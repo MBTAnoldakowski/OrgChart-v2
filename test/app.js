@@ -7,6 +7,7 @@ module.exports = function(app)
     var connectionString = 'mongodb://127.0.0.1:27017/test'; // for local
     if(process.env.MLAB_USERNAME_WEBDEV) { // check if running remotely
         var username = process.env.MLAB_USERNAME_WEBDEV; // get from environment
+        console.log('getting to db')
         var password = process.env.MLAB_PASSWORD_WEBDEV;
         connectionString = 'mongodb://' + username + ':' + password;
         connectionString += 'ds135444.mlab.com:35444/heroku_829kjs4t'; // use yours

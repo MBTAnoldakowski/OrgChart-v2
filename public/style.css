@@ -1,0 +1,134 @@
+.node {
+    cursor: pointer;
+}
+/*
+.node circle {
+    fill: #fff;
+    stroke: steelblue;
+    stroke-width: 1.5px;
+}
+*/
+.node text {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 11pt;
+    font-weight: 700;
+}
+
+.link {
+    fill: none;
+    stroke: #836f6f;
+    stroke-width: 1px;
+}
+
+div.tooltip {
+    position: absolute;
+    text-align: center;
+    width: auto;
+    height: auto;
+    padding: 8px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 11pt;
+    font-weight: 500;
+    background: #ffff99;
+    border: solid 1px #aaa;
+    border-radius: 8px;
+    pointer-events: none;
+}
+#expandB{
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    margin-bottom: 10px;
+    margin-right: 10px;
+}
+#option {
+    text-align: center;
+    width:900px;
+    margin:0 auto;
+    padding-top: 10px;
+}
+#chart {
+    text-align: center;
+    margin:0 auto;
+    padding-left: 10px;
+}
+#legend {
+    position: fixed;
+    width: 12%;
+    height: auto;
+    top:0;
+    left:0;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 11pt;
+    font-weight: 700;
+    background: white;
+}
+#ltitle {
+    margin-left: 10%;
+}
+#level1circle {
+    width: 15px;
+    height: 15px;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    border-radius: 25px;
+    background: black;
+    margin-left: 25px;
+    margin-right: 10px;
+    float: left;
+}
+#level2circle {
+    width: 15px;
+    height: 15px;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    border-radius: 25px;
+    background: red;
+    margin-left: 25px;
+    margin-right: 10px;
+    float: left;
+}
+#level3circle {
+    width: 15px;
+    height: 15px;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    border-radius: 25px;
+    background: orange;
+    margin-left: 25px;
+    margin-right: 10px;
+    float: left;
+}
+#level4circle {
+    width: 15px;
+    height: 15px;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    border-radius: 25px;
+    background: green;
+    margin-left: 25px;
+    margin-right: 10px;
+    float: left;
+}
+#level5circle {
+    width: 15px;
+    height: 15px;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    border-radius: 25px;
+    background: blue;
+    margin-left: 25px;
+    margin-right: 10px;
+    float: left;
+}
+#level6circle {
+    width: 15px;
+    height: 15px;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    border-radius: 25px;
+    background: purple;
+    margin-left: 25px;
+    margin-right: 10px;
+    float: left;
+}

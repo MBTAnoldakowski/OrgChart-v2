@@ -1,0 +1,754 @@
+{
+    "name":"General Manager",
+    "level":"2",
+    "deptno":"105000",
+    "approval1":"MRUNKEL",
+    "approval2":"MRUNKEL",
+    "approval3":"MRUNKEL",
+    "approval4":"MRUNKEL",
+    "approval5":"MABRAMO",
+    "approval6":"MABRAMO",
+    "approval7":"MABRAMO",
+    "approval8":"SPOFTAK",
+    "children":[
+        {
+            "name":"Chief Financial Officer",
+            "level":"4",
+            "deptno":"640000",
+            "approval1":"MRUNKEL",
+            "approval2":"MRUNKEL",
+            "approval3":"MRUNKEL",
+            "approval4":"MRUNKEL",
+            "approval5":"MABRAMO",
+            "approval6":"MABRAMO",
+            "approval7":"MABRAMO",
+            "approval8":"SPOFTAK",
+            "children":[
+                {
+                    "name":"Cash Collection",
+                    "level":"5",
+                    "deptno":"642002"
+                },
+                {
+                    "name":"FMCB Operations",
+                    "level":"5",
+                    "deptno":"643002"
+                },
+                {
+                    "name":"Chief Financial Officer",
+                    "level":"5",
+                    "deptno":"641002"
+                }
+            ]
+        },
+        {
+            "name":"Budget",
+            "level":"4",
+            "deptno":"630000",
+            "approval1":"MRUNKEL",
+            "approval2":"MRUNKEL",
+            "approval3":"MRUNKEL",
+            "approval4":"MRUNKEL",
+            "approval5":"MABRAMO",
+            "approval6":"MABRAMO",
+            "approval7":"MABRAMO",
+            "approval8":"SPOFTAK",
+            "children":[
+                {
+                    "name":"Budget Administration",
+                    "level":"5",
+                    "deptno":"631002"
+                },
+                {
+                    "name":"Budget Operating",
+                    "level":"5",
+                    "deptno":"632002"
+                },
+                {
+                    "name":"Budget Capital",
+                    "level":"5",
+                    "deptno":"633002"
+                }
+            ]
+        },
+        {
+            "name":"Treasurer Controller",
+            "level":"4",
+            "deptno":"805000",
+            "approval1":"PBRANDLEY",
+            "approval2":"PBRANDLEY",
+            "approval3":"PBRANDLEY",
+            "approval4":"PBRANDLEY NEASLEY",
+            "approval5":"MABRAMO",
+            "approval6":"MABRAMO",
+            "approval7":"MABRAMO",
+            "approval8":"SPOFTAK",
+            "children":[
+                {
+                    "name":"Controller",
+                    "level":"5",
+                    "deptno":"805202",
+                    "children":[
+                                {
+                            "name":"Accounts Payable",
+                            "level":"6",
+                            "deptno":"821002"
+                        },
+                                {
+                            "name":"Administration",
+                            "level":"6",
+                            "deptno":"811002"
+                        },
+                                {
+                            "name":"Accounting",
+                            "level":"6",
+                            "deptno":"822002"
+                        },
+                                {
+                            "name":"Payroll",
+                            "level":"6",
+                            "deptno":"823002"
+                        },
+                                {
+                            "name":"Balance Sheet Accounts",
+                            "level":"6",
+                            "deptno":"841002"
+                        }]
+                },
+                
+                {
+                    "name":"Treasurer",
+                    "level":"5",
+                    "deptno":"805302",
+                    "children":[{
+                            "name":"Finance Capital",
+                            "level":"6",
+                            "deptno":"832002"
+                        },
+                        {
+                            "name":"Finance Cash",
+                            "level":"6",
+                            "deptno":"833002"
+                        },
+                        {
+                            "name":"Finance Insurance",
+                            "level":"6",
+                            "deptno":"834002"
+                        }]
+                }
+            ]
+        },
+
+        {
+            "name":"General Activities",
+            "level":"4",
+            "deptno":"860000",
+            "approval1":"MRUNKEL",
+            "approval2":"MRUNKEL",
+            "approval3":"MRUNKEL",
+            "approval4":"MRUNKEL",
+            "approval5":"MABRAMO",
+            "approval6":"MABRAMO",
+            "approval7":"MABRAMO",
+            "approval8":"SPOFTAK",
+            "children":[
+                {
+                    "name":"General Activities",
+                    "level":"5",
+                    "deptno":"861002"
+                },
+                {
+                    "name":"General Activities Everett Mn",
+                    "level":"5",
+                    "deptno":"861107"
+                },
+                {
+                    "name":"General Activities Everett Str",
+                    "level":"5",
+                    "deptno":"861108"
+                }
+            ]
+        },
+        {
+            "name":"Own Source Revenue",
+            "level":"4",
+            "deptno":"172000",
+            "approval1":"EMROWE",
+            "approval2":"EMROWE",
+            "approval3":"EMROWE",
+            "approval4":"EMROWE",
+            "approval5":"EMROWE",
+            "approval6":"EMROWE",
+            "approval7":"MABRAMO",
+            "approval8":"SPOFTAK",
+            "children":[
+                {
+                    "name":"Own Source Revenue",
+                    "level":"5",
+                    "deptno":"172002"
+                }
+            ]
+        },
+        {
+            "name":"Interagency",
+            "level":"4",
+            "deptno":"170000",
+            "children":[
+                {
+                    "name":"Interagency",
+                    "level":"5",
+                    "deptno":"171002"
+                }
+            ]
+
+
+        },
+
+        {
+            "name":"System-wide Accessibility",
+            "level":"4",
+            "deptno":"102000",
+            "approval1":"LBRELSFORD",
+            "approval2":"LBRELSFORD",
+            "approval3":"LBRELSFORD",
+            "approval4":"LBRELSFORD",
+            "approval5":"LBRELSFORD",
+            "approval6":"LBRELSFORD",
+            "approval7":"MABRAMO",
+            "approval8":"SPOFTAK",
+            "children":[
+                {
+                    "name":"System-wide Accessibility",
+                    "level":"5",
+                    "deptno":"102002"
+                }
+            ]
+        },
+        {
+            "name":"Law",
+            "level":"4",
+            "deptno":"160000",
+            "approval1":"LGANNON",
+            "approval2":"LGANNON",
+            "approval3":"LGANNON",
+            "approval4":"LGANNON",
+            "approval5":"LGANNON",
+            "approval6":"MABRAMO",
+            "approval7":"MABRAMO",
+            "approval8":"SPOFTAK",
+            "children":[
+                {
+                    "name":"Law",
+                    "level":"5",
+                    "deptno":"161002"
+                }
+            ]
+        },
+        {
+            "name":"Public Affairs",
+            "level":"4",
+            "deptno":"115000",
+            "children":[
+                {
+                    "name":"Public Affairs",
+                    "level":"5",
+                    "deptno":"112002"
+                }
+            ]
+        },
+        {
+            "name":"Winter Storm Costs",
+            "level":"4",
+            "deptno":"140000",
+            "children":[
+                {
+                    "name":"Winter Storm Costs",
+                    "level":"5",
+                    "deptno":"141002"
+                }
+            ]
+        },
+        {
+            "name":"Real Estate",
+            "level":"4",
+            "deptno":"330000",
+            "approval1":"JCHAN",
+            "approval2":"JCHAN",
+            "approval3":"JCHAN",
+            "approval4":"JCHAN",
+            "approval5":"LGANNON",
+            "approval6":"JCHAN",
+            "approval7":"MABRAMO",
+            "approval8":"SPOFTAK",
+            "children":[
+                {
+                    "name":"Real Estate",
+                    "level":"5",
+                    "deptno":"331002"
+                },
+                {
+                    "name":"Facilities Management",
+                    "level":"5",
+                    "deptno":"442002"
+                }
+            ]
+        },
+        {
+            "name":"Diversity & Civil Rights",
+            "level":"4",
+            "deptno":"135000",
+            "approval1":"KCLIFTON",
+            "approval2":"KCLIFTON",
+            "approval3":"JTYNES",
+            "approval4":"JTYNES",
+            "approval5":"JTYNES",
+            "approval6":"JTYNES",
+            "approval7":"MABRAMO",
+            "approval8":"SPOFTAK",
+            "children":[
+                {
+                    "name":"EEO/AA Administration",
+                    "level":"5",
+                    "deptno":"131002"
+                },
+                {
+                    "name":"Disadvantaged Business Enterprise",
+                    "level":"5",
+                    "deptno":"132002"
+                },
+                {
+                    "name":"EEO/AA Contract Administration",
+                    "level":"5",
+                    "deptno":"133002"
+                },
+                {
+                    "name":"Training",
+                    "level":"5",
+                    "deptno":"134002"
+                }
+            ]
+        },
+        {
+            "name":"Customer Technology Department",
+            "level":"4",
+            "deptno":"118000",
+            "approval1":"DBARKER KDOHERTY LONEILL MCIBOROWSKI MMORAN NOLIVEIRA KGROGAN",
+            "approval2":"WKINGKADE MMORAN MCIBOROWSKI AVENEZIANO DBARKER",
+            "approval3":"AVENEZIANO DBARKER WKINGKADE",
+            "approval4":"AVENEZIANO WKINGKADE",
+            "approval5":"DBSCHACHTER",
+            "approval6":"DBSCHACHTER",
+            "approval7":"MABRAMO",
+            "approval8":"SPOFTAK",
+            "children":[
+                
+                {
+                    "name":"AFC 1.0",
+                    "level":"5",
+                    "deptno":"116002",
+                    "children":[
+                        {
+                    "name":"Revenue Maintenance Charlestown",
+                    "level":"6",
+                    "deptno":"263077"
+                },
+                        {
+                    "name":"Revenue Maintenance Everett",
+                    "level":"6",
+                    "deptno":"263106"
+                },{
+                    "name":"Revenue Audit",
+                    "level":"6",
+                    "deptno":"267002"
+                },
+                        {
+                    "name":"Revenue Maintenance Franklin",
+                    "level":"6",
+                    "deptno":"263123"
+                }
+                    ]
+                },{
+                    "name":"AFC 2.0",
+                    "level":"5",
+                    "deptno":"117002"
+                },
+                {
+                    "name":"Customer Technology Division",
+                    "level":"5",
+                    "deptno":"118002"
+                }
+            ]
+        },
+        {
+            "name":"OPMI",
+            "level":"4",
+            "deptno":"620000",
+            "approval1":"RBAIN LPAGETSEEKINS",
+            "approval2":"RBAIN LPAGETSEEKINS",
+            "approval3":"RBAIN LPAGETSEEKINS",
+            "approval4":"RBAIN LPAGETSEEKINS",
+            "approval5":"MABRAMO",
+            "approval6":"MABRAMO",
+            "approval7":"MABRAMO",
+            "approval8":"SPOFTAK",
+            "children":[
+                {
+                    "name":"OPMI",
+                    "level":"5",
+                    "deptno":"621002"
+                }
+            ]
+        },
+        {
+            "name":"General Manager",
+            "level":"4",
+            "deptno":"100000",
+            "children":[
+                {
+                    "name":"General Manager",
+                    "level":"5",
+                    "deptno":"101002"
+                }
+            ]
+        },
+        {
+            "name":"Labor Relations",
+            "level":"4",
+            "deptno":"730000",
+            "children":[
+                {
+                    "name":"Labor Relations",
+                    "level":"5",
+                    "deptno":"731002"
+                }
+            ]
+        },
+        {
+            "name":"Safety",
+            "level":"4",
+            "deptno":"240000",
+            "approval1":"HDURSO SCULP",
+            "approval2":"HDURSO SCULP",
+            "approval3":"HDURSO SCULP",
+            "approval4":"SCULP",
+            "approval5":"RNICKLE",
+            "approval6":"RNICKLE",
+            "approval7":"MABRAMO",
+            "approval8":"SPOFTAK",
+            "children":[
+                {
+                    "name":"Safety Administration",
+                    "level":"5",
+                    "deptno":"241080"
+                }
+            ]
+        },
+        {
+            "name":"Transit Police",
+            "level":"4",
+            "deptno":"120000",
+            "children":[
+                {
+                    "name":"Transit Police",
+                    "level":"5",
+                    "deptno":"121012"
+                }
+            ]
+        },
+        {
+            "name":"ITD",
+            "level":"4",
+            "deptno":"430000",
+            "approval1":"DMETRAUX KSILVA SGROFF",
+            "approval2":"DMETRAUX KSILVA SGROFF",
+            "approval3":"DMETRAUX KSILVA SGROFF",
+            "approval4":"GFOSTER",
+            "approval5":"GFOSTER",
+            "approval6":"GFOSTER",
+            "approval7":"MABRAMO",
+            "approval8":"SPOFTAK",
+            "children":[
+                {
+                    "name":"ITD Enterprise-Wide Proc",
+                    "level":"5",
+                    "deptno":"434002"
+                },
+                {
+                    "name":"ITD",
+                    "level":"5",
+                    "deptno":"433002"
+                },
+                {
+                    "name":"ITD Development",
+                    "level":"5",
+                    "deptno":"435002"
+                }
+            ]
+        },
+        {
+            "name":"Environmental Affairs",
+            "level":"4",
+            "deptno":"155000",
+            "approval1":"ABRENNAN MDONAGHY",
+            "approval2":"ABRENNAN",
+            "approval3":"ABRENNAN",
+            "approval4":"ABRENNAN",
+            "approval5":"MABRAMO",
+            "approval6":"MABRAMO",
+            "approval7":"MABRAMO",
+            "approval8":"SPOFTAK",
+            "children":[
+                {
+                    "name":"Utilities",
+                    "level":"5",
+                    "deptno":"182005"
+                },
+                {
+                    "name":"Environmental Affairs",
+                    "level":"5",
+                    "deptno":"156002"
+                }
+            ]
+        },
+        {
+            "name":"Customer Experience",
+            "level":"4",
+            "deptno":"110000",
+            "approval1":"CJORDAN DTRIBONE JRAMSAY TKING",
+            "approval2":"JRAMSAY DTRIBONE CHOWZE",
+            "approval3":"JRAMSAY DTRIBONE CHOWZE",
+            "approval4":"MYOUNG",
+            "approval5":"MYOUNG",
+            "approval6":"MYOUNG",
+            "approval7":"MABRAMO",
+            "approval8":"SPOFTAK",
+            "children":[
+                {
+                    "name":"Charlie Store",
+                    "level":"5",
+                    "deptno":"528103"
+                },
+                {
+                    "name":"Customer Expeience Div Marketing",
+                    "level":"5",
+                    "deptno":"110002"
+                },
+                {
+                    "name":"Customer Care Center",
+                    "level":"5",
+                    "deptno":"275008"
+                },
+                {
+                    "name":"Communications",
+                    "level":"5",
+                    "deptno":"521002"
+                }
+                
+            ]
+        },
+        
+        {
+            "name":"Office of Transportation Access",
+            "level":"4",
+            "deptno":"290000",
+            "approval1":"CJOYCE-HARRINGTON",
+            "approval2":"MHULAK",
+            "approval3":"MHULAK",
+            "approval4":"BSCHULTZMAN",
+            "approval5":"BSCHULTZMAN",
+            "approval6":"BSCHULTZMAN MABRAMO",
+            "approval7":"MABRAMO",
+            "approval8":"SPOFTAK",
+            "children":[
+                {
+                    "name":"Office of Transportation Access",
+                    "level":"5",
+                    "deptno":"291002"
+                }
+            ]
+        },
+        {
+            "name":"Human Resources",
+            "level":"4",
+            "deptno":"700000",
+            "approval1":"JBROCHU",
+            "approval2":"JBROCHU",
+            "approval3":"JBROCHU",
+            "approval4":"JBROCHU",
+            "approval5":"JBROCHU",
+            "approval6":"MABRAMO",
+            "approval7":"MABRAMO",
+            "approval8":"SPOFTAK",
+            "children":[
+                {
+                    "name":"Employment and Training",
+                    "level":"5",
+                    "deptno":"721002"
+                },
+                {
+                    "name":"Benefits and Comp",
+                    "level":"5",
+                    "deptno":"751002"
+                },
+                {
+                    "name":"Health and Welfare Fund",
+                    "level":"5",
+                    "deptno":"752002"
+                }
+                
+            ]
+        },
+        {
+            "name":"Employee Relations",
+            "level":"4",
+            "deptno":"710000",
+            "children":[
+                {
+                    "name":"Employee Relations",
+                    "level":"5",
+                    "deptno":"711002"
+                }
+            ]
+        },
+        {
+            "name":"Occupational Health Services",
+            "level":"4",
+            "deptno":"780000",
+            "approval1":"SSULLIVAN",
+            "approval2":"KLEGROW",
+            "approval3":"KLEGROW",
+            "approval4":"KLEGROW",
+            "approval5":"JSAINTCYR",
+            "approval6":"JSAINTCYR",
+            "approval7":"MABRAMO",
+            "approval8":"SPOFTAK",
+            "children":[
+                {
+                    "name":"Worker's Compensation",
+                    "level":"5",
+                    "deptno":"741002",
+                    "approval1":"JDOOLEY",
+                    "approval2":"JDOOLEY",
+                    "approval3":"JDOOLEY",
+                    "approval4":"KLEGROW",
+                    "approval5":"JSAINTCYR",
+                    "approval6":"JSAINTCYR",
+                    "approval7":"MABRAMO",
+                    "approval8":"SPOFTAK"
+                },
+                {
+                    "name":"Medical Operations",
+                    "level":"5",
+                    "deptno":"761002"
+                },
+                {
+                    "name":"Employee Counseling",
+                    "level":"5",
+                    "deptno":"781002"
+                }
+            ]
+        },
+        {
+            "name":"Procurement and Logistics",
+            "level":"4",
+            "deptno":"400000",
+            "approval1":"FSCABIN NEASLEY",
+            "approval2":"FSCABIN NEASLEY",
+            "approval3":"FSCABIN NEASLEY",
+            "approval4":"NEASLEY JPOLCARI",
+            "approval5":"JPOLCARI",
+            "approval6":"JPOLCARI",
+            "approval7":"MABRAMO",
+            "approval8":"SPOFTAK",
+            "children":[
+                {
+                    "name":"Administration",
+                    "level":"5",
+                    "deptno":"421002"
+                },
+                {
+                    "name":"Purchasing Inventory",
+                    "level":"5",
+                    "deptno":"425002"
+                },
+                {
+                    "name":"Purchasing Non-Inventory",
+                    "level":"5",
+                    "deptno":"426002"
+                },
+                {
+                    "name":"Stores",
+                    "level":"5",
+                    "deptno":"443002"
+                }
+            ]
+        },
+        {
+            "name":"Vendor Management",
+            "level":"4",
+            "deptno":"804000",
+            "children":[
+                {
+                    "name":"Money Room",
+                    "level":"5",
+                    "deptno":"262077"
+                },
+                {
+                    "name":"Vendor Management",
+                    "level":"5",
+                    "deptno":"805402"
+                }
+            ]
+        },
+
+      {
+         "name":"Rail Operations",
+         "level":"4",
+         "deptno":"210000",
+         "approval1":"JCARREGA KAUBUCHON MLANNIN",
+         "approval2":"MLANNIN",
+         "approval3":"MLANNIN",
+         "approval4":"SADKINS RCOHOLAN",
+         "approval5":"JRAY",
+         "approval6":"JRAY",
+         "approval7":"MABRAMO",
+         "approval8":"SPOFTAK",
+         "children":[
+            {
+               "name":"Commuter Rail Supervision",
+               "level":"5",
+               "deptno":"211008",
+               "children":[
+                  {
+                     "name":"Commuter Ferry Subsidy",
+                     "level":"6",
+                     "deptno":"202026"
+                  },
+                  {
+                     "name":"Commuter Ferry Supervision",
+                     "level":"6",
+                     "deptno":"202008"
+                  }
+               ]
+            },
+            {
+               "name":"Commuter Rail Subsidy",
+               "level":"5",
+               "deptno":"216000",
+               "children":[
+                  {
+                     "name":"Commuter Rail Subsidy",
+                     "level":"6",
+                     "deptno":"215008"
+                  }
+               ]
+            },
+                  {
+                     "name":"CRR Cape Flyer Operations",
+                     "level":"5",
+                     "deptno":"215001"
+                  }
+         ]
+      }
+    ]
+}

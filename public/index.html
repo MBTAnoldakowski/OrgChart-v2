@@ -1,16 +1,22 @@
-<!DOCTYPE html>
+<!DOCTYPE html ng-app="OrgApp">
 <html>
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>MBTA Organization Structure</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="style.css">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="resources/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
-    <script src="app.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="../app.js"></script>
+
 </head>
 <body>
+<div ng-controller="OrgController as model">
+    <div ng-model="model.getBudget(118002)"></div>
+
+</div>
 <script src="//d3js.org/d3.v3.min.js"></script>
 <div id="option">
 
@@ -57,7 +63,7 @@
         .attr("class", "tooltip")
         .style("opacity", 1e-6);
 
-    d3.json("flare_experiment_2.json", function (error, flare) {
+    d3.json("resources/flare_experiment_2.json", function (error, flare) {
         if (error) throw error;
 
         root = flare;
@@ -243,7 +249,7 @@
     }
 
     function updateData() {
-        d3.json("flare_experiment.json", function (error, flare) {
+        d3.json("resources/flare_experiment.json", function (error, flare) {
             if (error) throw error;
 
             root = flare;
@@ -265,7 +271,7 @@
     }
 
     function updateData2() {
-        d3.json("flare_experiment_2.json", function (error, flare) {
+        d3.json("resources/flare_experiment_2.json", function (error, flare) {
             if (error) throw error;
 
             root = flare;

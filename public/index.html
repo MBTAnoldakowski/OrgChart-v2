@@ -16,18 +16,17 @@
     <p>Last Updated: 9/15/2017 11:43AM</p>
     <input name="updateButton"
            type="button"
-           class = "btn"
+           class="btn"
            value="View Operating"
-           onclick="updateData()" />
-    <script src="//d3js.org/d3.v3.min.js"></script>
+           onclick="updateData()"/>
 
     <input name="updateButton"
            type="button"
            class="btn"
            value="View Administration"
-           onclick="updateData2()" />
+           onclick="updateData2()"/>
 </div>
-<div id = "chart"></div>
+<div id="chart"></div>
 <script>
 
     var margin = {top: 20, right: 150, bottom: 20, left: 200},
@@ -42,7 +41,9 @@
         .size([height, width]);
 
     var diagonal = d3.svg.diagonal()
-        .projection(function(d) { return [d.y, d.x]; });
+        .projection(function (d) {
+            return [d.y, d.x];
+        });
 
     var svg = d3.select("#chart").append("svg")
         .attr("width", width + margin.right + margin.left)
@@ -54,7 +55,7 @@
         .attr("class", "tooltip")
         .style("opacity", 1e-6);
 
-    d3.json("flare_experiment_2.json", function(error, flare) {
+    d3.json("flare_experiment_2.json", function (error, flare) {
         if (error) throw error;
 
         root = flare;
@@ -82,50 +83,67 @@
             links = tree.links(nodes);
 
         // Normalize for fixed-depth.
-        nodes.forEach(function(d) { d.y = d.depth * 250; }); //180
+        nodes.forEach(function (d) {
+            d.y = d.depth * 250;
+        }); //180
 
         // Update the nodes…
         var node = svg.selectAll("g.node")
-            .data(nodes, function(d) { return d.id || (d.id = ++i); });
+            .data(nodes, function (d) {
+                return d.id || (d.id = ++i);
+            });
 
         // Enter any new nodes at the parent's previous position.
         var nodeEnter = node.enter().append("g")
             .attr("class", "node")
-            .attr("transform", function(d) { return "translate(" + source.y0 + "," + source.x0 + ")"; })
+            .attr("transform", function (d) {
+                return "translate(" + source.y0 + "," + source.x0 + ")";
+            })
             .on("click", click);
 
         nodeEnter.append("circle")
             .attr("r", 1e-6);
 
         nodeEnter.append("text")
-            .attr("x", function(d) { return d.children || d._children ? -10 : 10; })
+            .attr("x", function (d) {
+                return d.children || d._children ? -10 : 10;
+            })
             .attr("dy", ".35em")
-            .attr("text-anchor", function(d) { return d.children || d._children ? "end" : "start"; })
-            .text(function(d) { return d.name; })
+            .attr("text-anchor", function (d) {
+                return d.children || d._children ? "end" : "start";
+            })
+            .text(function (d) {
+                return d.name;
+            })
             .on("mouseover", mouseover)
-            .on("mousemove", function(d){mousemove(d);})
+            .on("mousemove", function (d) {
+                mousemove(d);
+            })
             .on("mouseout", mouseout)
             .style("fill-opacity", 1e-6);
 
         // Transition nodes to their new position.
         var nodeUpdate = node.transition()
             .duration(duration)
-            .attr("transform", function(d) { return "translate(" + d.y + "," + d.x + ")"; });
+            .attr("transform", function (d) {
+                return "translate(" + d.y + "," + d.x + ")";
+            });
 
         nodeUpdate.select("circle")
             .attr("r", 6)
-            .style("fill", function(d) { if(d.level == "2") return "red";
-                if(d.level == "3") return "orange";
-                if(d.level == "4") return "green";
-                if(d.level == "5") return "blue";
-                if(d.level == "6") return "purple";
-                if(d.name == "") return "#ffffff";
+            .style("fill", function (d) {
+                if (d.level == "2") return "red";
+                if (d.level == "3") return "orange";
+                if (d.level == "4") return "green";
+                if (d.level == "5") return "blue";
+                if (d.level == "6") return "purple";
+                if (d.name == "") return "#ffffff";
             })
-            .style("opacity", function(d){
-                if(d.level == ""){
+            .style("opacity", function (d) {
+                if (d.level == "") {
                     return 0;
                 }
-            }) ;
+            });
 
         nodeUpdate.select("text")
             .style("fill-opacity", 1);
@@ -133,7 +151,9 @@
         // Transition exiting nodes to the parent's new position.
         var nodeExit = node.exit().transition()
             .duration(duration)
-            .attr("transform", function(d) { return "translate(" + source.y + "," + source.x + ")"; })
+            .attr("transform", function (d) {
+                return "translate(" + source.y + "," + source.x + ")";
+            })
             .remove();
 
         nodeExit.select("circle")
@@ -144,12 +164,14 @@
 
         // Update the links…
         var link = svg.selectAll("path.link")
-            .data(links, function(d) { return d.target.id; });
+            .data(links, function (d) {
+                return d.target.id;
+            });
 
         // Enter any new links at the parent's previous position.
         link.enter().insert("path", "g")
             .attr("class", "link")
-            .attr("d", function(d) {
+            .attr("d", function (d) {
                 var o = {x: source.x0, y: source.y0};
                 return diagonal({source: o, target: o});
             });
@@ -162,14 +184,14 @@
         // Transition exiting nodes to the parent's new position.
         link.exit().transition()
             .duration(duration)
-            .attr("d", function(d) {
+            .attr("d", function (d) {
                 var o = {x: source.x, y: source.y};
                 return diagonal({source: o, target: o});
             })
             .remove();
 
         // Stash the old positions for transition.
-        nodes.forEach(function(d) {
+        nodes.forEach(function (d) {
             d.x0 = d.x;
             d.y0 = d.y;
         });
@@ -186,6 +208,7 @@
         }
         update(d);
     }
+
     function mouseover() {
         div.transition()
             .duration(300)
@@ -193,20 +216,20 @@
     }
 
     function mousemove(d) {
-        if(d.approval1 != undefined){
-            div.html(d.deptno+ "<br/>" + "Level 1: " + d.approval1 + "<br/>" + "Level 2: " + d.approval2 + "<br/>" + "Level 3: " + d.approval3+ "<br/>" + "Level 4: " + d.approval4+ "<br/>" + "Level 5: " + d.approval5+ "<br/>" + "Level 6: " + d.approval6+ "<br/>" + "Level 7: " + d.approval7+ "<br/>" + "Level 8: " + d.approval8)
+        if (d.approval1 != undefined) {
+            div.html(d.deptno + "<br/>" + "Level 1: " + d.approval1 + "<br/>" + "Level 2: " + d.approval2 + "<br/>" + "Level 3: " + d.approval3 + "<br/>" + "Level 4: " + d.approval4 + "<br/>" + "Level 5: " + d.approval5 + "<br/>" + "Level 6: " + d.approval6 + "<br/>" + "Level 7: " + d.approval7 + "<br/>" + "Level 8: " + d.approval8)
                 .style("left", (d3.event.pageX ) + "px")
                 .style("top", (d3.event.pageY) + "px");
         }
         /*if(d.level == "" && d.deptno == ""){
             div.html("<br/>")
         }*/
-        else{
-            div.html(d.deptno+"<br/> Approves at a higher level")
+        else {
+            div.html(d.deptno + "<br/> Approves at a higher level")
                 .style("left", (d3.event.pageX ) + "px")
                 .style("top", (d3.event.pageY) + "px");
         }
-        if(d.name =="Office of the General Manager" || d.name == "Office of the CFO"){
+        if (d.name == "Office of the General Manager" || d.name == "Office of the CFO") {
             div.html("<br/>")
         }
     }
@@ -216,8 +239,9 @@
             .duration(300)
             .style("opacity", 1e-6);
     }
-    function updateData(){
-        d3.json("flare_experiment.json", function(error, flare) {
+
+    function updateData() {
+        d3.json("flare_experiment.json", function (error, flare) {
             if (error) throw error;
 
             root = flare;
@@ -237,8 +261,9 @@
         });
 
     }
-    function updateData2(){
-        d3.json("flare_experiment_2.json", function(error, flare) {
+
+    function updateData2() {
+        d3.json("flare_experiment_2.json", function (error, flare) {
             if (error) throw error;
 
             root = flare;
@@ -258,39 +283,46 @@
         });
 
     }
-    function expand(d){
-        var children = (d.children)?d.children:d._children;
+
+    function expand(d) {
+        var children = (d.children) ? d.children : d._children;
         if (d._children) {
             d.children = d._children;
             d._children = null;
         }
-        if(children)
+        if (children)
             children.forEach(expand);
     }
 
-    function expandAll(){
+    function expandAll() {
         expand(root);
         update(root);
     }
 
 </script>
-<div id = "legend">
-    <h3 id = "ltitle">Legend</h3>
-    <div id = "level1circle"></div> <p>Level 1 is MBTA</p>
-    <div id = "level2circle"></div> <p>Level 2</p>
-    <div id = "level3circle"></div> <p>Level 3</p>
-    <div id = "level4circle"></div> <p>Level 4</p>
-    <div id = "level5circle"></div> <p>Level 5</p>
-    <div id = "level6circle"></div> <p>Level 6</p>
+<div id="legend">
+    <h3 id="ltitle">Legend</h3>
+    <div id="level1circle"></div>
+    <p>Level 1 is MBTA</p>
+    <div id="level2circle"></div>
+    <p>Level 2</p>
+    <div id="level3circle"></div>
+    <p>Level 3</p>
+    <div id="level4circle"></div>
+    <p>Level 4</p>
+    <div id="level5circle"></div>
+    <p>Level 5</p>
+    <div id="level6circle"></div>
+    <p>Level 6</p>
 
 </div>
-<div id = "expandB">
+<div id="expandB">
     <input name="expandButton"
            type="button"
            class="btn"
            id="expandB"
            value="Expand All"
-           onclick="expandAll()" />
+           onclick="expandAll()"/>
 </div>
 </body>
 </html>

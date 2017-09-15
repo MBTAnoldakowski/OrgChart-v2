@@ -8,13 +8,10 @@ module.exports = function(app)
 
     if(process.env.MLAB_USERNAME_WEBDEV) {
         connectionString = process.env.MLAB_USERNAME_WEBDEV + ":" +
-            process.env.MLAB_PASSWORD_WEBDEV + "@" +
-            process.env.MLAB_HOST + ':' +
-            process.env.MLAB_PORT + '/' +
-            process.env.MLAB_APP_NAME;
+            process.env.MLAB_PASSWORD_WEBDEV + "@ds135444.mlab.com:35444/heroku_829kjs4t";
     }
 
-    var connectionString = 'mongodb://127.0.0.1:27017/test'; // for local
+    //var connectionString = 'mongodb://127.0.0.1:27017/test'; // for local
     if(process.env.MLAB_USERNAME) { // check if running remotely
         var username = process.env.MLAB_USERNAME_WEBDEV; // get from environment
         var password = process.env.MLAB_PASSWORD_WEBDEV;

@@ -8,15 +8,11 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="resources/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="../app.js"></script>
-
+    <script src="config.js"></script>
 </head>
 <body>
-<div ng-controller="OrgController as model">
-    <div ng-model="model.getBudget(118002)"></div>
-
-</div>
 <script src="//d3js.org/d3.v3.min.js"></script>
 <div id="option">
 
@@ -332,5 +328,6 @@
            value="Expand All"
            onclick="expandAll()"/>
 </div>
+    {{model.budget}}
 </body>
 </html>

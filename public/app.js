@@ -1,6 +1,7 @@
 console.log("SERVER SIDE!");
-var app = require('express'); // creates an instance of the express lib
-//var myModule = angular.module('OrgApp', []);
+var app = require('../express'); // creates an instance of the express lib
+
+
 var mongoose = require('mongoose');
 var connectionString = 'mongodb://localhost/BUDGET-DATA';
 if (process.env.MLAB_USERNAME_WEBDEV) {

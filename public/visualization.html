@@ -1,3 +1,4 @@
+
 <div id="option">
 
     <h1>MBTA Organization Chart</h1>
@@ -205,7 +206,10 @@
 
     function mousemove(d) {
         if (d.approval1 != undefined) {
-            div.html(d.deptno + "<br/>" + "Level 1: " + d.approval1 + "<br/>" + "Level 2: " + d.approval2 + "<br/>" + "Level 3: " + d.approval3 + "<br/>" + "Level 4: " + d.approval4 + "<br/>" + "Level 5: " + d.approval5 + "<br/>" + "Level 6: " + d.approval6 + "<br/>" + "Level 7: " + d.approval7 + "<br/>" + "Level 8: " + d.approval8)
+            div.html(d.deptno + "<br/>" + "Level 1: " + d.approval1 + "<br/>" + "Level 2: " + d.approval2 + "<br/>"
+                + "Level 3: " + d.approval3 + "<br/>" + "Level 4: " + d.approval4 + "<br/>" + "Level 5: " + d.approval5
+                + "<br/>" + "Level 6: " + d.approval6 + "<br/>" + "Level 7: " + d.approval7 + "<br/>" + "Level 8: "
+                + d.approval8 + "<br/>" + "Budget Amount: "+ model.findBudgetById(d.deptno))
                 .style("left", (d3.event.pageX ) + "px")
                 .style("top", (d3.event.pageY) + "px");
         }
@@ -312,4 +316,3 @@
            value="Expand All"
            onclick="expandAll()"/>
 </div>
-{{model.budget}}

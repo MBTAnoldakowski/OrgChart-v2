@@ -6,10 +6,7 @@ var connectionString = 'mongodb://localhost/BUDGET-DATA';
 if (process.env.MLAB_USERNAME_WEBDEV) {
     console.log("on heroku!");
     connectionString = process.env.MLAB_USERNAME_WEBDEV + ":" +
-        process.env.MLAB_PASSWORD_WEBDEV + "@" +
-        process.env.MLAB_HOST + ':' +
-        process.env.MLAB_PORT + '/' +
-        process.env.MLAB_APP_NAME;
+        process.env.MLAB_PASSWORD_WEBDEV + "@ds135444.mlab.com:35444/heroku_829kjs4t"
 }
 
 if (process.env.MLAB_USERNAME) { // check if running remotely

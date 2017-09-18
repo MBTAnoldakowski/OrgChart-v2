@@ -10,4 +10,5 @@ var budgetSchema = mongoose.Schema({
 
 }, {collection: "budget"});
 
+console.log('budget schema');
 module.exports = budgetSchema;

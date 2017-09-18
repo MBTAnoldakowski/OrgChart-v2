@@ -1,5 +1,6 @@
 (function () {
-    angular.module('OrgApp')
+    angular
+        .module('OrgApp')
         .controller('budgetController', budgetController);
 
     function budgetController(budgetService) {

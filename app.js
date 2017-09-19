@@ -19,3 +19,4 @@ mongoose.connect(connectionString);
 
 require('./services/budget.service.server');
 
+require('./services/upload.service.server');

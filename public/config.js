@@ -6,8 +6,13 @@
     function configuration($routeProvider) {
         $routeProvider
             .when('/', {
-                templateUrl: 'index.html',
+                templateUrl: 'visualization.html',
                 controller: 'budgetController',
+                controllerAs: 'model'
+            })
+            .when('/update',{
+                templateUrl: 'upload.template.html',
+                controller: 'uploadController',
                 controllerAs: 'model'
             })
     }

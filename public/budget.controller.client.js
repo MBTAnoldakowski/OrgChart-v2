@@ -1,7 +1,7 @@
 (function () {
     angular
         .module('OrgApp')
-        .controller('budgetController', budgetController);
+        .controller('budgetController', ['$scope', budgetController]);
 
     function budgetController(budgetService) {
         var model = this;
@@ -17,14 +17,13 @@
 
         function renderBudget(budgets) {
             model.budgets = budgets;
+            $scope.budget = budgets;
         }
 
         init();
 
         function findBudgetById(id){
-            console.log('finding by id');
             for(var i =0; i < model.budgets.length; i++){
-                //console.log(model.budgets[i].deptNo);
                 if(model.budgets[i].deptNo == id){
                     console.log(model.budgets[i].deptNo);
                     return model.budgets[i].budgetAmount;

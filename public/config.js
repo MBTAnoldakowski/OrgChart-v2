@@ -12,8 +12,8 @@
             })
             .when('/update',{
                 templateUrl: 'upload.template.html',
-                controller: 'uploadController',
-                controllerAs: 'model'
+                controllerAs: 'model',
+                controller: 'uploadController'
             })
     }
 

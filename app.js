@@ -10,9 +10,10 @@ if (process.env.MLAB_USERNAME_WEBDEV) {
 }
 
 if (process.env.MLAB_USERNAME) { // check if running remotely
-    connectionString = 'mongodb://heroku_829kjs4t:v2026l7f40bpcokspsu46nc9ii@ds135444.mlab.com:35444/heroku_829kjs4t'
+    connectionString = process.env.MLAB_USERNAME_WEBDEV + ":" +
+        process.env.MLAB_PASSWORD_WEBDEV + "@ds135444.mlab.com:35444/heroku_829kjs4t"
 }
-console.log(connectionString);
+console.log("connecting with: " + connectionString);
 
 mongoose.connect(connectionString);
 

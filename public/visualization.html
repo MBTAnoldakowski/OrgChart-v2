@@ -263,6 +263,7 @@
     function mousemove(d) {
         var deptNo = d.deptno;
         if (d.approval1 != undefined) {
+
             div.html(d.deptno + "<br/>" + "Level 1: " + d.approval1 + "<br/>" + "Level 2: " + d.approval2 + "<br/>"
                 + "Level 3: " + d.approval3 + "<br/>" + "Level 4: " + d.approval4 + "<br/>" + "Level 5: " + d.approval5
                 + "<br/>" + "Level 6: " + d.approval6 + "<br/>" + "Level 7: " + d.approval7 + "<br/>" + "Level 8: "
@@ -270,17 +271,22 @@
                 .style("left", (d3.event.pageX ) + "px")
                 .style("top", (d3.event.pageY) + "px");
         }
+        /*if(d.level == "" && d.deptno == ""){
+            div.html("<br/>")
+        }*/
         if(getBudgetData(d.deptno) != undefined) {
             div.html(d.deptno + "<br/> Approves at a higher level" + "<div align = 'right'> Budget Amount: " + formatMoney(getBudgetData(d.deptno))
                 + "<br/> Budget Actual: " + formatMoney(getBudgetActuals(d.deptno))+"</div>")
                 .style("left", (d3.event.pageX ) + "px")
                 .style("top", (d3.event.pageY) + "px");
         }
-        else{
+
+        if(d.approval1 == undefined && getBudgetData(d.deptno) == undefined){
             div.html(d.deptno + "<br/> Approves at a higher level")
                 .style("left", (d3.event.pageX ) + "px")
                 .style("top", (d3.event.pageY) + "px");
         }
+        
     }
 
     function formatMoney(number){

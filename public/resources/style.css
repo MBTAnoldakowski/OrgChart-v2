@@ -1,6 +1,7 @@
 .node {
     cursor: pointer;
 }
+
 /*
 .node circle {
     fill: #fff;
@@ -34,38 +35,59 @@ div.tooltip {
     border-radius: 8px;
     pointer-events: none;
 }
-#expandB{
+
+#expandB {
     position: fixed;
     right: 0;
     bottom: 0;
     margin-bottom: 10px;
     margin-right: 10px;
 }
+
 #option {
     text-align: center;
-    width:900px;
-    margin:0 auto;
+    width: 900px;
+    margin: 0 auto;
     padding-top: 10px;
 }
+
 #chart {
     text-align: center;
-    margin:0 auto;
+    margin: 0 auto;
     padding-left: 10px;
 }
+
 #legend {
     position: fixed;
     width: 12%;
     height: auto;
-    top:0;
-    left:0;
+    top: 0;
+    left: 0;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 11pt;
     font-weight: 700;
     background: white;
 }
-#ltitle {
+
+.ltitle {
     margin-left: 10%;
 }
+
+.ltitleright {
+    position: fixed;
+    width: 12%;
+    height: auto;
+    top: 0;
+    right: 0;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 11pt;
+    font-weight: 700;
+    background: white;
+
+    margin-left: 10px;
+    margin-right: 25px;
+}
+
 #level1circle {
     width: 15px;
     height: 15px;
@@ -77,6 +99,7 @@ div.tooltip {
     margin-right: 10px;
     float: left;
 }
+
 #level2circle {
     width: 15px;
     height: 15px;
@@ -88,6 +111,7 @@ div.tooltip {
     margin-right: 10px;
     float: left;
 }
+
 #level3circle {
     width: 15px;
     height: 15px;
@@ -99,6 +123,7 @@ div.tooltip {
     margin-right: 10px;
     float: left;
 }
+
 #level4circle {
     width: 15px;
     height: 15px;
@@ -110,6 +135,7 @@ div.tooltip {
     margin-right: 10px;
     float: left;
 }
+
 #level5circle {
     width: 15px;
     height: 15px;
@@ -121,6 +147,7 @@ div.tooltip {
     margin-right: 10px;
     float: left;
 }
+
 #level6circle {
     width: 15px;
     height: 15px;
@@ -131,4 +158,20 @@ div.tooltip {
     margin-left: 25px;
     margin-right: 10px;
     float: left;
+}
+
+#lessthan25 {
+    color: #32CD32;
+}
+
+#x25to50 {
+    color: #CCCC00;
+}
+
+#x50to75 {
+    color: red;
+}
+
+#x75plus {
+    color: #800000;
 }

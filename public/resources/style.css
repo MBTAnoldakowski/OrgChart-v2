@@ -83,7 +83,7 @@ div.tooltip {
     font-size: 11pt;
     font-weight: 700;
     background: white;
-
+    text-align: right;
     margin-left: 10px;
     margin-right: 25px;
 }
@@ -162,16 +162,20 @@ div.tooltip {
 
 #lessthan25 {
     color: #32CD32;
+    text-align: right;
 }
 
 #x25to50 {
     color: #CCCC00;
+    text-align: right;
 }
 
 #x50to75 {
     color: red;
+    text-align: right;
 }
 
 #x75plus {
     color: #800000;
+    text-align: right;
 }

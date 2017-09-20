@@ -42,7 +42,7 @@
     var div = d3.select("body").append("div")
         .attr("class", "tooltip")
         .style("opacity", 1e-6);
-
+    var deptData = [];
     d3.json("resources/flare_experiment_2.json", function (error, flare) {
         if (error) throw error;
 
@@ -59,38 +59,28 @@
                 d._children.forEach(collapse);
                 d.children = null;
             }
+            console.log("D: " + d);
         }
 
         //root.children.forEach(collapse);
         update(root);
     });
-
+    var buData = [];
+    d3.csv("csv/budgetdata.csv", function (error, bData) {
+        if (error) throw error;
+        //console.log('data');
+        bData.forEach(function (b) {
+            b.deptNo = +b.deptNo;
+            b.year = +b.year;
+            //console.log(b);
+            buData.push(b);
+        });
+    });
+    //console.log("b: "+ buData);
 
     d3.select(self.frameElement).style("height", "800px");
 
     function update(source) {
-        d3.csv("csv/budgetdata.csv", function (error, bData) {
-            if (error) throw error;
-            console.log('data');
-            console.log(source);
-            bData.forEach(function (b) {
-                b.deptNo = +b.deptNo;
-                b.year = +b.year;
-            });
-            console.log(bData);
-            source.forEach(function (d, i) {
-                console.log(d);
-                /*
-                bData.forEach(function (e, j) {
-                    if (d.deptNo === e.deptNo) {
-                        e.budgetAmount = d.budgetAmount;
-                        e.actualsAmount = d.actualsAmount;
-                    }
-                })
-                */
-            });
-
-        });
 
         // Compute the new tree layout.
         var nodes = tree.nodes(root).reverse(),
@@ -236,7 +226,8 @@
             div.html(d.deptno + "<br/>" + "Level 1: " + d.approval1 + "<br/>" + "Level 2: " + d.approval2 + "<br/>"
                 + "Level 3: " + d.approval3 + "<br/>" + "Level 4: " + d.approval4 + "<br/>" + "Level 5: " + d.approval5
                 + "<br/>" + "Level 6: " + d.approval6 + "<br/>" + "Level 7: " + d.approval7 + "<br/>" + "Level 8: "
-                + d.approval8 + "<br/>" + "Budget Amount: ")
+                + d.approval8 + "<br/>" + "Budget Amount: " + getBudgetData(d.deptno) + "<br/>" + "Actual Amount: "
+                + getBudgetActuals(d.deptno))
                 .style("left", (d3.event.pageX ) + "px")
                 .style("top", (d3.event.pageY) + "px");
         }
@@ -244,7 +235,8 @@
             div.html("<br/>")
         }*/
         else {
-            div.html(d.deptno + "<br/> Approves at a higher level")
+            div.html(d.deptno + "<br/> Approves at a higher level" + "<br/> Budget Amount: " + getBudgetData(d.deptno)
+                + "<br/> Budget Actual: " + getBudgetActuals(d.deptno))
                 .style("left", (d3.event.pageX ) + "px")
                 .style("top", (d3.event.pageY) + "px");
         }
@@ -257,6 +249,34 @@
         div.transition()
             .duration(300)
             .style("opacity", 1e-6);
+    }
+
+    function getBudgetData(department) {
+        //console.log('getting budget data');
+        //console.log(department);
+        for (var i = 0; i < buData.length; i++) {
+            //  console.log(i);
+            //  console.log(buData[i].deptNo);
+            if (buData[i].deptNo == department) {
+                //    console.log(buData[i].deptNo + " = " + department);
+                //    console.log(buData[i]);
+                return buData[i].budgetAmount;
+            }
+        }
+    }
+
+    function getBudgetActuals(department) {
+        //console.log('getting budget data');
+        //console.log(department);
+        for (var i = 0; i < buData.length; i++) {
+            //  console.log(i);
+            //  console.log(buData[i].deptNo);
+            if (buData[i].deptNo == department) {
+                //    console.log(buData[i].deptNo + " = " + department);
+                //    console.log(buData[i]);
+                return buData[i].actualsAmount;
+            }
+        }
     }
 
     function updateData() {

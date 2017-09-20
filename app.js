@@ -2,6 +2,7 @@ console.log("SERVER SIDE!");
 var app = require('express'); // creates an instance of the express lib
 //var myModule = angular.module('OrgApp', []);
 var mongoose = require('mongoose');
+var underscore = require('underscore');
 var connectionString = 'mongodb://localhost/BUDGET-DATA';
 if (process.env.MLAB_USERNAME_WEBDEV) {
     console.log("on heroku!");

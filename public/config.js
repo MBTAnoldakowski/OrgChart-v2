@@ -15,6 +15,9 @@
                 controllerAs: 'model',
                 controller: 'uploadController'
             })
+            .when('/employees',{
+                templateUrl: 'employees.html'
+        })
     }
 
 })();

@@ -180,6 +180,10 @@ console.log(d.name);
                         console.log(d.deptno);
                         return "red"
                     }
+                    if(actual == 0){
+                        console.log("underspending");
+                        return "#0000FF";
+                    }
                 }
                 return "black";
             });

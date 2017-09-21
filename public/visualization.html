@@ -134,36 +134,40 @@
             .style("fill-opacity", 1e-6)
             //STYLE TEXT
             .style("fill", function (d) {
-                console.log(d.deptno);
+                //console.log(d.deptno);
                 var budget = getBudgetData(d.deptno);
                 var actual = getBudgetActuals(d.deptno);
                 var date = new Date();
                 var month = (getFiscalMonth(date.getMonth()) + 1) / 12;
                 var prop = 0;
+                var dec = 0;
                 if (budget != undefined && actual != undefined) {
-                    console.log('both');
+                    //console.log('both');
                     if (budget != 0) {
                         prop = actual / budget;
-                        console.log(prop);
+                        //console.log('proportion: ' + prop);
+                        dec = month - prop;
+                        //console.log('dec: ' + dec);
+
+                        /* if(prop = 0){
+                             console.log('no budget');
+                             return "black";
+                         }*/
+                        if (dec > -0.1 && dec < 0.1) {
+                            //console.log('green');
+                            return "#32CD32"
+                        }
+                        if (dec > 0.1) {
+                         //   console.log('yellow');
+                            return "#CCCC00"
+                        }
+                        if (dec < -0.1) {
+                           // console.log('red');
+                            return "#800000"
+                        }
                     }
-                    /* if(prop = 0){
-                         console.log('no budget');
-                         return "black";
-                     }*/
-                    if (prop <= 0.25) {
-                        console.log('green');
-                        return "#32CD32"
-                    }
-                    if (prop > 0.25 && prop <= 0.5) {
-                        console.log('yellow');
-                        return "#CCCC00"
-                    }
-                    if (prop > 0.5 && prop <= 0.75) {
-                        console.log('red');
-                        return "red"
-                    }
-                    if (prop > 0.75) {
-                        console.log('real dark red');
+                    if(budget == 0 && actual > 0){
+                        console.log(d.deptno);
                         return "#800000"
                     }
                 }
@@ -482,11 +486,10 @@
 
 </div>
 <div class="ltitleright">
-    <h3 class="ltitle">Budget Key</h3>
-    <p id="lessthan25">Less than 25% used</p>
-    <p id="x25to50">25-50% used</p>
-    <p id="x50to75">50-75% used</p>
-    <p id="x75plus">Over 75% used</p>
+    <h3 class="ltitle">Projected Budget Key</h3>
+    <p id="lessthan25">On Target</p>
+    <p id="x25to50">Underspending</p>
+    <p id="x75plus">Overspending</p>
 </div>
 
 <div id="expandB">

@@ -177,32 +177,6 @@
                 return "black";
             });
 
-        function getFiscalMonth(month) {
-            var fMonth;
-            switch (month) {
-                case 6:
-                case 7:
-                case 8:
-                case 9:
-                case 10:
-                case 11:
-                    fMonth = month - 6;
-                    break;
-                case 0:
-                case 1:
-                case 2:
-                case 3:
-                case 4:
-                case 5:
-                    fMonth = month + 6;
-                    break;
-                default:
-                    console.log("SOMETHING IS WRONG...");
-            }
-            return fMonth;
-
-        }
-
         // Transition nodes to their new position.
         var nodeUpdate = node.transition()
             .duration(duration)
@@ -314,8 +288,8 @@
             div.html("<br/>")
         }*/
         if (getBudgetData(d.deptno) != undefined) {
-            div.html(d.deptno + "<br/> Approves at a higher level" + "<div align = 'right'> Budget Amount: " + formatMoney(getBudgetData(d.deptno))
-                + "<br/> Budget Actual: " + formatMoney(getBudgetActuals(d.deptno)) + "</div>")
+            div.html(d.deptno + "<br/> Approves at a higher level" + "<div align = 'right'> Budget: " + formatMoney(getBudgetData(d.deptno))
+                + "<br/> Actual: " + formatMoney(getBudgetActuals(d.deptno)) + "<br/> YTD Budget: " + YTDbudget(getBudgetData(d.deptno)) + "</div>")
                 .style("left", (d3.event.pageX ) + "px")
                 .style("top", (d3.event.pageY) + "px");
         }
@@ -328,14 +302,51 @@
 
     }
 
+    //helper function to get YTD
+    function YTDbudget(budgetTotal) {
+        var date = new Date();
+        var month = getFiscalMonth(date.getMonth());
+        var p = month / 12;
+        var ytd = budgetTotal * p;
+        console.log("YTD: " + ytd);
+        return formatMoney(ytd);
+    }
+
     //helper function for formatting money in the tooltip
     function formatMoney(number) {
         var oldNum = parseFloat(number);
+        console.log(oldNum);
         var num = '$' + oldNum.toFixed(2).replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
 
         return num;
     }
 
+    function getFiscalMonth(month) {
+        var fMonth;
+        console.log(month);
+        switch (month) {
+            case 6:
+            case 7:
+            case 8:
+            case 9:
+            case 10:
+            case 11:
+                fMonth = month - 6;
+                break;
+            case 0:
+            case 1:
+            case 2:
+            case 3:
+            case 4:
+            case 5:
+                fMonth = month + 6;
+                break;
+            default:
+                console.log("SOMETHING IS WRONG...");
+        }
+        return fMonth;
+
+    }
 
     // controls how slowly the tooltip disappears
     function mouseout() {

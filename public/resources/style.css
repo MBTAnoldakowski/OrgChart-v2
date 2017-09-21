@@ -179,3 +179,11 @@ div.tooltip {
     color: #800000;
     text-align: right;
 }
+
+#employeeButton {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    margin-bottom: 10px;
+    margin-left: 10px;
+}

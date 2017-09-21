@@ -44,11 +44,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="visualization.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="visualization.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/visualization.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="142" column="26" lean-forward="false" selection-start-line="142" selection-start-column="26" selection-end-line="142" selection-end-column="26" />
+            <state relative-caret-position="638">
+              <caret line="499" column="6" lean-forward="false" selection-start-line="499" selection-start-column="6" selection-end-line="499" selection-end-column="6" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/public/resources/style.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="893">
+              <caret line="180" column="1" lean-forward="true" selection-start-line="180" selection-start-column="1" selection-end-line="180" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -108,7 +118,6 @@
         <option value="$PROJECT_DIR$/public/upload.controller.client.js" />
         <option value="$PROJECT_DIR$/services/upload.service.server.js" />
         <option value="$PROJECT_DIR$/public/upload.template.html" />
-        <option value="$PROJECT_DIR$/public/resources/style.css" />
         <option value="$PROJECT_DIR$/public/config.js" />
         <option value="$PROJECT_DIR$/public/index.html" />
         <option value="$PROJECT_DIR$/public/csvtojson.js" />
@@ -120,6 +129,7 @@
         <option value="$PROJECT_DIR$/public/resources/tree.json" />
         <option value="$PROJECT_DIR$/public/employees.html" />
         <option value="$PROJECT_DIR$/public/visualization.html" />
+        <option value="$PROJECT_DIR$/public/resources/style.css" />
       </list>
     </option>
   </component>
@@ -251,12 +261,12 @@
       <workItem from="1505825880681" duration="1141000" />
       <workItem from="1505913226368" duration="1228000" />
       <workItem from="1505914783039" duration="20371000" />
-      <workItem from="1505999488212" duration="5888000" />
+      <workItem from="1505999488212" duration="6710000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="75281000" />
+    <option name="totallyTimeSpent" value="76103000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1358" y="-187" width="1936" height="1096" extended-state="6" />
@@ -487,13 +497,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/resources/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3043">
-          <caret line="179" column="22" lean-forward="false" selection-start-line="179" selection-start-column="22" selection-end-line="179" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
@@ -550,14 +553,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="689">
-          <caret line="81" column="2" lean-forward="false" selection-start-line="81" selection-start-column="2" selection-end-line="81" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/budget.controller.client.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
@@ -592,8 +587,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/visualization.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="142" column="26" lean-forward="false" selection-start-line="142" selection-start-column="26" selection-end-line="142" selection-end-column="26" />
+        <state relative-caret-position="638">
+          <caret line="499" column="6" lean-forward="false" selection-start-line="499" selection-start-column="6" selection-end-line="499" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="689">
+          <caret line="81" column="2" lean-forward="false" selection-start-line="81" selection-start-column="2" selection-end-line="81" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/resources/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="893">
+          <caret line="180" column="1" lean-forward="true" selection-start-line="180" selection-start-column="1" selection-end-line="180" selection-end-column="1" />
           <folding />
         </state>
       </provider>

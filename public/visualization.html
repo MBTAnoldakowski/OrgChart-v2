@@ -15,7 +15,6 @@
            onclick="updateData2()"/>
 
 
-    <a class="btn btn-default" href="#!/employees">Employee Chart</a>
 </div>
 <div id="chart"></div>
 <script>
@@ -139,8 +138,7 @@
                 var budget = getBudgetData(d.deptno);
                 var actual = getBudgetActuals(d.deptno);
                 var date = new Date();
-                var month = Math.abs((date.getMonth() + 1)-7)/12;
-                console.lo
+                var month = (getFiscalMonth(date.getMonth()) + 1) / 12;
                 var prop = 0;
                 if (budget != undefined && actual != undefined) {
                     console.log('both');
@@ -171,6 +169,32 @@
                 }
                 return "black";
             });
+
+        function getFiscalMonth(month) {
+            var fMonth;
+            switch (month) {
+                case 6:
+                case 7:
+                case 8:
+                case 9:
+                case 10:
+                case 11:
+                    fMonth = month - 6;
+                    break;
+                case 0:
+                case 1:
+                case 2:
+                case 3:
+                case 4:
+                case 5:
+                    fMonth = month + 6;
+                    break;
+                default:
+                    console.log("SOMETHING IS WRONG...");
+            }
+            return fMonth;
+
+        }
 
         // Transition nodes to their new position.
         var nodeUpdate = node.transition()
@@ -472,4 +496,7 @@
            id="expandB"
            value="Expand All"
            onclick="expandAll()"/>
+</div>
+<div id="employeeButton">
+    <a class="btn btn-default" href="#!/employees">Employee Chart</a>
 </div>

@@ -187,3 +187,23 @@ div.tooltip {
     margin-bottom: 10px;
     margin-left: 10px;
 }
+
+#over{
+    text-align: right;
+    color: red;
+}
+
+#slightlyover{
+    text-align: right;
+    color: #FF9999;
+}
+
+#under{
+    text-align: right;
+    color: #0000FF;
+}
+
+#slightlyunder{
+    text-align: right;
+    color: #5FB7C9;
+}

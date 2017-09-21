@@ -153,22 +153,29 @@
                              console.log('no budget');
                              return "black";
                          }*/
-                        if (dec > -0.1 && dec < 0.1) {
+                        if (dec >= -0.1 && dec < 0.1) {
                             //console.log('green');
                             return "#32CD32"
                         }
-                        if (dec > 0.1) {
+                        if (dec >= 0.1 && dec < 0.25) {
                          //   console.log('yellow');
-                            return "#CCCC00"
+                            return "#5FB7C9"
                         }
-                        if (dec < -0.1) {
+                        if (dec >= 0.25) {
+                            //   console.log('yellow');
+                            return "#0000FF"
+                        }
+                        if (dec < -0.1 && dec >= -0.25) {
                            // console.log('red');
-                            return "#800000"
+                            return "#FF9999"
+                        }
+                        if(dec < -0.25){
+                            return "red"
                         }
                     }
                     if(budget == 0 && actual > 0){
                         console.log(d.deptno);
-                        return "#800000"
+                        return "red"
                     }
                 }
                 return "black";
@@ -487,9 +494,11 @@
 </div>
 <div class="ltitleright">
     <h3 class="ltitle">Projected Budget Key</h3>
+    <p id="over">Over Budget</p>
+    <p id="slightlyover">Slightly Overspending</p>
     <p id="lessthan25">On Target</p>
-    <p id="x25to50">Underspending</p>
-    <p id="x75plus">Overspending</p>
+    <p id="slightlyunder">Slightly Underspending</p>
+    <p id="under">Under Budget</p>
 </div>
 
 <div id="expandB">

@@ -717,31 +717,12 @@
             {
                "name":"Commuter Rail Supervision",
                "level":"5",
-               "deptno":"211008",
-               "children":[
-                  {
-                     "name":"Commuter Ferry Subsidy",
-                     "level":"6",
-                     "deptno":"202026"
-                  },
-                  {
-                     "name":"Commuter Ferry Supervision",
-                     "level":"6",
-                     "deptno":"202008"
-                  }
-               ]
+               "deptno":"211008"
             },
             {
                "name":"Commuter Rail Subsidy",
                "level":"5",
-               "deptno":"216000",
-               "children":[
-                  {
-                     "name":"Commuter Rail Subsidy",
-                     "level":"6",
-                     "deptno":"215008"
-                  }
-               ]
+               "deptno":"216000"
             },
                   {
                      "name":"CRR Cape Flyer Operations",

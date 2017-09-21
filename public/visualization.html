@@ -165,7 +165,7 @@
                         }
                         if (dec < -0.25) {
                             console.log("underspending");
-                            return "#0000FF";
+                            return "#4B0082";
                         }
                         if (dec > 0.1 && dec <= 0.25) {
                             console.log("slightly over");
@@ -183,7 +183,7 @@
                     }
                     if (actual == 0) {
                         console.log("underspending");
-                        return "#0000FF";
+                        return "#4B0082";
                     }
                 }
                 return "black";
@@ -504,11 +504,11 @@
 <!--Projected Budget-->
 <div class="ltitleright">
     <h3 class="ltitle">Projected Budget Key</h3>
-    <p id="over">Over Budget</p>
-    <p id="slightlyover">Slightly Overspending</p>
-    <p id="lessthan25">On Target</p>
-    <p id="slightlyunder">Slightly Underspending</p>
-    <p id="under">Under Budget</p>
+    <p id="over">Over Budget (>25%)</p>
+    <p id="slightlyover">Slightly Overspending (10-25%)</p>
+    <p id="lessthan25">On Target (-10-10%) </p>
+    <p id="slightlyunder">Slightly Underspending (-25--10%)</p>
+    <p id="under">Under Budget (<-25%)</p>
 </div>
 
 <!--Expand Button -->

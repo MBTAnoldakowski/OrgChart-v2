@@ -1,6 +1,6 @@
 {
   "name":"General Manager",
-  "hear"
+  "head": "Luis Ramirez"
   "level":"2",
   "deptno":"105000",
   "children":[

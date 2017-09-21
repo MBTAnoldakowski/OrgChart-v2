@@ -144,15 +144,16 @@
                 var budget = getBudgetData(d.deptno);
                 var actual = getBudgetActuals(d.deptno);
                 var date = new Date();
-                var month = (getFiscalMonth(date.getMonth()) + 1) / 12;
+                var month = getFiscalDay() / 365;
+                console.log(month);
                 var ytd = budget * month;
                 console.log(ytd);
                 var dec = 0;
                 if (budget != undefined && actual != undefined) {
 
                     if (budget != 0) {
-console.log(d.name);
-                        dec = (actual - ytd) /budget ;
+                        console.log(d.name);
+                        dec = (actual - ytd) / ytd;
                         console.log(dec);
                         if (dec >= -0.1 && dec <= 0.1) {
                             console.log('in range');
@@ -180,7 +181,7 @@ console.log(d.name);
                         console.log(d.deptno);
                         return "red"
                     }
-                    if(actual == 0){
+                    if (actual == 0) {
                         console.log("underspending");
                         return "#0000FF";
                     }
@@ -316,8 +317,8 @@ console.log(d.name);
     //helper function to get YTD
     function YTDbudget(budgetTotal) {
         var date = new Date();
-        var month = getFiscalMonth(date.getMonth())+1;
-        var p = month / 12;
+        var month = getFiscalDay();
+        var p = month / 365;
         var ytd = budgetTotal * p;
         console.log("YTD: " + ytd);
         return formatMoney(ytd);
@@ -357,6 +358,29 @@ console.log(d.name);
         }
         return fMonth;
 
+    }
+
+    function getFiscalDay() {
+        var date = new Date();
+        var year = date.getFullYear();
+        console.log(year);
+        switch (date.getMonth()){
+            case 0:
+            case 1:
+            case 2:
+            case 3:
+            case 4:
+            case 5:
+                year = year - 1;
+                break;
+            default:
+                console.log("before new real year");
+        }
+       var day = date.getDate();
+        var startOfFiscalYear = new Date("July 1, "+year+" 12:00:00");
+        var utc1 = Date.UTC(date.getFullYear(), date.getMonth(), date.getDate());
+        var utc2 = Date.UTC(startOfFiscalYear.getFullYear(), startOfFiscalYear.getMonth(), startOfFiscalYear.getDate());
+        return Math.floor(Math.abs(utc2 - utc1) / (1000*60*60*24));
     }
 
     // controls how slowly the tooltip disappears

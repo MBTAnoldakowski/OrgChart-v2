@@ -20,7 +20,7 @@
 <div id="chart"></div>
 <script>
     // clears the screen in case the employee visualization is still loaded
-    d3.select("svg").remove();
+   // d3.select("svg").remove();
 
     // sizes the box to paint in
     var margin = {top: 20, right: 150, bottom: 20, left: 200},
@@ -81,7 +81,7 @@
                 d._children.forEach(collapse);
                 d.children = null;
             }
-            console.log("D: " + d);
+          //  console.log("D: " + d);
         }
 
         //root.children.forEach(collapse);
@@ -308,14 +308,14 @@
         var month = getFiscalMonth(date.getMonth());
         var p = month / 12;
         var ytd = budgetTotal * p;
-        console.log("YTD: " + ytd);
+       // console.log("YTD: " + ytd);
         return formatMoney(ytd);
     }
 
     //helper function for formatting money in the tooltip
     function formatMoney(number) {
         var oldNum = parseFloat(number);
-        console.log(oldNum);
+       // console.log(oldNum);
         var num = '$' + oldNum.toFixed(2).replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
 
         return num;
@@ -323,7 +323,7 @@
 
     function getFiscalMonth(month) {
         var fMonth;
-        console.log(month);
+       // console.log(month);
         switch (month) {
             case 6:
             case 7:
@@ -363,7 +363,7 @@
         for (var i in buData) {
            // console.log(i);
             if (parseFloat(buData[i].deptNo) === dept) {
-                console.log(i);
+            //   console.log(i);
                 return buData[i].budgetAmount;
             }
         }
@@ -377,7 +377,7 @@
         for (var i in buData) {
 
             if (parseFloat(buData[i].deptNo) === dept) {
-                console.log(i);
+             //  console.log(i);
                 return buData[i].actualsAmount;
             }
         }

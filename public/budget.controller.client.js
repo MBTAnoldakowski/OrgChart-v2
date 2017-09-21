@@ -4,7 +4,7 @@
         .controller('budgetController', ['$scope', budgetController]);
 
     function budgetController(budgetService) {
-        var model = this;
+        var model = this;/*
         model.findBudgetById = findBudgetById;
         console.log('in controller');
 
@@ -30,6 +30,7 @@
                 }
             }
         }
+        */
     }
 })
 ();

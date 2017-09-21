@@ -14,10 +14,14 @@
            value="View Administration"
            onclick="updateData2()"/>
 
-    <a class = "btn btn-default" href = "#!/employees">Employee Chart</a>
+
+    <a class="btn btn-default" href="#!/employees">Employee Chart</a>
 </div>
 <div id="chart"></div>
 <script>
+
+    d3.select("svg").remove();
+
 
     var margin = {top: 20, right: 150, bottom: 20, left: 200},
         width = 1000//960 - margin.right - margin.left,
@@ -134,6 +138,9 @@
                 console.log(d.deptno);
                 var budget = getBudgetData(d.deptno);
                 var actual = getBudgetActuals(d.deptno);
+                var date = new Date();
+                var month = Math.abs((date.getMonth() + 1)-7)/12;
+                console.lo
                 var prop = 0;
                 if (budget != undefined && actual != undefined) {
                     console.log('both');

@@ -1,21 +1,14 @@
 {
   "name":"General Manager",
-  "head": "Luis Ramirez"
+  "head": "Luis Ramirez",
   "level":"2",
   "deptno":"105000",
   "children":[
     {
       "name":"Chief Financial Officer",
+      "head": "Michael Abramo",
       "level":"4",
       "deptno":"640000",
-      "approval1":"MRUNKEL",
-      "approval2":"MRUNKEL",
-      "approval3":"MRUNKEL",
-      "approval4":"MRUNKEL",
-      "approval5":"MABRAMO",
-      "approval6":"MABRAMO",
-      "approval7":"MABRAMO",
-      "approval8":"SPOFTAK",
       "children":[
         {
           "name":"Cash Collection",

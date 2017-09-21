@@ -18,6 +18,9 @@
             .when('/employees',{
                 templateUrl: 'employees.html'
         })
+            .when('/procurement',{
+                templateUrl: 'procurement.html'
+            })
     }
 
 })();

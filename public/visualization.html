@@ -174,11 +174,7 @@
                         return "red"
                     }
                 }
-                if(budget== undefined || actual == undefined){
-                    console.log(budget);
-                    console.log(actual);
-                }
-                return "orange";
+                return "black";
             });
 
         // Transition nodes to their new position.
@@ -363,8 +359,11 @@
     // It gets the budget for a specific department
     function getBudgetData(department) {
         var dept = parseFloat(department);
+       // console.log(dept);
         for (var i in buData) {
+           // console.log(i);
             if (parseFloat(buData[i].deptNo) === dept) {
+                console.log(i);
                 return buData[i].budgetAmount;
             }
         }
@@ -374,8 +373,11 @@
     // This gets the actuals for a specific department
     function getBudgetActuals(department) {
         var dept = parseFloat(department);
+        //console.log(dept);
         for (var i in buData) {
+
             if (parseFloat(buData[i].deptNo) === dept) {
+                console.log(i);
                 return buData[i].actualsAmount;
             }
         }

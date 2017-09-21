@@ -16,16 +16,19 @@
 
 
 </div>
+<!-- this is an empty div for the script to populate with the tree -->
 <div id="chart"></div>
 <script>
-
+    // clears the screen in case the employee visualization is still loaded
     d3.select("svg").remove();
 
-
+    // sizes the box to paint in
     var margin = {top: 20, right: 150, bottom: 20, left: 200},
-        width = 1000//960 - margin.right - margin.left,
-    height = 1300// - margin.top - margin.bottom;
+        width = 1000,
+        height = 1300;
 
+    // honestly, I am not 100% sure what the next few declarations actually do specifically.
+    // I do know that they are very important though. They initialize the tree
     var i = 0,
         duration = 750,
         root;
@@ -47,24 +50,26 @@
     var div = d3.select("body").append("div")
         .attr("class", "tooltip")
         .style("opacity", 1e-6);
+
+    // loads in the CSV with the budgeting data in it
     var buData = [];
 
     d3.csv("csv/budgetdata.csv", function (error, bData) {
         if (error) throw error;
         bData.forEach(function (b) {
+            //the + next to the following makes d3 think of it as a number
             b.deptNo = +b.deptNo;
             b.year = +b.year;
             b.budgetAmount = +parseFloat(b.budgetAmount);
             b.actualsAmount = +parseFloat(b.actualsAmount);
+            //adds all of the budget data to the array that I initialized above.
             buData.push(b);
         });
     });
 
+    //loads the department data
     d3.json("resources/flare_experiment_2.json", function (error, flare) {
         if (error) throw error;
-        console.log(buData);
-
-        console.log(flare);
 
         root = flare;
         root.x0 = height / 2;
@@ -94,10 +99,12 @@
 
         // Normalize for fixed-depth.
         nodes.forEach(function (d) {
-            d.y = d.depth * 250;
+            d.y = d.depth * 250;    // I don't know specifically what this does,
+                                    // but I do know that changing the number
+                                    // changes the width of the tree that is displayed
         }); //180
 
-        // Update the nodes…
+        // Update the nodes
         var node = svg.selectAll("g.node")
             .data(nodes, function (d) {
                 return d.id || (d.id = ++i);
@@ -122,7 +129,7 @@
             .attr("text-anchor", function (d) {
                 return d.children || d._children ? "end" : "start";
             })
-            //RIGHT HERE IS WHERE THE NAME IS APPENDED
+            //the name is appended to the dot right here
             .text(function (d) {
                 return d.name;
             })
@@ -132,9 +139,8 @@
             })
             .on("mouseout", mouseout)
             .style("fill-opacity", 1e-6)
-            //STYLE TEXT
+            // the names are styled here.
             .style("fill", function (d) {
-                //console.log(d.deptno);
                 var budget = getBudgetData(d.deptno);
                 var actual = getBudgetActuals(d.deptno);
                 var date = new Date();
@@ -142,38 +148,28 @@
                 var prop = 0;
                 var dec = 0;
                 if (budget != undefined && actual != undefined) {
-                    //console.log('both');
+
                     if (budget != 0) {
                         prop = actual / budget;
-                        //console.log('proportion: ' + prop);
                         dec = month - prop;
-                        //console.log('dec: ' + dec);
 
-                        /* if(prop = 0){
-                             console.log('no budget');
-                             return "black";
-                         }*/
                         if (dec >= -0.1 && dec < 0.1) {
-                            //console.log('green');
                             return "#32CD32"
                         }
                         if (dec >= 0.1 && dec < 0.25) {
-                         //   console.log('yellow');
                             return "#5FB7C9"
                         }
                         if (dec >= 0.25) {
-                            //   console.log('yellow');
                             return "#0000FF"
                         }
                         if (dec < -0.1 && dec >= -0.25) {
-                           // console.log('red');
                             return "#FF9999"
                         }
-                        if(dec < -0.25){
+                        if (dec < -0.25) {
                             return "red"
                         }
                     }
-                    if(budget == 0 && actual > 0){
+                    if (budget == 0 && actual > 0) {
                         console.log(d.deptno);
                         return "red"
                     }
@@ -217,30 +213,7 @@
         // size/style the circles
         nodeUpdate.select("circle")
             .attr("r", function (d) {
-                // console.log(d.deptno);
-                /* var size = getCircleSize(d.deptno);
-                console.log(size);
-                 if(size = undefined){
-                     console.log('oh well...');
-                     return 7;
-                 }
-                 else{
-                     console.log('returning size');
-                     return size;
-                 }
-                 return 7;
-                 var dept = d.deptno;
-                 console.log(dept);
-                 var budget = getBudgetData(dept);
-                 console.log(budget);
-                 var budgetActuals = getBudgetActuals(dept);
-                 console.log(budgetActuals);
-                 console.log(budget);
-                 var circSize = budgetActuals / budget * 7;
-                 console.log(circSize);
-                 return circSize;*/
                 return 7;
-
             })
             .style("fill", function (d) {
                 if (d.level == "2") return "red";
@@ -308,19 +281,6 @@
         });
     }
 
-    function getCircleSize(department) {
-        var dept = department;
-
-        console.log(dept);
-        var budget = getBudgetData(dept);
-        console.log(budget);
-        var budgetActuals = getBudgetActuals(dept);
-        console.log(budgetActuals);
-        var circSize = budgetActuals / budget * 7;
-        console.log(circSize);
-        return circSize;
-    }
-
     // Toggle children on click.
     function click(d) {
         if (d.children) {
@@ -339,10 +299,10 @@
             .style("opacity", 1);
     }
 
+    //draws the tooltip
     function mousemove(d) {
         var deptNo = d.deptno;
         if (d.approval1 != undefined) {
-
             div.html(d.deptno + "<br/>" + "Level 1: " + d.approval1 + "<br/>" + "Level 2: " + d.approval2 + "<br/>"
                 + "Level 3: " + d.approval3 + "<br/>" + "Level 4: " + d.approval4 + "<br/>" + "Level 5: " + d.approval5
                 + "<br/>" + "Level 6: " + d.approval6 + "<br/>" + "Level 7: " + d.approval7 + "<br/>" + "Level 8: "
@@ -368,54 +328,46 @@
 
     }
 
+    //helper function for formatting money in the tooltip
     function formatMoney(number) {
         var oldNum = parseFloat(number);
-        //console.log(oldNum);
         var num = '$' + oldNum.toFixed(2).replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
 
         return num;
     }
 
 
+    // controls how slowly the tooltip disappears
     function mouseout() {
         div.transition()
             .duration(300)
             .style("opacity", 1e-6);
     }
 
+    // I have had so much trouble with this function for whatever reason
+    // It gets the budget for a specific department
     function getBudgetData(department) {
         var dept = parseFloat(department);
-        //console.log('getting budget data');
-        //console.log(dept);
-        //console.log(buData);
         for (var i in buData) {
-            //console.log(buData[i].deptNo);
             if (parseFloat(buData[i].deptNo) === dept) {
-                // console.log(buData[i].deptNo + " = " + department);
-                //  console.log(buData[i].description);
-                //  console.log("I: " + i);
                 return buData[i].budgetAmount;
             }
         }
 
     }
 
+    // This gets the actuals for a specific department
     function getBudgetActuals(department) {
         var dept = parseFloat(department);
-        // console.log('getting budget actuals data');
-        // console.log(dept);
         for (var i in buData) {
-            //console.log("in loop");
-            //console.log(buData[i].deptNo);
             if (parseFloat(buData[i].deptNo) === dept) {
-                //       console.log(buData[i].deptNo + " = " + department);
-                //      console.log(buData[i].description);
-                //       console.log("I: " + i);
                 return buData[i].actualsAmount;
             }
         }
     }
 
+    // this is triggered when you hit the 'View Operating' button, it just loads the
+    // Operating data instead of the Administration data
     function updateData() {
         d3.json("resources/flare_experiment.json", function (error, flare) {
             if (error) throw error;
@@ -432,12 +384,14 @@
                 }
             }
 
+            //UNCOMMENT below if you would like the nodes to all be collapsed on start.
             //root.children.forEach(collapse);
             update(root);
         });
 
     }
 
+    // this function updates the data to display administration
     function updateData2() {
         d3.json("resources/flare_experiment_2.json", function (error, flare) {
             if (error) throw error;
@@ -460,6 +414,7 @@
 
     }
 
+
     function expand(d) {
         var children = (d.children) ? d.children : d._children;
         if (d._children) {
@@ -470,12 +425,14 @@
             children.forEach(expand);
     }
 
+    //expands all nodes in the tree
     function expandAll() {
         expand(root);
         update(root);
     }
 
 </script>
+<!--Circle Legend-->
 <div id="legend">
     <h3 class="ltitle">Legend</h3>
     <div id="level1circle"></div>
@@ -492,6 +449,7 @@
     <p>Level 6</p>
 
 </div>
+<!--Projected Budget-->
 <div class="ltitleright">
     <h3 class="ltitle">Projected Budget Key</h3>
     <p id="over">Over Budget</p>
@@ -501,6 +459,7 @@
     <p id="under">Under Budget</p>
 </div>
 
+<!--Expand Button -->
 <div id="expandB">
     <input name="expandButton"
            type="button"
@@ -509,6 +468,7 @@
            value="Expand All"
            onclick="expandAll()"/>
 </div>
+<!--Switch to Employee Page button-->
 <div id="employeeButton">
     <a class="btn btn-default" href="#!/employees">Employee Chart</a>
 </div>

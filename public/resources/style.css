@@ -260,3 +260,13 @@ div.tooltip {
     text-align: right;
     color: #53FF28;
 }
+
+.lastUpdated{
+
+    display: inline-block;
+
+}
+.update{
+    display: inline-block;
+
+}

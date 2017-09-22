@@ -23,8 +23,13 @@
 </style>
 <div id="option">
     <h1>MBTA Employee Chart</h1>
-    <p>Last Updated: 9/20/2017 3:11PM</p>
-    <a class="btn btn-default" href="#!/">Back to OrgChart</a>
+    <div class="lastUpdated">
+        <p>Last Updated: 9/22/2017 3:25PM</p>
+    </div>
+    <div class="update">
+        <a class="btn btn-warning" href="#!/update">Update</a>
+    </div>
+
 
 </div>
 <div id="chart"></div>
@@ -114,7 +119,7 @@
                 return d.children || d._children ? "end" : "start";
             })
             .text(function (d) {
-                var returnString = d.title + "\n" + d.name;
+                var returnString = d.title + "/" + d.name;
                 return returnString ;
             })
             .style("fill-opacity", 1e-6);
@@ -200,9 +205,8 @@
 
 <div id="employeeButton" class="btn-group-vertical">
     <a class="btn btn-default" href="#!/procurement">Procurement Chart</a>
-
     <a class="btn btn-default"  href="#!/">Budget Chart</a>
+    <a class="btn btn-primary disabled" href="#!/employees">Employee Chart</a>
 
-    <a class="btn btn-warning" href="#!/update">Update</a>
 
 </div>

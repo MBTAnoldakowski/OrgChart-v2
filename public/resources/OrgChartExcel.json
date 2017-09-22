@@ -1,0 +1,133 @@
+{
+  "name": "Luis Ramirez",
+  "title": "General Manager",
+  "children": [
+    {
+      "name": "Laura Brelsford",
+      "title": "Assistant General Manager, System-wide Accessibility"
+    },
+    {
+      "name": "Kenneth A. Green",
+      "title": "Chief of Police"
+    },
+    {
+      "name": "Mark E. D'Angelo",
+      "title": "Employee, Temp Special Projects",
+      "children": [
+        {
+          "name": "Ahmad E. Barnes",
+          "title": "Director of Labor Relations"
+        }
+      ]
+    },
+    {
+      "name": "Ronald W. Nickle",
+      "title": "Chief Safety Officer",
+      "children": [
+        {
+          "name": "Steven V. Culp",
+          "title": "Director of Safety Engineering"
+        },
+        {
+          "name": "Holly B. Durso",
+          "title": "Director of Safety",
+          "children": [
+            {
+              "name": "Charles J. Murphy",
+              "title": "Deputy Director of Corporate Safety Assurance & Control"
+            },
+            {
+              "name": "Kelly P. Chronley",
+              "title": "Deputy Director of Safety Oversight"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "John D. Ray",
+      "title": "AGM Commuter Rail Operations",
+      "children": [
+        {
+          "name": "Ryan D. Coholan",
+          "title": "Chief Railroad Officer",
+          "children": [
+            {
+              "name": "Steven I. Adkins",
+              "title": "Director of Maintenance, Railroad Operations"
+            },
+            {
+              "name": "William Lally",
+              "title": "Director of Engineering"
+            },
+            {
+              "name": "Corey N. Lynch",
+              "title": "Deputy Director, Railroad Ops"
+            },
+            {
+              "name": "John A. Carrega Jr",
+              "title": "Deputy Director Maintenance, Railroad Ops"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Gary S. Foster",
+      "title": "Chief Information Officer",
+      "children": [{"name":"John S. Groff",
+        "title":"Director of Tech Infrastructure & Ops",
+        "children":[{"name":"Christine M. McCarthy",
+          "title":"Deputy Director of Infrastructure & Ops"},
+          {"name":"Larry B. Thomas",
+            "title":"Deputy Director of Communications - SMI"}]},
+        {"name":"David R. Metraux",
+          "title":"Deputy Director"},
+        {"name":"Brian C. Glavin",
+          "title":"Deputy Director of IT Risk Management"}]
+    },
+    {"name":"David Block-Schachter",
+      "title":"Chief Technology Officer",
+      "children":[{"name":"William E. Kingkade Jr.",
+        "title":"Director of AFC",
+        "children":[{"name":"Lynne M. O'Neill",
+          "title":"Deputy Director of AFC Revenue Ops"},
+          {"name":"Kathleen Wallace",
+            "title":"Deputy Director of AFC Ops & Maintenance"},
+          {"name":"MaryEllen Moran",
+            "title":"Assistant Director of AFC"}]},
+        {"name":"Adam Veneziano",
+          "title":"Director of Fare Systems"},
+        {"name":"David P. Barker",
+          "title":"Director of Operations Technology"}]},
+    {"name":"Beth Larkin",
+      "title":"AGM Capital Delivery",
+      "children":[{"name":"Russell P. Croteau",
+        "title":"Director Doc Control, MassDOT/MBTA"},
+        {"name":"Mary R. Ainsley",
+          "title":"Director, Sr. Design and Construction"},
+        {"name":"Christian G. Connors",
+          "title":"Manager, Sr. Const Change Orders"},
+        {"name":"Peter Paravalos",
+          "title":"Director of Projects, Design and Construction"},
+        {"name":"Sean K. McDonnell",
+          "title":"Manager, Sr. Construction Contract Procurement",
+          "children":[{"name":"Yvelisse Duverge",
+            "title":"Manager of Const Contract Procurement"}]},
+        {"name":"Cheryl A. Guiod",
+          "title":"Manager, Sr. Professional Services Procurement",
+          "children":[{"name":"Martin B. Joyce",
+            "title":"Manager, Construction Contract Administration Audit"}]},
+        {"name":"Jack Donovan",
+          "title":"Director of Projects, QA & QC",
+          "children":[{"name":"Patrick M. Hagerty",
+            "title":"Engineer, Sr. Quality Control"},
+            {"name":"Michael Deshler",
+              "title":"Engineer, Material Testing"}]},
+        {"name":"Terrence P. McCarthy",
+          "title":"Director of Projects - Design & Construction",
+          "children":[{"name":"",
+            "title":"",
+            "children":[]}]}]}
+  ]
+}

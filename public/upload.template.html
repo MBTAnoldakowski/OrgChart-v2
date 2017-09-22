@@ -1,9 +1,15 @@
 <div class="container">
-
+    <h1>Update Budget Data</h1>
     <form action="/api/upload/image" method="post" enctype="multipart/form-data">
         <input name="myFile" type="file" class="form-control" accept=".csv"/>
         <br/>
-        <button type="submit" class="btn btn-block btn-primary">Upload Image</button>
+        <button type="submit" class="btn btn-block btn-primary">Upload</button>
     </form>
 
+    <h1>Update Procurement Data</h1>
+    <form action="/api/upload/p" method="post" enctype="multipart/form-data">
+        <input name="myFile" type="file" class="form-control" accept=".csv"/>
+        <br/>
+        <button type="submit" class="btn btn-block btn-primary">Upload</button>
+    </form>
 </div>

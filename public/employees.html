@@ -22,7 +22,6 @@
 
 </style>
 <div id="option">
-
     <h1>MBTA Employee Chart</h1>
     <p>Last Updated: 9/20/2017 3:11PM</p>
     <a class="btn btn-default" href="#!/">Back to OrgChart</a>
@@ -33,8 +32,8 @@
     d3.select("svg").remove();
 
     var margin = {top: 20, right: 120, bottom: 20, left: 120},
-        width = 4000,
-        height = 8000;
+        width = 1000,
+        height = 800;
 
     var i = 0,
         duration = 750,
@@ -53,8 +52,8 @@
         .attr("height", height + margin.top + margin.bottom)
         .append("g")
         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-/*
-    d3.json("resources/tree.json", function (error, flare) {
+
+    d3.json("resources/OrgChartExcel.json", function (error, flare) {
         if (error) throw error;
 
         root = flare;
@@ -72,7 +71,7 @@
         // root.children.forEach(collapse);
         update(root);
     });
-*/
+
     d3.select(self.frameElement).style("height", "800px");
 
     function update(source) {
@@ -115,7 +114,7 @@
                 return d.children || d._children ? "end" : "start";
             })
             .text(function (d) {
-                return d.id;
+                return d.title;
             })
             .style("fill-opacity", 1e-6);
 

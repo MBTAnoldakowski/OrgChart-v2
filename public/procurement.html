@@ -20,7 +20,7 @@
 <div id="chart"></div>
 <script>
     // clears the screen in case the employee visualization is still loaded
-    // d3.select("svg").remove();
+    d3.select("svg").remove();
 
     // sizes the box to paint in
     var margin = {top: 20, right: 150, bottom: 20, left: 200},
@@ -54,14 +54,13 @@
     // loads in the CSV with the budgeting data in it
     var buData = [];
 
-    d3.csv("csv/budgetdata.csv", function (error, bData) {
+    d3.csv("csv/procurementdata.csv", function (error, bData) {
         if (error) throw error;
         bData.forEach(function (b) {
             //the + next to the following makes d3 think of it as a number
-            b.deptNo = +b.deptNo;
-            b.year = +b.year;
-            b.budgetAmount = +parseFloat(b.budgetAmount);
-            b.actualsAmount = +parseFloat(b.actualsAmount);
+            b.dept = +b.dept;
+            b.poNum = +parseFloat(b.poNum);
+            b.total = +parseFloat(b.total);
             //adds all of the budget data to the array that I initialized above.
             buData.push(b);
         });
@@ -140,52 +139,8 @@
             .on("mouseout", mouseout)
             .style("fill-opacity", 1e-6)
             // the names are styled here.
-            .style("fill", function (d) {
-                var budget = getBudgetData(d.deptno);
-                var actual = getBudgetActuals(d.deptno);
-                var date = new Date();
-                var month = getFiscalDay() / 365;
-                console.log(month);
-                var ytd = budget * month;
-                console.log(ytd);
-                var dec = 0;
-                if (budget != undefined && actual != undefined) {
-
-                    if (budget != 0) {
-                        console.log(d.name);
-                        dec = (actual - ytd) / ytd;
-                        console.log(dec);
-                        if (dec >= -0.1 && dec <= 0.1) {
-                            console.log('in range');
-                            return "#32CD32";
-                        }
-                        if (dec <= -0.1 && dec > -0.25) {
-                            console.log("slightly underspending");
-                            return "#5FB7C9";
-                        }
-                        if (dec < -0.25) {
-                            console.log("underspending");
-                            return "#4B0082";
-                        }
-                        if (dec > 0.1 && dec <= 0.25) {
-                            console.log("slightly over");
-                            return "#FF9999";
-
-                        }
-                        if (dec > 0.25) {
-                            console.log("overspending");
-                            return "red";
-                        }
-                    }
-                    if (budget == 0 && actual > 0) {
-                        console.log(d.deptno);
-                        return "red"
-                    }
-                    if (actual == 0) {
-                        console.log("underspending");
-                        return "#4B0082";
-                    }
-                }
+            .style("fill",
+                function (d) {
                 return "black";
             });
 
@@ -300,8 +255,8 @@
             div.html("<br/>")
         }*/
         if (getBudgetData(d.deptno) != undefined) {
-            div.html(d.deptno + "<br/> Approves at a higher level" + "<div align = 'right'> Budget: " + formatMoney(getBudgetData(d.deptno))
-                + "<br/> Actual: " + formatMoney(getBudgetActuals(d.deptno)) + "<br/> YTD Budget: " + YTDbudget(getBudgetData(d.deptno)) + "</div>")
+            div.html(d.deptno + "<br/> Approves at a higher level" + "<div align = 'right'> # of POs: " + getBudgetData(d.deptno)
+                + "<br/> Total: " + formatMoney(getBudgetActuals(d.deptno)) + "</div>")
                 .style("left", (d3.event.pageX ) + "px")
                 .style("top", (d3.event.pageY) + "px");
         }
@@ -314,16 +269,6 @@
 
     }
 
-    //helper function to get YTD
-    function YTDbudget(budgetTotal) {
-        var date = new Date();
-        var month = getFiscalDay();
-        var p = month / 365;
-        var ytd = budgetTotal * p;
-        console.log("YTD: " + ytd);
-        return formatMoney(ytd);
-    }
-
     //helper function for formatting money in the tooltip
     function formatMoney(number) {
         var oldNum = parseFloat(number);
@@ -331,56 +276,6 @@
         var num = '$' + oldNum.toFixed(0).replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
 
         return num;
-    }
-
-    function getFiscalMonth(month) {
-        var fMonth;
-        // console.log(month);
-        switch (month) {
-            case 6:
-            case 7:
-            case 8:
-            case 9:
-            case 10:
-            case 11:
-                fMonth = month - 6;
-                break;
-            case 0:
-            case 1:
-            case 2:
-            case 3:
-            case 4:
-            case 5:
-                fMonth = month + 6;
-                break;
-            default:
-                console.log("SOMETHING IS WRONG...");
-        }
-        return fMonth;
-
-    }
-
-    function getFiscalDay() {
-        var date = new Date();
-        var year = date.getFullYear();
-        console.log(year);
-        switch (date.getMonth()){
-            case 0:
-            case 1:
-            case 2:
-            case 3:
-            case 4:
-            case 5:
-                year = year - 1;
-                break;
-            default:
-                console.log("before new real year");
-        }
-        var day = date.getDate();
-        var startOfFiscalYear = new Date("July 1, "+year+" 12:00:00");
-        var utc1 = Date.UTC(date.getFullYear(), date.getMonth(), date.getDate());
-        var utc2 = Date.UTC(startOfFiscalYear.getFullYear(), startOfFiscalYear.getMonth(), startOfFiscalYear.getDate());
-        return Math.floor(Math.abs(utc2 - utc1) / (1000*60*60*24));
     }
 
     // controls how slowly the tooltip disappears
@@ -397,9 +292,9 @@
         // console.log(dept);
         for (var i in buData) {
             // console.log(i);
-            if (parseFloat(buData[i].deptNo) === dept) {
+            if (parseFloat(buData[i].dept) === dept) {
                 //   console.log(i);
-                return buData[i].budgetAmount;
+                return buData[i].poNum;
             }
         }
 
@@ -411,9 +306,9 @@
         //console.log(dept);
         for (var i in buData) {
 
-            if (parseFloat(buData[i].deptNo) === dept) {
+            if (parseFloat(buData[i].dept) === dept) {
                 //  console.log(i);
-                return buData[i].actualsAmount;
+                return buData[i].total;
             }
         }
     }
@@ -500,15 +395,6 @@
     <div id="level6circle"></div>
     <p>Level 6</p>
 
-</div>
-<!--Projected Budget-->
-<div class="ltitleright">
-    <h3 class="ltitle">Projected Budget Key</h3>
-    <p id="over">Over Budget (>25%)</p>
-    <p id="slightlyover">Slightly Overspending (10-25%)</p>
-    <p id="lessthan25">On Target (-10-10%) </p>
-    <p id="slightlyunder">Slightly Underspending (-25--10%)</p>
-    <p id="under">Under Budget (<-25%)</p>
 </div>
 
 <!--Expand Button -->

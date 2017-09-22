@@ -14,11 +14,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="procurement.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="employees.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/employees.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-2471">
+              <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="visualization.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/public/visualization.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="320">
+              <caret line="525" column="64" lean-forward="false" selection-start-line="525" selection-start-column="64" selection-end-line="525" selection-end-column="64" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="procurement.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/procurement.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="411" column="6" lean-forward="true" selection-start-line="411" selection-start-column="6" selection-end-line="411" selection-end-column="6" />
+            <state relative-caret-position="371">
+              <caret line="411" column="40" lean-forward="false" selection-start-line="411" selection-start-column="40" selection-end-line="411" selection-end-column="40" />
               <folding />
             </state>
           </provider>
@@ -121,12 +141,12 @@
         <option value="$PROJECT_DIR$/public/resources/departments.json" />
         <option value="$PROJECT_DIR$/public/config.js" />
         <option value="$PROJECT_DIR$/public/employees.html" />
-        <option value="$PROJECT_DIR$/public/visualization.html" />
         <option value="$PROJECT_DIR$/public/resources/OrgChartExcel.json" />
         <option value="$PROJECT_DIR$/public/upload.template.html" />
         <option value="$PROJECT_DIR$/services/upload.service.server.js" />
         <option value="$PROJECT_DIR$/server.js" />
         <option value="$PROJECT_DIR$/public/procurement.html" />
+        <option value="$PROJECT_DIR$/public/visualization.html" />
       </list>
     </option>
   </component>
@@ -254,12 +274,12 @@
       <workItem from="1505914783039" duration="20371000" />
       <workItem from="1505999488212" duration="8867000" />
       <workItem from="1506009638401" duration="15073000" />
-      <workItem from="1506086577716" duration="2918000" />
+      <workItem from="1506086577716" duration="3596000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="96251000" />
+    <option name="totallyTimeSpent" value="96929000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -533,14 +553,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/visualization.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="314">
-          <caret line="22" column="4" lean-forward="false" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="402">
@@ -581,18 +593,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/employees.html">
+    <entry file="file://$PROJECT_DIR$/public/procurement.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="32" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+        <state relative-caret-position="371">
+          <caret line="411" column="40" lean-forward="false" selection-start-line="411" selection-start-column="40" selection-end-line="411" selection-end-column="40" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/procurement.html">
+    <entry file="file://$PROJECT_DIR$/public/employees.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="411" column="6" lean-forward="true" selection-start-line="411" selection-start-column="6" selection-end-line="411" selection-end-column="6" />
+        <state relative-caret-position="-2471">
+          <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/visualization.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="525" column="64" lean-forward="false" selection-start-line="525" selection-start-column="64" selection-end-line="525" selection-end-column="64" />
           <folding />
         </state>
       </provider>

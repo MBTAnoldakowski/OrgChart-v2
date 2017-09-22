@@ -32,8 +32,8 @@
     d3.select("svg").remove();
 
     var margin = {top: 20, right: 120, bottom: 20, left: 120},
-        width = 1000,
-        height = 800;
+        width = 1800,
+        height = 1000;
 
     var i = 0,
         duration = 750,
@@ -114,7 +114,8 @@
                 return d.children || d._children ? "end" : "start";
             })
             .text(function (d) {
-                return d.title;
+                var returnString = d.title + "\n" + d.name;
+                return returnString ;
             })
             .style("fill-opacity", 1e-6);
 

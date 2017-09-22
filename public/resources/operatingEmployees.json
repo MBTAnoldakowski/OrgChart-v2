@@ -1,0 +1,306 @@
+{"name": "Jeffrey D. Gonneville",
+  "title": "Chief Operating Officer",
+  "children": [
+    {
+      "name": "Tina Beasley",
+      "title": "Deputy Chief Operating Officer Admin",
+      "children": [
+        {
+          "name": "Florence K. Hill",
+          "title": "Director of Administration"
+        },
+        {
+          "name": "Thomas A. Johnson, Jr.",
+          "title": "Director of Finance & Administration - Ops"
+        }
+      ]
+    },
+    {
+      "name": "Andrew D. Brennan",
+      "title": "Director of Environmental Affairs & Energy",
+      "children": [
+        {
+          "name": "Michael A. Donaghy",
+          "title": "Manager of Energy Efficiency"
+        },
+        {
+          "name": "Janis O. Kearney",
+          "title": "Director of Environmental Compliance/AGO I",
+          "children": [
+            {
+              "name": "Thomas F. Daly",
+              "title": "Manager of Environmental Compliance"
+            },
+            {
+              "name": "Robert K. Perry",
+              "title": "Manager of Environmental Compliance"
+            }
+          ]
+        },
+        {
+          "name": "Erik J. Stoothoff",
+          "title": "Deputy Chief Operating Officer",
+          "children": [
+            {
+              "name": "William G. Wolfgang",
+              "title": "Director of Vehicle Engineering"
+            },
+            {
+              "name": "Howard C. Lim",
+              "title": "Director I"
+            },
+            {
+              "name": "Joseph T. McNall",
+              "title": "Director of Signals & Communications"
+            },
+            {
+              "name": "John H. Gauthier, Jr.",
+              "title": "Deputy Director of Transit Facilities Maintenance & Environmental",
+              "children": [
+                {
+                  "name": "Richard Hart",
+                  "title": "Assistant Superintendant Cleaning Maintenance Systems"
+                }
+              ]
+            },
+            {
+              "name": "Walter A. Reed",
+              "title": "Director, Senior Assets, Plan & Trng ",
+              "children": [
+                {
+                  "name": "Satyen Patel",
+                  "title": "Director of Assets Management",
+                  "children": [
+                    {
+                      "name": "Mustapha J. Jahour",
+                      "title": "Manager EAMS Information"
+                    },
+                    {
+                      "name": "Cornelius McEleney",
+                      "title": "Manager of Asset Information"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Joseph A. Gushue",
+              "title": "Director of Right of Way Maintenance",
+              "children": [
+                {
+                  "name": "Danny M. Payne",
+                  "title": "Deputy Director - MOW",
+                  "children": [
+                    {
+                      "name": "William R. McPherson",
+                      "title": "Superintendent - MOW"
+                    },
+                    {
+                      "name": "Joseph Anderson",
+                      "title": "Superintendent - MOW"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Jessica S. Casey",
+          "title": "Deputy Chief Operating Officer, Service Planning & Strategy",
+          "children": [
+            {
+              "name": "Melissa Dullea",
+              "title": "Director, Senior Service Planning",
+              "children": [
+                {
+                  "name": "Heather M. Hume",
+                  "title": "Director of Service Planning"
+                },
+                {
+                  "name": "Angel M. Harrington",
+                  "title": "Director of Scheduling"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Todd G. Johnson",
+          "title": "Deputy Chief Operating Officer - Service Performance",
+          "children": [
+            {
+              "name": "David B. Carney",
+              "title": "AGM Bus Operations",
+              "children": [
+                {
+                  "name": "Howard J. Pransky",
+                  "title": "Chief Officer Mech - Bus",
+                  "children": [
+                    {
+                      "name": "Kevin Petit",
+                      "title": "Superintendent Maintenance - Bus"
+                    }
+                  ]
+                },
+                {
+                  "name": "Karen Burns",
+                  "title": "Chief Officer Transportation - Bus",
+                  "children": [
+                    {
+                      "name": "Sean E. Mills",
+                      "title": "Division Chief Bus - Silver Line",
+                      "children": [
+                        {
+                          "name": "Tammie F. Burton",
+                          "title": "Superintendent Transportation - Bus"
+                        },
+                        {
+                          "name": "Carlos E. Osgood",
+                          "title": "Superintendent Transportation - Bus"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Patricia Labitue",
+                      "title": "Division Chief Bus - North/South",
+                      "children": [
+                        {
+                          "name": "Calvin Thomas",
+                          "title": "Superintendent Transportation - Bus"
+                        },
+                        {
+                          "name": "James McDonough",
+                          "title": "Superintendent Transportation - Bus L"
+                        },
+                        {
+                          "name": "Dane K. Laifook",
+                          "title": "Superintendent Transportation - Bus"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "Robert S. Creedon",
+                  "title": "Director of Security & Emergency Management"
+                },
+                {
+                  "name": "Aisheea E. Lawrence-Isidor",
+                  "title": "Deputy Div Chief Ops Trng"
+                },
+                {
+                  "name": "Marc A. Romain",
+                  "title": "Deputy Div Chief OCC"
+                },
+                {
+                  "name": "William F. McClellan",
+                  "title": "AGM Rail Operations",
+                  "children": [
+                    {
+                      "name": "John Barnicoat",
+                      "title": "Deputy Director - QA & QC - Ops"
+                    },
+                    {
+                      "name": "Norman W. Michaud",
+                      "title": "Chief Officer Transportation - Rail",
+                      "children": [
+                        {
+                          "name": "Christopher Shea",
+                          "title": "Div Chief Rapid Transit",
+                          "children": [
+                            {
+                              "name": "Tarik Choqri-Hamrani",
+                              "title": "Supervisor Transportation - Subway"
+                            }
+                          ]
+                        },
+                        {
+                          "name": "Andrea L. Gordon",
+                          "title": "Div Chief Rapid Transit",
+                          "children": [
+                            {
+                              "name": "Patrick J. Richmond",
+                              "title": "Supt Trans - Rapid Transit"
+                            }
+                          ]
+                        },
+                        {
+                          "name": "Elizabeth Ulloa-Murray",
+                          "title": "Div Chief Rapid Transit",
+                          "children": [
+                            {
+                              "name": "Frederick W. Olson",
+                              "title": "Supt Trans - Rapid Transit"
+                            }
+                          ]
+                        },
+                        {
+                          "name": "Tamieka R. Thibodeaux",
+                          "title": "Div Chief Light Rail",
+                          "children": [
+                            {
+                              "name": "Margaret L. Fong",
+                              "title": "Supt Trans - Surface Lines",
+                              "children": []
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Stephen Hicks",
+                      "title": "Chief Officer Mech - Rail",
+                      "children": [
+                        {
+                          "name": "Joseph C. Gentilucci",
+                          "title": "Deputy Chief Officer Mech - Rail",
+                          "children": [
+                            {
+                              "name": "Paul F. Flynn",
+                              "title": "Deputy Director - Everett",
+                              "children": [
+                                {
+                                  "name": "Edward J. Belanger",
+                                  "title": "Superintendent Everett Shops Maintenance"
+                                }
+                              ]
+                            },
+                            {
+                              "name": "Jay Berry",
+                              "title": "Deputy Director of Heavy Rail Maintenance",
+                              "children": [
+                                {
+                                  "name": "John P. McQuiggan",
+                                  "title": "Superintendent of Maintenance - Rapid Transit"
+                                },
+                                {
+                                  "name": "Mark Harrigan",
+                                  "title": "Superintendent of Maintenance - Rapid Transit"
+                                }
+                              ]
+                            },
+                            {
+                              "name": "Kimberly A. Woollard",
+                              "title": "Deputy Director of Light Rail Maintenance",
+                              "children": [
+                                {
+                                  "name": "John S. Murray",
+                                  "title": "Superintendent of Maintenance - Rapid Transit"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

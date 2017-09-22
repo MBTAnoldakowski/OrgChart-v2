@@ -26,19 +26,27 @@
     <div class="lastUpdated">
         <p>Last Updated: 9/22/2017 3:25PM</p>
     </div>
-    <div class="update">
-        <a class="btn btn-warning" href="#!/update">Update</a>
-    </div>
+    <br/>
+    <input name="updateButton"
+           type="button"
+           class="btn btn-default"
+           value="View Operating"
+           onclick="updateData()"/>
 
+    <input name="updateButton"
+           type="button"
+           class="btn btn-default"
+           value="View Administration"
+           onclick="updateData2()"/>
 
 </div>
 <div id="chart"></div>
 <script>
     d3.select("svg").remove();
 
-    var margin = {top: 20, right: 120, bottom: 20, left: 120},
-        width = 1800,
-        height = 1000;
+    var margin = {top: 20, right: 150, bottom: 20, left: 200},
+        width = 1000,
+        height = 1300;
 
     var i = 0,
         duration = 750,
@@ -119,7 +127,21 @@
                 return d.children || d._children ? "end" : "start";
             })
             .text(function (d) {
-                var returnString = d.title + "/" + d.name;
+                var returnString = d.title;
+                return returnString ;
+            })
+            .style("fill-opacity", 1e-6);
+
+        nodeEnter.append("text")
+            .attr("x", function (d) {
+                return d.children || d._children ? -10 : 10;
+            })
+            .attr("dy", ".35em")
+            .attr("text-anchor", function (d) {
+                return d.children || d._children ? "end" : "start";
+            })
+            .text(function (d) {
+                var returnString = d.name;
                 return returnString ;
             })
             .style("fill-opacity", 1e-6);
@@ -201,7 +223,104 @@
         update(d);
     }
 
+    // this is triggered when you hit the 'View Operating' button, it just loads the
+    // Operating data instead of the Administration data
+    function updateData() {
+        d3.json("resources/operatingEmployees.json", function (error, flare) {
+            if (error) throw error;
+
+            root = flare;
+            root.x0 = height / 2;
+            root.y0 = 0;
+
+            function collapse(d) {
+                if (d.children) {
+                    d._children = d.children;
+                    d._children.forEach(collapse);
+                    d.children = null;
+                }
+            }
+
+            //UNCOMMENT below if you would like the nodes to all be collapsed on start.
+            //root.children.forEach(collapse);
+            update(root);
+        });
+
+    }
+
+    // this function updates the data to display administration
+    function updateData2() {
+        d3.json("resources/OrgChartExcel.json", function (error, flare) {
+            if (error) throw error;
+
+            root = flare;
+            root.x0 = height / 2;
+            root.y0 = 0;
+
+            function collapse(d) {
+                if (d.children) {
+                    d._children = d.children;
+                    d._children.forEach(collapse);
+                    d.children = null;
+                }
+            }
+
+            //root.children.forEach(collapse);
+            update(root);
+        });
+
+    }
+
+    function wrap(text, width) {
+        text.each(function() {
+            var text = d3.select(this),
+                words = text.text().split(/\s+/).reverse(),
+                word,
+                line = [],
+                lineNumber = 0,
+                lineHeight = 1.1, // ems
+                y = text.attr("y"),
+                dy = parseFloat(text.attr("dy")),
+                tspan = text.text(null).append("tspan").attr("x", 0).attr("y", y).attr("dy", dy + "em");
+            while (word = words.pop()) {
+                line.push(word);
+                tspan.text(line.join(" "));
+                if (tspan.node().getComputedTextLength() > width) {
+                    line.pop();
+                    tspan.text(line.join(" "));
+                    line = [word];
+                    tspan = text.append("tspan").attr("x", 0).attr("y", y).attr("dy", ++lineNumber * lineHeight + dy + "em").text(word);
+                }
+            }
+        });
+    }
+
+    function expand(d) {
+        var children = (d.children) ? d.children : d._children;
+        if (d._children) {
+            d.children = d._children;
+            d._children = null;
+        }
+        if (children)
+            children.forEach(expand);
+    }
+
+    //expands all nodes in the tree
+    function expandAll() {
+        expand(root);
+        update(root);
+    }
+
 </script>
+
+<div id="expandB">
+    <input name="expandButton"
+           type="button"
+           class="btn"
+           id="expandB"
+           value="Expand All"
+           onclick="expandAll()"/>
+</div>
 
 <div id="employeeButton" class="btn-group-vertical">
     <a class="btn btn-default" href="#!/procurement">Procurement Chart</a>

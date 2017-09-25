@@ -1,5 +1,4 @@
 <div id="option">
-
     <h1>MBTA Procurement Analysis Chart</h1>
     <div class="lastUpdated">
         <p>Last Updated: 9/25/2017 2:25PM</p>
@@ -19,8 +18,6 @@
            class="btn btn-default"
            value="View Administration"
            onclick="updateData2()"/>
-
-
 </div>
 <!-- this is an empty div for the script to populate with the tree -->
 <div id="chart"></div>
@@ -89,14 +86,13 @@
                 d._children.forEach(collapse);
                 d.children = null;
             }
-            //  console.log("D: " + d);
         }
 
         root.children.forEach(collapse);
         update(root);
         setTimeout(function () {
             expandAll();
-        }, 100)
+        }, 100);
     });
 
     d3.select(self.frameElement).style("height", "800px");
@@ -121,7 +117,6 @@
             });
 
         // Enter any new nodes at the parent's previous position.
-
         var nodeEnter = node.enter().append("g")
             .attr("class", "node")
             .attr("transform", function (d) {
@@ -195,8 +190,6 @@
                         return "#4CE628"
                     }
                     return "black";
-
-                    //return returnColor(rank);
                 });
 
         function returnColor(rank) {
@@ -310,7 +303,6 @@
         });
 
     }
-
 
     // Toggle children on click.
     function click(d) {

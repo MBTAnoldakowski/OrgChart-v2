@@ -17,8 +17,8 @@
       <file leaf-file-name="procurement.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/procurement.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="36" lean-forward="false" selection-start-line="4" selection-start-column="36" selection-end-line="4" selection-end-column="36" />
+            <state relative-caret-position="493">
+              <caret line="29" column="51" lean-forward="false" selection-start-line="29" selection-start-column="51" selection-end-line="29" selection-end-column="51" />
               <folding />
             </state>
           </provider>
@@ -137,11 +137,6 @@
             <path>
               <item name="OrgChart-v2" type="b2602c69:ProjectViewProjectNode" />
               <item name="OrgChart-v2" type="462c0819:PsiDirectoryNode" />
-              <item name="models" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="OrgChart-v2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="OrgChart-v2" type="462c0819:PsiDirectoryNode" />
               <item name="public" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -220,12 +215,12 @@
       <workItem from="1506009638401" duration="15073000" />
       <workItem from="1506086577716" duration="3647000" />
       <workItem from="1506098482734" duration="12328000" />
-      <workItem from="1506345859917" duration="11250000" />
+      <workItem from="1506345859917" duration="12157000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="122423000" />
+    <option name="totallyTimeSpent" value="123330000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1358" y="-187" width="1936" height="1096" extended-state="6" />
@@ -559,8 +554,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/procurement.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="36" lean-forward="false" selection-start-line="4" selection-start-column="36" selection-end-line="4" selection-end-column="36" />
+        <state relative-caret-position="493">
+          <caret line="29" column="51" lean-forward="false" selection-start-line="29" selection-start-column="51" selection-end-line="29" selection-end-column="51" />
           <folding />
         </state>
       </provider>

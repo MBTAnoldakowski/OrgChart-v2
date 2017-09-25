@@ -154,8 +154,8 @@
                 console.log(month);
                 var ytd = budget * month;
                 console.log(ytd);
-                //var dec = 0;
-                /*
+                var dec = 0;
+
                 if (budget != undefined && actual != undefined) {
 
                     if (budget != 0) {
@@ -194,8 +194,8 @@
                     }
                 }
                 return "black";
-                */
-                return returnColor(budget, actual, ytd);
+
+               //return returnColor(budget, actual, ytd);
             });
 
         function returnColor(budget, actual, ytd) {
@@ -317,6 +317,8 @@
             d.x0 = d.x;
             d.y0 = d.y;
         });
+
+        expand(root);
     }
 
     // Toggle children on click.
@@ -557,9 +559,9 @@
 <div class="ltitleright">
     <h3 class="ltitle">Projected Budget Key</h3>
     <p id="over">Over Budget (>25%)</p>
-    <p id="slightlyover">Slightly Overspending (10-25%)</p>
-    <p id="lessthan25">On Target (-10-10%) </p>
-    <p id="slightlyunder">Slightly Underspending (-25--10%)</p>
+    <p id="slightlyover">Slightly Overspending (10 to 25%)</p>
+    <p id="lessthan25">On Target (-10 to 10%) </p>
+    <p id="slightlyunder">Slightly Underspending (-25 to -10%)</p>
     <p id="under">Under Budget (<-25%)</p>
 </div>
 

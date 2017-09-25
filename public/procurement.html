@@ -165,7 +165,7 @@
                             //console.log(d.name+" Rank: "+rank)
                         }
                     }
-                    /*
+
                     //console.log(rank);
                     if (rank >= 0 && rank < 9) {
                         return "#FF0F15"
@@ -195,8 +195,8 @@
                         return "#53FF28"
                     }
                     return "black";
-                    */
-                    return returnColor(rank);
+
+                    //return returnColor(rank);
                 });
 
         function returnColor(rank) {
@@ -308,6 +308,7 @@
             d.x0 = d.x;
             d.y0 = d.y;
         });
+        expand(root);
     }
 
 

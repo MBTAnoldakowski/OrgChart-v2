@@ -14,11 +14,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="employees.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="employees.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/employees.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="391">
               <caret line="136" column="37" lean-forward="true" selection-start-line="136" selection-start-column="37" selection-end-line="136" selection-end-column="37" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="flare_experiment.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/resources/flare_experiment.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1292">
+              <caret line="76" column="19" lean-forward="true" selection-start-line="76" selection-start-column="19" selection-end-line="76" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="flare_experiment_2.json" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/public/resources/flare_experiment_2.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="531" column="42" lean-forward="false" selection-start-line="531" selection-start-column="42" selection-end-line="531" selection-end-column="42" />
               <folding />
             </state>
           </provider>
@@ -77,7 +97,6 @@
         <option value="$PROJECT_DIR$/public/budget.controller.client.js" />
         <option value="$PROJECT_DIR$/public/resources/tree.json" />
         <option value="$PROJECT_DIR$/public/csv/budgetdata.csv" />
-        <option value="$PROJECT_DIR$/public/resources/flare_experiment_2.json" />
         <option value="$PROJECT_DIR$/public/resources/departments.json" />
         <option value="$PROJECT_DIR$/public/config.js" />
         <option value="$PROJECT_DIR$/services/upload.service.server.js" />
@@ -89,6 +108,7 @@
         <option value="$PROJECT_DIR$/public/resources/OrgChartExcel.json" />
         <option value="$PROJECT_DIR$/public/resources/operatingEmployees.json" />
         <option value="$PROJECT_DIR$/public/employees.html" />
+        <option value="$PROJECT_DIR$/public/resources/flare_experiment_2.json" />
       </list>
     </option>
   </component>
@@ -102,8 +122,8 @@
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1858" />
-    <option name="y" value="-191" />
+    <option name="x" value="-162" />
+    <option name="y" value="-8" />
     <option name="width" value="958" />
     <option name="height" value="648" />
   </component>
@@ -218,24 +238,24 @@
       <workItem from="1506009638401" duration="15073000" />
       <workItem from="1506086577716" duration="3647000" />
       <workItem from="1506098482734" duration="12328000" />
-      <workItem from="1506345859917" duration="1362000" />
+      <workItem from="1506345859917" duration="1718000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="112535000" />
+    <option name="totallyTimeSpent" value="112891000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1358" y="-187" width="1936" height="1096" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22291666" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3133236" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14994934" sideWeight="0.50208336" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14994934" sideWeight="0.49791667" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23307087" sideWeight="0.49791667" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -433,13 +453,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/resources/flare_experiment_2.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="447">
-          <caret line="726" column="19" lean-forward="true" selection-start-line="726" selection-start-column="19" selection-end-line="726" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/resources/reportsTo.csv">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -451,13 +464,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="1" column="48" lean-forward="false" selection-start-line="1" selection-start-column="48" selection-end-line="1" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/resources/flare_experiment.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1445">
-          <caret line="85" column="20" lean-forward="false" selection-start-line="81" selection-start-column="18" selection-end-line="85" selection-end-column="20" />
         </state>
       </provider>
     </entry>
@@ -552,6 +558,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
           <caret line="136" column="37" lean-forward="true" selection-start-line="136" selection-start-column="37" selection-end-line="136" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/resources/flare_experiment.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1292">
+          <caret line="76" column="19" lean-forward="true" selection-start-line="76" selection-start-column="19" selection-end-line="76" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/resources/flare_experiment_2.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="531" column="42" lean-forward="false" selection-start-line="531" selection-start-column="42" selection-end-line="531" selection-end-column="42" />
           <folding />
         </state>
       </provider>

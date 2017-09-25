@@ -2,7 +2,7 @@
 
     <h1>MBTA Procurement Analysis Chart</h1>
     <div class="lastUpdated">
-        <p>Last Updated: 9/22/2017 3:25PM</p>
+        <p>Last Updated: 9/25/2017 2:25PM</p>
     </div>
     <div class="update">
         <a class="btn btn-warning" href="#!/update">Update</a>
@@ -168,31 +168,31 @@
 
                     //console.log(rank);
                     if (rank >= 0 && rank < 9) {
-                        return "#FF0F15"
+                        return "#BF0100"
                     }
                     if (rank >= 9 && rank < 19) {
-                        return "#FF4212"
+                        return "#EB1E25"
                     }
                     if (rank >= 19 && rank < 29) {
-                        return "#FF7A15"
+                        return "#BD05C5"
                     }
                     if (rank >= 29 && rank < 39) {
-                        return "#FFB018"
+                        return "#5C08C8"
                     }
                     if (rank >= 39 && rank < 49) {
-                        return "#FFE51C"
+                        return "#0B1CCB"
                     }
                     if (rank >= 49 && rank < 59) {
-                        return "#E5FF1F"
+                        return "#0E84CE"
                     }
                     if (rank >= 59 && rank < 69) {
-                        return "#B3FF22"
+                        return "#12D1B6"
                     }
                     if (rank >= 69 && rank < 79) {
-                        return "#82FF25"
+                        return "#15D455"
                     }
                     if (rank >= 79) {
-                        return "#53FF28"
+                        return "#4CE628"
                     }
                     return "black";
 
@@ -311,212 +311,6 @@
 
     }
 
-    function update(source) {
-
-        // Compute the new tree layout.
-        var nodes = tree.nodes(root).reverse(),
-            links = tree.links(nodes);
-
-        // Normalize for fixed-depth.
-        nodes.forEach(function (d) {
-            d.y = d.depth * 250;    // I don't know specifically what this does,
-                                    // but I do know that changing the number
-                                    // changes the width of the tree that is displayed
-        }); //180
-
-        // Update the nodes
-        var node = svg.selectAll("g.node")
-            .data(nodes, function (d) {
-                return d.id || (d.id = ++i);
-            });
-
-        // Enter any new nodes at the parent's previous position.
-
-        var nodeEnter = node.enter().append("g")
-            .attr("class", "node")
-            .attr("transform", function (d) {
-                return "translate(" + source.y0 + "," + source.x0 + ")";
-            })
-            .on("click", click);
-        nodeEnter.append("circle")
-            .attr("r", 1e-6);
-        nodeEnter.append("text")
-            .attr("x", function (d) {
-                return d.children || d._children ? -10 : 10;
-            })
-            .attr("dy", ".35em")
-            .attr("text-anchor", function (d) {
-                return d.children || d._children ? "end" : "start";
-            })
-            //the name is appended to the dot right here
-            .text(function (d) {
-                return d.name;
-            })
-            .on("mouseover", mouseover)
-            .on("mousemove", function (d) {
-                mousemove(d);
-            })
-            .on("mouseout", mouseout)
-            //.style("fill-opacity", 1e-6)
-            .style("fill-opacity", 1)
-            // the names are styled here.
-            .style("fill",
-                function (d) {
-                    var rank = -1;
-                    var s = sortedArray.sort(function (a, b) {
-                        return a.total - b.total
-                    });
-                    s.reverse();
-                    //console.log(s);
-                    for (var i = 0; i < s.length; i++) {
-                        //console.log(sortedArray[i].name);
-                        if (s[i].dept == d.deptno) {
-                            rank = i;
-                            //console.log(d.name+" Rank: "+rank)
-                        }
-                    }
-
-                    //console.log(rank);
-                    if (rank >= 0 && rank < 9) {
-                        return "#FF0F15"
-                    }
-                    if (rank >= 9 && rank < 19) {
-                        return "#FF4212"
-                    }
-                    if (rank >= 19 && rank < 29) {
-                        return "#FF7A15"
-                    }
-                    if (rank >= 29 && rank < 39) {
-                        return "#FFB018"
-                    }
-                    if (rank >= 39 && rank < 49) {
-                        return "#FFE51C"
-                    }
-                    if (rank >= 49 && rank < 59) {
-                        return "#E5FF1F"
-                    }
-                    if (rank >= 59 && rank < 69) {
-                        return "#B3FF22"
-                    }
-                    if (rank >= 69 && rank < 79) {
-                        return "#82FF25"
-                    }
-                    if (rank >= 79) {
-                        return "#53FF28"
-                    }
-                    return "black";
-
-                    //return returnColor(rank);
-                });
-
-        function returnColor(rank) {
-            //console.log(rank);
-            if (rank >= 0 && rank < 9) {
-                return "#FF0F15"
-            }
-            if (rank >= 9 && rank < 19) {
-                return "#FF4212"
-            }
-            if (rank >= 19 && rank < 29) {
-                return "#FF7A15"
-            }
-            if (rank >= 29 && rank < 39) {
-                return "#FFB018"
-            }
-            if (rank >= 39 && rank < 49) {
-                return "#FFE51C"
-            }
-            if (rank >= 49 && rank < 59) {
-                return "#E5FF1F"
-            }
-            if (rank >= 59 && rank < 69) {
-                return "#B3FF22"
-            }
-            if (rank >= 69 && rank < 79) {
-                return "#82FF25"
-            }
-            if (rank >= 79) {
-                return "#53FF28"
-            }
-            else {
-                return "black";
-            }
-        }
-
-        // Transition nodes to their new position.
-        var nodeUpdate = node.transition()
-            .duration(duration)
-            .attr("transform", function (d) {
-                return "translate(" + d.y + "," + d.x + ")";
-            });
-
-        // size/style the circles
-        nodeUpdate.select("circle")
-            .attr("r", function (d) {
-                return 7;
-            })
-            .style("fill", function (d) {
-                if (d.level == "2") return "red";
-                if (d.level == "3") return "orange";
-                if (d.level == "4") return "green";
-                if (d.level == "5") return "blue";
-                if (d.level == "6") return "purple";
-                if (d.name == "") return "#ffffff";
-            })
-            .style("opacity", function (d) {
-                if (d.level == "") {
-                    return 0;
-                }
-            });
-
-        // Transition exiting nodes to the parent's new position.
-        var nodeExit = node.exit().transition()
-            .duration(duration)
-            .attr("transform", function (d) {
-                return "translate(" + source.y + "," + source.x + ")";
-            })
-            .remove();
-
-        nodeExit.select("circle")
-            .attr("r", 1e-6);
-
-        nodeExit.select("text")
-            .style("fill-opacity", 1e-6);
-
-        // Update the links…
-        var link = svg.selectAll("path.link")
-            .data(links, function (d) {
-                return d.target.id;
-            });
-
-        // Enter any new links at the parent's previous position.
-        link.enter().insert("path", "g")
-            .attr("class", "link")
-            .attr("d", function (d) {
-                var o = {x: source.x0, y: source.y0};
-                return diagonal({source: o, target: o});
-            });
-
-        // Transition links to their new position.
-        link.transition()
-            .duration(duration)
-            .attr("d", diagonal);
-
-        // Transition exiting nodes to the parent's new position.
-        link.exit().transition()
-            .duration(duration)
-            .attr("d", function (d) {
-                var o = {x: source.x, y: source.y};
-                return diagonal({source: o, target: o});
-            })
-            .remove();
-
-        // Stash the old positions for transition.
-        nodes.forEach(function (d) {
-            d.x0 = d.x;
-            d.y0 = d.y;
-        });
-    }
 
     // Toggle children on click.
     function click(d) {

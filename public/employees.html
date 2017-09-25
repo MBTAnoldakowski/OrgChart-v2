@@ -95,22 +95,7 @@
             .style("fill", function (d) {
                 return d._children ? "lightsteelblue" : "#fff";
             });
-/*
-        nodeEnter.append("text")
-            .attr("x", function (d) {
-                return d.children || d._children ? -10 : 10;
-            })
-            .attr("dy", ".35em")
-            .attr("text-anchor", function (d) {
-                return d.children || d._children ? "end" : "start";
-            })
-            .text(function (d) {
-                var returnString = d.title +" - "+ d.name;
-                return returnString ;
-            })
-            .call(wrap, 120)
-            .style("fill-opacity", 1e-6);
-*/
+
         nodeEnter.append("text")
             .attr("x", function (d) {
                 return d.children || d._children ? -10 : 10;

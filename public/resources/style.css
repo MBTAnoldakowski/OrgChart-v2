@@ -223,39 +223,39 @@ div.tooltip {
 
 #scale1{
     text-align: right;
-    color: #FF0F15;
+    color: #BF0100;
 }
 #scale2{
     text-align: right;
-    color: #FF4212;
+    color: #EB1E25;
 }
 #scale3{
     text-align: right;
-    color: #FF7A15;
+    color: #BD05C5;
 }
 #scale4{
     text-align: right;
-    color: #FFB018;
+    color: #5C08C8;
 }
 #scale5{
     text-align: right;
-    color: #FFE51C;
+    color: #0B1CCB;
 }
 #scale6{
     text-align: right;
-    color: #E5FF1F;
+    color: #0E84CE;
 }
 #scale7{
     text-align: right;
-    color: #B3FF22;
+    color: #12D1B6;
 }
 #scale8{
     text-align: right;
-    color: #82FF25;
+    color: #15D455;
 }
 #scale9{
     text-align: right;
-    color: #53FF28;
+    color: #4CE628;
 }
 
 .lastUpdated{

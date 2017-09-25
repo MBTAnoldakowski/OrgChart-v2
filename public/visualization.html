@@ -91,7 +91,11 @@
         }
 
         //root.children.forEach(collapse);
+        root.children.forEach(collapse);
         update(root);
+        setTimeout(function () {
+            expandAll();
+        }, 100)
     });
 
 
@@ -195,11 +199,11 @@
                 }
                 return "black";
 
-               //return returnColor(budget, actual, ytd);
+                //return returnColor(budget, actual, ytd);
             });
 
         function returnColor(budget, actual, ytd) {
-            console.log(budget +" "+actual+" "+ytd)
+            console.log(budget + " " + actual + " " + ytd)
             var dec = 0;
             if (budget != undefined && actual != undefined) {
 

@@ -45,7 +45,7 @@
     d3.select("svg").remove();
 
     var margin = {top: 20, right: 150, bottom: 20, left: 200},
-        width = 1000,
+        width = 1550,
         height = 1300;
 
     var i = 0,
@@ -117,34 +117,47 @@
             .style("fill", function (d) {
                 return d._children ? "lightsteelblue" : "#fff";
             });
-
+/*
         nodeEnter.append("text")
             .attr("x", function (d) {
                 return d.children || d._children ? -10 : 10;
             })
             .attr("dy", ".35em")
+            .attr("text-anchor", function (d) {
+                return d.children || d._children ? "end" : "start";
+            })
+            .text(function (d) {
+                var returnString = d.title +" - "+ d.name;
+                return returnString ;
+            })
+            .call(wrap, 120)
+            .style("fill-opacity", 1e-6);
+*/
+        nodeEnter.append("text")
+            .attr("x", function (d) {
+                return d.children || d._children ? -10 : 10;
+            })
+            .attr("dy", "-5")
             .attr("text-anchor", function (d) {
                 return d.children || d._children ? "end" : "start";
             })
             .text(function (d) {
                 var returnString = d.title;
                 return returnString ;
-            })
-            .style("fill-opacity", 1e-6);
+            });
 
         nodeEnter.append("text")
             .attr("x", function (d) {
                 return d.children || d._children ? -10 : 10;
             })
-            .attr("dy", ".35em")
+            .attr("dy", "5")
             .attr("text-anchor", function (d) {
                 return d.children || d._children ? "end" : "start";
             })
             .text(function (d) {
                 var returnString = d.name;
                 return returnString ;
-            })
-            .style("fill-opacity", 1e-6);
+            });
 
         // Transition nodes to their new position.
         var nodeUpdate = node.transition()
@@ -208,6 +221,30 @@
         nodes.forEach(function (d) {
             d.x0 = d.x;
             d.y0 = d.y;
+        });
+    }
+
+    function wrap(text, width) {
+        text.each(function() {
+            var text = d3.select(this),
+                words = text.text().split(/\s+/).reverse(),
+                word,
+                line = [],
+                lineNumber = 0,
+                lineHeight = 1.1, // ems
+                y = text.attr("y"),
+                dy = parseFloat(text.attr("dy")),
+                tspan = text.text(null).append("tspan").attr("x", 0).attr("y", y).attr("dy", dy + "em");
+            while (word = words.pop()) {
+                line.push(word);
+                tspan.text(line.join(" "));
+                if (tspan.node().getComputedTextLength() > width) {
+                    line.pop();
+                    tspan.text(line.join(" "));
+                    line = [word];
+                    tspan = text.append("tspan").attr("x", 0).attr("y", y).attr("dy", ++lineNumber * lineHeight + dy + "em").text(word);
+                }
+            }
         });
     }
 

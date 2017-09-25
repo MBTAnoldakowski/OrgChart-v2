@@ -198,10 +198,6 @@
                   "title": "AGM Rail Operations",
                   "children": [
                     {
-                      "name": "John Barnicoat",
-                      "title": "Deputy Director - QA & QC - Ops"
-                    },
-                    {
                       "name": "Norman W. Michaud",
                       "title": "Chief Officer Transportation - Rail",
                       "children": [
@@ -257,16 +253,6 @@
                           "title": "Deputy Chief Officer Mech - Rail",
                           "children": [
                             {
-                              "name": "Paul F. Flynn",
-                              "title": "Deputy Director - Everett",
-                              "children": [
-                                {
-                                  "name": "Edward J. Belanger",
-                                  "title": "Superintendent Everett Shops Maintenance"
-                                }
-                              ]
-                            },
-                            {
                               "name": "Jay Berry",
                               "title": "Deputy Director of Heavy Rail Maintenance",
                               "children": [
@@ -274,9 +260,20 @@
                                   "name": "John P. McQuiggan",
                                   "title": "Superintendent of Maintenance - Rapid Transit"
                                 },
+
                                 {
                                   "name": "Mark Harrigan",
                                   "title": "Superintendent of Maintenance - Rapid Transit"
+                                }
+                              ]
+                            },
+                            {
+                              "name": "Paul F. Flynn",
+                              "title": "Deputy Director - Everett",
+                              "children": [
+                                {
+                                  "name": "Edward J. Belanger",
+                                  "title": "Superintendent Everett Shops Maintenance"
                                 }
                               ]
                             },
@@ -293,6 +290,11 @@
                           ]
                         }
                       ]
+                    },
+
+                    {
+                      "name": "John Barnicoat",
+                      "title": "Deputy Director - QA & QC - Ops"
                     }
                   ]
                 }

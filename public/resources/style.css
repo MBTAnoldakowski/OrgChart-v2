@@ -2,17 +2,14 @@
     cursor: pointer;
 }
 
-/*
-.node circle {
-    fill: #fff;
-    stroke: steelblue;
-    stroke-width: 1.5px;
-}
-*/
 .node text {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 11pt;
     font-weight: 700;
+}
+
+#name-text{
+    font-weight: normal;
 }
 
 .link {

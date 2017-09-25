@@ -7,7 +7,7 @@
     <div class="update">
         <a class="btn btn-warning" href="#!/update">Update</a>
     </div>
-<br/>
+    <br/>
     <input name="updateButton"
            type="button"
            class="btn btn-default"
@@ -26,7 +26,7 @@
 <div id="chart"></div>
 <script>
     // clears the screen in case the employee visualization is still loaded
-     d3.select("svg").remove();
+    d3.select("svg").remove();
 
     // sizes the box to paint in
     var margin = {top: 20, right: 150, bottom: 20, left: 200},
@@ -154,7 +154,8 @@
                 console.log(month);
                 var ytd = budget * month;
                 console.log(ytd);
-                var dec = 0;
+                //var dec = 0;
+                /*
                 if (budget != undefined && actual != undefined) {
 
                     if (budget != 0) {
@@ -193,7 +194,52 @@
                     }
                 }
                 return "black";
+                */
+                return returnColor(budget, actual, ytd);
             });
+
+        function returnColor(budget, actual, ytd) {
+            console.log(budget +" "+actual+" "+ytd)
+            var dec = 0;
+            if (budget != undefined && actual != undefined) {
+
+                if (budget != 0) {
+                    dec = (actual - ytd) / ytd;
+                    console.log(dec);
+                    if (dec >= -0.1 && dec <= 0.1) {
+                        console.log('in range');
+                        return "#32CD32";
+                    }
+                    if (dec <= -0.1 && dec > -0.25) {
+                        console.log("slightly underspending");
+                        return "#5FB7C9";
+                    }
+                    if (dec < -0.25) {
+                        console.log("underspending");
+                        return "#4B0082";
+                    }
+                    if (dec > 0.1 && dec <= 0.25) {
+                        console.log("slightly over");
+                        return "#FF9999";
+
+                    }
+                    if (dec > 0.25) {
+                        console.log("overspending");
+                        return "red";
+                    }
+                }
+                if (budget == 0 && actual > 0) {
+                    return "red"
+                }
+                if (actual == 0) {
+                    console.log("underspending");
+                    return "#4B0082";
+                }
+            }
+            else {
+                return "black";
+            }
+        }
 
         // Transition nodes to their new position.
         var nodeUpdate = node.transition()
@@ -370,7 +416,7 @@
         var date = new Date();
         var year = date.getFullYear();
         console.log(year);
-        switch (date.getMonth()){
+        switch (date.getMonth()) {
             case 0:
             case 1:
             case 2:
@@ -382,11 +428,11 @@
             default:
                 console.log("before new real year");
         }
-       var day = date.getDate();
-        var startOfFiscalYear = new Date("July 1, "+year+" 12:00:00");
+        var day = date.getDate();
+        var startOfFiscalYear = new Date("July 1, " + year + " 12:00:00");
         var utc1 = Date.UTC(date.getFullYear(), date.getMonth(), date.getDate());
         var utc2 = Date.UTC(startOfFiscalYear.getFullYear(), startOfFiscalYear.getMonth(), startOfFiscalYear.getDate());
-        return Math.floor(Math.abs(utc2 - utc1) / (1000*60*60*24));
+        return Math.floor(Math.abs(utc2 - utc1) / (1000 * 60 * 60 * 24));
     }
 
     // controls how slowly the tooltip disappears
@@ -529,7 +575,7 @@
 <!--Switch to Employee Page button-->
 <div id="employeeButton" class="btn-group-vertical">
     <a class="btn btn-default" href="#!/procurement">Procurement Chart</a>
-    <a class="btn btn-primary disabled"  href="#!/">Budget Chart</a>
+    <a class="btn btn-primary disabled" href="#!/">Budget Chart</a>
     <a class="btn btn-default" href="#!/employees">Employee Chart</a>
 
 

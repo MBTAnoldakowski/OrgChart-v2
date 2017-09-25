@@ -3,24 +3,6 @@
   "title": "General Manager",
   "children": [
     {
-      "name": "Laura Brelsford",
-      "title": "Assistant General Manager, System-wide Accessibility"
-    },
-    {
-      "name": "Kenneth A. Green",
-      "title": "Chief of Police"
-    },
-    {
-      "name": "Mark E. D'Angelo",
-      "title": "Employee, Temp Special Projects",
-      "children": [
-        {
-          "name": "Ahmad E. Barnes",
-          "title": "Director of Labor Relations"
-        }
-      ]
-    },
-    {
       "name": "Ronald W. Nickle",
       "title": "Chief Safety Officer",
       "children": [
@@ -443,7 +425,24 @@
           ]
         }
       ]
+    },
+    {
+      "name": "Kenneth A. Green",
+      "title": "Chief of Police"
+    },
+    {
+      "name": "Mark E. D'Angelo",
+      "title": "Employee, Temp Special Projects",
+      "children": [
+        {
+          "name": "Ahmad E. Barnes",
+          "title": "Director of Labor Relations"
+        }
+      ]
+    },
+    {
+      "name": "Laura Brelsford",
+      "title": "Assistant General Manager, System-wide Accessibility"
     }
-
   ]
 }

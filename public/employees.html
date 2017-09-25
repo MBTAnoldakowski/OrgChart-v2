@@ -1,26 +1,4 @@
-<style>
 
-    .node {
-        cursor: pointer;
-    }
-
-    .node circle {
-        fill: #fff;
-        stroke: steelblue;
-        stroke-width: 1.5px;
-    }
-
-    .node text {
-        font: 10px sans-serif;
-    }
-
-    .link {
-        fill: none;
-        stroke: #ccc;
-        stroke-width: 1.5px;
-    }
-
-</style>
 <div id="option">
     <h1>MBTA Employee Chart</h1>
     <div class="lastUpdated">
@@ -45,8 +23,8 @@
     d3.select("svg").remove();
 
     var margin = {top: 20, right: 150, bottom: 20, left: 200},
-        width = 1550,
-        height = 1300;
+        width = 2250,
+        height = 3000;
 
     var i = 0,
         duration = 750,
@@ -95,7 +73,7 @@
 
         // Normalize for fixed-depth.
         nodes.forEach(function (d) {
-            d.y = d.depth * 180;
+            d.y = d.depth * 250;
         });
 
         // Update the nodes…
@@ -137,7 +115,7 @@
             .attr("x", function (d) {
                 return d.children || d._children ? -10 : 10;
             })
-            .attr("dy", "-5")
+            .attr("dy", "-10")
             .attr("text-anchor", function (d) {
                 return d.children || d._children ? "end" : "start";
             })
@@ -150,7 +128,8 @@
             .attr("x", function (d) {
                 return d.children || d._children ? -10 : 10;
             })
-            .attr("dy", "5")
+            .attr("dy", "10")
+            .attr("id", "name-text")
             .attr("text-anchor", function (d) {
                 return d.children || d._children ? "end" : "start";
             })
@@ -167,9 +146,14 @@
             });
 
         nodeUpdate.select("circle")
-            .attr("r", 4.5)
-            .style("fill", function (d) {
-                return d._children ? "lightsteelblue" : "#fff";
+            .attr("r", function (d) {
+                return 7;
+            })
+            .style("fill","#9dafcc")
+            .style("opacity", function (d) {
+                if (d.level == "") {
+                    return 0;
+                }
             });
 
         nodeUpdate.select("text")

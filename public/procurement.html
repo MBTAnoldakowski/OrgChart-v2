@@ -337,9 +337,10 @@
 
         if (getBudgetData(d.deptno) != undefined) {
             div.html(d.deptno + "<br/> Approves at a higher level" + "<div> # of POs: " + getBudgetData(d.deptno)
-                + "<br/> Total: " + formatMoney(getBudgetActuals(d.deptno)) + "</div>")
-                .style("left", (d3.event.pageX ) + "px")
-                .style("top", (d3.event.pageY) + "px");
+                + "<br/><div align='right'> Total: " + formatMoney(getBudgetActuals(d.deptno)) + "<br/> Average Per PO: "
+                + formatMoney(getBudgetActuals(d.deptno) / getBudgetData(d.deptno)) + "</div></div>")
+                    .style("left", (d3.event.pageX ) + "px")
+                    .style("top", (d3.event.pageY) + "px");
         }
 
         if (d.approval1 == undefined && getBudgetData(d.deptno) == undefined) {

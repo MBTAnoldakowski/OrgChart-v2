@@ -71,9 +71,18 @@
         var nodes = tree.nodes(root).reverse(),
             links = tree.links(nodes);
 
+        var c = 1;
         // Normalize for fixed-depth.
         nodes.forEach(function (d) {
-            d.y = d.depth * 200;
+            if(c%2 == 0) {
+                d.y = d.depth * 159;
+
+                c++;
+            }
+            else{
+                d.y = d.depth *201;
+                c++;
+            }
         });
 
         // Update the nodes…
@@ -136,8 +145,9 @@
                 return 7;
             })
             .style("fill",function(d){
-             if(d.children != undefined){
-                 return "red";
+                console.log(d);
+             if(d._children != undefined){
+                 return "#4b0082";
              }
                 return "#9dafcc";
             })
@@ -287,6 +297,7 @@
 </div>
 
 <div id="employeeButton" class="btn-group-vertical">
+    <a class="btn btn-default"  href="#!/kpi">KPI Chart</a>
     <a class="btn btn-default" href="#!/procurement">Procurement Chart</a>
     <a class="btn btn-default"  href="#!/">Budget Chart</a>
     <a class="btn btn-primary disabled" href="#!/employees">Employee Chart</a>

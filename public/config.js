@@ -21,6 +21,9 @@
             .when('/procurement',{
                 templateUrl: 'procurement.html'
             })
+            .when('/kpi',{
+                templateUrl: 'kpi.html'
+            })
     }
 
 })();

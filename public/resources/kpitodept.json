@@ -1,0 +1,232 @@
+[
+    {
+      "name": "1.1",
+      "desc": "Reorganize the MBTA for success in achieving Strategic Plan targets (both vertical/org chart and virtual reporting relationships) and to ensure organizational focus and ability to execute on safety, performance, customer experience, capital delivery and fiscal stability objectives of the Strategic Plan.",
+      "shortdesc": "Align organization with strategy plan.",
+      "depts": [
+        "100000"
+      ]
+    },
+    {
+      "name": "1.2",
+      "desc": "Achieve FY18 budget objectives both for limiting structural budget deficit to $30 million and achieving non-fare, own-source revenue targets (advertising, parking and real estate).",
+      "shortdesc": "Limit deficit to $30 million and meet own-source revenue targets for FY2018",
+      "depts": [
+        "100000",
+        "172000",
+        "172002",
+        "330000",
+        "331002",
+        "805000",
+        "805302",
+        "832002",
+        "833002"
+      ]
+    },
+    {
+      "name": "1.3",
+      "desc": "Complete critical procurement processes currently underway, including those for Automated Fare Collection (AFC) 2.0 and bus maintenance.",
+      "shortdesc": "Complete AFC 2.0 and bus maintenance procurements",
+      "depts": [
+        "100000",
+        "400000",
+        "426002",
+        "118000",
+        "117002",
+        "640000",
+        "642002",
+        "200000",
+        "189000",
+        "250000",
+        "640000",
+        "643002"
+      ]
+    },
+    {
+      "name": "1.4",
+      "desc": "Build and obtain FMCB approval of a fiscal year 2019 operating and capital budgets that continue to balance objectives of fiscal stability with need to invest in operations and assets, consistent with achieving Strategic Plan targets.",
+      "shortdesc": "Build a FY18 budget that aligns with Strategic Plan",
+      "depts": [
+        "100000",
+        "630000",
+        "632002",
+        "633002",
+        "805000",
+        "805302",
+        "832002",
+        "200000",
+        "189000",
+        "250000",
+        "640000",
+        "643002"
+      ]
+    },
+    {
+      "name": "2.1",
+      "desc": "Working with direct reports, fill key senior management and operational vacancies including but not limited to Chief Operating Officer, Chief Engineer, Customer Experience chief, executive director of commuter rail and Chief Financial Officer.",
+      "shortdesc": "Fill senior management and operational vacancies",
+      "depts": [
+        "100000",
+        "700000"
+      ]
+    },
+    {
+      "name": "2.2",
+      "desc": "Oversee completion of compensation study and “reset” of key salaries, particularly in Operations/Engineering and Maintenance, in time to use new compensation scales to recruit for key positions and build FY19 budget.",
+      "shortdesc": "Adjust key salaries- particularly in operations, maintenance- in time to recruit and build FY19 budget",
+      "depts": [
+        "100000",
+        "700000",
+        "751002",
+        "200000",
+        "630000",
+        "631002"
+      ]
+    },
+    {
+      "name": "2.3",
+      "desc": "Institute business process redesign/LEAN reviews of key internal processes in Human Resources (hiring and performance management).",
+      "shortdesc": "Redesign HR processes for hiring and performance management",
+      "depts": [
+        "100000",
+        "700000",
+        "721002"
+      ]
+    },
+    {
+      "name": "2.4",
+      "desc": "Oversee labor relations and collective bargaining strategy to achieve desired objectives in renegotiation of all collective bargaining agreements set to expire in June 2018.",
+      "shortdesc": "Meet objectives in renegotiation of union agreements set to expire in June 2018",
+      "depts": [
+        "100000",
+        "730000",
+        "731002"
+      ]
+    },
+    {
+      "name": "3.1",
+      "desc": "Oversee efforts to measure and achieve quarter-over-quarter improvement (e.g. first quarter calendar 2017 over first quarter calendar 2016) in on-time performance on commuter rail system, four subway lines and bus system (Key Bus Routes and other routes).",
+      "shortdesc": "Measure/achieve quarter-over-quarter improvement in on-time performance systemwide",
+      "depts": [
+        "100000",
+        "200000",
+        "220000",
+        "224000",
+        "189000",
+        "672000",
+        "674000",
+        "671000",
+        "230000",
+        "235000",
+        "239000",
+        "795000",
+        "231000",
+        "238000"
+      ]
+    },
+    {
+      "name": "3.2",
+      "desc": "Hire senior customer experience lead and develop and begin execution of a near-term customer experience improvement plan.",
+      "shortdesc": "Hire customer experience lead and begin customer experience improvement plan",
+      "depts": [
+        "100000",
+        "110000"
+      ]
+    },
+    {
+      "name": "3.3",
+      "desc": "Develop and execute plan for investing “lockbox” capital resources intended to produce near-term improvements in performance and customer experience.",
+      "shortdesc": "Plan investment of capital resources to improve performance and customer experience",
+      "depts": [
+        "100000",
+        "805000",
+        "805302",
+        "832002",
+        "200000",
+        "110000",
+        "630000",
+        "633002"
+      ]
+    },
+    {
+      "name": "3.4",
+      "desc": "Develop and execute a customer communications plan for both real-time customer information across modes and for communicating MBTA objectives, challenges and accomplishments.",
+      "shortdesc": "Communicate real-time information and MBTA goals to customers",
+      "depts": [
+        "100000",
+        "118000",
+        "118002",
+        "110000",
+        "192005"
+      ]
+    },
+    {
+      "name": "3.5",
+      "desc": "Develop one or more statistically valid Key Performance Indicators for customer satisfaction and system for collection of baseline data so that new indicator(s) can be implemented fully in fiscal year 2019.",
+      "shortdesc": "Develop system to measuere customer satisfaction",
+      "depts": [
+        "100000",
+        "110000"
+      ]
+    },
+    {
+      "name": "4.1",
+      "desc": "Achieve all fiscal year 2018 capital delivery objectives including increasing State of Good Repair/modernization spending from $709 million in FY17 to $795 million in FY18, along with sub-targets (to be determined) for new contracts, vehicle spending and non-vehicle spending.",
+      "shortdesc": "Increase modernization spending from $709 mil to $795 mil and achieve sub-targets (TBD)",
+      "depts": [
+        "100000",
+        "200000",
+        "220000",
+        "230000",
+        "189000",
+        "400000"
+      ]
+    },
+    {
+      "name": "4.2",
+      "desc": "Institute business process redesign/LEAN reviews of key capital delivery processes to ensure that MBTA is capable of delivering $1 billion annually in State of Good Repair/modernization investments beginning in fiscal year 2019.",
+      "shortdesc": "Make T able to spend $1 billion on modernization/State of Good Repair starting in 2019",
+      "depts": [
+        "100000",
+        "200000",
+        "630000",
+        "633002",
+        "220000",
+        "230000",
+        "189000"
+      ]
+    },
+    {
+      "name": "4.3",
+      "desc": "Complete 20-year Fleet and Facilities plan for revenue vehicles across all modes and for maintenance facilities",
+      "shortdesc": "Complete 20 year plan for all revenue vehicles and maintenance facilities",
+      "depts": [
+        "100000",
+        "200000",
+        "220000",
+        "230000",
+        "189000"
+      ]
+    },
+    {
+      "name": "4.4",
+      "desc": "Develop near-term plan (fiscal years 18 and 19) for accelerating investment in signals, power and track in order to meet spending target for that infrastructure in 5 year capital plan.",
+      "shortdesc": "Increase spending on signals, power and track to meet target in 5 year capital plan",
+      "depts": [
+        "100000",
+        "200000",
+        "189000",
+        "672000",
+        "250000",
+        "671000",
+        "674000",
+        "400000",
+        "426002",
+        "630000",
+        "633002"
+
+
+      ]
+    }
+  ]
+

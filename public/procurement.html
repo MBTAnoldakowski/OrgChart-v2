@@ -149,7 +149,7 @@
                 function (d) {
                     var rank = -1;
                     var s = sortedArray.sort(function (a, b) {
-                        return a.total - b.total
+                        return a.poNum - b.poNum
                     });
                     s.reverse();
                     //console.log(s);
@@ -481,7 +481,7 @@
 </div>
 <div class="ltitleright2">
     <h3 class="ltitle">Total Procurements</h3>
-    <p id="scale1">Most Money Spent</p>
+    <p id="scale1">Most POs</p>
     <p id="scale2">X</p>
     <p id="scale3">X</p>
     <p id="scale4">X</p>
@@ -489,7 +489,7 @@
     <p id="scale6">X</p>
     <p id="scale7">X</p>
     <p id="scale8">X</p>
-    <p id="scale9">Least Money Spent</p>
+    <p id="scale9">Least POs</p>
 </div>
 <!--Expand Button -->
 <div id="expandB">

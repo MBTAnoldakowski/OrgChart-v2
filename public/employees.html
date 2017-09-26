@@ -22,8 +22,8 @@
 <script>
     d3.select("svg").remove();
 
-    var margin = {top: 20, right: 150, bottom: 20, left: 200},
-        width = 2250,
+    var margin = {top: 40, right: 150, bottom: 20, left: 200},
+        width = 1000,
         height = 2900;
 
     var i = 0,
@@ -31,25 +31,25 @@
         root;
 
     var tree = d3.layout.tree()
-        .size([height, width]);
+        .size([width, height]);
 
     var diagonal = d3.svg.diagonal()
         .projection(function (d) {
-            return [d.y, d.x];
+            return [d.x, d.y];
         });
 
     var svg = d3.select("body").append("svg")
         .attr("width", width + margin.right + margin.left)
         .attr("height", height + margin.top + margin.bottom)
-        .append("g")
-        .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+        .append("g");
+        //.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
     d3.json("resources/OrgChartExcel.json", function (error, flare) {
         if (error) throw error;
 
         root = flare;
-        root.x0 = height / 2;
-        root.y0 = 0;
+        root.y0 = height / 2;
+        root.x0 = 0;
 
         function collapse(d) {
             if (d.children) {
@@ -59,7 +59,7 @@
             }
         }
 
-        // root.children.forEach(collapse);
+         root.children.forEach(collapse);
         update(root);
     });
 
@@ -73,7 +73,7 @@
 
         // Normalize for fixed-depth.
         nodes.forEach(function (d) {
-            d.y = d.depth * 250;
+            d.y = d.depth * 200;
         });
 
         // Update the nodes…
@@ -98,11 +98,11 @@
 
         nodeEnter.append("text")
             .attr("x", function (d) {
-                return d.children || d._children ? -10 : 10;
+                return d.children || d._children ? -80 : -50;
             })
-            .attr("dy", "-10")
+            .attr("dy", "20")
             .attr("text-anchor", function (d) {
-                return d.children || d._children ? "end" : "start";
+                return d.children; //|| d._children ? "end" : "start";
             })
             .text(function (d) {
                 var returnString = d.title;
@@ -111,12 +111,13 @@
 
         nodeEnter.append("text")
             .attr("x", function (d) {
-                return d.children || d._children ? -10 : 10;
+
+                return d.children || d._children ? -80 : -50;
             })
-            .attr("dy", "10")
+            .attr("dy", "35")
             .attr("id", "name-text")
             .attr("text-anchor", function (d) {
-                return d.children || d._children ? "end" : "start";
+                return d.children; //|| d._children ? "end" : "start";
             })
             .text(function (d) {
                 var returnString = d.name;
@@ -127,14 +128,19 @@
         var nodeUpdate = node.transition()
             .duration(duration)
             .attr("transform", function (d) {
-                return "translate(" + d.y + "," + d.x + ")";
+                return "translate(" + d.x + "," + d.y + ")";
             });
 
         nodeUpdate.select("circle")
             .attr("r", function (d) {
                 return 7;
             })
-            .style("fill","#9dafcc")
+            .style("fill",function(d){
+             if(d.children != undefined){
+                 return "red";
+             }
+                return "#9dafcc";
+            })
             .style("opacity", function (d) {
                 if (d.level == "") {
                     return 0;
@@ -148,7 +154,7 @@
         var nodeExit = node.exit().transition()
             .duration(duration)
             .attr("transform", function (d) {
-                return "translate(" + source.y + "," + source.x + ")";
+                return "translate(" + source.x + "," + source.y + ")";
             })
             .remove();
 
@@ -168,7 +174,7 @@
         link.enter().insert("path", "g")
             .attr("class", "link")
             .attr("d", function (d) {
-                var o = {x: source.x0, y: source.y0};
+                var o = {x: source.y0, y: source.x0};
                 return diagonal({source: o, target: o});
             });
 
@@ -181,7 +187,7 @@
         link.exit().transition()
             .duration(duration)
             .attr("d", function (d) {
-                var o = {x: source.x, y: source.y};
+                var o = {x: source.y, y: source.x};
                 return diagonal({source: o, target: o});
             })
             .remove();
@@ -190,30 +196,6 @@
         nodes.forEach(function (d) {
             d.x0 = d.x;
             d.y0 = d.y;
-        });
-    }
-
-    function wrap(text, width) {
-        text.each(function() {
-            var text = d3.select(this),
-                words = text.text().split(/\s+/).reverse(),
-                word,
-                line = [],
-                lineNumber = 0,
-                lineHeight = 1.1, // ems
-                y = text.attr("y"),
-                dy = parseFloat(text.attr("dy")),
-                tspan = text.text(null).append("tspan").attr("x", 0).attr("y", y).attr("dy", dy + "em");
-            while (word = words.pop()) {
-                line.push(word);
-                tspan.text(line.join(" "));
-                if (tspan.node().getComputedTextLength() > width) {
-                    line.pop();
-                    tspan.text(line.join(" "));
-                    line = [word];
-                    tspan = text.append("tspan").attr("x", 0).attr("y", y).attr("dy", ++lineNumber * lineHeight + dy + "em").text(word);
-                }
-            }
         });
     }
 
@@ -236,8 +218,8 @@
             if (error) throw error;
 
             root = flare;
-            root.x0 = height / 2;
-            root.y0 = 0;
+            root.y0 = height / 2;
+            root.x0 = 0;
 
             function collapse(d) {
                 if (d.children) {
@@ -248,7 +230,7 @@
             }
 
             //UNCOMMENT below if you would like the nodes to all be collapsed on start.
-            //root.children.forEach(collapse);
+            root.children.forEach(collapse);
             update(root);
         });
 
@@ -260,8 +242,8 @@
             if (error) throw error;
 
             root = flare;
-            root.x0 = height / 2;
-            root.y0 = 0;
+            root.y0 = height / 2;
+            root.x0 = 0;
 
             function collapse(d) {
                 if (d.children) {
@@ -271,34 +253,10 @@
                 }
             }
 
-            //root.children.forEach(collapse);
+            root.children.forEach(collapse);
             update(root);
         });
 
-    }
-
-    function wrap(text, width) {
-        text.each(function() {
-            var text = d3.select(this),
-                words = text.text().split(/\s+/).reverse(),
-                word,
-                line = [],
-                lineNumber = 0,
-                lineHeight = 1.1, // ems
-                y = text.attr("y"),
-                dy = parseFloat(text.attr("dy")),
-                tspan = text.text(null).append("tspan").attr("x", 0).attr("y", y).attr("dy", dy + "em");
-            while (word = words.pop()) {
-                line.push(word);
-                tspan.text(line.join(" "));
-                if (tspan.node().getComputedTextLength() > width) {
-                    line.pop();
-                    tspan.text(line.join(" "));
-                    line = [word];
-                    tspan = text.append("tspan").attr("x", 0).attr("y", y).attr("dy", ++lineNumber * lineHeight + dy + "em").text(word);
-                }
-            }
-        });
     }
 
     function expand(d) {

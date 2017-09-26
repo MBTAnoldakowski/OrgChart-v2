@@ -7,22 +7,22 @@
       "title": "Chief Safety Officer",
       "children": [
         {
-          "name": "Steven V. Culp",
-          "title": "Director of Safety Engineering"
-        },
-        {
           "name": "Holly B. Durso",
           "title": "Director of Safety",
           "children": [
             {
-              "name": "Charles J. Murphy",
-              "title": "Deputy Director of Corporate Safety Assurance & Control"
-            },
-            {
               "name": "Kelly P. Chronley",
               "title": "Deputy Director of Safety Oversight"
+            },
+            {
+              "name": "Charles J. Murphy",
+              "title": "Deputy Director of Corporate Safety Assurance & Control"
             }
           ]
+        },
+        {
+          "name": "Steven V. Culp",
+          "title": "Director of Safety Engineering"
         }
       ]
     },

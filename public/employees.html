@@ -23,7 +23,7 @@
     d3.select("svg").remove();
 
     var margin = {top: 40, right: 150, bottom: 20, left: 200},
-        width = 1000,
+        width = 7000,
         height = 2900;
 
     var i = 0,
@@ -41,8 +41,12 @@
     var svg = d3.select("body").append("svg")
         .attr("width", width + margin.right + margin.left)
         .attr("height", height + margin.top + margin.bottom)
+        .call(d3.behavior.zoom().on("zoom", function () {
+            svg.attr("transform", "translate(" + d3.event.translate + ")" + " scale(" + d3.event.scale + ")")
+        }))
         .append("g");
         //.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
 
     d3.json("resources/OrgChartExcel.json", function (error, flare) {
         if (error) throw error;
@@ -74,13 +78,14 @@
         var c = 1;
         // Normalize for fixed-depth.
         nodes.forEach(function (d) {
+
             if(c%2 == 0) {
-                d.y = d.depth * 159;
+                d.y = d.depth * 200;
 
                 c++;
             }
             else{
-                d.y = d.depth *201;
+                d.y = d.depth *250;
                 c++;
             }
         });
@@ -221,6 +226,7 @@
         update(d);
     }
 
+
     // this is triggered when you hit the 'View Operating' button, it just loads the
     // Operating data instead of the Administration data
     function updateData() {
@@ -268,6 +274,7 @@
         });
 
     }
+
 
     function expand(d) {
         var children = (d.children) ? d.children : d._children;

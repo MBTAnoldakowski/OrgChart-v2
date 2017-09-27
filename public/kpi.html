@@ -216,7 +216,7 @@
                 return diagonal({source: o, target: o});
             })
             .remove();
-
+        link.exit().remove();
         // Stash the old positions for transition.
         nodes.forEach(function (d) {
             d.x0 = d.x;

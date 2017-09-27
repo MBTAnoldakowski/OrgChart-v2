@@ -447,6 +447,14 @@
             "name":"Transit Police",
             "level":"4",
             "deptno":"120000",
+            "approval1":"PGREEN",
+            "approval2":"RSULLIVAN KGREEN",
+            "approval3":"RSULLIVAN KGREEN",
+            "approval4":"RSULLIVAN KGREEN",
+            "approval5":"KGREEN",
+            "approval6":"MABRAMO",
+            "approval7":"MABRAMO",
+            "approval8":"SPOFTAK",
             "children":[
                 {
                     "name":"Transit Police",

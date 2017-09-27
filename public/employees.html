@@ -23,8 +23,8 @@
     d3.select("svg").remove();
 
     var margin = {top: 40, right: 150, bottom: 20, left: 200},
-        width = 7000,
-        height = 2900;
+        width = 1000,
+        height = 2000;
 
     var i = 0,
         duration = 750,
@@ -80,12 +80,12 @@
         nodes.forEach(function (d) {
 
             if(c%2 == 0) {
-                d.y = d.depth * 200;
+                d.y = d.depth * 201;
 
                 c++;
             }
             else{
-                d.y = d.depth *250;
+                d.y = d.depth *247;
                 c++;
             }
         });

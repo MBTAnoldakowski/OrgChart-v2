@@ -16,7 +16,7 @@
                 controller: 'uploadController'
             })
             .when('/employees',{
-                templateUrl: 'employees2.html'
+                templateUrl: 'employees3.html'
         })
             .when('/procurement',{
                 templateUrl: 'procurement.html'

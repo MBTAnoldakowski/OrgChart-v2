@@ -1,464 +1,289 @@
 <style>
-
     .node {
         cursor: pointer;
     }
-
     .node circle {
         fill: #fff;
         stroke: steelblue;
-        stroke-width: 0px;
-        opacity: 1;
+        stroke-width: 1.5px;
     }
-
-    .node text {
-        font: 12px sans-serif;
-    }
-
     .link {
         fill: none;
-        stroke: rgb(0,0,255);
-        stroke-width: 10px;
-        opacity: 0.3;
+        stroke: #ccc;
+        stroke-width: 1.5px;
     }
-
 </style>
+<div id="option">
+    <h1>MBTA Employee Chart</h1>
+    <div class="lastUpdated">
+        <p>Last Updated: 9/22/2017 3:25PM</p>
+    </div>
+    <br/>
+    <input name="updateButton"
+           type="button"
+           class="btn btn-default"
+           value="View Operating"
+           onclick="updateData()"/>
 
+    <input name="updateButton"
+           type="button"
+           class="btn btn-default"
+           value="View Administration"
+           onclick="updateData2()"/>
 
-<!-- load the d3.js library -->
-<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
-<script src="http://d3js.org/d3.v3.min.js"></script>
-
+</div>
+<div id="chart"></div>
 <script>
-    // create the tree array
-    var treeData = [];
-    var data;
-    var leaves = [];
-    // Calculate total nodes, max label length
-    var totalNodes = 0;
-    var maxLabelLength = 0;
-    var maximum = 0;
-    var maxDepth = 0;
-    var sum = 0;
-    var allNames = [];
-    var query = "";
-    var deleting = 0;
-    var scaling = 50;
-    var nodeSelected;
-    // panning variables
-    //Proof of concept
-    var panSpeed = 200;
-    var panBoundary = 20; // Within 20px from edges will pan when dragging.
-
-    var margin = {top: 5, right: 5, bottom: 5, left: 5},
-        width = 960 - margin.right - margin.left,
-        height = 500 - margin.top - margin.bottom;
-
-    if (!d3) { throw "d3 wasn't included!"};
-
-    // size of the diagram
-    try {
-        var viewerWidth = $(document).width() - margin.right - margin.left;
-        var viewerHeight = $(document).height() - margin.top - margin.bottom;}
-    catch(err){
-        document.getElementById("search").innerHTML = "No connection. Please try again.";
-    }
-
+    d3.select("svg").remove();
+    var margin = {top: 20, right: 150, bottom: 20, left: 200},
+        width = 1000,
+        height = 3000;
     var i = 0,
         duration = 750,
         root;
-
     var tree = d3.layout.tree()
-        .size([viewerHeight, viewerWidth]);
-
+        .size([height, width]);
     var diagonal = d3.svg.diagonal()
-        .projection(function(d) { return [d.y, d.x]; });
-
-    // A recursive helper function for performing some setup by walking through all nodes
-    function visit(parent, visitFn, childrenFn) {
-        if (!parent) return;
-
-        visitFn(parent);
-
-        var children = childrenFn(parent);
-        if (children) {
-            var count = children.length;
-            for (var i = 0; i < count; i++) {
-                visit(children[i], visitFn, childrenFn);
-            }
-        }
-    }
-
-    // sort the tree according to the node names
-    function sortTree() {
-        tree.sort(function(a, b) {
-            return b.depth < a.depth ? 1 : -1;
+        .projection(function (d) {
+            return [d.y, d.x];
         });
-    }
-
-    // TODO: Pan function, can be better implemented.
-    function pan(domNode, direction) {
-        var speed = panSpeed;
-        if (panTimer) {
-            clearTimeout(panTimer);
-            translateCoords = d3.transform(svgGroup.attr("transform"));
-            if (direction == 'left' || direction == 'right') {
-                translateX = direction == 'left' ? translateCoords.translate[0] + speed : translateCoords.translate[0] - speed;
-                translateY = translateCoords.translate[1];
-            } else if (direction == 'up' || direction == 'down') {
-                translateX = translateCoords.translate[0];
-                translateY = direction == 'up' ? translateCoords.translate[1] + speed : translateCoords.translate[1] - speed;
-            }
-            scaleX = translateCoords.scale[0];
-            scaleY = translateCoords.scale[1];
-            scale = zoomListener.scale();
-            svgGroup.transition().attr("transform", "translate(" + translateX + "," + translateY + ")scale(" + scale + ")");
-            d3.select(domNode).select('g.node').attr("transform", "translate(" + translateX + "," + translateY + ")");
-            zoomListener.scale(zoomListener.scale());
-            zoomListener.translate([translateX, translateY]);
-            panTimer = setTimeout(function() {
-                pan(domNode, speed, direction);
-            }, 50);
-        }
-    }
-
-    // Define the zoom function for the zoomable tree
-    function zoom() {
-        svgGroup.attr("transform", "translate(" + d3.event.translate + ")scale(" + d3.event.scale + ")");
-    }
-
-    // define the zoomListener which calls the zoom function on the "zoom" event constrained within the scaleExtents
-    var zoomListener = d3.behavior.zoom().scaleExtent([0.1, 3]).on("zoom", zoom);
-
     var svg = d3.select("body").append("svg")
-        .attr("width", viewerWidth)
-        .attr("height", viewerHeight)
-        .attr("class", "overlay")
-        .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
-        .call(zoomListener)
-        .style("float", "inherit");
-
-    var svgGroup = svg.append("g");
-
-    // Function to center node when clicked/dropped so node doesn't get lost when collapsing/moving with large amount of children.
-    function centerNode(source) {
-        scale = zoomListener.scale();
-        x = -source.y0;
-        y = -source.x0;
-        x = (x * scale + viewerWidth / 2)-500;
-        y = y * scale + viewerHeight / 2;
-        d3.select('g').transition()
-            .duration(duration)
-            .attr("transform", "translate(" + x + "," + y + ")scale(" + scale + ")");
-        zoomListener.scale(scale);
-        zoomListener.translate([x, y]);
-    }
-
-    function getRandomColor() {
-        var letters = '0123456789ABCDEF'.split('');
-        var color = '#';
-        for (var i = 0; i < 6; i++ ) {
-            color += letters[Math.floor(Math.random() * 16)];
-        }
-        return color;
-    }
-
-    // Toggle children function
-    function toggleChildren(d) {
-        if (d.children) {
-            d._children = d.children;
-            d.children = null;
-        } else if (d._children) {
-            d.children = d._children;
-            d._children = null;
-        }
-        //document.write("hello");
-        return d;
-    }
-
-    // Toggle children on click.
-
-    function click(d) {
-        if (d3.event.defaultPrevented) return; // click suppressed
-        toggleChildren(d);
-        update(d);
-        centerNode(d);
-    }
-
-    var cursorX;
-    var cursorY;
-    document.onmousemove = function(e){
-        cursorX = e.pageX;
-        cursorY = e.pageY;
-    }
-
-    function mouseenter(d){
-        //if (d3.event.defaultPrevented) return;
-        document.getElementById('description').innerHTML = d.size;
-        document.getElementById('description').style.display = 'block';
-        document.getElementById('description').style.left = (cursorX+50)+'px';
-        document.getElementById('description').style.top = (cursorY+40)+'px';
-    }
-
-    function mouseleave(d){
-        if (d3.event.defaultPrevented) return;
-        document.getElementById('description').style.display = 'none';
-    }
-
-    function toggleAll(d) {
-        if (d.children) {
-            d.children.forEach(toggleAll);
-            d = toggleChildren(d);
-        }
-        else if (d._children) {
-            d._children.forEach(toggleAll);
-            d = toggleChildren(d);
-        }
-    }
-
-    var filename = "OrgChartExcel.json";
-    var extension = filename.split(".").pop();
-
-    if (extension == "json") {
-        treeJSON = d3.json(filename, function(error, json) {
-// ************** Generate the tree diagram	 *****************
-
-            treeData = json;
-
-            root = treeData[0];
-            configure(root);
-
-            update(root);
-
-            d3.select(self.frameElement).style("height", "500px");
-
-        });
-    } else if (extension == "csv") {
-
-// load the external data
-        d3.csv(filename, function(error, csv) {
-
-// *********** Convert flat data into a nice tree ***************
-            data = csv;
-
-            germinate(data)
-            root = treeData[0];
-            configure(root);
-
-            update(root);
-            centerNode(root);
-        });
-    }
-
-    function germinate(data){
-
-// create a name: node map
-        var dataMap = data.reduce(function(map, node) {
-            map[node.name] = node;
-            return map;
-        }, {});
-
-        data.forEach(function(node) {
-            node.size = +node.size;
-            maximum = Math.max(node.size, maximum);
-            var parent = dataMap[node.parent];
-            if (!parent) {node.size = maximum + 1;}
-        });
-
-        data.forEach(function(node) {
-            // add to parent
-            var parent = dataMap[node.parent];
-            if (parent) {
-                // create child array if it doesn't exist
-                if (!parent.children){parent.children = [];}
-                parent.children.push(node); // add node to child array
-            } else {
-                // parent is null or missing
-                treeData.push(node);
-            }
-        });
-
-    }
-
-    function configure(source) {
+        .attr("width", width + margin.right + margin.left)
+        .attr("height", height + margin.top + margin.bottom)
+        .call(d3.behavior.zoom().on("zoom", function () {
+            svg.attr("transform", "translate(" + d3.event.translate + ")" + " scale(" + d3.event.scale + ")")
+        }))
+        .append("g");
+      //  .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+    d3.json("resources/OrgChartExcel.json", function (error, flare) {
+        if (error) throw error;
+        root = flare;
         root.x0 = height / 2;
         root.y0 = 0;
-
-        // Call visit function to establish maxLabelLength
-        visit(root, function(d) {
-            totalNodes++;
-            sum = sum + (d.size ? d.size : 0);
-            maxLabelLength = Math.max(d.name.length, maxLabelLength);
-            if (!d.children && !d._children) {leaves.push(d);}
-        }, function(d) {
-            if (d.children) {return d.children;}
-            else if (d._children) {return d._chilren;}
-            else{return null;}
-        });
-
-        // Sort the tree initially incase the JSON isn't in a sorted order.
-        sortTree();
-    }
-
-    function leafCount(d) {
-        decedents = [];
-        visit(d, function(d) {
-            totalNodes++;
-            if (!d.children && !d._children){decedents.push(d);}
-        }, function(d) {
-            if (d.children) {return d.children;}
-            else if (d._children) {return d._children;}
-            else{return null;}
-        });
-        return decedents;
-    }
-
-    function update(source) {
-        // Compute the new height, function counts total children of root node and sets tree height accordingly.
-        // This prevents the layout looking squashed when new nodes are made visible or looking sparse when nodes are removed
-        // This makes the layout more consistent.
-        var levelWidth = [1];
-        var childCount = function(level, n) {
-
-            if (n.children && n.children.length > 0) {
-                if (levelWidth.length <= level + 1) levelWidth.push(0);
-
-                levelWidth[level + 1] += n.children.length;
-                n.children.forEach(function(d) {
-                    childCount(level + 1, d);
-                });
+        function collapse(d) {
+            if (d.children) {
+                d._children = d.children;
+                d._children.forEach(collapse);
+                d.children = null;
             }
-        };
-        childCount(0, root);
-        var newHeight = d3.max(levelWidth) * scaling; // 25 pixels per line
-        tree = tree.size([newHeight, viewerWidth]);
-
+        }
+         root.children.forEach(collapse);
+        update(root);
+    });
+    d3.select(self.frameElement).style("height", "800px");
+    function update(source) {
         // Compute the new tree layout.
         var nodes = tree.nodes(root).reverse(),
             links = tree.links(nodes);
-
-        nodes.forEach(function(d) {
-            var tempSum = 0;
-            visit(d, function(d) {
-                totalNodes++;
-                maxDepth = Math.max(d.depth, maxDepth);
-                tempSum = tempSum + (d.size ? d.size : 0);
-            }, function(d) {
-                if (d.children) {return d.children;}
-                else if (d._children) {return d._children;}
-                else{return null;}
-            });
-            d.sum = tempSum;
-        });
-
         // Normalize for fixed-depth.
-        // Set widths between levels based on maxLabelLength.
-        nodes.forEach(function(d) {
-            //d.y = (d.depth * maxLabelLength * 10); //maxLabelLength * 10px
-            // alternatively to keep a fixed scale one can set a fixed depth per level
-            // Normalize for fixed-depth by commenting out below line
-            d.y = ((maximum - d.size + 1) * 100); //500px per level.
+        nodes.forEach(function (d) {
+            d.y = d.depth * 250
         });
-
-        var spacing = viewerHeight*50/leaves.length;
-        for (var i = 0; i < leaves.length; i++) {
-            leaves[i].x = i*spacing;
-        }
-
-        nodes.forEach(function(d) {
-            var decedents = leafCount(d);
-            d.x = decedents[0].x + decedents.length*spacing/2;
-        });
-
         // Update the nodes…
-        var node = svgGroup.selectAll("g.node")
-            .data(nodes, function(d) { return d.id || (d.id = ++i); });
-
+        var node = svg.selectAll("g.node")
+            .data(nodes, function (d) {
+                return d.id || (d.id = ++i);
+            });
         // Enter any new nodes at the parent's previous position.
         var nodeEnter = node.enter().append("g")
             .attr("class", "node")
-            .attr("transform", function(d) { return "translate(" + source.y0 + "," + source.x0 + ")"; })
-            .on("click", click)
-            .on("mouseenter", mouseenter)
-            .on("mouseleave", mouseleave);
-
+            .attr("transform", function (d) {
+                return "translate(" + source.y0 + "," + source.x0 + ")";
+            })
+            .on("click", click);
         nodeEnter.append("circle")
-            .attr('class', 'nodeCircle')
-            .attr("r", function(d) { return(Math.max(Math.round(d.size*40/maximum),2)) })
-            .style("fill", function(d) { return d._children ? "red" : "rgb(0,0,"+(Math.max(Math.round(d.size*255/maximum),2))+")"; });
+            .attr("r", 1e-6)
+            .style("fill", function (d) {
+                return d._children ? "lightsteelblue" : "#fff";
+            });
+
 
         nodeEnter.append("text")
-            .attr("x", function(d) { return d.children || d._children ? 0 : 13; })
-            //.attr("y", function(d) { return d.children || d._children ? 25 : 0; })
-            .attr("dy", ".35em")
-            .attr('class', 'nodeText')
-            .attr("text-anchor", function(d) { return d.children || d._children ? "end" : "start"; })
-            .text(function(d) { return (d.name.length < 6 ? d.name : d.name.substring(0,6)+"..."); })
-            .style("fill-opacity", 1e-6)
-            .style("fill", function(d) { return d.found ? "red" : "white" });
+            .attr("x", function (d) {
+                return d.children || d._children ? 10 : 10;
+            })
+            .attr("dy", "-10")
+            .attr("text-anchor", function (d) {
+                return d.children; //|| d._children ? "end" : "start";
+            })
+            .text(function (d) {
+                var returnString = d.title;
+                return returnString ;
+            });
+
+        nodeEnter.append("text")
+            .attr("x", function (d) {
+
+                return d.children || d._children ? 10 : 10;
+            })
+            .attr("dy", "10")
+            .attr("id", "name-text")
+            .attr("text-anchor", function (d) {
+                return d.children; //|| d._children ? "end" : "start";
+            })
+            .text(function (d) {
+                var returnString = d.name;
+                return returnString ;
+            });
+
 
         // Transition nodes to their new position.
         var nodeUpdate = node.transition()
             .duration(duration)
-            .attr("transform", function(d) { return "translate(" + d.y + "," + d.x + ")"; });
-
+            .attr("transform", function (d) {
+                return "translate(" + d.y + "," + d.x + ")";
+            });
         nodeUpdate.select("circle")
-            .attr("r", function(d) { return(Math.max(Math.round(d.size*40/maximum),2)) })
-            .style("fill", function(d) { return d._children ? "red" : "rgb(0,0,"+Math.max(Math.round(d.size*255/maximum),2)+")"; })
-            .style("stroke-width", function(d) { return nodeSelected == d ? (Math.max(Math.round(d.size*4/maximum),2)) : 0 });
-
+            .attr("r", 4.5)
+            .style("fill", function (d) {
+                return d._children ? "lightsteelblue" : "#fff";
+            });
         nodeUpdate.select("text")
-            .style("fill-opacity", 1)
-            .style("fill", function(d){ return d.found ? "red" : "grey" });
-
+            .style("fill-opacity", 1);
         // Transition exiting nodes to the parent's new position.
         var nodeExit = node.exit().transition()
             .duration(duration)
-            .attr("transform", function(d) { return "translate(" + source.y + "," + source.x + ")"; })
+            .attr("transform", function (d) {
+                return "translate(" + source.y + "," + source.x + ")";
+            })
             .remove();
-
         nodeExit.select("circle")
-            .attr("r", 0);
-
+            .attr("r", 1e-6);
         nodeExit.select("text")
-            .style("fill-opacity", 0);
-
+            .style("fill-opacity", 1e-6);
         // Update the links…
-        var link = svgGroup.selectAll("path.link")
-            .data(links, function(d) { return d.target.id; });
-
+        var link = svg.selectAll("path.link")
+            .data(links, function (d) {
+                return d.target.id;
+            });
         // Enter any new links at the parent's previous position.
         link.enter().insert("path", "g")
             .attr("class", "link")
-            .attr("d", function(d) {
+            .attr("d", function (d) {
                 var o = {x: source.x0, y: source.y0};
-                return diagonal({source: o, target: o})
-            })
-            .style("stroke-width", function(d) { return ((Math.max(Math.round(d.target.size*50/maximum),2))+"px"); })
-            .style("stroke", function(d) { return getRandomColor()/*("rgb(0,0,"+(255-Math.max(Math.round(d.target.size*255/maximum),2))+")")*/; });
-
+                return diagonal({source: o, target: o});
+            });
         // Transition links to their new position.
         link.transition()
             .duration(duration)
-            .attr("d", diagonal)
-            .style("stroke-width", function(d) { return ((Math.max(Math.round(d.target.size*50/maximum),2))+"px"); })
-            .style("stroke", function(d) { return getRandomColor()/*("rgb(0,0,"+(255-Math.max(Math.round(d.target.size*255/maximum),2))+")")*/; });
-
+            .attr("d", diagonal);
         // Transition exiting nodes to the parent's new position.
         link.exit().transition()
             .duration(duration)
-            .attr("d", function(d) {
+            .attr("d", function (d) {
                 var o = {x: source.x, y: source.y};
                 return diagonal({source: o, target: o});
             })
             .remove();
-
         // Stash the old positions for transition.
-        nodes.forEach(function(d) {
+        nodes.forEach(function (d) {
             d.x0 = d.x;
             d.y0 = d.y;
         });
-
     }
-
+    // Toggle children on click.
+    function click(d) {
+        if (d.children) {
+            d._children = d.children;
+            d.children = null;
+        } else {
+            d.children = d._children;
+            d._children = null;
+        }
+        update(d);
+    }
+    // this is triggered when you hit the 'View Operating' button, it just loads the
+    // Operating data instead of the Administration data
+    function updateData() {
+        d3.json("resources/operatingEmployees.json", function (error, flare) {
+            if (error) throw error;
+            root = flare;
+            root.x0 = height / 2;
+            root.y0 = 0;
+            function collapse(d) {
+                if (d.children) {
+                    d._children = d.children;
+                    d._children.forEach(collapse);
+                    d.children = null;
+                }
+            }
+            //UNCOMMENT below if you would like the nodes to all be collapsed on start.
+            //root.children.forEach(collapse);
+            update(root);
+        });
+    }
+    // this function updates the data to display administration
+    function updateData2() {
+        d3.json("resources/OrgChartExcel.json", function (error, flare) {
+            if (error) throw error;
+            root = flare;
+            root.x0 = height / 2;
+            root.y0 = 0;
+            function collapse(d) {
+                if (d.children) {
+                    d._children = d.children;
+                    d._children.forEach(collapse);
+                    d.children = null;
+                }
+            }
+            //root.children.forEach(collapse);
+            update(root);
+        });
+    }
+    function wrap(text, width) {
+        text.each(function() {
+            var text = d3.select(this),
+                words = text.text().split(/\s+/).reverse(),
+                word,
+                line = [],
+                lineNumber = 0,
+                lineHeight = 1.1, // ems
+                y = text.attr("y"),
+                dy = parseFloat(text.attr("dy")),
+                tspan = text.text(null).append("tspan").attr("x", 0).attr("y", y).attr("dy", dy + "em");
+            while (word = words.pop()) {
+                line.push(word);
+                tspan.text(line.join(" "));
+                if (tspan.node().getComputedTextLength() > width) {
+                    line.pop();
+                    tspan.text(line.join(" "));
+                    line = [word];
+                    tspan = text.append("tspan").attr("x", 0).attr("y", y).attr("dy", ++lineNumber * lineHeight + dy + "em").text(word);
+                }
+            }
+        });
+    }
+    function expand(d) {
+        var children = (d.children) ? d.children : d._children;
+        if (d._children) {
+            d.children = d._children;
+            d._children = null;
+        }
+        if (children)
+            children.forEach(expand);
+    }
+    //expands all nodes in the tree
+    function expandAll() {
+        expand(root);
+        update(root);
+    }
 </script>
+
+<div id="expandB">
+    <input name="expandButton"
+           type="button"
+           class="btn"
+           id="expandB"
+           value="Expand All"
+           onclick="expandAll()"/>
+</div>
+
+
+<div id="employeeButton" class="btn-group-vertical">
+    <a class="btn btn-default"  href="#!/kpi">KPI Chart</a>
+    <a class="btn btn-default" href="#!/procurement">Procurement Chart</a>
+    <a class="btn btn-default"  href="#!/">Budget Chart</a>
+    <a class="btn btn-primary disabled" href="#!/employees">Employee Chart</a>
+
+
+</div>

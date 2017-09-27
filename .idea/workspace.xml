@@ -13,22 +13,22 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="kpi.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/public/kpi.html">
+    <leaf>
+      <file leaf-file-name="employees2.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/employees2.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="329">
-              <caret line="342" column="20" lean-forward="true" selection-start-line="342" selection-start-column="20" selection-end-line="342" selection-end-column="20" />
+            <state relative-caret-position="591">
+              <caret line="119" column="12" lean-forward="true" selection-start-line="119" selection-start-column="12" selection-end-line="119" selection-end-column="36" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="employees2.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/employees2.html">
+      <file leaf-file-name="employees3.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/public/employees3.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="281" column="0" lean-forward="true" selection-start-line="281" selection-start-column="0" selection-end-line="281" selection-end-column="0" />
+            <state relative-caret-position="459">
+              <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -40,6 +40,18 @@
             <state relative-caret-position="306">
               <caret line="18" column="40" lean-forward="false" selection-start-line="18" selection-start-column="40" selection-end-line="18" selection-end-column="40" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="employees.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/employees.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="145">
+              <caret line="26" column="18" lean-forward="false" selection-start-line="26" selection-start-column="18" selection-end-line="26" selection-end-column="18" />
+              <folding>
+                <marker date="1506533302068" expanded="true" signature="1117:1128" ph="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -111,13 +123,14 @@
         <option value="$PROJECT_DIR$/public/procurement.html" />
         <option value="$PROJECT_DIR$/public/visualization.html" />
         <option value="$PROJECT_DIR$/public/resources/style.css" />
-        <option value="$PROJECT_DIR$/public/config.js" />
-        <option value="$PROJECT_DIR$/public/employees.html" />
-        <option value="$PROJECT_DIR$/public/employees2.html" />
         <option value="$PROJECT_DIR$/public/resources/flare_experiment.json" />
         <option value="$PROJECT_DIR$/public/resources/flare_experiment_2.json" />
         <option value="$PROJECT_DIR$/public/resources/kpitodept.json" />
         <option value="$PROJECT_DIR$/public/kpi.html" />
+        <option value="$PROJECT_DIR$/public/employees.html" />
+        <option value="$PROJECT_DIR$/public/employees2.html" />
+        <option value="$PROJECT_DIR$/public/config.js" />
+        <option value="$PROJECT_DIR$/public/employees3.html" />
       </list>
     </option>
   </component>
@@ -130,7 +143,7 @@
   <component name="NodeModulesDirectoryManager">
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="1911" />
     <option name="y" value="-189" />
     <option name="width" value="958" />
@@ -245,15 +258,15 @@
       <workItem from="1506098482734" duration="12328000" />
       <workItem from="1506345859917" duration="14757000" />
       <workItem from="1506432824804" duration="18701000" />
-      <workItem from="1506517918102" duration="9889000" />
+      <workItem from="1506517918102" duration="13448000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="154520000" />
+    <option name="totallyTimeSpent" value="158079000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1358" y="-187" width="1936" height="1096" extended-state="7" />
+    <frame x="1358" y="-187" width="1936" height="1096" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.146875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -288,7 +301,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/style.css" />
     <entry file="file://$PROJECT_DIR$/../MBTA-Organization-Chart Experiment/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -533,24 +545,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="40" lean-forward="false" selection-start-line="18" selection-start-column="40" selection-end-line="18" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/employees.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="45" column="11" lean-forward="true" selection-start-line="45" selection-start-column="11" selection-end-line="45" selection-end-column="11" />
-          <folding>
-            <marker date="1506523450175" expanded="true" signature="1117:1128" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/resources/flare_experiment.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="127">
@@ -575,18 +569,44 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/employees2.html">
+    <entry file="file://$PROJECT_DIR$/public/kpi.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="281" column="0" lean-forward="true" selection-start-line="281" selection-start-column="0" selection-end-line="281" selection-end-column="0" />
+        <state relative-caret-position="312">
+          <caret line="341" column="27" lean-forward="true" selection-start-line="341" selection-start-column="27" selection-end-line="341" selection-end-column="27" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/kpi.html">
+    <entry file="file://$PROJECT_DIR$/public/employees.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="329">
-          <caret line="342" column="20" lean-forward="true" selection-start-line="342" selection-start-column="20" selection-end-line="342" selection-end-column="20" />
+        <state relative-caret-position="145">
+          <caret line="26" column="18" lean-forward="false" selection-start-line="26" selection-start-column="18" selection-end-line="26" selection-end-column="18" />
+          <folding>
+            <marker date="1506533302068" expanded="true" signature="1117:1128" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="40" lean-forward="false" selection-start-line="18" selection-start-column="40" selection-end-line="18" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/employees2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="591">
+          <caret line="119" column="12" lean-forward="true" selection-start-line="119" selection-start-column="12" selection-end-line="119" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/employees3.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
           <folding />
         </state>
       </provider>

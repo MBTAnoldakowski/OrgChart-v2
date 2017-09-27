@@ -273,7 +273,7 @@ div.tooltip {
     right: 0;
     top: 0;
     margin-right: 10px;
-    margin-top: 55px;
+    margin-top: 6%;
 }
 
 #description{
@@ -288,4 +288,11 @@ div.tooltip {
     background: white;
     padding-left: 10px;
     border-bottom-left-radius: 30px;
+}
+#descriptionText{
+    position: fixed;
+    right: 0;
+    top:0;
+    margin-top: 52px;
+    background: white;
 }

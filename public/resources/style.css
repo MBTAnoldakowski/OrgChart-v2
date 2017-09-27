@@ -284,7 +284,8 @@ div.tooltip {
     position: fixed;
     right: 0;
     top: 0;
-    width: 25%;
+    width: 30%;
     background: white;
-    padding-left: 4px;
+    padding-left: 10px;
+    border-bottom-left-radius: 30px;
 }

@@ -1,18 +1,47 @@
 <div class="container">
-    <h1>Update Budget Data</h1>
+    <h1>Update Budget Data <a href="/csv/budgetdata.csv" download class="btn btn-success pull-right">Download</a></h1>
     <form action="/api/upload/image" method="post" enctype="multipart/form-data">
         <input name="myFile" type="file" class="form-control" accept=".csv"/>
         <br/>
         <button type="submit" class="btn btn-block btn-primary">Upload</button>
     </form>
 
-    <h1>Update Procurement Data</h1>
+    <h1>Update Procurement Data<a href="/csv/procurementdata.csv" download class="btn btn-success pull-right">Download</a></h1>
     <form action="/api/upload/p" method="post" enctype="multipart/form-data">
         <input name="myFile" type="file" class="form-control" accept=".csv"/>
         <br/>
         <button type="submit" class="btn btn-block btn-primary">Upload</button>
     </form>
 
+    <h1>Update Administrative Department and Approval Data<a href="/resources/flare_experiment_2.json" download
+                                                             class="btn btn-success pull-right">Download</a></h1>
+    <form action="/api/upload/adepartments" method="post" enctype="multipart/form-data">
+        <input name="myFile" type="file" class="form-control" accept=".json"/>
+        <br/>
+        <button type="submit" class="btn btn-block btn-primary">Upload</button>
+    </form>
+
+    <h1>Update Operating Departments and Approval Data<a href="/resources/flare_experiment.json" download
+                                                         class="btn btn-success pull-right">Download</a></h1>
+    <form action="/api/upload/odepartments" method="post" enctype="multipart/form-data">
+        <input name="myFile" type="file" class="form-control" accept=".json"/>
+        <br/>
+        <button type="submit" class="btn btn-block btn-primary">Upload</button>
+    </form>
+    <h1>Update Administrative Employee Data <a href="/resources/OrgChartExcel.json" download class="btn btn-success pull-right">Download</a>
+    </h1>
+    <form action="/api/upload/aemployees" method="post" enctype="multipart/form-data">
+        <input name="myFile" type="file" class="form-control" accept=".json"/>
+        <br/>
+        <button type="submit" class="btn btn-block btn-primary">Upload</button>
+    </form>
+    <h1>Update Operating Employee Data <a href="/resources/operatingEmployees.json" download class="btn btn-success pull-right">Download</a>
+    </h1>
+    <form action="/api/upload/oemployees" method="post" enctype="multipart/form-data">
+        <input name="myFile" type="file" class="form-control" accept=".json"/>
+        <br/>
+        <button type="submit" class="btn btn-block btn-primary">Upload</button>
+    </form>
 
 </div>
 

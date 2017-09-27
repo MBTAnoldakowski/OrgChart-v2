@@ -1,7 +1,7 @@
 <div id="option">
     <h1>MBTA KPI Chart</h1>
     <div class="lastUpdated">
-        <p>Last Updated: 9/26/2017 1:45PM</p>
+        <p>Last Updated: 9/27/2017 9:52AM</p>
     </div>
     <br/>
     <input name="updateButton"
@@ -56,7 +56,6 @@
         .style("opacity", 1e-6);
 
     var kpiData = [];
-    var deptMap = [];
 
     d3.json("resources/kpitodept.json", function (e) {
         e.forEach(function (b) {
@@ -246,7 +245,26 @@
 
     //draws the tooltip
     function mousemove(d) {
-        var deptNo = d.deptno;
+        //console.log(d);
+        var kpis = [];
+        for (k in kpiData) {
+            //console.log(kpiData[k].name);
+            for (i in kpiData[k].depts) {
+                //console.log(kpiData[k].depts[i]);
+                if (kpiData[k].depts[i] == d.deptno) {
+                    kpis.push(kpiData[k].name)
+                }
+            }
+        }
+        var kpiString = "Included in KPIs:<br/>";
+        for(k in kpis){
+            kpiString = kpiString + kpis[k];
+            kpiString = kpiString + "<br/>";
+        }
+        div.html(kpiString)
+            .style("left", (d3.event.pageX ) + "px")
+            .style("top", (d3.event.pageY) + "px");
+        /*
         if (d.approval1 != undefined) {
             div.html(d.deptno + "<br/>" + "Level 1: " + d.approval1 + "<br/>" + "Level 2: " + d.approval2 + "<br/>"
                 + "Level 3: " + d.approval3 + "<br/>" + "Level 4: " + d.approval4 + "<br/>" + "Level 5: " + d.approval5
@@ -260,6 +278,8 @@
                 .style("left", (d3.event.pageX ) + "px")
                 .style("top", (d3.event.pageY) + "px");
         }
+        */
+        kpis = [];
 
     }
 
@@ -340,24 +360,25 @@
         var depts = [];
         var description = "";
         for (k in kpiData) {
-            if(kpiData[k].name == section.toString()){
+            if (kpiData[k].name == section.toString()) {
                 depts = kpiData[k].depts;
                 description = kpiData[k].shortdesc;
             }
         }
         d3.selectAll("text")
-            .style("fill", function(d){
-                if(d != undefined){
-               if(depts.indexOf(d.deptno) > -1 ){
-                   return "red";
-               }
-               else{
-                   return "black";
-               }}
+            .style("fill", function (d) {
+                if (d != undefined) {
+                    if (depts.indexOf(d.deptno) > -1) {
+                        return "red";
+                    }
+                    else {
+                        return "black";
+                    }
+                }
             });
 
         d3.select("#description").select("text")
-            .text(description);
+            .text(section + ": " +description);
 
     }
 

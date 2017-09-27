@@ -27,7 +27,7 @@ div.tooltip {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 11pt;
     font-weight: 500;
-    background: #ffff99;
+    background: #b7ceff;
     border: solid 1px #aaa;
     border-radius: 8px;
     pointer-events: none;
@@ -273,15 +273,18 @@ div.tooltip {
     right: 0;
     top: 0;
     margin-right: 10px;
-    margin-top: 50px;
+    margin-top: 55px;
 }
 
 #description{
     height: 50px;
     border: black;
-    border-style: 1px;
+    border-style: solid;
+    border-width: 0px 0px 2px 2px;
     position: fixed;
     right: 0;
     top: 0;
     width: 25%;
+    background: white;
+    padding-left: 4px;
 }

@@ -1,3 +1,23 @@
+
+<div id="option">
+    <h1>MBTA Employee Chart</h1>
+    <div class="lastUpdated">
+        <p>Last Updated: 9/27/2017 2:40PM</p>
+    </div>
+    <br/>
+    <input name="updateButton"
+           type="button"
+           class="btn btn-default"
+           value="View Operating"
+           onclick="updateData()"/>
+
+    <input name="updateButton"
+           type="button"
+           class="btn btn-default"
+           value="View Administration"
+           onclick="updateData2()"/>
+
+</div>
 <div id="body"></div>
 <script>
     var margin = {
@@ -16,18 +36,20 @@
         rectH = 100,
         root;
 
-    var tree = d3.layout.tree().nodeSize([70, 40]);
+    var tree = d3.layout.tree().nodeSize([70, 40]).separation(function(a, b) {
+        return a.parent == b.parent ? 3 : 4;
+    });
     var diagonal = d3.svg.diagonal()
         .projection(function (d) {
             return [d.x + rectW / 2, d.y + rectH / 2];
         });
 
     var svg = d3.select("#body").append("svg").attr("width", 1500).attr("height", 1000)
-        .call(zm = d3.behavior.zoom().scaleExtent([-17, 10]).on("zoom", redraw)).append("g")
-        .attr("transform", "translate(" + 350 + "," + 20 + ")");
+        .call(zm = d3.behavior.zoom().scaleExtent([-1.5,2]).on("zoom", redraw)).append("g")
+        .attr("transform", "translate(" + 800 + "," + 20 + ")");
 
     //necessary so that zoom knows where to zoom and unzoom from
-    zm.translate([350, 20]);
+    zm.translate([800, 20]);
 
     d3.json("resources/OrgChartExcel.json", function (error, flare) {
         if (error) throw error;
@@ -42,7 +64,7 @@
                 d.children = null;
             }
         }
-
+        root.children.forEach(collapse);
         update(root);
     });
 
@@ -204,7 +226,42 @@
         }
         update(d);
     }
-
+    function updateData() {
+        d3.json("resources/operatingEmployees.json", function (error, flare) {
+            if (error) throw error;
+            root = flare;
+            root.x0 = height / 2;
+            root.y0 = 0;
+            function collapse(d) {
+                if (d.children) {
+                    d._children = d.children;
+                    d._children.forEach(collapse);
+                    d.children = null;
+                }
+            }
+            //UNCOMMENT below if you would like the nodes to all be collapsed on start.
+            root.children.forEach(collapse);
+            update(root);
+        });
+    }
+    // this function updates the data to display administration
+    function updateData2() {
+        d3.json("resources/OrgChartExcel.json", function (error, flare) {
+            if (error) throw error;
+            root = flare;
+            root.x0 = height / 2;
+            root.y0 = 0;
+            function collapse(d) {
+                if (d.children) {
+                    d._children = d.children;
+                    d._children.forEach(collapse);
+                    d.children = null;
+                }
+            }
+            root.children.forEach(collapse);
+            update(root);
+        });
+    }
     //Redraw for zoom
     function redraw() {
 //console.log("here", d3.event.translate, d3.event.scale);

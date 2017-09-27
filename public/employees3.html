@@ -1,3 +1,4 @@
+<div id="sizer"></div>
 
 <div id="option">
     <h1>MBTA Employee Chart</h1>
@@ -18,7 +19,9 @@
            onclick="updateData2()"/>
 
 </div>
+<div id="description"> &nbsp;&nbsp;&nbsp;&nbsp;Click and drag on the chart to pan, use your scroll wheel to zoom.</div>
 <div id="body"></div>
+
 <script>
     var margin = {
             top: 20,
@@ -35,8 +38,10 @@
         rectW = 160,
         rectH = 100,
         root;
-
-    var tree = d3.layout.tree().nodeSize([70, 40]).separation(function(a, b) {
+    var chartDiv = document.getElementById("sizer");
+    var chartwidth = chartDiv.clientWidth;
+    var chartheight = chartDiv.clientHeight;
+    var tree = d3.layout.tree().nodeSize([70, 40]).separation(function (a, b) {
         return a.parent == b.parent ? 3 : 4;
     });
     var diagonal = d3.svg.diagonal()
@@ -44,12 +49,12 @@
             return [d.x + rectW / 2, d.y + rectH / 2];
         });
 
-    var svg = d3.select("#body").append("svg").attr("width", 1500).attr("height", 1000)
-        .call(zm = d3.behavior.zoom().scaleExtent([-1.5,2]).on("zoom", redraw)).append("g")
-        .attr("transform", "translate(" + 800 + "," + 20 + ")");
+    var svg = d3.select("#body").append("svg").attr("width", chartwidth).attr("height", chartheight - 150)
+        .call(zm = d3.behavior.zoom().scaleExtent([-1.5, 2]).on("zoom", redraw)).append("g")
+        .attr("transform", "translate(" + (chartwidth / 2.2) + "," + 20 + ")");
 
     //necessary so that zoom knows where to zoom and unzoom from
-    zm.translate([800, 20]);
+    zm.translate([chartwidth / 2.2, 20]);
 
     d3.json("resources/OrgChartExcel.json", function (error, flare) {
         if (error) throw error;
@@ -64,6 +69,7 @@
                 d.children = null;
             }
         }
+
         root.children.forEach(collapse);
         update(root);
     });
@@ -71,20 +77,20 @@
     d3.select("#body").style("height", "800px");
 
     function update(source) {
-        console.log(source);
+        //console.log(source);
 // Compute the new tree layout.
         var nodes = tree.nodes(root).reverse(),
             links = tree.links(nodes);
 
 // Normalize for fixed-depth.
         nodes.forEach(function (d) {
-            d.y = d.depth * 300;
+            d.y = d.depth * 250;
         });
 
 // Update the nodes…
         var node = svg.selectAll("g.node")
             .data(nodes, function (d) {
-                console.log(d);
+                //console.log(d);
                 return d.id || (d.id = ++i);
             });
 
@@ -109,7 +115,7 @@
 
         nodeEnter.append("text")
             .attr("x", rectW / 2)
-            .attr("y", rectH / 2)
+            .attr("y", 35 * rectH / 100)
             .attr("dy", "10")
             .attr("text-anchor", "middle")
             .text(function (d) {
@@ -121,7 +127,7 @@
 
         nodeEnter.append("text")
             .attr("x", rectW / 2)
-            .attr("y", rectH / 2)
+            .attr("y", rectH / 3)
             .attr("dy", "-10")
             .attr("id", "name-text")
             .attr("text-anchor", "middle")
@@ -226,12 +232,14 @@
         }
         update(d);
     }
+
     function updateData() {
         d3.json("resources/operatingEmployees.json", function (error, flare) {
             if (error) throw error;
             root = flare;
             root.x0 = height / 2;
             root.y0 = 0;
+
             function collapse(d) {
                 if (d.children) {
                     d._children = d.children;
@@ -239,11 +247,13 @@
                     d.children = null;
                 }
             }
+
             //UNCOMMENT below if you would like the nodes to all be collapsed on start.
             root.children.forEach(collapse);
             update(root);
         });
     }
+
     // this function updates the data to display administration
     function updateData2() {
         d3.json("resources/OrgChartExcel.json", function (error, flare) {
@@ -251,6 +261,7 @@
             root = flare;
             root.x0 = height / 2;
             root.y0 = 0;
+
             function collapse(d) {
                 if (d.children) {
                     d._children = d.children;
@@ -258,10 +269,12 @@
                     d.children = null;
                 }
             }
+
             root.children.forEach(collapse);
             update(root);
         });
     }
+
     //Redraw for zoom
     function redraw() {
 //console.log("here", d3.event.translate, d3.event.scale);
@@ -269,8 +282,9 @@
             "translate(" + d3.event.translate + ")"
             + " scale(" + d3.event.scale + ")");
     }
-    function wrap(text, width,height) {
-        text.each(function() {
+
+    function wrap(text, width, height) {
+        text.each(function () {
             var text = d3.select(this),
                 words = text.text().split(/\s+/).reverse(),
                 word,
@@ -279,7 +293,7 @@
                 lineHeight = 1.1, // ems
                 y = text.attr("y"),
                 dy = parseFloat(text.attr("dy")),
-                tspan = text.text(null).append("tspan").attr("x", width/2).attr("y", y).attr("dy", dy);
+                tspan = text.text(null).append("tspan").attr("x", width / 2).attr("y", y).attr("dy", dy);
             while (word = words.pop()) {
                 line.push(word);
                 tspan.text(line.join(" "));
@@ -287,10 +301,42 @@
                     line.pop();
                     tspan.text(line.join(" "));
                     line = [word];
-                    tspan = text.append("tspan").attr("x", width/2).attr("y", y).attr("dy", ++lineNumber * lineHeight *15 +dy).text(word);
+                    tspan = text.append("tspan").attr("x", width / 2).attr("y", y).attr("dy", ++lineNumber * lineHeight * 15 + dy).text(word);
                 }
             }
         });
     }
 
+    function expand(d) {
+        var children = (d.children) ? d.children : d._children;
+        if (d._children) {
+            d.children = d._children;
+            d._children = null;
+        }
+        if (children)
+            children.forEach(expand);
+    }
+
+    //expands all nodes in the tree
+    function expandAll() {
+        expand(root);
+        update(root);
+    }
+
 </script>
+<div id="expandB">
+    <input name="expandButton"
+           type="button"
+           class="btn"
+           id="expandB"
+           value="Expand All"
+           onclick="expandAll()"/>
+</div>
+<div id="employeeButton" class="btn-group-vertical">
+    <a class="btn btn-default"  href="#!/kpi">KPI Chart</a>
+    <a class="btn btn-default" href="#!/procurement">Procurement Chart</a>
+    <a class="btn btn-default"  href="#!/">Budget Chart</a>
+    <a class="btn btn-primary disabled" href="#!/employees">Employee Chart</a>
+
+
+</div>

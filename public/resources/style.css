@@ -296,3 +296,12 @@ div.tooltip {
     margin-top: 52px;
     background: white;
 }
+
+#sizer{
+    position: fixed;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+    z-index: -100;
+}

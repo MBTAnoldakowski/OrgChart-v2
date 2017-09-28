@@ -47,7 +47,7 @@
                 return [d.x + rectW / 2, d.y + rectH / 2];
             });
 
-        var svg = d3.select("#body").append("svg").attr("width", chartwidth).attr("height", chartheight)
+        var svg = d3.select("#sizer").append("svg").attr("width", chartwidth).attr("height", chartheight+ 500)
             .attr("id", "svgId")
             .call(zm = d3.behavior.zoom().scaleExtent([-1.5, 2]).on("zoom", redraw)).append("g")
             .attr("transform", "translate(" + (chartwidth / 2.2) + "," + 20 + ")scale(0.72,0.72)");

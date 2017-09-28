@@ -292,11 +292,12 @@
                 .text("Click on a number to view departments");
             d3.json("resources/flare_experiment.json", function (error, flare) {
                 if (error) throw error;
-                setTimeout(function () {
+
                     root = flare;
+                setTimeout(function () {
                     root.x0 = height / 2;
                     root.y0 = 0;
-                }, 200);
+                }, 400);
                 function collapse(d) {
                     if (d.children) {
                         d._children = d.children;
@@ -317,17 +318,18 @@
 
     // this function updates the data to display administration
     function updateData2() {
-
+        setTimeout(function () {
             d3.selectAll("text").remove();
             var descriptionBox = d3.select("#description").append("text")
                 .text("Click on a number to view departments");
             d3.json("resources/flare_experiment_2.json", function (error, flare) {
                 if (error) throw error;
-                setTimeout(function () {
+
                 root = flare;
-                root.x0 = height / 2;
-                root.y0 = 0;
-                }, 200);
+                setTimeout(function () {
+                    root.x0 = height / 2;
+                    root.y0 = 0;
+                }, 400);
                 function collapse(d) {
                     if (d.children) {
                         d._children = d.children;
@@ -336,12 +338,14 @@
                     }
                 }
 
+                //UNCOMMENT below if you would like the nodes to all be collapsed on start.
                 //root.children.forEach(collapse);
                 setTimeout(function () {
                     update(root);
                 }, 500);
-            });
 
+            });
+        }, 200);
     }
 
 

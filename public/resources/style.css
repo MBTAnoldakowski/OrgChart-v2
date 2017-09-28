@@ -319,5 +319,17 @@ div.tooltip {
 }
 #employees{
     height: 100%;
-    overflow: 'hidden';
+    overflow: hidden;
+}
+
+#employeeOptions{
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    padding: 10px;
+    z-index: 100;
+    border-right: solid 2px;
+    border-bottom: solid 2px;
+    border-bottom-right-radius: 70px;
+    background-color: white;
 }

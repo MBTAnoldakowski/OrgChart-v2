@@ -12,8 +12,10 @@
             })
             .when('/update',{
                 templateUrl: 'upload.template.html',
-                controllerAs: 'model',
-                controller: 'uploadController'
+                controllerAs: 'model'//,
+                /*resolve: {
+                    currentUser: checkLoggedIn
+                }*/
             })
             .when('/employees',{
                 templateUrl: 'employees3.html'
@@ -25,5 +27,18 @@
                 templateUrl: 'kpi.html'
             })
     }
-
+    /*
+    function checkLoggedIn($q, $location, userService) {
+        var deferred = $q.defer();
+        userService.checkLoggedIn()
+            .then(function (currentUser) {
+                if (currentUser === '0') {
+                    deferred.reject();
+                    $location.url('/login')
+                } else {
+                    deferred.resolve(currentUser);
+                }
+            });
+        return deferred.promise;
+    }*/
 })();

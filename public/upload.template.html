@@ -1,3 +1,9 @@
+<script type="text/javascript">
+    var password = prompt("Please enter the password", "password");
+    if (password != "mbta123") {
+        location.reload();
+    }
+</script>
 <div class="container">
     <h1>Update Budget Data <a href="/csv/budgetdata.csv" download class="btn btn-success pull-right">Download</a></h1>
     <form action="/api/upload/image" method="post" enctype="multipart/form-data">

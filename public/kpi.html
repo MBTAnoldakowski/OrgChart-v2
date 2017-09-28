@@ -285,6 +285,7 @@
     // this is triggered when you hit the 'View Operating' button, it just loads the
     // Operating data instead of the Administration data
     function updateData() {
+        d3.select("text").remove();
         d3.json("resources/flare_experiment.json", function (error, flare) {
             if (error) throw error;
 
@@ -312,6 +313,7 @@
 
     // this function updates the data to display administration
     function updateData2() {
+        d3.select("text").remove();
         d3.json("resources/flare_experiment_2.json", function (error, flare) {
             if (error) throw error;
 

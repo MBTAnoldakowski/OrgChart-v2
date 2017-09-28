@@ -45,7 +45,16 @@
         <br/>
         <button type="submit" class="btn btn-block btn-primary">Upload</button>
     </form>
+    <h1>Update KPI Data <a href="/resources/kpitodept.json" download
+                                          class="btn btn-success pull-right">Download</a>
+    </h1>
+    <form action="/api/upload/kpi" method="post" enctype="multipart/form-data">
+        <input name="myFile" type="file" class="form-control" accept=".json"/>
+        <br/>
+        <button type="submit" class="btn btn-block btn-primary">Upload</button>
+    </form>
     <br/>
+
     <br/>
     <br/>
 </div>

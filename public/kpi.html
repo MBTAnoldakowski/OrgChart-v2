@@ -286,6 +286,8 @@
     // Operating data instead of the Administration data
     function updateData() {
         d3.selectAll("text").remove();
+        var descriptionBox = d3.select("#description").append("text")
+            .text("Click on a number to view departments");
         d3.json("resources/flare_experiment.json", function (error, flare) {
             if (error) throw error;
 
@@ -314,6 +316,8 @@
     // this function updates the data to display administration
     function updateData2() {
         d3.selectAll("text").remove();
+        var descriptionBox = d3.select("#description").append("text")
+            .text("Click on a number to view departments");
         d3.json("resources/flare_experiment_2.json", function (error, flare) {
             if (error) throw error;
 

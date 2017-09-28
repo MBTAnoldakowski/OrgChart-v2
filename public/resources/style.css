@@ -310,3 +310,14 @@ div.tooltip {
     bottom: 0px;
     z-index: -100;
 }
+
+#back-button{
+    left: 0;
+    top:0;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+#employees{
+    height: 100%;
+    overflow: 'hidden';
+}

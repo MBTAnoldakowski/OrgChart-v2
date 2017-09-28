@@ -37,7 +37,7 @@
     // honestly, I am not 100% sure what the next few declarations actually do specifically.
     // I do know that they are very important though. They initialize the tree
     var i = 0,
-        duration = 1000,
+        duration = 1500,
         root;
 
     var tree = d3.layout.tree()
@@ -91,7 +91,7 @@
         update(root);
         setTimeout(function () {
             expandAll();
-        }, 100)
+        }, 500)
     });
 
 
@@ -286,60 +286,62 @@
     // this is triggered when you hit the 'View Operating' button, it just loads the
     // Operating data instead of the Administration data
     function updateData() {
-        d3.selectAll("text").remove();
-        var descriptionBox = d3.select("#description").append("text")
-            .text("Click on a number to view departments");
-        d3.json("resources/flare_experiment.json", function (error, flare) {
-            if (error) throw error;
+        setTimeout(function () {
+            d3.selectAll("text").remove();
+            var descriptionBox = d3.select("#description").append("text")
+                .text("Click on a number to view departments");
+            d3.json("resources/flare_experiment.json", function (error, flare) {
+                if (error) throw error;
 
-            root = flare;
-            root.x0 = height / 2;
-            root.y0 = 0;
+                root = flare;
+                root.x0 = height / 2;
+                root.y0 = 0;
 
-            function collapse(d) {
-                if (d.children) {
-                    d._children = d.children;
-                    d._children.forEach(collapse);
-                    d.children = null;
+                function collapse(d) {
+                    if (d.children) {
+                        d._children = d.children;
+                        d._children.forEach(collapse);
+                        d.children = null;
+                    }
                 }
-            }
 
-            //UNCOMMENT below if you would like the nodes to all be collapsed on start.
-            //root.children.forEach(collapse);
-            setTimeout(function () {
-                update(root);
-            }, 300);
+                //UNCOMMENT below if you would like the nodes to all be collapsed on start.
+                //root.children.forEach(collapse);
+                setTimeout(function () {
+                    update(root);
+                }, 500);
 
-        });
-
+            });
+        }, 200);
     }
 
     // this function updates the data to display administration
     function updateData2() {
-        d3.selectAll("text").remove();
-        var descriptionBox = d3.select("#description").append("text")
-            .text("Click on a number to view departments");
-        d3.json("resources/flare_experiment_2.json", function (error, flare) {
-            if (error) throw error;
+        setTimeout(function () {
+            d3.selectAll("text").remove();
+            var descriptionBox = d3.select("#description").append("text")
+                .text("Click on a number to view departments");
+            d3.json("resources/flare_experiment_2.json", function (error, flare) {
+                if (error) throw error;
 
-            root = flare;
-            root.x0 = height / 2;
-            root.y0 = 0;
+                root = flare;
+                root.x0 = height / 2;
+                root.y0 = 0;
 
-            function collapse(d) {
-                if (d.children) {
-                    d._children = d.children;
-                    d._children.forEach(collapse);
-                    d.children = null;
+                function collapse(d) {
+                    if (d.children) {
+                        d._children = d.children;
+                        d._children.forEach(collapse);
+                        d.children = null;
+                    }
                 }
-            }
 
-            //root.children.forEach(collapse);
-            setTimeout(function () {
-                update(root);
-            }, 300);
-        });
-
+                //root.children.forEach(collapse);
+                setTimeout(function () {
+                    update(root);
+                }, 400);
+            });
+        }, 200);
     }
 
 

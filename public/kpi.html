@@ -95,8 +95,11 @@
 
     d3.select(self.frameElement).style("height", "800px");
 
-    function update(source) {
-        svg.selectAll("g.node").remove();
+    function update(source, remove) {
+        if(remove) {
+            console.log('removing');
+            svg.selectAll("g.node").remove();
+        }
         // Compute the new tree layout.
         var nodes = tree.nodes(root).reverse(),
             links = tree.links(nodes);
@@ -226,7 +229,7 @@
             d.y0 = d.y;
         });
 
-        expand(root);
+
     }
 
     // Toggle children on click.
@@ -238,7 +241,7 @@
             d.children = d._children;
             d._children = null;
         }
-        update(d);
+        update(d, false);
     }
 
     function mouseover() {
@@ -305,7 +308,7 @@
                 //UNCOMMENT below if you would like the nodes to all be collapsed on start.
                 //root.children.forEach(collapse);
                 setTimeout(function () {
-                    update(root);
+                    update(root, true);
                 }, 500);
 
             });
@@ -335,7 +338,7 @@
                 //UNCOMMENT below if you would like the nodes to all be collapsed on start.
                 //root.children.forEach(collapse);
                 setTimeout(function () {
-                    update(root);
+                    update(root, true);
                 }, 500);
 
             });

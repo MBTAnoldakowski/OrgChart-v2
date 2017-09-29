@@ -362,13 +362,16 @@
         if (d.gaveApprovalTo) {
             div2.html("Gave approval to:" + getDepartments(d.gaveApprovalTo))
                 .style("left", (d3.event.pageX ) + "px")
-                .style("top", (d3.event.pageY) + "px")
+                .style("top", (d3.event.pageY) + "px");
+            highlight(d.gaveApprovalTo);
         }
         if (d.gotApprovalFrom) {
             div2.html("Received approval from:" + getDepartments(d.gotApprovalFrom))
                 .style("left", (d3.event.pageX ) + "px")
-                .style("top", (d3.event.pageY) + "px")
+                .style("top", (d3.event.pageY) + "px");
+            highlight(d.gotApprovalFrom);
         }
+
     }
 
     function getDepartments(approval) {
@@ -380,7 +383,85 @@
         }
         return returnString;
     }
+    function highlight(section) {
+        d3.selectAll("text")
+            .style("fill", function (d) {
+                console.log(d);
+                console.log(section);
+                for(s in section) {
 
+                    if (d != undefined) {
+                        if (section[s].deptno == (d.deptno)) {
+                            return "red";
+                        }
+                        else {
+                            return "black";
+                        }
+                    }
+                }
+            })
+            .style("font-size",function(d){
+                for(s in section) {
+
+                    if (d != undefined) {
+                        if (section[s].deptno == (d.deptno)) {
+                            return "24px";
+                        }
+                    }
+                }});
+
+    }
+    function unHighlight(){
+        d3.selectAll("text")
+            .style("fill",
+                function (d) {
+                    var rank = -1;
+                    var s = sortedArray.sort(function (a, b) {
+                        return a.poNum - b.poNum
+                    });
+                    s.reverse();
+                    //console.log(s);
+                    for (var i = 0; i < s.length; i++) {
+                        //console.log(sortedArray[i].name);
+                        if (s[i].dept == d.deptno) {
+                            rank = i;
+                            //console.log(d.name+" Rank: "+rank)
+                        }
+                    }
+
+                    //console.log(rank);
+                    if (rank >= 0 && rank < 9) {
+                        return "#BF0100"
+                    }
+                    if (rank >= 9 && rank < 19) {
+                        return "#EB1E25"
+                    }
+                    if (rank >= 19 && rank < 29) {
+                        return "#BD05C5"
+                    }
+                    if (rank >= 29 && rank < 39) {
+                        return "#5C08C8"
+                    }
+                    if (rank >= 39 && rank < 49) {
+                        return "#0B1CCB"
+                    }
+                    if (rank >= 49 && rank < 59) {
+                        return "#0E84CE"
+                    }
+                    if (rank >= 59 && rank < 69) {
+                        return "#12D1B6"
+                    }
+                    if (rank >= 69 && rank < 79) {
+                        return "#15D455"
+                    }
+                    if (rank >= 79) {
+                        return "#4CE628"
+                    }
+                    return "black";
+                })
+            .style("font-size","11pt")
+            .style("font-weight","700");
+    }
 
     //helper function for formatting money in the tooltip
     function formatMoney(number) {
@@ -401,6 +482,7 @@
         div2.transition()
             .duration(300)
             .style("opacity", 1e-6);
+        unHighlight();
     }
 
     // I have had so much trouble with this function for whatever reason

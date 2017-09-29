@@ -336,3 +336,16 @@ div.tooltip {
     border-bottom-right-radius: 70px;
     background-color: white;
 }
+
+.control.glyphicon {
+    position: static;
+}
+
+.control.glyphicon.glyphicon-info-sign{
+    color: blue;
+}
+
+
+.control.glyphicon.glyphicon-exclamation-sign{
+    color: red;
+}

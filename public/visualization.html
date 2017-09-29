@@ -202,49 +202,6 @@
                 //return returnColor(budget, actual, ytd);
             });
 
-        function returnColor(budget, actual, ytd) {
-            console.log(budget + " " + actual + " " + ytd)
-            var dec = 0;
-            if (budget != undefined && actual != undefined) {
-
-                if (budget != 0) {
-                    dec = (actual - ytd) / ytd;
-                    console.log(dec);
-                    if (dec >= -0.1 && dec <= 0.1) {
-                        console.log('in range');
-                        return "#32CD32";
-                    }
-                    if (dec <= -0.1 && dec > -0.25) {
-                        console.log("slightly underspending");
-                        return "#5FB7C9";
-                    }
-                    if (dec < -0.25) {
-                        console.log("underspending");
-                        return "#4B0082";
-                    }
-                    if (dec > 0.1 && dec <= 0.25) {
-                        console.log("slightly over");
-                        return "#FF9999";
-
-                    }
-                    if (dec > 0.25) {
-                        console.log("overspending");
-                        return "red";
-                    }
-                }
-                if (budget == 0 && actual > 0) {
-                    return "red"
-                }
-                if (actual == 0) {
-                    console.log("underspending");
-                    return "#4B0082";
-                }
-            }
-            else {
-                return "black";
-            }
-        }
-
         // Transition nodes to their new position.
         var nodeUpdate = node.transition()
             .duration(duration)
@@ -321,8 +278,6 @@
             d.x0 = d.x;
             d.y0 = d.y;
         });
-
-        expand(root);
     }
 
     // Toggle children on click.

@@ -192,40 +192,6 @@
                     return "black";
                 });
 
-        function returnColor(rank) {
-            //console.log(rank);
-            if (rank >= 0 && rank < 9) {
-                return "#FF0F15"
-            }
-            if (rank >= 9 && rank < 19) {
-                return "#FF4212"
-            }
-            if (rank >= 19 && rank < 29) {
-                return "#FF7A15"
-            }
-            if (rank >= 29 && rank < 39) {
-                return "#FFB018"
-            }
-            if (rank >= 39 && rank < 49) {
-                return "#FFE51C"
-            }
-            if (rank >= 49 && rank < 59) {
-                return "#E5FF1F"
-            }
-            if (rank >= 59 && rank < 69) {
-                return "#B3FF22"
-            }
-            if (rank >= 69 && rank < 79) {
-                return "#82FF25"
-            }
-            if (rank >= 79) {
-                return "#53FF28"
-            }
-            else {
-                return "black";
-            }
-        }
-
         // Transition nodes to their new position.
         var nodeUpdate = node.transition()
             .duration(duration)

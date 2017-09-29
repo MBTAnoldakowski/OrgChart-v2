@@ -55,6 +55,10 @@
         .attr("class", "tooltip")
         .style("opacity", 1e-6);
 
+    var div2 = d3.select("body").append("div")
+        .attr("class", "tooltip")
+        .style("opacity", 1e-6);
+
     // loads in the CSV with the budgeting data in it
     var buData = [];
     var sortedArray = [];
@@ -97,8 +101,10 @@
 
     d3.select(self.frameElement).style("height", "800px");
 
-    function update(source) {
-        svg.selectAll("g.node").remove();
+    function update(source, remove) {
+        if (remove) {
+            svg.selectAll("g.node").remove();
+        }
         // Compute the new tree layout.
         var nodes = tree.nodes(root).reverse(),
             links = tree.links(nodes);
@@ -129,21 +135,28 @@
         nodeEnter.append("circle")
             .attr("r", 1e-6);
 
-            nodeEnter.append("svg:foreignObject")
-                .attr("width", 20)
-                .attr("height", 20)
-                .attr("y", "-25px")
-                .attr("x", "-10px")
-                .append("xhtml:span")
-                .attr("class", function (d) {
-                    console.log('appending');
-                    if (d.gaveApprovalTo) {
-                        return "control glyphicon glyphicon-exclamation-sign"
-                    }
-                    if (d.gotApprovalFrom) {
-                        return "control glyphicon glyphicon-info-sign"
-                    }
-                });
+        node.append("svg:foreignObject")
+            .attr("width", 20)
+            .attr("height", 20)
+            .attr("y", "-25px")
+            .attr("x", "-10px")
+            .append("xhtml:span")
+            .attr("z-index", "1000")
+            .attr("class", function (d) {
+                console.log('appending');
+                if (d.gaveApprovalTo) {
+                    return "control glyphicon glyphicon-exclamation-sign"
+                }
+                if (d.gotApprovalFrom) {
+                    return "control glyphicon glyphicon-info-sign"
+                }
+            })
+            .on("mouseover", mouseover2)
+            .on("mousemove", function (d) {
+                mousemove2(d);
+            })
+            .on("mouseout", mouseout2)
+
 
         nodeEnter.append("text")
             .attr("x", function (d) {
@@ -300,11 +313,17 @@
             d.children = d._children;
             d._children = null;
         }
-        update(d);
+        update(d, false);
     }
 
     function mouseover() {
         div.transition()
+            .duration(300)
+            .style("opacity", 1);
+    }
+
+    function mouseover2() {
+        div2.transition()
             .duration(300)
             .style("opacity", 1);
     }
@@ -338,6 +357,31 @@
 
     }
 
+    //draws the tooltip
+    function mousemove2(d) {
+        if (d.gaveApprovalTo) {
+            div2.html("Gave approval to:" + getDepartments(d.gaveApprovalTo))
+                .style("left", (d3.event.pageX ) + "px")
+                .style("top", (d3.event.pageY) + "px")
+        }
+        if (d.gotApprovalFrom) {
+            div2.html("Received approval from:" + getDepartments(d.gotApprovalFrom))
+                .style("left", (d3.event.pageX ) + "px")
+                .style("top", (d3.event.pageY) + "px")
+        }
+    }
+
+    function getDepartments(approval) {
+        var returnString ="";
+        for (i in approval) {
+            if (approval[i] != undefined) {
+                returnString = returnString + "<br/>" + approval[i].name;
+            }
+        }
+        return returnString;
+    }
+
+
     //helper function for formatting money in the tooltip
     function formatMoney(number) {
         var oldNum = parseFloat(number);
@@ -349,6 +393,12 @@
     // controls how slowly the tooltip disappears
     function mouseout() {
         div.transition()
+            .duration(300)
+            .style("opacity", 1e-6);
+    }
+
+    function mouseout2() {
+        div2.transition()
             .duration(300)
             .style("opacity", 1e-6);
     }
@@ -402,7 +452,7 @@
             //UNCOMMENT below if you would like the nodes to all be collapsed on start.
             //root.children.forEach(collapse);
             dataDisplayed = 1;
-            update(root);
+            update(root, true);
         });
 
     }
@@ -426,7 +476,7 @@
 
             //root.children.forEach(collapse);
             dataDisplayed = 0;
-            update(root);
+            update(root, true);
         });
 
     }

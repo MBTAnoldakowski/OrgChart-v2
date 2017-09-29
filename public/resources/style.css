@@ -354,6 +354,7 @@ div2.tooltip2 {
 
 .control.glyphicon {
     position: static;
+    font-size: 19px;
 }
 
 .control.glyphicon.glyphicon-info-sign{

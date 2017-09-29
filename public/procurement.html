@@ -145,10 +145,10 @@
             .attr("class", function (d) {
                 console.log('appending');
                 if (d.gaveApprovalTo) {
-                    return "control glyphicon glyphicon-exclamation-sign"
+                    return "control glyphicon glyphicon-minus-sign"
                 }
                 if (d.gotApprovalFrom) {
-                    return "control glyphicon glyphicon-info-sign"
+                    return "control glyphicon glyphicon-plus-sign"
                 }
             })
             .on("mouseover", mouseover2)
@@ -372,7 +372,7 @@
     }
 
     function getDepartments(approval) {
-        var returnString ="";
+        var returnString = "";
         for (i in approval) {
             if (approval[i] != undefined) {
                 returnString = returnString + "<br/>" + approval[i].name;
@@ -527,6 +527,10 @@
     <p id="scale7">X</p>
     <p id="scale8">X</p>
     <p id="scale9">Least POs</p>
+
+        <p><span class="glyphicon-key glyphicon glyphicon-minus-sign"></span> Recently gave up approval rights</p>
+        <p><span class="glyphicon-key glyphicon glyphicon-plus-sign"></span> Recently gained approval rights</p>
+
 </div>
 <!--Expand Button -->
 <div id="expandB">

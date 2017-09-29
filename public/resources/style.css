@@ -8,7 +8,7 @@
     font-weight: 700;
 }
 
-#name-text{
+#name-text {
     font-weight: normal;
 }
 
@@ -100,6 +100,7 @@ div2.tooltip2 {
     margin-left: 10px;
     margin-right: 25px;
 }
+
 .ltitleright2 {
     position: fixed;
     width: 12%;
@@ -217,86 +218,95 @@ div2.tooltip2 {
 
 }
 
-#over{
+#over {
     text-align: right;
     color: red;
 }
 
-#slightlyover{
+#slightlyover {
     text-align: right;
     color: #FF9999;
 }
 
-#under{
+#under {
     text-align: right;
     color: #4B0082;
 }
 
-#slightlyunder{
+#slightlyunder {
     text-align: right;
     color: #5FB7C9;
 }
 
-#scale1{
+#scale1 {
     text-align: right;
     color: #BF0100;
 }
-#scale2{
+
+#scale2 {
     text-align: right;
     color: #EB1E25;
 }
-#scale3{
+
+#scale3 {
     text-align: right;
     color: #BD05C5;
 }
-#scale4{
+
+#scale4 {
     text-align: right;
     color: #5C08C8;
 }
-#scale5{
+
+#scale5 {
     text-align: right;
     color: #0B1CCB;
 }
-#scale6{
+
+#scale6 {
     text-align: right;
     color: #0E84CE;
 }
-#scale7{
+
+#scale7 {
     text-align: right;
     color: #12D1B6;
 }
-#scale8{
+
+#scale8 {
     text-align: right;
     color: #15D455;
 }
-#scale9{
+
+#scale9 {
     text-align: right;
     color: #4CE628;
 }
 
-.lastUpdated{
+.lastUpdated {
 
     display: inline-block;
 
 }
-.update{
+
+.update {
     display: inline-block;
 
 }
 
-#kpi-buttons{
+#kpi-buttons {
     position: fixed;
     right: 0;
     top: 0;
     margin-right: 10px;
     margin-top: 6%;
-    height:75%;
-    overflow-y:auto;
-    overflow-x:hidden;
+    height: 75%;
+    overflow-y: auto;
+    overflow-x: hidden;
     opacity: 0.9;
 }
 
-#description{
+#description {
     height: 50px;
     border: black;
     border-style: solid;
@@ -310,17 +320,18 @@ div2.tooltip2 {
     border-bottom-left-radius: 30px;
     z-index: 100;
 }
-#descriptionText{
+
+#descriptionText {
     position: fixed;
     right: 0;
-    top:0;
+    top: 0;
     margin-top: 52px;
     margin-right: 15px;
     background: white;
 
 }
 
-#sizer{
+#sizer {
     position: fixed;
     left: 0px;
     right: 0px;
@@ -329,18 +340,19 @@ div2.tooltip2 {
     z-index: 99;
 }
 
-#back-button{
+#back-button {
     left: 0;
-    top:0;
+    top: 0;
     margin-left: 10px;
     margin-top: 10px;
 }
-#employees{
+
+#employees {
     height: 100%;
     overflow: hidden;
 }
 
-#employeeOptions{
+#employeeOptions {
     position: fixed;
     left: 0px;
     top: 0px;
@@ -357,11 +369,20 @@ div2.tooltip2 {
     font-size: 19px;
 }
 
-.control.glyphicon.glyphicon-info-sign{
+.control.glyphicon.glyphicon-plus-sign {
     color: blue;
 }
 
-
-.control.glyphicon.glyphicon-exclamation-sign{
+.control.glyphicon.glyphicon-minus-sign {
     color: red;
+}
+
+.glyphicon-key.glyphicon.glyphicon-plus-sign {
+    color: blue;
+    font-size: 19px;
+}
+
+.glyphicon-key.glyphicon.glyphicon-minus-sign {
+    color: red;
+    font-size: 19px;
 }

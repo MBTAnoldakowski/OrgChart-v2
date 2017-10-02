@@ -103,7 +103,6 @@
             var nodeEnter = node.enter().append("g")
                 .attr("class", "node")
                 .attr("transform", function (d) {
-                    console.log(d);
                     return "translate(" + source.x0 + "," + source.y0 + ")";
                 })
                 .on("click", click);
@@ -115,7 +114,6 @@
                 .attr("stroke", "black")
                 .attr("stroke-width", 1)
                 .style("fill", function (d) {
-                    console.log(d);
                     return d._children ? "lightsteelblue" : "#fff";
                 });
 
@@ -126,7 +124,6 @@
                 .attr("dy", "10")
                 .attr("text-anchor", "middle")
                 .text(function (d) {
-                    console.log(d);
                     return d.title;
                 })
                 //makes the text wrap
@@ -140,7 +137,6 @@
                 .attr("id", "name-text")
                 .attr("text-anchor", "middle")
                 .text(function (d) {
-                    console.log(d);
                     return d.name;
                 });
 

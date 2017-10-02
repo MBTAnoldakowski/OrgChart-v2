@@ -383,35 +383,33 @@
         }
         return returnString;
     }
+
     function highlight(section) {
         d3.selectAll("text")
             .style("fill", function (d) {
-                console.log(d);
-                console.log(section);
-                for(s in section) {
+                for (s in section) {
 
                     if (d != undefined) {
                         if (section[s].deptno == (d.deptno)) {
                             return "red";
                         }
-                        else {
-                            return "black";
-                        }
                     }
                 }
             })
-            .style("font-size",function(d){
-                for(s in section) {
+            .style("font-size", function (d) {
+                for (s in section) {
 
                     if (d != undefined) {
                         if (section[s].deptno == (d.deptno)) {
                             return "24px";
                         }
                     }
-                }});
+                }
+            });
 
     }
-    function unHighlight(){
+
+    function unHighlight() {
         d3.selectAll("text")
             .style("fill",
                 function (d) {
@@ -459,8 +457,8 @@
                     }
                     return "black";
                 })
-            .style("font-size","11pt")
-            .style("font-weight","700");
+            .style("font-size", "11pt")
+            .style("font-weight", "700");
     }
 
     //helper function for formatting money in the tooltip
@@ -610,8 +608,8 @@
     <p id="scale8">X</p>
     <p id="scale9">Least POs</p>
 
-        <p><span class="glyphicon-key glyphicon glyphicon-minus-sign"></span> Recently gave up approval rights</p>
-        <p><span class="glyphicon-key glyphicon glyphicon-plus-sign"></span> Recently gained approval rights</p>
+    <p><span class="glyphicon-key glyphicon glyphicon-minus-sign"></span> Recently gave up approval rights</p>
+    <p><span class="glyphicon-key glyphicon glyphicon-plus-sign"></span> Recently gained approval rights</p>
 
 </div>
 <!--Expand Button -->

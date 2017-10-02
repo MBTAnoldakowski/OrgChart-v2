@@ -17,6 +17,7 @@
     <div id="description"> &nbsp;&nbsp;&nbsp;&nbsp;Click and drag on the chart to pan, use your scroll wheel to zoom.
     </div>
     <script>
+        // size variables for the box to paint in
         var margin = {
                 top: 20,
                 right: 120,
@@ -26,7 +27,9 @@
             width = 1200 - margin.right - margin.left,
             height = 800 - margin.top - margin.bottom;
         var i = 0,
+            //sets the amount of time it takes the tree opening animation to run
             duration = 450,
+            // sets the variables for rectangle size
             rectW = 160,
             rectH = 100,
             root;
@@ -34,12 +37,14 @@
         var chartDiv = document.getElementById("sizer");
         var chartwidth = chartDiv.clientWidth;
         var chartheight = chartDiv.clientHeight;
+        // sets the size of the svg to paint on to the size of the window
         height = chartheight;
         width = chartwidth;
         // the .separation part of this determines how far apart the nodes are
         var tree = d3.layout.tree().nodeSize([70, 40]).separation(function (a, b) {
             return a.parent == b.parent ? 3 : 4;
         });
+        // initializes the tree branches
         var diagonal = d3.svg.diagonal()
             .projection(function (d) {
                 return [d.x + rectW / 2, d.y + rectH / 2];
@@ -52,7 +57,7 @@
             .attr("transform", "translate(" + (chartwidth / 2.2) + "," + 20 + ")scale(0.72,0.72)");
 
         //necessary so that zoom knows where to zoom and unzoom from
-        zm.translate([chartwidth / 2.2, 20]).scale(0.72,0.72);
+        zm.translate([chartwidth / 2.2, 20]).scale(0.72, 0.72);
 
         //loads in the administrative employee data
         d3.json("resources/OrgChartExcel.json", function (error, flare) {
@@ -69,15 +74,15 @@
                 }
             }
 
-            //this line start the tree collapsed
+            //this line starts the tree collapsed
             root.children.forEach(collapse);
             update(root);
         });
 
+        // sets the height to 800px
         d3.select("#body").style("height", "800px");
 
         function update(source) {
-            //console.log(source);
             // Compute the new tree layout.
             var nodes = tree.nodes(root).reverse(),
                 links = tree.links(nodes);
@@ -103,7 +108,7 @@
                 })
                 .on("click", click);
 
-            // appends the rectangle that holds the
+            // appends the rectangle that holds the name
             nodeEnter.append("rect")
                 .attr("width", rectW)
                 .attr("height", rectH)
@@ -114,7 +119,7 @@
                     return d._children ? "lightsteelblue" : "#fff";
                 });
 
-            // appens the job title to the rectangle
+            // appends the job title to the rectangle
             nodeEnter.append("text")
                 .attr("x", rectW / 2)
                 .attr("y", 35 * rectH / 100)
@@ -169,8 +174,6 @@
             nodeExit.select("rect")
                 .attr("width", rectW)
                 .attr("height", rectH)
-                //.attr("width", bbox.getBBox().width)""
-                //.attr("height", bbox.getBBox().height)
                 .attr("stroke", "black")
                 .attr("stroke-width", 1);
 
@@ -253,7 +256,7 @@
                     }
                 }
 
-                //UNCOMMENT below if you would like the nodes to all be collapsed on start.
+                // collapses nodes on start.
                 root.children.forEach(collapse);
                 update(root);
             });
@@ -312,6 +315,7 @@
             });
         }
 
+        // expands a node
         function expand(d) {
             var children = (d.children) ? d.children : d._children;
             if (d._children) {
@@ -329,6 +333,7 @@
         }
 
     </script>
+    <!-- This div contains the 'Expand All' button -->
     <div id="expandB">
         <input name="expandButton"
                type="button"
@@ -336,13 +341,14 @@
                value="Expand All"
                onclick="expandAll()"/>
     </div>
+    <!-- This div contains the navigation-->
     <div id="employeeButton" class="btn-group-vertical">
         <a class="btn btn-default" href="#!/kpi">KPI Chart</a>
         <a class="btn btn-default" href="#!/procurement">Procurement Chart</a>
         <a class="btn btn-default" href="#!/">Budget Chart</a>
         <a class="btn btn-primary disabled" href="#!/employees">Employee Chart</a>
     </div>
-
+    <!--This div contains the header menu-->
     <div id="employeeOptions">
         <h1>MBTA Employee Chart</h1>
         <div class="lastUpdated">

@@ -1,3 +1,4 @@
+<!--This div contains the header menu-->
 <div id="option">
     <h1>MBTA KPI Chart</h1>
     <div class="lastUpdated">
@@ -24,43 +25,50 @@
 <div id="description"></div>
 <div id="descriptionText">Description</div>
 <script>
-    // clears the screen in case the employee visualization is still loaded
+    // clears the screen in case a visualization is still loaded
     d3.select("svg").remove();
 
-    // sizes the box to paint in
+    // size variables for the box to paint in
     var margin = {top: 20, right: 150, bottom: 20, left: 200},
         width = 1000,
         height = 1300;
 
-    // honestly, I am not 100% sure what the next few declarations actually do specifically.
-    // I do know that they are very important though. They initialize the tree
     var i = 0,
+        //sets the amount of time it takes the tree opening animation to run
         duration = 750,
         root;
 
+    // initializes the tree
     var tree = d3.layout.tree()
         .size([height, width]);
 
+    // initializes the tree branches
     var diagonal = d3.svg.diagonal()
         .projection(function (d) {
             return [d.y, d.x];
         });
 
+    // appends the svg to paint on to the chart div
     var svg = d3.select("#chart").append("svg")
+    // sets the height and width of the svg
         .attr("width", width + margin.right + margin.left)
         .attr("height", height + margin.top + margin.bottom)
         .append("g")
         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
+    // sets the text of the description box in the upper right
     var descriptionBox = d3.select("#description").append("text")
         .text("Click on a number to view departments");
 
+    // initializes the tooltip
     var div = d3.select("body").append("div")
         .attr("class", "tooltip")
         .style("opacity", 1e-6);
 
+    // initializes the array for the KPI data.
     var kpiData = [];
 
+    // takes the KPI data from the JSON file and places it into the array
     d3.json("resources/kpitodept.json", function (e) {
         e.forEach(function (b) {
             kpiData.push(b);
@@ -81,10 +89,9 @@
                 d._children.forEach(collapse);
                 d.children = null;
             }
-            //  console.log("D: " + d);
         }
 
-        //root.children.forEach(collapse);
+        // collapses children nodes
         root.children.forEach(collapse);
         update(root);
         setTimeout(function () {
@@ -92,11 +99,12 @@
         }, 500)
     });
 
-
+    //sets the frame height
     d3.select(self.frameElement).style("height", "800px");
 
     function update(source, remove) {
-        if(remove) {
+        // this part is for removing the nodes when something is already displayed
+        if (remove) {
             svg.selectAll("g.node").remove();
         }
         // Compute the new tree layout.
@@ -127,8 +135,10 @@
         nodeEnter.append("circle")
             .attr("r", 1e-6);
 
+        // appends the name text to the nodes
         nodeEnter.append("text")
             .attr("x", function (d) {
+                // sets the range of X locations for the text
                 return d.children || d._children ? -10 : 10;
             })
             .attr("dy", ".35em")
@@ -139,6 +149,7 @@
             .text(function (d) {
                 return d.name;
             })
+            // calls for tooltip on mouseover
             .on("mouseover", mouseover)
             .on("mousemove", function (d) {
                 mousemove(d);
@@ -158,9 +169,10 @@
                 return "translate(" + d.y + "," + d.x + ")";
             });
 
-        // size/style the circles
+        // size/style the circles based on levels
         nodeUpdate.select("circle")
             .attr("r", function (d) {
+                // change this number to make dots bigger or smaller
                 return 6;
             })
             .style("fill", function (d) {
@@ -221,7 +233,10 @@
                 return diagonal({source: o, target: o});
             })
             .remove();
+
+        // double removes the links
         link.exit().remove();
+
         // Stash the old positions for transition.
         nodes.forEach(function (d) {
             d.x0 = d.x;
@@ -243,6 +258,7 @@
         update(d, false);
     }
 
+    // controls how long it takes the tooltip to appear after you hover
     function mouseover() {
         div.transition()
             .duration(300)
@@ -251,12 +267,9 @@
 
     //draws the tooltip
     function mousemove(d) {
-        //console.log(d);
         var kpis = [];
         for (k in kpiData) {
-            //console.log(kpiData[k].name);
             for (i in kpiData[k].depts) {
-                //console.log(kpiData[k].depts[i]);
                 if (kpiData[k].depts[i] == d.deptno) {
                     kpis.push(kpiData[k].name)
                 }
@@ -270,9 +283,7 @@
         div.html(kpiString)
             .style("left", (d3.event.pageX ) + "px")
             .style("top", (d3.event.pageY) + "px");
-
         kpis = [];
-
     }
 
 
@@ -283,29 +294,22 @@
             .style("opacity", 1e-6);
     }
 
-    // this is triggered when you hit the 'View Operating' button, it just loads the
+    // this is triggered when you hit the 'View Operating' button; it loads the
     // Operating data instead of the Administration data
     function updateData() {
         setTimeout(function () {
+            // there was a funny issues where the text persisted, this gets rid of that
             d3.selectAll("text").remove();
-            var descriptionBox = d3.select("#description").append("text")
+            // appends text to the description box
+            d3.select("#description").append("text")
                 .text("Click on a number to view departments");
+            // load in the new data
             d3.json("resources/flare_experiment.json", function (error, flare) {
                 if (error) throw error;
-
-                    root = flare;
-                    root.x0 = height / 2;
-                    root.y0 = 0;
-                function collapse(d) {
-                    if (d.children) {
-                        d._children = d.children;
-                        d._children.forEach(collapse);
-                        d.children = null;
-                    }
-                }
-
-                //UNCOMMENT below if you would like the nodes to all be collapsed on start.
-                //root.children.forEach(collapse);
+                root = flare;
+                root.x0 = height / 2;
+                root.y0 = 0;
+                // this setTimeout function makes the page wait for 500ms before moving on
                 setTimeout(function () {
                     update(root, true);
                 }, 500);
@@ -317,25 +321,20 @@
     // this function updates the data to display administration
     function updateData2() {
         setTimeout(function () {
+            // there was a funny issues where the text persisted, this gets rid of that
             d3.selectAll("text").remove();
-            var descriptionBox = d3.select("#description").append("text")
+            // appends text to the description box
+            d3.select("#description").append("text")
                 .text("Click on a number to view departments");
+            // load in the new data
             d3.json("resources/flare_experiment_2.json", function (error, flare) {
                 if (error) throw error;
 
                 root = flare;
-                    root.x0 = height / 2;
-                    root.y0 = 0;
-                function collapse(d) {
-                    if (d.children) {
-                        d._children = d.children;
-                        d._children.forEach(collapse);
-                        d.children = null;
-                    }
-                }
+                root.x0 = height / 2;
+                root.y0 = 0;
 
-                //UNCOMMENT below if you would like the nodes to all be collapsed on start.
-                //root.children.forEach(collapse);
+                // this setTimeout function makes the page wait for 500ms before moving on
                 setTimeout(function () {
                     update(root, true);
                 }, 500);
@@ -343,8 +342,7 @@
             });
         }, 200);
     }
-
-
+    // expands a node
     function expand(d) {
         var children = (d.children) ? d.children : d._children;
         if (d._children) {
@@ -361,6 +359,7 @@
         update(root);
     }
 
+    // highlights all names that appear in a certain KPI section
     function highlight(section) {
         var depts = [];
         var description = "";
@@ -388,6 +387,7 @@
     }
 
 </script>
+<!--This div contains the legend of the chart -->
 <div id="legend">
     <h3 class="ltitle">Legend</h3>
     <div id="level1circle"></div>
@@ -402,16 +402,16 @@
     <p>Level 5</p>
     <div id="level6circle"></div>
     <p>Level 6</p>
-
 </div>
+<!-- This div contains the 'Expand All' button -->
 <div id="expandB">
     <input name="expandButton"
            type="button"
            class="btn"
-           id="expandB"
            value="Expand All"
            onclick="expandAll()"/>
 </div>
+<!-- This div contains the navigation-->
 <div id="employeeButton" class="btn-group-vertical">
     <a class="btn btn-primary disabled" href="#!/kpi">KPI Chart</a>
     <a class="btn btn-default" href="#!/procurement">Procurement Chart</a>
@@ -420,99 +420,100 @@
 
 
 </div>
+<!-- This div contains the KPI buttons-->
 <div id="kpi-outer">
     <div id="kpi-buttons" class="btn-group-vertical">
         <div class="btn-group-vertical">
-        <a href="" class="btn btn-default btn-sm disabled">KPI Numbers</a>
-        <a href="" class="btn btn-warning btn-sm disabled">Organizational Transformation</a>
-        <input name="Button1.1"
-               type="button"
-               class="btn btn-default btn-sm"
-               value="1.1"
-               onclick="highlight('1.1')"/>
-        <input name="Button1.2"
-               type="button"
-               class="btn btn-default btn-sm"
-               value="1.2"
-               onclick="highlight('1.2')"/>
-        <input name="Button1.3"
-               type="button"
-               class="btn btn-default btn-sm"
-               value="1.3"
-               onclick="highlight('1.3')"/>
-        <input name="Button1.4"
-               type="button"
-               class="btn btn-default btn-sm"
-               value="1.4"
-               onclick="highlight('1.4')"/>
-        <a href="" class="btn btn-success btn-sm disabled">Human Capital</a>
-        <input name="Button2.1"
-               type="button"
-               class="btn btn-default btn-sm"
-               value="2.1"
-               onclick="highlight('2.1')"/>
-        <input name="Button2.2"
-               type="button"
-               class="btn btn-default btn-sm"
-               value="2.2"
-               onclick="highlight('2.2')"/>
-        <input name="Button2.3"
-               type="button"
-               class="btn btn-default btn-sm"
-               value="2.3"
-               onclick="highlight('2.3')"/>
-        <input name="Button2.4"
-               type="button"
-               class="btn btn-default btn-sm"
-               value="2.4"
-               onclick="highlight('2.4')"/>
-        <a href="" class="btn btn-primary btn-sm disabled">Customer Experience and Performance</a>
-        <input name="Button3.1"
-               type="button"
-               class="btn btn-default btn-sm"
-               value="3.1"
-               onclick="highlight('3.1')"/>
-        <input name="Button3.2"
-               type="button"
-               class="btn btn-default btn-sm"
-               value="3.2"
-               onclick="highlight('3.2')"/>
-        <input name="Button3.3"
-               type="button"
-               class="btn btn-default btn-sm"
-               value="3.3"
-               onclick="highlight('3.3')"/>
-        <input name="Button3.4"
-               type="button"
-               class="btn btn-default btn-sm"
-               value="3.4"
-               onclick="highlight('3.4')"/>
-        <input name="Button3.5"
-               type="button"
-               class="btn btn-default btn-sm"
-               value="3.5"
-               onclick="highlight('3.5')"/>
-        <a href="" class="btn btn-danger btn-sm disabled">Capital Delivery/State of Good Repair</a>
-        <input name="Button4.1"
-               type="button"
-               class="btn btn-default btn-sm"
-               value="4.1"
-               onclick="highlight('4.1')"/>
-        <input name="Button4.2"
-               type="button"
-               class="btn btn-default btn-sm"
-               value="4.2"
-               onclick="highlight('4.2')"/>
-        <input name="Button4.3"
-               type="button"
-               class="btn btn-default btn-sm"
-               value="4.3"
-               onclick="highlight('4.3')"/>
-        <input name="Button4.4"
-               type="button"
-               class="btn btn-default btn-sm"
-               value="4.4"
-               onclick="highlight('4.4')"/>
-    </div>
+            <a href="" class="btn btn-default btn-sm disabled">KPI Numbers</a>
+            <a href="" class="btn btn-warning btn-sm disabled">Organizational Transformation</a>
+            <input name="Button1.1"
+                   type="button"
+                   class="btn btn-default btn-sm"
+                   value="1.1"
+                   onclick="highlight('1.1')"/>
+            <input name="Button1.2"
+                   type="button"
+                   class="btn btn-default btn-sm"
+                   value="1.2"
+                   onclick="highlight('1.2')"/>
+            <input name="Button1.3"
+                   type="button"
+                   class="btn btn-default btn-sm"
+                   value="1.3"
+                   onclick="highlight('1.3')"/>
+            <input name="Button1.4"
+                   type="button"
+                   class="btn btn-default btn-sm"
+                   value="1.4"
+                   onclick="highlight('1.4')"/>
+            <a href="" class="btn btn-success btn-sm disabled">Human Capital</a>
+            <input name="Button2.1"
+                   type="button"
+                   class="btn btn-default btn-sm"
+                   value="2.1"
+                   onclick="highlight('2.1')"/>
+            <input name="Button2.2"
+                   type="button"
+                   class="btn btn-default btn-sm"
+                   value="2.2"
+                   onclick="highlight('2.2')"/>
+            <input name="Button2.3"
+                   type="button"
+                   class="btn btn-default btn-sm"
+                   value="2.3"
+                   onclick="highlight('2.3')"/>
+            <input name="Button2.4"
+                   type="button"
+                   class="btn btn-default btn-sm"
+                   value="2.4"
+                   onclick="highlight('2.4')"/>
+            <a href="" class="btn btn-primary btn-sm disabled">Customer Experience and Performance</a>
+            <input name="Button3.1"
+                   type="button"
+                   class="btn btn-default btn-sm"
+                   value="3.1"
+                   onclick="highlight('3.1')"/>
+            <input name="Button3.2"
+                   type="button"
+                   class="btn btn-default btn-sm"
+                   value="3.2"
+                   onclick="highlight('3.2')"/>
+            <input name="Button3.3"
+                   type="button"
+                   class="btn btn-default btn-sm"
+                   value="3.3"
+                   onclick="highlight('3.3')"/>
+            <input name="Button3.4"
+                   type="button"
+                   class="btn btn-default btn-sm"
+                   value="3.4"
+                   onclick="highlight('3.4')"/>
+            <input name="Button3.5"
+                   type="button"
+                   class="btn btn-default btn-sm"
+                   value="3.5"
+                   onclick="highlight('3.5')"/>
+            <a href="" class="btn btn-danger btn-sm disabled">Capital Delivery/State of Good Repair</a>
+            <input name="Button4.1"
+                   type="button"
+                   class="btn btn-default btn-sm"
+                   value="4.1"
+                   onclick="highlight('4.1')"/>
+            <input name="Button4.2"
+                   type="button"
+                   class="btn btn-default btn-sm"
+                   value="4.2"
+                   onclick="highlight('4.2')"/>
+            <input name="Button4.3"
+                   type="button"
+                   class="btn btn-default btn-sm"
+                   value="4.3"
+                   onclick="highlight('4.3')"/>
+            <input name="Button4.4"
+                   type="button"
+                   class="btn btn-default btn-sm"
+                   value="4.4"
+                   onclick="highlight('4.4')"/>
+        </div>
     </div>
 </div>

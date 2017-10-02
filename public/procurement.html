@@ -1,3 +1,4 @@
+<!--This div contains the header menu-->
 <div id="option">
     <h1>MBTA Procurement Analysis Chart</h1>
     <div class="lastUpdated">
@@ -23,38 +24,43 @@
 <div id="chart"></div>
 <script>
     var dataDisplayed = 0; // when 0, admin- when 1, ops
-    // clears the screen in case the employee visualization is still loaded
+    // clears the screen in case a visualization is still loaded
     d3.select("svg").remove();
 
-    // sizes the box to paint in
+    // size variables for the box to paint in
     var margin = {top: 20, right: 150, bottom: 20, left: 200},
         width = 1000,
         height = 1300;
 
-    // honestly, I am not 100% sure what the next few declarations actually do specifically.
-    // I do know that they are very important though. They initialize the tree
     var i = 0,
+        //sets the amount of time it takes the tree opening animation to run
         duration = 750,
         root;
 
+    // initializes the tree
     var tree = d3.layout.tree()
         .size([height, width]);
 
+    // initializes the tree branches
     var diagonal = d3.svg.diagonal()
         .projection(function (d) {
             return [d.y, d.x];
         });
 
+    // appends the svg to paint on to the chart div
     var svg = d3.select("#chart").append("svg")
+    // sets the height and width of the svg
         .attr("width", width + margin.right + margin.left)
         .attr("height", height + margin.top + margin.bottom)
         .append("g")
         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
+    // initializes the budget/approval tooltip
     var div = d3.select("body").append("div")
         .attr("class", "tooltip")
         .style("opacity", 1e-6);
 
+    // initializes the new approval tooltip
     var div2 = d3.select("body").append("div")
         .attr("class", "tooltip")
         .style("opacity", 1e-6);
@@ -62,7 +68,6 @@
     // loads in the CSV with the budgeting data in it
     var buData = [];
     var sortedArray = [];
-    var deptWithChanges = [];
     d3.csv("csv/procurementdata.csv", function (error, bData) {
         if (error) throw error;
         bData.forEach(function (b) {
@@ -132,9 +137,11 @@
                 return "translate(" + source.y0 + "," + source.x0 + ")";
             })
             .on("click", click);
+
         nodeEnter.append("circle")
             .attr("r", 1e-6);
 
+        // appends the new/old approval signifiers
         node.append("svg:foreignObject")
             .attr("width", 20)
             .attr("height", 20)
@@ -143,7 +150,6 @@
             .append("xhtml:span")
             .attr("z-index", "1000")
             .attr("class", function (d) {
-                console.log('appending');
                 if (d.gaveApprovalTo) {
                     return "control glyphicon glyphicon-minus-sign"
                 }
@@ -151,13 +157,14 @@
                     return "control glyphicon glyphicon-plus-sign"
                 }
             })
+            // calls for approval tooltip on mouseover
             .on("mouseover", mouseover2)
             .on("mousemove", function (d) {
                 mousemove2(d);
             })
-            .on("mouseout", mouseout2)
+            .on("mouseout", mouseout2);
 
-
+        // appends the name text to the nodes
         nodeEnter.append("text")
             .attr("x", function (d) {
                 return d.children || d._children ? -10 : 10;
@@ -170,14 +177,14 @@
             .text(function (d) {
                 return d.name;
             })
+            // calls for PO data tooltip on mouseover
             .on("mouseover", mouseover)
             .on("mousemove", function (d) {
                 mousemove(d);
             })
             .on("mouseout", mouseout)
-            //.style("fill-opacity", 1e-6)
             .style("fill-opacity", 1)
-            // the names are styled here.
+            // the names are styled here based on PO data
             .style("fill",
                 function (d) {
                     var rank = -1;
@@ -185,16 +192,12 @@
                         return a.poNum - b.poNum
                     });
                     s.reverse();
-                    //console.log(s);
                     for (var i = 0; i < s.length; i++) {
-                        //console.log(sortedArray[i].name);
                         if (s[i].dept == d.deptno) {
                             rank = i;
-                            //console.log(d.name+" Rank: "+rank)
                         }
                     }
 
-                    //console.log(rank);
                     if (rank >= 0 && rank < 9) {
                         return "#BF0100"
                     }
@@ -233,9 +236,10 @@
                 return "translate(" + d.y + "," + d.x + ")";
             });
 
-        // size/style the circles
+        // size/style the circles based on levels
         nodeUpdate.select("circle")
             .attr("r", function (d) {
+                // change this number to make dots bigger or smaller
                 return 6;
             })
             .style("fill", function (d) {
@@ -252,7 +256,6 @@
                 }
             });
 
-        // nodeUpdate.select("text").style("fill-opacity", 1);
 
         // Transition exiting nodes to the parent's new position.
         var nodeExit = node.exit().transition()
@@ -316,12 +319,14 @@
         update(d, false);
     }
 
+    // controls how long it takes the tooltip to appear after you hover
     function mouseover() {
         div.transition()
             .duration(300)
             .style("opacity", 1);
     }
 
+    // controls how long it takes the tooltip to appear after you hover
     function mouseover2() {
         div2.transition()
             .duration(300)
@@ -330,7 +335,6 @@
 
     //draws the tooltip
     function mousemove(d) {
-        var deptNo = d.deptno;
         if (d.approval1 != undefined) {
             div.html(d.deptno + "<br/>" + "Level 1: " + d.approval1 + "<br/>" + "Level 2: " + d.approval2 + "<br/>"
                 + "Level 3: " + d.approval3 + "<br/>" + "Level 4: " + d.approval4 + "<br/>" + "Level 5: " + d.approval5
@@ -374,6 +378,7 @@
 
     }
 
+    // formats approvals into a string that can be displayed on tooltip
     function getDepartments(approval) {
         var returnString = "";
         for (i in approval) {
@@ -384,6 +389,7 @@
         return returnString;
     }
 
+    // highlights department names that are in a certain KPI section
     function highlight(section) {
         d3.selectAll("text")
             .style("fill", function (d) {
@@ -409,6 +415,7 @@
 
     }
 
+    // un-highlights all departments
     function unHighlight() {
         d3.selectAll("text")
             .style("fill",
@@ -418,16 +425,12 @@
                         return a.poNum - b.poNum
                     });
                     s.reverse();
-                    //console.log(s);
                     for (var i = 0; i < s.length; i++) {
-                        //console.log(sortedArray[i].name);
                         if (s[i].dept == d.deptno) {
                             rank = i;
-                            //console.log(d.name+" Rank: "+rank)
                         }
                     }
-
-                    //console.log(rank);
+                    // recolors based on PO data
                     if (rank >= 0 && rank < 9) {
                         return "#BF0100"
                     }
@@ -465,7 +468,6 @@
     function formatMoney(number) {
         var oldNum = parseFloat(number);
         var num = '$' + oldNum.toFixed(0).replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
-
         return num;
     }
 
@@ -476,6 +478,7 @@
             .style("opacity", 1e-6);
     }
 
+    // highlights department names that are in a certain KPI section
     function mouseout2() {
         div2.transition()
             .duration(300)
@@ -487,11 +490,8 @@
     // It gets the budget for a specific department
     function getBudgetData(department) {
         var dept = parseFloat(department);
-        // console.log(dept);
         for (var i in buData) {
-            // console.log(i);
             if (parseFloat(buData[i].dept) === dept) {
-                //   console.log(i);
                 return buData[i].poNum;
             }
         }
@@ -501,11 +501,8 @@
     // This gets the actuals for a specific department
     function getBudgetActuals(department) {
         var dept = parseFloat(department);
-        //console.log(dept);
         for (var i in buData) {
-
             if (parseFloat(buData[i].dept) === dept) {
-                //  console.log(i);
                 return buData[i].total;
             }
         }
@@ -516,21 +513,9 @@
     function updateData() {
         d3.json("resources/flare_experiment.json", function (error, flare) {
             if (error) throw error;
-
             root = flare;
             root.x0 = height / 2;
             root.y0 = 0;
-
-            function collapse(d) {
-                if (d.children) {
-                    d._children = d.children;
-                    d._children.forEach(collapse);
-                    d.children = null;
-                }
-            }
-
-            //UNCOMMENT below if you would like the nodes to all be collapsed on start.
-            //root.children.forEach(collapse);
             dataDisplayed = 1;
             update(root, true);
         });
@@ -541,27 +526,16 @@
     function updateData2() {
         d3.json("resources/flare_experiment_2.json", function (error, flare) {
             if (error) throw error;
-
             root = flare;
             root.x0 = height / 2;
             root.y0 = 0;
-
-            function collapse(d) {
-                if (d.children) {
-                    d._children = d.children;
-                    d._children.forEach(collapse);
-                    d.children = null;
-                }
-            }
-
-            //root.children.forEach(collapse);
             dataDisplayed = 0;
             update(root, true);
         });
 
     }
 
-
+    // expands a node
     function expand(d) {
         var children = (d.children) ? d.children : d._children;
         if (d._children) {
@@ -579,7 +553,7 @@
     }
 
 </script>
-<!--Circle Legend-->
+<!--This div contains the legend of the chart -->
 <div id="legend">
     <h3 class="ltitle">Legend</h3>
     <div id="level1circle"></div>
@@ -596,6 +570,7 @@
     <p>Level 6</p>
 
 </div>
+<!--This div contains the PO Data Key-->
 <div class="ltitleright2">
     <h3 class="ltitle">Total Procurements</h3>
     <p id="scale1">Most POs</p>
@@ -612,21 +587,18 @@
     <p><span class="glyphicon-key glyphicon glyphicon-plus-sign"></span> Recently gained approval rights</p>
 
 </div>
-<!--Expand Button -->
+<!-- This div contains the 'Expand All' button -->
 <div id="expandB">
     <input name="expandButton"
            type="button"
            class="btn"
-           id="expandB"
            value="Expand All"
            onclick="expandAll()"/>
 </div>
-<!--Switch to Employee Page button-->
+<!-- This div contains the navigation-->
 <div id="employeeButton" class="btn-group-vertical">
     <a class="btn btn-default" href="#!/kpi">KPI Chart</a>
     <a class="btn btn-primary disabled" href="#!/procurement">Procurement Chart</a>
     <a class="btn btn-default" href="#!/">Budget Chart</a>
     <a class="btn btn-default" href="#!/employees">Employee Chart</a>
-
-
 </div>

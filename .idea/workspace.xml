@@ -47,8 +47,8 @@
       <file leaf-file-name="flare_experiment_2.json" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/resources/flare_experiment_2.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="702" column="24" lean-forward="false" selection-start-line="702" selection-start-column="24" selection-end-line="702" selection-end-column="24" />
+            <state relative-caret-position="272">
+              <caret line="708" column="23" lean-forward="true" selection-start-line="708" selection-start-column="23" selection-end-line="708" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -286,12 +286,12 @@
       <workItem from="1506604447826" duration="14327000" />
       <workItem from="1506623609926" duration="6326000" />
       <workItem from="1506692353688" duration="1316000" />
-      <workItem from="1506948394206" duration="2458000" />
+      <workItem from="1506948394206" duration="3057000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="199437000" />
+    <option name="totallyTimeSpent" value="200036000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1358" y="-187" width="1936" height="1096" extended-state="6" />
@@ -529,8 +529,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/resources/flare_experiment_2.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="702" column="24" lean-forward="false" selection-start-line="702" selection-start-column="24" selection-end-line="702" selection-end-column="24" />
+        <state relative-caret-position="272">
+          <caret line="708" column="23" lean-forward="true" selection-start-line="708" selection-start-column="23" selection-end-line="708" selection-end-column="23" />
           <folding />
         </state>
       </provider>

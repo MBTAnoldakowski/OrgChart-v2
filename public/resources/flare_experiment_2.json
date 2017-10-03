@@ -2,6 +2,7 @@
   "name": "General Manager",
   "level": "2",
   "deptno": "105000",
+
   "gaveApprovalTo": [
     {
       "name": "Vendor Management",
@@ -206,12 +207,13 @@
       "approval8": "LMRAMIREZ",
       "newApproval1": "EMROWE",
       "newApproval2": "EMROWE",
-      "newApproval3":"EMROWE",
+      "newApproval3": "EMROWE",
       "newApproval4": "EMROWE",
       "newApproval5": "EMROWE",
       "newApproval6": "EMROWE",
       "newApproval7": "MABRAMO",
       "newApproval8": "LMRAMIREZ",
+      "requestors": "ADOROSARIO",
       "children": [
         {
           "name": "Own Source Revenue",
@@ -252,6 +254,8 @@
       "newApproval6": "LBRELSFORD",
       "newApproval7": "MABRAMO",
       "newApproval8": "LMRAMIREZ",
+      "requestors": "KECHOLS",
+
       "children": [
         {
           "name": "System-wide Accessibility",
@@ -272,6 +276,7 @@
       "approval6": "MABRAMO",
       "approval7": "MABRAMO",
       "approval8": "LMRAMIREZ",
+      "requestors": "REQWF161002 CCHEEK BDIVIRGILIO",
       "children": [
         {
           "name": "Law",
@@ -349,6 +354,7 @@
       "newApproval6": "JTYNES",
       "newApproval7": "MABRAMO",
       "newApproval8": "LMRAMIREZ",
+      "requestors": "WHUBBARD JUNIECELESTIN",
       "children": [
         {
           "name": "EEO/AA Administration",
@@ -392,6 +398,7 @@
       "newApproval6": "DBSCHACHTER",
       "newApproval7": "MABRAMO",
       "newApproval8": "LMRAMIREZ",
+      "requestors": "KWALLACE REQWF118000 KWILLIS JHENRY",
       "children": [
         {
           "name": "AFC 1.0",
@@ -480,6 +487,7 @@
       "newApproval6": "MABRAMO",
       "newApproval7": "MABRAMO",
       "newApproval8": "LMRAMIREZ",
+      "requestors": "REQWF101002 RCOMBS FHENES DMALONEY WSTEMBERG",
       "children": [
         {
           "name": "General Manager",
@@ -540,6 +548,7 @@
       "approval6": "MABRAMO",
       "approval7": "MABRAMO",
       "approval8": "LMRAMIREZ",
+      "requestors": "SSUPPAPINICHAI",
       "children": [
         {
           "name": "Transit Police",
@@ -598,14 +607,15 @@
       "approval6": "MABRAMO",
       "approval7": "MABRAMO",
       "approval8": "LMRAMIREZ",
-      "newApproval1":  "ABRENNAN MDONAGHY",
-      "newApproval2":"ABRENNAN",
+      "newApproval1": "ABRENNAN MDONAGHY",
+      "newApproval2": "ABRENNAN",
       "newApproval3": "ABRENNAN",
       "newApproval4": "ABRENNAN",
       "newApproval5": "MABRAMO",
       "newApproval6": "MABRAMO",
       "newApproval7": "MABRAMO",
       "newApproval8": "LMRAMIREZ",
+      "requestors": "LBAXTER",
       "children": [
         {
           "name": "Utilities",
@@ -639,6 +649,7 @@
       "newApproval6": "MABRAMO",
       "newApproval7": "MABRAMO",
       "newApproval8": "LMRAMIREZ",
+      "requestors": "LRADOSTA",
       "children": [
         {
           "name": "Charlie Store",
@@ -864,6 +875,7 @@
       "newApproval6": "JRAY",
       "newApproval7": "MABRAMO",
       "newApproval8": "LMRAMIREZ",
+      "requestors":"REQWF210000 KROYSTON DORDOYNE NCADIGAN",
       "children": [
         {
           "name": "Commuter Rail Supervision",

@@ -20,5 +20,8 @@
             .when('/kpi',{
                 templateUrl: 'kpi.html'
             })
+            .when('/approvals',{
+                templateUrl: 'approvals.html'
+            })
     }
 })();

@@ -249,7 +249,7 @@
       "newApproval3": "LBRELSFORD RSAMPSON",
       "newApproval4": "LBRELSFORD RSAMPSON",
       "newApproval5": "LBRELSFORD MABRAMO",
-      "newApproval6": "LBRELSFORD",
+      "newApproval6": "MABRAMO",
       "newApproval7": "MABRAMO",
       "newApproval8": "LMRAMIREZ",
       "children": [
@@ -856,6 +856,14 @@
       "approval6": "JRAY",
       "approval7": "MABRAMO",
       "approval8": "LMRAMIREZ",
+      "newApproval1": "KAUBUCHON MLANNIN",
+      "newApproval2": "MLANNIN",
+      "newApproval3": "MLANNIN",
+      "newApproval4": "",
+      "newApproval5": "NEASLEY",
+      "newApproval6": "NEASLEY",
+      "newApproval7": "MABRAMO",
+      "newApproval8": "LMRAMIREZ",
       "children": [
         {
           "name": "Commuter Rail Supervision",

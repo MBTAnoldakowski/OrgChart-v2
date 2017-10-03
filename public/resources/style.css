@@ -472,11 +472,13 @@ input:checked + .slider:before {
     float: left;
     padding: 10px;
     border-right: thick double black;
+    max-width: 400px;
 }
 .new-approvals{
     float: right;
     top:0;
     padding: 10px;
     border-left: thick double black;
+    max-width: 400px;
 
 }

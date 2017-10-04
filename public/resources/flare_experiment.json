@@ -40,6 +40,7 @@
       "newApproval7": "JGONNEVILLE",
       "newApproval8": "LMRAMIREZ",
       "requestors":"WWALSH LMCAVOY BS020E BS016E WIOVEN SNETH RHALEY",
+      "newRequestors":"WWALSH LMCAVOY WIOVEN SNETH RHALEY",
       "children": [
         {
           "name": "Bus Maintenance",
@@ -410,6 +411,7 @@
           "newApproval7": "JGONNEVILLE",
           "newApproval8": "LMRAMIREZ",
           "requestors":"ALARSON MHARRIGAN MCRAVEN MBIANCHI LWILKINS KWOOLLARD KMIRANDA KKALLENBERG KBRENNAN JSILVA JORTIZ JMURRAY2 JMONFILS JMCQUIGGAN JMCHUGH JGARCIA JBERRY GIENTILE RDACEY REQWF231000 REQWF238000 REQWF239000 SCLARK TTHIBODEAUX WCAMERON WMAHAR WPELLEGRINE AISIDOR AKOTSIOPOULOS MHECKER AMEHTA AQUEEN BS023E BS024E BS025E BS026E BS027E CYUSKOWSKI DBOVEST DSING EKEELEY EULLOA-MURRAY",
+          "newRequestors":"ALARSON MHARRIGAN MCRAVEN MBIANCHI LWILKINS KWOOLLARD KMIRANDA KKALLENBERG KBRENNAN JSILVA JORTIZ JMURRAY2 JMONFILS JMCQUIGGAN JMCHUGH JGARCIA JBERRY GIENTILE RDACEY SCLARK TTHIBODEAUX WCAMERON WMAHAR WPELLEGRINE AISIDOR AKOTSIOPOULOS MHECKER AMEHTA AQUEEN CYUSKOWSKI DBOVEST DSING EKEELEY EULLOA-MURRAY",
           "children": [
             {
               "name": "GL Reservoir Maintenance",
@@ -464,6 +466,7 @@
           "newApproval7": "JGONNEVILLE",
           "newApproval8": "LMRAMIREZ",
           "requestors":"LNONG PFFLYNN KONEIL JMENJIN JBRUNDAGE MSAVAGE MBURROWS LLARACY AWIGGINS",
+          "newRequestors":"LNONG PFFLYNN KONEIL JMENJIN JBRUNDAGE MSAVAGE MBURROWS LLARACY AWIGGINS",
           "children": [
             {
               "name": "Administration",
@@ -624,6 +627,7 @@
           "level": "4",
           "deptno": "205000",
           "requestors": "SOLEARY",
+          "newRequestors": "SOLEARY",
           "children": [
             {
               "name": "Chief Operating Officer",
@@ -653,6 +657,7 @@
           "newApproval7": "JGONNEVILLE",
           "newApproval8": "LMRAMIREZ",
           "requestors": "KKEUNG",
+          "newRequestors": "KKEUNG",
           "children": [
             {
               "name": "Operations Office of Administration",
@@ -771,6 +776,7 @@
           "newApproval7": "JGONNEVILLE",
           "newApproval8": "LMRAMIREZ",
           "requestors":"APETERS REQWF280000",
+          "newRequestors":"APETERS REQWF280000",
           "children": [
             {
               "name": "Security Department",

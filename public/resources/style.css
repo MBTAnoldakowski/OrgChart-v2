@@ -465,20 +465,39 @@ input:checked + .slider:before {
 .slider.round:before {
     border-radius: 50%;
 }
-.tooltip-head{
+
+.tooltip-head {
     width: 100%;
 }
-.old-approvals{
+
+.old-approvals {
     float: left;
     padding: 10px;
     border-right: thick double black;
     max-width: 400px;
 }
-.new-approvals{
+
+.new-approvals {
     float: right;
-    top:0;
+    top: 0;
     padding: 10px;
     border-left: thick double black;
     max-width: 400px;
 
+}
+
+.old-requests {
+    float: left;
+    padding: 10px;
+    border-top: thick double black;
+    width: 50%;
+    right: 0;
+}
+
+.new-requests {
+    float: right;
+    padding: 10px;
+    border-top: thick double black;
+    width: 50%;
+    left: 0;
 }

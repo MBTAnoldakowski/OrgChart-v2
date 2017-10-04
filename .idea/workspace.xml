@@ -13,66 +13,48 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5">
-      <split-first>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="admin_capital.json" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/public/resources/admin_capital.json">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="256">
-                  <caret line="783" column="31" lean-forward="true" selection-start-line="783" selection-start-column="31" selection-end-line="783" selection-end-column="31" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="operating_capital.json" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/public/resources/operating_capital.json">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="273">
-                  <caret line="49" column="26" lean-forward="false" selection-start-line="49" selection-start-column="26" selection-end-line="49" selection-end-column="26" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="approvals.html" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/public/approvals.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="404">
-                  <caret line="549" column="18" lean-forward="true" selection-start-line="549" selection-start-column="18" selection-end-line="549" selection-end-column="18" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf>
-          <file leaf-file-name="flare_experiment_2.json" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/public/resources/flare_experiment_2.json">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="545">
-                  <caret line="800" column="51" lean-forward="false" selection-start-line="800" selection-start-column="51" selection-end-line="800" selection-end-column="51" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="flare_experiment.json" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/public/resources/flare_experiment.json">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="239">
-                  <caret line="524" column="31" lean-forward="false" selection-start-line="524" selection-start-column="31" selection-end-line="524" selection-end-column="31" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="admin_capital.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/resources/admin_capital.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="256">
+              <caret line="783" column="11" lean-forward="false" selection-start-line="783" selection-start-column="11" selection-end-line="783" selection-end-column="11" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="operating_capital.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/resources/operating_capital.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="273">
+              <caret line="49" column="26" lean-forward="false" selection-start-line="49" selection-start-column="26" selection-end-line="49" selection-end-column="26" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="approvals.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/public/approvals.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="455">
+              <caret line="404" column="104" lean-forward="false" selection-start-line="404" selection-start-column="104" selection-end-line="404" selection-end-column="104" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/resources/style.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="608">
+              <caret line="500" column="4" lean-forward="false" selection-start-line="500" selection-start-column="4" selection-end-line="500" selection-end-column="4" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -84,8 +66,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>250000</find>
-      <find>23900</find>
       <find>24000</find>
       <find>310000</find>
       <find>330000</find>
@@ -111,8 +91,10 @@
       <find>239000</find>
       <find>28000</find>
       <find>290000</find>
-      <find>29000</find>
       <find>80500</find>
+      <find>780000</find>
+      <find>29000</find>
+      <find>78000</find>
       <find>221000</find>
     </findStrings>
     <replaceStrings>
@@ -167,16 +149,16 @@
         <option value="$PROJECT_DIR$/public/index.html" />
         <option value="$PROJECT_DIR$/public/circle.html" />
         <option value="$PROJECT_DIR$/public/config.js" />
-        <option value="$PROJECT_DIR$/public/resources/style.css" />
         <option value="$PROJECT_DIR$/public/employees3.html" />
         <option value="$PROJECT_DIR$/public/procurement.html" />
         <option value="$PROJECT_DIR$/public/visualization.html" />
         <option value="$PROJECT_DIR$/public/kpi.html" />
-        <option value="$PROJECT_DIR$/public/approvals.html" />
         <option value="$PROJECT_DIR$/public/resources/flare_experiment.json" />
         <option value="$PROJECT_DIR$/public/resources/operating_capital.json" />
         <option value="$PROJECT_DIR$/public/resources/admin_capital.json" />
         <option value="$PROJECT_DIR$/public/resources/flare_experiment_2.json" />
+        <option value="$PROJECT_DIR$/public/resources/style.css" />
+        <option value="$PROJECT_DIR$/public/approvals.html" />
       </list>
     </option>
   </component>
@@ -309,12 +291,12 @@
       <workItem from="1506948394206" duration="10543000" />
       <workItem from="1507037119281" duration="18570000" />
       <workItem from="1507122123705" duration="1362000" />
-      <workItem from="1507123808503" duration="5864000" />
+      <workItem from="1507123808503" duration="6919000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="237406000" />
+    <option name="totallyTimeSpent" value="238461000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1358" y="-187" width="1936" height="1096" extended-state="6" />
@@ -513,13 +495,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/resources/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="817">
-          <caret line="480" column="36" lean-forward="true" selection-start-line="480" selection-start-column="36" selection-end-line="480" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/procurement.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="786">
@@ -548,10 +523,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/approvals.html">
+    <entry file="file://$PROJECT_DIR$/public/resources/flare_experiment_2.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="404">
-          <caret line="549" column="18" lean-forward="true" selection-start-line="549" selection-start-column="18" selection-end-line="549" selection-end-column="18" />
+        <state relative-caret-position="545">
+          <caret line="800" column="51" lean-forward="false" selection-start-line="800" selection-start-column="51" selection-end-line="800" selection-end-column="51" />
           <folding />
         </state>
       </provider>
@@ -564,6 +539,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/public/resources/admin_capital.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="256">
+          <caret line="783" column="11" lean-forward="false" selection-start-line="783" selection-start-column="11" selection-end-line="783" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/resources/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="608">
+          <caret line="500" column="4" lean-forward="false" selection-start-line="500" selection-start-column="4" selection-end-line="500" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/public/resources/operating_capital.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="273">
@@ -572,18 +563,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/resources/flare_experiment_2.json">
+    <entry file="file://$PROJECT_DIR$/public/approvals.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="545">
-          <caret line="800" column="51" lean-forward="false" selection-start-line="800" selection-start-column="51" selection-end-line="800" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/resources/admin_capital.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="783" column="31" lean-forward="true" selection-start-line="783" selection-start-column="31" selection-end-line="783" selection-end-column="31" />
+        <state relative-caret-position="455">
+          <caret line="404" column="104" lean-forward="false" selection-start-line="404" selection-start-column="104" selection-end-line="404" selection-end-column="104" />
           <folding />
         </state>
       </provider>

@@ -34,7 +34,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="approvals.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="approvals.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/approvals.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="455">
@@ -44,11 +44,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/resources/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="608">
-              <caret line="500" column="4" lean-forward="false" selection-start-line="500" selection-start-column="4" selection-end-line="500" selection-end-column="4" />
+            <state relative-caret-position="266">
+              <caret line="24" column="16" lean-forward="false" selection-start-line="24" selection-start-column="16" selection-end-line="24" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -157,8 +157,8 @@
         <option value="$PROJECT_DIR$/public/resources/operating_capital.json" />
         <option value="$PROJECT_DIR$/public/resources/admin_capital.json" />
         <option value="$PROJECT_DIR$/public/resources/flare_experiment_2.json" />
-        <option value="$PROJECT_DIR$/public/resources/style.css" />
         <option value="$PROJECT_DIR$/public/approvals.html" />
+        <option value="$PROJECT_DIR$/public/resources/style.css" />
       </list>
     </option>
   </component>
@@ -291,12 +291,12 @@
       <workItem from="1506948394206" duration="10543000" />
       <workItem from="1507037119281" duration="18570000" />
       <workItem from="1507122123705" duration="1362000" />
-      <workItem from="1507123808503" duration="6919000" />
+      <workItem from="1507123808503" duration="7183000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="238461000" />
+    <option name="totallyTimeSpent" value="238725000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1358" y="-187" width="1936" height="1096" extended-state="6" />
@@ -547,14 +547,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/resources/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="608">
-          <caret line="500" column="4" lean-forward="false" selection-start-line="500" selection-start-column="4" selection-end-line="500" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/resources/operating_capital.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="273">
@@ -567,6 +559,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="455">
           <caret line="404" column="104" lean-forward="false" selection-start-line="404" selection-start-column="104" selection-end-line="404" selection-end-column="104" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/resources/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="24" column="16" lean-forward="false" selection-start-line="24" selection-start-column="16" selection-end-line="24" selection-end-column="16" />
           <folding />
         </state>
       </provider>

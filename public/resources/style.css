@@ -21,8 +21,7 @@
 div.tooltip {
     position: absolute;
     text-align: center;
-    width: auto;
-    max-width: 60%;
+    max-width: 65%;
     height: auto;
     padding: 8px;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -475,7 +474,7 @@ input:checked + .slider:before {
     float: left;
     padding: 10px;
     border-right: thick double black;
-    max-width: 400px;
+    width: 50%
 }
 
 .new-approvals {
@@ -483,7 +482,7 @@ input:checked + .slider:before {
     top: 0;
     padding: 10px;
     border-left: thick double black;
-    max-width: 400px;
+    width: 50%;
 
 }
 
@@ -491,12 +490,16 @@ input:checked + .slider:before {
     float: left;
     padding: 10px;
     border-top: thick double black;
-    max-width: 50%;
+    width: 50%;
+    left:0;
+    bottom: 0;
 }
 
 .new-requests {
     float: right;
     padding: 10px;
     border-top: thick double black;
-    max-width: 50%;
+    width: 50%;
+    right:0;
+    bottom: 0;
 }

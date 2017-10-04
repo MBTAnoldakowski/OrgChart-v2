@@ -54,11 +54,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="kpi.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="kpi.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/kpi.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="417">
-              <caret line="151" column="14" lean-forward="false" selection-start-line="151" selection-start-column="14" selection-end-line="151" selection-end-column="14" />
+            <state relative-caret-position="468">
+              <caret line="94" column="10" lean-forward="false" selection-start-line="94" selection-start-column="10" selection-end-line="94" selection-end-column="10" />
               <folding />
             </state>
           </provider>
@@ -84,7 +84,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="visualization.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="visualization.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/visualization.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-66">
@@ -216,9 +216,9 @@
         <option value="$PROJECT_DIR$/public/resources/style.css" />
         <option value="$PROJECT_DIR$/public/index.html" />
         <option value="$PROJECT_DIR$/public/approvals.html" />
-        <option value="$PROJECT_DIR$/public/kpi.html" />
         <option value="$PROJECT_DIR$/public/procurement.html" />
         <option value="$PROJECT_DIR$/public/visualization.html" />
+        <option value="$PROJECT_DIR$/public/kpi.html" />
       </list>
     </option>
   </component>
@@ -351,12 +351,12 @@
       <workItem from="1506948394206" duration="10543000" />
       <workItem from="1507037119281" duration="18570000" />
       <workItem from="1507122123705" duration="1362000" />
-      <workItem from="1507123808503" duration="15259000" />
+      <workItem from="1507123808503" duration="15839000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="246801000" />
+    <option name="totallyTimeSpent" value="247381000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1358" y="-187" width="1936" height="1096" extended-state="6" />
@@ -613,14 +613,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/kpi.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="417">
-          <caret line="151" column="14" lean-forward="false" selection-start-line="151" selection-start-column="14" selection-end-line="151" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/procurement.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="324">
@@ -633,6 +625,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-66">
           <caret line="150" column="17" lean-forward="true" selection-start-line="150" selection-start-column="17" selection-end-line="150" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/kpi.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="468">
+          <caret line="94" column="10" lean-forward="false" selection-start-line="94" selection-start-column="10" selection-end-line="94" selection-end-column="10" />
           <folding />
         </state>
       </provider>

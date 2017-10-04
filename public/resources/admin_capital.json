@@ -2,12 +2,6 @@
   "name": "General Manager",
   "level": "2",
   "deptno": "105000",
-  "gaveApprovalTo": [
-    {
-      "name": "Vendor Management",
-      "deptno": "804000"
-    }
-  ],
   "children": [
     {
       "name": "Chief Financial Officer",
@@ -29,6 +23,7 @@
       "newApproval6": "MABRAMO",
       "newApproval7": "MABRAMO",
       "newApproval8": "LMRAMIREZ",
+      "requestors": "REQWF640000",
       "children": [
         {
           "name": "Cash Collection",
@@ -67,6 +62,7 @@
       "newApproval6": "MABRAMO",
       "newApproval7": "MABRAMO",
       "newApproval8": "LMRAMIREZ",
+      "requestors": "JSANS REQWF630000",
       "children": [
         {
           "name": "Budget Administration",
@@ -174,6 +170,7 @@
       "approval6": "MABRAMO",
       "approval7": "MABRAMO",
       "approval8": "LMRAMIREZ",
+      "requestors":"REQWF860000",
       "children": [
         {
           "name": "General Activities",
@@ -319,6 +316,7 @@
       "approval6": "JCHAN",
       "approval7": "MABRAMO",
       "approval8": "LMRAMIREZ",
+      "requestors":"CDUSTIN TLOGAN MBAMONTE",
       "children": [
         {
           "name": "Real Estate",
@@ -457,6 +455,7 @@
       "newApproval6": "MABRAMO",
       "newApproval7": "MABRAMO",
       "newApproval8": "LMRAMIREZ",
+      "requestors": "AGARTSMAN LRIEGEL SGARCIA2",
       "children": [
         {
           "name": "OPMI",
@@ -526,6 +525,7 @@
       "newApproval6": "RNICKLE",
       "newApproval7": "MABRAMO",
       "newApproval8": "LMRAMIREZ",
+      "requestors":"OSANCHEZ KRYSSMAN",
       "children": [
         {
           "name": "Safety Administration",
@@ -575,6 +575,7 @@
       "newApproval6": "GFOSTER",
       "newApproval7": "MABRAMO",
       "newApproval8": "LMRAMIREZ",
+      "requestors": "GORAVEC DDIGGS SDENICOLA SNWILLIAMS DMURKISON",
       "children": [
         {
           "name": "ITD Enterprise-Wide Proc",
@@ -691,6 +692,7 @@
       "newApproval6": "BSCHULTZMAN MABRAMO",
       "newApproval7": "MABRAMO",
       "newApproval8": "LMRAMIREZ",
+      "requestors":"AMURKISON AHGRIFFITH PFITZGERALD PBALCOM",
       "children": [
         {
           "name": "Office of Transportation Access",
@@ -719,6 +721,7 @@
       "newApproval6": "MABRAMO",
       "newApproval7": "MABRAMO",
       "newApproval8": "LMRAMIREZ",
+      "requestors":"VPOON CTAYLOR MAMADO STAYLOR JRICHARDS1 CMCCOLGAN",
       "children": [
         {
           "name": "Employment and Training",
@@ -761,6 +764,7 @@
       "approval6": "JSAINTCYR",
       "approval7": "MABRAMO",
       "approval8": "LMRAMIREZ",
+      "requestors":"AAGRAWAL BOBRIEN VRWILSON PHARDY",
       "children": [
         {
           "name": "Worker's Compensation",
@@ -807,6 +811,7 @@
       "newApproval6": "NEASLEY",
       "newApproval7": "MABRAMO",
       "newApproval8": "LMRAMIREZ",
+      "requestors": "ABRIGHT FPECANHA HREIL KMCHUGH2 AFLYNN RGIRADO",
       "children": [
         {
           "name": "Administration",
@@ -836,8 +841,7 @@
       "deptno": "804000",
       "gotApprovalFrom": [
         {
-          "name": "General Manager",
-          "deptno": "105000"
+          "name": "General Manager"
         }
       ],
       "children": [

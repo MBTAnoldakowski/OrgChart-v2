@@ -365,17 +365,11 @@
 
     //draws the tooltip
     function mousemove2(d) {
-        if (d.gaveApprovalTo) {
-            div2.html("Gave approval to:" + getDepartments(d.gaveApprovalTo))
-                .style("left", (d3.event.pageX ) + "px")
-                .style("top", (d3.event.pageY) + "px");
-            highlight(d.gaveApprovalTo);
-        }
         if (d.gotApprovalFrom) {
-            div2.html("Received approval from:" + getDepartments(d.gotApprovalFrom))
+            div2.html("Recently received approval structure")
                 .style("left", (d3.event.pageX ) + "px")
                 .style("top", (d3.event.pageY) + "px");
-            highlight(d.gotApprovalFrom);
+            //highlight(d.gotApprovalFrom);
         }
 
     }
@@ -549,8 +543,6 @@
 </div>
 <!--This div contains the PO Data Key-->
 <div class="ltitleright2">
-
-    <p><span class="glyphicon-key glyphicon glyphicon-minus-sign"></span> Recently gave up approval rights</p>
     <p><span class="glyphicon-key glyphicon glyphicon-plus-sign"></span> Recently gained approval rights</p>
 
 </div>

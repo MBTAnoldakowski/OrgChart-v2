@@ -13,56 +13,18 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5">
-      <split-first>
-        <leaf>
-          <file leaf-file-name="admin_capital.json" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/public/resources/admin_capital.json">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="592">
-                  <caret line="875" column="6" lean-forward="false" selection-start-line="875" selection-start-column="6" selection-end-line="875" selection-end-column="60" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="operating_capital.json" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/public/resources/operating_capital.json">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="442">
-                  <caret line="478" column="98" lean-forward="true" selection-start-line="478" selection-start-column="10" selection-end-line="478" selection-end-column="98" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf>
-          <file leaf-file-name="flare_experiment_2.json" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/public/resources/flare_experiment_2.json">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="592">
-                  <caret line="877" column="60" lean-forward="false" selection-start-line="877" selection-start-column="60" selection-end-line="877" selection-end-column="60" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="flare_experiment.json" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/public/resources/flare_experiment.json">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="354">
-                  <caret line="482" column="23" lean-forward="true" selection-start-line="482" selection-start-column="23" selection-end-line="482" selection-end-column="23" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="approvals.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/public/approvals.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="319">
+              <caret line="544" column="26" lean-forward="false" selection-start-line="544" selection-start-column="26" selection-end-line="544" selection-end-column="26" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -74,27 +36,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>tooltip</find>
-      <find>tool</find>
-      <find>console.log(</find>
-      <find>ltitleright2</find>
-      <find>heav</find>
-      <find>SPOFTAK</find>
-      <find>chief finan</find>
-      <find>rail</find>
-      <find>general manag</find>
-      <find>capital deli</find>
-      <find>law</find>
-      <find>CUSTOMER E</find>
-      <find>ADMINIS</find>
-      <find>ADMINISTRA</find>
-      <find>ADM</find>
-      <find>RAIL</find>
-      <find>BUS OP</find>
-      <find>SAFETY</find>
-      <find>TRANSPORTATION ACC</find>
-      <find>OCC</find>
-      <find>LIGHT RAIL</find>
       <find>TREAS</find>
       <find>SECURITY</find>
       <find>treas</find>
@@ -104,6 +45,27 @@
       <find>10000</find>
       <find>OWN SOU</find>
       <find>209000</find>
+      <find>22000</find>
+      <find>250000</find>
+      <find>23900</find>
+      <find>24000</find>
+      <find>290000</find>
+      <find>29000</find>
+      <find>310000</find>
+      <find>330000</find>
+      <find>31000</find>
+      <find>570000</find>
+      <find>62000</find>
+      <find>6710</find>
+      <find>671000</find>
+      <find>67200</find>
+      <find>700000</find>
+      <find>674000</find>
+      <find>70000</find>
+      <find>86000</find>
+      <find>80500</find>
+      <find>795000</find>
+      <find>805000</find>
     </findStrings>
     <replaceStrings>
       <replace>LMRAMIREZ</replace>
@@ -158,15 +120,15 @@
         <option value="$PROJECT_DIR$/public/circle.html" />
         <option value="$PROJECT_DIR$/public/config.js" />
         <option value="$PROJECT_DIR$/public/resources/style.css" />
-        <option value="$PROJECT_DIR$/public/approvals.html" />
         <option value="$PROJECT_DIR$/public/employees3.html" />
         <option value="$PROJECT_DIR$/public/procurement.html" />
         <option value="$PROJECT_DIR$/public/visualization.html" />
         <option value="$PROJECT_DIR$/public/kpi.html" />
-        <option value="$PROJECT_DIR$/public/resources/operating_capital.json" />
-        <option value="$PROJECT_DIR$/public/resources/flare_experiment.json" />
-        <option value="$PROJECT_DIR$/public/resources/admin_capital.json" />
         <option value="$PROJECT_DIR$/public/resources/flare_experiment_2.json" />
+        <option value="$PROJECT_DIR$/public/resources/admin_capital.json" />
+        <option value="$PROJECT_DIR$/public/resources/flare_experiment.json" />
+        <option value="$PROJECT_DIR$/public/resources/operating_capital.json" />
+        <option value="$PROJECT_DIR$/public/approvals.html" />
       </list>
     </option>
   </component>
@@ -180,8 +142,8 @@
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1844" />
-    <option name="y" value="-188" />
+    <option name="x" value="2203" />
+    <option name="y" value="-197" />
     <option name="width" value="958" />
     <option name="height" value="648" />
   </component>
@@ -201,7 +163,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -231,6 +192,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -298,31 +260,34 @@
       <workItem from="1506692353688" duration="1316000" />
       <workItem from="1506948394206" duration="10543000" />
       <workItem from="1507037119281" duration="18570000" />
+      <workItem from="1507122123705" duration="1362000" />
+      <workItem from="1507123808503" duration="2720000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="230180000" />
+    <option name="totallyTimeSpent" value="234262000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1358" y="-187" width="1936" height="1096" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18333334" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1496063" sideWeight="0.50512445" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32928064" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.110435665" sideWeight="0.49487555" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19452888" sideWeight="0.49487555" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32928064" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -469,7 +434,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1190">
           <caret line="70" column="32" lean-forward="false" selection-start-line="70" selection-start-column="32" selection-end-line="70" selection-end-column="32" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -477,7 +441,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="18" column="14" lean-forward="true" selection-start-line="18" selection-start-column="14" selection-end-line="18" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -485,7 +448,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-7423">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -493,7 +455,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-8109">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -501,7 +462,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
           <caret line="385" column="8" lean-forward="true" selection-start-line="385" selection-start-column="8" selection-end-line="392" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -509,15 +469,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="817">
           <caret line="480" column="36" lean-forward="true" selection-start-line="480" selection-start-column="36" selection-end-line="480" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/approvals.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="786">
-          <caret line="568" column="4" lean-forward="false" selection-start-line="568" selection-start-column="4" selection-end-line="568" selection-end-column="79" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -525,7 +476,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="786">
           <caret line="624" column="70" lean-forward="false" selection-start-line="624" selection-start-column="70" selection-end-line="624" selection-end-column="70" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -533,7 +483,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="752">
           <caret line="473" column="70" lean-forward="false" selection-start-line="473" selection-start-column="70" selection-end-line="473" selection-end-column="70" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -541,7 +490,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="230">
           <caret line="398" column="6" lean-forward="true" selection-start-line="398" selection-start-column="6" selection-end-line="398" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -549,43 +497,45 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1075">
           <caret line="344" column="8" lean-forward="true" selection-start-line="344" selection-start-column="8" selection-end-line="344" selection-end-column="74" />
-          <folding>
-            <element signature="e#298#304#0" expanded="true" />
-            <element signature="e#304#310#0" expanded="true" />
-            <element signature="e#310#316#0" expanded="true" />
-            <element signature="e#316#322#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/resources/operating_capital.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="478" column="98" lean-forward="true" selection-start-line="478" selection-start-column="10" selection-end-line="478" selection-end-column="98" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/resources/flare_experiment.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="354">
-          <caret line="482" column="23" lean-forward="true" selection-start-line="482" selection-start-column="23" selection-end-line="482" selection-end-column="23" />
+        <state relative-caret-position="95">
+          <caret line="353" column="25" lean-forward="false" selection-start-line="353" selection-start-column="25" selection-end-line="353" selection-end-column="25" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/resources/admin_capital.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="592">
-          <caret line="875" column="6" lean-forward="false" selection-start-line="875" selection-start-column="6" selection-end-line="875" selection-end-column="60" />
+        <state relative-caret-position="106">
+          <caret line="824" column="10" lean-forward="true" selection-start-line="824" selection-start-column="10" selection-end-line="824" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/resources/operating_capital.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="54" column="38" lean-forward="true" selection-start-line="54" selection-start-column="38" selection-end-line="54" selection-end-column="38" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/resources/flare_experiment_2.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="592">
-          <caret line="877" column="60" lean-forward="false" selection-start-line="877" selection-start-column="60" selection-end-line="877" selection-end-column="60" />
+        <state relative-caret-position="-3128">
+          <caret line="14" column="29" lean-forward="true" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/approvals.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="319">
+          <caret line="544" column="26" lean-forward="false" selection-start-line="544" selection-start-column="26" selection-end-line="544" selection-end-column="26" />
           <folding />
         </state>
       </provider>

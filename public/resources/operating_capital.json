@@ -39,12 +39,7 @@
       "newApproval6": "JGONNEVILLE",
       "newApproval7": "JGONNEVILLE",
       "newApproval8": "LMRAMIREZ",
-      "gaveApprovalTo": [
-        {
-          "name": "Bus Maintenance",
-          "deptno": "221000"
-        }
-      ],
+      "requestors":"WWALSH LMCAVOY BS020E BS016E WIOVEN SNETH RHALEY",
       "children": [
         {
           "name": "Bus Maintenance",
@@ -203,6 +198,7 @@
           "approval6": "JGONNEVILLE",
           "approval7": "MABRAMO",
           "approval8": "LMRAMIREZ",
+          "requestors":"SKERINS CFLYNN WFALLON TAVELINO REQWF673000",
           "children": [
             {
               "name": "Administration",
@@ -238,6 +234,7 @@
           "approval6": "JGONNEVILLE",
           "approval7": "MABRAMO",
           "approval8": "LMRAMIREZ",
+          "requestors":"LBILOTAS JCAMINITI JMACEACHERN JBUONOPANE ESTORER DBYRNE TSMEDBERG SDELFORNO REQWF672000 MTINNEY AYUEN CDUTTON",
           "children": [
             {
               "name": "Administration",
@@ -268,6 +265,7 @@
           "approval6": "JGONNEVILLE",
           "approval7": "MABRAMO",
           "approval8": "LMRAMIREZ",
+          "requestors": "REQWF671000 JASULLIVAN",
           "children": [
             {
               "name": "MOW Surface Light Rail",
@@ -298,6 +296,7 @@
           "approval6": "JGONNEVILLE",
           "approval7": "MABRAMO",
           "approval8": "LMRAMIREZ",
+          "requestors":"REQWF674000",
           "children": [
             {
               "name": "Power Systems and Equipment",
@@ -328,6 +327,7 @@
           "approval6": "JGONNEVILLE",
           "approval7": "MABRAMO",
           "approval8": "LMRAMIREZ",
+          "requestors":"REQWF250000",
           "children": [
             {
               "name": "Capital & Maintenance Planning/Scheduling",
@@ -352,20 +352,6 @@
       "name": "Subway",
       "level": "3",
       "deptno": "230000",
-      "gaveApprovalTo": [
-        {
-          "name": "Light Rail",
-          "deptno": "235000"
-        },
-        {
-          "name": "OCC & Training",
-          "deptno": "238000"
-        },
-        {
-          "name": "Heavy Rail",
-          "deptno": "231000"
-        }
-      ],
       "children": [
         {
           "name": "Light Rail",
@@ -423,6 +409,7 @@
           "newApproval6": "JGONNEVILLE",
           "newApproval7": "JGONNEVILLE",
           "newApproval8": "LMRAMIREZ",
+          "requestors":"ALARSON MHARRIGAN MCRAVEN MBIANCHI LWILKINS KWOOLLARD KMIRANDA KKALLENBERG KBRENNAN JSILVA JORTIZ JMURRAY2 JMONFILS JMCQUIGGAN JMCHUGH JGARCIA JBERRY GIENTILE RDACEY REQWF231000 REQWF238000 REQWF239000 SCLARK TTHIBODEAUX WCAMERON WMAHAR WPELLEGRINE AISIDOR AKOTSIOPOULOS MHECKER AMEHTA AQUEEN BS023E BS024E BS025E BS026E BS027E CYUSKOWSKI DBOVEST DSING EKEELEY EULLOA-MURRAY",
           "children": [
             {
               "name": "GL Reservoir Maintenance",
@@ -686,6 +673,7 @@
           "approval6": "JGONNEVILLE",
           "approval7": "MABRAMO",
           "approval8": "LMRAMIREZ",
+          "requestors":"CHARTURENA DWEBBER PHENNIGAN",
           "children": [
             {
               "name": "Suburban Bus",
@@ -782,6 +770,7 @@
           "newApproval6": "JGONNEVILLE",
           "newApproval7": "JGONNEVILLE",
           "newApproval8": "LMRAMIREZ",
+          "requestors":"APETERS REQWF280000",
           "children": [
             {
               "name": "Security Department",
@@ -802,6 +791,7 @@
           "approval6": "JDALTON BLARKIN",
           "approval7": "MABRAMO",
           "approval8": "LMRAMIREZ",
+          "requestors":"GTAMMARO MCROWLEY MCANTOR LDRAYTON-OLIVER KBENDERY SSILVERBERG CJJACKSON CLACKARD DSHEA REQWF310000 HCOOPER HLIM JSARIN JSWARTZ",
           "children": [
             {
               "name": "Capital Delivery Administration",
@@ -814,7 +804,8 @@
               "approval5": "BLARKIN",
               "approval6": "BLARKIN",
               "approval7": "MABRAMO",
-              "approval8": "LMRAMIREZ"
+              "approval8": "LMRAMIREZ",
+              "requestors":"YGOMEZ"
             }
           ]
         }

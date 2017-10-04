@@ -103,7 +103,7 @@
       "newApproval6": "MABRAMO",
       "newApproval7": "MABRAMO",
       "newApproval8": "LMRAMIREZ",
-      "requestors":"BS018 BS019 BS020 BS021 BS023 BS024 BS025 BS026 BS027 BS017 BS016 BS015 BS011 BS010 BS012 BS014 BS013",
+      "requestors": "BS018 BS019 BS020 BS021 BS023 BS024 BS025 BS026 BS027 BS017 BS016 BS015 BS011 BS010 BS012 BS014 BS013",
       "children": [
         {
           "name": "Controller",
@@ -173,7 +173,7 @@
       "approval6": "MABRAMO",
       "approval7": "MABRAMO",
       "approval8": "LMRAMIREZ",
-      "requestors":"REQWF860000",
+      "requestors": "REQWF860000",
       "children": [
         {
           "name": "General Activities",
@@ -213,7 +213,7 @@
       "newApproval7": "MABRAMO",
       "newApproval8": "LMRAMIREZ",
       "requestors": "ADOROSARIO",
-      "newRequestors":"ADOROSARIO YPOULAKOS EWRONALDSON BFOGARTY",
+      "newRequestors": "ADOROSARIO YPOULAKOS EWRONALDSON BFOGARTY",
       "children": [
         {
           "name": "Own Source Revenue",
@@ -255,7 +255,7 @@
       "newApproval7": "MABRAMO",
       "newApproval8": "LMRAMIREZ",
       "requestors": "KECHOLS",
-      "newRequestors":"KECHOLS",
+      "newRequestors": "KECHOLS",
       "children": [
         {
           "name": "System-wide Accessibility",
@@ -321,7 +321,7 @@
       "approval6": "JCHAN",
       "approval7": "MABRAMO",
       "approval8": "LMRAMIREZ",
-      "requestors":"CDUSTIN TLOGAN MBAMONTE JRUSH",
+      "requestors": "CDUSTIN TLOGAN MBAMONTE JRUSH",
       "newApproval1": "JCHAN",
       "newApproval2": "JCHAN",
       "newApproval3": "JCHAN",
@@ -502,8 +502,7 @@
       "newApproval7": "MABRAMO",
       "newApproval8": "LMRAMIREZ",
       "requestors": "REQWF101002 RCOMBS FHENES DMALONEY WSTEMBERG",
-      "newRequestors":"RCOMBS FHENES",
-
+      "newRequestors": "RCOMBS FHENES",
       "children": [
         {
           "name": "General Manager",
@@ -544,8 +543,8 @@
       "newApproval6": "RNICKLE",
       "newApproval7": "MABRAMO",
       "newApproval8": "LMRAMIREZ",
-      "requestors":"OSANCHEZ KRYSSMAN",
-      "newRequestors":"OSANCHEZ KRYSSMAN",
+      "requestors": "OSANCHEZ KRYSSMAN",
+      "newRequestors": "OSANCHEZ KRYSSMAN",
       "children": [
         {
           "name": "Safety Administration",
@@ -715,8 +714,8 @@
       "newApproval6": "BSCHULTZMAN MABRAMO",
       "newApproval7": "MABRAMO",
       "newApproval8": "LMRAMIREZ",
-      "requestors":"AMURKISON AHGRIFFITH PFITZGERALD PBALCOM",
-      "newRequestors":"AMURKISON AHGRIFFITH PFITZGERALD PBALCOM",
+      "requestors": "AMURKISON AHGRIFFITH PFITZGERALD PBALCOM",
+      "newRequestors": "AMURKISON AHGRIFFITH PFITZGERALD PBALCOM",
       "children": [
         {
           "name": "Office of Transportation Access",
@@ -745,7 +744,7 @@
       "newApproval6": "MABRAMO",
       "newApproval7": "MABRAMO",
       "newApproval8": "LMRAMIREZ",
-      "requestors":"VPOON CTAYLOR MAMADO STAYLOR JRICHARDS1 CMCCOLGAN",
+      "requestors": "VPOON CTAYLOR MAMADO STAYLOR JRICHARDS1 CMCCOLGAN",
       "newRequestors": "VREINA MAMADO STAYLOR JRICHARDS1 CMCCOLGAN",
       "children": [
         {
@@ -789,7 +788,7 @@
       "approval6": "JSAINTCYR",
       "approval7": "MABRAMO",
       "approval8": "LMRAMIREZ",
-      "requestors":"AAGRAWAL BOBRIEN VRWILSON PHARDY",
+      "requestors": "AAGRAWAL BOBRIEN VRWILSON PHARDY",
       "newApproval1": "SSULLIVAN",
       "newApproval2": "KLEGROW",
       "newApproval3": "KLEGROW",
@@ -922,8 +921,8 @@
       "newApproval6": "JRAY",
       "newApproval7": "MABRAMO",
       "newApproval8": "LMRAMIREZ",
-      "requestors":"REQWF210000 KROYSTON DORDOYNE NCADIGAN",
-      "newRequestors":"KROYSTON DORDOYNE NCADIGAN",
+      "requestors": "REQWF210000 KROYSTON DORDOYNE NCADIGAN",
+      "newRequestors": "KROYSTON DORDOYNE NCADIGAN",
       "children": [
         {
           "name": "Commuter Rail Supervision",
@@ -941,6 +940,95 @@
           "deptno": "215001"
         }
       ]
+    },
+    {
+      "name": "Community Relations",
+      "level": "4",
+      "deptno": "570000",
+      "removed": true,
+      "requestors":"MMCDOWELL",
+      "approval1":"FSCABIN",
+      "approval2":"FSCABIN NEASLEY",
+      "approval3":"FSCABIN NEASLEY",
+      "approval4":"JPOLCARI",
+      "approval5":"JPOLCARI",
+      "approval6":"JPOLCARI",
+      "approval7":"MABRAMO",
+      "approval8":"LMRAMIREZ"
+
+    },
+    {
+      "name": "DGM Human Resources and Labor Relations",
+      "level": "4",
+      "deptno": "770000",
+      "removed": true,
+      "requestors":"GDIMAMBRO",
+      "approval1":"FSCABIN",
+      "approval2":"FSCABIN NEASLEY",
+      "approval3":"FSCABIN NEASLEY",
+      "approval4":"JPOLCARI",
+      "approval5":"JPOLCARI",
+      "approval6":"JPOLCARI",
+      "approval7":"MABRAMO",
+      "approval8":"LMRAMIREZ"
+
+    },
+    {
+      "name": "Worker's Compensation",
+      "level":"4",
+      "deptno":"741000",
+      "removed": true,
+      "requestors": "AROMANO CHAMER GDIMAMBRO",
+      "approval1":"JDOOLEY",
+      "approval2":"JDOOLEY",
+      "approval3":"JDOOLEY",
+      "approval4":"KLEGROW",
+      "approval5":"JSAINTCYR",
+      "approval6":"JSAINTCYR",
+      "approval7":"MABRAMO",
+      "approval8":"LMRAMIREZ"
+    },
+    {
+      "name": "Director of Marketing & Communications",
+      "level":"4",
+      "deptno":"550000",
+      "removed": true,
+      "approval1":"TKING",
+      "approval2":"JRAMSAY",
+      "approval3":"JRAMSAY",
+      "approval4":"MYOUNG",
+      "approval5":"MYOUNG",
+      "approval6":"MABRAMO",
+      "approval7":"MABRAMO",
+      "approval8":"LMRAMIREZ"
+    },
+    {
+      "name": "Director of Marketing",
+      "level":"4",
+      "deptno":"500000",
+      "removed": true,
+      "approval1":"JRAMSAY",
+      "approval2":"JRAMSAY",
+      "approval3":"JRAMSAY",
+      "approval4":"MYOUNG",
+      "approval5":"MYOUNG",
+      "approval6":"MABRAMO",
+      "approval7":"MABRAMO",
+      "approval8":"LMRAMIREZ"
+    },
+    {
+      "name": "Director of Customer Service",
+      "level":"4",
+      "deptno":"275000",
+      "removed": true,
+      "approval1":"CJORDAN",
+      "approval2":"CHOWZE",
+      "approval3":"CHOWZE",
+      "approval4":"MYOUNG",
+      "approval5":"MYOUNG",
+      "approval6":"MABRAMO",
+      "approval7":"MABRAMO",
+      "approval8":"LMRAMIREZ"
     }
   ]
 }

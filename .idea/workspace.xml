@@ -14,11 +14,41 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="admin_capital.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/resources/admin_capital.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17289">
+              <caret line="1017" column="5" lean-forward="true" selection-start-line="1017" selection-start-column="5" selection-end-line="1031" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="operating_capital.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/resources/operating_capital.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="374">
+              <caret line="121" column="32" lean-forward="true" selection-start-line="121" selection-start-column="32" selection-end-line="121" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="flare_experiment.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/resources/flare_experiment.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="362" column="32" lean-forward="true" selection-start-line="362" selection-start-column="32" selection-end-line="362" selection-end-column="32" />
+            <state relative-caret-position="153">
+              <caret line="9" column="21" lean-forward="false" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="flare_experiment_2.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/resources/flare_experiment_2.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="370">
+              <caret line="1011" column="28" lean-forward="true" selection-start-line="1011" selection-start-column="28" selection-end-line="1011" selection-end-column="28" />
               <folding />
             </state>
           </provider>
@@ -27,8 +57,8 @@
       <file leaf-file-name="approvals.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/approvals.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="388" column="56" lean-forward="true" selection-start-line="388" selection-start-column="56" selection-end-line="388" selection-end-column="56" />
+            <state relative-caret-position="266">
+              <caret line="324" column="70" lean-forward="false" selection-start-line="324" selection-start-column="70" selection-end-line="324" selection-end-column="70" />
               <folding />
             </state>
           </provider>
@@ -143,12 +173,12 @@
         <option value="$PROJECT_DIR$/public/procurement.html" />
         <option value="$PROJECT_DIR$/public/visualization.html" />
         <option value="$PROJECT_DIR$/public/kpi.html" />
+        <option value="$PROJECT_DIR$/public/resources/style.css" />
         <option value="$PROJECT_DIR$/public/resources/admin_capital.json" />
         <option value="$PROJECT_DIR$/public/resources/flare_experiment_2.json" />
-        <option value="$PROJECT_DIR$/public/resources/flare_experiment.json" />
         <option value="$PROJECT_DIR$/public/resources/operating_capital.json" />
+        <option value="$PROJECT_DIR$/public/resources/flare_experiment.json" />
         <option value="$PROJECT_DIR$/public/approvals.html" />
-        <option value="$PROJECT_DIR$/public/resources/style.css" />
       </list>
     </option>
   </component>
@@ -162,8 +192,8 @@
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1914" />
-    <option name="y" value="-187" />
+    <option name="x" value="1544" />
+    <option name="y" value="-182" />
     <option name="width" value="958" />
     <option name="height" value="648" />
   </component>
@@ -281,12 +311,12 @@
       <workItem from="1506948394206" duration="10543000" />
       <workItem from="1507037119281" duration="18570000" />
       <workItem from="1507122123705" duration="1362000" />
-      <workItem from="1507123808503" duration="10104000" />
+      <workItem from="1507123808503" duration="13408000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="241646000" />
+    <option name="totallyTimeSpent" value="244950000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1358" y="-187" width="1936" height="1096" extended-state="6" />
@@ -506,34 +536,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/resources/flare_experiment_2.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="545">
-          <caret line="800" column="51" lean-forward="false" selection-start-line="800" selection-start-column="51" selection-end-line="800" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/resources/operating_capital.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="52" column="20" lean-forward="false" selection-start-line="52" selection-start-column="20" selection-end-line="52" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/employees3.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="733">
           <caret line="344" column="8" lean-forward="false" selection-start-line="344" selection-start-column="8" selection-end-line="344" selection-end-column="74" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/resources/admin_capital.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="5" lean-forward="true" selection-start-line="5" selection-start-column="5" selection-end-line="5" selection-end-column="5" />
           <folding />
         </state>
       </provider>
@@ -546,18 +552,42 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/public/resources/flare_experiment_2.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="370">
+          <caret line="1011" column="28" lean-forward="true" selection-start-line="1011" selection-start-column="28" selection-end-line="1011" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/resources/operating_capital.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="121" column="32" lean-forward="true" selection-start-line="121" selection-start-column="32" selection-end-line="121" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/resources/admin_capital.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17289">
+          <caret line="1017" column="5" lean-forward="true" selection-start-line="1017" selection-start-column="5" selection-end-line="1031" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/public/resources/flare_experiment.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="362" column="32" lean-forward="true" selection-start-line="362" selection-start-column="32" selection-end-line="362" selection-end-column="32" />
+        <state relative-caret-position="153">
+          <caret line="9" column="21" lean-forward="false" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/approvals.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="388" column="56" lean-forward="true" selection-start-line="388" selection-start-column="56" selection-end-line="388" selection-end-column="56" />
+        <state relative-caret-position="266">
+          <caret line="324" column="70" lean-forward="false" selection-start-line="324" selection-start-column="70" selection-end-line="324" selection-end-column="70" />
           <folding />
         </state>
       </provider>

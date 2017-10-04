@@ -504,3 +504,18 @@ input:checked + .slider:before {
     right:0;
     bottom: 0;
 }
+
+#striker{
+    position: relative;
+    display: inline-block;
+    color: red;
+}
+#striker::before{
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 1px; /* ADJUST HEIGHT TO ADD WEIGHT */
+    background: red; /* CHANGE COLOR TO SUIT */
+}

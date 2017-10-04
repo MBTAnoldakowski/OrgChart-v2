@@ -14,31 +14,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="admin_capital.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/resources/admin_capital.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17289">
-              <caret line="1017" column="5" lean-forward="true" selection-start-line="1017" selection-start-column="5" selection-end-line="1031" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="flare_experiment.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/resources/flare_experiment.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="21" lean-forward="false" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="approvals.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="approvals.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/approvals.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="447">
-              <caret line="174" column="14" lean-forward="true" selection-start-line="162" selection-start-column="12" selection-end-line="174" selection-end-column="14" />
+            <state relative-caret-position="251">
+              <caret line="188" column="40" lean-forward="false" selection-start-line="188" selection-start-column="40" selection-end-line="188" selection-end-column="40" />
               <folding />
             </state>
           </provider>
@@ -54,21 +34,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="kpi.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="kpi.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/kpi.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="655">
-              <caret line="336" column="50" lean-forward="false" selection-start-line="336" selection-start-column="50" selection-end-line="336" selection-end-column="50" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="circle.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/circle.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="733">
-              <caret line="70" column="32" lean-forward="false" selection-start-line="70" selection-start-column="32" selection-end-line="70" selection-end-column="32" />
+            <state relative-caret-position="2933">
+              <caret line="323" column="39" lean-forward="true" selection-start-line="323" selection-start-column="39" selection-end-line="323" selection-end-column="39" />
               <folding />
             </state>
           </provider>
@@ -77,8 +47,8 @@
       <file leaf-file-name="procurement.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/procurement.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="181" column="14" lean-forward="false" selection-start-line="181" selection-start-column="14" selection-end-line="181" selection-end-column="14" />
+            <state relative-caret-position="306">
+              <caret line="359" column="39" lean-forward="false" selection-start-line="359" selection-start-column="39" selection-end-line="359" selection-end-column="39" />
               <folding />
             </state>
           </provider>
@@ -87,8 +57,8 @@
       <file leaf-file-name="visualization.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/visualization.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-66">
-              <caret line="150" column="17" lean-forward="true" selection-start-line="150" selection-start-column="17" selection-end-line="150" selection-end-column="17" />
+            <state relative-caret-position="400">
+              <caret line="316" column="63" lean-forward="false" selection-start-line="316" selection-start-column="63" selection-end-line="316" selection-end-column="63" />
               <folding />
             </state>
           </provider>
@@ -97,18 +67,8 @@
       <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/resources/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="307">
-              <caret line="70" column="25" lean-forward="false" selection-start-line="70" selection-start-column="25" selection-end-line="70" selection-end-column="25" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="30" column="5" lean-forward="false" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
+            <state relative-caret-position="557">
+              <caret line="512" column="1" lean-forward="true" selection-start-line="512" selection-start-column="0" selection-end-line="512" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -213,12 +173,12 @@
         <option value="$PROJECT_DIR$/public/resources/flare_experiment_2.json" />
         <option value="$PROJECT_DIR$/public/resources/operating_capital.json" />
         <option value="$PROJECT_DIR$/public/resources/flare_experiment.json" />
-        <option value="$PROJECT_DIR$/public/resources/style.css" />
         <option value="$PROJECT_DIR$/public/index.html" />
-        <option value="$PROJECT_DIR$/public/approvals.html" />
+        <option value="$PROJECT_DIR$/public/kpi.html" />
+        <option value="$PROJECT_DIR$/public/resources/style.css" />
         <option value="$PROJECT_DIR$/public/procurement.html" />
         <option value="$PROJECT_DIR$/public/visualization.html" />
-        <option value="$PROJECT_DIR$/public/kpi.html" />
+        <option value="$PROJECT_DIR$/public/approvals.html" />
       </list>
     </option>
   </component>
@@ -232,8 +192,8 @@
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1544" />
-    <option name="y" value="-182" />
+    <option name="x" value="1801" />
+    <option name="y" value="-188" />
     <option name="width" value="958" />
     <option name="height" value="648" />
   </component>
@@ -351,12 +311,12 @@
       <workItem from="1506948394206" duration="10543000" />
       <workItem from="1507037119281" duration="18570000" />
       <workItem from="1507122123705" duration="1362000" />
-      <workItem from="1507123808503" duration="16314000" />
+      <workItem from="1507123808503" duration="19156000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="247856000" />
+    <option name="totallyTimeSpent" value="250698000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1358" y="-187" width="1936" height="1096" extended-state="6" />
@@ -573,14 +533,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/resources/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="307">
-          <caret line="70" column="25" lean-forward="false" selection-start-line="70" selection-start-column="25" selection-end-line="70" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
@@ -597,6 +549,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/public/resources/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="557">
+          <caret line="512" column="1" lean-forward="true" selection-start-line="512" selection-start-column="0" selection-end-line="512" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/public/employees3.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="733">
@@ -605,34 +565,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/approvals.html">
+    <entry file="file://$PROJECT_DIR$/public/kpi.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="447">
-          <caret line="174" column="14" lean-forward="true" selection-start-line="162" selection-start-column="12" selection-end-line="174" selection-end-column="14" />
+        <state relative-caret-position="2933">
+          <caret line="323" column="39" lean-forward="true" selection-start-line="323" selection-start-column="39" selection-end-line="323" selection-end-column="39" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/procurement.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="181" column="14" lean-forward="false" selection-start-line="181" selection-start-column="14" selection-end-line="181" selection-end-column="14" />
+        <state relative-caret-position="306">
+          <caret line="359" column="39" lean-forward="false" selection-start-line="359" selection-start-column="39" selection-end-line="359" selection-end-column="39" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/visualization.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-66">
-          <caret line="150" column="17" lean-forward="true" selection-start-line="150" selection-start-column="17" selection-end-line="150" selection-end-column="17" />
+        <state relative-caret-position="400">
+          <caret line="316" column="63" lean-forward="false" selection-start-line="316" selection-start-column="63" selection-end-line="316" selection-end-column="63" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/kpi.html">
+    <entry file="file://$PROJECT_DIR$/public/approvals.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="655">
-          <caret line="336" column="50" lean-forward="false" selection-start-line="336" selection-start-column="50" selection-end-line="336" selection-end-column="50" />
+        <state relative-caret-position="251">
+          <caret line="188" column="40" lean-forward="false" selection-start-line="188" selection-start-column="40" selection-end-line="188" selection-end-column="40" />
           <folding />
         </state>
       </provider>

@@ -21,6 +21,7 @@
           "newApproval6": "JGONNEVILLE",
           "newApproval7": "JGONNEVILLE",
           "newApproval8": "LMRAMIREZ",
+          "newRequestors": "LMCAVOY WLOVEN",
           "gotApprovalFrom": [
             {
               "name": "Bus Operations",
@@ -351,6 +352,7 @@
           "newApproval6": "JGONNEVILLE",
           "newApproval7": "JGONNEVILLE",
           "newApproval8": "LMRAMIREZ",
+          "newRequestors":"AGOMES SOLEARY",
           "gotApprovalFrom": [
             {
               "name": "Subway",
@@ -489,6 +491,7 @@
           "name": "Heavy Rail",
           "level": "4",
           "deptno": "231000",
+          "newRequestors": "AHOWELL RCARIUS FOLSON ACAIN SOLEARY",
           "gotApprovalFrom": [
             {
               "name": "Subway",
@@ -573,6 +576,7 @@
           "newApproval6": "JGONNEVILLE",
           "newApproval7": "JGONNEVILLE",
           "newApproval8": "LMRAMIREZ",
+          "newRequestors":"WCAMERON ALARSON LARMSTRONG",
           "gotApprovalFrom": [
             {
               "name": "Subway",

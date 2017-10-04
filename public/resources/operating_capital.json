@@ -37,7 +37,7 @@
           "newApproval6": "JGONNEVILLE",
           "newApproval7": "JGONNEVILLE",
           "newApproval8": "LMRAMIREZ",
-          "newRequestors": "VREINA MAMADO STAYLOR JRICHARDS1 CMCCOLGAN",
+          "newRequestors": "LMCAVOY WLOVEN",
           "gotApprovalFrom": [
             {
               "name": "Bus Operations",
@@ -368,6 +368,7 @@
           "newApproval6": "JGONNEVILLE",
           "newApproval7": "JGONNEVILLE",
           "newApproval8": "LMRAMIREZ",
+          "newRequestors":"AGOMES SOLEARY",
           "gotApprovalFrom": [
             {
               "name": "Subway",
@@ -519,6 +520,7 @@
           "newApproval6": "JGONNEVILLE",
           "newApproval7": "JGONNEVILLE",
           "newApproval8": "LMRAMIREZ",
+          "newRequestors": "AHOWELL RCARIUS FOLSON ACAIN SOLEARY",
           "children": [
             {
               "name": "Blue Line Orient Heights Station",
@@ -589,6 +591,7 @@
           "newApproval6": "JGONNEVILLE",
           "newApproval7": "JGONNEVILLE",
           "newApproval8": "LMRAMIREZ",
+          "newRequestors":"WCAMERON ALARSON LARMSTRONG",
           "gotApprovalFrom": [
             {
               "name": "Subway",

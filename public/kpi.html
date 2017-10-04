@@ -138,11 +138,16 @@
         // appends the name text to the nodes
         nodeEnter.append("text")
             .attr("x", function (d) {
-                // sets the range of X locations for the text
+                if(d.removed == true){
+                    return d.children || d._children ? -20 : -10;
+                }
                 return d.children || d._children ? -10 : 10;
             })
             .attr("dy", ".35em")
             .attr("text-anchor", function (d) {
+                if(d.removed == true){
+                    return d.children || d._children ? "end" : "end";
+                }
                 return d.children || d._children ? "end" : "start";
             })
             //the name is appended to the dot right here
@@ -159,6 +164,11 @@
             // the names are styled here.
             .style("fill", function (d) {
                 return "black";
+            })
+            .style("text-decoration",function(d){
+                if(d.removed == true){
+                    return "line-through"
+                }
             });
 
 

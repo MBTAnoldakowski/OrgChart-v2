@@ -139,10 +139,16 @@
         // appends the name text to the nodes
         nodeEnter.append("text")
             .attr("x", function (d) {
+                if(d.removed == true){
+                    return d.children || d._children ? -20 : -10;
+                }
                 return d.children || d._children ? -10 : 10;
             })
             .attr("dy", ".35em")
             .attr("text-anchor", function (d) {
+                if(d.removed == true){
+                    return d.children || d._children ? "end" : "end";
+                }
                 return d.children || d._children ? "end" : "start";
             })
             //the name is appended to the dot right here
@@ -156,6 +162,11 @@
             })
             .on("mouseout", mouseout)
             .style("fill-opacity", 1e-6)
+            .style("text-decoration",function(d){
+                if(d.removed == true){
+                    return "line-through"
+                }
+            })
             // the names are styled here based on budgeted amount vs actual
             .style("fill", function (d) {
                 var budget = getBudgetData(d.deptno);

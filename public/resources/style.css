@@ -378,6 +378,12 @@ div2.tooltip2 {
     color: red;
 }
 
+.control.glyphicon.glyphicon-remove-circle {
+    color: white;
+    z-index: 9999;
+    font-size: 16px;
+}
+
 .glyphicon-key.glyphicon.glyphicon-plus-sign {
     color: blue;
     font-size: 19px;

@@ -158,6 +158,18 @@
             })
             .on("mouseout", mouseout2);
 
+        node.append("svg:foreignObject")
+            .attr("width", 20)
+            .attr("height", 20)
+            .attr("y", "-8px")
+            .attr("x", "-10px")
+            .append("xhtml:span")
+            .attr("z-index", "9999")
+            .attr("class", function (d) {
+                if (d.removed) {
+                    return "control glyphicon glyphicon-remove-circle"
+                }
+            });
         // appends the name text to the nodes
         nodeEnter.append("text")
             .attr("x", function (d) {
@@ -215,6 +227,7 @@
                 // change this number to make dots bigger or smaller
                 return 6;
             })
+            .attr("z-index", "9997")
             .style("fill", function (d) {
                 if (d.level == "2") return "red";
                 if (d.level == "3") return "orange";

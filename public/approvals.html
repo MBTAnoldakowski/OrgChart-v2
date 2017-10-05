@@ -62,7 +62,7 @@
         .attr("height", height + margin.top + margin.bottom)
         .append("g")
         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-
+    d3.select("#switch-label-right").style("color","#2FCCD1");
     // initializes the budget/approval tooltip
     var div = d3.select("body").append("div")
         .attr("class", "tooltip")
@@ -295,7 +295,10 @@
 
     function checkBox() {
         if (d3.select("#toggleBox").property("checked")) {
+            d3.select("#switch-label-left").style("color","#2FCCD1");
+            d3.select("#switch-label-right").style("color","black");
             if (dataDisplayed == 0) {
+
                 updateApprovalData2();
             }
             else {
@@ -303,6 +306,8 @@
             }
 
         } else {
+            d3.select("#switch-label-left").style("color","black");
+            d3.select("#switch-label-right").style("color","#2FCCD1");
             if (dataDisplayed == 0) {
                 updateData2();
             }

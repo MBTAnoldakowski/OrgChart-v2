@@ -379,9 +379,9 @@ div2.tooltip2 {
 }
 
 .control.glyphicon.glyphicon-remove-circle {
-    color: white;
+    color: black;
     z-index: 9999;
-    font-size: 16px;
+    font-size: 15px;
 }
 
 .glyphicon-key.glyphicon.glyphicon-plus-sign {

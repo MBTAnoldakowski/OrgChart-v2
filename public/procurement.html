@@ -267,7 +267,18 @@
                     return 0;
                 }
             });
-
+        node.append("svg:foreignObject")
+            .attr("width", 20)
+            .attr("height", 20)
+            .attr("y", "-8px")
+            .attr("x", "-10px")
+            .append("xhtml:span")
+            .attr("z-index", "9999")
+            .attr("class", function (d) {
+                if (d.removed) {
+                    return "control glyphicon glyphicon-remove-circle"
+                }
+            });
 
         // Transition exiting nodes to the parent's new position.
         var nodeExit = node.exit().transition()

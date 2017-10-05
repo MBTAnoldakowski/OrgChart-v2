@@ -178,7 +178,18 @@
             .attr("transform", function (d) {
                 return "translate(" + d.y + "," + d.x + ")";
             });
-
+        node.append("svg:foreignObject")
+            .attr("width", 20)
+            .attr("height", 20)
+            .attr("y", "-8px")
+            .attr("x", "-10px")
+            .append("xhtml:span")
+            .attr("z-index", "9999")
+            .attr("class", function (d) {
+                if (d.removed) {
+                    return "control glyphicon glyphicon-remove-circle"
+                }
+            });
         // size/style the circles based on levels
         nodeUpdate.select("circle")
             .attr("r", function (d) {

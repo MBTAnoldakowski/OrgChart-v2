@@ -21,6 +21,7 @@
 div.tooltip {
     position: absolute;
     text-align: center;
+    width: auto;
     max-width: 65%;
     height: auto;
     padding: 8px;
@@ -480,37 +481,44 @@ input:checked + .slider:before {
 .old-approvals {
     float: left;
     padding: 10px;
-    border-right: thick double black;
-    width: 50%
+    border-right: medium solid black;
+    width: 50%;
+    height: 75%;
 }
 
 .new-approvals {
     float: right;
     top: 0;
     padding: 10px;
-    border-left: thick double black;
+    border-left: medium solid black;
     width: 50%;
-
+    height: 75%;
 }
 
 .old-requests {
     float: left;
     padding: 10px;
-    border-top: thick double black;
-    width: 50%;
+    border-top: medium solid black;
+    height: 25%;
     left:0;
     bottom: 0;
+    width: 50%;
 }
 
 .new-requests {
-    float: right;
-    padding: 10px;
-    border-top: thick double black;
-    width: 50%;
-    right:0;
+     float: right;
+     padding: 10px;
+     border-top: medium solid black;
+     width: 50%;
+     height: 25%;
+     right:0;
+     bottom: 0;
+ }
+.request-container{
     bottom: 0;
+    left:0;
+    right: 0;
 }
-
 #striker{
     position: relative;
     display: inline-block;

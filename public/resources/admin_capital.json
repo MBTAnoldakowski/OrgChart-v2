@@ -103,6 +103,8 @@
       "newApproval6": "MABRAMO",
       "newApproval7": "MABRAMO",
       "newApproval8": "LMRAMIREZ",
+      "requestors":"BS018 BS019 BS020 BS021 BS023 BS024 BS025 BS026 BS027 BS017 BS016 BS015 BS011 BS010 BS012 BS014 BS013",
+      "newRequestors":"",
       "children": [
         {
           "name": "Controller",

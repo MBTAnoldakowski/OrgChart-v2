@@ -23,5 +23,18 @@
             .when('/approvals',{
                 templateUrl: 'approvals.html'
             })
+            .when('/vendor/:vendorName',{
+                templateUrl: 'vendor.html',
+                controller: 'vendorPageController',
+                controllerAs: 'model'
+            })
+            .when('/vendor',{
+                templateUrl: 'vendorUpload.html'
+            })
+            .when('/vendors',{
+                templateUrl: 'vendor-list.html',
+                controller: 'vendorController',
+                controllerAs: 'model'
+            })
     }
 })();

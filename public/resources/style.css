@@ -216,7 +216,8 @@ div2.tooltip2 {
     margin-bottom: 10px;
     margin-left: 10px;
     z-index: 100;
-
+    max-width: 13%;
+    white-space: normal;
 }
 
 #over {

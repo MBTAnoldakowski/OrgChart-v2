@@ -1,11 +1,7 @@
-<!--This div contains the header menu-->
 <div id="option">
-    <h1>MBTA Procurement Analysis Chart</h1>
+    <h1>MBTA Chart: {{vendor}}</h1>
     <div class="lastUpdated">
-        <p>Last Updated: 10/5/2017 10:00AM</p>
-    </div>
-    <div class="update">
-        <a class="btn btn-warning" href="#!/update">Update</a>
+        <p>Last Updated: 10/6/2017 3:00PM</p>
     </div>
     <br/>
     <input name="updateButton"
@@ -21,10 +17,11 @@
            onclick="updateData2()"/>
 
 </div>
-<!-- this is an empty div for the script to populate with the tree -->
 <div id="chart"></div>
 <script>
-    var dataDisplayed = 0; // when 0, admin- when 1, ops
+    var url = window.location.href;
+    var vendorName = url ? url.split('/vendor/')[1] : window.location.search.slice(1);
+
     // clears the screen in case a visualization is still loaded
     d3.select("svg").remove();
 
@@ -55,35 +52,23 @@
         .attr("height", height + margin.top + margin.bottom)
         .append("g")
         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-
-    // initializes the budget/approval tooltip
+    // initializes the tooltip
     var div = d3.select("body").append("div")
         .attr("class", "tooltip")
         .style("opacity", 1e-6);
 
-    // initializes the new approval tooltip
-    var div2 = d3.select("body").append("div")
-        .attr("class", "tooltip")
-        .style("opacity", 1e-6);
+    var dataArray = [];
 
-    // loads in the CSV with the budgeting data in it
-    var buData = [];
-    var sortedArray = [];
-    d3.csv("csv/procurementdata.csv", function (error, bData) {
+    // takes the budgeting data from the CSV file and places it into the array
+    d3.csv("vendor-data/" + decodeURI(vendorName) + ".csv", function (error, data) {
         if (error) throw error;
-        bData.forEach(function (b) {
-            //the + next to the following makes d3 think of it as a number
-            b.dept = +b.dept;
-            b.poNum = +parseFloat(b.poNum);
-            b.total = +parseFloat(b.total);
-            //adds all of the budget data to the array that I initialized above.
-            buData.push(b);
-            sortedArray.push(b);
+        data.forEach(function (b) {
+            //adds all of the data to the array that I initialized above.
+            dataArray.push(b);
         });
     });
-
     //loads the department data
-    d3.json("resources/flare_experiment_2.json", function (error, flare) {
+    d3.json("resources/admin.min.json", function (error, flare) {
         if (error) throw error;
 
         root = flare;
@@ -141,41 +126,17 @@
 
         nodeEnter.append("circle")
             .attr("r", 1e-6);
-
-        // appends the new/old approval signifiers
-        node.append("svg:foreignObject")
-            .attr("width", 20)
-            .attr("height", 20)
-            .attr("y", "-26px")
-            .attr("x", "-10px")
-            .append("xhtml:span")
-            .attr("z-index", "1000")
-            .attr("class", function (d) {
-                if (d.gaveApprovalTo) {
-                    return "control glyphicon glyphicon-minus-sign"
-                }
-                if (d.gotApprovalFrom) {
-                    return "control glyphicon glyphicon-plus-sign"
-                }
-            })
-            // calls for approval tooltip on mouseover
-            .on("mouseover", mouseover2)
-            .on("mousemove", function (d) {
-                mousemove2(d);
-            })
-            .on("mouseout", mouseout2);
-
         // appends the name text to the nodes
         nodeEnter.append("text")
             .attr("x", function (d) {
-                if(d.removed == true){
+                if (d.removed == true) {
                     return d.children || d._children ? -20 : -10;
                 }
                 return d.children || d._children ? -10 : 10;
             })
             .attr("dy", ".35em")
             .attr("text-anchor", function (d) {
-                if(d.removed == true){
+                if (d.removed == true) {
                     return d.children || d._children ? "end" : "end";
                 }
                 return d.children || d._children ? "end" : "start";
@@ -191,56 +152,13 @@
             })
             .on("mouseout", mouseout)
             .style("fill-opacity", 1)
-            .style("text-decoration",function(d){
-                if(d.removed == true){
+            .style("text-decoration", function (d) {
+                if (d.removed == true) {
                     return "line-through"
                 }
             })
             // the names are styled here based on PO data
-            .style("fill",
-                function (d) {
-                    var rank = -1;
-                    var s = sortedArray.sort(function (a, b) {
-                        return a.poNum - b.poNum
-                    });
-                    s.reverse();
-                    for (var i = 0; i < s.length; i++) {
-                        if (s[i].dept == d.deptno) {
-                            rank = i;
-                        }
-                    }
-
-                    if (rank >= 0 && rank < 9) {
-                        return "#BF0100"
-                    }
-                    if (rank >= 9 && rank < 19) {
-                        return "#EB1E25"
-                    }
-                    if (rank >= 19 && rank < 29) {
-                        return "#BD05C5"
-                    }
-                    if (rank >= 29 && rank < 39) {
-                        return "#5C08C8"
-                    }
-                    if (rank >= 39 && rank < 49) {
-                        return "#0B1CCB"
-                    }
-                    if (rank >= 49 && rank < 59) {
-                        return "#0E84CE"
-                    }
-                    if (rank >= 59 && rank < 69) {
-                        return "#12D1B6"
-                    }
-                    if (rank >= 69 && rank < 79) {
-                        return "#15D455"
-                    }
-                    if (rank >= 79) {
-                        return "#4CE628"
-                    }
-                    return "black";
-                });
-
-
+            .style("fill", "black");
         // Transition nodes to their new position.
         var nodeUpdate = node.transition()
             .duration(duration)
@@ -349,140 +267,11 @@
             .style("opacity", 1);
     }
 
-    // controls how long it takes the tooltip to appear after you hover
-    function mouseover2() {
-        div2.transition()
-            .duration(300)
-            .style("opacity", 1);
-    }
-
     //draws the tooltip
     function mousemove(d) {
-
-
-        if (getBudgetData(d.deptno) != undefined) {
-            div.html(d.deptno + "<br/>" + "<div> # of POs: " + getBudgetData(d.deptno)
-                + "<br/> Total: " + formatMoney(getBudgetActuals(d.deptno))
-                + "</div>")
-                .style("left", (d3.event.pageX ) + "px")
-                .style("top", (d3.event.pageY) + "px");
-        }
-        else{
-            div.html(d.deptno + "<br/> No PO data").style("left", (d3.event.pageX ) + "px")
-                .style("top", (d3.event.pageY) + "px");
-        }
-
-
-    }
-
-    //draws the tooltip
-    function mousemove2(d) {
-        if (d.gaveApprovalTo) {
-            div2.html("Gave approval to:" + getDepartments(d.gaveApprovalTo))
-                .style("left", (d3.event.pageX ) + "px")
-                .style("top", (d3.event.pageY) + "px");
-            highlight(d.gaveApprovalTo);
-        }
-        if (d.gotApprovalFrom) {
-            div2.html("Received approval from:" + getDepartments(d.gotApprovalFrom))
-                .style("left", (d3.event.pageX ) + "px")
-                .style("top", (d3.event.pageY) + "px");
-            highlight(d.gotApprovalFrom);
-        }
-
-    }
-
-    // formats approvals into a string that can be displayed on tooltip
-    function getDepartments(approval) {
-        var returnString = "";
-        for (i in approval) {
-            if (approval[i] != undefined) {
-                returnString = returnString + "<br/>" + approval[i].name;
-            }
-        }
-        return returnString;
-    }
-
-    // highlights department names that are in a certain KPI section
-    function highlight(section) {
-        d3.selectAll("text")
-            .style("fill", function (d) {
-                for (s in section) {
-
-                    if (d != undefined) {
-                        if (section[s].deptno == (d.deptno)) {
-                            return "red";
-                        }
-                    }
-                }
-            })
-            .style("font-size", function (d) {
-                for (s in section) {
-
-                    if (d != undefined) {
-                        if (section[s].deptno == (d.deptno)) {
-                            return "24px";
-                        }
-                    }
-                }
-            });
-
-    }
-
-    // un-highlights all departments
-    function unHighlight() {
-        d3.selectAll("text")
-            .style("fill",
-                function (d) {
-                    var rank = -1;
-                    var s = sortedArray.sort(function (a, b) {
-                        return a.poNum - b.poNum
-                    });
-                    s.reverse();
-                    for (var i = 0; i < s.length; i++) {
-                        if (s[i].dept == d.deptno) {
-                            rank = i;
-                        }
-                    }
-                    // recolors based on PO data
-                    if (rank >= 0 && rank < 9) {
-                        return "#BF0100"
-                    }
-                    if (rank >= 9 && rank < 19) {
-                        return "#EB1E25"
-                    }
-                    if (rank >= 19 && rank < 29) {
-                        return "#BD05C5"
-                    }
-                    if (rank >= 29 && rank < 39) {
-                        return "#5C08C8"
-                    }
-                    if (rank >= 39 && rank < 49) {
-                        return "#0B1CCB"
-                    }
-                    if (rank >= 49 && rank < 59) {
-                        return "#0E84CE"
-                    }
-                    if (rank >= 59 && rank < 69) {
-                        return "#12D1B6"
-                    }
-                    if (rank >= 69 && rank < 79) {
-                        return "#15D455"
-                    }
-                    if (rank >= 79) {
-                        return "#4CE628"
-                    }
-                    return "black";
-                })
-            .style("font-size", "11pt")
-            .style("font-weight", "700");
-    }
-
-    //helper function for formatting money in the tooltip
-    function formatMoney(number) {
-        var oldNum = parseFloat(number);
-        var num = '$' + oldNum.toFixed(0).replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
-        return num;
+        div.html("Hello")
+            .style("left", (d3.event.pageX ) + "px")
+            .style("top", (d3.event.pageY) + "px");
     }
 
     // controls how slowly the tooltip disappears
@@ -492,40 +281,10 @@
             .style("opacity", 1e-6);
     }
 
-    // highlights department names that are in a certain KPI section
-    function mouseout2() {
-        div2.transition()
-            .duration(300)
-            .style("opacity", 1e-6);
-        unHighlight();
-    }
-
-    // I have had so much trouble with this function for whatever reason
-    // It gets the budget for a specific department
-    function getBudgetData(department) {
-        var dept = parseFloat(department);
-        for (var i in buData) {
-            if (parseFloat(buData[i].dept) === dept) {
-                return buData[i].poNum;
-            }
-        }
-
-    }
-
-    // This gets the actuals for a specific department
-    function getBudgetActuals(department) {
-        var dept = parseFloat(department);
-        for (var i in buData) {
-            if (parseFloat(buData[i].dept) === dept) {
-                return buData[i].total;
-            }
-        }
-    }
-
     // this is triggered when you hit the 'View Operating' button, it just loads the
     // Operating data instead of the Administration data
     function updateData() {
-        d3.json("resources/flare_experiment.json", function (error, flare) {
+        d3.json("resources/operating.min.json", function (error, flare) {
             if (error) throw error;
             root = flare;
             root.x0 = height / 2;
@@ -538,7 +297,7 @@
 
     // this function updates the data to display administration
     function updateData2() {
-        d3.json("resources/flare_experiment_2.json", function (error, flare) {
+        d3.json("resources/admin.min.json", function (error, flare) {
             if (error) throw error;
             root = flare;
             root.x0 = height / 2;
@@ -567,7 +326,7 @@
     }
 
 </script>
-<!--This div contains the legend of the chart -->
+
 <div id="legend">
     <h3 class="ltitle">Legend</h3>
     <div id="level1circle"></div>
@@ -584,23 +343,7 @@
     <p>Level 6</p>
 
 </div>
-<!--This div contains the PO Data Key-->
-<div class="ltitleright2">
-    <h3 class="ltitle">Total Procurements</h3>
-    <p id="scale1">Most POs</p>
-    <p id="scale2">X</p>
-    <p id="scale3">X</p>
-    <p id="scale4">X</p>
-    <p id="scale5">X</p>
-    <p id="scale6">X</p>
-    <p id="scale7">X</p>
-    <p id="scale8">X</p>
-    <p id="scale9">Least POs</p>
 
-    <p><span class="glyphicon-key glyphicon glyphicon-minus-sign"></span> Recently gave up approval rights</p>
-    <p><span class="glyphicon-key glyphicon glyphicon-plus-sign"></span> Recently gained approval rights</p>
-
-</div>
 <!-- This div contains the 'Expand All' button -->
 <div id="expandB">
     <input name="expandButton"
@@ -612,10 +355,9 @@
 <!-- This div contains the navigation-->
 <div id="employeeButton" class="btn-group-vertical">
     <a class="btn btn-default" href="#!/kpi">KPI Chart</a>
-    <a class="btn btn-primary disabled" href="#!/procurement">Procurement Chart</a>
+    <a class="btn btn-default" href="#!/procurement">Procurement Chart</a>
     <a class="btn btn-default" href="#!/approvals">Approvals Chart</a>
     <a class="btn btn-default" href="#!/">Budget Chart</a>
     <a class="btn btn-default" href="#!/employees">Employee Chart</a>
     <a class="btn btn-default" href="#!/vendors" style="white-space: normal;">Department Vendor Analysis Directory</a>
-
 </div>

@@ -169,18 +169,19 @@
                 if (d.removed) {
                     return "control glyphicon glyphicon-remove-circle"
                 }
-            });
+            })
+            .style("color","white");
         // appends the name text to the nodes
         nodeEnter.append("text")
             .attr("x", function (d) {
-                if (d.removed == true) {
+                if (d.removed == true && d.level =="4") {
                     return d.children || d._children ? -20 : -10;
                 }
                 return d.children || d._children ? -10 : 10;
             })
             .attr("dy", ".35em")
             .attr("text-anchor", function (d) {
-                if (d.removed == true) {
+                if (d.removed == true && d.level == "4") {
                     return d.children || d._children ? "end" : "end";
                 }
                 return d.children || d._children ? "end" : "start";

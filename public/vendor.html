@@ -14,6 +14,7 @@
            onclick="updateData2()"/>
 
 </div>
+
 <div id="chart"></div>
 <script>
     var url = window.location.href;
@@ -21,6 +22,36 @@
 
     // clears the screen in case a visualization is still loaded
     d3.select("svg").remove();
+    var config = {};
+
+    d3.json("/vendor-data/configuration/" + vendorName + "_config.json", function (error, configuration) {
+        if (error) throw error;
+        console.log('config ' + JSON.stringify(configuration));
+        config.deptNo = configuration.deptNo;
+        config.year = configuration.year;
+        config.price = configuration.price;
+        config.quantity = configuration.quantity;
+        config.extra = configuration.extra;
+        config.field1 = configuration.field1;
+        config.operation = configuration.operation;
+        config.field2 = configuration.field2;
+        config.vars = configuration.vars;
+
+        var myDDL = document.getElementById("colorBy");
+
+        for (i = 0; i < config.vars.length; i++) {
+            var option = document.createElement("option");
+            option.text = config.vars[i];
+            option.value = config.vars[i];
+            try {
+                myDDL.options.add(option);
+            }
+            catch (e) {
+                alert(e);
+            }
+        }
+    });
+
 
     // size variables for the box to paint in
     var margin = {top: 20, right: 150, bottom: 20, left: 200},
@@ -49,6 +80,7 @@
         .attr("height", height + margin.top + margin.bottom)
         .append("g")
         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
     // initializes the tooltip
     var div = d3.select("body").append("div")
         .attr("class", "tooltip")
@@ -126,7 +158,7 @@
         // appends the name text to the nodes
         nodeEnter.append("text")
             .attr("x", function (d) {
-                if (d.removed == true && d.level =="4") {
+                if (d.removed == true && d.level == "4") {
                     return d.children || d._children ? -20 : -10;
                 }
                 return d.children || d._children ? -10 : 10;
@@ -193,7 +225,8 @@
                 if (d.removed) {
                     return "control glyphicon glyphicon-remove-circle"
                 }
-            });
+            })
+            .style("color", "white");
 
         // Transition exiting nodes to the parent's new position.
         var nodeExit = node.exit().transition()
@@ -245,6 +278,75 @@
 
     }
 
+    d3.select('#colorBy')
+        .on("change", function () {
+            var sect = document.getElementById("colorBy");
+            var section = sect.options[sect.selectedIndex].value;
+            var meth = document.getElementById("colorByMethod");
+            var method = meth.options[meth.selectedIndex].value;
+            highlightBy(section, method);
+        });
+
+    d3.select('#colorByMethod')
+        .on("change", function () {
+            var sect = document.getElementById("colorBy");
+            var section = sect.options[sect.selectedIndex].value;
+            var meth = document.getElementById("colorByMethod");
+            var method = meth.options[meth.selectedIndex].value;
+            highlightBy(section, method);
+        });
+
+    function highlightBy(variableName, method) {
+        var met = method;
+        var max = getMaxVar(variableName);
+        var min = getMinVar(variableName);
+
+        console.log(max);
+        console.log(min);
+
+        d3.selectAll("text")
+            .style("fill", function (d) {
+                if (met == "aggregate") {
+                    console.log(met);
+                    if (findDeptData(d.deptno).length > 0) {
+                        return "red";
+                    }
+                }
+                if (met == "count") {
+                    console.log(met);
+                    if (findDeptData(d.deptno).length > 0) {
+                        return "blue";
+                    }
+                }
+                if (met == "0") {
+                    return "black";
+                }
+            });
+
+    }
+
+    function getMaxVar(variable){
+        var max = 0;
+        for(i in dataArray){
+            if(parseFloat(dataArray[i][variable]) > max){
+                max = dataArray[i][variable];
+            console.log("NEW MAX: "+max);
+            }
+        }
+        return max;
+    }
+    function getMinVar(variable){
+        var min = Number.MAX_VALUE;
+        for(i in dataArray){
+            if(parseFloat(dataArray[i][variable]) < min){
+
+                min = dataArray[i][variable];
+            console.log('NEW MIN: '+min);
+            }
+        }
+        return min;
+    }
+
     // Toggle children on click.
     function click(d) {
         if (d.children) {
@@ -266,7 +368,7 @@
 
     //draws the tooltip
     function mousemove(d) {
-        div.html("Hello")
+        div.html(d.deptno + "<br/>" + findDeptData(d.deptno))
             .style("left", (d3.event.pageX ) + "px")
             .style("top", (d3.event.pageY) + "px");
     }
@@ -276,6 +378,17 @@
         div.transition()
             .duration(300)
             .style("opacity", 1e-6);
+    }
+
+
+    function findDeptData(dept) {
+        var lookup = [];
+        for (var i = 0, len = dataArray.length; i < len; i++) {
+            if (dataArray[i].deptNo == dept) {
+                lookup.push(JSON.stringify(dataArray[i]));
+            }
+        }
+        return lookup;
     }
 
     // this is triggered when you hit the 'View Operating' button, it just loads the
@@ -340,7 +453,18 @@
     <p>Level 6</p>
 
 </div>
-
+<div id="optionsMenu">
+    <label>Color By:</label>
+    <select id="colorByMethod">
+        <option value="0" selected="selected">none</option>
+        <option value="aggregate">aggregate</option>
+        <option value="count">count</option>
+    </select>
+    <label>of</label>
+    <select id="colorBy">
+        <option value="0" selected="selected">none</option>
+    </select>
+</div>
 <!-- This div contains the 'Expand All' button -->
 <div id="expandB">
     <input name="expandButton"

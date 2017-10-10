@@ -1,3 +1,27 @@
+<script type='text/javascript'>
+    function addFields(){
+        // Number of inputs to create
+        var number = document.getElementById("extra").value;
+        // Container <div> where dynamic content will be placed
+        var container = document.getElementById("container");
+        // Clear previous contents of the container
+        while (container.hasChildNodes()) {
+            container.removeChild(container.lastChild);
+        }
+        container.appendChild(document.createElement("br"));
+        for (i=0;i<number;i++){
+            // Append a node with a random text
+            container.appendChild(document.createTextNode("Field " + (i+1) + " "));
+            // Create an <input> element, set its type and name attributes
+            var input = document.createElement("input");
+            input.type = "text";
+            input.name = "var" + (i+1);
+            container.appendChild(input);
+            // Append a line break
+            container.appendChild(document.createElement("br"));
+        }
+    }
+</script>
 <div class="container">
     <h1>Upload New Vendor Data</h1>
     <div class="form-group">
@@ -19,7 +43,11 @@
             <input type="checkbox" id="quantity" name="quantity" value="quantity" checked>
             <br/>
             <label>Number of Extra Fields</label>
-                <input type="number" id="extra" name="extra" value="extra" min="0" max="5">
+                <input type="number" id="extra" name="extra" value="extra" min="0" max="10">
+            <br/>
+            <a href="" id="filldetails" class="btn btn-primary btn-xs" onclick="addFields()">Input Extra Field Names</a>
+
+            <div id="container"><br/></div>
             <br/>
             <label>Create Line Chart in Tooltip?</label>
             <input type="checkbox" id="tooltip" name="tooltip" value="tooltip" checked>
@@ -36,6 +64,11 @@
                 <option value="var3">
                 <option value="var4">
                 <option value="var5">
+                <option value="var6">
+                <option value="var7">
+                <option value="var8">
+                <option value="var9">
+                <option value="var10">
             </datalist>
             <input list="operation" name="operation">
             <datalist id="operation">
@@ -55,6 +88,11 @@
                 <option value="var3">
                 <option value="var4">
                 <option value="var5">
+                <option value="var6">
+                <option value="var7">
+                <option value="var8">
+                <option value="var9">
+                <option value="var10">
             </datalist>
             <button type="submit" class="btn btn-block btn-primary">Upload</button>
         </form>

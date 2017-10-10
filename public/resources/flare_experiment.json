@@ -872,6 +872,15 @@
           "approval7": "MABRAMO",
           "approval8": "LMRAMIREZ",
           "requestors":"GTAMMARO MCROWLEY MCANTOR LDRAYTON-OLIVER KBENDERY SSILVERBERG CJJACKSON CLACKARD DSHEA REQWF310000 HCOOPER HLIM JSARIN JSWARTZ",
+          "newApproval1": "CGUIOD SMCDONNELL BDONOVAN",
+          "newApproval2": "BLARKIN JAALTO",
+          "newApproval3": "BLARKIN JAALTO",
+          "newApproval4": "BLARKIN JAALTO",
+          "newApproval5": "BLARKIN JAALTO",
+          "newApproval6": "BLARKIN JAALTO",
+          "newApproval7": "BLARKIN",
+          "newApproval8": "LMRAMIREZ",
+          "newRequestors":"MCROWLEY CJJACKSON JSWARTZ PBARE KQUIRK YDUVERGE SBARROS FPENACHA ASWEENEY",
           "children": [
             {
               "name": "Capital Delivery Administration",

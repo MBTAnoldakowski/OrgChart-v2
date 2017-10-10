@@ -533,3 +533,9 @@ input:checked + .slider:before {
     height: 1px; /* ADJUST HEIGHT TO ADD WEIGHT */
     background: red; /* CHANGE COLOR TO SUIT */
 }
+
+#optionsMenu{
+    top:0;
+    right:0;
+    position: fixed;
+}

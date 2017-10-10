@@ -820,7 +820,18 @@
           "approval5": "JSAINTCYR",
           "approval6": "JSAINTCYR",
           "approval7": "MABRAMO",
-          "approval8": "LMRAMIREZ"
+          "approval8": "LMRAMIREZ",
+          "newApproval1": "JDOOLEY",
+          "newApproval2": "JDOOLEY",
+          "newApproval3": "JDOOLEY",
+          "newApproval4": "KLEGROW",
+          "newApproval5": "JSAINTCYR",
+          "newApproval6": "JSAINTCYR",
+          "newApproval7": "MABRAMO",
+          "newApproval8": "LMRAMIREZ",
+
+          "requestors":"CHAMER AROMANO",
+          "newRequestors":"CHAMER AROMANO"
         },
         {
           "name": "Medical Operations",

@@ -299,24 +299,39 @@
     function highlightBy(variableName, method) {
         var met = method;
         var max = getMaxVar(variableName);
+        var maxAgg = getMaxAgg(variableName);
         var min = getMinVar(variableName);
-
+        var arrayLength = dataArray.length;
+        var binSize = (max - min) / 8;
+        var bins = [];
+        for (var k = 0; k < 8; k++) {
+            console.log(k * binSize);
+            var v = min + (k * binSize);
+            bins.push(v);
+        }
+        console.log(bins);
         console.log(max);
         console.log(min);
 
         d3.selectAll("text")
             .style("fill", function (d) {
-                if (met == "aggregate") {
-                    console.log(met);
-                    if (findDeptData(d.deptno).length > 0) {
-                        return "red";
+                var deptData = findDeptData(d.deptno);
+                if (met == "aggregate" && variableName != "0" && deptData.length > 0) {
+                    var agg = 0;
+                    var dep;
+                    for (var a = 0; a < deptData.length; a++) {
+                        dep = JSON.parse(deptData[a]);
+                        agg = agg + parseFloat(dep[variableName]);
                     }
+                    console.log("agg: " + agg);
                 }
-                if (met == "count") {
-                    console.log(met);
-                    if (findDeptData(d.deptno).length > 0) {
-                        return "blue";
-                    }
+                if (met == "count" && variableName != "0") {
+                    /*
+                    deptData = findDeptData(d.deptno).length;
+                    for(var i = 0; i < bins.length; i++){
+                        if()
+                            }
+                            */
                 }
                 if (met == "0") {
                     return "black";
@@ -325,26 +340,70 @@
 
     }
 
-    function getMaxVar(variable){
-        var max = 0;
-        for(i in dataArray){
-            if(parseFloat(dataArray[i][variable]) > max){
-                max = dataArray[i][variable];
-            console.log("NEW MAX: "+max);
+    function getDepts() {
+        var depts = [];
+        for (i in dataArray) {
+            if (depts.indexOf(dataArray[i].deptNo) < 0) {
+                depts.push(dataArray[i].deptNo)
             }
         }
-        return max;
+        return depts;
     }
-    function getMinVar(variable){
-        var min = Number.MAX_VALUE;
-        for(i in dataArray){
-            if(parseFloat(dataArray[i][variable]) < min){
 
-                min = dataArray[i][variable];
-            console.log('NEW MIN: '+min);
+    function getMaxAgg(variable) {
+        var maxAgg = 0;
+        var departmentList = getDepts();
+        for (var a = 0; a < departmentList.length; a++) {
+            var agg = 0;
+            for (var i = 0; i < dataArray.length; i++) {
+                if (dataArray[i].deptNo == departmentList[a]) {
+                    agg = agg + parseFloat(dataArray[i][variable]);
+                }
+            }
+            if (agg > maxAgg) {
+                maxAgg = agg;
             }
         }
-        return min;
+        return maxAgg;
+    }
+
+    function getMinAgg(variable) {
+        var minAgg = Number.MAX_VALUE;
+        var departmentList = getDepts();
+        for (var a = 0; a < departmentList.length; a++) {
+            console.log()
+            var agg = 0;
+            for (var i = 0; i < dataArray.length; i++) {
+                if (dataArray[i].deptNo == departmentList[a]) {
+                    agg = agg + parseFloat(dataArray[i][variable]);
+                    console.log("AGG: "+agg);
+                }
+            }
+            if (agg < minAgg) {
+                minAgg = agg;
+            }
+        }
+        return minAgg;
+    }
+
+    function getMaxVar(variable) {
+        var max = 0;
+        for (i in dataArray) {
+            if (parseFloat(dataArray[i][variable]) > max) {
+                max = dataArray[i][variable];
+            }
+        }
+        return parseFloat(max);
+    }
+
+    function getMinVar(variable) {
+        var min = Number.MAX_VALUE;
+        for (i in dataArray) {
+            if (parseFloat(dataArray[i][variable]) < min) {
+                min = dataArray[i][variable];
+            }
+        }
+        return parseFloat(min);
     }
 
     // Toggle children on click.

@@ -194,7 +194,7 @@
           "newApproval6": "JGONNEVILLE",
           "newApproval7": "MABRAMO",
           "newApproval8": "LMRAMIREZ",
-          "newRequestors":"CFLYNN WFALLON",
+          "newRequestors":"CFLYNN WFALLON REQWF673000",
           "children": [
             {
               "name": "Administration",
@@ -239,7 +239,7 @@
           "newApproval6": "JGONNEVILLE",
           "newApproval7": "MABRAMO",
           "newApproval8": "LMRAMIREZ",
-          "newRequestors":"JMACEACHERN",
+          "newRequestors":"JMACEACHERN REQWF672000",
           "children": [
             {
               "name": "Administration",
@@ -279,7 +279,7 @@
           "newApproval6": "JGONNEVILLE",
           "newApproval7": "MABRAMO",
           "newApproval8": "LMRAMIREZ",
-          "newRequestors": "JASULLIVAN",
+          "newRequestors": "REQWF671000 JASULLIVAN",
           "children": [
             {
               "name": "MOW Surface Light Rail",
@@ -319,7 +319,7 @@
           "newApproval6": "JGONNEVILLE",
           "newApproval7": "MABRAMO",
           "newApproval8": "LMRAMIREZ",
-          "newRequestors":"LBARRETT",
+          "newRequestors":"REQWF674000 LBARRETT",
           "children": [
             {
               "name": "Power Systems and Equipment",
@@ -359,7 +359,7 @@
           "newApproval6": "JGONNEVILLE",
           "newApproval7": "MABRAMO",
           "newApproval8": "LMRAMIREZ",
-          "newRequestors":"",
+          "newRequestors":"REQWF250000",
           "children": [
             {
               "name": "Capital & Maintenance Planning/Scheduling",

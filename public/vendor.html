@@ -371,7 +371,6 @@
         var minAgg = Number.MAX_VALUE;
         var departmentList = getDepts();
         for (var a = 0; a < departmentList.length; a++) {
-            console.log()
             var agg = 0;
             for (var i = 0; i < dataArray.length; i++) {
                 if (dataArray[i].deptNo == departmentList[a]) {
@@ -379,6 +378,8 @@
                     console.log("AGG: "+agg);
                 }
             }
+            console.log('full aggregate: '+agg);
+
             if (agg < minAgg) {
                 minAgg = agg;
             }

@@ -1,0 +1,42 @@
+{
+  "poNum": {
+    "display": true,
+    "money": false,
+    "view": "values"
+  },
+  "poStatus": {
+    "display": true,
+    "money": false,
+    "view": "values"
+  },
+  "poValue": {
+    "display": true,
+    "money": false,
+    "view": "values"
+  },
+  "poRemaining": {
+    "display": true,
+    "money": false,
+    "view": "values"
+  },
+  "model": {
+    "display": true,
+    "money": false,
+    "view": "values"
+  },
+  "yearTotal": {
+    "display": true,
+    "money": false,
+    "view": "values"
+  },
+  "receiver": {
+    "display": true,
+    "money": false,
+    "view": "values"
+  },
+  "location": {
+    "display": true,
+    "money": false,
+    "view": "values"
+  }
+}

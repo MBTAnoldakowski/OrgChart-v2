@@ -28,6 +28,11 @@
                 controller: 'vendorPageController',
                 controllerAs: 'model'
             })
+            .when('/vendor/:vendorName/options',{
+                templateUrl: 'vendorOptions.html',
+                controller: 'vendorPageController',
+                controllerAs: 'model'
+            })
             .when('/vendor',{
                 templateUrl: 'vendorUpload.html'
             })

@@ -450,6 +450,7 @@ div2.tooltip2 {
     -webkit-transition: .4s;
     transition: .4s;
 }
+
 /*
 input:checked + .slider {
     background-color: #2196F3;
@@ -500,31 +501,34 @@ input:checked + .slider:before {
     padding: 10px;
     border-top: medium solid black;
     height: 25%;
-    left:0;
+    left: 0;
     bottom: 0;
     width: 50%;
 }
 
 .new-requests {
-     float: right;
-     padding: 10px;
-     border-top: medium solid black;
-     width: 50%;
-     height: 25%;
-     right:0;
-     bottom: 0;
- }
-.request-container{
+    float: right;
+    padding: 10px;
+    border-top: medium solid black;
+    width: 50%;
+    height: 25%;
+    right: 0;
     bottom: 0;
-    left:0;
+}
+
+.request-container {
+    bottom: 0;
+    left: 0;
     right: 0;
 }
-#striker{
+
+#striker {
     position: relative;
     display: inline-block;
     color: red;
 }
-#striker::before{
+
+#striker::before {
     content: "";
     position: absolute;
     top: 50%;
@@ -534,8 +538,14 @@ input:checked + .slider:before {
     background: red; /* CHANGE COLOR TO SUIT */
 }
 
-#optionsMenu{
-    top:0;
-    right:0;
+#optionsMenu {
+    top: 0;
+    right: 0;
     position: fixed;
+}
+
+#optionsDiv {
+    bottom: 0;
+    float: right;
+    font-size: 45px;
 }

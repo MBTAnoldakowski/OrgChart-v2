@@ -7,6 +7,7 @@
         var model = this;
         var vendorFiles = [];
         var vendorNames =[];
+
         function init() {
             vendorService
                 .getVendors()

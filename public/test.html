@@ -462,18 +462,33 @@
         var deptData = findDeptData(dept);
         var varString = "<table>";
         for (var i = 0; i < config.vars.length; i++) {
-
+            if (i === 0 && deptData.length > 0) {
+                for (var z = 0; z < config.vars.length; z++) {
+                    varString = varString + "<th><b>" + config.vars[z].name + "</b></th>";
+                }
+                varString = varString + "<tr>"
+            }
+            else if (i !== 0 && deptData.length > 0) {
+                varString = varString + "<tr>";
+            }
+            /*
             if (deptData.length > 0) {
                 varString = varString + "<b>" + config.vars[i].name + ": " + "</b>";
-            }
+            }*/
             for (var k = 0; k < deptData.length; k++) {
                 ki = JSON.parse(deptData[k])[config.vars[i].value];
-                varString = varString + ki + " ";
+                varString = varString + "<td>" + ki + "</td>";
+                if (k === deptData.length - 1) {
+                    varString = varString + "</tr>"
+                }
             }
-            if (varString != "") {
+
+            if (varString !== "") {
                 varString = varString + "<br/>";
             }
         }
+        varString = varString + "</table>";
+        console.log(varString);
         div.html(d.deptno + "<br/>" + varString)
             .style("left", (d3.event.pageX ) + "px")
             .style("top", (d3.event.pageY) + "px");
@@ -583,9 +598,6 @@
     <select id="colorBy">
         <option value="0" selected="selected">none</option>
     </select>
-    <div id = "optionsDiv">
-        <a href="#!/vendor/{{vendor}}/options" title="Tooltip Options"><span class="glyphicon glyphicon-cog"></span></a>
-    </div>
 </div>
 <!-- This div contains the 'Expand All' button -->
 <div id="expandB">

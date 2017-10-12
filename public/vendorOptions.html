@@ -1,0 +1,49 @@
+<script>
+    var url = window.location.href;
+    var vendorName = url ? url.split('/vendor/')[1] : window.location.search.slice(1);
+    vendorName = vendorName.split('/options')[0];
+
+
+    $.getJSON("/vendor-data/tooltip/"+vendorName+"_tooltip-config.json", function(json) {
+        console.log(json); // this will show the info it in firebug console
+    });
+
+    $.getJSON("/vendor-data/configuration/"+vendorName+"_config.json", function(json) {
+        console.log(json); // this will show the info it in firebug console
+    });
+
+    function addFields(){
+        // Number of inputs to create
+        var number = document.getElementById("extra").value;
+        // Container <div> where dynamic content will be placed
+        var container = document.getElementById("container");
+        // Clear previous contents of the container
+        while (container.hasChildNodes()) {
+            container.removeChild(container.lastChild);
+        }
+        container.appendChild(document.createElement("br"));
+        container.appendChild(document.createTextNode("Input File Field Name and Tooltip Description "));
+        container.appendChild(document.createElement("br"));
+
+        for (i=0;i<number;i++){
+            // Append a node with a random text
+            container.appendChild(document.createTextNode("Field " + (i+1) + " "));
+            // Create an <input> element, set its type and name attributes
+            var input = document.createElement("input");
+            input.type = "text";
+            input.name = "var" + (i+1);
+            container.appendChild(input);
+
+            var input2 = document.createElement("input");
+            input2.type = "text";
+            input2.name = "varDesc" + (i+1);
+            container.appendChild(input2);
+
+            // Append a line break
+            container.appendChild(document.createElement("br"));
+        }
+    }
+</script>
+
+{{model.vendorName}}
+

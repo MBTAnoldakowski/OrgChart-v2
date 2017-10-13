@@ -2,48 +2,89 @@
     var url = window.location.href;
     var vendorName = url ? url.split('/vendor/')[1] : window.location.search.slice(1);
     vendorName = vendorName.split('/options')[0];
+    //when the document is finished loading, replace everything
+    //between the <a ...> </a> tags with the value of splitText
+    console.log(vendorName);
+    document.getElementById("vendor-name").innerHTML = decodeURI(vendorName);
 
-
-    $.getJSON("/vendor-data/tooltip/"+vendorName+"_tooltip-config.json", function(json) {
+    $.getJSON("/vendor-data/tooltip/" + vendorName + "_tooltip-config.json", function (json) {
         console.log(json); // this will show the info it in firebug console
-    });
-
-    $.getJSON("/vendor-data/configuration/"+vendorName+"_config.json", function(json) {
-        console.log(json); // this will show the info it in firebug console
-    });
-
-    function addFields(){
-        // Number of inputs to create
-        var number = document.getElementById("extra").value;
-        // Container <div> where dynamic content will be placed
+        var number = Object.keys(json).length;
+        console.log(number);
         var container = document.getElementById("container");
-        // Clear previous contents of the container
         while (container.hasChildNodes()) {
             container.removeChild(container.lastChild);
         }
-        container.appendChild(document.createElement("br"));
-        container.appendChild(document.createTextNode("Input File Field Name and Tooltip Description "));
-        container.appendChild(document.createElement("br"));
-
-        for (i=0;i<number;i++){
-            // Append a node with a random text
-            container.appendChild(document.createTextNode("Field " + (i+1) + " "));
+        for (var key in json) {
+            console.log(key);
             // Create an <input> element, set its type and name attributes
             var input = document.createElement("input");
             input.type = "text";
-            input.name = "var" + (i+1);
+            input.name = "var" + key;
+            input.className = "form-control-plaintext";
+            input.readOnly = true;
+            input.value = key;
+
             container.appendChild(input);
+            var displayLabel = document.createElement("label");
+            displayLabel.innerHTML = "&nbsp&nbsp&nbsp  Display?: &nbsp";
+            container.appendChild(displayLabel);
 
             var input2 = document.createElement("input");
-            input2.type = "text";
-            input2.name = "varDesc" + (i+1);
+            input2.type = "checkBox";
+            input2.name = "display" + key;
+            input2.checked = json[key].display;
             container.appendChild(input2);
+
+            var displayLabel2 = document.createElement("label");
+            displayLabel2.innerHTML = "&nbsp&nbsp&nbsp  Format as $?: &nbsp";
+            container.appendChild(displayLabel2);
+
+            var input3 = document.createElement("input");
+            input3.type = "checkBox";
+            input3.name = "money" + key;
+            input3.checked = json[key].money;
+            container.appendChild(input3);
+            var displayLabel3 = document.createElement("label");
+            displayLabel3.innerHTML = "&nbsp&nbsp&nbsp&nbsp Method: &nbsp";
+            container.appendChild(displayLabel3);
+            var option = ['values', 'aggregate', 'unique values'];
+
+            var input4 = document.createElement("select");
+            input4.name = "view"+key;
+            for (var j = 0; j < option.length; j++) {
+                var o = document.createElement('option');
+                o.value = option[j];
+                o.innerHTML = option[j];
+                input4.appendChild(o);
+            }
+
+            for(var i, m = 0; i = input4.options[m]; m++) {
+                console.log(i);
+                console.log(m);
+                console.log(json[key].view);
+                if(i.value == json[key].view) {
+                    input4.selectedIndex = m;
+                    break;
+                }
+            }
+            container.appendChild(input4);
 
             // Append a line break
             container.appendChild(document.createElement("br"));
         }
-    }
+    });
+
 </script>
+<h1>Update Tooltip Display
+    <div id="vendor-name"></div>
+</h1>
+<div class="form-group container">
+    <form action="/api/upload/vendorOptions" method="post" enctype="multipart/form-data">
+        <div class="container" id="container"></div>
+        <br/>
+        <input type="hidden" name="vendorName" value="{{vendor}}">
+        <button type="submit" class="btn btn-block btn-primary">Update Display Settings</button>
 
-{{model.vendorName}}
-
+    </form>
+</div>

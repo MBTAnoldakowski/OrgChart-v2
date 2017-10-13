@@ -19,6 +19,7 @@
         init();
         function makeList(array){
             for(a in array){
+                if(array[a]!== 'configuration' && array[a] !== 'tooltip')
                 vendorNames.push(array[a].substring(0,array[a].length-4));
             }
             model.vendors = vendorNames;

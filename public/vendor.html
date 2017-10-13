@@ -23,7 +23,7 @@
     // clears the screen in case a visualization is still loaded
     //d3.select("svg").remove();
     var config = {};
-
+    var tooltip = {};
     d3.json("/vendor-data/configuration/" + vendorName + "_config.json", function (error, configuration) {
         if (error) throw error;
         console.log('config ' + JSON.stringify(configuration));
@@ -52,7 +52,12 @@
             }
         }
     });
-
+    d3.json("/vendor-data/tooltip/" + vendorName + "_tooltip-config.json", function (error, configuration) {
+        if (error) throw error;
+        for (v in config.vars) {
+            tooltip[config.vars[v].value] = configuration[config.vars[v].value];
+        }
+    });
 
     // size variables for the box to paint in
     var margin = {top: 20, right: 150, bottom: 20, left: 200},
@@ -460,18 +465,22 @@
     function mousemove(d) {
         var dept = d.deptno;
         var deptData = findDeptData(dept);
-        var varString = "<table>";
+        var varString = "";
         for (var i = 0; i < config.vars.length; i++) {
-
-            if (deptData.length > 0) {
-                varString = varString + "<b>" + config.vars[i].name + ": " + "</b>";
-            }
-            for (var k = 0; k < deptData.length; k++) {
-                ki = JSON.parse(deptData[k])[config.vars[i].value];
-                varString = varString + ki + " ";
-            }
-            if (varString != "") {
-                varString = varString + "<br/>";
+            if (tooltip[config.vars[i].value].display === true) {
+                if (deptData.length > 0) {
+                    varString = varString + "<b>" + config.vars[i].name + ": " + "</b>";
+                }
+                for (var k = 0; k < deptData.length; k++) {
+                    ki = JSON.parse(deptData[k])[config.vars[i].value];
+                    if(tooltip[config.vars[i].value].money === true){
+                        ki = formatMoney(parseFloat(ki))
+                    }
+                    varString = varString + ki + " ";
+                }
+                if (varString != "") {
+                    varString = varString + "<br/>";
+                }
             }
         }
         div.html(d.deptno + "<br/>" + varString)
@@ -486,6 +495,11 @@
             .style("opacity", 1e-6);
     }
 
+    function formatMoney(number) {
+        var oldNum = parseFloat(number);
+        var num = '$' + oldNum.toFixed(0).replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
+        return num;
+    }
 
     function findDeptData(dept) {
         var lookup = [];
@@ -583,7 +597,7 @@
     <select id="colorBy">
         <option value="0" selected="selected">none</option>
     </select>
-    <div id = "optionsDiv">
+    <div id="optionsDiv">
         <a href="#!/vendor/{{vendor}}/options" title="Tooltip Options"><span class="glyphicon glyphicon-cog"></span></a>
     </div>
 </div>

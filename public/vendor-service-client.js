@@ -6,7 +6,8 @@
     function vendorService($http) {
         return {
             getVendors: getVendors
-        }
+        };
+
         function getVendors() {
             var url = "/api/vendor-list";
             return $http.get(url)

@@ -549,13 +549,13 @@
                     result = 0;
             }
             if (tooltip.operation.format == "money") {
-                varString = varString + "<b>Custom Field: </b>" + formatMoney(result);
+                varString = varString + "<b>"+ tooltip.operation.name+ ": </b>" + formatMoney(result);
             }
             else if (tooltip.operation.format == "percentage") {
-                varString = varString + "<b>Custom Field: </b>" + formatPercentage(result);
+                varString = varString + "<b>"+ tooltip.operation.name+ ": </b>" + formatPercentage(result);
             }
             else {
-                varString = varString + "<b>Custom Field: </b>" + result;
+                varString = varString + "<b>"+ tooltip.operation.name+ ": </b>" + result;
             }
             /*ki = JSON.parse(deptData[p])[config.vars[i].value];
             if (tooltip[config.vars[i].value].money === true) {
@@ -706,3 +706,18 @@
     <a class="btn btn-default" href="#!/employees">Employee Chart</a>
     <a class="btn btn-default" href="#!/vendors" style="white-space: normal;">Department Vendor Analysis Directory</a>
 </div>
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>

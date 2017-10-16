@@ -139,7 +139,7 @@
         // appends the name text to the nodes
         nodeEnter.append("text")
             .attr("x", function (d) {
-                if (d.removed == true && d.level =="4") {
+                if (d.removed == true && d.level == "4") {
                     return d.children || d._children ? -20 : -10;
                 }
                 return d.children || d._children ? -10 : 10;
@@ -162,8 +162,8 @@
             })
             .on("mouseout", mouseout)
             .style("fill-opacity", 1e-6)
-            .style("text-decoration",function(d){
-                if(d.removed == true){
+            .style("text-decoration", function (d) {
+                if (d.removed == true) {
                     return "line-through"
                 }
             })
@@ -245,7 +245,7 @@
                     return "control glyphicon glyphicon-remove-circle"
                 }
             })
-            .style("color","white");
+            .style("color", "white");
         nodeUpdate.select("text")
             .style("fill-opacity", 1);
 
@@ -320,12 +320,12 @@
     //draws the tooltip
     function mousemove(d) {
         if (getBudgetData(d.deptno) != undefined) {
-            div.html(d.deptno + "<br/> "+ "<div align = 'right'> Budget: " + formatMoney(getBudgetData(d.deptno))
+            div.html(d.deptno + "<br/> " + "<div align = 'right'> Budget: " + formatMoney(getBudgetData(d.deptno))
                 + "<br/> Actual: " + formatMoney(getBudgetActuals(d.deptno)) + "<br/> YTD Budget: " + YTDbudget(getBudgetData(d.deptno)) + "</div>")
                 .style("left", (d3.event.pageX ) + "px")
                 .style("top", (d3.event.pageY) + "px");
         }
-        else{
+        else {
             div.html(d.deptno + "<br/> No Budget Data Available")
                 .style("left", (d3.event.pageX ) + "px")
                 .style("top", (d3.event.pageY) + "px");
@@ -482,7 +482,7 @@
 </div>
 <!-- This div contains the navigation-->
 <div id="employeeButton" class="btn-group-vertical">
-    <a class="btn btn-default"  href="#!/kpi">KPI Chart</a>
+    <a class="btn btn-default" href="#!/kpi">KPI Chart</a>
     <a class="btn btn-default" href="#!/procurement">Procurement Chart</a>
     <a class="btn btn-default" href="#!/approvals">Approvals Chart</a>
     <a class="btn btn-primary disabled" href="#!/">Budget Chart</a>
@@ -491,3 +491,18 @@
 
 
 </div>
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>

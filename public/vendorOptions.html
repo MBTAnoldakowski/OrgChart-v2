@@ -24,7 +24,7 @@
                 input.readOnly = true;
                 input.value = key;
                 container.appendChild(input);
-                
+
                 var displayLabel = document.createElement("label");
                 displayLabel.innerHTML = "&nbsp&nbsp&nbsp  Display?: &nbsp";
                 container.appendChild(displayLabel);
@@ -87,10 +87,12 @@
             }
 
         }
-        for(opt in myDDL.options){
-            if(myDDL.options[opt].value === json.operation.field1){
+
+        for (opt in myDDL.options) {
+            if (myDDL.options[opt].value === json.operation.field1) {
                 myDDL.selectedIndex = opt;
-            };
+            }
+            ;
         }
         for (key in json) {
             var myDDL2 = document.getElementById("field2");
@@ -106,17 +108,19 @@
             }
 
         }
-        for(opt in myDDL2.options){
-            if(myDDL2.options[opt].value === json.operation.field2){
+        for (opt in myDDL2.options) {
+            if (myDDL2.options[opt].value === json.operation.field2) {
                 myDDL2.selectedIndex = opt;
-            };
+            }
+            ;
         }
 
         var operationDDL = document.getElementById("operation");
-        for(opt in operationDDL.options){
-            if(operationDDL.options[opt].value === json.operation.operation){
+        for (opt in operationDDL.options) {
+            if (operationDDL.options[opt].value === json.operation.operation) {
                 operationDDL.selectedIndex = opt;
-            };
+            }
+            ;
         }
     });
 
@@ -131,6 +135,7 @@
         <div class="container" id="container"></div>
         <br/>
         <label>Operation Field: </label>
+        <input type="text" id="opName" name="opName" value="Name"/>
         <select name="field1" id="field1">
             <option value="0" selected="selected">none</option>
         </select>

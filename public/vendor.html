@@ -57,6 +57,7 @@
         for (v in config.vars) {
             tooltip[config.vars[v].value] = configuration[config.vars[v].value];
         }
+        tooltip['operation'] = configuration.operation;
     });
 
     // size variables for the box to paint in
@@ -465,23 +466,104 @@
     function mousemove(d) {
         var dept = d.deptno;
         var deptData = findDeptData(dept);
+        console.log(deptData);
         var varString = "";
         for (var i = 0; i < config.vars.length; i++) {
             if (tooltip[config.vars[i].value].display === true) {
                 if (deptData.length > 0) {
                     varString = varString + "<b>" + config.vars[i].name + ": " + "</b>";
-                }
-                for (var k = 0; k < deptData.length; k++) {
-                    ki = JSON.parse(deptData[k])[config.vars[i].value];
-                    if(tooltip[config.vars[i].value].money === true){
-                        ki = formatMoney(parseFloat(ki))
+
+                    if (tooltip[config.vars[i].value].view === "values") {
+                        for (var k = 0; k < deptData.length; k++) {
+                            ki = JSON.parse(deptData[k])[config.vars[i].value];
+                            if (tooltip[config.vars[i].value].money === true) {
+                                ki = formatMoney(parseFloat(ki))
+                            }
+                            varString = varString + ki + " ";
+                        }
                     }
-                    varString = varString + ki + " ";
-                }
-                if (varString != "") {
-                    varString = varString + "<br/>";
+                    if (tooltip[config.vars[i].value].view === "unique values") {
+                        var uniqueValues = [];
+                        for (var k = 0; k < deptData.length; k++) {
+                            ki = JSON.parse(deptData[k])[config.vars[i].value];
+                            console.log(ki);
+                            if (uniqueValues.indexOf(ki) === -1) {
+                                uniqueValues.push(ki);
+                                varString = varString + ki + " ";
+
+                            }
+                        }
+                    }
+                    if (tooltip[config.vars[i].value].view === "aggregate") {
+                        var total = 0;
+                        for (var k = 0; k < deptData.length; k++) {
+                            ki = JSON.parse(deptData[k])[config.vars[i].value];
+                            total = total + parseFloat(ki);
+                        }
+                        if (tooltip[config.vars[i].value].money === true) {
+                            total = formatMoney(parseFloat(total))
+                        }
+                        varString = varString + total + " ";
+                    }
+                    if (tooltip[config.vars[i].value].view === "count") {
+                        var uniqueValues = [];
+                        for (var k = 0; k < deptData.length; k++) {
+                            ki = JSON.parse(deptData[k])[config.vars[i].value];
+                            console.log(ki);
+                            if (uniqueValues.indexOf(ki) === -1) {
+                                uniqueValues.push(ki)
+                            }
+                        }
+                        varString = varString + uniqueValues.length + " ";
+                    }
+                    if (varString !== "") {
+                        varString = varString + "<br/>";
+                    }
                 }
             }
+
+        }
+        if (tooltip.operation.field1 !== "0" && tooltip.operation.operation !== "0" && tooltip.operation.field2 !== "0" && deptData.length > 0) {
+            var json = JSON.parse("[" + deptData + "]");
+            var field1 = 0;
+            var field2 = 0;
+            for (j in json) {
+                field1 = field1 + parseFloat(json[j][tooltip.operation.field1]);
+                field2 = field2 + parseFloat(json[j][tooltip.operation.field2]);
+            }
+            var result = 0;
+            switch (tooltip.operation.operation) {
+                case 'plus':
+                    result = parseFloat(field1) + parseFloat(field2);
+                    break;
+                case 'minus':
+                    result = parseFloat(field1) + parseFloat(field2);
+                    break;
+                case 'multiply':
+                    result = parseFloat(field1) * parseFloat(field2);
+                    break;
+                case 'divide':
+                    result = parseFloat(field1) / parseFloat(field2);
+                    break;
+                default:
+                    result = 0;
+            }
+            if (tooltip.operation.format == "money") {
+                varString = varString + "<b>Custom Field: </b>" + formatMoney(result);
+            }
+            else if (tooltip.operation.format == "percentage") {
+                varString = varString + "<b>Custom Field: </b>" + formatPercentage(result);
+            }
+            else {
+                varString = varString + "<b>Custom Field: </b>" + result;
+            }
+            /*ki = JSON.parse(deptData[p])[config.vars[i].value];
+            if (tooltip[config.vars[i].value].money === true) {
+                ki = formatMoney(parseFloat(ki))
+            }
+            varString = varString + ki + " ";
+            */
+
         }
         div.html(d.deptno + "<br/>" + varString)
             .style("left", (d3.event.pageX ) + "px")
@@ -499,6 +581,12 @@
         var oldNum = parseFloat(number);
         var num = '$' + oldNum.toFixed(0).replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
         return num;
+    }
+
+    function formatPercentage(number) {
+        var oldNum = parseFloat(number);
+        var num = Math.round(number * 100);
+        return num + '%';
     }
 
     function findDeptData(dept) {

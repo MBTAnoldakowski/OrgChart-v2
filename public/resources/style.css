@@ -549,3 +549,7 @@ input:checked + .slider:before {
     float: right;
     font-size: 45px;
 }
+
+#vendor-name{
+    float: right;
+}

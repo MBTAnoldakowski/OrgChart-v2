@@ -10,79 +10,145 @@
     $.getJSON("/vendor-data/tooltip/" + vendorName + "_tooltip-config.json", function (json) {
         console.log(json); // this will show the info it in firebug console
         var number = Object.keys(json).length;
-        console.log(number);
         var container = document.getElementById("container");
         while (container.hasChildNodes()) {
             container.removeChild(container.lastChild);
         }
         for (var key in json) {
-            console.log(key);
-            // Create an <input> element, set its type and name attributes
-            var input = document.createElement("input");
-            input.type = "text";
-            input.name = "var" + key;
-            input.className = "form-control-plaintext";
-            input.readOnly = true;
-            input.value = key;
+            if (key !== 'operation') {
+                // Create an <input> element, set its type and name attributes
+                var input = document.createElement("input");
+                input.type = "text";
+                input.name = "var" + key;
+                input.className = "form-control-plaintext";
+                input.readOnly = true;
+                input.value = key;
+                container.appendChild(input);
+                
+                var displayLabel = document.createElement("label");
+                displayLabel.innerHTML = "&nbsp&nbsp&nbsp  Display?: &nbsp";
+                container.appendChild(displayLabel);
 
-            container.appendChild(input);
-            var displayLabel = document.createElement("label");
-            displayLabel.innerHTML = "&nbsp&nbsp&nbsp  Display?: &nbsp";
-            container.appendChild(displayLabel);
+                var input2 = document.createElement("input");
+                input2.type = "checkBox";
+                input2.name = "display" + key;
+                input2.checked = json[key].display;
+                container.appendChild(input2);
 
-            var input2 = document.createElement("input");
-            input2.type = "checkBox";
-            input2.name = "display" + key;
-            input2.checked = json[key].display;
-            container.appendChild(input2);
+                var displayLabel2 = document.createElement("label");
+                displayLabel2.innerHTML = "&nbsp&nbsp&nbsp  Format as $?: &nbsp";
+                container.appendChild(displayLabel2);
 
-            var displayLabel2 = document.createElement("label");
-            displayLabel2.innerHTML = "&nbsp&nbsp&nbsp  Format as $?: &nbsp";
-            container.appendChild(displayLabel2);
+                var input3 = document.createElement("input");
+                input3.type = "checkBox";
+                input3.name = "money" + key;
+                input3.checked = json[key].money;
+                container.appendChild(input3);
+                var displayLabel3 = document.createElement("label");
+                displayLabel3.innerHTML = "&nbsp&nbsp&nbsp&nbsp Method: &nbsp";
+                container.appendChild(displayLabel3);
+                var option = ['values', 'aggregate', 'unique values', 'count'];
 
-            var input3 = document.createElement("input");
-            input3.type = "checkBox";
-            input3.name = "money" + key;
-            input3.checked = json[key].money;
-            container.appendChild(input3);
-            var displayLabel3 = document.createElement("label");
-            displayLabel3.innerHTML = "&nbsp&nbsp&nbsp&nbsp Method: &nbsp";
-            container.appendChild(displayLabel3);
-            var option = ['values', 'aggregate', 'unique values'];
-
-            var input4 = document.createElement("select");
-            input4.name = "view"+key;
-            for (var j = 0; j < option.length; j++) {
-                var o = document.createElement('option');
-                o.value = option[j];
-                o.innerHTML = option[j];
-                input4.appendChild(o);
-            }
-
-            for(var i, m = 0; i = input4.options[m]; m++) {
-                console.log(i);
-                console.log(m);
-                console.log(json[key].view);
-                if(i.value == json[key].view) {
-                    input4.selectedIndex = m;
-                    break;
+                var input4 = document.createElement("select");
+                input4.name = "view" + key;
+                for (var j = 0; j < option.length; j++) {
+                    var o = document.createElement('option');
+                    o.value = option[j];
+                    o.innerHTML = option[j];
+                    input4.appendChild(o);
                 }
+
+                for (var i, m = 0; i = input4.options[m]; m++) {
+
+                    if (i.value == json[key].view) {
+                        input4.selectedIndex = m;
+                        break;
+                    }
+                }
+                container.appendChild(input4);
             }
-            container.appendChild(input4);
 
             // Append a line break
             container.appendChild(document.createElement("br"));
         }
+        for (key in json) {
+
+            var myDDL = document.getElementById("field1");
+            var option2 = document.createElement("option");
+            option2.text = key;
+            option2.value = key;
+
+            try {
+                myDDL.options.add(option2);
+
+            }
+            catch (e) {
+                alert(e);
+            }
+
+        }
+        for(opt in myDDL.options){
+            if(myDDL.options[opt].value === json.operation.field1){
+                myDDL.selectedIndex = opt;
+            };
+        }
+        for (key in json) {
+            var myDDL2 = document.getElementById("field2");
+            var option3 = document.createElement("option");
+            option3.text = key;
+            option3.value = key;
+            try {
+                myDDL2.options.add(option3);
+
+            }
+            catch (e) {
+                alert(e);
+            }
+
+        }
+        for(opt in myDDL2.options){
+            if(myDDL2.options[opt].value === json.operation.field2){
+                myDDL2.selectedIndex = opt;
+            };
+        }
+
+        var operationDDL = document.getElementById("operation");
+        for(opt in operationDDL.options){
+            if(operationDDL.options[opt].value === json.operation.operation){
+                operationDDL.selectedIndex = opt;
+            };
+        }
     });
 
 </script>
-<h1>Update Tooltip Display
-    <div id="vendor-name"></div>
-</h1>
+<div class="container">
+    <h1>Update Tooltip Display
+        <div id="vendor-name"></div>
+    </h1>
+</div>
 <div class="form-group container">
     <form action="/api/upload/vendorOptions" method="post" enctype="multipart/form-data">
         <div class="container" id="container"></div>
         <br/>
+        <label>Operation Field: </label>
+        <select name="field1" id="field1">
+            <option value="0" selected="selected">none</option>
+        </select>
+        <select id="operation" name="operation">
+            <option value="0">none</option>
+            <option value="plus">+</option>
+            <option value="minus">-</option>
+            <option value="multiply">*</option>
+            <option value="divide">÷</option>
+        </select>
+        <select id="field2" name="field2">
+            <option value="0" selected="selected">none</option>
+        </select>
+        <label>Format as: </label>
+        <select id="operationFormat" name="operationFormat">
+            <option value="percentage" selected="selected">percentage</option>
+            <option value="money">money</option>
+        </select>
         <input type="hidden" name="vendorName" value="{{vendor}}">
         <button type="submit" class="btn btn-block btn-primary">Update Display Settings</button>
 

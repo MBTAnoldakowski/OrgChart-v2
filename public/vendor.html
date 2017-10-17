@@ -17,16 +17,18 @@
 
 <div id="chart"></div>
 <script>
+    // gets the vendor name from the url to load the correct configuration files
     var url = window.location.href;
     var vendorName = url ? url.split('/vendor/')[1] : window.location.search.slice(1);
 
     // clears the screen in case a visualization is still loaded
-    //d3.select("svg").remove();
+    d3.select("svg").remove();
     var config = {};
     var tooltip = {};
+    var validDepartments = {};
+    // loads the configuration data
     d3.json("/vendor-data/configuration/" + vendorName + "_config.json", function (error, configuration) {
         if (error) throw error;
-        console.log('config ' + JSON.stringify(configuration));
         config.deptNo = configuration.deptNo;
         config.year = configuration.year;
         config.price = configuration.price;
@@ -37,11 +39,11 @@
         config.field2 = configuration.field2;
         config.vars = configuration.vars;
 
+        // populates the colorBy field dropdown
         var myDDL = document.getElementById("colorBy");
 
         for (i = 0; i < config.vars.length; i++) {
             var option = document.createElement("option");
-            console.log(config.vars);
             option.text = config.vars[i].name;
             option.value = config.vars[i].value;
             try {
@@ -52,6 +54,8 @@
             }
         }
     });
+
+    // loads the tooltip configuration data
     d3.json("/vendor-data/tooltip/" + vendorName + "_tooltip-config.json", function (error, configuration) {
         if (error) throw error;
         for (v in config.vars) {
@@ -94,8 +98,7 @@
         .style("opacity", 1e-6);
 
     var dataArray = [];
-
-    // takes the budgeting data from the CSV file and places it into the array
+    // takes the vendor data from the CSV file and places it into the array
     d3.csv("vendor-data/" + decodeURI(vendorName) + ".csv", function (error, data) {
         if (error) throw error;
         data.forEach(function (b) {
@@ -103,10 +106,10 @@
             dataArray.push(b);
         });
     });
+
     //loads the department data
     d3.json("resources/admin.min.json", function (error, flare) {
         if (error) throw error;
-
         root = flare;
         root.x0 = height / 2;
         root.y0 = 0;
@@ -144,6 +147,7 @@
                                     // changes the width of the tree that is displayed
 
         }); //180
+
 
         // Update the nodes
         var node = svg.selectAll("g.node")
@@ -221,6 +225,7 @@
                     return 0;
                 }
             });
+        // appends the 'remove' circles
         node.append("svg:foreignObject")
             .attr("width", 20)
             .attr("height", 20)
@@ -285,6 +290,7 @@
 
     }
 
+    // calls the highlightBy method based on the selection
     d3.select('#colorBy')
         .on("change", function () {
             var sect = document.getElementById("colorBy");
@@ -294,6 +300,8 @@
             highlightBy(section, method);
         });
 
+
+    // calls the highlightBy method based on the selection
     d3.select('#colorByMethod')
         .on("change", function () {
             var sect = document.getElementById("colorBy");
@@ -303,17 +311,15 @@
             highlightBy(section, method);
         });
 
+    // highlights nodes based on a variable
     function highlightBy(variableName, method) {
         var met = method;
-        var max = getMaxVar(variableName);
         var maxAgg = getMaxAgg(variableName);
-        var min = getMinVar(variableName);
         var minAgg = getMinAgg(variableName);
         var avgAgg = (maxAgg + minAgg) / 2;
         var maxCount = getMaxCount();
         var minCount = getMinCount();
         var avgCount = (maxCount + minCount) / 2;
-
         var color;
 
         if (met == "aggregate") {
@@ -370,7 +376,6 @@
                 max = length;
             }
         }
-        console.log("MAX: " + max);
         return max;
     }
 
@@ -383,7 +388,6 @@
                 min = length;
             }
         }
-        console.log("MIN: " + min);
         return min;
     }
 
@@ -466,7 +470,6 @@
     function mousemove(d) {
         var dept = d.deptno;
         var deptData = findDeptData(dept);
-        console.log(deptData);
         var varString = "";
         for (var i = 0; i < config.vars.length; i++) {
             if (tooltip[config.vars[i].value].display === true) {
@@ -486,7 +489,6 @@
                         var uniqueValues = [];
                         for (var k = 0; k < deptData.length; k++) {
                             ki = JSON.parse(deptData[k])[config.vars[i].value];
-                            console.log(ki);
                             if (uniqueValues.indexOf(ki) === -1) {
                                 uniqueValues.push(ki);
                                 varString = varString + ki + " ";
@@ -509,7 +511,6 @@
                         var uniqueValues = [];
                         for (var k = 0; k < deptData.length; k++) {
                             ki = JSON.parse(deptData[k])[config.vars[i].value];
-                            console.log(ki);
                             if (uniqueValues.indexOf(ki) === -1) {
                                 uniqueValues.push(ki)
                             }
@@ -549,13 +550,13 @@
                     result = 0;
             }
             if (tooltip.operation.format == "money") {
-                varString = varString + "<b>"+ tooltip.operation.name+ ": </b>" + formatMoney(result);
+                varString = varString + "<b>" + tooltip.operation.name + ": </b>" + formatMoney(result);
             }
             else if (tooltip.operation.format == "percentage") {
-                varString = varString + "<b>"+ tooltip.operation.name+ ": </b>" + formatPercentage(result);
+                varString = varString + "<b>" + tooltip.operation.name + ": </b>" + formatPercentage(result);
             }
             else {
-                varString = varString + "<b>"+ tooltip.operation.name+ ": </b>" + result;
+                varString = varString + "<b>" + tooltip.operation.name + ": </b>" + result;
             }
             /*ki = JSON.parse(deptData[p])[config.vars[i].value];
             if (tooltip[config.vars[i].value].money === true) {
@@ -638,6 +639,12 @@
             highlightBy(section, method);
         }, 1000)
     }
+
+    function updateDataOther() {
+        var unknownDepts = {};
+
+    }
+
 
     // expands a node
     function expand(d) {

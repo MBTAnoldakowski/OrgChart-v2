@@ -1,1 +1,39 @@
-{"unit":{"display":false,"view":"values","money":false},"poNo":{"display":true,"view":"count","money":false},"poDate":{"display":false,"view":"values","money":false},"poAmount":{"display":true,"view":"aggregate","money":false},"acct":{"display":true,"view":"unique values","money":false},"description":{"display":false,"view":"values","money":false},"operation":{"field1":"0","operation":"0","field2":"0","format":"percentage","name":""}}
+{
+  "unit": {
+    "display": false,
+    "view": "values",
+    "money": false
+  },
+  "poNo": {
+    "display": true,
+    "view": "count",
+    "money": false
+  },
+  "poDate": {
+    "display": false,
+    "view": "values",
+    "money": false
+  },
+  "poAmount": {
+    "display": true,
+    "view": "aggregate",
+    "money": false
+  },
+  "acct": {
+    "display": true,
+    "view": "unique values",
+    "money": false
+  },
+  "description": {
+    "display": false,
+    "view": "values",
+    "money": false
+  },
+  "operation": {
+    "field1": "0",
+    "operation": "0",
+    "field2": "0",
+    "format": "percentage",
+    "name": ""
+  }
+}

@@ -6,6 +6,9 @@
     function configuration($routeProvider) {
         $routeProvider
             .when('/', {
+                templateUrl: 'home.html'
+            })
+            .when('/budget', {
                 templateUrl: 'visualization.html'
             })
             .when('/update',{

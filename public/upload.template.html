@@ -1,5 +1,6 @@
-
 <script type="text/javascript">
+    d3.select("svg").remove();
+
     // asks for the password, if it's right it does nothing, if it isn't it reloads the page.
     var password = prompt("Please enter the password", "password");
     if (password !== "mbta123" && password !== null) {

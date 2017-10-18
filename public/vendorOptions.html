@@ -1,4 +1,6 @@
 <script>
+    d3.select("svg").remove();
+
     // gets the window address
     var url = window.location.href;
     // splits the url to get the vendor name
@@ -84,21 +86,21 @@
             container.appendChild(document.createElement("br"));
         }
         for (key in json) {
+            if (key !== "operation") {
+                //creates the options for the operations portion field1
+                var myDDL = document.getElementById("field1");
+                var option2 = document.createElement("option");
+                option2.text = key;
+                option2.value = key;
+                try {
+                    myDDL.options.add(option2);
 
-            //creates the options for the operations portion
-            var myDDL = document.getElementById("field1");
-            var option2 = document.createElement("option");
-            option2.text = key;
-            option2.value = key;
-            try {
-                myDDL.options.add(option2);
-
-            }
-            catch (e) {
-                alert(e);
+                }
+                catch (e) {
+                    alert(e);
+                }
             }
         }
-
         // select the correct option from the dropdown menu
         for (opt in myDDL.options) {
             console.log(json);
@@ -108,19 +110,25 @@
 
         }
         for (key in json) {
-            var myDDL2 = document.getElementById("field2");
-            var option3 = document.createElement("option");
-            option3.text = key;
-            option3.value = key;
-            try {
-                myDDL2.options.add(option3);
+            if (key !== "operation") {
+                //creates the options for the operations portion field2
+
+                var myDDL2 = document.getElementById("field2");
+                var option3 = document.createElement("option");
+                option3.text = key;
+                option3.value = key;
+                try {
+                    myDDL2.options.add(option3);
+
+                }
+                catch (e) {
+                    alert(e);
+                }
 
             }
-            catch (e) {
-                alert(e);
-            }
-
         }
+        // select the correct option from the dropdown menu
+
         for (opt2 in myDDL2.options) {
             if (myDDL2.options[opt2].value === json.operation.field2) {
                 myDDL2.selectedIndex = opt2;

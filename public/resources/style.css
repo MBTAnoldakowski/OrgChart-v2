@@ -550,6 +550,18 @@ input:checked + .slider:before {
     font-size: 45px;
 }
 
-#vendor-name{
+#vendor-name {
     float: right;
+}
+
+#not-bold {
+    font-style: italic;
+    font-size: 2em;
+}
+
+#wspNormal {
+    white-space: normal;
+    word-wrap: break-word;
+    margin-bottom:4px;
+    text-align: left;
 }

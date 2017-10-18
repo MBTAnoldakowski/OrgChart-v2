@@ -11,35 +11,40 @@
             .when('/budget', {
                 templateUrl: 'visualization.html'
             })
-            .when('/update',{
+            .when('/update', {
                 templateUrl: 'upload.template.html'
             })
-            .when('/employees',{
+            .when('/employees', {
                 templateUrl: 'employees3.html'
-        })
-            .when('/procurement',{
+            })
+            .when('/procurement', {
                 templateUrl: 'procurement.html'
             })
-            .when('/kpi',{
+            .when('/kpi', {
                 templateUrl: 'kpi.html'
             })
-            .when('/approvals',{
+            .when('/approvals', {
                 templateUrl: 'approvals.html'
             })
-            .when('/vendor/:vendorName',{
+            .when('/vendor/:vendorName', {
                 templateUrl: 'vendor.html',
                 controller: 'vendorPageController',
                 controllerAs: 'model'
             })
-            .when('/vendor/:vendorName/options',{
+            .when('/vendor/:vendorName/remove', {
+                templateUrl: 'vendorRemove.html',
+                controller: 'vendorPageController',
+                controllerAs: 'model'
+            })
+            .when('/vendor/:vendorName/options', {
                 templateUrl: 'vendorOptions.html',
                 controller: 'vendorPageController',
                 controllerAs: 'model'
             })
-            .when('/vendor',{
+            .when('/vendor', {
                 templateUrl: 'vendorUpload.html'
             })
-            .when('/vendors',{
+            .when('/vendors', {
                 templateUrl: 'vendor-list.html',
                 controller: 'vendorController',
                 controllerAs: 'model'

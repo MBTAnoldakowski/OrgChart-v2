@@ -527,12 +527,12 @@ input:checked + .slider:before {
     left: 0;
     right: 0;
 }
-
+/*
 .approvals-container {
     border: medium red dashed;
     background-color: red;
 }
-
+*/
 #striker {
     position: relative;
     display: inline-block;

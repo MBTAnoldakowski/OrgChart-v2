@@ -21,7 +21,7 @@
           "newApproval6": "JGONNEVILLE",
           "newApproval7": "JGONNEVILLE",
           "newApproval8": "LMRAMIREZ",
-          "newRequestors": "LMCAVOY WLOVEN",
+          "newRequestors": "LMCAVOY WIOVEN",
           "gotApprovalFrom": [
             {
               "name": "Bus Operations",
@@ -231,7 +231,6 @@
           "approval7": "MABRAMO",
           "approval8": "LMRAMIREZ",
           "requestors":"LBILOTAS JCAMINITI JMACEACHERN JBUONOPANE ESTORER DBYRNE TSMEDBERG SDELFORNO REQWF672000 MTINNEY AYUEN CDUTTON",
-
           "newApproval1": "JBUONOPANE",
           "newApproval2": "JBUONOPANE",
           "newApproval3": "JBUONOPANE",
@@ -544,8 +543,8 @@
               "deptno": "230000"
             }
           ],
-          "newApproval1": "AGRODON CSHEA WULLOA-MURRAY",
-          "newApproval2": "AGRODON CSHEA WULLOA-MURRAY",
+          "newApproval1": "AGORDON CSHEA WULLOA-MURRAY",
+          "newApproval2": "AGORDON CSHEA WULLOA-MURRAY",
           "newApproval3": "NMICHAUD",
           "newApproval4": "NMICHAUD",
           "newApproval5": "TGJOHNSON",
@@ -773,9 +772,24 @@
           ]
         },
         {
-          "name": "Capital Project Oversight",
+          "name": "Capital Program Oversight",
           "level": "4",
           "deptno": "320000",
+          "newApproval1": "DPETERSEN JTHORNTON",
+          "newApproval2": "JAALTO",
+          "newApproval3": "JAALTO CJACOBSON",
+          "newApproval4": "JAALTO CJACOBSON",
+          "newApproval5": "JDALTON BLARKIN",
+          "newApproval6": "JDALTON BLARKIN",
+          "newApproval7": "MABRAMO",
+          "newApproval8": "LMRAMIREZ",
+          "newRequestors":"GTAMMARO MCROWLEY MCANTOR LDRAYTON-OLIVER KBENDERY CJJACKSON CLACKARD DSHEA HCOOPER HLIM JSARIN JSWARTZ",
+          "gotApprovalFrom": [
+            {
+              "name": "Capital Delivery",
+              "deptno": "310000"
+            }
+          ],
           "children": [
             {
               "name": "Capital Project Oversight PP",

@@ -482,7 +482,6 @@ input:checked + .slider:before {
 .old-approvals {
     float: left;
     padding: 10px;
-    border-right: medium solid black;
     width: 50%;
     height: 75%;
 }
@@ -491,7 +490,6 @@ input:checked + .slider:before {
     float: right;
     top: 0;
     padding: 10px;
-    border-left: medium solid black;
     width: 50%;
     height: 75%;
 }
@@ -499,7 +497,7 @@ input:checked + .slider:before {
 .old-requests {
     float: left;
     padding: 10px;
-    border-top: medium solid black;
+    /* border-top: medium solid black; */
     height: 25%;
     left: 0;
     bottom: 0;
@@ -509,7 +507,7 @@ input:checked + .slider:before {
 .new-requests {
     float: right;
     padding: 10px;
-    border-top: medium solid black;
+    /* border-top: medium solid black; */
     width: 50%;
     height: 25%;
     right: 0;
@@ -520,6 +518,19 @@ input:checked + .slider:before {
     bottom: 0;
     left: 0;
     right: 0;
+    float: right;
+    width: 100%;
+}
+
+.request-container2 {
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.approvals-container {
+    border: medium red dashed;
+    background-color: red;
 }
 
 #striker {
@@ -562,6 +573,6 @@ input:checked + .slider:before {
 #wspNormal {
     white-space: normal;
     word-wrap: break-word;
-    margin-bottom:4px;
+    margin-bottom: 4px;
     text-align: left;
 }

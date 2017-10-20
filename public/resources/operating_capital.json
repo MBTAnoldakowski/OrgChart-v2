@@ -21,7 +21,7 @@
           "newApproval6": "JGONNEVILLE",
           "newApproval7": "JGONNEVILLE",
           "newApproval8": "LMRAMIREZ",
-          "newRequestors": "LMCAVOY WLOVEN",
+          "newRequestors": "LMCAVOY WIOVEN",
           "gotApprovalFrom": [
             {
               "name": "Bus Operations",
@@ -319,7 +319,7 @@
           "newApproval6": "JGONNEVILLE",
           "newApproval7": "MABRAMO",
           "newApproval8": "LMRAMIREZ",
-          "newRequestors":"REQWF674000 LBARRETT",
+          "newRequestors":"REQWF674000",
           "children": [
             {
               "name": "Power Systems and Equipment",
@@ -541,8 +541,8 @@
               "deptno": "230000"
             }
           ],
-          "newApproval1": "AGRODON CSHEA WULLOA-MURRAY",
-          "newApproval2": "AGRODON CSHEA WULLOA-MURRAY",
+          "newApproval1": "AGORDON CSHEA WULLOA-MURRAY",
+          "newApproval2": "AGORDON CSHEA WULLOA-MURRAY",
           "newApproval3": "NMICHAUD",
           "newApproval4": "NMICHAUD",
           "newApproval5": "TGJOHNSON",
@@ -771,9 +771,19 @@
           ]
         },
         {
-          "name": "Capital Project Oversight",
+          "name": "Capital Program Oversight",
           "level": "4",
           "deptno": "320000",
+          "newApproval1": "DPETERSEN JTHORNTON",
+          "newApproval2": "JAALTO CJACOBSON",
+          "newApproval3": "JAALTO CJACOBSON",
+          "newApproval4": "JAALTO CJACOBSON",
+          "newApproval5": "JDALTON BLARKIN",
+          "newApproval6": "JDALTON BLARKIN",
+          "newApproval7": "MABRAMO",
+          "newApproval8": "LMRAMIREZ",
+          "newRequestors":"GTAMMARO MCROWLEY MCANTOR LDRAYTON-OLIVER KBENDERY CJJACKSON CLACKARD DSHEA HCOOPER HLIM JSARIN JSWARTZ",
+
           "children": [
             {
               "name": "Capital Project Oversight PP",

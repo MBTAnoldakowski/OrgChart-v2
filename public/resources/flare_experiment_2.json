@@ -543,37 +543,6 @@
       ]
     },
     {
-      "name": "Labor Relations",
-      "level": "4",
-      "deptno": "730000",
-      "requestors":"GDIMAMBRO",
-      "approval1":"FSCABIN",
-      "approval2":"FSCABIN NEASLEY",
-      "approval3":"FSCABIN NEASLEY",
-      "approval4":"JPOLCARI",
-      "approval5":"JPOLCARI",
-      "approval6":"JPOLCARI",
-      "approval7":"MABRAMO",
-      "approval8":"LMRAMIREZ",
-      "newApproval1": "MD'ANGELO",
-      "newApproval2": "MD'ANGELO",
-      "newApproval3": "MD'ANGELO",
-      "newApproval4": "MD'ANGELO",
-      "newApproval5": "MD'ANGELO",
-      "newApproval6": "MABRAMO",
-      "newApproval7": "MABRAMO PBRANDLEY",
-      "newApproval8": "LMRAMIREZ",
-      "newApproval9": "FMCB",
-      "newRequestors": "GDIMAMBRO",
-      "children": [
-        {
-          "name": "Labor Relations",
-          "level": "5",
-          "deptno": "731002"
-        }
-      ]
-    },
-    {
       "name": "Safety",
       "level": "4",
       "deptno": "240000",
@@ -673,6 +642,44 @@
           "name": "ITD Development",
           "level": "5",
           "deptno": "435002"
+        }
+      ]
+    },
+
+    {
+      "name": "Labor Relations",
+      "level": "4",
+      "deptno": "730000",
+      "requestors":"GDIMAMBRO",
+      "approval1":"FSCABIN",
+      "approval2":"FSCABIN NEASLEY",
+      "approval3":"FSCABIN NEASLEY",
+      "approval4":"JPOLCARI",
+      "approval5":"JPOLCARI",
+      "approval6":"JPOLCARI",
+      "approval7":"MABRAMO",
+      "approval8":"LMRAMIREZ",
+      "gotApprovalFrom": [
+        {
+          "name": "DGM",
+          "deptno": "220000"
+        }
+      ],
+      "newApproval1": "MD'ANGELO",
+      "newApproval2": "MD'ANGELO",
+      "newApproval3": "MD'ANGELO",
+      "newApproval4": "MD'ANGELO",
+      "newApproval5": "MD'ANGELO",
+      "newApproval6": "MABRAMO",
+      "newApproval7": "MABRAMO PBRANDLEY",
+      "newApproval8": "LMRAMIREZ",
+      "newApproval9": "FMCB",
+      "newRequestors": "GDIMAMBRO",
+      "children": [
+        {
+          "name": "Labor Relations",
+          "level": "5",
+          "deptno": "731002"
         }
       ]
     },

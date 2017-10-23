@@ -120,6 +120,12 @@
           "newApproval8": "LMRAMIREZ",
           "newApproval9": "FMCB",
           "newRequestors":"WWALSH LMCAVOY WIOVEN SNETH RHALEY",
+          "gotApprovalFrom": [
+            {
+              "name": "Bus Operations",
+              "deptno": "220000"
+            }
+          ],
           "children": [
             {
               "name": "Bus Transportation Administration",

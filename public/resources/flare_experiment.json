@@ -8,6 +8,15 @@
       "level": "3",
       "deptno": "220000",
       "removed":true,
+      "requestors":"WWALSH LMCAVOY BS020E BS016E WIOVEN SNETH RHALEY",
+      "approval1": "SHICKS WDECOSTE",
+      "approval2": "SHICKS WDECOSTE",
+      "approval3": "SHICKS WDECOSTE",
+      "approval4": "SHICKS",
+      "approval5": "TJOHNSON",
+      "approval6": "JGONNEVILLE",
+      "approval7": "MABRAMO",
+      "approval8": "LMRAMIREZ",
       "children": [
         {
           "name": "Bus Maintenance",
@@ -101,14 +110,6 @@
           "name": "Bus Transportation",
           "level": "4",
           "deptno": "224000",
-          "approval1": "SHICKS WDECOSTE",
-          "approval2": "SHICKS WDECOSTE",
-          "approval3": "SHICKS WDECOSTE",
-          "approval4": "SHICKS",
-          "approval5": "TJOHNSON",
-          "approval6": "JGONNEVILLE",
-          "approval7": "MABRAMO",
-          "approval8": "LMRAMIREZ",
           "newApproval1": "PLABITUE SMILLS",
           "newApproval2": "KBURNS",
           "newApproval3": "DCARNEY",
@@ -118,7 +119,6 @@
           "newApproval7": "MABRAMO PBRANDLEY",
           "newApproval8": "LMRAMIREZ",
           "newApproval9": "FMCB",
-          "requestors":"WWALSH LMCAVOY BS020E BS016E WIOVEN SNETH RHALEY",
           "newRequestors":"WWALSH LMCAVOY WIOVEN SNETH RHALEY",
           "children": [
             {

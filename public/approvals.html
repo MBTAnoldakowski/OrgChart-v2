@@ -154,10 +154,10 @@
 
         // appends the new/old approval signifiers
         node.append("svg:foreignObject")
-            .attr("width", 20)
-            .attr("height", 20)
-            .attr("y", "-26px")
-            .attr("x", "-10px")
+            .attr("width", 10)
+            .attr("height", 10)
+            .attr("y", "-11px")
+            .attr("x", "-4.5px")
             .append("xhtml:span")
             .attr("z-index", "1000")
             .attr("class", function (d) {
@@ -165,7 +165,7 @@
                     return "control glyphicon glyphicon-minus-sign"
                 }
                 if (d.gotApprovalFrom) {
-                    return "control glyphicon glyphicon-plus-sign"
+                    return "control glyphicon glyphicon-plus"
                 }
             })
             // calls for approval tooltip on mouseover
@@ -178,7 +178,7 @@
         node.append("svg:foreignObject")
             .attr("width", 20)
             .attr("height", 20)
-            .attr("y", "-8px")
+            .attr("y", "-7px")
             .attr("x", "-10px")
             .append("xhtml:span")
             .attr("z-index", "9999")
@@ -226,6 +226,11 @@
             .style("fill", function (d) {
                 if (d.removed == true) {
                     return "black"
+                }
+            })
+            .style("font-size", function (d) {
+                if (d.deptno == "000000") {
+                    return "18px";
                 }
             })
             .attr("id", function (d) {
@@ -366,6 +371,7 @@
 
     //draws the tooltip
     function mousemove(d) {
+
         if (d.approval1 != undefined && d.requestors == undefined) {
             div.html(d.deptno + "<br/>" + "Level 1: " + d.approval1 + "<br/>" + "Level 2: " + d.approval2 + "<br/>"
                 + "Level 3: " + d.approval3 + "<br/>" + "Level 4: " + d.approval4 + "<br/>" + "Level 5: " + d.approval5
@@ -402,7 +408,8 @@
                 .style("top", (d3.event.pageY) + "px")
 
         }
-       /**/ if (d.newApproval1 != undefined && d.approval1 != undefined && (d.approval1 != d.newApproval1
+        /**/
+        if (d.newApproval1 != undefined && d.approval1 != undefined && (d.approval1 != d.newApproval1
                 || d.approval2 != d.newApproval2 || d.approval3 != d.newApproval3 || d.approval4 != d.newApproval4 ||
                 d.approval5 != d.newApproval5 || d.approval6 != d.newApproval6 || d.approval7 != d.newApproval7
                 || d.approval8 != d.newApproval8) && d.requestors != undefined && d.newRequestors != undefined) {
@@ -414,13 +421,14 @@
                 + d.approval8 + "</div>" + "<div class='new-approvals'> New Approval Structure <br/> Level 1: " + d.newApproval1 + "<br/>" + "Level 2: " + d.newApproval2 + "<br/>"
                 + "Level 3: " + d.newApproval3 + "<br/>" + "Level 4: " + d.newApproval4 + "<br/>" + "Level 5: " + d.newApproval5
                 + "<br/>" + "Level 6: " + d.newApproval6 + "<br/>" + "Level 7: " + d.newApproval7 + "<br/>" + "Level 8: "
-                + d.newApproval8 + "<br/>" + "Level 9: " + d.newApproval9+ "</div></div>"
+                + d.newApproval8 + "<br/>" + "Level 9: " + d.newApproval9 + "</div></div>"
                 + "<div class='request-container'><div class='old-requests'> Old Requestors <br/>" + d.requestors + "</div>"
                 + "<div class='new-requests'> New Requestors <br/>" + d.newRequestors + "</div>")
                 .style("left", (d3.event.pageX ) + "px")
                 .style("top", (d3.event.pageY) + "px")
         }
-       /**/ if (d.newApproval1 != undefined && d.approval1 != undefined && (d.approval1 != d.newApproval1
+        /**/
+        if (d.newApproval1 != undefined && d.approval1 != undefined && (d.approval1 != d.newApproval1
                 || d.approval2 != d.newApproval2 || d.approval3 != d.newApproval3 || d.approval4 != d.newApproval4 ||
                 d.approval5 != d.newApproval5 || d.approval6 != d.newApproval6 || d.approval7 != d.newApproval7
                 || d.approval8 != d.newApproval8) && d.requestors != undefined && d.newRequestors != undefined && d.requestors == d.newRequestors) {
@@ -430,7 +438,7 @@
                 + d.approval8 + "</div>" + "<div class='new-approvals'> New Approval Structure <br/> Level 1: " + d.newApproval1 + "<br/>" + "Level 2: " + d.newApproval2 + "<br/>"
                 + "Level 3: " + d.newApproval3 + "<br/>" + "Level 4: " + d.newApproval4 + "<br/>" + "Level 5: " + d.newApproval5
                 + "<br/>" + "Level 6: " + d.newApproval6 + "<br/>" + "Level 7: " + d.newApproval7 + "<br/>" + "Level 8: "
-                + d.newApproval8 + "<br/>" + "Level 9: " + d.newApproval9+ "</div></div>"
+                + d.newApproval8 + "<br/>" + "Level 9: " + d.newApproval9 + "</div></div>"
                 + "<div class='request-container'><br/> Requestors did not change<br/>" + d.requestors + "</div></div>")
                 .style("left", (d3.event.pageX ) + "px")
                 .style("top", (d3.event.pageY) + "px")
@@ -446,7 +454,7 @@
                 + d.approval8 + "</div>" + "<div class='new-approvals'> New Approval Structure <br/> Level 1: " + d.newApproval1 + "<br/>" + "Level 2: " + d.newApproval2 + "<br/>"
                 + "Level 3: " + d.newApproval3 + "<br/>" + "Level 4: " + d.newApproval4 + "<br/>" + "Level 5: " + d.newApproval5
                 + "<br/>" + "Level 6: " + d.newApproval6 + "<br/>" + "Level 7: " + d.newApproval7 + "<br/>" + "Level 8: "
-                + d.newApproval8 + "<br/>" + "Level 9: " + d.newApproval9+ "</div></div>")
+                + d.newApproval8 + "<br/>" + "Level 9: " + d.newApproval9 + "</div></div>")
                 .style("left", (d3.event.pageX ) + "px")
                 .style("top", (d3.event.pageY) + "px")
         }
@@ -491,7 +499,7 @@
             div.html(d.deptno + "<br/>" + "New Approval Structure <br/> Level 1: " + d.newApproval1 + "<br/>" + "Level 2: " + d.newApproval2 + "<br/>"
                 + "Level 3: " + d.newApproval3 + "<br/>" + "Level 4: " + d.newApproval4 + "<br/>" + "Level 5: " + d.newApproval5
                 + "<br/>" + "Level 6: " + d.newApproval6 + "<br/>" + "Level 7: " + d.newApproval7 + "<br/>" + "Level 8: "
-                + d.newApproval8 + "<br/>" + "Level 9: " + d.newApproval9+ "</div>")
+                + d.newApproval8 + "<br/>" + "Level 9: " + d.newApproval9 + "</div>")
                 .style("left", (d3.event.pageX ) + "px")
                 .style("top", (d3.event.pageY) + "px")
 
@@ -500,7 +508,7 @@
             div.html(d.deptno + "<br/>" + "New Approval Structure <br/><div class='approvals-container'> Level 1: " + d.newApproval1 + "<br/>" + "Level 2: " + d.newApproval2 + "<br/>"
                 + "Level 3: " + d.newApproval3 + "<br/>" + "Level 4: " + d.newApproval4 + "<br/>" + "Level 5: " + d.newApproval5
                 + "<br/>" + "Level 6: " + d.newApproval6 + "<br/>" + "Level 7: " + d.newApproval7 + "<br/>" + "Level 8: "
-                + d.newApproval8 + "<br/>" + "Level 9: " + d.newApproval9+ "</div><div class='request-container2'><br/> New Requestor Structure <br/>" + d.newRequestors + "</div>")
+                + d.newApproval8 + "<br/>" + "Level 9: " + d.newApproval9 + "</div><div class='request-container2'><br/> New Requestor Structure <br/>" + d.newRequestors + "</div>")
                 .style("left", (d3.event.pageX ) + "px")
                 .style("top", (d3.event.pageY) + "px")
 
@@ -520,11 +528,16 @@
                 .style("left", (d3.event.pageX ) + "px")
                 .style("top", (d3.event.pageY) + "px");
         }
+        if (d.deptno == "000000") {
+            div.html("Proposed new department. <br/> Awaiting approval structure")
+                .style("left", (d3.event.pageX ) + "px")
+                .style("top", (d3.event.pageY) + "px");
+        }
     }
 
     //draws the tooltip
     function mousemove2(d) {
-        if (d.gotApprovalFrom) {
+        if (d.gotApprovalFrom && d.deptno !="000000") {
             div2.html("Recently received approval structure")
                 .style("left", (d3.event.pageX ) + "px")
                 .style("top", (d3.event.pageY) + "px");
@@ -560,7 +573,7 @@
             .style("font-size", function (d) {
                 for (s in section) {
 
-                    if (d != undefined) {
+                    if (d != undefined && d.deptno != "000000") {
                         if (section[s].deptno == (d.deptno)) {
                             return "24px";
                         }
@@ -590,7 +603,7 @@
         div2.transition()
             .duration(300)
             .style("opacity", 1e-6);
-        unHighlight();
+        // unHighlight();
     }
 
     // this is triggered when you hit the 'View Operating' button, it just loads the

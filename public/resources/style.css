@@ -371,8 +371,9 @@ div2.tooltip2 {
     font-size: 19px;
 }
 
-.control.glyphicon.glyphicon-plus-sign {
-    color: blue;
+.control.glyphicon.glyphicon-plus {
+    color: white;
+    font-size: 9px;
 }
 
 .control.glyphicon.glyphicon-minus-sign {
@@ -385,9 +386,9 @@ div2.tooltip2 {
     font-size: 15px;
 }
 
-.glyphicon-key.glyphicon.glyphicon-plus-sign {
-    color: blue;
-    font-size: 19px;
+.glyphicon-key.glyphicon.glyphicon-plus {
+    color: white;
+    font-size: 9px;
 }
 
 .glyphicon-key.glyphicon.glyphicon-minus-sign {

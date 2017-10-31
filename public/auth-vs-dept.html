@@ -1,0 +1,520 @@
+<!--This div contains the header menu-->
+<div id="option">
+    <h1>MBTA Auth vs Dept Chart</h1>
+    <div class="lastUpdated">
+        <p>Last Updated: 10/31/2017 2:42PM</p>
+    </div>
+    <br/>
+    <input name="updateButton"
+           type="button"
+           class="btn btn-default"
+           value="View Operating"
+           onclick="updateData()"/>
+
+    <input name="updateButton"
+           type="button"
+           class="btn btn-default"
+           value="View Administration"
+           onclick="updateData2()"/>
+
+</div>
+<!-- this is an empty div for the script to populate with the tree -->
+<div id="chart"></div>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<script>
+    var dataDisplayed = 0; // when 0, admin- when 1, ops
+    // clears the screen in case a visualization is still loaded
+    d3.select("svg").remove();
+
+    // size variables for the box to paint in
+    var margin = {top: 20, right: 150, bottom: 20, left: 200},
+        width = 1000,
+        height = 1300;
+
+    var i = 0,
+        //sets the amount of time it takes the tree opening animation to run
+        duration = 750,
+        root;
+
+    // initializes the tree
+    var tree = d3.layout.tree()
+        .size([height, width]);
+
+    // initializes the tree branches
+    var diagonal = d3.svg.diagonal()
+        .projection(function (d) {
+            return [d.y, d.x];
+        });
+
+    // appends the svg to paint on to the chart div
+    var svg = d3.select("#chart").append("svg")
+    // sets the height and width of the svg
+        .attr("width", width + margin.right + margin.left)
+        .attr("height", height + margin.top + margin.bottom)
+        .append("g")
+        .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+    // initializes the budget/approval tooltip
+    var div = d3.select("body").append("div")
+        .attr("class", "tooltip")
+        .style("opacity", 1e-6);
+
+    // initializes the new approval tooltip
+    var div2 = d3.select("body").append("div")
+        .attr("class", "tooltip")
+        .style("opacity", 1e-6);
+
+
+    //loads the department data
+    d3.json("resources/admin.combined.json", function (error, flare) {
+        if (error) throw error;
+
+        root = flare;
+        root.x0 = height / 2;
+        root.y0 = 0;
+
+        function collapse(d) {
+            if (d.children) {
+                d._children = d.children;
+                d._children.forEach(collapse);
+                d.children = null;
+            }
+        }
+
+        root.children.forEach(collapse);
+        update(root);
+        setTimeout(function () {
+            expandAll();
+        }, 100);
+    });
+
+    d3.select(self.frameElement).style("height", "800px");
+
+    function update(source, remove) {
+        if (remove) {
+            svg.selectAll("g.node").remove();
+        }
+        // Compute the new tree layout.
+        var nodes = tree.nodes(root).reverse(),
+            links = tree.links(nodes);
+
+
+        // Normalize for fixed-depth.
+        nodes.forEach(function (d) {
+            d.y = d.depth * 250;    // I don't know specifically what this does,
+                                    // but I do know that changing the number
+                                    // changes the width of the tree that is displayed
+
+        }); //180
+
+        // Update the nodes
+        var node = svg.selectAll("g.node")
+            .data(nodes, function (d) {
+                return d.id || (d.id = ++i);
+            });
+
+
+        // Enter any new nodes at the parent's previous position.
+        var nodeEnter = node.enter().append("g")
+            .attr("class", "node")
+            .attr("transform", function (d) {
+                return "translate(" + source.y0 + "," + source.x0 + ")";
+            })
+            .on("click", click);
+
+        nodeEnter.append("circle")
+            .attr("r", 1e-6);
+
+        node.append("svg:foreignObject")
+            .attr("width", 20)
+            .attr("height", 20)
+            .attr("y", "-10px")
+            .attr("x", function (d) {
+                if (d.level == "4" || d.deptno == "310002") {
+                    return "7px";
+                }
+                return "-25px";
+            })
+            .append("xhtml:span")
+            .attr("z-index", "9999")
+            .attr("class", function (d) {
+                if (d.tree.authUnder || d.tree.authDeptNo || d.tree.authLevel) {
+                    return "control glyphicon glyphicon-star"
+                }
+            })
+            .style("color", function (d) {
+                if (d.tree.authUnder) {
+                    return "red";
+                }
+                if (d.tree.authDeptNo) {
+                    return "#CCCC00";
+                }
+                if (d.tree.authLevel) {
+                    return "purple";
+                }
+                return "black";
+            });
+
+        node.append("svg:foreignObject")
+            .attr("width", 10)
+            .attr("height", 10)
+            .attr("y", "-8.4px")
+            .attr("x", "-7.9px")
+            .append("xhtml:span")
+            .attr("z-index", "9999")
+            .attr("class", function (d) {
+                if (d.tree.affiliation == "both") {
+                    return "control glyphicon glyphicon-record"
+                }
+            })
+            .style("color", "black");
+        /*
+                node.append("svg:foreignObject")
+                    .attr("width", 20)
+                    .attr("height", 20)
+                    .attr("y", "-7px")
+                    .attr("x", "-10px")
+                    .append("xhtml:span")
+                    .attr("z-index", "9997")
+                    .attr("class", function (d) {
+                        if (d.removed) {
+                            return "control glyphicon glyphicon-remove-circle"
+                        }
+                    })
+                    .style("color", "white");
+                    */
+        // appends the name text to the nodes
+        nodeEnter.append("text")
+            .attr("x", function (d) {
+                if (d.removed == true && d.level == "4") {
+                    return d.children || d._children ? -20 : -10;
+                }
+                return d.children || d._children ? -10 : 10;
+            })
+            .attr("dy", ".35em")
+            .attr("text-anchor", function (d) {
+                if (d.removed == true && d.level == "4") {
+                    return d.children || d._children ? "end" : "end";
+                }
+                return d.children || d._children ? "end" : "start";
+            })
+            //the name is appended to the dot right here
+            .text(function (d) {
+                if (d.deptno == "320000") {
+                    return d.name + "  C̶a̶p̶i̶t̶a̶l̶ ̶P̶r̶o̶j̶e̶c̶t̶ ̶O̶v̶e̶r̶s̶i̶g̶h̶t̶";
+                }
+                return d.name;
+            })
+            // calls for PO data tooltip on mouseover
+            .on("mouseover", mouseover)
+            .on("mousemove", function (d) {
+                mousemove(d);
+            })
+            .on("mouseout", mouseout)
+            .style("fill-opacity", function (d) {
+                if (d.tree.affiliation == "auth") {
+                    return 0.5;
+                }
+                else {
+                    return 1;
+                }
+
+            })
+            .style("text-decoration", function (d) {
+                if (d.removed == true) {
+                    return "line-through"
+                }
+            })
+            // the names are styled here based on PO data
+            .style("fill", function (d) {
+                if (d.removed == true) {
+                    return "black"
+                }
+            })
+            .style("font-size", function (d) {
+                if (d.deptno == "000000") {
+                    return "18px";
+                }
+            })
+            .attr("id", function (d) {
+                if (d.removed == true) {
+                    return "striker"
+                }
+            });
+
+
+        // Transition nodes to their new position.
+        var nodeUpdate = node.transition()
+            .duration(duration)
+            .attr("transform", function (d) {
+                return "translate(" + d.y + "," + d.x + ")";
+            });
+
+        // size/style the circles based on levels
+        nodeUpdate.select("circle")
+            .attr("r", function (d) {
+                // change this number to make dots bigger or smaller
+                return 6;
+            })
+            .attr("z-index", "9997")
+            .style("fill", function (d) {
+                if (d.level == "2") return "red";
+                if (d.level == "3") return "orange";
+                if (d.level == "4") return "green";
+                if (d.level == "5") return "#00afd6";
+                if (d.level == "6") return "purple";
+                if (d.name == "") return "#ffffff";
+            })
+            .style("opacity", function (d) {
+                if (d.level == "") {
+                    return 0;
+                }
+                if (d.tree.affiliation === "auth") {
+                    return 0.6;
+                }
+            });
+
+
+        // Transition exiting nodes to the parent's new position.
+        var nodeExit = node.exit().transition()
+            .duration(duration)
+            .attr("transform", function (d) {
+                return "translate(" + source.y + "," + source.x + ")";
+            })
+            .remove();
+
+        nodeExit.select("circle")
+            .attr("r", 1e-6);
+
+        nodeExit.select("text")
+            .style("fill-opacity", 1e-6);
+
+        // Update the links…
+        var link = svg.selectAll("path.link")
+            .data(links, function (d) {
+                return d.target.id;
+            });
+
+        // Enter any new links at the parent's previous position.
+        link.enter().insert("path", "g")
+            .attr("class", "link")
+            .attr("d", function (d) {
+                var o = {x: source.x0, y: source.y0};
+                return diagonal({source: o, target: o});
+            });
+
+        // Transition links to their new position.
+        link.transition()
+            .duration(duration)
+            .attr("d", diagonal);
+
+        // Transition exiting nodes to the parent's new position.
+        link.exit().transition()
+            .duration(duration)
+            .attr("d", function (d) {
+                var o = {x: source.x, y: source.y};
+                return diagonal({source: o, target: o});
+            })
+            .remove();
+
+        // Stash the old positions for transition.
+        nodes.forEach(function (d) {
+            d.x0 = d.x;
+            d.y0 = d.y;
+        });
+
+    }
+
+
+    // Toggle children on click.
+    function click(d) {
+        if (d.children) {
+            d._children = d.children;
+            d.children = null;
+        } else {
+            d.children = d._children;
+            d._children = null;
+        }
+        update(d, false);
+    }
+
+    // controls how long it takes the tooltip to appear after you hover
+    function mouseover() {
+        div.transition()
+            .duration(300)
+            .style("opacity", 1);
+    }
+
+    // controls how long it takes the tooltip to appear after you hover
+    function mouseover2() {
+        div2.transition()
+            .duration(300)
+            .style("opacity", 1);
+    }
+
+    //draws the tooltip
+    function mousemove(d) {
+        if (d.tree.affiliation == "both" && !d.tree.authLevel && !d.tree.authDeptNo && !d.tree.authUnder) {
+            div.html(d.deptno + "<br/>" + "Department is in both the auth and department trees.")
+                .style("left", (d3.event.pageX ) + "px")
+                .style("top", (d3.event.pageY) + "px")
+        }
+        if (d.tree.affiliation == "dept" && !d.tree.authLevel && !d.tree.authDeptNo && !d.tree.authUnder) {
+            div.html(d.deptno + "<br/>" + "Department is only in the department tree")
+                .style("left", (d3.event.pageX ) + "px")
+                .style("top", (d3.event.pageY) + "px")
+        }
+        if (d.tree.affiliation == "auth" && !d.tree.authLevel && !d.tree.authDeptNo && !d.tree.authUnder) {
+            div.html(d.deptno + "<br/>" + "Department is only in the auth tree")
+                .style("left", (d3.event.pageX ) + "px")
+                .style("top", (d3.event.pageY) + "px")
+        }
+        if (d.tree.affiliation == "both" && d.tree.authLevel && !d.tree.authDeptNo && !d.tree.authUnder) {
+            div.html(d.deptno + "<br/>" + "Department is in both the auth and department trees, but is Level " + d.tree.authLevel + " in the auth tree.")
+                .style("left", (d3.event.pageX ) + "px")
+                .style("top", (d3.event.pageY) + "px")
+        }
+        if (d.tree.affiliation != "both" && !d.tree.authLevel && d.tree.authDeptNo && !d.tree.authUnder) {
+            div.html(d.deptno + "<br/>" + "Department has department # " + d.tree.authDeptNo + " in the auth tree.")
+                .style("left", (d3.event.pageX ) + "px")
+                .style("top", (d3.event.pageY) + "px")
+        }
+        if (d.tree.affiliation == "both" && !d.tree.authLevel && d.tree.authDeptNo && !d.tree.authUnder) {
+            div.html(d.deptno + "<br/>" + "Department with this # is in both trees, but there is a department with a similar name that has department # " + d.tree.authDeptNo + " in the auth tree.")
+                .style("left", (d3.event.pageX ) + "px")
+                .style("top", (d3.event.pageY) + "px")
+        }
+        if (d.tree.affiliation == "both" && !d.tree.authLevel && !d.tree.authDeptNo && d.tree.authUnder) {
+            div.html(d.deptno + "<br/>" + "Department is in both the auth and department trees, but is under department # " + d.tree.authUnder + " in the auth tree.")
+                .style("left", (d3.event.pageX ) + "px")
+                .style("top", (d3.event.pageY) + "px")
+        }
+    }
+
+
+    // controls how slowly the tooltip disappears
+    function mouseout() {
+        div.transition()
+            .duration(300)
+            .style("opacity", 1e-6);
+    }
+
+    // highlights department names that are in a certain KPI section
+    function mouseout2() {
+        div2.transition()
+            .duration(300)
+            .style("opacity", 1e-6);
+        // unHighlight();
+    }
+
+    // this is triggered when you hit the 'View Operating' button, it just loads the
+    // Operating data instead of the Administration data
+    function updateData() {
+        var filename = "resources/operating.combined.json";
+
+        d3.json(filename, function (error, flare) {
+            if (error) throw error;
+            root = flare;
+            root.x0 = height / 2;
+            root.y0 = 0;
+            dataDisplayed = 1;
+            update(root, true);
+        });
+        dataDisplayed = 1;
+    }
+
+    // this function updates the data to display administration
+    function updateData2() {
+        var filename = "resources/admin.combined.json";
+
+        d3.json(filename, function (error, flare) {
+            if (error) throw error;
+            root = flare;
+            root.x0 = height / 2;
+            root.y0 = 0;
+            dataDisplayed = 0;
+            update(root, true);
+        });
+        dataDisplayed = 0;
+    }
+
+
+    // expands a node
+    function expand(d) {
+        var children = (d.children) ? d.children : d._children;
+        if (d._children) {
+            d.children = d._children;
+            d._children = null;
+        }
+        if (children)
+            children.forEach(expand);
+    }
+
+    //expands all nodes in the tree
+    function expandAll() {
+        expand(root);
+        update(root);
+    }
+
+</script>
+<!--This div contains the legend of the chart -->
+<div id="legend">
+    <h3 class="ltitle">Legend</h3>
+    <div id="level1circle"></div>
+    <p>Level 1 is MBTA</p>
+    <div id="level2circle"></div>
+    <p>Level 2</p>
+    <div id="level3circle"></div>
+    <p>Level 3</p>
+    <div id="level4circle"></div>
+    <p>Level 4</p>
+    <div id="level5circle"></div>
+    <p>Level 5</p>
+    <div id="level6circle"></div>
+    <p>Level 6</p>
+
+</div>
+
+<div id="iconLegend">
+    <h3 class="ltitle">Icons</h3>
+    <span class="glyphicon glyphicon-star" style="color: red;"></span> <p>Hierarchy is different in auth tree</p>
+    <br/>
+    <span class="glyphicon glyphicon-star" style="color: #CCCC00;"></span> <p>Different department number in auth tree</p>
+    <br/>
+    <span class="glyphicon glyphicon-star" style="color: purple"></span> <p>Different Level in auth tree</p>
+    <br/>
+    <span class="glyphicon glyphicon-record" style="color: black"></span><p>In both auth and dept trees</p>
+    <br/>
+    <span class="glyphicon glyphicon-one-fine-dot" style="color: black; opacity: 0.6;"></span><p>In auth tree only</p>
+    <br/>
+    <span class="glyphicon glyphicon-one-fine-dot" style="color: black; opacity: 1;"></span><p>In dept tree only</p>
+    <br/>
+</div>
+<!-- This div contains the 'Expand All' button -->
+<div id="expandB">
+    <input name="expandButton"
+           type="button"
+           class="btn"
+           value="Expand All"
+           onclick="expandAll()"/>
+</div>
+<!-- This div contains the navigation-->
+<div id="employeeButton" class="btn-group-vertical">
+    <a class="btn btn-default" href="#!/">Home</a>
+</div>

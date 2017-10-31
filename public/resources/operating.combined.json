@@ -1,0 +1,993 @@
+{
+  "name": "Chief Operating Officer",
+  "level": "2",
+  "deptno": "200000" ,
+  "tree": {
+    "affiliation": "dept"
+  },
+  "children": [
+    {
+      "name": "Bus Operations",
+      "level": "3",
+      "deptno": "220000",
+      "tree": {
+        "affiliation": "both"
+      },
+      "removed": true,
+      "children": [
+        {
+          "name": "Bus Maintenance",
+          "level": "4",
+          "deptno": "221000",
+          "tree": {
+            "affiliation": "dept"
+          },
+          "children": [
+            {
+              "name": "Chief Mechanical Officer - Water Street",
+              "level": "5",
+              "deptno": "222006",
+              "tree": {
+                "affiliation": "both",
+                "authUnder": "220000"
+              }
+            },
+            {
+              "name": "Chief Mechanical Officer - Arlington",
+              "level": "5",
+              "deptno": "222028",
+              "tree": {
+                "affiliation": "both",
+                "authUnder": "220000"
+              }
+            },
+            {
+              "name": "Bus Maintenance Administration",
+              "level": "5",
+              "deptno": "222080",
+              "tree": {
+                "affiliation": "both",
+                "authUnder": "220000"
+              }
+            },
+            {
+              "name": "Albany Maintenance",
+              "level": "5",
+              "deptno": "225016" ,
+              "tree": {
+                "affiliation": "dept"
+              }
+            },
+            {
+              "name": "Fellsway Maintenance",
+              "level": "5",
+              "deptno": "225113" ,
+              "tree": {
+                "affiliation": "dept"
+              }
+            },
+            {
+              "name": "Charlestown Maintenance",
+              "level": "5",
+              "deptno": "225080" ,
+              "tree": {
+                "affiliation": "dept"
+              }
+            },
+            {
+              "name": "Southampton Maintenance",
+              "level": "5",
+              "deptno": "225339" ,
+              "tree": {
+                "affiliation": "dept"
+              }
+            },
+            {
+              "name": "Arborway Maintenance",
+              "level": "5",
+              "deptno": "225025" ,
+              "tree": {
+                "affiliation": "dept"
+              }
+            },
+            {
+              "name": "North Cambridge Maintenance",
+              "level": "5",
+              "deptno": "225208",
+              "tree": {
+                "affiliation": "both",
+                "authUnder": "220000"
+              }
+            },
+            {
+              "name": "Cabot Maintenance",
+              "level": "5",
+              "deptno": "225067" ,
+              "tree": {
+                "affiliation": "dept"
+              }
+            },
+            {
+              "name": "Lynn Maintenance",
+              "level": "5",
+              "deptno": "225174" ,
+              "tree": {
+                "affiliation": "dept"
+              }
+            },
+            {
+              "name": "Quincy Maintenance",
+              "level": "5",
+              "deptno": "225241" ,
+              "tree": {
+                "affiliation": "dept"
+              }
+            },
+            {
+              "name": "Barlett Maintenance",
+              "level": "5",
+              "deptno": "225039" ,
+              "tree": {
+                "affiliation": "dept"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Bus Transportation",
+          "level": "4",
+          "deptno": "224000" ,
+          "tree": {
+            "affiliation": "dept"
+          },
+          "children": [
+            {
+              "name": "Bus Transportation Administration",
+              "level": "5",
+              "deptno": "226080" ,
+              "tree": {
+                "affiliation": "dept"
+              }
+            },
+            {
+              "name": "Chief Transportation Officer",
+              "level": "5",
+              "deptno": "224069" ,
+              "tree": {
+                "affiliation": "dept"
+              }
+            },
+            {
+              "name": "Arborway Transportation",
+              "level": "5",
+              "deptno": "224025" ,
+              "tree": {
+                "affiliation": "dept"
+              }
+            },
+            {
+              "name": "Cabot Transportation",
+              "level": "5",
+              "deptno": "224067" ,
+              "tree": {
+                "affiliation": "dept"
+              }
+            },
+            {
+              "name": "Bennet/ N. Cambridge Transportation",
+              "level": "5",
+              "deptno": "224068" ,
+              "tree": {
+                "affiliation": "dept"
+              }
+            },
+            {
+              "name": "Charlestown/Fellsway Transportation",
+              "level": "5",
+              "deptno": "224080" ,
+              "tree": {
+                "affiliation": "dept"
+              }
+            },
+            {
+              "name": "Lynn",
+              "level": "5",
+              "deptno": "224174" ,
+              "tree": {
+                "affiliation": "dept"
+              }
+            },
+            {
+              "name": "Quincy",
+              "level": "5",
+              "deptno": "224241" ,
+              "tree": {
+                "affiliation": "dept"
+              }
+            },
+            {
+              "name": "Southampton (Silver Line)",
+              "level": "5",
+              "deptno": "228339" ,
+              "tree": {
+                "affiliation": "dept"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Engineering & Maintenance",
+      "level": "3",
+      "deptno": "189000",
+      "tree": {
+        "affiliation": "dept"
+      },
+      "children": [
+        {
+          "name": "Transit Facilities Maintenance",
+          "level": "4",
+          "deptno": "673000",
+          "tree": {
+            "affiliation": "both"
+          },
+          "children": [
+            {
+              "name": "Administration",
+              "level": "5",
+              "deptno": "181008",
+              "tree": {
+                "affiliation": "both"
+              }
+            },
+            {
+              "name": "Building & Station Maintenance",
+              "level": "5",
+              "deptno": "183005",
+              "tree": {
+                "affiliation": "both"
+              }
+            },
+            {
+              "name": "Mechanical Maintenance",
+              "level": "5",
+              "deptno": "184005",
+              "tree": {
+                "affiliation": "dept"
+              }
+            },
+            {
+              "name": "Bridges and Structures",
+              "level": "5",
+              "deptno": "186005",
+              "tree": {
+                "affiliation": "both"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Signals & Communications",
+          "level": "4",
+          "deptno": "672000",
+          "tree": {
+            "affiliation": "both",
+            "authDeptNo": "190000"
+          },
+          "children": [
+            {
+              "name": "Administration",
+              "level": "5",
+              "deptno": "193005",
+              "tree": {
+                "affiliation": "dept"
+              }
+            },
+            {
+              "name": "Signals",
+              "level": "5",
+              "deptno": "191005",
+              "tree": {
+                "affiliation": "dept"
+              }
+            },
+            {
+              "name": "Communications",
+              "level": "5",
+              "deptno": "192005",
+              "tree": {
+                "affiliation": "dept"
+              }
+
+            },{
+              "name": "Signals Arborway",
+              "level": "5",
+              "deptno": "191011",
+              "tree": {
+                "affiliation": "auth"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Maintenance of Way",
+          "level": "4",
+          "deptno": "671000",
+          "tree": {
+            "affiliation": "both",
+            "authDeptNo": "150000"
+          },
+          "children": [
+            {
+              "name": "MOW Surface Light Rail",
+              "level": "5",
+              "deptno": "151005",
+              "tree": {
+                "affiliation": "dept"
+              }
+            },
+            {
+              "name": "MOW Rail Equipment",
+              "level": "5",
+              "deptno": "153005",
+              "tree": {
+                "affiliation": "both"
+              }
+            },
+            {
+              "name": "MOW Rapid Transit",
+              "level": "5",
+              "deptno": "152005",
+              "tree": {
+                "affiliation": "dept"
+              }
+            },
+            {
+              "name": "Rapid Transit Arborway",
+              "level": "5",
+              "deptno": "152011",
+              "tree": {
+                "affiliation": "auth"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Power Systems Maintenance",
+          "level": "4",
+          "deptno": "674000",
+          "tree": {
+            "affiliation": "both"
+          },
+          "children": [
+            {
+              "name": "Power Systems and Equipment",
+              "level": "5",
+              "deptno": "197005",
+              "tree": {
+                "affiliation": "both"
+              }
+            },
+            {
+              "name": "Electrical Maintenance",
+              "level": "5",
+              "deptno": "187005",
+              "tree": {
+                "affiliation": "dept"
+              }
+            },
+            {
+              "name": "Transmission & Distribution",
+              "level": "5",
+              "deptno": "196005",
+              "tree": {
+                "affiliation": "dept"
+              }
+            },{
+              "name": "Power Systems & Equipment",
+              "level": "5",
+              "deptno": "197005",
+              "tree": {
+                "affiliation": "auth"
+              }
+            },
+            {
+              "name": "Trans & Distrib Arborway",
+              "level": "5",
+              "deptno": "196011",
+              "tree": {
+                "affiliation": "auth"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Asset Planning & Training",
+          "level": "4",
+          "deptno": "250000",
+          "tree": {
+            "affiliation": "both"
+          },
+          "children": [
+            {
+              "name": "Capital & Maintenance Planning/Scheduling",
+              "level": "5",
+              "deptno": "251005",
+              "tree": {
+                "affiliation": "both"
+              }
+            },
+            {
+              "name": "Asset Management",
+              "level": "5",
+              "deptno": "252005",
+              "tree": {
+                "affiliation": "both"
+              }
+            },
+            {
+              "name": "E & M Training",
+              "level": "5",
+              "deptno": "253005",
+              "tree": {
+                "affiliation": "both"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Subway",
+      "level": "3",
+      "deptno": "230000" ,
+      "tree": {
+        "affiliation": "dept"
+      },
+      "children": [
+        {
+          "name": "Light Rail",
+          "level": "4",
+          "deptno": "235000",
+          "tree": {
+            "affiliation": "dept"
+          },
+          "children": [
+            {
+              "name": "Green Line Chief",
+              "level": "5",
+              "deptno": "235008" ,
+              "tree": {
+                "affiliation": "dept"
+              }
+            },
+            {
+              "name": "Revenue Customer Service - GL",
+              "level": "5",
+              "deptno": "264235" ,
+              "tree": {
+                "affiliation": "dept"
+              }
+            },
+            {
+              "name": "Green Line Reservoir Station",
+              "level": "5",
+              "deptno": "235249" ,
+              "tree": {
+                "affiliation": "dept"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Rail Maintenance",
+          "level": "4",
+          "deptno": "239000",
+          "tree": {
+            "affiliation": "both"
+          },
+          "children": [
+            {
+              "name": "GL Reservoir Maintenance",
+              "level": "5",
+              "deptno": "235252" ,
+              "tree": {
+                "affiliation": "dept"
+              }
+            },
+            {
+              "name": "GL Mattapan Maintenance",
+              "level": "5",
+              "deptno": "235184",
+              "tree": {
+                "affiliation": "both"
+              }
+            },
+            {
+              "name": "GL Riverside Maintenance",
+              "level": "5",
+              "deptno": "235254",
+              "tree": {
+                "affiliation": "both"
+              }
+            },
+            {
+              "name": "OL Wellington Maintenance",
+              "level": "5",
+              "deptno": "232313",
+              "tree": {
+                "affiliation": "both"
+              }
+            },
+            {
+              "name": "RL Cabot Maintenance",
+              "level": "5",
+              "deptno": "233067",
+              "tree": {
+                "affiliation": "both"
+              }
+            },
+            {
+              "name": "BL Orient Heights Maintenance",
+              "level": "5",
+              "deptno": "234228",
+              "tree": {
+                "affiliation": "both"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Everett Main Repair",
+          "level": "4",
+          "deptno": "209000",
+          "tree": {
+            "affiliation": "both"
+          },
+          "children": [
+            {
+              "name": "Administration",
+              "level": "5",
+              "deptno": "203002" ,
+              "tree": {
+                "affiliation": "dept"
+              }
+            },
+            {
+              "name": "Everett Shops - Bus",
+              "level": "5",
+              "deptno": "223106",
+              "tree": {
+                "affiliation": "both"
+              }
+            },
+            {
+              "name": "Quality Assurance",
+              "level": "5",
+              "deptno": "207008",
+              "tree": {
+                "affiliation": "both",
+                "authUnder": "208000"
+              }
+            },
+            {
+              "name": "System Engineering Support - High St",
+              "level": "5",
+              "deptno": "237008",
+              "tree": {
+                "affiliation": "both",
+                "authUnder": "239000"
+              }
+            },
+            {
+              "name": "System Engineering Support - Everett",
+              "level": "5",
+              "deptno": "237107",
+              "tree": {
+                "affiliation": "both",
+                "authUnder": "239000"
+              }
+            },
+            {
+              "name": "System Engineering Support - Q/A",
+              "level": "5",
+              "deptno": "237111",
+              "tree": {
+                "affiliation": "both"
+              }
+            },
+            {
+              "name": "EVE Dir of Quality Asssurance",
+              "level": "5",
+              "deptno": "204002",
+              "tree": {
+                "affiliation": "auth"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Heavy Rail",
+          "level": "4",
+          "deptno": "231000" ,
+          "tree": {
+            "affiliation": "dept"
+          },
+          "children": [
+            {
+              "name": "Blue Line Orient Heights Station",
+              "level": "5",
+              "deptno": "234229" ,
+              "tree": {
+                "affiliation": "dept"
+              }
+            },
+            {
+              "name": "Administration",
+              "level": "5",
+              "deptno": "231008" ,
+              "tree": {
+                "affiliation": "dept"
+              }
+            },
+            {
+              "name": "Orange Line Chief",
+              "level": "5",
+              "deptno": "232008" ,
+              "tree": {
+                "affiliation": "dept"
+              }
+            },
+            {
+              "name": "Red Line Chief",
+              "level": "5",
+              "deptno": "233008" ,
+              "tree": {
+                "affiliation": "dept"
+              }
+            },
+            {
+              "name": "Blue Line Chief",
+              "level": "5",
+              "deptno": "234008" ,
+              "tree": {
+                "affiliation": "dept"
+              }
+            },
+            {
+              "name": "Orange Line Wellington Station",
+              "level": "5",
+              "deptno": "232314" ,
+              "tree": {
+                "affiliation": "dept"
+              }
+            },
+            {
+              "name": "Red Line JFK/UMass Station",
+              "level": "5",
+              "deptno": "233155",
+              "tree": {
+                "affiliation": "both",
+                "authUnder": "239000"
+              }
+            },
+            {
+              "name": "Revenue Customer Service - OL",
+              "level": "5",
+              "deptno": "264232" ,
+              "tree": {
+                "affiliation": "dept"
+              }
+            },
+            {
+              "name": "Revenue Customer Service - BL",
+              "level": "5",
+              "deptno": "264234" ,
+              "tree": {
+                "affiliation": "dept"
+              }
+            },
+            {
+              "name": "Revenue Customer Service - RL",
+              "level": "5",
+              "deptno": "264233" ,
+              "tree": {
+                "affiliation": "dept"
+              }
+            },
+            {
+              "name": "Revenue Customer Service Control",
+              "level": "5",
+              "deptno": "264236" ,
+              "tree": {
+                "affiliation": "dept"
+              }
+            }
+          ]
+        },
+        {
+          "name": "OCC & Training",
+          "level": "4",
+          "deptno": "238000" ,
+          "tree": {
+            "affiliation": "dept"
+          },
+          "children": [
+            {
+              "name": "OCC & Training - Administration",
+              "level": "5",
+              "deptno": "236009",
+              "tree": {
+                "affiliation": "both",
+                "authUnder": "239000"
+              }
+            },
+            {
+              "name": "OCC & Training - Cabot",
+              "level": "5",
+              "deptno": "236067" ,
+              "tree": {
+                "affiliation": "dept"
+              }
+            },
+            {
+              "name": "OCC & Training - Riverside",
+              "level": "5",
+              "deptno": "236255" ,
+              "tree": {
+                "affiliation": "dept"
+              }
+            },
+            {
+              "name": "OCC & Training - Heavy Rail Chief",
+              "level": "5",
+              "deptno": "236008" ,
+              "tree": {
+                "affiliation": "dept"
+              }
+            },
+            {
+              "name": "OCC & Training - Bus Inspectors",
+              "level": "5",
+              "deptno": "236080" ,
+              "tree": {
+                "affiliation": "dept"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Chief Operating Officer",
+          "level": "4",
+          "deptno": "205000",
+          "tree": {
+            "affiliation": "both"
+          },
+          "children": [
+            {
+              "name": "Chief Operating Officer",
+              "level": "5",
+              "deptno": "206008",
+              "tree": {
+                "affiliation": "both"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Operations Office of Administration",
+          "level": "4",
+          "deptno": "208000",
+          "tree": {
+            "affiliation": "both"
+          },
+          "children": [
+            {
+              "name": "Operations Office of Administration",
+              "level": "5",
+              "deptno": "208008",
+              "tree": {
+                "affiliation": "auth"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Operations Service Planning",
+          "level": "4",
+          "deptno": "795000",
+          "tree": {
+            "affiliation": "both"
+          },
+          "children": [
+            {
+              "name": "Suburban Bus",
+              "level": "5",
+              "deptno": "203032",
+              "tree": {
+                "affiliation": "dept"
+              }
+            },
+            {
+              "name": "Passenger Services",
+              "level": "5",
+              "deptno": "272008",
+              "tree": {
+                "affiliation": "dept"
+              }
+            },
+            {
+              "name": "Private Carrier Bus",
+              "level": "5",
+              "deptno": "203008",
+              "tree": {
+                "affiliation": "dept"
+              }
+            },
+            {
+              "name": "Private Carrier Bus Interdistrict",
+              "level": "5",
+              "deptno": "203034",
+              "tree": {
+                "affiliation": "dept"
+              }
+            },
+            {
+              "name": "Service Planning",
+              "level": "5",
+              "deptno": "274008",
+              "tree": {
+                "affiliation": "dept"
+              }
+            },
+            {
+              "name": "Planning & Schedules",
+              "level": "5",
+              "deptno": "273008",
+              "tree": {
+                "affiliation": "dept"
+              }
+            },{
+              "name": "Water Transportation",
+              "level": "5",
+              "deptno": "202002",
+              "tree": {
+                "affiliation": "auth"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Capital Project Oversight",
+          "level": "4",
+          "deptno": "320000" ,
+          "tree": {
+            "affiliation": "dept"
+          },
+          "children": [
+            {
+              "name": "Capital Project Oversight PP",
+              "level": "5",
+              "deptno": "322002" ,
+              "tree": {
+                "affiliation": "dept"
+              }
+            },
+            {
+              "name": "Capital Project Oversight SoSt",
+              "level": "5",
+              "deptno": "3222280" ,
+              "tree": {
+                "affiliation": "dept"
+              }
+            },
+            {
+              "name": "Capital Project Oversight SuSt",
+              "level": "5",
+              "deptno": "322124" ,
+              "tree": {
+                "affiliation": "dept"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Vehicle Engineering",
+          "level": "4",
+          "deptno": "204000",
+          "tree": {
+            "affiliation": "both"
+          },
+          "children": [
+            {
+              "name": "Vehicle Engineering",
+              "level": "5",
+              "deptno": "204008",
+              "tree": {
+                "affiliation": "both"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Security",
+          "level": "4",
+          "deptno": "280000",
+          "tree": {
+            "affiliation": "both"
+          },
+          "children": [
+            {
+              "name": "Security Department",
+              "level": "5",
+              "deptno": "282008",
+              "tree": {
+                "affiliation": "both"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Capital Delivery",
+          "level": "4",
+          "deptno": "310000",
+          "tree": {
+            "affiliation": "both"
+          },
+          "children": [
+            {
+              "name": "Capital Delivery Administration",
+              "level": "5",
+              "deptno": "310002",
+              "tree": {
+                "affiliation": "both",
+                "authLevel":"4"
+              },
+              "children":[{
+                "name": "Contract Administration Park Plaza",
+                "level": "5",
+                "deptno": "423002",
+                "tree": {
+                  "affiliation": "auth"
+                }
+              }]
+            },
+            {
+              "name": "Design & Construction",
+              "level": "5",
+              "deptno": "311002",
+              "tree": {
+                "affiliation": "auth"
+              }
+            },
+            {
+              "name": "D&D Quality Control 100 Summer Street",
+              "level": "5",
+              "deptno": "321124",
+              "tree": {
+                "affiliation": "auth"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Power Transit Facilities",
+          "level": "4",
+          "deptno": "180000",
+          "tree": {
+            "affiliation": "auth"
+          }
+        },
+        {
+          "name": "Quality Assurance",
+          "level": "4",
+          "deptno": "207000",
+          "tree": {
+            "affiliation": "auth"
+          }
+        }
+      ]
+    }
+  ]
+}

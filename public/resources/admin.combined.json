@@ -1,0 +1,964 @@
+{
+  "name": "General Manager",
+  "level": "2",
+  "deptno": "105000",
+  "tree": {
+    "affiliation": "dept"
+  },
+  "children": [
+    {
+      "name": "Chief Financial Officer",
+      "level": "4",
+      "deptno": "640000",
+      "tree": {
+        "affiliation": "both"
+      },
+      "children": [
+        {
+          "name": "Cash Collection",
+          "level": "5",
+          "deptno": "642002",
+          "tree": {
+            "affiliation": "both"
+          }
+        },
+        {
+          "name": "FMCB Operations",
+          "level": "5",
+          "deptno": "643002",
+          "tree": {
+            "affiliation": "dept"
+          }
+        },
+        {
+          "name": "Chief Financial Officer",
+          "level": "5",
+          "deptno": "641002",
+          "tree": {
+            "affiliation": "both"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Budget",
+      "level": "4",
+      "deptno": "630000",
+      "tree": {
+        "affiliation": "both"
+      },
+      "children": [
+        {
+          "name": "Budget Administration",
+          "level": "5",
+          "deptno": "631002",
+          "tree": {
+            "affiliation": "both"
+          }
+        },
+        {
+          "name": "Budget Operating",
+          "level": "5",
+          "deptno": "632002",
+          "tree": {
+            "affiliation": "dept"
+          }
+        },
+        {
+          "name": "Budget Capital",
+          "level": "5",
+          "deptno": "633002",
+          "tree": {
+            "affiliation": "dept"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Treasurer Controller",
+      "level": "4",
+      "deptno": "805000",
+      "tree": {
+        "affiliation": "both"
+      },
+      "children": [
+        {
+          "name": "Controller",
+          "level": "5",
+          "deptno": "805202",
+          "tree": {
+            "affiliation": "dept"
+          },
+          "children": [
+            {
+              "name": "Accounts Payable",
+              "level": "6",
+              "deptno": "821002",
+              "tree": {
+                "affiliation": "dept"
+              }
+            },
+            {
+              "name": "Administration",
+              "level": "6",
+              "deptno": "811002",
+              "tree": {
+                "affiliation": "both",
+                "authLevel": "5"
+              }
+            },
+            {
+              "name": "Accounting",
+              "level": "6",
+              "deptno": "822002",
+              "tree": {
+                "affiliation": "dept"
+              }
+            },
+            {
+              "name": "Payroll",
+              "level": "6",
+              "deptno": "823002",
+              "tree": {
+                "affiliation": "dept"
+              }
+            },
+            {
+              "name": "Balance Sheet Accounts",
+              "level": "6",
+              "deptno": "841002",
+              "tree": {
+                "affiliation": "both",
+                "authLevel": "5"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Treasurer",
+          "level": "5",
+          "deptno": "805302",
+          "tree": {
+            "affiliation": "dept"
+          },
+          "children": [
+            {
+              "name": "Finance Capital",
+              "level": "6",
+              "deptno": "832002",
+              "tree": {
+                "affiliation": "dept"
+              }
+            },
+            {
+              "name": "Finance Cash",
+              "level": "6",
+              "deptno": "833002",
+              "tree": {
+                "affiliation": "dept"
+              }
+            },
+            {
+              "name": "Finance Insurance",
+              "level": "6",
+              "deptno": "834002",
+              "tree": {
+                "affiliation": "dept"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "General Activities",
+      "level": "4",
+      "deptno": "860000",
+      "tree": {
+        "affiliation": "both"
+      },
+      "children": [
+        {
+          "name": "General Activities",
+          "level": "5",
+          "deptno": "861002",
+          "tree": {
+            "affiliation": "both"
+          }
+        },
+        {
+          "name": "General Activities Everett Mn",
+          "level": "5",
+          "deptno": "861107" ,
+          "tree": {
+            "affiliation": "dept"
+          }
+        },
+        {
+          "name": "General Activities Everett Str",
+          "level": "5",
+          "deptno": "861108" ,
+          "tree": {
+            "affiliation": "dept"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Own Source Revenue",
+      "level": "4",
+      "deptno": "172000",
+      "tree": {
+        "affiliation": "both"
+      },
+      "children": [
+        {
+          "name": "Own Source Revenue",
+          "level": "5",
+          "deptno": "172002",
+          "tree": {
+            "affiliation": "both"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Interagency",
+      "level": "4",
+      "deptno": "170000",
+      "tree": {
+        "affiliation": "dept"
+      },
+      "children": [
+        {
+          "name": "Interagency",
+          "level": "5",
+          "deptno": "171002" ,
+          "tree": {
+            "affiliation": "dept"
+          }
+        }
+      ]
+    },
+    {
+      "name": "System-wide Accessibility",
+      "level": "4",
+      "deptno": "102000",
+      "tree": {
+        "affiliation": "both"
+      },
+      "children": [
+        {
+          "name": "System-wide Accessibility",
+          "level": "5",
+          "deptno": "102002",
+          "tree": {
+            "affiliation": "both"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Law",
+      "level": "4",
+      "deptno": "160000",
+      "tree": {
+        "affiliation": "both"
+      },
+      "children": [
+        {
+          "name": "Law",
+          "level": "5",
+          "deptno": "161002",
+          "tree": {
+            "affiliation": "both"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Public Affairs",
+      "level": "4",
+      "deptno": "115000",
+      "tree": {
+        "affiliation": "dept",
+        "authDeptNo": "112002"
+      },
+      "children": [
+        {
+          "name": "Public Affairs",
+          "level": "5",
+          "deptno": "112002",
+          "tree": {
+            "affiliation": "both",
+            "authLevel": "4"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Winter Storm Costs",
+      "level": "4",
+      "deptno": "140000",
+      "tree": {
+        "affiliation": "dept"
+      },
+      "children": [
+        {
+          "name": "Winter Storm Costs",
+          "level": "5",
+          "deptno": "141002" ,
+          "tree": {
+            "affiliation": "dept"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Real Estate",
+      "level": "4",
+      "deptno": "330000",
+      "tree": {
+        "affiliation": "both"
+      },
+      "children": [
+        {
+          "name": "Real Estate",
+          "level": "5",
+          "deptno": "331002",
+          "tree": {
+            "affiliation": "both"
+          }
+        },
+        {
+          "name": "Facilities Management",
+          "level": "5",
+          "deptno": "442002",
+          "tree": {
+            "affiliation": "dept"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Diversity & Civil Rights",
+      "level": "4",
+      "deptno": "135000",
+      "tree": {
+        "affiliation": "both"
+      },
+      "children": [
+        {
+          "name": "EEO/AA Administration",
+          "level": "5",
+          "deptno": "131002",
+          "tree": {
+            "affiliation": "both"
+          }
+        },
+        {
+          "name": "Disadvantaged Business Enterprise",
+          "level": "5",
+          "deptno": "132002" ,
+          "tree": {
+            "affiliation": "dept"
+          }
+        },
+        {
+          "name": "EEO/AA Contract Administration",
+          "level": "5",
+          "deptno": "133002" ,
+          "tree": {
+            "affiliation": "dept"
+          }
+        },
+        {
+          "name": "Training",
+          "level": "5",
+          "deptno": "134002" ,
+          "tree": {
+            "affiliation": "dept"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Customer Technology Department",
+      "level": "4",
+      "deptno": "118000",
+      "tree": {
+        "affiliation": "both"
+      },
+      "children": [
+        {
+          "name": "AFC 1.0",
+          "level": "5",
+          "deptno": "116002",
+          "tree": {
+            "affiliation": "both"
+          },
+          "children": [
+            {
+              "name": "Revenue Maintenance Charlestown",
+              "level": "6",
+              "deptno": "263077",
+              "tree": {
+                "affiliation": "both",
+                "authLevel": "5"
+              }
+            },
+            {
+              "name": "Revenue Maintenance Everett",
+              "level": "6",
+              "deptno": "263106",
+              "tree": {
+                "affiliation": "both",
+                "authLevel": "5"
+              }
+            },
+            {
+              "name": "Revenue Audit",
+              "level": "6",
+              "deptno": "267002",
+              "tree": {
+                "affiliation": "both",
+                "authLevel": "5"
+              }
+            },
+            {
+              "name": "Revenue Maintenance Franklin",
+              "level": "6",
+              "deptno": "263123",
+              "tree": {
+                "affiliation": "both",
+                "authLevel": "5"
+              }
+            }
+          ]
+        },
+        {
+          "name": "AFC 2.0",
+          "level": "5",
+          "deptno": "117002",
+          "tree": {
+            "affiliation": "both"
+          }
+        },
+        {
+          "name": "Customer Technology Division",
+          "level": "5",
+          "deptno": "118002",
+          "tree": {
+            "affiliation": "both"
+          }
+        }
+      ]
+    },
+    {
+      "name": "OPMI",
+      "level": "4",
+      "deptno": "620000",
+      "tree": {
+        "affiliation": "both"
+      },
+      "children": [
+        {
+          "name": "OPMI",
+          "level": "5",
+          "deptno": "621002",
+          "tree": {
+            "affiliation": "both"
+          }
+        }
+      ]
+    },
+    {
+      "name": "General Manager",
+      "level": "4",
+      "deptno": "100000",
+      "tree": {
+        "affiliation": "both"
+      },
+      "children": [
+        {
+          "name": "General Manager",
+          "level": "5",
+          "deptno": "101002",
+          "tree": {
+            "affiliation": "both"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Labor Relations",
+      "level": "4",
+      "deptno": "730000",
+      "tree": {
+        "affiliation": "dept"
+      },
+      "children": [
+        {
+          "name": "Labor Relations",
+          "level": "5",
+          "deptno": "731002",
+          "tree": {
+            "affiliation": "both",
+            "authUnder": "770000"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Safety",
+      "level": "4",
+      "deptno": "240000",
+      "tree": {
+        "affiliation": "both"
+      },
+      "children": [
+        {
+          "name": "Safety Administration",
+          "level": "5",
+          "deptno": "241080",
+          "tree": {
+            "affiliation": "both"
+          }
+        },
+        {
+          "name": "Safety Administration at Park Plaza",
+          "level": "5",
+          "deptno": "241002",
+          "tree": {
+            "affiliation": "auth"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Transit Police",
+      "level": "4",
+      "deptno": "120000",
+      "tree": {
+        "affiliation": "both"
+      },
+      "children": [
+        {
+          "name": "Transit Police",
+          "level": "5",
+          "deptno": "121012",
+          "tree": {
+            "affiliation": "both"
+          }
+        }
+      ]
+    },
+    {
+      "name": "ITD",
+      "level": "4",
+      "deptno": "430000",
+      "tree": {
+        "affiliation": "both"
+      },
+      "children": [
+        {
+          "name": "ITD Enterprise-Wide Proc",
+          "level": "5",
+          "deptno": "434002",
+          "tree": {
+            "affiliation": "dept"
+          }
+        },
+        {
+          "name": "ITD",
+          "level": "5",
+          "deptno": "433002",
+          "tree": {
+            "affiliation": "both"
+          }
+        },
+        {
+          "name": "ITD Development",
+          "level": "5",
+          "deptno": "435002",
+          "tree": {
+            "affiliation": "both"
+          }
+        },
+        {
+          "name": "AFC Park Plaza",
+          "level": "5",
+          "deptno": "856002",
+          "tree": {
+            "affiliation": "auth"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Environmental Affairs",
+      "level": "4",
+      "deptno": "155000",
+      "tree": {
+        "affiliation": "both"
+      },
+      "children": [
+        {
+          "name": "Utilities",
+          "level": "5",
+          "deptno": "182005",
+          "tree": {
+            "affiliation": "dept"
+          }
+        },
+        {
+          "name": "Environmental Affairs",
+          "level": "5",
+          "deptno": "156002",
+          "tree": {
+            "affiliation": "both"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Customer Experience",
+      "level": "4",
+      "deptno": "110000",
+      "tree": {
+        "affiliation": "both"
+      },
+      "children": [
+        {
+          "name": "Charlie Store",
+          "level": "5",
+          "deptno": "528103",
+          "tree": {
+            "affiliation": "both"
+          }
+        },
+        {
+          "name": "Customer Experience Div Marketing",
+          "level": "5",
+          "deptno": "110002",
+          "tree": {
+            "affiliation": "both"
+          }
+        },
+        {
+          "name": "Customer Care Center",
+          "level": "5",
+          "deptno": "275008",
+          "tree": {
+            "affiliation": "both"
+          }
+        },
+        {
+          "name": "Communications",
+          "level": "5",
+          "deptno": "521002",
+          "tree": {
+            "affiliation": "both"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Office of Transportation Access",
+      "level": "4",
+      "deptno": "290000",
+      "tree": {
+        "affiliation": "both"
+      },
+      "children": [
+        {
+          "name": "Office of Transportation Access",
+          "level": "5",
+          "deptno": "291002",
+          "tree": {
+            "affiliation": "both"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Human Resources",
+      "level": "4",
+      "deptno": "700000",
+      "tree": {
+        "affiliation": "both"
+      },
+      "children": [
+        {
+          "name": "Employment and Training",
+          "level": "5",
+          "deptno": "721002",
+          "tree": {
+            "affiliation": "both"
+          }
+        },
+        {
+          "name": "Benefits and Comp",
+          "level": "5",
+          "deptno": "751002",
+          "tree": {
+            "affiliation": "dept"
+          }
+        },
+        {
+          "name": "Health and Welfare Fund",
+          "level": "5",
+          "deptno": "752002",
+          "tree": {
+            "affiliation": "dept"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Employee Relations",
+      "level": "4",
+      "deptno": "710000",
+      "tree": {
+        "affiliation": "dept"
+      },
+      "children": [
+        {
+          "name": "Employee Relations",
+          "level": "5",
+          "deptno": "711002" ,
+          "tree": {
+            "affiliation": "dept"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Occupational Health Services",
+      "level": "4",
+      "deptno": "780000",
+      "tree": {
+        "affiliation": "both"
+      },
+      "children": [
+        {
+          "name": "Worker's Compensation",
+          "level": "5",
+          "deptno": "741002",
+          "tree": {
+            "affiliation": "both",
+            "authUnder": "741000"
+          }
+        },
+        {
+          "name": "Medical Operations",
+          "level": "5",
+          "deptno": "761002",
+          "tree": {
+            "affiliation": "both"
+          }
+        },
+        {
+          "name": "Employee Counseling",
+          "level": "5",
+          "deptno": "781002" ,
+          "tree": {
+            "affiliation": "dept"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Procurement and Logistics",
+      "level": "4",
+      "deptno": "400000",
+      "tree": {
+        "affiliation": "both"
+      },
+      "children": [
+        {
+          "name": "Administration",
+          "level": "5",
+          "deptno": "421002",
+          "tree": {
+            "affiliation": "both"
+          }
+        },
+        {
+          "name": "Purchasing Inventory",
+          "level": "5",
+          "deptno": "425002",
+          "tree": {
+            "affiliation": "dept"
+          }
+        },
+        {
+          "name": "Purchasing Non-Inventory",
+          "level": "5",
+          "deptno": "426002",
+          "tree": {
+            "affiliation": "dept"
+          }
+        },
+        {
+          "name": "Stores",
+          "level": "5",
+          "deptno": "443002",
+          "tree": {
+            "affiliation": "both"
+          }
+        },
+        {
+          "name": "Car Procurement Park Plaza",
+          "level": "5",
+          "deptno": "424002",
+          "tree": {
+            "affiliation": "auth"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Vendor Management",
+      "level": "4",
+      "deptno": "804000",
+      "tree": {
+        "affiliation": "both"
+      },
+      "children": [
+        {
+          "name": "Money Room",
+          "level": "5",
+          "deptno": "262077",
+          "tree": {
+            "affiliation": "both",
+            "authUnder": "805000"
+          }
+        },
+        {
+          "name": "Vendor Management",
+          "level": "5",
+          "deptno": "805402",
+          "tree": {
+            "affiliation": "both"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Rail Operations",
+      "level": "4",
+      "deptno": "210000",
+      "tree": {
+        "affiliation": "both"
+      },
+      "children": [
+        {
+          "name": "Commuter Rail Supervision",
+          "level": "5",
+          "deptno": "211008",
+          "tree": {
+            "affiliation": "both"
+          }
+        },
+        {
+          "name": "Commuter Rail Subsidy",
+          "level": "5",
+          "deptno": "216000",
+          "tree": {
+            "affiliation": "both",
+            "authDeptNo": "215008"
+          }
+        },
+        {
+          "name": "CRR Cape Flyer Operations",
+          "level": "5",
+          "deptno": "215001",
+          "tree": {
+            "affiliation": "dept"
+          }
+        },
+        {
+          "name": "Commuter Ferry Subsidy",
+          "level": "5",
+          "deptno": "202026",
+          "tree": {
+            "affiliation": "auth"
+          }
+        },
+        {
+          "name": "Commuter Rail Eng Park Plaza",
+          "level": "5",
+          "deptno": "213002",
+          "tree": {
+            "affiliation": "auth"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Community Relations",
+      "level": "4",
+      "deptno": "570000",
+      "tree": {
+        "affiliation": "both"
+      },
+      "removed": true,
+      "children": [
+        {
+          "name": "Supplier Diversity",
+          "level": "5",
+          "deptno": "571002",
+          "tree": {
+            "affiliation": "auth"
+          }
+        }
+      ]
+    },
+    {
+      "name": "DGM Human Resources and Labor Relations",
+      "level": "4",
+      "deptno": "770000",
+      "tree": {
+        "affiliation": "both"
+      },
+      "removed": true
+    },
+    {
+      "name": "Worker's Compensation",
+      "level": "4",
+      "deptno": "741000",
+      "tree": {
+        "affiliation": "both"
+      },
+      "removed": true
+    },
+    {
+      "name": "Director of Marketing & Communications",
+      "level": "4",
+      "deptno": "550000",
+      "removed": true,
+      "tree": {
+        "affiliation": "both"
+      }
+    },
+    {
+      "name": "Director of Marketing",
+      "level": "4",
+      "deptno": "500000",
+      "tree": {
+        "affiliation": "both"
+      },
+      "removed": true
+    },
+    {
+      "name": "Director of Customer Service",
+      "level": "4",
+      "deptno": "275000",
+      "tree": {
+        "affiliation": "both"
+      },
+      "removed": true
+    }
+  ]
+}

@@ -26,6 +26,9 @@
             .when('/approvals', {
                 templateUrl: 'approvals.html'
             })
+            .when('/auth-vs-dept', {
+                templateUrl: 'auth-vs-dept.html'
+            })
             .when('/vendor/:vendorName', {
                 templateUrl: 'vendor.html',
                 controller: 'vendorPageController',

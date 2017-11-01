@@ -44,8 +44,8 @@
 
     // size variables for the box to paint in
     var margin = {top: 20, right: 150, bottom: 20, left: 200},
-        width = 1000,
-        height = 1300;
+        width = 1150,
+        height = 1450;
 
     var i = 0,
         //sets the amount of time it takes the tree opening animation to run
@@ -159,17 +159,14 @@
                 }
             })
             .style("color", function (d) {
-                if (d.tree.authUnder) {
-                    return "red";
-                }
-                if (d.tree.authDeptNo) {
-                    return "#CCCC00";
-                }
-                if (d.tree.authLevel) {
-                    return "purple";
-                }
-                return "black";
-            });
+                return "red";
+            })
+            .on("mouseover", mouseover)
+            .on("mousemove", function (d) {
+                mousemove(d);
+            })
+            .on("mouseout", mouseout)
+            .style("cursor", "pointer");
 
         node.append("svg:foreignObject")
             .attr("width", 10)
@@ -222,19 +219,15 @@
                 return d.name;
             })
             // calls for PO data tooltip on mouseover
-            .on("mouseover", mouseover)
-            .on("mousemove", function (d) {
-                mousemove(d);
-            })
-            .on("mouseout", mouseout)
-            .style("fill-opacity", function (d) {
-                if (d.tree.affiliation == "auth") {
-                    return 0.5;
-                }
-                else {
-                    return 1;
-                }
 
+            .on("mouseover", mouseover2)
+            .on("mousemove", function (d) {
+                mousemove2(d);
+            })
+            .on("mouseout", mouseout2)
+
+            .style("fill-opacity", function (d) {
+                return 1;
             })
             .style("text-decoration", function (d) {
                 if (d.removed == true) {
@@ -274,19 +267,30 @@
             })
             .attr("z-index", "9997")
             .style("fill", function (d) {
-                if (d.level == "2") return "red";
-                if (d.level == "3") return "orange";
-                if (d.level == "4") return "green";
-                if (d.level == "5") return "#00afd6";
-                if (d.level == "6") return "purple";
-                if (d.name == "") return "#ffffff";
+                if (d.tree.affiliation == "auth") return "#ffffff";
+                else {
+                    if (d.level == "2") return "red";
+                    if (d.level == "3") return "orange";
+                    if (d.level == "4") return "green";
+                    if (d.level == "5") return "#00afd6";
+                    if (d.level == "6") return "purple";
+                    if (d.name == "") return "#ffffff";
+                }
             })
             .style("opacity", function (d) {
                 if (d.level == "") {
                     return 0;
                 }
-                if (d.tree.affiliation === "auth") {
-                    return 0.6;
+                return 1;
+            })
+            .style("stroke", function (d) {
+                if (d.tree.affiliation == "auth") {
+                    return "black";
+                }
+            })
+            .style("stroke-width", function (d) {
+                if (d.tree.affiliation == "auth") {
+                    return "1.5px";
                 }
             });
 
@@ -366,6 +370,12 @@
         div2.transition()
             .duration(300)
             .style("opacity", 1);
+    }
+
+    function mousemove2(d) {
+        div2.html(d.deptno)
+            .style("left", (d3.event.pageX ) + "px")
+            .style("top", (d3.event.pageY) + "px")
     }
 
     //draws the tooltip
@@ -493,18 +503,18 @@
 
 <div id="iconLegend">
     <h3 class="ltitle">Icons</h3>
-    <span class="glyphicon glyphicon-star" style="color: red;"></span> <p>Hierarchy is different in auth tree</p>
-    <br/>
-    <span class="glyphicon glyphicon-star" style="color: #CCCC00;"></span> <p>Different department number in auth tree</p>
-    <br/>
-    <span class="glyphicon glyphicon-star" style="color: purple"></span> <p>Different Level in auth tree</p>
-    <br/>
-    <span class="glyphicon glyphicon-record" style="color: black"></span><p>In both auth and dept trees</p>
-    <br/>
-    <span class="glyphicon glyphicon-one-fine-dot" style="color: black; opacity: 0.6;"></span><p>In auth tree only</p>
-    <br/>
-    <span class="glyphicon glyphicon-one-fine-dot" style="color: black; opacity: 1;"></span><p>In dept tree only</p>
-    <br/>
+    <div><span class="glyphicon glyphicon-star" style="color: red;"></span>
+        <p>Structure is different in auth tree</p></div>
+
+    <div><span class="glyphicon glyphicon-record" style="color: black"></span>
+        <p>In both auth and dept trees</p></div>
+
+    <div style="border: 1.5px solid black; border-radius: 50%; width: 14px; height: 14px;"></div>
+    <div><p>In auth tree only</p></div>
+
+    <div><span class="glyphicon glyphicon-one-fine-dot" style="color: black; opacity: 1;"></span>
+        <p>In dept tree only</p></div>
+
 </div>
 <!-- This div contains the 'Expand All' button -->
 <div id="expandB">

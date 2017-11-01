@@ -1,0 +1,372 @@
+<!--This div contains the header menu-->
+<div id="option">
+
+    <h1>MBTA Auth Tree Chart</h1>
+    <div class="lastUpdated">
+        <p>Last Updated: 10/5/2017 10:00AM</p>
+    </div>
+    <br/>
+    <input name="updateButton"
+           type="button"
+           class="btn btn-default"
+           value="Old Auth Tree"
+           onclick="updateData()"/>
+
+    <input name="updateButton"
+           type="button"
+           class="btn btn-default"
+           value="New Auth Tree"
+           onclick="updateData2()"/>
+
+
+</div>
+<!-- this is an empty div for the script to populate with the tree -->
+<div id="chart"></div>
+<script>
+    // clears the screen in case a visualization is still loaded
+    d3.select("svg").remove();
+
+    // size variables for the box to paint in
+    var margin = {top: 20, right: 150, bottom: 20, left: 200},
+        width = 1000,
+        height = 2800;
+
+    var i = 0,
+        //sets the amount of time it takes the tree opening animation to run
+        duration = 750,
+        root;
+
+    // initializes the tree
+    var tree = d3.layout.tree()
+        .size([height, width]);
+
+    // initializes the tree branches
+    var diagonal = d3.svg.diagonal()
+        .projection(function (d) {
+            return [d.y, d.x];
+        });
+
+    // appends the svg to paint on to the chart div
+    var svg = d3.select("#chart").append("svg")
+    // sets the height and width of the svg
+        .attr("width", width + margin.right + margin.left)
+        .attr("height", height + margin.top + margin.bottom)
+        .append("g")
+        .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+    // initializes the tooltip
+    var div = d3.select("body").append("div")
+        .attr("class", "tooltip")
+        .style("opacity", 1e-6);
+
+
+    //loads the department data
+    d3.json("resources/auth.json", function (error, flare) {
+
+        if (error) throw error;
+        root = flare;
+        root.x0 = height / 2;
+        root.y0 = 0;
+
+        function collapse(d) {
+            if (d.children) {
+                d._children = d.children;
+                d._children.forEach(collapse);
+                d.children = null;
+            }
+        }
+
+        // collapses children nodes
+        root.children.forEach(collapse);
+        update(root);
+        setTimeout(function () {
+            expandAll();
+        }, 100)
+    });
+
+    //sets the frame height
+    d3.select(self.frameElement).style("height", "800px");
+
+    function update(source) {
+
+        // Compute the new tree layout.
+        var nodes = tree.nodes(root).reverse(),
+            links = tree.links(nodes);
+
+        // Normalize for fixed-depth.
+        nodes.forEach(function (d) {
+            d.y = d.depth * 300;    // I don't know specifically what this does,
+                                    // but I do know that changing the number
+                                    // changes the width of the tree that is displayed
+        }); //180
+
+        // Update the nodes
+        var node = svg.selectAll("g.node")
+            .data(nodes, function (d) {
+                return d.id || (d.id = ++i);
+            });
+
+        // Enter any new nodes at the parent's previous position.
+        var nodeEnter = node.enter().append("g")
+            .attr("class", "node")
+            .attr("transform", function (d) {
+                return "translate(" + source.y0 + "," + source.x0 + ")";
+            })
+            .on("click", click);
+
+        nodeEnter.append("circle")
+            .attr("r", 1e-6);
+
+        // appends the name text to the nodes
+        nodeEnter.append("text")
+            .attr("x", function (d) {
+                if (d.level == "4") {
+                    return d.children || d._children ? -20 : -10;
+                }
+                return d.children || d._children ? -10 : 10;
+            })
+            .attr("dy", ".35em")
+            .attr("text-anchor", function (d) {
+                if ( d.level == "4") {
+                    return d.children || d._children ? "end" : "end";
+                }
+                return d.children || d._children ? "end" : "start";
+            })
+            //the name is appended to the dot right here
+            .text(function (d) {
+                return d.name;
+            })
+            // calls for tooltip on mouseover
+            .on("mouseover", mouseover)
+            .on("mousemove", function (d) {
+                mousemove(d);
+            })
+            .on("mouseout", mouseout)
+            .style("fill-opacity", 1e-6)
+            .style("text-decoration", function (d) {
+                if (d.removed == true) {
+                    return "line-through"
+                }
+            });
+
+        // Transition nodes to their new position.
+        var nodeUpdate = node.transition()
+            .duration(duration)
+            .attr("transform", function (d) {
+                return "translate(" + d.y + "," + d.x + ")";
+            });
+
+        // size/style the circles based on levels
+        nodeUpdate.select("circle")
+            .attr("r", function (d) {
+                // change this number to make dots bigger/smaller
+                return 6;
+            })
+            .style("fill", function (d) {
+                if (d.level == "2") return "red";
+                if (d.level == "3") return "orange";
+                if (d.level == "4") return "green";
+                if (d.level == "5") return "blue";
+                if (d.level == "6") return "purple";
+                if (d.name == "") return "#ffffff";
+            })
+            .style("opacity", function (d) {
+                if (d.level == "") {
+                    return 0;
+                }
+            });
+        node.append("svg:foreignObject")
+            .attr("width", 20)
+            .attr("height", 20)
+            .attr("y", "-8px")
+            .attr("x", "-10px")
+            .append("xhtml:span")
+            .attr("z-index", "9999")
+            .attr("class", function (d) {
+                if (d.removed) {
+                    return "control glyphicon glyphicon-remove-circle"
+                }
+            })
+            .style("color", "white");
+        nodeUpdate.select("text")
+            .style("fill-opacity", 1);
+
+        // Transition exiting nodes to the parent's new position.
+        var nodeExit = node.exit().transition()
+            .duration(duration)
+            .attr("transform", function (d) {
+                return "translate(" + source.y + "," + source.x + ")";
+            })
+            .remove();
+
+        nodeExit.select("circle")
+            .attr("r", 1e-6);
+
+        nodeExit.select("text")
+            .style("fill-opacity", 1e-6);
+
+        // Update the links…
+        var link = svg.selectAll("path.link")
+            .data(links, function (d) {
+                return d.target.id;
+            });
+
+        // Enter any new links at the parent's previous position.
+        link.enter().insert("path", "g")
+            .attr("class", "link")
+            .attr("d", function (d) {
+                var o = {x: source.x0, y: source.y0};
+                return diagonal({source: o, target: o});
+            });
+
+        // Transition links to their new position.
+        link.transition()
+            .duration(duration)
+            .attr("d", diagonal);
+
+        // Transition exiting nodes to the parent's new position.
+        link.exit().transition()
+            .duration(duration)
+            .attr("d", function (d) {
+                var o = {x: source.x, y: source.y};
+                return diagonal({source: o, target: o});
+            })
+            .remove();
+
+        // Stash the old positions for transition.
+        nodes.forEach(function (d) {
+            d.x0 = d.x;
+            d.y0 = d.y;
+        });
+    }
+
+    // Toggle children on click.
+    function click(d) {
+        if (d.children) {
+            d._children = d.children;
+            d.children = null;
+        } else {
+            d.children = d._children;
+            d._children = null;
+        }
+        update(d);
+    }
+
+    // controls how long it takes the tooltip to appear after you hover
+    function mouseover() {
+        div.transition()
+            .duration(300)
+            .style("opacity", 1);
+    }
+
+    //draws the tooltip
+    function mousemove(d) {
+
+    }
+
+
+    // controls how slowly the tooltip disappears
+    function mouseout() {
+        div.transition()
+            .duration(300)
+            .style("opacity", 1e-6);
+    }
+
+    // I have had so much trouble with this function for whatever reason
+    // It gets the budget for a specific department
+    function getBudgetData(department) {
+        var dept = parseFloat(department);
+        for (var i in buData) {
+            if (parseFloat(buData[i].deptNo) === dept) {
+                return buData[i].budgetAmount;
+            }
+        }
+
+    }
+
+    // this is triggered when you hit the 'View Operating' button, it just loads the
+    // Operating data instead of the Administration data
+    function updateData() {
+        d3.json("resources/auth.json", function (error, flare) {
+            if (error) throw error;
+
+            root = flare;
+            root.x0 = height / 2;
+            root.y0 = 0;
+
+            update(root);
+        });
+
+    }
+
+    // this function updates the data to display administration
+    function updateData2() {
+        d3.json("resources/new_auth.json", function (error, flare) {
+            if (error) throw error;
+
+            root = flare;
+            root.x0 = height / 2;
+            root.y0 = 0;
+            update(root);
+        });
+
+    }
+
+    // expands a node
+    function expand(d) {
+        var children = (d.children) ? d.children : d._children;
+        if (d._children) {
+            d.children = d._children;
+            d._children = null;
+        }
+        if (children)
+            children.forEach(expand);
+    }
+
+    //expands all nodes in the tree
+    function expandAll() {
+        expand(root);
+        update(root);
+    }
+
+</script>
+<!--This div contains the legend of the chart -->
+<div id="legend">
+    <h3 class="ltitle">Legend</h3>
+    <div id="level1circle"></div>
+    <p>Level 0 </p>
+    <div id="level4circle"></div>
+    <p>Level 1</p>
+    <div id="level5circle"></div>
+    <p>Level 2</p>
+
+</div>
+<!-- This div contains the 'Expand All' button -->
+<div id="expandB">
+    <input name="expandButton"
+           type="button"
+           class="btn"
+           value="Expand All"
+           onclick="expandAll()"/>
+</div>
+<!-- This div contains the navigation-->
+<div id="employeeButton" class="btn-group-vertical">
+    <a class="btn btn-default" href="#!/">Home</a>
+
+
+</div>
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>

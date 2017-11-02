@@ -136,6 +136,11 @@
                 mousemove(d);
             })
             .on("mouseout", mouseout)
+            .on("click", function (d) {
+                if (d.tree.authUnder) {
+                    highlight(d.tree.authUnder);
+                }
+            })
             .style("cursor", "pointer");
         /*
                 node.append("svg:foreignObject")
@@ -398,6 +403,28 @@
         // unHighlight();
     }
 
+    // highlights all names that appear in a certain KPI section
+    function highlight(deptNo) {
+        unHighlight();
+        d3.selectAll("text")
+            .style("font-size", function (d) {
+                if (d.deptno == deptNo) {
+                    return "20px";
+                }
+                else {
+                    return "14.5px";
+                }
+            });
+
+    }
+
+    function unHighlight() {
+        d3.selectAll("text")
+            .style("font-size", function (d) {
+                return "14.5px";
+            });
+
+    }
 
     // expands a node
     function expand(d) {
@@ -448,10 +475,17 @@
 <div id="expandB">
     <input name="expandButton"
            type="button"
-           class="btn"
+           class="btn btn-block"
            value="Expand All"
            onclick="expandAll()"/>
+    <br/>
+    <input name="clearButton"
+           type="button"
+           class="btn btn-block"
+           value="Clear"
+           onclick="unHighlight()"/>
 </div>
+
 <!-- This div contains the navigation-->
 <div id="employeeButton" class="btn-group-vertical">
     <a class="btn btn-default" href="#!/">Home</a>

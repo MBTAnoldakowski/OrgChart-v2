@@ -252,6 +252,22 @@
       ]
     },
     {
+      "name": "Director of Customer Service",
+      "level": "4",
+      "deptno": "275000",
+      "tree": {
+        "affiliation": "old"
+      }
+    },
+    {
+      "name": "Director of Marketing and Communications",
+      "level": "4",
+      "deptno": "550000",
+      "tree": {
+        "affiliation": "old"
+      }
+    },
+    {
       "name": "Customer Technology Department",
       "level": "4",
       "deptno": "118000",
@@ -543,6 +559,14 @@
           }
         }
       ]
+    },
+    {
+      "name": "Director of Marketing",
+      "level": "4",
+      "deptno": "500000",
+      "tree": {
+        "affiliation": "old"
+      }
     },
     {
       "name": "Vendor Management",
@@ -860,6 +884,24 @@
       ]
     },
     {
+      "name": "Community Relations",
+      "level": "4",
+      "deptno": "570000",
+      "tree": {
+        "affiliation": "old"
+      },
+      "children": [
+        {
+          "name": "Supplier Diversity",
+          "level": "5",
+          "deptno": "571002",
+          "tree": {
+            "affiliation": "old"
+          }
+        }
+      ]
+    },
+    {
       "name": "Occupational Health Services",
       "level": "4",
       "deptno": "780000",
@@ -893,6 +935,14 @@
           }
         }
       ]
+    },
+    {
+      "name": "Worker's Compensation",
+      "level": "4",
+      "deptno": "741000",
+      "tree": {
+        "affiliation": "old"
+      }
     },
     {
       "name": "Winter Storm Costs",
@@ -1089,6 +1139,14 @@
       ]
     },
     {
+      "name": "Bus Operations",
+      "level": "4",
+      "deptno": "220000",
+      "tree": {
+        "affiliation": "old"
+      }
+    },
+    {
       "name": "Bus Transportation",
       "level": "4",
       "deptno": "224000",
@@ -1255,6 +1313,14 @@
       ]
     },
     {
+      "name": "Power Transit Facilities",
+      "level": "4",
+      "deptno": "180000",
+      "tree": {
+        "affiliation": "old"
+      }
+    },
+    {
       "name": "Signals & Communications",
       "level": "4",
       "deptno": "672000",
@@ -1297,6 +1363,14 @@
       ]
     },
     {
+      "name": "SMI Signals & Communication",
+      "level": "4",
+      "deptno": "190000",
+      "tree": {
+        "affiliation": "old"
+      }
+    },
+    {
       "name": "Maintenance of Way",
       "level": "4",
       "deptno": "671000",
@@ -1337,6 +1411,14 @@
           }
         }
       ]
+    },
+    {
+      "name": "SMI Maintenance of Way",
+      "level": "4",
+      "deptno": "150000",
+      "tree": {
+        "affiliation": "old"
+      }
     },
     {
       "name": "Asset Planning & Training",
@@ -1532,6 +1614,14 @@
           }
         }
       ]
+    },
+    {
+      "name": "Quality Assurance",
+      "level": "4",
+      "deptno": "207000",
+      "tree": {
+        "affiliation": "old"
+      }
     },
     {
       "name": "Heavy Rail",
@@ -1816,7 +1906,7 @@
           "deptno": "424002",
           "tree": {
             "affiliation": "both",
-            "authUnder":"400000"
+            "authUnder": "400000"
           }
         }
       ]
@@ -1853,7 +1943,7 @@
           "deptno": "321124",
           "tree": {
             "affiliation": "both",
-            "authUnder":"310000"
+            "authUnder": "310000"
           }
         },
         {
@@ -1944,99 +2034,10 @@
           "deptno": "310002",
           "tree": {
             "affiliation": "both",
-            "authLevel":"4"
+            "authLevel": "4"
           }
         }
       ]
-    }, {
-      "name": "SMI Maintenance of Way",
-      "level": "4",
-      "deptno": "150000",
-      "tree": {
-        "affiliation": "old"
-      }
-    },
-    {
-      "name": "Power Transit Facilities",
-      "level": "4",
-      "deptno": "180000",
-      "tree": {
-        "affiliation": "old"
-      }
-    },
-    {
-      "name": "SMI Signals & Communication",
-      "level": "4",
-      "deptno": "190000",
-      "tree": {
-        "affiliation": "old"
-      }
-    },
-    {
-      "name": "Quality Assurance",
-      "level": "4",
-      "deptno": "207000",
-      "tree": {
-        "affiliation": "old"
-      }
-    },
-    {
-      "name": "Bus Operations",
-      "level": "4",
-      "deptno": "220000",
-      "tree": {
-        "affiliation": "old"
-      }
-    },
-    {
-      "name": "Director of Customer Service",
-      "level": "4",
-      "deptno": "275000",
-      "tree": {
-        "affiliation": "old"
-      }
-    },
-    {
-      "name": "Director of Marketing",
-      "level": "4",
-      "deptno": "500000",
-      "tree": {
-        "affiliation": "old"
-      }
-    },
-    {
-      "name": "Director of Marketing and Communications",
-      "level": "4",
-      "deptno": "550000",
-      "tree": {
-        "affiliation": "old"
-      }
-    },
-    {
-      "name": "Community Relations",
-      "level": "4",
-      "deptno": "570000",
-      "tree": {
-        "affiliation": "old"
-      },
-      "children": [
-        {
-          "name": "Supplier Diversity",
-          "level": "5",
-          "deptno": "571002",
-          "tree": {
-            "affiliation": "old"
-          }
-        }
-      ]
-    },
-    {
-      "name": "Worker's Compensation",
-      "level": "4",
-      "deptno": "741000",
-      "tree": {
-        "affiliation": "old"
-      }
     }
   ]
 }

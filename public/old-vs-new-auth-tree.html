@@ -10,20 +10,6 @@
 <br/>
 <br/>
 <br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
 <script>
     var dataDisplayed = 0; // when 0, admin- when 1, ops
     // clears the screen in case a visualization is still loaded
@@ -151,20 +137,20 @@
             })
             .on("mouseout", mouseout)
             .style("cursor", "pointer");
-
-        node.append("svg:foreignObject")
-            .attr("width", 10)
-            .attr("height", 10)
-            .attr("y", "-8.4px")
-            .attr("x", "-7.3px")
-            .append("xhtml:span")
-            .attr("z-index", "9999")
-            .attr("class", function (d) {
-                if (d.tree.affiliation == "both") {
-                    return "control glyphicon glyphicon-record"
-                }
-            })
-            .style("color", "black");
+        /*
+                node.append("svg:foreignObject")
+                    .attr("width", 10)
+                    .attr("height", 10)
+                    .attr("y", "-8.4px")
+                    .attr("x", "-7.3px")
+                    .append("xhtml:span")
+                    .attr("z-index", "9999")
+                    .attr("class", function (d) {
+                        if (d.tree.affiliation == "both") {
+                            return "control glyphicon glyphicon-record"
+                        }
+                    })
+                    .style("color", "black");*/
         /*
                 node.append("svg:foreignObject")
                     .attr("width", 20)
@@ -190,16 +176,13 @@
             })
             .attr("dy", ".35em")
             .attr("text-anchor", function (d) {
-                if ( d.level == "4") {
+                if (d.level == "4") {
                     return d.children || d._children ? "end" : "end";
                 }
                 return d.children || d._children ? "end" : "start";
             })
             //the name is appended to the dot right here
             .text(function (d) {
-                if (d.deptno == "320000") {
-                    return d.name + "  C̶a̶p̶i̶t̶a̶l̶ ̶P̶r̶o̶j̶e̶c̶t̶ ̶O̶v̶e̶r̶s̶i̶g̶h̶t̶";
-                }
                 return d.name;
             })
             // calls for PO data tooltip on mouseover
@@ -214,18 +197,21 @@
                 return 1;
             })
             .style("text-decoration", function (d) {
-                if (d.removed == true) {
+                if (d.tree.affiliation == "old") {
                     return "line-through"
                 }
             })
             // the names are styled here based on PO data
             .style("fill", function (d) {
-                if (d.removed == true) {
-                    return "black"
+                if (d.tree.affiliation == "old") {
+                    return "red"
+                }
+                if (d.tree.affiliation == "new") {
+                    return "green"
                 }
             })
             .attr("id", function (d) {
-                if (d.removed == true) {
+                if (d.tree.affiliation == "old") {
                     return "striker"
                 }
             });
@@ -263,13 +249,13 @@
                 return 1;
             })
             .style("stroke", function (d) {
-                if (d.tree.affiliation == "old") {
+                if (d.tree.affiliation != "both") {
                     return "black";
                 }
             })
             .style("stroke-width", function (d) {
-                if (d.tree.affiliation == "old") {
-                    return "1.5px";
+                if (d.tree.affiliation != "both") {
+                    return "2.5px";
                 }
             });
 
@@ -413,7 +399,6 @@
     }
 
 
-
     // expands a node
     function expand(d) {
         var children = (d.children) ? d.children : d._children;
@@ -447,16 +432,16 @@
 <div id="iconLegend">
     <h3 class="ltitle">Icons</h3>
     <div><span class="glyphicon glyphicon-star" style="color: red;"></span>
-        <p>Structure is different in old tree</p></div>
+        <p>Structure to change</p></div>
 
-    <div><span class="glyphicon glyphicon-record" style="color: black"></span>
-        <p>In both trees</p></div>
+    <div style="border: 2.5px solid black; border-radius: 50%; width: 14px; height: 14px;"></div>
+    <div><p style="color: red;">To be removed</p></div>
 
-    <div style="border: 1.5px solid black; border-radius: 50%; width: 14px; height: 14px;"></div>
-    <div><p>In old tree only</p></div>
+    <div style="background-color: grey; border: 2.5px solid black; border-radius: 50%; width: 14px; height: 14px;"></div>
+    <div><p style="color: green;">To be added</p></div>
 
-    <div><span class="glyphicon glyphicon-one-fine-dot" style="color: black; opacity: 1;"></span>
-        <p>In new tree only</p></div>
+    <div style="background-color: black; border: 2.5px solid black; border-radius: 50%; width: 14px; height: 14px;"></div>
+    <div><p>Staying the same</p></div>
 
 </div>
 <!-- This div contains the 'Expand All' button -->

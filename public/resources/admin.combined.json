@@ -813,7 +813,7 @@
           "level": "5",
           "deptno": "424002",
           "tree": {
-            "affiliation": "auth"
+            "affiliation": "both"
           }
         }
       ]
@@ -883,7 +883,7 @@
           "level": "5",
           "deptno": "202026",
           "tree": {
-            "affiliation": "auth"
+            "affiliation": "both"
           }
         },
         {
@@ -891,7 +891,7 @@
           "level": "5",
           "deptno": "213002",
           "tree": {
-            "affiliation": "auth"
+            "affiliation": "both"
           }
         }
       ]

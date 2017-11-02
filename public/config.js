@@ -50,6 +50,9 @@
             .when('/auth', {
                 templateUrl: 'auth.html'
             })
+            .when('/newAuth', {
+                templateUrl: 'old-vs-new-auth-tree.html'
+            })
             .when('/vendors', {
                 templateUrl: 'vendor-list.html',
                 controller: 'vendorController',

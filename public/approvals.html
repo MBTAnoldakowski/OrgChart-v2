@@ -19,6 +19,7 @@
            class="btn btn-default"
            value="View Administration"
            onclick="updateData2()"/>
+    <!--
     <div id="toggle-switch">
         <p id="switch-label-left">Capital Approvals</p>
         <label class="switch">
@@ -27,6 +28,7 @@
         </label>
         <p id="switch-label-right">Operating Approvals</p>
     </div>
+    -->
 </div>
 <!-- this is an empty div for the script to populate with the tree -->
 <div id="chart"></div>
@@ -79,7 +81,7 @@
         .attr("height", height + margin.top + margin.bottom)
         .append("g")
         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-    d3.select("#switch-label-right").style("color", "#2FCCD1");
+    //d3.select("#switch-label-right").style("color", "#2FCCD1");
     // initializes the budget/approval tooltip
     var div = d3.select("body").append("div")
         .attr("class", "tooltip")
@@ -90,7 +92,7 @@
         .attr("class", "tooltip")
         .style("opacity", 1e-6);
 
-    d3.select("#toggleBox").on("change", checkBox);
+    //d3.select("#toggleBox").on("change", checkBox);
 
     //loads the department data
     d3.json("resources/flare_experiment_2.json", function (error, flare) {
@@ -537,7 +539,7 @@
 
     //draws the tooltip
     function mousemove2(d) {
-        if (d.gotApprovalFrom && d.deptno !="000000") {
+        if (d.gotApprovalFrom && d.deptno != "000000") {
             div2.html("Recently received approval structure")
                 .style("left", (d3.event.pageX ) + "px")
                 .style("top", (d3.event.pageY) + "px");
@@ -610,14 +612,13 @@
     // Operating data instead of the Administration data
     function updateData() {
         var filename = "";
-        if (d3.select("#toggleBox").property("checked")) {
-            console.log('checked');
-            filename = "resources/operating_capital.json";
-        }
-        else {
-            console.log('not checked');
-            filename = "resources/flare_experiment.json";
-        }
+        /* if (d3.select("#toggleBox").property("checked")) {
+             console.log('checked');
+             filename = "resources/operating_capital.json";
+         }*/
+        //else {
+        filename = "resources/flare_experiment.json";
+        //}
         d3.json(filename, function (error, flare) {
             if (error) throw error;
             root = flare;
@@ -632,14 +633,14 @@
     // this function updates the data to display administration
     function updateData2() {
         var filename = "";
+        /*
         if (d3.select("#toggleBox").property("checked")) {
             console.log('checked');
             filename = "resources/admin_capital.json";
         }
-        else {
-            console.log('not checked');
-            filename = "resources/flare_experiment_2.json";
-        }
+        else { */
+        filename = "resources/flare_experiment_2.json";
+        //}
         d3.json(filename, function (error, flare) {
             if (error) throw error;
             root = flare;

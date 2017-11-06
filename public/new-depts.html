@@ -38,6 +38,7 @@
         root;
 
     var deptCount = 0;
+    var starredCount = 0;
     // initializes the tree
     var tree = d3.layout.tree()
         .size([height, width]);
@@ -187,6 +188,7 @@
             .attr("z-index", "9999")
             .attr("class", function (d) {
                 if (d.new) {
+                    starredCount++;
                     return "control glyphicon glyphicon-star"
                 }
             })

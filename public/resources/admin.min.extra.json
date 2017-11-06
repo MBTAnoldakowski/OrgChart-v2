@@ -191,26 +191,22 @@
         {
           "name": "Revenue Admin Charlestown",
           "level": "5",
-          "deptno": "261080",
-          "new": true
+          "deptno": "261080"
         },
         {
           "name": "Parking Woodland",
           "level": "5",
-          "deptno": "261333",
-          "new": true
+          "deptno": "261333"
         },
         {
           "name": "Parking Haymarket",
           "level": "5",
-          "deptno": "261143",
-          "new": true
+          "deptno": "261143"
         },
         {
           "name": "Parking Beverly Depot",
           "level": "5",
-          "deptno": "261207",
-          "new": true
+          "deptno": "261207"
         },
         {
           "name": "Parking Administration Park Plaza",

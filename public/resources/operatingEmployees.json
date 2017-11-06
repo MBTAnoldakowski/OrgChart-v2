@@ -1,4 +1,5 @@
-{"name": "Jeffrey D. Gonneville",
+{
+  "name": "Jeffrey D. Gonneville",
   "title": "Chief Operating Officer",
   "children": [
     {
@@ -260,7 +261,6 @@
                                   "name": "John P. McQuiggan",
                                   "title": "Superintendent of Maintenance - Rapid Transit"
                                 },
-
                                 {
                                   "name": "Mark Harrigan",
                                   "title": "Superintendent of Maintenance - Rapid Transit"
@@ -291,7 +291,6 @@
                         }
                       ]
                     },
-
                     {
                       "name": "John Barnicoat",
                       "title": "Deputy Director - QA & QC - Ops"

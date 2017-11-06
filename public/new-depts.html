@@ -1,9 +1,10 @@
 <!--This div contains the header menu-->
 <div id="option">
 
-    <h1>MBTA Auth Tree Chart</h1>
+    <h1>MBTA New Departments</h1>
     <div class="lastUpdated">
         <p>Last Updated: 11/2/2017 9:20AM</p>
+        <p>136 starred departments, 405 departments (274 Admin, 131 Ops)</p>
     </div>
     <br/>
     <input name="updateButton"
@@ -36,6 +37,7 @@
         duration = 750,
         root;
 
+    var deptCount = 0;
     // initializes the tree
     var tree = d3.layout.tree()
         .size([height, width]);
@@ -159,6 +161,7 @@
         // size/style the circles based on levels
         nodeUpdate.select("circle")
             .attr("r", function (d) {
+                deptCount++;
                 // change this number to make dots bigger/smaller
                 return 6;
             })
@@ -325,11 +328,17 @@
 <div id="legend">
     <h3 class="ltitle">Legend</h3>
     <div id="level1circle"></div>
-    <p>Level 0 </p>
-    <div id="level4circle"></div>
-    <p>Level 1</p>
-    <div id="level5circle"></div>
+    <p>Level 1 is MBTA</p>
+    <div id="level2circle"></div>
     <p>Level 2</p>
+    <div id="level3circle"></div>
+    <p>Level 3</p>
+    <div id="level4circle"></div>
+    <p>Level 4</p>
+    <div id="level5circle"></div>
+    <p>Level 5</p>
+    <div id="level6circle"></div>
+    <p>Level 6</p>
 
 </div>
 <!-- This div contains the 'Expand All' button -->

@@ -1,0 +1,685 @@
+[
+  {
+    "name": "Chief of Staff Office",
+    "level": "4",
+    "deptno": "106000",
+    "children": [
+      {
+        "name": "Chief of Staff",
+        "level": "5",
+        "deptno": "106002"
+      }
+    ]
+  },
+  {
+    "name": "Intergovernmental",
+    "level": "5",
+    "deptno": "111002"
+  },
+  {
+    "name": "Surface Light Rail Arborway",
+    "level": "5",
+    "deptno": "151011"
+  },
+  {
+    "name": "Rapid Transit Arborway",
+    "level": "5",
+    "deptno": "152011"
+  },
+  {
+    "name": "Utilities",
+    "level": "5",
+    "deptno": "182011"
+  },
+  {
+    "name": "Signals Arborway",
+    "level": "5",
+    "deptno": "191011"
+  },
+  {
+    "name": "SMI Administration Arborway",
+    "level": "5",
+    "deptno": "193011"
+  },
+  {
+    "name": "Power Systems and Equipment Arborway",
+    "level": "5",
+    "deptno": "197011"
+  },
+  {
+    "name": "Commuter Rail Transportation Back Bay",
+    "level": "5",
+    "deptno": "215036"
+  },
+  {
+    "name": "Commuter Rail Transportation North Station",
+    "level": "5",
+    "deptno": "215213"
+  },
+  {
+    "name": "Commuter Rail Transportation South Station",
+    "level": "5",
+    "deptno": "215281"
+  },
+  {
+    "name": "OCC & Training High Street",
+    "level": "5",
+    "deptno": "227008"
+  },
+  {
+    "name": "OCC & Training Cabot",
+    "level": "5",
+    "deptno": "227067"
+  },
+  {
+    "name": "OCC & Training Charlestown",
+    "level": "5",
+    "deptno": "227080"
+  },
+  {
+    "name": "OCC & Training Water Street",
+    "level": "5",
+    "deptno": "236006"
+  },
+  {
+    "name": "Parking Administration Park Plaza",
+    "level": "5",
+    "deptno": "261002"
+  },
+  {
+    "name": "Parking Andover",
+    "level": "5",
+    "deptno": "261022"
+  },
+  {
+    "name": "Parking Ashland",
+    "level": "5",
+    "deptno": "261032"
+  },
+  {
+    "name": "Parking Ballardvale",
+    "level": "5",
+    "deptno": "261038"
+  },
+  {
+    "name": "Parking Beachmont",
+    "level": "5",
+    "deptno": "261040"
+  },
+  {
+    "name": "Parking Bellevue",
+    "level": "5",
+    "deptno": "261043"
+  },
+  {
+    "name": "Parking Bradford",
+    "level": "5",
+    "deptno": "261054"
+  },
+  {
+    "name": "Parking Braintree",
+    "level": "5",
+    "deptno": "261056"
+  },
+  {
+    "name": "Parking Brandeis",
+    "level": "5",
+    "deptno": "261058"
+  },
+  {
+    "name": "Parking Canton Center",
+    "level": "5",
+    "deptno": "261069"
+  },
+  {
+    "name": "Parking Canton Junction",
+    "level": "5",
+    "deptno": "261070"
+  },
+  {
+    "name": "Parking Chestnut Hill",
+    "level": "5",
+    "deptno": "261085"
+  },
+  {
+    "name": "Parking Dedham",
+    "level": "5",
+    "deptno": "261099"
+  },
+  {
+    "name": "Parking Eliot",
+    "level": "5",
+    "deptno": "261104"
+  },
+  {
+    "name": "Parking Fairmont",
+    "level": "5",
+    "deptno": "261112"
+  },
+  {
+    "name": "Parking Forest Hills",
+    "level": "5",
+    "deptno": "261120"
+  },
+  {
+    "name": "Parking Forge Park",
+    "level": "5",
+    "deptno": "261121"
+  },
+  {
+    "name": "Parking Franklin",
+    "level": "5",
+    "deptno": "261123"
+  },
+  {
+    "name": "Parking Grafton",
+    "level": "5",
+    "deptno": "261126"
+  },
+  {
+    "name": "Parking Gloucester",
+    "level": "5",
+    "deptno": "261128"
+  },
+  {
+    "name": "Parking Hamilton",
+    "level": "5",
+    "deptno": "261134"
+  },
+  {
+    "name": "Parking Haverhill",
+    "level": "5",
+    "deptno": "261141"
+  },
+  {
+    "name": "Parking Hersey Station CRR Ops",
+    "level": "5",
+    "deptno": "261145"
+  },
+  {
+    "name": "Parking Highland",
+    "level": "5",
+    "deptno": "261146"
+  },
+  {
+    "name": "Parking Hyde Park",
+    "level": "5",
+    "deptno": "261148"
+  },
+  {
+    "name": "Parking Islington",
+    "level": "5",
+    "deptno": "261151"
+  },
+  {
+    "name": "Parking Lechmere",
+    "level": "5",
+    "deptno": "261165"
+  },
+  {
+    "name": "Parking Lynn",
+    "level": "5",
+    "deptno": "261173"
+  },
+  {
+    "name": "Parking Malden",
+    "level": "5",
+    "deptno": "261177"
+  },
+  {
+    "name": "Mansfield CR Lot",
+    "level": "5",
+    "deptno": "261180"
+  },
+  {
+    "name": "Parking Mattapan",
+    "level": "5",
+    "deptno": "261181"
+  },
+  {
+    "name": "Parking Butler Lot",
+    "level": "5",
+    "deptno": "261182"
+  },
+  {
+    "name": "Parking Mattapan Hi Speed",
+    "level": "5",
+    "deptno": "261183"
+  },
+  {
+    "name": "Parking Milton",
+    "level": "5",
+    "deptno": "261189"
+  },
+  {
+    "name": "Parking Montserrat",
+    "level": "5",
+    "deptno": "261191"
+  },
+  {
+    "name": "Parking Auburndale Facility",
+    "level": "5",
+    "deptno": "261197"
+  },
+  {
+    "name": "Parking Needham Heights CRR",
+    "level": "5",
+    "deptno": "261199"
+  },
+  {
+    "name": "Parking Needham Junction CRR Ops",
+    "level": "5",
+    "deptno": "261200"
+  },
+  {
+    "name": "Parking Newburyport",
+    "level": "5",
+    "deptno": "261201"
+  },
+  {
+    "name": "Parking W. Newton Webster Street",
+    "level": "5",
+    "deptno": "261202"
+  },
+  {
+    "name": "Parking W. Newton Washington Street",
+    "level": "5",
+    "deptno": "261204"
+  },
+  {
+    "name": "Parking Norfolk",
+    "level": "5",
+    "deptno": "261205"
+  },
+  {
+    "name": "Parking North Beverly",
+    "level": "5",
+    "deptno": "261206"
+  },
+  {
+    "name": "North Billerica CR Lot",
+    "level": "5",
+    "deptno": "261208"
+  },
+  {
+    "name": "Parking North Quincy",
+    "level": "5",
+    "deptno": "261211"
+  },
+  {
+    "name": "Parking North Quincy/Newport",
+    "level": "5",
+    "deptno": "261212"
+  },
+  {
+    "name": "Parking Norwood Center",
+    "level": "5",
+    "deptno": "261219"
+  },
+  {
+    "name": "Parking Norwood Depot",
+    "level": "5",
+    "deptno": "261220"
+  },
+  {
+    "name": "Parking Oak Grove",
+    "level": "5",
+    "deptno": "261224"
+  },
+  {
+    "name": "Parking Orient Heights",
+    "level": "5",
+    "deptno": "261231"
+  },
+  {
+    "name": "Parking Quincy Adams",
+    "level": "5",
+    "deptno": "261244"
+  },
+  {
+    "name": "Parking Reading",
+    "level": "5",
+    "deptno": "261247"
+  },
+  {
+    "name": "Parking Readville",
+    "level": "5",
+    "deptno": "261248"
+  },
+  {
+    "name": "Parking Riverside",
+    "level": "5",
+    "deptno": "261256"
+  },
+  {
+    "name": "Parking Roslindale",
+    "level": "5",
+    "deptno": "261259"
+  },
+  {
+    "name": "Parking Route 128 Garage",
+    "level": "5",
+    "deptno": "261260"
+  },
+  {
+    "name": "Parking Salem",
+    "level": "5",
+    "deptno": "261267"
+  },
+  {
+    "name": "Parking Savin Hill",
+    "level": "5",
+    "deptno": "261268"
+  },
+  {
+    "name": "Sharon CR Lot",
+    "level": "5",
+    "deptno": "261271"
+  },
+  {
+    "name": "Parking South Attleboro",
+    "level": "5",
+    "deptno": "261278"
+  },
+  {
+    "name": "Parking Stoughton",
+    "level": "5",
+    "deptno": "261288"
+  },
+  {
+    "name": "Parking Southborough",
+    "level": "5",
+    "deptno": "261289"
+  },
+  {
+    "name": "Parking Suffolk Downs",
+    "level": "5",
+    "deptno": "261290"
+  },
+  {
+    "name": "Parking Sullivan",
+    "level": "5",
+    "deptno": "261291"
+  },
+  {
+    "name": "Parking Swampscott",
+    "level": "5",
+    "deptno": "261295"
+  },
+  {
+    "name": "Parking Waban",
+    "level": "5",
+    "deptno": "261301"
+  },
+  {
+    "name": "Parking Wakefield",
+    "level": "5",
+    "deptno": "261302"
+  },
+  {
+    "name": "Parking Walpole",
+    "level": "5",
+    "deptno": "261303"
+  },
+  {
+    "name": "Parking Watertown",
+    "level": "5",
+    "deptno": "261307"
+  },
+  {
+    "name": "Parking Westboro",
+    "level": "5",
+    "deptno": "261309"
+  },
+  {
+    "name": "Parking Wellington",
+    "level": "5",
+    "deptno": "261316"
+  },
+  {
+    "name": "West Concord CR Lot",
+    "level": "5",
+    "deptno": "261318"
+  },
+  {
+    "name": "Parking West Gloucester",
+    "level": "5",
+    "deptno": "261319"
+  },
+  {
+    "name": "Parking West Medford",
+    "level": "5",
+    "deptno": "261320"
+  },
+  {
+    "name": "Parking West Natick",
+    "level": "5",
+    "deptno": "261321"
+  },
+  {
+    "name": "Parking West Roxbury",
+    "level": "5",
+    "deptno": "261324"
+  },
+  {
+    "name": "Parking Wilmington",
+    "level": "5",
+    "deptno": "261325"
+  },
+  {
+    "name": "Parking Wollaston",
+    "level": "5",
+    "deptno": "261328"
+  },
+  {
+    "name": "Parking Wonderland Surface Lot",
+    "level": "5",
+    "deptno": "261331"
+  },
+  {
+    "name": "Parking Wonderland Garage",
+    "level": "5",
+    "deptno": "261332"
+  },
+  {
+    "name": "Parking Abington",
+    "level": "5",
+    "deptno": "261401"
+  },
+  {
+    "name": "Parking Bridgewater",
+    "level": "5",
+    "deptno": "261402"
+  },
+  {
+    "name": "Parking Campello",
+    "level": "5",
+    "deptno": "261403"
+  },
+  {
+    "name": "Parking Cohasset",
+    "level": "5",
+    "deptno": "261404"
+  },
+  {
+    "name": "Parking East Weymouth",
+    "level": "5",
+    "deptno": "261405"
+  },
+  {
+    "name": "Parking Greenbush",
+    "level": "5",
+    "deptno": "261406"
+  },
+  {
+    "name": "Parking Halifax",
+    "level": "5",
+    "deptno": "261407"
+  },
+  {
+    "name": "Parking Hanson",
+    "level": "5",
+    "deptno": "261408"
+  },
+  {
+    "name": "Parking Holbrook",
+    "level": "5",
+    "deptno": "261409"
+  },
+  {
+    "name": "Parking Kingston",
+    "level": "5",
+    "deptno": "261410"
+  },
+  {
+    "name": "Parking Middleboro",
+    "level": "5",
+    "deptno": "261411"
+  },
+  {
+    "name": "Parking Montello",
+    "level": "5",
+    "deptno": "261412"
+  },
+  {
+    "name": "Parking North Scituate",
+    "level": "5",
+    "deptno": "261413"
+  },
+  {
+    "name": "Parking Nantasket",
+    "level": "5",
+    "deptno": "261414"
+  },
+  {
+    "name": "Parking Plymouth",
+    "level": "5",
+    "deptno": "261415"
+  },
+  {
+    "name": "Parking South Weymouth",
+    "level": "5",
+    "deptno": "261416"
+  },
+  {
+    "name": "Parking West Hingham",
+    "level": "5",
+    "deptno": "216417"
+  },
+  {
+    "name": "Parking Weymouth",
+    "level": "5",
+    "deptno": "216418"
+  },
+  {
+    "name": "Parking Whitman",
+    "level": "5",
+    "deptno": "216419"
+  },
+  {
+    "name": "Parking Hingham Boat",
+    "level": "5",
+    "deptno": "216420"
+  },
+  {
+    "name": "Parking Quincy Boat",
+    "level": "5",
+    "deptno": "216421"
+  },
+  {
+    "name": "Parking Rowley",
+    "level": "5",
+    "deptno": "216422"
+  },
+  {
+    "name": "Parking Attleboro CRR Lot",
+    "level": "5",
+    "deptno": "216430"
+  },
+  {
+    "name": "Parking Littleton",
+    "level": "5",
+    "deptno": "216501"
+  },
+  {
+    "name": "Revenue Administration Support Arlington",
+    "level": "5",
+    "deptno": "267005"
+  },
+  {
+    "name": "D&C AGM Office 100 Summer St",
+    "level": "5",
+    "deptno": "311124"
+  },
+  {
+    "name": "D&C Managemnent Engineering Equipment",
+    "level": "5",
+    "deptno": "322081"
+  },
+  {
+    "name": "Construction Management Design Arborway",
+    "level": "5",
+    "deptno": "323011"
+  },
+  {
+    "name": "Construction Management CA/T Park Plaza",
+    "level": "5",
+    "deptno": "324002"
+  },
+  {
+    "name": "Construction Management CA/T South Station",
+    "level": "5",
+    "deptno": "324280"
+  },
+  {
+    "name": "Construction ROW Park Plaza",
+    "level": "5",
+    "deptno": "325002"
+  },
+  {
+    "name": "Real Estate Transit Park Plaza",
+    "level": "5",
+    "deptno": "332002"
+  },
+  {
+    "name": "Real Estate Park Plaza",
+    "level": "5",
+    "deptno": "334002"
+  },
+  {
+    "name": "Library Park Plaza",
+    "level": "5",
+    "deptno": "422002"
+  },
+  {
+    "name": "Stores Charlestown",
+    "level": "5",
+    "deptno": "443080"
+  },
+  {
+    "name": "Supplier Diversity",
+    "level": "5",
+    "deptno": "571002"
+  },
+  {
+    "name": "T/C Finance Accounts Rec Park Plaza",
+    "level": "5",
+    "deptno": "831002"
+  },
+  {
+    "name": "Automated Fare Collection Park Plaza",
+    "level": "5",
+    "deptno": "856002"
+  },
+  {
+    "name": "South Station Intermodal",
+    "level": "5",
+    "deptno": "862281"
+  },
+  {
+    "name": "Center for Audit/Gaap Adjustment",
+    "level": "5",
+    "deptno": "871002"
+  }
+]
+

@@ -47,6 +47,9 @@
             .when('/vendor', {
                 templateUrl: 'vendorUpload.html'
             })
+            .when('/extra', {
+                templateUrl: 'new-depts.html'
+            })
             .when('/auth', {
                 templateUrl: 'auth.html'
             })

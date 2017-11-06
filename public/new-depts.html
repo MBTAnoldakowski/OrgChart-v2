@@ -9,13 +9,13 @@
     <input name="updateButton"
            type="button"
            class="btn btn-default"
-           value="Old Auth Tree"
+           value="Show Operating"
            onclick="updateData()"/>
 
     <input name="updateButton"
            type="button"
            class="btn btn-default"
-           value="New Auth Tree"
+           value="Show Administration"
            onclick="updateData2()"/>
 
 
@@ -28,7 +28,7 @@
 
     // size variables for the box to paint in
     var margin = {top: 20, right: 150, bottom: 20, left: 200},
-        width = 1000,
+        width = 1200,
         height = 2800;
 
     var i = 0,
@@ -289,7 +289,7 @@
     // this is triggered when you hit the 'View Operating' button, it just loads the
     // Operating data instead of the Administration data
     function updateData() {
-        d3.json("resources/auth.json", function (error, flare) {
+        d3.json("resources/operating.min.extra.json", function (error, flare) {
             if (error) throw error;
 
             root = flare;
@@ -303,7 +303,7 @@
 
     // this function updates the data to display administration
     function updateData2() {
-        d3.json("resources/operating.min.extra.json", function (error, flare) {
+        d3.json("resources/admin.min.extra.json", function (error, flare) {
             if (error) throw error;
 
             root = flare;

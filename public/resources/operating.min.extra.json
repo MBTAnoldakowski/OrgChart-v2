@@ -180,7 +180,8 @@
             {
               "name": "SMI Administration Arborway",
               "level": "5",
-              "deptno": "193011"
+              "deptno": "193011",
+              "new": true
             },
             {
               "name": "Signals",
@@ -190,7 +191,8 @@
             {
               "name": "Signals Arborway",
               "level": "5",
-              "deptno": "191011"
+              "deptno": "191011",
+              "new": true
             },
             {
               "name": "Communications",
@@ -212,7 +214,8 @@
             {
               "name": "Rapid Transit Arborway",
               "level": "5",
-              "deptno": "152011"
+              "deptno": "152011",
+              "new": true
             },
             {
               "name": "MOW Rail Equipment",
@@ -223,6 +226,12 @@
               "name": "MOW Rapid Transit",
               "level": "5",
               "deptno": "152005"
+            },
+            {
+              "name": "Surface Light Rail Arborway",
+              "level": "5",
+              "deptno": "151011",
+              "new": true
             }
           ]
         },
@@ -239,7 +248,8 @@
             {
               "name": "Power Systems and Equipment Arborway",
               "level": "5",
-              "deptno": "197011"
+              "deptno": "197011",
+              "new": true
             },
             {
               "name": "Electrical Maintenance",
@@ -478,22 +488,26 @@
             {
               "name": "OCC & Training High Street",
               "level": "5",
-              "deptno": "227008"
+              "deptno": "227008",
+              "new": true
             },
             {
               "name": "OCC & Training Cabot",
               "level": "5",
-              "deptno": "227067"
+              "deptno": "227067",
+              "new": true
             },
             {
               "name": "OCC & Training Charlestown",
               "level": "5",
-              "deptno": "227080"
+              "deptno": "227080",
+              "new": true
             },
             {
               "name": "OCC & Training Water Street",
               "level": "5",
-              "deptno": "236006"
+              "deptno": "236006",
+              "new": true
             }
           ]
         },
@@ -596,12 +610,14 @@
             {
               "name": "D&C AGM Office 100 Summer St",
               "level": "5",
-              "deptno": "311124"
+              "deptno": "311124",
+              "new": true
             },
             {
-              "name": "D&C Managemnent Engineering Equipment",
+              "name": "D&C Management Engineering Equipment",
               "level": "5",
-              "deptno": "322081"
+              "deptno": "322081",
+              "new": true
             },
             {
               "name": "Capital Project Oversight PP",
@@ -672,22 +688,26 @@
             {
               "name": "Construction Management Design Arborway",
               "level": "5",
-              "deptno": "323011"
+              "deptno": "323011",
+              "new": true
             },
             {
               "name": "Construction Management CA/T Park Plaza",
               "level": "5",
-              "deptno": "324002"
+              "deptno": "324002",
+              "new": true
             },
             {
               "name": "Construction Management CA/T South Station",
               "level": "5",
-              "deptno": "324280"
+              "deptno": "324280",
+              "new": true
             },
             {
               "name": "Construction ROW Park Plaza",
               "level": "5",
-              "deptno": "325002"
+              "deptno": "325002",
+              "new": true
             }
           ]
         }

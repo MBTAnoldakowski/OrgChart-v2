@@ -144,7 +144,7 @@
             .on("mouseout", mouseout)
             .style("fill-opacity", 1e-6)
             .style("text-decoration", function (d) {
-                if (d.removed == true) {
+                if (d.removed === true) {
                     return "line-through"
                 }
             });
@@ -163,15 +163,15 @@
                 return 6;
             })
             .style("fill", function (d) {
-                if (d.level == "2") return "red";
-                if (d.level == "3") return "orange";
-                if (d.level == "4") return "green";
-                if (d.level == "5") return "#00afd6";
-                if (d.level == "6") return "purple";
-                if (d.name == "") return "#ffffff";
+                if (d.level === "2") return "red";
+                if (d.level === "3") return "orange";
+                if (d.level === "4") return "green";
+                if (d.level === "5") return "#00afd6";
+                if (d.level === "6") return "purple";
+                if (d.name === "") return "#ffffff";
             })
             .style("opacity", function (d) {
-                if (d.level == "") {
+                if (d.level === "") {
                     return 0;
                 }
             });

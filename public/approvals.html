@@ -19,16 +19,6 @@
            class="btn btn-default"
            value="View Administration"
            onclick="updateData2()"/>
-    <!--
-    <div id="toggle-switch">
-        <p id="switch-label-left">Capital Approvals</p>
-        <label class="switch">
-            <input type="checkbox" id="toggleBox">
-            <span class="slider round"></span>
-        </label>
-        <p id="switch-label-right">Operating Approvals</p>
-    </div>
-    -->
 </div>
 <!-- this is an empty div for the script to populate with the tree -->
 <div id="chart"></div>
@@ -51,6 +41,7 @@
 <br/>
 <script>
     var dataDisplayed = 0; // when 0, admin- when 1, ops
+
     // clears the screen in case a visualization is still loaded
     d3.select("svg").remove();
 
@@ -81,7 +72,7 @@
         .attr("height", height + margin.top + margin.bottom)
         .append("g")
         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-    //d3.select("#switch-label-right").style("color", "#2FCCD1");
+
     // initializes the budget/approval tooltip
     var div = d3.select("body").append("div")
         .attr("class", "tooltip")
@@ -91,8 +82,6 @@
     var div2 = d3.select("body").append("div")
         .attr("class", "tooltip")
         .style("opacity", 1e-6);
-
-    //d3.select("#toggleBox").on("change", checkBox);
 
     //loads the department data
     d3.json("resources/flare_experiment_2.json", function (error, flare) {
@@ -127,21 +116,18 @@
         var nodes = tree.nodes(root).reverse(),
             links = tree.links(nodes);
 
-
         // Normalize for fixed-depth.
         nodes.forEach(function (d) {
             d.y = d.depth * 250;    // I don't know specifically what this does,
                                     // but I do know that changing the number
                                     // changes the width of the tree that is displayed
-
-        }); //180
+        }); //180 is the default
 
         // Update the nodes
         var node = svg.selectAll("g.node")
             .data(nodes, function (d) {
                 return d.id || (d.id = ++i);
             });
-
 
         // Enter any new nodes at the parent's previous position.
         var nodeEnter = node.enter().append("g")
@@ -190,24 +176,27 @@
                 }
             })
             .style("color", "white");
+
         // appends the name text to the nodes
         nodeEnter.append("text")
+        // changes the X position of where the text starts in relation to the node
             .attr("x", function (d) {
-                if (d.removed == true && d.level == "4") {
+                if (d.removed === true && d.level === "4") {
                     return d.children || d._children ? -20 : -10;
                 }
                 return d.children || d._children ? -10 : 10;
             })
             .attr("dy", ".35em")
+            // I never really understood this, but it changes which side of the node the text appears on
             .attr("text-anchor", function (d) {
-                if (d.removed == true && d.level == "4") {
+                if (d.removed === true && d.level === "4") {
                     return d.children || d._children ? "end" : "end";
                 }
                 return d.children || d._children ? "end" : "start";
             })
             //the name is appended to the dot right here
             .text(function (d) {
-                if (d.deptno == "320000") {
+                if (d.deptno === "320000") {
                     return d.name + "  C̶a̶p̶i̶t̶a̶l̶ ̶P̶r̶o̶j̶e̶c̶t̶ ̶O̶v̶e̶r̶s̶i̶g̶h̶t̶";
                 }
                 return d.name;
@@ -219,24 +208,27 @@
             })
             .on("mouseout", mouseout)
             .style("fill-opacity", 1)
+            // puts a line through a department's name if it is to be removed
             .style("text-decoration", function (d) {
-                if (d.removed == true) {
+                if (d.removed === true) {
                     return "line-through"
                 }
             })
             // the names are styled here based on PO data
             .style("fill", function (d) {
-                if (d.removed == true) {
+                if (d.removed === true) {
                     return "black"
                 }
             })
+            //makes Green Line Extension's text large
             .style("font-size", function (d) {
-                if (d.deptno == "000000") {
+                if (d.deptno === "000000") {
                     return "18px";
                 }
             })
+            // I am pretty sure this is left over from me trying to put a red line through text
             .attr("id", function (d) {
-                if (d.removed == true) {
+                if (d.removed === true) {
                     return "striker"
                 }
             });
@@ -256,16 +248,17 @@
                 return 6;
             })
             .attr("z-index", "9997")
+            // fill circles based on their level
             .style("fill", function (d) {
-                if (d.level == "2") return "red";
-                if (d.level == "3") return "orange";
-                if (d.level == "4") return "green";
-                if (d.level == "5") return "blue";
-                if (d.level == "6") return "purple";
-                if (d.name == "") return "#ffffff";
+                if (d.level === "2") return "red";
+                if (d.level === "3") return "orange";
+                if (d.level === "4") return "green";
+                if (d.level === "5") return "blue";
+                if (d.level === "6") return "purple";
+                if (d.name === "") return "#ffffff";
             })
             .style("opacity", function (d) {
-                if (d.level == "") {
+                if (d.level === "") {
                     return 0;
                 }
             });
@@ -321,30 +314,6 @@
 
     }
 
-    function checkBox() {
-        if (d3.select("#toggleBox").property("checked")) {
-            d3.select("#switch-label-left").style("color", "#2FCCD1");
-            d3.select("#switch-label-right").style("color", "black");
-            if (dataDisplayed == 0) {
-
-                updateApprovalData2();
-            }
-            else {
-                updateApprovalData();
-            }
-
-        } else {
-            d3.select("#switch-label-left").style("color", "black");
-            d3.select("#switch-label-right").style("color", "#2FCCD1");
-            if (dataDisplayed == 0) {
-                updateData2();
-            }
-            else {
-                updateData();
-            }
-        }
-    }
-
     // Toggle children on click.
     function click(d) {
         if (d.children) {
@@ -373,8 +342,8 @@
 
     //draws the tooltip
     function mousemove(d) {
-
-        if (d.approval1 != undefined && d.requestors == undefined) {
+        //if there is an old approval structure but no requestors
+        if (d.approval1 !== undefined && d.requestors === undefined) {
             div.html(d.deptno + "<br/>" + "Level 1: " + d.approval1 + "<br/>" + "Level 2: " + d.approval2 + "<br/>"
                 + "Level 3: " + d.approval3 + "<br/>" + "Level 4: " + d.approval4 + "<br/>" + "Level 5: " + d.approval5
                 + "<br/>" + "Level 6: " + d.approval6 + "<br/>" + "Level 7: " + d.approval7 + "<br/>" + "Level 8: "
@@ -383,7 +352,8 @@
                 .style("top", (d3.event.pageY) + "px")
 
         }
-        if (d.approval1 != undefined && d.requestors != undefined) {
+        // if there is an old approval structure and an old requestor structure
+        if (d.approval1 !== undefined && d.requestors !== undefined) {
             div.html(d.deptno + "<br/><div class='approvals-container'>" + "Level 1: " + d.approval1 + "<br/>" + "Level 2: " + d.approval2 + "<br/>"
                 + "Level 3: " + d.approval3 + "<br/>" + "Level 4: " + d.approval4 + "<br/>" + "Level 5: " + d.approval5
                 + "<br/>" + "Level 6: " + d.approval6 + "<br/>" + "Level 7: " + d.approval7 + "<br/>" + "Level 8: "
@@ -392,7 +362,8 @@
                 .style("top", (d3.event.pageY) + "px")
 
         }
-        if (d.approval1 != undefined && d.removed == true && d.requestors != undefined) {
+        // if there is an old approval structure and an old requestor structure and the department is to be removed
+        if (d.approval1 !== undefined && d.removed === true && d.requestors !== undefined) {
             div.html(d.deptno + "<br/>Department is to be removed<br/>" + "Level 1: " + d.approval1 + "<br/>" + "Level 2: " + d.approval2 + "<br/>"
                 + "Level 3: " + d.approval3 + "<br/>" + "Level 4: " + d.approval4 + "<br/>" + "Level 5: " + d.approval5
                 + "<br/>" + "Level 6: " + d.approval6 + "<br/>" + "Level 7: " + d.approval7 + "<br/>" + "Level 8: "
@@ -401,7 +372,8 @@
                 .style("top", (d3.event.pageY) + "px")
 
         }
-        if (d.approval1 != undefined && d.removed == true && d.requestors == undefined) {
+        // if there is an old approval structure, but not a requestor structure, and the department is to be removed
+        if (d.approval1 !== undefined && d.removed === true && d.requestors === undefined) {
             div.html(d.deptno + "<br/>Department is to be removed<br/>" + "Level 1: " + d.approval1 + "<br/>" + "Level 2: " + d.approval2 + "<br/>"
                 + "Level 3: " + d.approval3 + "<br/>" + "Level 4: " + d.approval4 + "<br/>" + "Level 5: " + d.approval5
                 + "<br/>" + "Level 6: " + d.approval6 + "<br/>" + "Level 7: " + d.approval7 + "<br/>" + "Level 8: "
@@ -410,11 +382,11 @@
                 .style("top", (d3.event.pageY) + "px")
 
         }
-        /**/
-        if (d.newApproval1 != undefined && d.approval1 != undefined && (d.approval1 != d.newApproval1
-                || d.approval2 != d.newApproval2 || d.approval3 != d.newApproval3 || d.approval4 != d.newApproval4 ||
-                d.approval5 != d.newApproval5 || d.approval6 != d.newApproval6 || d.approval7 != d.newApproval7
-                || d.approval8 != d.newApproval8) && d.requestors != undefined && d.newRequestors != undefined) {
+        // if there is a new approval structure, an old approval structure that is different, and requestors
+        if (d.newApproval1 !== undefined && d.approval1 !== undefined && (d.approval1 !== d.newApproval1
+                || d.approval2 !== d.newApproval2 || d.approval3 !== d.newApproval3 || d.approval4 !== d.newApproval4 ||
+                d.approval5 !== d.newApproval5 || d.approval6 !== d.newApproval6 || d.approval7 !== d.newApproval7
+                || d.approval8 !== d.newApproval8) && d.requestors !== undefined && d.newRequestors !== undefined) {
 
             div.html("<div class='tooltip-head'>" + d.deptno + "</div>"
                 + "<div class='approvals-container'><div class='old-approvals'> Old Approval Structure <br/> Level 1: " + d.approval1 + "<br/>" + "Level 2: " + d.approval2 + "<br/>"
@@ -429,11 +401,11 @@
                 .style("left", (d3.event.pageX ) + "px")
                 .style("top", (d3.event.pageY) + "px")
         }
-        /**/
-        if (d.newApproval1 != undefined && d.approval1 != undefined && (d.approval1 != d.newApproval1
-                || d.approval2 != d.newApproval2 || d.approval3 != d.newApproval3 || d.approval4 != d.newApproval4 ||
-                d.approval5 != d.newApproval5 || d.approval6 != d.newApproval6 || d.approval7 != d.newApproval7
-                || d.approval8 != d.newApproval8) && d.requestors != undefined && d.newRequestors != undefined && d.requestors == d.newRequestors) {
+        // if there is a new approval structure, an old approval structure that is different, and requestors did not change
+        if (d.newApproval1 !== undefined && d.approval1 !== undefined && (d.approval1 !== d.newApproval1
+                || d.approval2 !== d.newApproval2 || d.approval3 !== d.newApproval3 || d.approval4 !== d.newApproval4 ||
+                d.approval5 !== d.newApproval5 || d.approval6 !== d.newApproval6 || d.approval7 !== d.newApproval7
+                || d.approval8 !== d.newApproval8) && d.requestors !== undefined && d.newRequestors !== undefined && d.requestors === d.newRequestors) {
             div.html("<div class='tooltip-head'>" + d.deptno + "</div>" + "<div class='approvals-container'><div class='old-approvals'> Old Approval Structure <br/> Level 1: " + d.approval1 + "<br/>" + "Level 2: " + d.approval2 + "<br/>"
                 + "Level 3: " + d.approval3 + "<br/>" + "Level 4: " + d.approval4 + "<br/>" + "Level 5: " + d.approval5
                 + "<br/>" + "Level 6: " + d.approval6 + "<br/>" + "Level 7: " + d.approval7 + "<br/>" + "Level 8: "
@@ -445,10 +417,11 @@
                 .style("left", (d3.event.pageX ) + "px")
                 .style("top", (d3.event.pageY) + "px")
         }
-        if (d.newApproval1 != undefined && d.approval1 != undefined && (d.approval1 != d.newApproval1
-                || d.approval2 != d.newApproval2 || d.approval3 != d.newApproval3 || d.approval4 != d.newApproval4 ||
-                d.approval5 != d.newApproval5 || d.approval6 != d.newApproval6 || d.approval7 != d.newApproval7
-                || d.approval8 != d.newApproval8) && d.requestors == undefined && d.newRequestors == undefined) {
+        // if there is a new approval structure, an old approval structure that is different, and no requestors
+        if (d.newApproval1 !== undefined && d.approval1 !== undefined && (d.approval1 !== d.newApproval1
+                || d.approval2 !== d.newApproval2 || d.approval3 !== d.newApproval3 || d.approval4 !== d.newApproval4 ||
+                d.approval5 !== d.newApproval5 || d.approval6 !== d.newApproval6 || d.approval7 !== d.newApproval7
+                || d.approval8 !== d.newApproval8) && d.requestors === undefined && d.newRequestors === undefined) {
             div.html("<div class='tooltip-head'>" + d.deptno + "</div>"
                 + "<div class='approvals-container'><div class='old-approvals'> Old Approval Structure <br/> Level 1: " + d.approval1 + "<br/>" + "Level 2: " + d.approval2 + "<br/>"
                 + "Level 3: " + d.approval3 + "<br/>" + "Level 4: " + d.approval4 + "<br/>" + "Level 5: " + d.approval5
@@ -460,10 +433,11 @@
                 .style("left", (d3.event.pageX ) + "px")
                 .style("top", (d3.event.pageY) + "px")
         }
-        if (d.newApproval1 != undefined && d.approval1 != undefined && d.approval1 == d.newApproval1
-            && d.approval2 == d.newApproval2 && d.approval3 == d.newApproval3 && d.approval4 == d.newApproval4 &&
-            d.approval5 == d.newApproval5 && d.approval6 == d.newApproval6 && d.approval7 == d.newApproval7
-            && d.approval8 == d.newApproval8 && d.requestors == undefined && d.newRequestors == undefined) {
+        // if there is a new approval structure, an old approval structure that is the same, and no requestors
+        if (d.newApproval1 !== undefined && d.approval1 !== undefined && d.approval1 === d.newApproval1
+            && d.approval2 === d.newApproval2 && d.approval3 === d.newApproval3 && d.approval4 === d.newApproval4 &&
+            d.approval5 === d.newApproval5 && d.approval6 === d.newApproval6 && d.approval7 === d.newApproval7
+            && d.approval8 === d.newApproval8 && d.requestors === undefined && d.newRequestors === undefined) {
             div.html(d.deptno + "<br/>Approval did not change<br/>" + "Level 1: " + d.approval1 + "<br/>" + "Level 2: " + d.approval2 + "<br/>"
                 + "Level 3: " + d.approval3 + "<br/>" + "Level 4: " + d.approval4 + "<br/>" + "Level 5: " + d.approval5
                 + "<br/>" + "Level 6: " + d.approval6 + "<br/>" + "Level 7: " + d.approval7 + "<br/>" + "Level 8: "
@@ -472,10 +446,11 @@
                 .style("top", (d3.event.pageY) + "px")
 
         }
-        if (d.newApproval1 != undefined && d.approval1 != undefined && d.approval1 == d.newApproval1
-            && d.approval2 == d.newApproval2 && d.approval3 == d.newApproval3 && d.approval4 == d.newApproval4 &&
-            d.approval5 == d.newApproval5 && d.approval6 == d.newApproval6 && d.approval7 == d.newApproval7
-            && d.approval8 == d.newApproval8 && d.requestors != undefined && d.newRequestors != undefined) {
+        // if there is a new approval structure, an old approval structure that is the same, and requestors
+        if (d.newApproval1 !== undefined && d.approval1 !== undefined && d.approval1 === d.newApproval1
+            && d.approval2 === d.newApproval2 && d.approval3 === d.newApproval3 && d.approval4 === d.newApproval4 &&
+            d.approval5 === d.newApproval5 && d.approval6 === d.newApproval6 && d.approval7 === d.newApproval7
+            && d.approval8 === d.newApproval8 && d.requestors !== undefined && d.newRequestors !== undefined) {
             div.html(d.deptno + "<br/>Approval did not change<br/><div class='approvals-container'>" + "Level 1: " + d.approval1 + "<br/>" + "Level 2: " + d.approval2 + "<br/>"
                 + "Level 3: " + d.approval3 + "<br/>" + "Level 4: " + d.approval4 + "<br/>" + "Level 5: " + d.approval5
                 + "<br/>" + "Level 6: " + d.approval6 + "<br/>" + "Level 7: " + d.approval7 + "<br/>" + "Level 8: "
@@ -485,10 +460,11 @@
                 .style("top", (d3.event.pageY) + "px")
 
         }
-        if (d.newApproval1 != undefined && d.approval1 != undefined && d.approval1 == d.newApproval1
-            && d.approval2 == d.newApproval2 && d.approval3 == d.newApproval3 && d.approval4 == d.newApproval4 &&
-            d.approval5 == d.newApproval5 && d.approval6 == d.newApproval6 && d.approval7 == d.newApproval7
-            && d.approval8 == d.newApproval8 && d.requestors != undefined && d.newRequestors != undefined && d.requestors == d.newRequestors) {
+        // if there is a new approval structure, an old approval structure that is the same, and the same requestors
+        if (d.newApproval1 !== undefined && d.approval1 !== undefined && d.approval1 === d.newApproval1
+            && d.approval2 === d.newApproval2 && d.approval3 === d.newApproval3 && d.approval4 === d.newApproval4 &&
+            d.approval5 === d.newApproval5 && d.approval6 === d.newApproval6 && d.approval7 === d.newApproval7
+            && d.approval8 === d.newApproval8 && d.requestors !== undefined && d.newRequestors !== undefined && d.requestors === d.newRequestors) {
             div.html(d.deptno + "<br/>Approval did not change<br/><div class='approvals-container'>" + "Level 1: " + d.approval1 + "<br/>" + "Level 2: " + d.approval2 + "<br/>"
                 + "Level 3: " + d.approval3 + "<br/>" + "Level 4: " + d.approval4 + "<br/>" + "Level 5: " + d.approval5
                 + "<br/>" + "Level 6: " + d.approval6 + "<br/>" + "Level 7: " + d.approval7 + "<br/>" + "Level 8: "
@@ -497,7 +473,8 @@
                 .style("top", (d3.event.pageY) + "px")
 
         }
-        if (d.newApproval1 != undefined && d.approval1 == undefined && d.newRequestors == undefined) {
+        // if there is a new approval structure, no an old approval structure, and no requestors
+        if (d.newApproval1 !== undefined && d.approval1 === undefined && d.newRequestors === undefined) {
             div.html(d.deptno + "<br/>" + "New Approval Structure <br/> Level 1: " + d.newApproval1 + "<br/>" + "Level 2: " + d.newApproval2 + "<br/>"
                 + "Level 3: " + d.newApproval3 + "<br/>" + "Level 4: " + d.newApproval4 + "<br/>" + "Level 5: " + d.newApproval5
                 + "<br/>" + "Level 6: " + d.newApproval6 + "<br/>" + "Level 7: " + d.newApproval7 + "<br/>" + "Level 8: "
@@ -506,7 +483,8 @@
                 .style("top", (d3.event.pageY) + "px")
 
         }
-        if (d.newApproval1 != undefined && d.approval1 == undefined && d.newRequestors != undefined) {
+        // if there is a new approval structure, no an old approval structure, and requestors
+        if (d.newApproval1 !== undefined && d.approval1 === undefined && d.newRequestors !== undefined) {
             div.html(d.deptno + "<br/>" + "New Approval Structure <br/><div class='approvals-container'> Level 1: " + d.newApproval1 + "<br/>" + "Level 2: " + d.newApproval2 + "<br/>"
                 + "Level 3: " + d.newApproval3 + "<br/>" + "Level 4: " + d.newApproval4 + "<br/>" + "Level 5: " + d.newApproval5
                 + "<br/>" + "Level 6: " + d.newApproval6 + "<br/>" + "Level 7: " + d.newApproval7 + "<br/>" + "Level 8: "
@@ -515,22 +493,26 @@
                 .style("top", (d3.event.pageY) + "px")
 
         }
-        if (d.approval1 == undefined && d.newApproval1 == undefined && d.requestors == undefined) {
+        // if there is no new approval structure, no an old approval structure, and no requestors
+        if (d.approval1 === undefined && d.newApproval1 === undefined && d.requestors === undefined) {
             div.html(d.deptno + "<br/> Approves at a higher level")
                 .style("left", (d3.event.pageX ) + "px")
                 .style("top", (d3.event.pageY) + "px");
         }
-        if (d.approval1 == undefined && d.newApproval1 == undefined && d.requestors != undefined) {
+        // if there is no new approval structure, no an old approval structure, but requestors
+        if (d.approval1 === undefined && d.newApproval1 === undefined && d.requestors !== undefined) {
             div.html(d.deptno + "<br/> Approves at a higher level <br/> Requestors <br/>" + d.requestors)
                 .style("left", (d3.event.pageX ) + "px")
                 .style("top", (d3.event.pageY) + "px");
         }
-        if (d.approval1 == undefined && d.newApproval1 == undefined && d.removed == true) {
+        // if there is no new approval structure, no an old approval structure, and department is to be removed
+        if (d.approval1 === undefined && d.newApproval1 === undefined && d.removed === true) {
             div.html(d.deptno + "<br/> Department is to be removed <br/>")
                 .style("left", (d3.event.pageX ) + "px")
                 .style("top", (d3.event.pageY) + "px");
         }
-        if (d.deptno == "000000") {
+        // this was made exclusively for Green Line Extension, which is a proposed new department.
+        if (d.deptno === "000000") {
             div.html("Proposed new department. <br/> Awaiting approval structure")
                 .style("left", (d3.event.pageX ) + "px")
                 .style("top", (d3.event.pageY) + "px");
@@ -548,51 +530,6 @@
 
     }
 
-    // formats approvals into a string that can be displayed on tooltip
-    function getDepartments(approval) {
-        var returnString = "";
-        for (i in approval) {
-            if (approval[i] != undefined) {
-                returnString = returnString + "<br/>" + approval[i].name;
-            }
-        }
-        return returnString;
-    }
-
-    // highlights department names that are in a certain KPI section
-    function highlight(section) {
-        d3.selectAll("text")
-            .style("fill", function (d) {
-                for (s in section) {
-
-                    if (d != undefined) {
-                        if (section[s].deptno == (d.deptno)) {
-                            return "red";
-                        }
-                    }
-                }
-            })
-            .style("font-size", function (d) {
-                for (s in section) {
-
-                    if (d != undefined && d.deptno != "000000") {
-                        if (section[s].deptno == (d.deptno)) {
-                            return "24px";
-                        }
-                    }
-                }
-            });
-
-    }
-
-    // un-highlights all departments
-    function unHighlight() {
-        d3.selectAll("text")
-            .style("fill", "black")
-            .style("font-size", "11pt")
-            .style("font-weight", "700");
-    }
-
     // controls how slowly the tooltip disappears
     function mouseout() {
         div.transition()
@@ -605,20 +542,13 @@
         div2.transition()
             .duration(300)
             .style("opacity", 1e-6);
-        // unHighlight();
     }
 
     // this is triggered when you hit the 'View Operating' button, it just loads the
     // Operating data instead of the Administration data
     function updateData() {
-        var filename = "";
-        /* if (d3.select("#toggleBox").property("checked")) {
-             console.log('checked');
-             filename = "resources/operating_capital.json";
-         }*/
-        //else {
-        filename = "resources/flare_experiment.json";
-        //}
+        var filename = "resources/flare_experiment.json";
+
         d3.json(filename, function (error, flare) {
             if (error) throw error;
             root = flare;
@@ -632,15 +562,7 @@
 
     // this function updates the data to display administration
     function updateData2() {
-        var filename = "";
-        /*
-        if (d3.select("#toggleBox").property("checked")) {
-            console.log('checked');
-            filename = "resources/admin_capital.json";
-        }
-        else { */
-        filename = "resources/flare_experiment_2.json";
-        //}
+        var filename = "resources/flare_experiment_2.json";
         d3.json(filename, function (error, flare) {
             if (error) throw error;
             root = flare;
@@ -652,32 +574,6 @@
         dataDisplayed = 0;
     }
 
-    // this is triggered when you hit the 'View Operating' button, it just loads the
-    // Operating data instead of the Administration data
-    function updateApprovalData() {
-        d3.json("resources/operating_capital.json", function (error, flare) {
-            if (error) throw error;
-            root = flare;
-            root.x0 = height / 2;
-            root.y0 = 0;
-            dataDisplayed = 1;
-            update(root, true);
-        });
-        dataDisplayed = 1;
-    }
-
-    // this function updates the data to display administration
-    function updateApprovalData2() {
-        d3.json("resources/admin_capital.json", function (error, flare) {
-            if (error) throw error;
-            root = flare;
-            root.x0 = height / 2;
-            root.y0 = 0;
-            dataDisplayed = 0;
-            update(root, true);
-        });
-        dataDisplayed = 0;
-    }
 
     // expands a node
     function expand(d) {
@@ -714,7 +610,7 @@
     <p>Level 6</p>
 
 </div>
-<!--This div contains the PO Data Key-->
+<!--This div contains the Key-->
 <div class="ltitleright2">
     <p><span class="glyphicon-key glyphicon glyphicon-plus-sign"></span> Recently gained approval rights</p>
 

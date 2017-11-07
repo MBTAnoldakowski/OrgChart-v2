@@ -380,37 +380,37 @@
 
     //draws the tooltip
     function mousemove(d) {
-        if (d.tree.affiliation == "both" && !d.tree.authLevel && !d.tree.authDeptNo && !d.tree.authUnder) {
+        if (d.tree.affiliation === "both" && !d.tree.authLevel && !d.tree.authDeptNo && !d.tree.authUnder) {
             div.html(d.deptno + "<br/>" + "Department is in both the auth and department trees.")
                 .style("left", (d3.event.pageX ) + "px")
                 .style("top", (d3.event.pageY) + "px")
         }
-        if (d.tree.affiliation == "dept" && !d.tree.authLevel && !d.tree.authDeptNo && !d.tree.authUnder) {
+        if (d.tree.affiliation === "dept" && !d.tree.authLevel && !d.tree.authDeptNo && !d.tree.authUnder) {
             div.html(d.deptno + "<br/>" + "Department is only in the department tree")
                 .style("left", (d3.event.pageX ) + "px")
                 .style("top", (d3.event.pageY) + "px")
         }
-        if (d.tree.affiliation == "auth" && !d.tree.authLevel && !d.tree.authDeptNo && !d.tree.authUnder) {
+        if (d.tree.affiliation === "auth" && !d.tree.authLevel && !d.tree.authDeptNo && !d.tree.authUnder) {
             div.html(d.deptno + "<br/>" + "Department is only in the auth tree")
                 .style("left", (d3.event.pageX ) + "px")
                 .style("top", (d3.event.pageY) + "px")
         }
-        if (d.tree.affiliation == "both" && d.tree.authLevel && !d.tree.authDeptNo && !d.tree.authUnder) {
+        if (d.tree.affiliation === "both" && d.tree.authLevel && !d.tree.authDeptNo && !d.tree.authUnder) {
             div.html(d.deptno + "<br/>" + "Department is in both the auth and department trees, but is Level " + d.tree.authLevel + " in the auth tree.")
                 .style("left", (d3.event.pageX ) + "px")
                 .style("top", (d3.event.pageY) + "px")
         }
-        if (d.tree.affiliation != "both" && !d.tree.authLevel && d.tree.authDeptNo && !d.tree.authUnder) {
+        if (d.tree.affiliation !== "both" && !d.tree.authLevel && d.tree.authDeptNo && !d.tree.authUnder) {
             div.html(d.deptno + "<br/>" + "Department has department # " + d.tree.authDeptNo + " in the auth tree.")
                 .style("left", (d3.event.pageX ) + "px")
                 .style("top", (d3.event.pageY) + "px")
         }
-        if (d.tree.affiliation == "both" && !d.tree.authLevel && d.tree.authDeptNo && !d.tree.authUnder) {
+        if (d.tree.affiliation === "both" && !d.tree.authLevel && d.tree.authDeptNo && !d.tree.authUnder) {
             div.html(d.deptno + "<br/>" + "Department with this # is in both trees, but there is a department with a similar name that has department # " + d.tree.authDeptNo + " in the auth tree.")
                 .style("left", (d3.event.pageX ) + "px")
                 .style("top", (d3.event.pageY) + "px")
         }
-        if (d.tree.affiliation == "both" && !d.tree.authLevel && !d.tree.authDeptNo && d.tree.authUnder) {
+        if (d.tree.affiliation === "both" && !d.tree.authLevel && !d.tree.authDeptNo && d.tree.authUnder) {
             div.html(d.deptno + "<br/>" + "Department is in both the auth and department trees, but is structurally under department # " + d.tree.authUnder + " in the auth tree.")
                 .style("left", (d3.event.pageX ) + "px")
                 .style("top", (d3.event.pageY) + "px")

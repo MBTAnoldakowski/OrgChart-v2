@@ -142,35 +142,6 @@
                 }
             })
             .style("cursor", "pointer");
-        /*
-                node.append("svg:foreignObject")
-                    .attr("width", 10)
-                    .attr("height", 10)
-                    .attr("y", "-8.4px")
-                    .attr("x", "-7.3px")
-                    .append("xhtml:span")
-                    .attr("z-index", "9999")
-                    .attr("class", function (d) {
-                        if (d.tree.affiliation == "both") {
-                            return "control glyphicon glyphicon-record"
-                        }
-                    })
-                    .style("color", "black");*/
-        /*
-                node.append("svg:foreignObject")
-                    .attr("width", 20)
-                    .attr("height", 20)
-                    .attr("y", "-7px")
-                    .attr("x", "-10px")
-                    .append("xhtml:span")
-                    .attr("z-index", "9997")
-                    .attr("class", function (d) {
-                        if (d.removed) {
-                            return "control glyphicon glyphicon-remove-circle"
-                        }
-                    })
-                    .style("color", "white");
-                    */
         // appends the name text to the nodes
         nodeEnter.append("text")
             .attr("x", function (d) {

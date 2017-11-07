@@ -1033,12 +1033,6 @@
           "name": "General Manager",
           "level": "5",
           "deptno": "101002"
-        },
-        {
-          "name": "Library Park Plaza",
-          "level": "5",
-          "deptno": "422002",
-          "new": true
         }
       ]
     },
@@ -1261,6 +1255,12 @@
           "name": "Stores Charlestown",
           "level": "5",
           "deptno": "443080",
+          "new": true
+        },
+        {
+          "name": "Library Park Plaza",
+          "level": "5",
+          "deptno": "422002",
           "new": true
         }
       ]

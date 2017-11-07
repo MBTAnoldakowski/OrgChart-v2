@@ -14,21 +14,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="operating.min.extra.json" pinned="false" current-in-tab="true">
+      <file leaf-file-name="operating.min.extra.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/resources/operating.min.extra.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="962">
-              <caret line="600" column="27" lean-forward="true" selection-start-line="600" selection-start-column="27" selection-end-line="600" selection-end-column="27" />
+            <state relative-caret-position="945">
+              <caret line="578" column="13" lean-forward="true" selection-start-line="578" selection-start-column="13" selection-end-line="578" selection-end-column="13" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="admin.min.extra.json" pinned="false" current-in-tab="false">
+      <file leaf-file-name="new-depts.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/new-depts.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="714">
+              <caret line="64" column="0" lean-forward="true" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="admin.min.extra.json" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/resources/admin.min.extra.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="248">
-              <caret line="211" column="29" lean-forward="false" selection-start-line="211" selection-start-column="29" selection-end-line="211" selection-end-column="29" />
+            <state relative-caret-position="240">
+              <caret line="1281" column="9" lean-forward="true" selection-start-line="1281" selection-start-column="9" selection-end-line="1281" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -46,7 +56,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>871</find>
       <find>87</find>
       <find>422</find>
       <find>revenue</find>
@@ -76,6 +85,7 @@
       <find>261080</find>
       <find>236067</find>
       <find>d&amp;c</find>
+      <find>procureme</find>
     </findStrings>
     <replaceStrings>
       <replace>LMRAMIREZ</replace>
@@ -132,8 +142,6 @@
         <option value="$PROJECT_DIR$/public/config.js" />
         <option value="$PROJECT_DIR$/public/resources/unplaced_auth.json" />
         <option value="$PROJECT_DIR$/public/resources/operatingEmployees.json" />
-        <option value="$PROJECT_DIR$/public/resources/admin.min.extra.json" />
-        <option value="$PROJECT_DIR$/public/new-depts.html" />
         <option value="$PROJECT_DIR$/public/approvals.html" />
         <option value="$PROJECT_DIR$/public/auth.html" />
         <option value="$PROJECT_DIR$/public/auth-vs-dept.html" />
@@ -141,6 +149,8 @@
         <option value="$PROJECT_DIR$/public/old-vs-new-auth-tree.html" />
         <option value="$PROJECT_DIR$/public/vendor.html" />
         <option value="$PROJECT_DIR$/public/resources/operating.min.extra.json" />
+        <option value="$PROJECT_DIR$/public/new-depts.html" />
+        <option value="$PROJECT_DIR$/public/resources/admin.min.extra.json" />
       </list>
     </option>
   </component>
@@ -304,12 +314,12 @@
       <workItem from="1509716442373" duration="9015000" />
       <workItem from="1509734417856" duration="2062000" />
       <workItem from="1509978658972" duration="12766000" />
-      <workItem from="1510064480697" duration="4053000" />
+      <workItem from="1510064480697" duration="4832000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="499083000" />
+    <option name="totallyTimeSpent" value="499862000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1358" y="-548" width="1936" height="1096" extended-state="6" />
@@ -562,6 +572,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1522">
           <caret line="574" column="8" lean-forward="false" selection-start-line="574" selection-start-column="1" selection-end-line="574" selection-end-column="8" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -648,14 +659,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/new-depts.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-5401">
-          <caret line="16" column="24" lean-forward="false" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/old-vs-new-auth-tree.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2431">
@@ -704,18 +707,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/resources/admin.min.extra.json">
+    <entry file="file://$PROJECT_DIR$/public/resources/operating.min.extra.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="248">
-          <caret line="211" column="29" lean-forward="false" selection-start-line="211" selection-start-column="29" selection-end-line="211" selection-end-column="29" />
+        <state relative-caret-position="945">
+          <caret line="578" column="13" lean-forward="true" selection-start-line="578" selection-start-column="13" selection-end-line="578" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/resources/operating.min.extra.json">
+    <entry file="file://$PROJECT_DIR$/public/new-depts.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="962">
-          <caret line="600" column="27" lean-forward="true" selection-start-line="600" selection-start-column="27" selection-end-line="600" selection-end-column="27" />
+        <state relative-caret-position="714">
+          <caret line="64" column="0" lean-forward="true" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/resources/admin.min.extra.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="1281" column="9" lean-forward="true" selection-start-line="1281" selection-start-column="9" selection-end-line="1281" selection-end-column="9" />
           <folding />
         </state>
       </provider>

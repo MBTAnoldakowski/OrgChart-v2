@@ -4,6 +4,7 @@
     <h1>MBTA New Departments</h1>
     <div class="lastUpdated">
         <p>Last Updated: 11/2/2017 9:20AM</p>
+        <p id="starred"></p>
         <p>136 starred departments, 405 departments (274 Admin, 131 Ops)</p>
     </div>
     <br/>
@@ -98,7 +99,7 @@
 
         // Normalize for fixed-depth.
         nodes.forEach(function (d) {
-            d.y = d.depth * 300;    // I don't know specifically what this does,
+            d.y = d.depth * 325;    // I don't know specifically what this does,
                                     // but I do know that changing the number
                                     // changes the width of the tree that is displayed
         }); //180

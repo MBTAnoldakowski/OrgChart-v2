@@ -5,7 +5,7 @@
     <div class="lastUpdated">
         <p>Last Updated: 11/2/2017 9:20AM</p>
         <p id="starred"></p>
-        <p>136 starred departments, 405 departments (274 Admin, 131 Ops)</p>
+        <p>136 starred departments, 364 departments </p>
     </div>
     <br/>
     <input name="updateButton"
@@ -124,6 +124,7 @@
         // appends the name text to the nodes
         nodeEnter.append("text")
             .attr("x", function (d) {
+                console.log(d.deptno);
                 if (d.level == "4") {
                     return d.children || d._children ? -20 : -10;
                 }
@@ -190,7 +191,6 @@
             .attr("class", function (d) {
                 if (d.new) {
                     starredCount++;
-                    console.log(d.deptno);
                     return "control glyphicon glyphicon-star"
                 }
             })

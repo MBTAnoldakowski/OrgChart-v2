@@ -365,11 +365,12 @@
             div.html(d.deptno + "<br/>" + "<div> # of POs: " + getBudgetData(d.deptno)
                 + "<br/> Total: " + formatMoney(getBudgetActuals(d.deptno))
                 + "</div>")
-                .style("left", (d3.event.pageX ) + "px")
+                .style("left", (d3.event.pageX + 15) + "px")
                 .style("top", (d3.event.pageY) + "px");
         }
         else{
-            div.html(d.deptno + "<br/> No PO data").style("left", (d3.event.pageX ) + "px")
+            div.html(d.deptno + "<br/> No PO data")
+                .style("left", (d3.event.pageX + 15) + "px")
                 .style("top", (d3.event.pageY) + "px");
         }
 
@@ -380,13 +381,13 @@
     function mousemove2(d) {
         if (d.gaveApprovalTo) {
             div2.html("Gave approval to:" + getDepartments(d.gaveApprovalTo))
-                .style("left", (d3.event.pageX ) + "px")
+                .style("left", (d3.event.pageX + 15) + "px")
                 .style("top", (d3.event.pageY) + "px");
             highlight(d.gaveApprovalTo);
         }
         if (d.gotApprovalFrom) {
             div2.html("Received approval from:" + getDepartments(d.gotApprovalFrom))
-                .style("left", (d3.event.pageX ) + "px")
+                .style("left", (d3.event.pageX + 15) + "px")
                 .style("top", (d3.event.pageY) + "px");
             highlight(d.gotApprovalFrom);
         }

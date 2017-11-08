@@ -241,6 +241,24 @@
           "new": true
         },
         {
+          "name": "Construction Real Estate RR Park Plaza",
+          "level": "5",
+          "deptno": "335002",
+          "new": true
+        },
+        {
+          "name": "Construction Real Estate ROW Park Plaza",
+          "level": "5",
+          "deptno": "336002",
+          "new": true
+        },
+        {
+          "name": "Construction Real Estate Development Washington",
+          "level": "5",
+          "deptno": "337013",
+          "new": true
+        },
+        {
           "name": "Facilities Management",
           "level": "5",
           "deptno": "442002"

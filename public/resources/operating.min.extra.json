@@ -320,6 +320,20 @@
           ]
         },
         {
+          "name": "GLX",
+          "level": "4",
+          "deptno": "313000",
+          "new": true,
+          "children": [
+            {
+              "name": "GLX",
+              "level": "5",
+              "deptno": "313002",
+              "new": true
+            }
+          ]
+        },
+        {
           "name": "Rail Maintenance",
           "level": "4",
           "deptno": "239000",
@@ -608,6 +622,18 @@
               "deptno": "322005"
             },
             {
+              "name": "D&C Engineering Charlestown",
+              "level": "5",
+              "deptno": "311081",
+              "new": true
+            },
+            {
+              "name": "D&C Engineering South Station",
+              "level": "5",
+              "deptno": "311280",
+              "new": true
+            },
+            {
               "name": "D&C AGM Office 100 Summer St",
               "level": "5",
               "deptno": "311124",
@@ -615,6 +641,12 @@
             },
             {
               "name": "D&C Management Engineering Equipment",
+              "level": "5",
+              "deptno": "322081",
+              "new": true
+            },
+            {
+              "name": "D&C Management Administration South Station",
               "level": "5",
               "deptno": "322081",
               "new": true

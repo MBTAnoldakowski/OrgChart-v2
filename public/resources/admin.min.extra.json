@@ -1296,49 +1296,49 @@
             {
               "name": "Parking West Hingham",
               "level": "6",
-              "deptno": "216417",
+              "deptno": "261417",
               "new": true
             },
             {
               "name": "Parking Weymouth",
               "level": "6",
-              "deptno": "216418",
+              "deptno": "261418",
               "new": true
             },
             {
               "name": "Parking Whitman",
               "level": "6",
-              "deptno": "216419",
+              "deptno": "261419",
               "new": true
             },
             {
               "name": "Parking Hingham Boat",
               "level": "6",
-              "deptno": "216420",
+              "deptno": "261420",
               "new": true
             },
             {
               "name": "Parking Quincy Boat",
               "level": "6",
-              "deptno": "216421",
+              "deptno": "261421",
               "new": true
             },
             {
               "name": "Parking Rowley",
               "level": "6",
-              "deptno": "216422",
+              "deptno": "261422",
               "new": true
             },
             {
               "name": "Parking Attleboro CRR Lot",
               "level": "6",
-              "deptno": "216430",
+              "deptno": "261430",
               "new": true
             },
             {
               "name": "Parking Littleton",
               "level": "6",
-              "deptno": "216501",
+              "deptno": "261501",
               "new": true
             }
           ]

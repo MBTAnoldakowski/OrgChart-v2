@@ -1,0 +1,1949 @@
+{
+  "name": "MBTA",
+  "level": "1",
+  "deptno": "000000",
+  "children": [
+    {
+      "name": "Chief of Staff Office",
+      "level": "4",
+      "deptno": "106000",
+      "tree": {
+        "affiliation": "dept"
+      },
+      "children": [
+        {
+          "name": "Chief of Staff",
+          "level": "5",
+          "deptno": "106002",
+          "tree": {
+            "affiliation": "dept"
+          }
+        }
+      ]
+    },
+    {
+      "name": "General Manager",
+      "level": "4",
+      "deptno": "100000",
+      "tree": {
+        "affiliation": "both"
+      },
+      "children": [
+        {
+          "name": "General Manager",
+          "level": "5",
+          "deptno": "101002",
+          "tree": {
+            "affiliation": "both"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Safety",
+      "level": "4",
+      "deptno": "240000",
+      "tree": {
+        "affiliation": "both"
+      },
+      "children": [
+        {
+          "name": "Safety Administration",
+          "level": "5",
+          "deptno": "241080",
+          "tree": {
+            "affiliation": "both"
+          }
+        },
+        {
+          "name": "Safety Administration at Park Plaza",
+          "level": "5",
+          "deptno": "241002",
+          "tree": {
+            "affiliation": "auth"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Transit Police",
+      "level": "4",
+      "deptno": "120000",
+      "children": [
+        {
+          "name": "Transit Police",
+          "level": "5",
+          "deptno": "121012"
+        }
+      ]
+    },
+    {
+      "name": "Office of Transportation Access",
+      "level": "4",
+      "deptno": "290000",
+      "children": [
+        {
+          "name": "Office of Transportation Access",
+          "level": "5",
+          "deptno": "291002"
+        }
+      ]
+    },
+    {
+      "name": "System-wide Accessibility",
+      "level": "4",
+      "deptno": "102000",
+      "children": [
+        {
+          "name": "System-wide Accessibility",
+          "level": "5",
+          "deptno": "102002"
+        }
+      ]
+    },
+    {
+      "name": "Law",
+      "level": "4",
+      "deptno": "160000",
+      "children": [
+        {
+          "name": "Law",
+          "level": "5",
+          "deptno": "161002"
+        }
+      ]
+    },
+    {
+      "name": "Labor Relations",
+      "level": "4",
+      "deptno": "730000",
+      "children": [
+        {
+          "name": "Labor Relations",
+          "level": "5",
+          "deptno": "731002"
+        }
+      ]
+    },
+    {
+      "name": "Diversity & Civil Rights",
+      "level": "4",
+      "deptno": "135000",
+      "children": [
+        {
+          "name": "EEO/AA Administration",
+          "level": "5",
+          "deptno": "131002"
+        },
+        {
+          "name": "Disadvantaged Business Enterprise",
+          "level": "5",
+          "deptno": "132002"
+        },
+        {
+          "name": "EEO/AA Contract Administration",
+          "level": "5",
+          "deptno": "133002"
+        },
+        {
+          "name": "Training",
+          "level": "5",
+          "deptno": "134002"
+        },
+        {
+          "name": "Supplier Diversity",
+          "level": "5",
+          "deptno": "571002"
+        }
+      ]
+    },
+    {
+      "name": "OPMI",
+      "level": "4",
+      "deptno": "620000",
+      "children": [
+        {
+          "name": "OPMI",
+          "level": "5",
+          "deptno": "621002"
+        }
+      ]
+    },
+    {
+      "name": "Customer Experience",
+      "level": "4",
+      "deptno": "110000",
+      "children": [
+        {
+          "name": "Charlie Store",
+          "level": "5",
+          "deptno": "528103"
+        },
+        {
+          "name": "Customer Experience Div Marketing",
+          "level": "5",
+          "deptno": "110002"
+        },
+        {
+          "name": "Customer Care Center",
+          "level": "5",
+          "deptno": "275008"
+        },
+        {
+          "name": "Communications",
+          "level": "5",
+          "deptno": "521002"
+        }
+      ]
+    },
+    {
+      "name": "Customer Technology Department",
+      "level": "4",
+      "deptno": "118000",
+      "children": [
+        {
+          "name": "AFC 1.0",
+          "level": "5",
+          "deptno": "116002"
+        },
+        {
+          "name": "Revenue Maintenance Charlestown",
+          "level": "6",
+          "deptno": "263077"
+        },
+        {
+          "name": "Revenue Maintenance Everett",
+          "level": "6",
+          "deptno": "263106"
+        },
+        {
+          "name": "Revenue Audit",
+          "level": "6",
+          "deptno": "267002"
+        },
+        {
+          "name": "Revenue Maintenance Franklin",
+          "level": "6",
+          "deptno": "263123"
+        },
+        {
+          "name": "AFC 2.0",
+          "level": "5",
+          "deptno": "117002"
+        },
+        {
+          "name": "Automated Fare Collection Park Plaza",
+          "level": "5",
+          "deptno": "856002"
+        },
+        {
+          "name": "Customer Technology Division",
+          "level": "5",
+          "deptno": "118002"
+        }
+      ]
+    },
+    {
+      "name": "Real Estate",
+      "level": "4",
+      "deptno": "330000",
+      "children": [
+        {
+          "name": "Real Estate",
+          "level": "5",
+          "deptno": "331002"
+        },
+        {
+          "name": "Real Estate Transit Park Plaza",
+          "level": "5",
+          "deptno": "332002"
+        },
+        {
+          "name": "Real Estate Park Plaza",
+          "level": "5",
+          "deptno": "334002"
+        },
+        {
+          "name": "Construction Real Estate RR Park Plaza",
+          "level": "5",
+          "deptno": "335002"
+        },
+        {
+          "name": "Construction Real Estate ROW Park Plaza",
+          "level": "5",
+          "deptno": "336002"
+        },
+        {
+          "name": "Construction Real Estate Development Washington",
+          "level": "5",
+          "deptno": "337013"
+        },
+        {
+          "name": "Facilities Management",
+          "level": "5",
+          "deptno": "442002"
+        }
+      ]
+    },
+    {
+      "name": "Public Affairs",
+      "level": "4",
+      "deptno": "115000",
+      "children": [
+        {
+          "name": "Public Affairs",
+          "level": "5",
+          "deptno": "112002"
+        }
+      ]
+    },
+    {
+      "name": "Chief Financial Officer",
+      "level": "4",
+      "deptno": "640000",
+      "children": [
+        {
+          "name": "Cash Collection",
+          "level": "5",
+          "deptno": "642002"
+        },
+        {
+          "name": "FMCB Operations",
+          "level": "5",
+          "deptno": "643002"
+        },
+        {
+          "name": "Chief Financial Officer",
+          "level": "5",
+          "deptno": "641002"
+        }
+      ]
+    },
+    {
+      "name": "Procurement and Logistics",
+      "level": "4",
+      "deptno": "400000",
+      "children": [
+        {
+          "name": "Administration",
+          "level": "5",
+          "deptno": "421002"
+        },
+        {
+          "name": "Purchasing Inventory",
+          "level": "5",
+          "deptno": "425002"
+        },
+        {
+          "name": "Purchasing Non-Inventory",
+          "level": "5",
+          "deptno": "426002"
+        },
+        {
+          "name": "Stores",
+          "level": "5",
+          "deptno": "443002"
+        },
+        {
+          "name": "Stores Charlestown",
+          "level": "5",
+          "deptno": "443080"
+        },
+        {
+          "name": "Library Park Plaza",
+          "level": "5",
+          "deptno": "422002"
+        }
+      ]
+    },
+    {
+      "name": "Treasurer Controller",
+      "level": "4",
+      "deptno": "805000",
+      "children": [
+        {
+          "name": "Controller",
+          "level": "5",
+          "deptno": "805202"
+        },
+        {
+          "name": "Accounts Payable",
+          "level": "6",
+          "deptno": "821002"
+        },
+        {
+          "name": "Administration",
+          "level": "6",
+          "deptno": "811002"
+        },
+        {
+          "name": "Accounting",
+          "level": "6",
+          "deptno": "822002"
+        },
+        {
+          "name": "Payroll",
+          "level": "6",
+          "deptno": "823002"
+        },
+        {
+          "name": "Balance Sheet Accounts",
+          "level": "6",
+          "deptno": "841002"
+        },
+        {
+          "name": "Trustee Funds Park Plaza",
+          "level": "6",
+          "deptno": "890002"
+        },
+        {
+          "name": "MetrTranPark Balance Sheet",
+          "level": "6",
+          "deptno": "846002"
+        },
+        {
+          "name": "Treasurer",
+          "level": "5",
+          "deptno": "805302"
+        },
+        {
+          "name": "Finance Capital",
+          "level": "6",
+          "deptno": "832002"
+        },
+        {
+          "name": "Finance Cash",
+          "level": "6",
+          "deptno": "833002"
+        },
+        {
+          "name": "Finance Insurance",
+          "level": "6",
+          "deptno": "834002"
+        },
+        {
+          "name": "T/C Finance Accounts Rec Park Plaza",
+          "level": "5",
+          "deptno": "831002"
+        },
+        {
+          "name": "Center for Audit/Gaap Adjustment",
+          "level": "5",
+          "deptno": "871002"
+        }
+      ]
+    },
+    {
+      "name": "Vendor Management",
+      "level": "4",
+      "deptno": "804000",
+      "children": [
+        {
+          "name": "Money Room",
+          "level": "5",
+          "deptno": "262077"
+        },
+        {
+          "name": "Vendor Management",
+          "level": "5",
+          "deptno": "805402"
+        }
+      ]
+    },
+    {
+      "name": "Budget",
+      "level": "4",
+      "deptno": "630000",
+      "children": [
+        {
+          "name": "Budget Administration",
+          "level": "5",
+          "deptno": "631002"
+        },
+        {
+          "name": "Budget Operating",
+          "level": "5",
+          "deptno": "632002"
+        },
+        {
+          "name": "Budget Capital",
+          "level": "5",
+          "deptno": "633002"
+        }
+      ]
+    },
+    {
+      "name": "General Activities",
+      "level": "4",
+      "deptno": "860000",
+      "children": [
+        {
+          "name": "General Activities",
+          "level": "5",
+          "deptno": "861002"
+        },
+        {
+          "name": "General Activities Everett Mn",
+          "level": "5",
+          "deptno": "861107"
+        },
+        {
+          "name": "General Activities Everett Str",
+          "level": "5",
+          "deptno": "861108"
+        }
+      ]
+    },
+    {
+      "name": "Interagency",
+      "level": "4",
+      "deptno": "170000",
+      "children": [
+        {
+          "name": "Interagency",
+          "level": "5",
+          "deptno": "171002"
+        },
+        {
+          "name": "Intergovernmental",
+          "level": "5",
+          "deptno": "111002"
+        }
+      ]
+    },
+    {
+      "name": "Own Source Revenue",
+      "level": "4",
+      "deptno": "172000",
+      "children": [
+        {
+          "name": "Own Source Revenue",
+          "level": "5",
+          "deptno": "172002"
+        },
+        {
+          "name": "Parking Program Summary",
+          "level": "5",
+          "deptno": "261000"
+        },
+        {
+          "name": "Parking Framingham",
+          "level": "6",
+          "deptno": "261122"
+        },
+        {
+          "name": "Parking Alewife",
+          "level": "6",
+          "deptno": "261018"
+        },
+        {
+          "name": "Revenue Admin Arlington",
+          "level": "6",
+          "deptno": "261005"
+        },
+        {
+          "name": "Revenue Administration Support Arlington",
+          "level": "6",
+          "deptno": "267005"
+        },
+        {
+          "name": "Revenue Admin Charlestown",
+          "level": "6",
+          "deptno": "261080"
+        },
+        {
+          "name": "Parking Woodland",
+          "level": "6",
+          "deptno": "261333"
+        },
+        {
+          "name": "Parking Haymarket",
+          "level": "6",
+          "deptno": "261143"
+        },
+        {
+          "name": "Parking Beverly Depot",
+          "level": "6",
+          "deptno": "261207"
+        },
+        {
+          "name": "Parking Administration Park Plaza",
+          "level": "6",
+          "deptno": "261002"
+        },
+        {
+          "name": "Parking Andover",
+          "level": "6",
+          "deptno": "261022"
+        },
+        {
+          "name": "Parking Ashland",
+          "level": "6",
+          "deptno": "261032"
+        },
+        {
+          "name": "Parking Ballardvale",
+          "level": "6",
+          "deptno": "261038"
+        },
+        {
+          "name": "Parking Beachmont",
+          "level": "6",
+          "deptno": "261040"
+        },
+        {
+          "name": "Parking Bellevue",
+          "level": "6",
+          "deptno": "261043"
+        },
+        {
+          "name": "Parking Bradford",
+          "level": "6",
+          "deptno": "261054"
+        },
+        {
+          "name": "Parking Braintree",
+          "level": "6",
+          "deptno": "261056"
+        },
+        {
+          "name": "Parking Brandeis",
+          "level": "6",
+          "deptno": "261058"
+        },
+        {
+          "name": "Parking Canton Center",
+          "level": "6",
+          "deptno": "261069"
+        },
+        {
+          "name": "Parking Canton Junction",
+          "level": "6",
+          "deptno": "261070"
+        },
+        {
+          "name": "Parking Chestnut Hill",
+          "level": "6",
+          "deptno": "261085"
+        },
+        {
+          "name": "Parking Dedham",
+          "level": "6",
+          "deptno": "261099"
+        },
+        {
+          "name": "Parking Eliot",
+          "level": "6",
+          "deptno": "261104"
+        },
+        {
+          "name": "Parking Fairmont",
+          "level": "6",
+          "deptno": "261112"
+        },
+        {
+          "name": "Parking Forest Hills",
+          "level": "6",
+          "deptno": "261120"
+        },
+        {
+          "name": "Parking Forge Park",
+          "level": "6",
+          "deptno": "261121"
+        },
+        {
+          "name": "Parking Franklin",
+          "level": "6",
+          "deptno": "261123"
+        },
+        {
+          "name": "Parking Grafton",
+          "level": "6",
+          "deptno": "261126"
+        },
+        {
+          "name": "Parking Gloucester",
+          "level": "6",
+          "deptno": "261128"
+        },
+        {
+          "name": "Parking Hamilton",
+          "level": "6",
+          "deptno": "261134"
+        },
+        {
+          "name": "Parking Haverhill",
+          "level": "6",
+          "deptno": "261141"
+        },
+        {
+          "name": "Parking Hersey Station CRR Ops",
+          "level": "6",
+          "deptno": "261145"
+        },
+        {
+          "name": "Parking Highland",
+          "level": "6",
+          "deptno": "261146"
+        },
+        {
+          "name": "Parking Hyde Park",
+          "level": "6",
+          "deptno": "261148"
+        },
+        {
+          "name": "Parking Islington",
+          "level": "6",
+          "deptno": "261151"
+        },
+        {
+          "name": "Parking Lechmere",
+          "level": "6",
+          "deptno": "261165"
+        },
+        {
+          "name": "Parking Lynn",
+          "level": "6",
+          "deptno": "261173"
+        },
+        {
+          "name": "Parking Malden",
+          "level": "6",
+          "deptno": "261177"
+        },
+        {
+          "name": "Mansfield CR Lot",
+          "level": "6",
+          "deptno": "261180"
+        },
+        {
+          "name": "Parking Mattapan",
+          "level": "6",
+          "deptno": "261181"
+        },
+        {
+          "name": "Parking Butler Lot",
+          "level": "6",
+          "deptno": "261182"
+        },
+        {
+          "name": "Parking Mattapan Hi Speed",
+          "level": "6",
+          "deptno": "261183"
+        },
+        {
+          "name": "Parking Milton",
+          "level": "6",
+          "deptno": "261189"
+        },
+        {
+          "name": "Parking Montserrat",
+          "level": "6",
+          "deptno": "261191"
+        },
+        {
+          "name": "Parking Auburndale Facility",
+          "level": "6",
+          "deptno": "261197"
+        },
+        {
+          "name": "Parking Needham Heights CRR",
+          "level": "6",
+          "deptno": "261199"
+        },
+        {
+          "name": "Parking Needham Junction CRR Ops",
+          "level": "6",
+          "deptno": "261200"
+        },
+        {
+          "name": "Parking Newburyport",
+          "level": "6",
+          "deptno": "261201"
+        },
+        {
+          "name": "Parking W. Newton Webster Street",
+          "level": "6",
+          "deptno": "261202"
+        },
+        {
+          "name": "Parking W. Newton Washington Street",
+          "level": "6",
+          "deptno": "261204"
+        },
+        {
+          "name": "Parking Norfolk",
+          "level": "6",
+          "deptno": "261205"
+        },
+        {
+          "name": "Parking North Beverly",
+          "level": "6",
+          "deptno": "261206"
+        },
+        {
+          "name": "North Billerica CR Lot",
+          "level": "6",
+          "deptno": "261208"
+        },
+        {
+          "name": "Parking North Quincy",
+          "level": "6",
+          "deptno": "261211"
+        },
+        {
+          "name": "Parking North Quincy/Newport",
+          "level": "6",
+          "deptno": "261212"
+        },
+        {
+          "name": "Parking Norwood Center",
+          "level": "6",
+          "deptno": "261219"
+        },
+        {
+          "name": "Parking Norwood Depot",
+          "level": "6",
+          "deptno": "261220"
+        },
+        {
+          "name": "Parking Oak Grove",
+          "level": "6",
+          "deptno": "261224"
+        },
+        {
+          "name": "Parking Orient Heights",
+          "level": "6",
+          "deptno": "261231"
+        },
+        {
+          "name": "Parking Quincy Adams",
+          "level": "6",
+          "deptno": "261244"
+        },
+        {
+          "name": "Parking Reading",
+          "level": "6",
+          "deptno": "261247"
+        },
+        {
+          "name": "Parking Readville",
+          "level": "6",
+          "deptno": "261248"
+        },
+        {
+          "name": "Parking Riverside",
+          "level": "6",
+          "deptno": "261256"
+        },
+        {
+          "name": "Parking Roslindale",
+          "level": "6",
+          "deptno": "261259"
+        },
+        {
+          "name": "Parking Route 128 Garage",
+          "level": "6",
+          "deptno": "261260"
+        },
+        {
+          "name": "Parking Salem",
+          "level": "6",
+          "deptno": "261267"
+        },
+        {
+          "name": "Parking Savin Hill",
+          "level": "6",
+          "deptno": "261268"
+        },
+        {
+          "name": "Sharon CR Lot",
+          "level": "6",
+          "deptno": "261271"
+        },
+        {
+          "name": "Parking South Attleboro",
+          "level": "6",
+          "deptno": "261278"
+        },
+        {
+          "name": "Parking Stoughton",
+          "level": "6",
+          "deptno": "261288"
+        },
+        {
+          "name": "Parking Southborough",
+          "level": "6",
+          "deptno": "261289"
+        },
+        {
+          "name": "Parking Suffolk Downs",
+          "level": "6",
+          "deptno": "261290"
+        },
+        {
+          "name": "Parking Sullivan",
+          "level": "6",
+          "deptno": "261291"
+        },
+        {
+          "name": "Parking Swampscott",
+          "level": "6",
+          "deptno": "261295"
+        },
+        {
+          "name": "Parking Waban",
+          "level": "6",
+          "deptno": "261301"
+        },
+        {
+          "name": "Parking Wakefield",
+          "level": "6",
+          "deptno": "261302"
+        },
+        {
+          "name": "Parking Walpole",
+          "level": "6",
+          "deptno": "261303"
+        },
+        {
+          "name": "Parking Watertown",
+          "level": "6",
+          "deptno": "261307"
+        },
+        {
+          "name": "Parking Westboro",
+          "level": "6",
+          "deptno": "261309"
+        },
+        {
+          "name": "Parking Wellington",
+          "level": "6",
+          "deptno": "261316"
+        },
+        {
+          "name": "West Concord CR Lot",
+          "level": "6",
+          "deptno": "261318"
+        },
+        {
+          "name": "Parking West Gloucester",
+          "level": "6",
+          "deptno": "261319"
+        },
+        {
+          "name": "Parking West Medford",
+          "level": "6",
+          "deptno": "261320"
+        },
+        {
+          "name": "Parking West Natick",
+          "level": "6",
+          "deptno": "261321"
+        },
+        {
+          "name": "Parking West Roxbury",
+          "level": "6",
+          "deptno": "261324"
+        },
+        {
+          "name": "Parking Wilmington",
+          "level": "6",
+          "deptno": "261325"
+        },
+        {
+          "name": "Parking Wollaston",
+          "level": "6",
+          "deptno": "261328"
+        },
+        {
+          "name": "Parking Wonderland Surface Lot",
+          "level": "6",
+          "deptno": "261331"
+        },
+        {
+          "name": "Parking Wonderland Garage",
+          "level": "6",
+          "deptno": "261332"
+        },
+        {
+          "name": "Parking Abington",
+          "level": "6",
+          "deptno": "261401"
+        },
+        {
+          "name": "Parking Bridgewater",
+          "level": "6",
+          "deptno": "261402"
+        },
+        {
+          "name": "Parking Campello",
+          "level": "6",
+          "deptno": "261403"
+        },
+        {
+          "name": "Parking Cohasset",
+          "level": "6",
+          "deptno": "261404"
+        },
+        {
+          "name": "Parking East Weymouth",
+          "level": "6",
+          "deptno": "261405"
+        },
+        {
+          "name": "Parking Greenbush",
+          "level": "6",
+          "deptno": "261406"
+        },
+        {
+          "name": "Parking Halifax",
+          "level": "6",
+          "deptno": "261407"
+        },
+        {
+          "name": "Parking Hanson",
+          "level": "6",
+          "deptno": "261408"
+        },
+        {
+          "name": "Parking Holbrook",
+          "level": "6",
+          "deptno": "261409"
+        },
+        {
+          "name": "Parking Kingston",
+          "level": "6",
+          "deptno": "261410"
+        },
+        {
+          "name": "Parking Middleboro",
+          "level": "6",
+          "deptno": "261411"
+        },
+        {
+          "name": "Parking Montello",
+          "level": "6",
+          "deptno": "261412"
+        },
+        {
+          "name": "Parking North Scituate",
+          "level": "6",
+          "deptno": "261413"
+        },
+        {
+          "name": "Parking Nantasket",
+          "level": "6",
+          "deptno": "261414"
+        },
+        {
+          "name": "Parking Plymouth",
+          "level": "6",
+          "deptno": "261415"
+        },
+        {
+          "name": "Parking South Weymouth",
+          "level": "6",
+          "deptno": "261416"
+        },
+        {
+          "name": "Parking West Hingham",
+          "level": "6",
+          "deptno": "261417"
+        },
+        {
+          "name": "Parking Weymouth",
+          "level": "6",
+          "deptno": "261418"
+        },
+        {
+          "name": "Parking Whitman",
+          "level": "6",
+          "deptno": "261419"
+        },
+        {
+          "name": "Parking Hingham Boat",
+          "level": "6",
+          "deptno": "261420"
+        },
+        {
+          "name": "Parking Quincy Boat",
+          "level": "6",
+          "deptno": "261421"
+        },
+        {
+          "name": "Parking Rowley",
+          "level": "6",
+          "deptno": "261422"
+        },
+        {
+          "name": "Parking Attleboro CRR Lot",
+          "level": "6",
+          "deptno": "261430"
+        },
+        {
+          "name": "Parking Littleton",
+          "level": "6",
+          "deptno": "261501"
+        }
+      ]
+    },
+    {
+      "name": "ITD",
+      "level": "4",
+      "deptno": "430000",
+      "children": [
+        {
+          "name": "ITD Enterprise-Wide Proc",
+          "level": "5",
+          "deptno": "434002"
+        },
+        {
+          "name": "ITD",
+          "level": "5",
+          "deptno": "433002"
+        },
+        {
+          "name": "ITD Development",
+          "level": "5",
+          "deptno": "435002"
+        }
+      ]
+    },
+    {
+      "name": "Environmental Affairs",
+      "level": "4",
+      "deptno": "155000",
+      "children": [
+        {
+          "name": "Utilities",
+          "level": "5",
+          "deptno": "182011"
+        },
+        {
+          "name": "Utilities",
+          "level": "5",
+          "deptno": "182005"
+        },
+        {
+          "name": "Environmental Affairs",
+          "level": "5",
+          "deptno": "156002"
+        }
+      ]
+    },
+    {
+      "name": "Human Resources",
+      "level": "4",
+      "deptno": "700000",
+      "children": [
+        {
+          "name": "Employment and Training",
+          "level": "5",
+          "deptno": "721002"
+        },
+        {
+          "name": "Benefits and Comp",
+          "level": "5",
+          "deptno": "751002"
+        },
+        {
+          "name": "Health and Welfare Fund",
+          "level": "5",
+          "deptno": "752002"
+        }
+      ]
+    },
+    {
+      "name": "Employee Relations",
+      "level": "4",
+      "deptno": "710000",
+      "children": [
+        {
+          "name": "Employee Relations",
+          "level": "5",
+          "deptno": "711002"
+        }
+      ]
+    },
+    {
+      "name": "Occupational Health Services",
+      "level": "4",
+      "deptno": "780000",
+      "children": [
+        {
+          "name": "Worker's Compensation",
+          "level": "5",
+          "deptno": "741002"
+        },
+        {
+          "name": "Medical Operations",
+          "level": "5",
+          "deptno": "761002"
+        },
+        {
+          "name": "Employee Counseling",
+          "level": "5",
+          "deptno": "781002"
+        }
+      ]
+    },
+    {
+      "name": "Winter Storm Costs",
+      "level": "4",
+      "deptno": "140000",
+      "children": [
+        {
+          "name": "Winter Storm Costs",
+          "level": "5",
+          "deptno": "141002"
+        }
+      ]
+    },
+    {
+      "name": "Rail Operations",
+      "level": "4",
+      "deptno": "210000",
+      "children": [
+        {
+          "name": "Commuter Ferry Supervision",
+          "level": "5",
+          "deptno": "202008"
+        },
+        {
+          "name": "Commuter Ferry Subsidy",
+          "level": "5",
+          "deptno": "202026"
+        },
+        {
+          "name": "Commuter Rail Eng Park Plaza",
+          "level": "5",
+          "deptno": "213002"
+        },
+        {
+          "name": "Commuter Rail Subsidy",
+          "level": "5",
+          "deptno": "215008"
+        },
+        {
+          "name": "Commuter Rail Supervision",
+          "level": "5",
+          "deptno": "211008"
+        },
+        {
+          "name": "Commuter Rail Transportation Back Bay",
+          "level": "5",
+          "deptno": "215036"
+        },
+        {
+          "name": "Commuter Rail Transportation North Station",
+          "level": "5",
+          "deptno": "215213"
+        },
+        {
+          "name": "Commuter Rail Transportation South Station",
+          "level": "5",
+          "deptno": "215281"
+        },
+        {
+          "name": "CRR Cape Flyer Operations",
+          "level": "5",
+          "deptno": "215001"
+        },
+        {
+          "name": "South Station Intermodal",
+          "level": "5",
+          "deptno": "862281"
+        }
+      ]
+    },
+    {
+      "name": "Bus Maintenance",
+      "level": "4",
+      "deptno": "221000",
+      "children": [
+        {
+          "name": "Chief Mechanical Officer - Water Street",
+          "level": "5",
+          "deptno": "222006"
+        },
+        {
+          "name": "Chief Mechanical Officer - Arlington",
+          "level": "5",
+          "deptno": "222028"
+        },
+        {
+          "name": "Bus Maintenance Administration",
+          "level": "5",
+          "deptno": "222080"
+        },
+        {
+          "name": "Albany Maintenance",
+          "level": "5",
+          "deptno": "225016"
+        },
+        {
+          "name": "Fellsway Maintenance",
+          "level": "5",
+          "deptno": "225113"
+        },
+        {
+          "name": "Charlestown Maintenance",
+          "level": "5",
+          "deptno": "225080"
+        },
+        {
+          "name": "Southampton Maintenance",
+          "level": "5",
+          "deptno": "225339"
+        },
+        {
+          "name": "Arborway Maintenance",
+          "level": "5",
+          "deptno": "225025"
+        },
+        {
+          "name": "North Cambridge Maintenance",
+          "level": "5",
+          "deptno": "225208"
+        },
+        {
+          "name": "Cabot Maintenance",
+          "level": "5",
+          "deptno": "225067"
+        },
+        {
+          "name": "Lynn Maintenance",
+          "level": "5",
+          "deptno": "225174"
+        },
+        {
+          "name": "Quincy Maintenance",
+          "level": "5",
+          "deptno": "225241"
+        },
+        {
+          "name": "Barlett Maintenance",
+          "level": "5",
+          "deptno": "225039"
+        }
+      ]
+    },
+    {
+      "name": "Bus Transportation",
+      "level": "4",
+      "deptno": "224000",
+      "children": [
+        {
+          "name": "Bus Transportation Administration",
+          "level": "5",
+          "deptno": "226080"
+        },
+        {
+          "name": "Chief Transportation Officer",
+          "level": "5",
+          "deptno": "224069"
+        },
+        {
+          "name": "Arborway Transportation",
+          "level": "5",
+          "deptno": "224025"
+        },
+        {
+          "name": "Cabot Transportation",
+          "level": "5",
+          "deptno": "224067"
+        },
+        {
+          "name": "Bennet/ N. Cambridge Transportation",
+          "level": "5",
+          "deptno": "224068"
+        },
+        {
+          "name": "Charlestown/Fellsway Transportation",
+          "level": "5",
+          "deptno": "224080"
+        },
+        {
+          "name": "Lynn",
+          "level": "5",
+          "deptno": "224174"
+        },
+        {
+          "name": "Quincy",
+          "level": "5",
+          "deptno": "224241"
+        },
+        {
+          "name": "Southampton (Silver Line)",
+          "level": "5",
+          "deptno": "228339"
+        }
+      ]
+    },
+    {
+      "name": "Power Systems Maintenance",
+      "level": "4",
+      "deptno": "674000",
+      "children": [
+        {
+          "name": "Power Systems and Equipment",
+          "level": "5",
+          "deptno": "197005"
+        },
+        {
+          "name": "Power Systems and Equipment Arborway",
+          "level": "5",
+          "deptno": "197011"
+        },
+        {
+          "name": "Electrical Maintenance",
+          "level": "5",
+          "deptno": "187005"
+        },
+        {
+          "name": "Transmission & Distribution",
+          "level": "5",
+          "deptno": "196005"
+        },
+        {
+          "name": "Trans & Distrib Arborway",
+          "level": "5",
+          "deptno": "196011"
+        }
+      ]
+    },
+    {
+      "name": "Transit Facilities Maintenance",
+      "level": "4",
+      "deptno": "673000",
+      "children": [
+        {
+          "name": "Administration",
+          "level": "5",
+          "deptno": "181008"
+        },
+        {
+          "name": "Building & Station Maintenance",
+          "level": "5",
+          "deptno": "183005"
+        },
+        {
+          "name": "Mechanical Maintenance",
+          "level": "5",
+          "deptno": "184005"
+        },
+        {
+          "name": "Bridges and Structures",
+          "level": "5",
+          "deptno": "186005"
+        }
+      ]
+    },
+    {
+      "name": "Signals & Communications",
+      "level": "4",
+      "deptno": "672000",
+      "children": [
+        {
+          "name": "Administration",
+          "level": "5",
+          "deptno": "193005"
+        },
+        {
+          "name": "SMI Administration Arborway",
+          "level": "5",
+          "deptno": "193011"
+        },
+        {
+          "name": "Signals",
+          "level": "5",
+          "deptno": "191005"
+        },
+        {
+          "name": "Signals Arborway",
+          "level": "5",
+          "deptno": "191011"
+        },
+        {
+          "name": "Communications",
+          "level": "5",
+          "deptno": "192005"
+        }
+      ]
+    },
+    {
+      "name": "Maintenance of Way",
+      "level": "4",
+      "deptno": "671000",
+      "children": [
+        {
+          "name": "MOW Surface Light Rail",
+          "level": "5",
+          "deptno": "151005"
+        },
+        {
+          "name": "Rapid Transit Arborway",
+          "level": "5",
+          "deptno": "152011"
+        },
+        {
+          "name": "MOW Rail Equipment",
+          "level": "5",
+          "deptno": "153005"
+        },
+        {
+          "name": "MOW Rapid Transit",
+          "level": "5",
+          "deptno": "152005"
+        },
+        {
+          "name": "Surface Light Rail Arborway",
+          "level": "5",
+          "deptno": "151011"
+        }
+      ]
+    },
+    {
+      "name": "Asset Planning & Training",
+      "level": "4",
+      "deptno": "250000",
+      "children": [
+        {
+          "name": "Capital & Maintenance Planning/Scheduling",
+          "level": "5",
+          "deptno": "251005"
+        },
+        {
+          "name": "Asset Management",
+          "level": "5",
+          "deptno": "252005"
+        },
+        {
+          "name": "E & M Training",
+          "level": "5",
+          "deptno": "253005"
+        }
+      ]
+    },
+    {
+      "name": "GLX",
+      "level": "4",
+      "deptno": "313000",
+      "children": [
+        {
+          "name": "GLX",
+          "level": "5",
+          "deptno": "313002"
+        }
+      ]
+    },
+    {
+      "name": "Light Rail",
+      "level": "4",
+      "deptno": "235000",
+      "children": [
+        {
+          "name": "Green Line Chief",
+          "level": "5",
+          "deptno": "235008"
+        },
+        {
+          "name": "Revenue Customer Service - GL",
+          "level": "5",
+          "deptno": "264235"
+        },
+        {
+          "name": "Green Line Reservoir Station",
+          "level": "5",
+          "deptno": "235249"
+        }
+      ]
+    },
+    {
+      "name": "Rail Maintenance",
+      "level": "4",
+      "deptno": "239000",
+      "children": [
+        {
+          "name": "GL Reservoir Maintenance",
+          "level": "5",
+          "deptno": "235252"
+        },
+        {
+          "name": "GL Mattapan Maintenance",
+          "level": "5",
+          "deptno": "235184"
+        },
+        {
+          "name": "GL Riverside Maintenance",
+          "level": "5",
+          "deptno": "235254"
+        },
+        {
+          "name": "OL Wellington Maintenance",
+          "level": "5",
+          "deptno": "232313"
+        },
+        {
+          "name": "RL Cabot Maintenance",
+          "level": "5",
+          "deptno": "233067"
+        },
+        {
+          "name": "BL Orient Heights Maintenance",
+          "level": "5",
+          "deptno": "234228"
+        }
+      ]
+    },
+    {
+      "name": "Everett Main Repair",
+      "level": "4",
+      "deptno": "209000",
+      "children": [
+        {
+          "name": "Administration",
+          "level": "5",
+          "deptno": "203002"
+        },
+        {
+          "name": "Everett Shops - Bus",
+          "level": "5",
+          "deptno": "223106"
+        },
+        {
+          "name": "Quality Assurance",
+          "level": "5",
+          "deptno": "207008"
+        },
+        {
+          "name": "System Engineering Support - High St",
+          "level": "5",
+          "deptno": "237008"
+        },
+        {
+          "name": "System Engineering Support - Everett",
+          "level": "5",
+          "deptno": "237107"
+        },
+        {
+          "name": "System Engineering Support - Q/A",
+          "level": "5",
+          "deptno": "237111"
+        }
+      ]
+    },
+    {
+      "name": "Heavy Rail",
+      "level": "4",
+      "deptno": "231000",
+      "children": [
+        {
+          "name": "Blue Line Orient Heights Station",
+          "level": "5",
+          "deptno": "234229"
+        },
+        {
+          "name": "Administration",
+          "level": "5",
+          "deptno": "231008"
+        },
+        {
+          "name": "Orange Line Chief",
+          "level": "5",
+          "deptno": "232008"
+        },
+        {
+          "name": "Red Line Chief",
+          "level": "5",
+          "deptno": "233008"
+        },
+        {
+          "name": "Blue Line Chief",
+          "level": "5",
+          "deptno": "234008"
+        },
+        {
+          "name": "Orange Line Wellington Station",
+          "level": "5",
+          "deptno": "232314"
+        },
+        {
+          "name": "Red Line JFK/UMass Station",
+          "level": "5",
+          "deptno": "233155"
+        },
+        {
+          "name": "Revenue Customer Service - OL",
+          "level": "5",
+          "deptno": "264232"
+        },
+        {
+          "name": "Revenue Customer Service - BL",
+          "level": "5",
+          "deptno": "264234"
+        },
+        {
+          "name": "Revenue Customer Service - RL",
+          "level": "5",
+          "deptno": "264233"
+        },
+        {
+          "name": "Revenue Customer Service Control",
+          "level": "5",
+          "deptno": "264236"
+        }
+      ]
+    },
+    {
+      "name": "OCC & Training",
+      "level": "4",
+      "deptno": "238000",
+      "children": [
+        {
+          "name": "OCC & Training - Administration",
+          "level": "5",
+          "deptno": "236009"
+        },
+        {
+          "name": "OCC & Training - Cabot",
+          "level": "5",
+          "deptno": "236067"
+        },
+        {
+          "name": "OCC & Training - Riverside",
+          "level": "5",
+          "deptno": "236255"
+        },
+        {
+          "name": "OCC & Training - Heavy Rail Chief",
+          "level": "5",
+          "deptno": "236008"
+        },
+        {
+          "name": "OCC & Training - Bus Inspectors",
+          "level": "5",
+          "deptno": "236080"
+        },
+        {
+          "name": "OCC & Training High Street",
+          "level": "5",
+          "deptno": "227008"
+        },
+        {
+          "name": "OCC & Training Charlestown",
+          "level": "5",
+          "deptno": "227080"
+        },
+        {
+          "name": "OCC & Training Water Street",
+          "level": "5",
+          "deptno": "236006"
+        },
+        {
+          "name": "OCC & Training - Cabot",
+          "level": "5",
+          "deptno": "227067"
+        }
+      ]
+    },
+    {
+      "name": "Operations Office of Administration",
+      "level": "4",
+      "deptno": "208000",
+      "children": [
+        {
+          "name": "Operations Office of Administration",
+          "level": "5",
+          "deptno": "208008"
+        }
+      ]
+    },
+    {
+      "name": "Operations Service Planning",
+      "level": "4",
+      "deptno": "795000",
+      "children": [
+        {
+          "name": "Suburban Bus",
+          "level": "5",
+          "deptno": "203032"
+        },
+        {
+          "name": "Passenger Services",
+          "level": "5",
+          "deptno": "272008"
+        },
+        {
+          "name": "Private Carrier Bus",
+          "level": "5",
+          "deptno": "203008"
+        },
+        {
+          "name": "Private Carrier Bus Interdistrict",
+          "level": "5",
+          "deptno": "203034"
+        },
+        {
+          "name": "Service Planning",
+          "level": "5",
+          "deptno": "274008"
+        },
+        {
+          "name": "Planning & Schedules",
+          "level": "5",
+          "deptno": "273008"
+        }
+      ]
+    },
+    {
+      "name": "Vehicle Engineering",
+      "level": "4",
+      "deptno": "204000",
+      "children": [
+        {
+          "name": "Vehicle Engineering",
+          "level": "5",
+          "deptno": "204008"
+        },
+        {
+          "name": "Contract Administration Park Plaza",
+          "level": "5",
+          "deptno": "423002"
+        },
+        {
+          "name": "Car Procurement Park Plaza",
+          "level": "5",
+          "deptno": "424002"
+        }
+      ]
+    },
+    {
+      "name": "Security",
+      "level": "4",
+      "deptno": "280000",
+      "children": [
+        {
+          "name": "Security Department",
+          "level": "5",
+          "deptno": "282008"
+        }
+      ]
+    },
+    {
+      "name": "Capital Project Oversight",
+      "level": "4",
+      "deptno": "320000",
+      "children": [
+        {
+          "name": "D&D Quality Control 100 Summer Street",
+          "level": "5",
+          "deptno": "321124"
+        },
+        {
+          "name": "D&C Management Engineering Motorshop",
+          "level": "5",
+          "deptno": "322336"
+        },
+        {
+          "name": "D&C Management Engineering Quincy",
+          "level": "5",
+          "deptno": "322241"
+        },
+        {
+          "name": "D&C Management Engineering Arlington",
+          "level": "5",
+          "deptno": "322028"
+        },
+        {
+          "name": "D&C Management Engineering Charlestown",
+          "level": "5",
+          "deptno": "322011"
+        },
+        {
+          "name": "D&C Management Engineering Arlington",
+          "level": "5",
+          "deptno": "322005"
+        },
+        {
+          "name": "D&C Engineering Charlestown",
+          "level": "5",
+          "deptno": "311081"
+        },
+        {
+          "name": "D&C Engineering South Station",
+          "level": "5",
+          "deptno": "311280"
+        },
+        {
+          "name": "D&C AGM Office 100 Summer St",
+          "level": "5",
+          "deptno": "311124"
+        },
+        {
+          "name": "D&C Management Engineering Equipment",
+          "level": "5",
+          "deptno": "322081"
+        },
+        {
+          "name": "D&C Management Administration South Station",
+          "level": "5",
+          "deptno": "322081"
+        },
+        {
+          "name": "Capital Project Oversight PP",
+          "level": "5",
+          "deptno": "322002"
+        },
+        {
+          "name": "Capital Project Oversight SoSt",
+          "level": "5",
+          "deptno": "322280"
+        },
+        {
+          "name": "Capital Project Oversight SuSt",
+          "level": "5",
+          "deptno": "322124"
+        }
+      ]
+    },
+    {
+      "name": "Capital Delivery",
+      "level": "4",
+      "deptno": "310000",
+      "children": [
+        {
+          "name": "Design & Construction",
+          "level": "5",
+          "deptno": "311002"
+        },
+        {
+          "name": "Capital Delivery Administration",
+          "level": "5",
+          "deptno": "310002"
+        },
+        {
+          "name": "Construction Management Design Arborway",
+          "level": "5",
+          "deptno": "323011"
+        },
+        {
+          "name": "Construction Management CA/T Park Plaza",
+          "level": "5",
+          "deptno": "324002"
+        },
+        {
+          "name": "Construction Management CA/T South Station",
+          "level": "5",
+          "deptno": "324280"
+        },
+        {
+          "name": "Construction ROW Park Plaza",
+          "level": "5",
+          "deptno": "325002"
+        }
+      ]
+    }
+  ]
+}

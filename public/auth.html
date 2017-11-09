@@ -29,7 +29,7 @@
     // size variables for the box to paint in
     var margin = {top: 20, right: 150, bottom: 20, left: 200},
         width = 1000,
-        height = 2800;
+        height = 4700;
 
     var i = 0,
         //sets the amount of time it takes the tree opening animation to run
@@ -167,7 +167,7 @@
                 if (d.level === "3") return "orange";
                 if (d.level === "4") return "green";
                 if (d.level === "5") return "#00afd6";
-                if (d.level === "6") return "purple";
+                if (d.level === "6") return "#00afd6";
                 if (d.name === "") return "#ffffff";
             })
             .style("opacity", function (d) {
@@ -303,7 +303,7 @@
 
     // this function updates the data to display administration
     function updateData2() {
-        d3.json("resources/new_auth.json", function (error, flare) {
+        d3.json("resources/auth.min.new.json", function (error, flare) {
             if (error) throw error;
 
             root = flare;
@@ -357,18 +357,3 @@
 
 
 </div>
-
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>

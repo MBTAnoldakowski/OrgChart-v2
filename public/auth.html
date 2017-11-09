@@ -7,6 +7,7 @@
     </div>
     <br/>
     <input name="updateButton"
+           id="old-button"
            type="button"
            class="btn btn-default"
            value="Old Auth Tree"
@@ -14,6 +15,7 @@
 
     <input name="updateButton"
            type="button"
+           id="new-button"
            class="btn btn-default"
            value="New Auth Tree"
            onclick="updateData2()"/>
@@ -23,6 +25,11 @@
 <!-- this is an empty div for the script to populate with the tree -->
 <div id="chart"></div>
 <script>
+    document.getElementById("old-button").style.background='#8e97b2';
+    document.getElementById("old-button").style.border='3px solid black';
+
+    document.getElementById("new-button").style.background='#ffffff';
+    document.getElementById("new-button").style.border='1px solid black';
     // clears the screen in case a visualization is still loaded
     d3.select("svg").remove();
 
@@ -298,6 +305,10 @@
 
             update(root);
         });
+        document.getElementById("old-button").style.background='#8e97b2';
+        document.getElementById("new-button").style.background='#ffffff';
+        document.getElementById("old-button").style.border='3px solid black';
+        document.getElementById("new-button").style.border='1px solid black';
 
     }
 
@@ -311,7 +322,10 @@
             root.y0 = 0;
             update(root);
         });
-
+        document.getElementById("new-button").style.background='#8e97b2';
+        document.getElementById("old-button").style.background='#ffffff';
+        document.getElementById("new-button").style.border='3px solid black';
+        document.getElementById("old-button").style.border='1px solid black';
     }
 
     // expands a node

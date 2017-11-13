@@ -9,25 +9,28 @@
                 templateUrl: 'home.html'
             })
             .when('/budget', {
-                templateUrl: 'visualization.html'
+                templateUrl: './templates/visualization.html'
+            })
+            .when('/old', {
+                templateUrl: './deprecated.html'
             })
             .when('/update', {
                 templateUrl: 'upload.template.html'
             })
             .when('/employees', {
-                templateUrl: 'employees3.html'
+                templateUrl: './templates/employees3.html'
             })
             .when('/procurement', {
-                templateUrl: 'procurement.html'
+                templateUrl: './templates/procurement.html'
             })
             .when('/kpi', {
-                templateUrl: 'kpi.html'
+                templateUrl: './templates/kpi.html'
             })
             .when('/approvals', {
-                templateUrl: 'approvals.html'
+                templateUrl: './templates/approvals.html'
             })
             .when('/auth-vs-dept', {
-                templateUrl: 'auth-vs-dept.html'
+                templateUrl: './templates/auth-vs-dept.html'
             })
             .when('/vendor/:vendorName', {
                 templateUrl: 'vendor.html',
@@ -48,13 +51,13 @@
                 templateUrl: 'vendorUpload.html'
             })
             .when('/extra', {
-                templateUrl: 'new-depts.html'
+                templateUrl: './templates/new-depts.html'
             })
             .when('/auth', {
-                templateUrl: 'auth.html'
+                templateUrl: './templates/auth.html'
             })
             .when('/newAuth', {
-                templateUrl: 'old-vs-new-auth-tree.html'
+                templateUrl: './templates/old-vs-new-auth-tree.html'
             })
             .when('/vendors', {
                 templateUrl: 'vendor-list.html',

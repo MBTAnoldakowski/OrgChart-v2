@@ -142,28 +142,6 @@
         nodeEnter.append("circle")
             .attr("r", 1e-6);
 
-        // appends the new/old approval signifiers
-        node.append("svg:foreignObject")
-            .attr("width", 20)
-            .attr("height", 20)
-            .attr("y", "-26px")
-            .attr("x", "-10px")
-            .append("xhtml:span")
-            .attr("z-index", "1000")
-            .attr("class", function (d) {
-                if (d.gaveApprovalTo) {
-                    return "control glyphicon glyphicon-minus-sign"
-                }
-                if (d.gotApprovalFrom) {
-                    return "control glyphicon glyphicon-plus-sign"
-                }
-            })
-            // calls for approval tooltip on mouseover
-            .on("mouseover", mouseover2)
-            .on("mousemove", function (d) {
-                mousemove2(d);
-            })
-            .on("mouseout", mouseout2);
 
         // appends the name text to the nodes
         nodeEnter.append("text")
@@ -598,9 +576,6 @@
     <p id="scale7">X</p>
     <p id="scale8">X</p>
     <p id="scale9">Least POs</p>
-
-    <p><span class="glyphicon-key glyphicon glyphicon-minus-sign"></span> Recently gave up approval rights</p>
-    <p><span class="glyphicon-key glyphicon glyphicon-plus-sign"></span> Recently gained approval rights</p>
 
 </div>
 <!-- This div contains the 'Expand All' button -->

@@ -68,7 +68,8 @@
 
 
     //loads the department data
-    d3.json("resources/auth.json", function (error, flare) {
+    d3.json("resources/auth.json", function (error, flare)
+    {
 
         if (error) throw error;
         root = flare;
@@ -182,6 +183,7 @@
                     return 0;
                 }
             });
+
         node.append("svg:foreignObject")
             .attr("width", 20)
             .attr("height", 20)
@@ -281,17 +283,6 @@
             .style("opacity", 1e-6);
     }
 
-    // I have had so much trouble with this function for whatever reason
-    // It gets the budget for a specific department
-    function getBudgetData(department) {
-        var dept = parseFloat(department);
-        for (var i in buData) {
-            if (parseFloat(buData[i].deptNo) === dept) {
-                return buData[i].budgetAmount;
-            }
-        }
-
-    }
 
     // this is triggered when you hit the 'View Operating' button, it just loads the
     // Operating data instead of the Administration data

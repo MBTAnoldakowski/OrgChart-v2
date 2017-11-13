@@ -1,8 +1,12 @@
 <script>
-    if (confirm("Are you sure you would like to remove this vendor?") == true) {
-        txt = "You pressed OK!";
+    var scope = angular.element(document.getElementById('scopeVariable')).scope();
+
+    if (confirm("Are you sure you would like to remove this vendor?") === true) {
+        scope.$removeVendor();
+
     } else {
-        txt = "You pressed Cancel!";
+        window.location.replace("#!/vendors");
     }
-    alert(txt)
+
 </script>
+<div id="scopeVariable">{{vendor}}</div>

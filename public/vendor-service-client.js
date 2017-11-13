@@ -15,5 +15,13 @@
                     return response.data;
                 });
         }
+
+        function removeVendors(vendorName) {
+            var url = "/api/remove";
+            return $http.delete(url, vendorName)
+                .then(function (response) {
+                    return response.data;
+                });
+        }
     }
 })();

@@ -31,6 +31,7 @@
             container.appendChild(document.createElement("br"));
         }
     }
+
 </script>
 <div class="container">
     <h1>Upload New Vendor Data</h1>
@@ -39,7 +40,7 @@
             <label>Vendor Name</label>
             <input type="text" name="vendorName" value="">
             <br/>
-            <input name="myFile" type="file" class="form-control" accept=".csv"/>
+            <input name="myFile" type="file" class="form-control" accept=".csv" id="fileUploadButton"/>
             <br/>
             <h4>Fields in file</h4>
             <label>deptNo</label>
@@ -47,14 +48,6 @@
                    disabled>
             <br/>
 
-            <!--
-            <label>year</label>
-            <input type="checkbox" id="year" name="year" value="year" checked>
-            <label>price</label>
-            <input type="checkbox" id="price" name="price" value="price" checked>
-            <label>quantity</label>
-            <input type="checkbox" id="quantity" name="quantity" value="quantity" checked>
-            <br/>-->
             <label>Number of Fields In File</label>
                 <input type="number" id="extra" name="extra" value="extra" min="0" max="10">
             <br/>
@@ -62,52 +55,7 @@
 
             <div id="container"><br/></div>
             <br/>
-            <!--
-            <label>Create Line Chart in Tooltip?</label>
-            <input type="checkbox" id="tooltip" name="tooltip" value="tooltip" checked>
-            <br/>
-            <label>Operation Field</label>
-            <input list="field1" name="field1">
-            <datalist id="field1">
-                <option value="deptNo">
-                <option value="year">
-                <option value="price">
-                <option value="quantity">
-                <option value="var1">
-                <option value="var2">
-                <option value="var3">
-                <option value="var4">
-                <option value="var5">
-                <option value="var6">
-                <option value="var7">
-                <option value="var8">
-                <option value="var9">
-                <option value="var10">
-            </datalist>
-            <input list="operation" name="operation">
-            <datalist id="operation">
-                <option value="*">
-                <option value="/">
-                <option value="-">
-                <option value="+">
-            </datalist>
-            <input list="field2" name="field2">
-            <datalist id="field2">
-                <option value="deptNo">
-                <option value="year">
-                <option value="price">
-                <option value="quantity">
-                <option value="var1">
-                <option value="var2">
-                <option value="var3">
-                <option value="var4">
-                <option value="var5">
-                <option value="var6">
-                <option value="var7">
-                <option value="var8">
-                <option value="var9">
-                <option value="var10">
-            </datalist>-->
+
             <button type="submit" class="btn btn-block btn-primary">Upload</button>
         </form>
     </div>

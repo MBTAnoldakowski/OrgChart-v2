@@ -1,5 +1,6 @@
 <div id="option">
     <h1>Department Vendor Analysis </h1>
+    <!-- this is angular using the scope variable from the controller -->
     <h4>{{vendor}}</h4>
     <input name="updateButton"
            type="button"
@@ -12,15 +13,24 @@
            class="btn btn-default"
            value="View Administration"
            onclick="updateData2()"/>
-
+    <button class="btn btn-default" id="modalBtn">View Other</button>
 </div>
 
 <div id="chart"></div>
+<div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Unknown Departments</h2>
+        <div id="modelText"></div>
+    </div>
+
+</div>
 <script>
     // gets the vendor name from the url to load the correct configuration files
     var url = window.location.href;
     var vendorName = url ? url.split('/vendor/')[1] : window.location.search.slice(1);
-
     // clears the screen in case a visualization is still loaded
     d3.select("svg").remove();
     var config = {};
@@ -98,12 +108,15 @@
         .style("opacity", 1e-6);
 
     var dataArray = [];
+    var vendorDeptArray = [];
+    var realDeptArray = [];
     // takes the vendor data from the CSV file and places it into the array
     d3.csv("vendor-data/" + decodeURI(vendorName) + ".csv", function (error, data) {
         if (error) throw error;
         data.forEach(function (b) {
             //adds all of the data to the array that I initialized above.
             dataArray.push(b);
+            vendorDeptArray.push(b.deptNo);
         });
     });
 
@@ -113,6 +126,7 @@
         root = flare;
         root.x0 = height / 2;
         root.y0 = 0;
+        console.log(JSON.unflatten(root));
 
         function collapse(d) {
             if (d.children) {
@@ -145,7 +159,6 @@
             d.y = d.depth * 250;    // I don't know specifically what this does,
                                     // but I do know that changing the number
                                     // changes the width of the tree that is displayed
-
         }); //180
 
 
@@ -317,6 +330,7 @@
         var maxAgg = getMaxAgg(variableName);
         var minAgg = getMinAgg(variableName);
         var avgAgg = (maxAgg + minAgg) / 2;
+        var medianAgg = getMedianAgg(variableName)
         var maxCount = getMaxCount();
         var minCount = getMinCount();
         var avgCount = (maxCount + minCount) / 2;
@@ -324,7 +338,7 @@
 
         if (met == "aggregate") {
             color = d3.scale.linear()
-                .domain([minAgg, avgAgg, maxAgg])
+                .domain([minAgg, medianAgg, maxAgg])
                 .range(['#22DD22', '#FFFF00', '#FF0000']);
         }
 
@@ -423,6 +437,25 @@
             }
         }
         return minAgg;
+    }
+
+    function getMedianAgg(variable) {
+        var departmentList = getDepts();
+        var listOfValues = [];
+        for (var a = 0; a < departmentList.length; a++) {
+            var agg = 0;
+            for (var i = 0; i < dataArray.length; i++) {
+                if (dataArray[i].deptNo == departmentList[a]) {
+                    agg = agg + parseFloat(dataArray[i][variable]);
+                }
+            }
+            listOfValues.push(parseFloat(agg));
+        }
+        listOfValues.sort(function (a, b) {
+            return a - b;
+        });
+        console.log(listOfValues);
+        return listOfValues[parseInt(listOfValues.length) / 2];
     }
 
     function getMaxVar(variable) {
@@ -567,7 +600,7 @@
 
         }
         div.html(d.deptno + "<br/>" + varString)
-            .style("left", (d3.event.pageX ) + "px")
+            .style("left", (d3.event.pageX + 15) + "px")
             .style("top", (d3.event.pageY) + "px");
     }
 
@@ -663,6 +696,50 @@
         update(root);
     }
 
+    // Get the modal
+    var modal = document.getElementById('myModal');
+
+    // Get the button that opens the modal
+    var btn = document.getElementById("modalBtn");
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on the button, open the modal
+    btn.onclick = function () {
+        modal.style.display = "block";
+    };
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+        modal.style.display = "none";
+    };
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    };
+
+    JSON.unflatten = function (data) {
+        "use strict";
+        if (Object(data) !== data || Array.isArray(data)) return data;
+        var regex = /\.?([^.\[\]]+)|\[(\d+)\]/g,
+            resultholder = {};
+        for (var p in data) {
+            var cur = resultholder,
+                prop = "",
+                m;
+            while (m = regex.exec(p)) {
+                cur = cur[prop] || (cur[prop] = (m[2] ? [] : {}));
+                prop = m[2] || m[1];
+            }
+            cur[prop] = data[p];
+        }
+        return resultholder[""] || resultholder;
+    };
+
 </script>
 
 <div id="legend">
@@ -706,14 +783,10 @@
 </div>
 <!-- This div contains the navigation-->
 <div id="employeeButton" class="btn-group-vertical">
-    <a class="btn btn-default" href="#!/kpi">KPI Chart</a>
-    <a class="btn btn-default" href="#!/procurement">Procurement Chart</a>
-    <a class="btn btn-default" href="#!/approvals">Approvals Chart</a>
-    <a class="btn btn-default" href="#!/budget">Budget Chart</a>
-    <a class="btn btn-default" href="#!/employees">Employee Chart</a>
-    <a class="btn btn-default" href="#!/vendors" style="white-space: normal;">Department Vendor Analysis Directory</a>
-</div>
+    <a class="btn btn-default" href="#!/">Home</a>
 
+
+</div>
 <br/>
 <br/>
 <br/>

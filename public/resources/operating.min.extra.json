@@ -654,17 +654,20 @@
             {
               "name": "Capital Project Oversight PP",
               "level": "5",
-              "deptno": "322002"
+              "deptno": "322002",
+              "removed": true
             },
             {
               "name": "Capital Project Oversight SoSt",
               "level": "5",
-              "deptno": "322280"
+              "deptno": "322280",
+              "removed": true
             },
             {
               "name": "Capital Project Oversight SuSt",
               "level": "5",
-              "deptno": "322124"
+              "deptno": "322124",
+              "removed": true
             }
           ]
         },
@@ -715,7 +718,8 @@
             {
               "name": "Capital Delivery Administration",
               "level": "5",
-              "deptno": "310002"
+              "deptno": "310002",
+              "removed": true
             },
             {
               "name": "Construction Management Design Arborway",

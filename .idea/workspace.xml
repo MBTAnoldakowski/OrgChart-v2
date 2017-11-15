@@ -13,56 +13,50 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5">
-      <split-first>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="home.html" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/public/home.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="458">
-                  <caret line="56" column="21" lean-forward="false" selection-start-line="56" selection-start-column="21" selection-end-line="56" selection-end-column="21" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="procurement.html" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/public/templates/procurement.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="458">
-                  <caret line="578" column="0" lean-forward="true" selection-start-line="578" selection-start-column="0" selection-end-line="578" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="deprecated.html" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/public/deprecated.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="425">
-                  <caret line="25" column="42" lean-forward="false" selection-start-line="25" selection-start-column="42" selection-end-line="25" selection-end-column="42" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf>
-          <file leaf-file-name="config.js" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/public/config.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="557">
-                  <caret line="57" column="14" lean-forward="true" selection-start-line="57" selection-start-column="14" selection-end-line="57" selection-end-column="14" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="newApprovals.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/public/templates/newApprovals.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="689">
+              <caret line="647" column="35" lean-forward="true" selection-start-line="647" selection-start-column="35" selection-end-line="647" selection-end-column="35" />
+              <folding>
+                <element signature="n#style#0;n#input#0;n#div#4;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="old-vs-new-auth-tree.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/templates/old-vs-new-auth-tree.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="523">
+              <caret line="397" column="5" lean-forward="true" selection-start-line="376" selection-start-column="4" selection-end-line="397" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="kpi.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/templates/kpi.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="383" column="4" lean-forward="false" selection-start-line="383" selection-start-column="4" selection-end-line="408" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/resources/style.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1992">
+              <caret line="571" column="14" lean-forward="true" selection-start-line="571" selection-start-column="14" selection-end-line="571" selection-end-column="14" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -74,23 +68,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>revenue</find>
-      <find>193</find>
-      <find>151</find>
-      <find>surface</find>
-      <find>86</find>
-      <find>862</find>
-      <find>182</find>
-      <find>18</find>
-      <find>light</find>
-      <find>831</find>
-      <find>general</find>
-      <find>operations</find>
-      <find>rail</find>
-      <find>111002</find>
-      <find>151011</find>
-      <find>152011</find>
-      <find>182011</find>
       <find>191011</find>
       <find>215</find>
       <find>oc</find>
@@ -104,6 +81,22 @@
       <find>d&amp;c</find>
       <find>real</find>
       <find>own s</find>
+      <find>admin</find>
+      <find>treas</find>
+      <find>capital de</find>
+      <find>parking</find>
+      <find>technolo</find>
+      <find>customer</find>
+      <find>new</find>
+      <find>&quot;REMOVED</find>
+      <find>REMOVED</find>
+      <find>removed</find>
+      <find>220000</find>
+      <find>320000</find>
+      <find>310002</find>
+      <find>console.log</find>
+      <find>glx</find>
+      <find>highlight</find>
     </findStrings>
     <replaceStrings>
       <replace>LMRAMIREZ</replace>
@@ -118,37 +111,21 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/server/vendor-service-server.js" />
-        <option value="$PROJECT_DIR$/public/vendor-data/configurationWOW_config.json" />
-        <option value="$PROJECT_DIR$/public/vendor-data/configuration/XEROX_config.json" />
-        <option value="$PROJECT_DIR$/public/vendor-data/configuration/XEROXw_config.json" />
-        <option value="$PROJECT_DIR$/public/vendor-controller.js" />
-        <option value="$PROJECT_DIR$/public/vendor-data/tooltip/awda_tooltip-config.json" />
-        <option value="$PROJECT_DIR$/public/vendor-data/tooltip/XEROX_tooltip-config.json" />
-        <option value="$PROJECT_DIR$/public/vendor-data/tooltip/ReadyRefresh_tooltip-config.json" />
-        <option value="$PROJECT_DIR$/public/upload.template.html" />
-        <option value="$PROJECT_DIR$/public/vendorOptions.html" />
-        <option value="$PROJECT_DIR$/public/vendor-remove-controller.js" />
         <option value="$PROJECT_DIR$/public/vendor-service-client.js" />
         <option value="$PROJECT_DIR$/public/vendor-page-controller.js" />
         <option value="$PROJECT_DIR$/public/vendorRemove.html" />
         <option value="$PROJECT_DIR$/public/index.html" />
         <option value="$PROJECT_DIR$/public/vendorUpload.html" />
         <option value="$PROJECT_DIR$/public/resources/unplaced.auth.json" />
-        <option value="$PROJECT_DIR$/public/resources/style.css" />
         <option value="$PROJECT_DIR$/public/resources/auth.json" />
         <option value="$PROJECT_DIR$/public/resources/new_auth.json" />
         <option value="$PROJECT_DIR$/public/resources/new_auth_vs_old.json" />
         <option value="$PROJECT_DIR$/public/findOldNewDepts.js" />
         <option value="$PROJECT_DIR$/public/resources/admin_capital.json" />
-        <option value="$PROJECT_DIR$/public/resources/flare_experiment_2.json" />
-        <option value="$PROJECT_DIR$/public/resources/admin.min.json" />
         <option value="$PROJECT_DIR$/public/resources/operating_capital.json" />
         <option value="$PROJECT_DIR$/public/resources/operating.min.json" />
-        <option value="$PROJECT_DIR$/public/resources/flare_experiment.json" />
         <option value="$PROJECT_DIR$/public/resources/operating.combined.json" />
         <option value="$PROJECT_DIR$/public/resources/admin.combined.json" />
-        <option value="$PROJECT_DIR$/server.js" />
         <option value="$PROJECT_DIR$/public/employees3.html" />
         <option value="$PROJECT_DIR$/public/kpi.html" />
         <option value="$PROJECT_DIR$/public/procurement.html" />
@@ -156,7 +133,6 @@
         <option value="$PROJECT_DIR$/public/vendor-list.html" />
         <option value="$PROJECT_DIR$/public/visualization.html" />
         <option value="$PROJECT_DIR$/public/resources/extra-depts-json" />
-        <option value="$PROJECT_DIR$/public/config.js" />
         <option value="$PROJECT_DIR$/public/resources/unplaced_auth.json" />
         <option value="$PROJECT_DIR$/public/resources/operatingEmployees.json" />
         <option value="$PROJECT_DIR$/public/approvals.html" />
@@ -164,11 +140,28 @@
         <option value="$PROJECT_DIR$/public/auth-vs-dept.html" />
         <option value="$PROJECT_DIR$/public/circle.html" />
         <option value="$PROJECT_DIR$/public/old-vs-new-auth-tree.html" />
-        <option value="$PROJECT_DIR$/public/vendor.html" />
-        <option value="$PROJECT_DIR$/public/resources/operating.min.extra.json" />
-        <option value="$PROJECT_DIR$/public/resources/admin.min.extra.json" />
         <option value="$PROJECT_DIR$/public/new-depts.html" />
+        <option value="$PROJECT_DIR$/public/templates/kpi.html" />
+        <option value="$PROJECT_DIR$/public/templates/procurement.html" />
+        <option value="$PROJECT_DIR$/public/templates/visualization.html" />
+        <option value="$PROJECT_DIR$/public/resources/flare_experiment_2.json" />
+        <option value="$PROJECT_DIR$/public/vendor.html" />
+        <option value="$PROJECT_DIR$/public/resources/admin.min.extra.json" />
         <option value="$PROJECT_DIR$/public/home.html" />
+        <option value="$PROJECT_DIR$/public/resources/admin.min.json" />
+        <option value="$PROJECT_DIR$/public/resources/flare_experiment.json" />
+        <option value="$PROJECT_DIR$/public/resources/operating.min.extra.json" />
+        <option value="$PROJECT_DIR$/public/config.js" />
+        <option value="$PROJECT_DIR$/server.js" />
+        <option value="$PROJECT_DIR$/public/upload.template.html" />
+        <option value="$PROJECT_DIR$/public/templates/employees3.html" />
+        <option value="$PROJECT_DIR$/public/templates/auth-vs-dept.html" />
+        <option value="$PROJECT_DIR$/public/templates/auth.html" />
+        <option value="$PROJECT_DIR$/public/templates/old-vs-new-auth-tree.html" />
+        <option value="$PROJECT_DIR$/public/templates/circle.html" />
+        <option value="$PROJECT_DIR$/public/templates/approvals.html" />
+        <option value="$PROJECT_DIR$/public/resources/style.css" />
+        <option value="$PROJECT_DIR$/public/templates/newApprovals.html" />
       </list>
     </option>
   </component>
@@ -182,10 +175,10 @@
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1969" />
-    <option name="y" value="-19" />
-    <option name="width" value="1364" />
-    <option name="height" value="728" />
+    <option name="x" value="1569" />
+    <option name="y" value="-548" />
+    <option name="width" value="983" />
+    <option name="height" value="502" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -204,7 +197,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -221,17 +213,37 @@
               <item name="OrgChart-v2" type="b2602c69:ProjectViewProjectNode" />
               <item name="OrgChart-v2" type="462c0819:PsiDirectoryNode" />
               <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="csv" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="OrgChart-v2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="OrgChart-v2" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="OrgChart-v2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="OrgChart-v2" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="old" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="OrgChart-v2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="OrgChart-v2" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/resources/old" />
     <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
@@ -239,15 +251,17 @@
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://C:/Users/noldakowski/Documents/GitHub/OrgChart-v2/server.js" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\noldakowski\Documents\GitHub\OrgChart-v2\public\resources" />
-      <recent name="C:\Users\noldakowski\Documents\GitHub\OrgChart-v2\public" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\noldakowski\Documents\GitHub\OrgChart-v2\public\resources\old" />
       <recent name="C:\Users\noldakowski\Documents\GitHub\OrgChart-v2" />
       <recent name="C:\Users\noldakowski\Documents\GitHub\OrgChart-v2\public" />
       <recent name="C:\Users\noldakowski\Documents\GitHub\OrgChart-v2\public\resources" />
       <recent name="C:\Users\noldakowski\Documents\Updated Web\webdev-northeastern-master\public" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\noldakowski\Documents\GitHub\OrgChart-v2\public\templates" />
+      <recent name="C:\Users\noldakowski\Documents\GitHub\OrgChart-v2\public\resources" />
+      <recent name="C:\Users\noldakowski\Documents\GitHub\OrgChart-v2\public" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -327,42 +341,36 @@
       <workItem from="1509734417856" duration="2062000" />
       <workItem from="1509978658972" duration="12766000" />
       <workItem from="1510064480697" duration="8193000" />
+      <workItem from="1510670948995" duration="19222000" />
+      <workItem from="1510754748381" duration="1152000" />
+      <workItem from="1510760252640" duration="7599000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="503235000" />
+    <option name="totallyTimeSpent" value="536075000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1358" y="-548" width="1936" height="1096" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16145833" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17135416" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16850394" sideWeight="0.5183016" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3496063" sideWeight="0.51537335" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.10840932" sideWeight="0.4816984" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.10739615" sideWeight="0.48462665" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3496063" sideWeight="0.51537335" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16818643" sideWeight="0.48462665" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19583334" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32913387" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32826748" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -397,73 +405,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/vendor-controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="19" lean-forward="false" selection-start-line="11" selection-start-column="12" selection-end-line="16" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/vendor-service-client.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="34" lean-forward="false" selection-start-line="19" selection-start-column="34" selection-end-line="19" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/favicon.ico" />
-    <entry file="file://$PROJECT_DIR$/public/vendor-page-controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="107">
-          <caret line="21" column="15" lean-forward="false" selection-start-line="21" selection-start-column="15" selection-end-line="21" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://O:/NOLDAKOWSKI/Organizational Chart Website/Starter Data Files/Department Structures/OrgChartExcel.json" />
-    <entry file="file://$PROJECT_DIR$/public/resources/unplaced.auth.json" />
-    <entry file="file://$PROJECT_DIR$/public/findOldNewDepts.js" />
-    <entry file="file://$PROJECT_DIR$/public/resources/operating_capital.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="477">
-          <caret line="975" column="14" lean-forward="false" selection-start-line="975" selection-start-column="14" selection-end-line="975" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/resources/operating.combined.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="16660">
-          <caret line="980" column="32" lean-forward="false" selection-start-line="980" selection-start-column="28" selection-end-line="980" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/express.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/vendor-list.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
@@ -492,45 +433,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/resources/admin.combined.json">
+    <entry file="file://$PROJECT_DIR$/public/resources/old/admin.combined.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="285" column="8" lean-forward="true" selection-start-line="285" selection-start-column="8" selection-end-line="285" selection-end-column="8" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/resources/admin_capital.json">
+    <entry file="file://$PROJECT_DIR$/public/resources/old/admin_capital.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="349">
           <caret line="67" column="29" lean-forward="true" selection-start-line="67" selection-start-column="29" selection-end-line="67" selection-end-column="29" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/resources/admin.min.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="523" column="10" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="654" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/resources/operating.min.json">
+    <entry file="file://$PROJECT_DIR$/public/resources/old/operating.min.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="15" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="626" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/resources/flare_experiment.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="881" column="9" lean-forward="true" selection-start-line="881" selection-start-column="9" selection-end-line="881" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/resources/flare_experiment_2.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6">
-          <caret line="1137" column="29" lean-forward="true" selection-start-line="1137" selection-start-column="29" selection-end-line="1137" selection-end-column="29" />
         </state>
       </provider>
     </entry>
@@ -542,28 +462,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/resources/auth.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6579">
-          <caret line="387" column="21" lean-forward="false" selection-start-line="387" selection-start-column="15" selection-end-line="387" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/resources/new_auth.json">
+    <entry file="file://$PROJECT_DIR$/public/resources/old/new_auth.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-347">
           <caret line="1138" column="7" lean-forward="true" selection-start-line="1138" selection-start-column="7" selection-end-line="1138" selection-end-column="7" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/resources/new_auth_vs_old.json">
+    <entry file="file://$PROJECT_DIR$/public/resources/old/new_auth_vs_old.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1837">
           <caret line="963" column="6" lean-forward="true" selection-start-line="963" selection-start-column="6" selection-end-line="963" selection-end-column="6" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/resources/OrgChartExcel.json">
+    <entry file="file://$PROJECT_DIR$/public/resources/adminEmployees.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -577,95 +490,218 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/resources/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1522">
-          <caret line="574" column="8" lean-forward="false" selection-start-line="574" selection-start-column="1" selection-end-line="574" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/resources/extra-depts-json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="141" column="20" lean-forward="false" selection-start-line="141" selection-start-column="20" selection-end-line="141" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/approvals.html" />
     <entry file="file://$PROJECT_DIR$/public/auth.html" />
     <entry file="file://$PROJECT_DIR$/public/auth-vs-dept.html" />
     <entry file="file://$PROJECT_DIR$/public/circle.html" />
-    <entry file="file://$PROJECT_DIR$/public/config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="557">
-          <caret line="57" column="14" lean-forward="true" selection-start-line="57" selection-start-column="14" selection-end-line="57" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/employees3.html" />
     <entry file="file://$PROJECT_DIR$/public/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/kpi.html" />
     <entry file="file://$PROJECT_DIR$/public/old-vs-new-auth-tree.html" />
     <entry file="file://$PROJECT_DIR$/public/procurement.html" />
+    <entry file="file://$PROJECT_DIR$/public/visualization.html" />
+    <entry file="file://$PROJECT_DIR$/public/new-depts.html" />
     <entry file="file://$PROJECT_DIR$/public/test.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2374">
+        <state relative-caret-position="1940">
           <caret line="614" column="6" lean-forward="false" selection-start-line="614" selection-start-column="6" selection-end-line="614" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/upload.template.html">
+    <entry file="file://$PROJECT_DIR$/public/deprecated.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="13" lean-forward="false" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
+        <state relative-caret-position="425">
+          <caret line="25" column="42" lean-forward="false" selection-start-line="25" selection-start-column="42" selection-end-line="25" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/resources/old/extra-depts-json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="742">
+          <caret line="141" column="20" lean-forward="false" selection-start-line="141" selection-start-column="20" selection-end-line="141" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/resources/old/auth.min.new.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/templates/new-depts.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-272">
+          <caret line="20" column="30" lean-forward="true" selection-start-line="20" selection-start-column="30" selection-end-line="20" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/templates/visualization.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="332">
+          <caret line="32" column="57" lean-forward="true" selection-start-line="32" selection-start-column="57" selection-end-line="32" selection-end-column="57" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/vendor.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2669">
-          <caret line="2" column="73" lean-forward="false" selection-start-line="2" selection-start-column="73" selection-end-line="2" selection-end-column="73" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/visualization.html" />
-    <entry file="file://$PROJECT_DIR$/public/resources/operating.min.extra.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="945">
-          <caret line="578" column="13" lean-forward="false" selection-start-line="578" selection-start-column="13" selection-end-line="578" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/resources/admin.min.extra.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-10959">
-          <caret line="671" column="28" lean-forward="true" selection-start-line="671" selection-start-column="28" selection-end-line="671" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/new-depts.html" />
-    <entry file="file://$PROJECT_DIR$/public/templates/procurement.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="458">
-          <caret line="578" column="0" lean-forward="true" selection-start-line="578" selection-start-column="0" selection-end-line="578" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="697">
+          <caret line="62" column="25" lean-forward="true" selection-start-line="62" selection-start-column="25" selection-end-line="62" selection-end-column="25" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="458">
-          <caret line="56" column="21" lean-forward="false" selection-start-line="56" selection-start-column="21" selection-end-line="56" selection-end-column="21" />
+        <state relative-caret-position="68">
+          <caret line="4" column="4" lean-forward="false" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/resources/old/admin.min.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="855">
+          <caret line="296" column="7" lean-forward="true" selection-start-line="296" selection-start-column="7" selection-end-line="296" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/templates/procurement.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="69" column="4" lean-forward="false" selection-start-line="69" selection-start-column="4" selection-end-line="82" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/resources/old/flare_experiment_2.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="78" column="26" lean-forward="false" selection-start-line="78" selection-start-column="26" selection-end-line="78" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/resources/old/flare_experiment.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="1072" column="31" lean-forward="false" selection-start-line="1072" selection-start-column="25" selection-end-line="1072" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/resources/operating.min.extra.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="370">
+          <caret line="340" column="13" lean-forward="true" selection-start-line="340" selection-start-column="13" selection-end-line="340" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/resources/old/auth.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="819">
+          <caret line="387" column="21" lean-forward="false" selection-start-line="387" selection-start-column="15" selection-end-line="387" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="313">
+          <caret line="53" column="73" lean-forward="true" selection-start-line="53" selection-start-column="73" selection-end-line="53" selection-end-column="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/upload.template.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="58" column="92" lean-forward="true" selection-start-line="58" selection-start-column="92" selection-end-line="58" selection-end-column="92" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/templates/auth-vs-dept.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-255">
+          <caret line="453" column="38" lean-forward="false" selection-start-line="453" selection-start-column="38" selection-end-line="453" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/templates/auth.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="306" column="31" lean-forward="false" selection-start-line="306" selection-start-column="31" selection-end-line="306" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/templates/employees3.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="394">
+          <caret line="364" column="28" lean-forward="true" selection-start-line="364" selection-start-column="28" selection-end-line="364" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="63" column="14" lean-forward="true" selection-start-line="63" selection-start-column="14" selection-end-line="63" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/templates/circle.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/resources/admin.min.extra.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="1295" column="13" lean-forward="true" selection-start-line="1295" selection-start-column="13" selection-end-line="1295" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/templates/approvals.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="6" lean-forward="false" selection-start-line="22" selection-start-column="6" selection-end-line="22" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/resources/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1992">
+          <caret line="571" column="14" lean-forward="true" selection-start-line="571" selection-start-column="14" selection-end-line="571" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/templates/kpi.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="383" column="4" lean-forward="false" selection-start-line="383" selection-start-column="4" selection-end-line="408" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/templates/old-vs-new-auth-tree.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="523">
+          <caret line="397" column="5" lean-forward="true" selection-start-line="376" selection-start-column="4" selection-end-line="397" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/templates/newApprovals.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="689">
+          <caret line="647" column="35" lean-forward="true" selection-start-line="647" selection-start-column="35" selection-end-line="647" selection-end-column="35" />
+          <folding>
+            <element signature="n#style#0;n#input#0;n#div#4;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

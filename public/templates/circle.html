@@ -11,6 +11,10 @@
         font: 10px sans-serif;
     }
 
+    #svgId {
+        z-index: 1;
+    }
+
     .link {
         fill: none;
         stroke: #ccc;
@@ -18,26 +22,54 @@
     }
 
 </style>
+<div id="employeeOptions">
+    <input name="updateButton"
+           type="button"
+           class="btn btn-default"
+           value="Show Operating"
+           onclick="updateData('ops')"/>
+
+    <input name="updateButton"
+           type="button"
+           class="btn btn-default"
+           value="Show Administration"
+           onclick="updateData('admin')"/>
+</div>
+<br>
+<br>
+<div id="sizer"></div>
 
 <script>
-
-    var diameter = 1600,
-        padding = {top: 250, side: 400};
+    d3.select("svg").remove();
+    // this gets the size of the window
+    var chartDiv = document.getElementById("sizer");
+    var chartwidth = chartDiv.clientWidth;
+    var chartheight = chartDiv.clientHeight;
+    var diameter = 1500,
+        padding = {top: 550, side: 540};
 
     var tree = d3.layout.tree()
         .size([360, diameter / 2])
-        .separation(function(a, b) { return (a.parent == b.parent ? 1 : 2) / a.depth; });
+        .separation(function (a, b) {
+            return (a.parent == b.parent ? 1 : 2) / a.depth;
+        });
 
     var diagonal = d3.svg.diagonal.radial()
-        .projection(function(d) { return [d.y, d.x / 180 * Math.PI]; });
+        .projection(function (d) {
+            return [d.y, d.x / 180 * Math.PI];
+        });
 
-    var svg = d3.select("body").append("svg")
-        .attr("width", diameter + padding.side)
-        .attr("height", diameter + padding.top)
-        .append("g")
-        .attr("transform", "translate(900, 700)");
+    var svg = d3.select("#sizer").append("svg").attr("width", chartwidth).attr("height", chartheight + 500)
+        .attr("id", "svgId")
+        .call(zm = d3.behavior.zoom().scaleExtent([-1.5, 2]).on("zoom", redraw)).append("g")
+        .attr("transform", "translate(" + (chartwidth / 2.2) + "," + 20 + ")scale(0.72,0.72)");
 
-    d3.json("/resources/OrgChartExcel.json", function(error, data) {
+    // .attr("transform", "translate(1200, 1200)");
+
+    zm.translate([chartwidth / 2.2, 20]).scale(0.72, 0.72);
+
+
+    d3.json("/resources/admin.min.extra.json", function (error, data) {
         var nodes = tree.nodes(data),
             links = tree.links(nodes);
 
@@ -55,27 +87,152 @@
         nodes.enter()
             .append("g")
             .attr("class", "node")
-            .attr("transform", function(d){ return "rotate(" + (d.x - 90) + ")translate(" + d.y + ")"; })
+            .attr("transform", function (d) {
+                return "rotate(" + (d.x - 90) + ")translate(" + d.y + ")";
+            });
 
         // update
         nodes.append("circle")
-            .attr("r", 4.5);
+            .attr("r", 4.5)
+            .attr("z-index", "9997")
+            // fill circles based on their level
+            .style("fill", function (d) {
+                if (d.level == "2") return "red";
+                if (d.level == "3") return "orange";
+                if (d.level == "4") return "green";
+                if (d.level == "5") return "#00afd6";
+                if (d.level == "6") return "purple";
+                if (d.name == "") return "#ffffff";
+            })
+            .style("opacity", function (d) {
+                if (d.level === "") {
+                    return 0;
+                }
+            });
 
         nodes.append("text")
             .attr("dy", ".31em")
-            .attr("text-anchor", function(d) { return d.x < 180 ? "start" : "end"; })
-            .attr("transform", function(d) { return d.x < 180 ? "translate(8)" : "rotate(180)translate(-8)"; })
-            .text(function(d) { return d.name; })
+            .attr("text-anchor", function (d) {
+                return d.x < 180 ? "start" : "end";
+            })
+            .attr("transform", function (d) {
+                return d.x < 180 ? "translate(8)" : "rotate(180)translate(-8)";
+            })
+            .text(function (d) {
+                return d.name;
+            })
             .style("font-weight", "500");
 
         nodes.append("text")
             .attr("dy", ".56em")
-            .attr("text-anchor", function(d) { return d.x < 180 ? "start" : "end"; })
-            .attr("transform", function(d) { return d.x < 180 ? "translate(8)" : "rotate(180)translate(-8)"; })
-            .text(function(d) { return d.title; })
+            .attr("text-anchor", function (d) {
+                return d.x < 180 ? "start" : "end";
+            })
+            .attr("transform", function (d) {
+                return d.x < 180 ? "translate(8)" : "rotate(180)translate(-8)";
+            })
+            .text(function (d) {
+                return d.title;
+            })
             .style("font-weight", "500");
 
     });
+
+    function updateData(side) {
+        d3.select("svg").remove();
+        var svg = d3.select("#sizer").append("svg").attr("width", chartwidth).attr("height", chartheight + 500)
+            .attr("id", "svgId")
+            .call(zm = d3.behavior.zoom().scaleExtent([-1.5, 2]).on("zoom", redraw)).append("g")
+            .attr("transform", "translate(" + (chartwidth / 2.2) + "," + 20 + ")scale(0.72,0.72)");
+
+        // .attr("transform", "translate(1200, 1200)");
+
+        zm.translate([chartwidth / 2.2, 20]).scale(0.72, 0.72);
+
+        var file = "";
+        if (side === "ops") {
+            file = "/resources/operating.min.extra.json";
+        }
+        if (side === "admin") {
+            file = "/resources/admin.min.extra.json";
+        }
+        console.log(file);
+        d3.json(file, function (error, data) {
+            var nodes = tree.nodes(data),
+                links = tree.links(nodes);
+
+            var link = svg.selectAll("path.link")
+                .data(links)
+                .enter()
+                .append("path")
+                .attr("class", "link")
+                .attr("d", diagonal);
+
+            var nodes = svg.selectAll("g.node")
+                .data(nodes);
+
+            // enter
+            nodes.enter()
+                .append("g")
+                .attr("class", "node")
+                .attr("transform", function (d) {
+                    return "rotate(" + (d.x - 90) + ")translate(" + d.y + ")";
+                });
+
+            // update
+            nodes.append("circle")
+                .attr("r", 4.5)
+                .attr("z-index", "9997")
+                // fill circles based on their level
+                .style("fill", function (d) {
+                    if (d.level == "2") return "red";
+                    if (d.level == "3") return "orange";
+                    if (d.level == "4") return "green";
+                    if (d.level == "5") return "#00afd6";
+                    if (d.level == "6") return "purple";
+                    if (d.name == "") return "#ffffff";
+                })
+                .style("opacity", function (d) {
+                    if (d.level === "") {
+                        return 0;
+                    }
+                });
+
+            nodes.append("text")
+                .attr("dy", ".31em")
+                .attr("text-anchor", function (d) {
+                    return d.x < 180 ? "start" : "end";
+                })
+                .attr("transform", function (d) {
+                    return d.x < 180 ? "translate(8)" : "rotate(180)translate(-8)";
+                })
+                .text(function (d) {
+                    return d.name;
+                })
+                .style("font-weight", "500");
+
+            nodes.append("text")
+                .attr("dy", ".56em")
+                .attr("text-anchor", function (d) {
+                    return d.x < 180 ? "start" : "end";
+                })
+                .attr("transform", function (d) {
+                    return d.x < 180 ? "translate(8)" : "rotate(180)translate(-8)";
+                })
+                .text(function (d) {
+                    return d.title;
+                })
+                .style("font-weight", "500");
+
+        });
+    }
+
+    //Redraw for zoom
+    function redraw() {
+        svg.attr("transform",
+            "translate(" + d3.event.translate + ")"
+            + " scale(" + d3.event.scale + ")");
+    }
 
     d3.select(self.frameElement).style("height", (diameter + padding.top) + "px").style("width", (diameter + padding.side) + "px");
 

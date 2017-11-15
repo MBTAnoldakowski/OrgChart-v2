@@ -30,8 +30,8 @@
 
     // size variables for the box to paint in
     var margin = {top: 20, right: 150, bottom: 20, left: 200},
-        width = 1000,
-        height = 1300;
+        width = 1200,
+        height = 2000;
 
     var i = 0,
         //sets the amount of time it takes the tree opening animation to run
@@ -76,7 +76,7 @@
     });
 
     //loads the department data
-    d3.json("resources/flare_experiment_2.json", function (error, flare) {
+    d3.json("resources/admin.min.extra.json", function (error, flare) {
 
         if (error) throw error;
         root = flare;
@@ -113,7 +113,7 @@
 
         // Normalize for fixed-depth.
         nodes.forEach(function (d) {
-            d.y = d.depth * 250;    // I don't know specifically what this does,
+            d.y = d.depth * 300;    // I don't know specifically what this does,
                                     // but I do know that changing the number
                                     // changes the width of the tree that is displayed
         }); //180
@@ -326,7 +326,7 @@
             d3.select("#description").append('text')
                 .text("Click on a number to view departments");
             // load in the new data
-            d3.json("resources/flare_experiment.json", function (error, flare) {
+            d3.json("resources/operating.min.extra.json", function (error, flare) {
                 if (error) throw error;
                 root = flare;
                 root.x0 = height / 2;
@@ -349,7 +349,7 @@
             d3.select("#description").append('text')
                 .text("Click on a number to view departments");
             // load in the new data
-            d3.json("resources/flare_experiment_2.json", function (error, flare) {
+            d3.json("resources/admin.min.extra.json", function (error, flare) {
                 if (error) throw error;
 
                 root = flare;

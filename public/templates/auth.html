@@ -25,11 +25,11 @@
 <!-- this is an empty div for the script to populate with the tree -->
 <div id="chart"></div>
 <script>
-    document.getElementById("old-button").style.background='#8e97b2';
-    document.getElementById("old-button").style.border='3px solid black';
+    document.getElementById("old-button").style.background = '#8e97b2';
+    document.getElementById("old-button").style.border = '3px solid black';
 
-    document.getElementById("new-button").style.background='#ffffff';
-    document.getElementById("new-button").style.border='1px solid black';
+    document.getElementById("new-button").style.background = '#ffffff';
+    document.getElementById("new-button").style.border = '1px solid black';
     // clears the screen in case a visualization is still loaded
     d3.select("svg").remove();
 
@@ -68,8 +68,7 @@
 
 
     //loads the department data
-    d3.json("resources/auth.json", function (error, flare)
-    {
+    d3.json("resources/old/auth.json", function (error, flare) {
 
         if (error) throw error;
         root = flare;
@@ -287,7 +286,7 @@
     // this is triggered when you hit the 'View Operating' button, it just loads the
     // Operating data instead of the Administration data
     function updateData() {
-        d3.json("resources/auth.json", function (error, flare) {
+        d3.json("resources/old/auth.json", function (error, flare) {
             if (error) throw error;
 
             root = flare;
@@ -296,16 +295,16 @@
 
             update(root);
         });
-        document.getElementById("old-button").style.background='#8e97b2';
-        document.getElementById("new-button").style.background='#ffffff';
-        document.getElementById("old-button").style.border='3px solid black';
-        document.getElementById("new-button").style.border='1px solid black';
+        document.getElementById("old-button").style.background = '#8e97b2';
+        document.getElementById("new-button").style.background = '#ffffff';
+        document.getElementById("old-button").style.border = '3px solid black';
+        document.getElementById("new-button").style.border = '1px solid black';
 
     }
 
     // this function updates the data to display administration
     function updateData2() {
-        d3.json("resources/auth.min.new.json", function (error, flare) {
+        d3.json("resources/old/auth.min.new.json", function (error, flare) {
             if (error) throw error;
 
             root = flare;
@@ -313,10 +312,10 @@
             root.y0 = 0;
             update(root);
         });
-        document.getElementById("new-button").style.background='#8e97b2';
-        document.getElementById("old-button").style.background='#ffffff';
-        document.getElementById("new-button").style.border='3px solid black';
-        document.getElementById("old-button").style.border='1px solid black';
+        document.getElementById("new-button").style.background = '#8e97b2';
+        document.getElementById("old-button").style.background = '#ffffff';
+        document.getElementById("new-button").style.border = '3px solid black';
+        document.getElementById("old-button").style.border = '1px solid black';
     }
 
     // expands a node

@@ -27,7 +27,7 @@
                 templateUrl: './templates/kpi.html'
             })
             .when('/approvals', {
-                templateUrl: './templates/approvals.html'
+                templateUrl: './templates/newApprovals.html'
             })
             .when('/auth-vs-dept', {
                 templateUrl: './templates/auth-vs-dept.html'
@@ -58,6 +58,9 @@
             })
             .when('/newAuth', {
                 templateUrl: './templates/old-vs-new-auth-tree.html'
+            })
+            .when('/circle', {
+                templateUrl: './templates/circle.html'
             })
             .when('/vendors', {
                 templateUrl: 'vendor-list.html',

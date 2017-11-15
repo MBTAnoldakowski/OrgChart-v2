@@ -19,6 +19,7 @@
            class="btn btn-default"
            value="View Administration"
            onclick="updateData2()"/>
+
 </div>
 <!-- this is an empty div for the script to populate with the tree -->
 <div id="chart"></div>
@@ -39,6 +40,8 @@
 <br/>
 <br/>
 <br/>
+
+
 <script>
     var dataDisplayed = 0; // when 0, admin- when 1, ops
 
@@ -48,7 +51,7 @@
     // size variables for the box to paint in
     var margin = {top: 20, right: 150, bottom: 20, left: 200},
         width = 1000,
-        height = 1300;
+        height = 2200;
 
     var i = 0,
         //sets the amount of time it takes the tree opening animation to run
@@ -83,7 +86,7 @@
         .attr("class", "tooltip")
         .style("opacity", 1e-6);
 
-    //loads the department data
+    //loads the initial department data
     d3.json("resources/flare_experiment_2.json", function (error, flare) {
         if (error) throw error;
 
@@ -332,7 +335,6 @@
             .duration(300)
             .style("opacity", 1);
     }
-
 
 
     // controls how long it takes the tooltip to appear after you hover

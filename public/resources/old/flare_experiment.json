@@ -257,9 +257,21 @@
               "deptno": "193005"
             },
             {
+              "name": "SMI Administration Arborway",
+              "level": "5",
+              "deptno": "193011",
+              "new": true
+            },
+            {
               "name": "Signals",
               "level": "5",
               "deptno": "191005"
+            },
+            {
+              "name": "Signals Arborway",
+              "level": "5",
+              "deptno": "191011",
+              "new": true
             },
             {
               "name": "Communications",
@@ -298,6 +310,12 @@
               "deptno": "151005"
             },
             {
+              "name": "Rapid Transit Arborway",
+              "level": "5",
+              "deptno": "152011",
+              "new": true
+            },
+            {
               "name": "MOW Rail Equipment",
               "level": "5",
               "deptno": "153005"
@@ -306,6 +324,12 @@
               "name": "MOW Rapid Transit",
               "level": "5",
               "deptno": "152005"
+            },
+            {
+              "name": "Surface Light Rail Arborway",
+              "level": "5",
+              "deptno": "151011",
+              "new": true
             }
           ]
         },
@@ -352,6 +376,12 @@
               "name": "Trans & Distrib Arborway",
               "level": "5",
               "deptno": "196011"
+            },
+            {
+              "name": "Power Systems and Equipment Arborway",
+              "level": "5",
+              "deptno": "197011",
+              "new": true
             }
           ]
         },
@@ -438,6 +468,20 @@
               "name": "Green Line Reservoir Station",
               "level": "5",
               "deptno": "235249"
+            }
+          ]
+        },
+        {
+          "name": "GLX",
+          "level": "4",
+          "deptno": "313000",
+          "new": true,
+          "children": [
+            {
+              "name": "GLX",
+              "level": "5",
+              "deptno": "313002",
+              "new": true
             }
           ]
         },
@@ -676,6 +720,30 @@
               "name": "OCC & Training - Bus Inspectors",
               "level": "5",
               "deptno": "236080"
+            },
+            {
+              "name": "OCC & Training High Street",
+              "level": "5",
+              "deptno": "227008",
+              "new": true
+            },
+            {
+              "name": "OCC & Training Charlestown",
+              "level": "5",
+              "deptno": "227080",
+              "new": true
+            },
+            {
+              "name": "OCC & Training Water Street",
+              "level": "5",
+              "deptno": "236006",
+              "new": true
+            },
+            {
+              "name": "OCC & Training - Cabot",
+              "level": "5",
+              "deptno": "227067",
+              "new": true
             }
           ]
         },
@@ -798,7 +866,7 @@
           ]
         },
         {
-          "name": "Capital Program Oversight",
+          "name": "Capital Project Oversight",
           "level": "4",
           "deptno": "320000",
           "newApproval1": "DPETERSEN JTHORNTON",
@@ -818,17 +886,6 @@
             }
           ],
           "children": [
-            {
-              "name": "Green Line Expansion",
-              "level": "5",
-              "deptno": "000000",
-              "gotApprovalFrom": [
-                {
-                  "name": "General Manager",
-                  "deptno": "100000"
-                }
-              ]
-            },
             {
               "name": "D&D Quality Control 100 Summer Street",
               "level": "5",
@@ -858,6 +915,36 @@
               "name": "D&C Management Engineering Arlington",
               "level": "5",
               "deptno": "322280"
+            },
+            {
+              "name": "D&C Engineering Charlestown",
+              "level": "5",
+              "deptno": "311081",
+              "new": true
+            },
+            {
+              "name": "D&C Engineering South Station",
+              "level": "5",
+              "deptno": "311280",
+              "new": true
+            },
+            {
+              "name": "D&C AGM Office 100 Summer St",
+              "level": "5",
+              "deptno": "311124",
+              "new": true
+            },
+            {
+              "name": "D&C Management Engineering Equipment",
+              "level": "5",
+              "deptno": "322081",
+              "new": true
+            },
+            {
+              "name": "D&C Management Administration South Station",
+              "level": "5",
+              "deptno": "322081",
+              "new": true
             },
             {
               "name": "Capital Project Oversight PP",
@@ -994,6 +1081,30 @@
               "approval7": "MABRAMO",
               "approval8": "LMRAMIREZ",
               "requestors": "YGOMEZ"
+            },
+            {
+              "name": "Construction Management Design Arborway",
+              "level": "5",
+              "deptno": "323011",
+              "new": true
+            },
+            {
+              "name": "Construction Management CA/T Park Plaza",
+              "level": "5",
+              "deptno": "324002",
+              "new": true
+            },
+            {
+              "name": "Construction Management CA/T South Station",
+              "level": "5",
+              "deptno": "324280",
+              "new": true
+            },
+            {
+              "name": "Construction ROW Park Plaza",
+              "level": "5",
+              "deptno": "325002",
+              "new": true
             }
           ]
         }

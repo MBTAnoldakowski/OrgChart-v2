@@ -566,6 +566,14 @@ input:checked + .slider:before {
     right: 0;
 }
 
+.to-bottom {
+    bottom: 0;
+    width: 50%;
+    left: 50%;
+    right: 50%;
+    position: fixed;
+}
+
 /*
 .approvals-container {
     border: medium red dashed;

@@ -61,7 +61,7 @@
         zm.translate([chartwidth / 2.2, 20]).scale(0.72, 0.72);
 
         //loads in the administrative employee data
-        d3.json("resources/OrgChartExcel.json", function (error, flare) {
+        d3.json("resources/adminEmployees.json", function (error, flare) {
             if (error) throw error;
             root = flare;
             root.x0 = height / 2;
@@ -261,7 +261,7 @@
 
         // this function updates the data to display administration
         function updateData2() {
-            d3.json("resources/OrgChartExcel.json", function (error, flare) {
+            d3.json("resources/adminEmployees.json", function (error, flare) {
                 if (error) throw error;
                 root = flare;
                 root.x0 = height / 2;

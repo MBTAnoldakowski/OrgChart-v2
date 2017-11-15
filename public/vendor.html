@@ -77,7 +77,7 @@
     // size variables for the box to paint in
     var margin = {top: 20, right: 150, bottom: 20, left: 200},
         width = 1000,
-        height = 1300;
+        height = 2200;
 
     var i = 0,
         //sets the amount of time it takes the tree opening animation to run
@@ -121,7 +121,7 @@
     });
 
     //loads the department data
-    d3.json("resources/admin.min.json", function (error, flare) {
+    d3.json("resources/admin.min.extra.json", function (error, flare) {
         if (error) throw error;
         root = flare;
         root.x0 = height / 2;
@@ -636,7 +636,7 @@
     // this is triggered when you hit the 'View Operating' button, it just loads the
     // Operating data instead of the Administration data
     function updateData() {
-        d3.json("resources/operating.min.json", function (error, flare) {
+        d3.json("resources/operating.min.extra.json", function (error, flare) {
             if (error) throw error;
             root = flare;
             root.x0 = height / 2;

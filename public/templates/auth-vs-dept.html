@@ -82,7 +82,7 @@
 
 
     //loads the department data
-    d3.json("resources/admin.combined.json", function (error, flare) {
+    d3.json("resources/old/admin.combined.json", function (error, flare) {
         if (error) throw error;
 
         root = flare;
@@ -436,7 +436,7 @@
     // this is triggered when you hit the 'View Operating' button, it just loads the
     // Operating data instead of the Administration data
     function updateData() {
-        var filename = "resources/operating.combined.json";
+        var filename = "resources/old/operating.combined.json";
 
         d3.json(filename, function (error, flare) {
             if (error) throw error;
@@ -451,7 +451,7 @@
 
     // this function updates the data to display administration
     function updateData2() {
-        var filename = "resources/admin.combined.json";
+        var filename = "resources/old/admin.combined.json";
 
         d3.json(filename, function (error, flare) {
             if (error) throw error;

@@ -117,15 +117,15 @@
           ]
         },
         {
-          "name": "T/C Finance Accounts Rec Park Plaza",
-          "level": "5",
-          "deptno": "831002",
-          "new": true
-        },
-        {
           "name": "Center for Audit/Gaap Adjustment",
           "level": "5",
           "deptno": "871002",
+          "new": true
+        },
+        {
+          "name": "T/C Finance Accounts Rec Park Plaza",
+          "level": "5",
+          "deptno": "831002",
           "new": true
         }
       ]
@@ -149,6 +149,224 @@
           "name": "General Activities Everett Str",
           "level": "5",
           "deptno": "861108"
+        }
+      ]
+    },
+    {
+      "name": "Real Estate",
+      "level": "4",
+      "deptno": "330000",
+      "children": [
+        {
+          "name": "Real Estate",
+          "level": "5",
+          "deptno": "331002"
+        },
+        {
+          "name": "Real Estate Transit Park Plaza",
+          "level": "5",
+          "deptno": "332002",
+          "new": true
+        },
+        {
+          "name": "Real Estate Park Plaza",
+          "level": "5",
+          "deptno": "334002",
+          "new": true
+        },
+        {
+          "name": "Construction Real Estate RR Park Plaza",
+          "level": "5",
+          "deptno": "335002",
+          "new": true
+        },
+        {
+          "name": "Construction Real Estate ROW Park Plaza",
+          "level": "5",
+          "deptno": "336002",
+          "new": true
+        },
+        {
+          "name": "Construction Real Estate Development Washington",
+          "level": "5",
+          "deptno": "337013",
+          "new": true
+        },
+        {
+          "name": "Facilities Management",
+          "level": "5",
+          "deptno": "442002"
+        }
+      ]
+    },
+    {
+      "name": "Rail Operations",
+      "level": "4",
+      "deptno": "210000",
+      "children": [
+        {
+          "name": "Commuter Ferry Supervision",
+          "level": "5",
+          "deptno": "202008"
+        },
+        {
+          "name": "Commuter Ferry Subsidy",
+          "level": "5",
+          "deptno": "202026"
+        },
+        {
+          "name": "Commuter Rail Eng Park Plaza",
+          "level": "5",
+          "deptno": "213002"
+        },
+        {
+          "name": "Commuter Rail Subsidy",
+          "level": "5",
+          "deptno": "215008"
+        },
+        {
+          "name": "Commuter Rail Supervision",
+          "level": "5",
+          "deptno": "211008"
+        },
+        {
+          "name": "Commuter Rail Transportation Back Bay",
+          "level": "5",
+          "deptno": "215036",
+          "new": true
+        },
+        {
+          "name": "Commuter Rail Transportation North Station",
+          "level": "5",
+          "deptno": "215213",
+          "new": true
+        },
+        {
+          "name": "Commuter Rail Transportation South Station",
+          "level": "5",
+          "deptno": "215281",
+          "new": true
+        },
+        {
+          "name": "CRR Cape Flyer Operations",
+          "level": "5",
+          "deptno": "215001"
+        },
+        {
+          "name": "South Station Intermodal",
+          "level": "5",
+          "deptno": "862281",
+          "new": true
+        }
+      ]
+    },
+    {
+      "name": "Diversity & Civil Rights",
+      "level": "4",
+      "deptno": "135000",
+      "children": [
+        {
+          "name": "EEO/AA Administration",
+          "level": "5",
+          "deptno": "131002"
+        },
+        {
+          "name": "Disadvantaged Business Enterprise",
+          "level": "5",
+          "deptno": "132002"
+        },
+        {
+          "name": "EEO/AA Contract Administration",
+          "level": "5",
+          "deptno": "133002"
+        },
+        {
+          "name": "Training",
+          "level": "5",
+          "deptno": "134002"
+        },
+        {
+          "name": "Supplier Diversity",
+          "level": "5",
+          "deptno": "571002",
+          "new": true
+        }
+      ]
+    },
+    {
+      "name": "Customer Experience",
+      "level": "4",
+      "deptno": "110000",
+      "children": [
+        {
+          "name": "Charlie Store",
+          "level": "5",
+          "deptno": "528103"
+        },
+        {
+          "name": "Customer Experience Div Marketing",
+          "level": "5",
+          "deptno": "110002"
+        },
+        {
+          "name": "Customer Care Center",
+          "level": "5",
+          "deptno": "275008"
+        },
+        {
+          "name": "Communications",
+          "level": "5",
+          "deptno": "521002"
+        }
+      ]
+    },
+    {
+      "name": "Customer Technology Department",
+      "level": "4",
+      "deptno": "118000",
+      "children": [
+        {
+          "name": "AFC 1.0",
+          "level": "5",
+          "deptno": "116002",
+          "children": [
+            {
+              "name": "Revenue Maintenance Charlestown",
+              "level": "6",
+              "deptno": "263077"
+            },
+            {
+              "name": "Revenue Maintenance Everett",
+              "level": "6",
+              "deptno": "263106"
+            },
+            {
+              "name": "Revenue Audit",
+              "level": "6",
+              "deptno": "267002"
+            },
+            {
+              "name": "Revenue Maintenance Franklin",
+              "level": "6",
+              "deptno": "263123"
+            }
+          ]
+        },
+        {
+          "name": "AFC 2.0",
+          "level": "5",
+          "deptno": "117002"
+        },
+        {
+          "name": "Customer Technology Division",
+          "level": "5",
+          "deptno": "118002"
+        },
+        {
+          "name": "Automated Fare Collection Park Plaza",
+          "level": "5",
+          "deptno": "856002",
+          "new": true
         }
       ]
     },
@@ -215,136 +433,6 @@
           "name": "Winter Storm Costs",
           "level": "5",
           "deptno": "141002"
-        }
-      ]
-    },
-    {
-      "name": "Real Estate",
-      "level": "4",
-      "deptno": "330000",
-      "children": [
-        {
-          "name": "Real Estate",
-          "level": "5",
-          "deptno": "331002"
-        },
-        {
-          "name": "Real Estate Transit Park Plaza",
-          "level": "5",
-          "deptno": "332002",
-          "new": true
-        },
-        {
-          "name": "Real Estate Park Plaza",
-          "level": "5",
-          "deptno": "334002",
-          "new": true
-        },
-        {
-          "name": "Construction Real Estate RR Park Plaza",
-          "level": "5",
-          "deptno": "335002",
-          "new": true
-        },
-        {
-          "name": "Construction Real Estate ROW Park Plaza",
-          "level": "5",
-          "deptno": "336002",
-          "new": true
-        },
-        {
-          "name": "Construction Real Estate Development Washington",
-          "level": "5",
-          "deptno": "337013",
-          "new": true
-        },
-        {
-          "name": "Facilities Management",
-          "level": "5",
-          "deptno": "442002"
-        }
-      ]
-    },
-    {
-      "name": "Diversity & Civil Rights",
-      "level": "4",
-      "deptno": "135000",
-      "children": [
-        {
-          "name": "EEO/AA Administration",
-          "level": "5",
-          "deptno": "131002"
-        },
-        {
-          "name": "Disadvantaged Business Enterprise",
-          "level": "5",
-          "deptno": "132002"
-        },
-        {
-          "name": "EEO/AA Contract Administration",
-          "level": "5",
-          "deptno": "133002"
-        },
-        {
-          "name": "Training",
-          "level": "5",
-          "deptno": "134002"
-        },
-        {
-          "name": "Supplier Diversity",
-          "level": "5",
-          "deptno": "571002",
-          "new": true
-        }
-      ]
-    },
-    {
-      "name": "Customer Technology Department",
-      "level": "4",
-      "deptno": "118000",
-      "children": [
-        {
-          "name": "AFC 1.0",
-          "level": "5",
-          "deptno": "116002",
-          "children": [
-            {
-              "name": "Revenue Maintenance Charlestown",
-              "level": "6",
-              "deptno": "263077"
-            },
-            {
-              "name": "Revenue Maintenance Everett",
-              "level": "6",
-              "deptno": "263106"
-            },
-            {
-              "name": "Revenue Audit",
-              "level": "6",
-              "deptno": "267002"
-            },
-            {
-              "name": "Revenue Maintenance Franklin",
-              "level": "6",
-              "deptno": "263123"
-            }
-          ]
-        },
-        {
-          "name": "AFC 2.0",
-          "level": "5",
-          "deptno": "117002"
-        },
-        {
-          "name": "Automated Fare Collection Park Plaza",
-          "level": "5",
-          "deptno": "856002",
-          "new": true
-        },
-        {
-          "name": "Customer Technology Division",
-          "level": "5",
-          "deptno": "118002"
         }
       ]
     },
@@ -464,33 +552,6 @@
           "name": "Environmental Affairs",
           "level": "5",
           "deptno": "156002"
-        }
-      ]
-    },
-    {
-      "name": "Customer Experience",
-      "level": "4",
-      "deptno": "110000",
-      "children": [
-        {
-          "name": "Charlie Store",
-          "level": "5",
-          "deptno": "528103"
-        },
-        {
-          "name": "Customer Experience Div Marketing",
-          "level": "5",
-          "deptno": "110002"
-        },
-        {
-          "name": "Customer Care Center",
-          "level": "5",
-          "deptno": "275008"
-        },
-        {
-          "name": "Communications",
-          "level": "5",
-          "deptno": "521002"
         }
       ]
     },
@@ -615,67 +676,6 @@
           "name": "Vendor Management",
           "level": "5",
           "deptno": "805402"
-        }
-      ]
-    },
-    {
-      "name": "Rail Operations",
-      "level": "4",
-      "deptno": "210000",
-      "children": [
-        {
-          "name": "Commuter Ferry Supervision",
-          "level": "5",
-          "deptno": "202008"
-        },
-        {
-          "name": "Commuter Ferry Subsidy",
-          "level": "5",
-          "deptno": "202026"
-        },
-        {
-          "name": "Commuter Rail Eng Park Plaza",
-          "level": "5",
-          "deptno": "213002"
-        },
-        {
-          "name": "Commuter Rail Subsidy",
-          "level": "5",
-          "deptno": "215008"
-        },
-        {
-          "name": "Commuter Rail Supervision",
-          "level": "5",
-          "deptno": "211008"
-        },
-        {
-          "name": "Commuter Rail Transportation Back Bay",
-          "level": "5",
-          "deptno": "215036",
-          "new": true
-        },
-        {
-          "name": "Commuter Rail Transportation North Station",
-          "level": "5",
-          "deptno": "215213",
-          "new": true
-        },
-        {
-          "name": "Commuter Rail Transportation South Station",
-          "level": "5",
-          "deptno": "215281",
-          "new": true
-        },
-        {
-          "name": "CRR Cape Flyer Operations",
-          "level": "5",
-          "deptno": "215001"
-        },
-        {
-          "name": "South Station Intermodal",
-          "level": "5",
-          "deptno": "862281",
-          "new": true
         }
       ]
     },

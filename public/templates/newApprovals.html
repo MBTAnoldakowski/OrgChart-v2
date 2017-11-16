@@ -2,7 +2,7 @@
 <div id="option">
     <h1>MBTA Approvals Chart</h1>
     <div class="lastUpdated">
-        <p>Last Updated: 10/5/2017 10:00AM</p>
+        <p>Last Updated: 11/16/2017 11:45AM</p>
     </div>
     <div class="update">
         <a class="btn btn-warning" href="#!/update">Update</a>
@@ -147,7 +147,9 @@
                                     // changes the width of the tree that is displayed
             if (dataDisplayed == 0) {
                 adminDeptNumbers.push(d.deptno);
-            } else {
+
+            }
+            if (dataDisplayed == 1) {
                 opsDeptNumbers.push(d.deptno);
             }
         }); //180 is the default
@@ -682,7 +684,6 @@
     function highlight(deptNos) {
         d3.selectAll("text")
             .style("fill", function (d) {
-                console.log(d);
                 if (deptNos.indexOf(d.deptno) > -1) {
                     window.scrollTo(0, d.x);
                     return "red";
@@ -693,6 +694,7 @@
             });
     }
 
+
     function unHighlight() {
         d3.selectAll("text")
             .style("fill", function (d) {
@@ -700,6 +702,32 @@
             });
 
     }
+
+    // Get the modal
+    var modal = document.getElementById('myModal');
+
+    // Get the button that opens the modal
+    var btn = document.getElementById("modalBtn");
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on the button, open the modal
+    btn.onclick = function () {
+        modal.style.display = "block";
+    };
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+        modal.style.display = "none";
+    };
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    };
 
 </script>
 <!--This div contains the legend of the chart -->
@@ -733,11 +761,53 @@
            onclick="expandAll()"
            style="float:right;"/>
 
-    <div>
+    <div class="push-right">
         <br/>
-        <input type="text" name="search" id="search" placeholder="Search by department #"
+        <br/>
+        <input type="text" name="search" id="search" placeholder="Search by dept #"
                oninput="searchForDepartment()" onclick="searchForDepartment()">
+
+        <button class="btn" id="modalBtn"><span class="glyphicon-key glyphicon glyphicon-question-sign"></span>
+        </button>
     </div>
+</div>
+<div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content" style=";">
+        <span class="close">&times;</span>
+        <h2>Help</h2>
+        <div id="modelText">
+            <h3>About</h3>
+            <p>This page displays old and new requestor and approval structures for each department that exists within
+                FMIS. It shows Operating and Administrative Departments, and the Operating and Capital approval
+                structures for them.</p>
+            <h3>Triggering Tooltip Information</h3>
+            <p>To trigger the tooltip, hover over the name of a department (not the dot next to it!!). </p>
+            <h3>Operating and Administrative Buttons</h3>
+            <p>These buttons allow you to switch between viewing operating and administrative departments. It will cause
+                the tree that is currently selected to disappear, and the requested one to appear. If you click the
+                button that is the value of the one currently displayed (i.e. if I am looking at the Administration
+                departments and I click the ‘View Administration’ button), the current tree will reload. This is useful
+                to correct any errors that might occur. Instead of reloading the page completely, this quick reload can
+                potentially alleviate some time and pain. </p>
+            <h3>Searching for Departments</h3>
+            <p>To search for a department by number, click in the box in the lower right-hand corner of the screen. To
+                receive results, you will have to type at least two numbers. Results will be highlighted in red, and the
+                page will automatically scroll to your search results. Sometimes this can cause a problem if you don't
+                erase the search results after finishing your search.</p>
+            <h3>Nodes</h3>
+            <p>By clicking on one of these nodes, the child departments underneath the one that was clicked will
+                collapse and the tree structure will adjust to fill the page.
+                The nodes are color coded by their departmental level. Level 1 is not displayed on the chart because it
+                messed everything up, but it is the entire MBTA organization. Be careful not to confuse these color
+                codes with the color codes for text that are included in some of the charts.
+            </p>
+            <h3>Expand All</h3>
+            <p>Pressing this button will cause all nodes to become visible within the current view.</p>
+        </div>
+    </div>
+
 </div>
 <!-- This div contains the navigation-->
 <div id="employeeButton" class="btn-group-vertical">

@@ -45,7 +45,9 @@
 
 <script>
     var dataDisplayed = 0; // when 0, admin- when 1, ops
-    var allDeptNumbers = [];
+    var adminDeptNumbers = [];
+    var opsDeptNumbers = [];
+
     // clears the screen in case a visualization is still loaded
     d3.select("svg").remove();
 
@@ -119,11 +121,18 @@
         setTimeout(function () {
             expandAll();
         }, 100);
+        setTimeout(function () {
+            updateData();
+        }, 100);
+        setTimeout(function () {
+            updateData2();
+        }, 100);
     });
 
     d3.select(self.frameElement).style("height", "800px");
 
     function update(source, remove) {
+
         if (remove) {
             svg.selectAll("g.node").remove();
         }
@@ -136,7 +145,11 @@
             d.y = d.depth * 250;    // I don't know specifically what this does,
                                     // but I do know that changing the number
                                     // changes the width of the tree that is displayed
-            allDeptNumbers.push(d.deptno);
+            if (dataDisplayed == 0) {
+                adminDeptNumbers.push(d.deptno);
+            } else {
+                opsDeptNumbers.push(d.deptno);
+            }
         }); //180 is the default
 
         // Update the nodes
@@ -329,6 +342,7 @@
             d.y0 = d.y;
         });
 
+        searchForDepartment();
     }
 
     // Toggle children on click.
@@ -579,7 +593,6 @@
             update(root, true);
         });
         dataDisplayed = 1;
-        window.setTimeout(searchForDepartment(), 6000);
     }
 
     // this function updates the data to display administration
@@ -594,7 +607,6 @@
             update(root, true);
         });
         dataDisplayed = 0;
-        window.setTimeout(searchForDepartment(), 6000);
     }
 
     function findApproval(deptno) {
@@ -627,25 +639,56 @@
         unHighlight();
         var searchTerms = document.getElementById("search").value.toString();
         var results = [];
+        var toSearch;
+        if (dataDisplayed == 0) {
+            toSearch = adminDeptNumbers;
+        } else {
+            toSearch = opsDeptNumbers;
+        }
         if (searchTerms.length > 1) {
-            for (d in allDeptNumbers) {
-                if (allDeptNumbers[d].indexOf(searchTerms) > -1) {
-                    results.push(allDeptNumbers[d]);
+            for (d in toSearch) {
+                if (toSearch[d].indexOf(searchTerms) > -1) {
+                    results.push(toSearch[d]);
+                }
+            }
+            if (results.length > 0) {
+                highlight(results);
+            } else {
+                console.log('switch');
+
+                if (dataDisplayed === 0) {
+                    for (d in opsDeptNumbers) {
+                        if (opsDeptNumbers[d].indexOf(searchTerms) > -1 || opsDeptNumbers.length === 0) {
+                            updateData();
+                            return;
+                        }
+                        ;
+                    }
+                }
+                if (dataDisplayed === 1) {
+                    for (d in adminDeptNumbers) {
+                        if (adminDeptNumbers[d].indexOf(searchTerms) > -1 || adminDeptNumbers.length === 0) {
+                            updateData2();
+                            return;
+                        }
+                    }
                 }
             }
         }
-        highlight(results);
+        console.log(results);
     }
 
     // highlights all names that appear in a certain KPI section
     function highlight(deptNos) {
         d3.selectAll("text")
             .style("fill", function (d) {
+                console.log(d);
                 if (deptNos.indexOf(d.deptno) > -1) {
+                    window.scrollTo(0, d.x);
                     return "red";
                 }
                 else {
-                    return "black";
+                    return "grey";
                 }
             });
     }
@@ -657,6 +700,7 @@
             });
 
     }
+
 </script>
 <!--This div contains the legend of the chart -->
 <div id="legend">
@@ -688,14 +732,14 @@
            value="Expand All"
            onclick="expandAll()"
            style="float:right;"/>
+
     <div>
-        <label>Search by Dept #</label>
-        <input type="text" name="search" id="search" oninput="searchForDepartment()">
+        <br/>
+        <input type="text" name="search" id="search" placeholder="Search by department #"
+               oninput="searchForDepartment()" onclick="searchForDepartment()">
     </div>
 </div>
 <!-- This div contains the navigation-->
 <div id="employeeButton" class="btn-group-vertical">
-    <a class="btn btn-default" href="#!/">Home</a>
-
-
+    <a class="btn btn-primary btn-lg" href="#!/">Home</a>
 </div>

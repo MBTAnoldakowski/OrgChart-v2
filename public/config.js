@@ -67,5 +67,8 @@
                 controller: 'vendorController',
                 controllerAs: 'model'
             })
+            .when('/categories', {
+                templateUrl: './templates/categories.html'
+            })
     }
 })();

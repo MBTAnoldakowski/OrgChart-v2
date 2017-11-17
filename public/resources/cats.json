@@ -1,0 +1,62 @@
+{
+  "children": [
+    {
+      "name": "Clothing and Footwear",
+      "code": "CLT",
+      "children": [
+        {
+          "name": "Clothing, Uniforms, Footwear, Accessories, Personal Care Products and Bedding",
+          "link": "http://www.mass.gov/anf/docs/osd/uguide/clt08.pdf",
+          "code": "CLT08"
+        }
+      ]
+    },
+    {
+      "name": "Energy, Utilities, and Fuel",
+      "code": "ENE",
+      "children": [
+        {
+          "code": "ENE40",
+          "name": "Diesel Fuels: Ultra Low Sulfur Diesel and Biodiesel",
+          "link": ""
+        },
+        {
+          "code": "ENE41",
+          "name": "Gasoline",
+          "link": ""
+        },
+        {
+          "code": "ENE43",
+          "name": "Electricity",
+          "link": ""
+        },
+        {
+          "code": "ENE44",
+          "name": "Natural Gas",
+          "link": ""
+        },
+        {
+          "code": "ENE45",
+          "name": "No. 2 Heating Oil and No. 4 & 6 Residual Fuel",
+          "link": ""
+        },
+        {
+          "code": "ENE46",
+          "name": "Propane",
+          "link": ""
+        }
+      ]
+    },
+    {
+      "name": "Facilities Maintenance and Repair",
+      "code": "FAC",
+      "children": [
+        {
+          "code": "ENE40",
+          "name": "Diesel Fuels: Ultra Low Sulfur Diesel and Biodiesel",
+          "link": ""
+        }
+      ]
+    }
+  ]
+}

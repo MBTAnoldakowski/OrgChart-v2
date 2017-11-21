@@ -1,0 +1,324 @@
+<div id="option">
+    <h1>CommBuys Statewide Contracts</h1>
+    <p>This page edited 11/20/2017 2:24PM</p>
+    <p>Contracts September - October 2017</p>
+</div>
+<div class="row">
+    <div class="col-xs-4">
+        <div style="background-color: lightgrey;" onclick=drawButtons()>
+            <h3 style="text-align: center">
+                <br>
+                Facilities Maintenance and Repair
+                <br>
+                &nbsp
+            </h3>
+        </div>
+        <div style="cursor: hand; position: absolute; top:100%; left:0px; right: 0px;"
+             onclick="drawButtons()">
+            <img src="resources/icons/FAC.png" class="categoryIcon" id="facilities"
+                 style="width: 50%;margin: auto;display: block;"/>
+        </div>
+        <div class="list-group" id="facList"
+             style="opacity: 0; visibility: hidden; position: absolute; top:100%; left:0px; right: 0px; padding-right: 15px;padding-left: 10px;overflow-y:scroll; height:150% ">
+            <a href="#" class="list-group-item list-group-item-action">Dapibus ac facilisis in</a>
+            <a href="#" class="list-group-item list-group-item-action">Morbi leo risus</a>
+            <a href="#" class="list-group-item list-group-item-action">Porta ac consectetur ac</a>
+            <a href="#" class="list-group-item list-group-item-action">Vestibulum at eros</a>
+        </div>
+    </div>
+</div>
+<script>
+    function drawButtons() {
+        var opacity = $("#facilities").css("opacity");
+        if (opacity == 1) {
+            $("#facilities").fadeTo(1000, 0.25);
+            $("#facList").fadeTo(1000, 0.85);
+            document.getElementById("facList").style.visibility = "visible";
+        } else {
+            $("#facilities").fadeTo(1000, 1);
+            $("#facList").fadeTo(1000, 0);
+            setTimeout(
+                function () {
+                    document.getElementById("facList").style.visibility = "hidden"
+                }, 1000);
+
+        }
+    }
+
+    // this variable counts how many elements there are so far, to make correct rows.
+    var count = 0;
+    var jsonTree;
+
+    function loadJSON(callback) {
+
+        var xobj = new XMLHttpRequest();
+        xobj.overrideMimeType("application/json");
+        xobj.open('GET', 'resources/cats.json', true); // Replace 'my_data' with the path to your file
+        xobj.onreadystatechange = function () {
+            if (xobj.readyState == 4 && xobj.status == "200") {
+                // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
+                callback(xobj.responseText);
+            }
+        };
+        xobj.send(null);
+    }
+
+    function init() {
+        loadJSON(function (response) {
+            // Parse JSON string into object
+            jsonTree = JSON.parse(response);
+        });
+
+        setTimeout(function () {
+            console.log(jsonTree);
+//            initializeRows();
+        }, 1000);
+    }
+
+    init();
+
+    function initializeRows() {
+        var dataCount = 0;
+        var colIdCount = 0;
+        var rowIdName = "";
+        var colIdName = "";
+        for (data in jsonTree.children) {
+            if (colIdCount % 3 === 0) {
+                var div = document.createElement("div");
+                div.setAttribute('class', 'row');
+                div.setAttribute('id', 'row' + count);
+                rowIdName = 'row' + count;
+                colIdCount = 0;
+                count++;
+                document.body.appendChild(div);
+            }
+            var col = document.createElement("div");
+            col.setAttribute('class', 'col-md-4');
+            colIdName = rowIdName + 'col' + colIdCount;
+            col.setAttribute('id', colIdName);
+            document.getElementById(rowIdName).appendChild(col);
+            //console.log('#row' + count + "col" + colIdCount);
+            // setTimeout(initD3(count, colIdCount, jsonTree.children[dataCount]), 10000);
+            colIdCount++;
+            dataCount++;
+        }
+
+    }
+
+
+    function initD3(rowNumber, columnNumber, rootVar) {
+
+        console.log('drawing ' + rowNumber + " " + columnNumber + " " + rootVar);
+        setTimeout(function () {
+            var margin = {top: 5, right: 5, bottom: 5, left: 5},
+                width = 400 - margin.right - margin.left,
+                height = 400 - margin.top - margin.bottom;
+
+            var i = 0,
+                //sets the amount of time it takes the tree opening animation to run
+                duration = 750,
+                root,
+                svg;
+
+            var tree = d3.layout.tree()
+                .size([height, width]);
+
+            var diagonal = d3.svg.diagonal()
+                .projection(function (d) {
+                    return [d.y, d.x];
+                });
+            var rowName = "#row" + rowNumber + "col" + columnNumber;
+            //console.log(rowName);
+            svg = d3.select(rowName).append("svg")
+                .attr("width", width + margin.right + margin.left)
+                .attr("height", height + margin.top + margin.bottom)
+                // .style("background-color", getRandomColor())
+                .append("g")
+                .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+            function getRandomColor() {
+                var letters = '0123456789ABCDEF';
+                var color = '#';
+                for (var i = 0; i < 6; i++) {
+                    color += letters[Math.floor(Math.random() * 16)];
+                }
+                return color;
+            }
+
+            root = rootVar;
+            //console.log(root);
+            setTimeout(update(root), 1000);
+
+            function update(source) {
+                // Compute the new tree layout.
+                var nodes = tree.nodes(root).reverse(),
+                    links = tree.links(nodes);
+
+
+                // Normalize for fixed-depth.
+                nodes.forEach(function (d) {
+                    d.y = d.depth * 250;    // I don't know specifically what this does,
+                    // but I do know that changing the number
+                    // changes the width of the tree that is displayed
+                }); //180
+
+                // Update the nodes
+                var node = svg.selectAll("g.node")
+                    .data(nodes, function (d) {
+                        return d.id || (d.id = ++i);
+                    });
+
+                // Enter any new nodes at the parent's previous position.
+                var nodeEnter = node.enter().append("g")
+                    .attr("class", "node")
+                    .attr("transform", function (d) {
+                        return "translate(" + source.y + "," + source.x + ")";
+                    })
+                    .on("click", click);
+
+
+                nodeEnter.append("circle")
+                    .attr("r", 1e-6);
+
+                // appends the name text to the nodes
+                nodeEnter.append("text")
+                    .attr("x", function (d) {
+                        return d.children || d._children ? -10 : 10;
+                    })
+                    .attr("dy", ".35em")
+                    .attr("text-anchor", function (d) {
+                        return d.children || d._children ? "end" : "start";
+                    })
+                    //the name is appended to the dot right here
+                    .text(function (d) {
+                        return d.name;
+                    })
+                    .style("fill-opacity", 1)
+                    // the names are styled here based on PO data
+                    .style("fill", "black");
+
+                // Transition nodes to their new position.
+                var nodeUpdate = node.transition()
+                    .duration(duration)
+                    .attr("transform", function (d) {
+                        return "translate(" + d.y + "," + d.x + ")";
+                    });
+
+                // size/style the circles based on levels
+                nodeUpdate.select("circle")
+                    .attr("r", function (d) {
+                        // change this number to make dots bigger or smaller
+                        return 6;
+                    })
+                    .attr("opacity", function (d) {
+                        if (d.isParent) {
+                            return 0;
+                        }
+                    });
+                node
+                    .append("svg:foreignObject")
+                    .attr("width", 128)
+                    .attr("height", 128)
+                    .attr("y", "-100px")
+                    .attr("x", "100px")
+                    .append("xhtml:img")
+                    .attr("z-index", "9999")
+                    .attr("class", function (d) {
+                        if (d.isParent) {
+                            return "categoryIcon";
+                        }
+                    })
+                    .attr("src", function (d) {
+                        if (d.isParent) {
+                            console.log(d);
+                            var codeName = "/resources/icons/" + d.code + ".png";
+                            console.log(codeName);
+                            return codeName;
+                        }
+                    })
+                    .append("text")
+                    .attr("x", function (d) {
+                        return "100px";
+                    })
+                    .attr("y", "-100px")
+                    .text(function (d) {
+                        if (d.isParent) {
+                            return d.name;
+                        }
+                    });
+
+
+                // Transition exiting nodes to the parent's new position.
+                var nodeExit = node.exit().transition()
+                    .duration(duration)
+                    .attr("transform", function (d) {
+                        return "translate(" + source.y + "," + source.x + ")";
+                    })
+                    .remove();
+
+                nodeExit.select("circle")
+                    .attr("r", 1e-6);
+
+                nodeExit.select("text")
+                    .style("fill-opacity", 1e-6);
+
+                // Update the links…
+                var link = svg.selectAll("path.link")
+                    .data(links, function (d) {
+                        return d.target.id;
+                    });
+
+                // Enter any new links at the parent's previous position.
+                link.enter().insert("path", "g")
+                    .attr("class", "link")
+                    .attr("d", function (d) {
+                        var o = {x: source.x, y: source.y};
+                        return diagonal({source: o, target: o});
+                    });
+
+                // Transition links to their new position.
+                link.transition()
+                    .duration(duration)
+                    .attr("d", diagonal);
+
+                // Transition exiting nodes to the parent's new position.
+                link.exit().transition()
+                    .duration(duration)
+                    .attr("d", function (d) {
+                        var o = {x: source.x, y: source.y};
+                        return diagonal({source: o, target: o});
+                    })
+                    .remove();
+
+                // Stash the old positions for transition.
+                nodes.forEach(function (d) {
+                    d.x0 = d.x;
+                    d.y0 = d.y;
+                });
+
+            }
+
+            // Toggle children on click.
+            function click(d) {
+                if (d.children) {
+                    d._children = d.children;
+                    d.children = null;
+                } else {
+                    d.children = d._children;
+                    d._children = null;
+                }
+                update(d, false);
+            }
+
+            function collapse(d) {
+                if (d.children) {
+                    d._children = d.children;
+                    d._children.forEach(collapse);
+                    d.children = null;
+                }
+            }
+        }, 1000)
+    }
+
+
+</script>

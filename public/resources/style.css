@@ -2,6 +2,11 @@
     cursor: pointer;
 }
 
+.nodeRoot {
+    cursor: pointer;
+    color: red;
+}
+
 .node text {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 11pt;
@@ -671,4 +676,46 @@ input:checked + .slider:before {
 .glyphicon.glyphicon-one-fine-dot:before {
     content: "\25cf";
     font-size: 2em;
+}
+
+/* this is for the OSD page*/
+
+.categoryIcon {
+    border: 3px solid black;
+    border-radius: 50%;
+    background-color: lightgrey;
+    width: 80%;
+    margin: auto;
+    display: block;
+    bottom: 0;
+}
+
+.categoryIconDiv {
+    position: absolute;
+    width: 100%;
+}
+
+.itemList {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    top: 20%;
+    left: 10px;
+    right: 0px;
+    padding-right: 2px;
+    padding-left: 20px;
+    overflow-y: auto;
+    bottom: 0;
+}
+
+.contractTitle {
+    cursor: pointer;
+    text-align: center;
+    height: 20%;
+}
+
+.contractContainer {
+    height: 400px;
+    width: 100%;
+    position: relative;
 }

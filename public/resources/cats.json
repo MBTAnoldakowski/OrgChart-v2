@@ -3,7 +3,8 @@
     {
       "name": "Clothing and Footwear",
       "code": "CLT",
-      "children": [
+      "isParent": true,
+      "_children": [
         {
           "name": "Clothing, Uniforms, Footwear, Accessories, Personal Care Products and Bedding",
           "link": "http://www.mass.gov/anf/docs/osd/uguide/clt08.pdf",
@@ -14,47 +15,597 @@
     {
       "name": "Energy, Utilities, and Fuel",
       "code": "ENE",
-      "children": [
+      "isParent": true,
+      "_children": [
         {
           "code": "ENE40",
           "name": "Diesel Fuels: Ultra Low Sulfur Diesel and Biodiesel",
-          "link": ""
+          "link": "http://www.mass.gov/anf/docs/osd/uguide/ene40.pdf"
         },
         {
           "code": "ENE41",
           "name": "Gasoline",
-          "link": ""
+          "link": "http://www.mass.gov/anf/docs/osd/uguide/ene41.pdf"
         },
         {
           "code": "ENE43",
           "name": "Electricity",
-          "link": ""
+          "link": "http://www.mass.gov/anf/docs/osd/uguide/ene43.pdf"
         },
         {
           "code": "ENE44",
           "name": "Natural Gas",
-          "link": ""
+          "link": "http://www.mass.gov/anf/docs/osd/uguide/ene44.pdf"
         },
         {
           "code": "ENE45",
           "name": "No. 2 Heating Oil and No. 4 & 6 Residual Fuel",
-          "link": ""
+          "link": "http://www.mass.gov/anf/docs/osd/uguide/ene45.pdf"
         },
         {
           "code": "ENE46",
           "name": "Propane",
-          "link": ""
+          "link": "http://www.mass.gov/anf/docs/osd/uguide/ene46.pdf"
         }
       ]
     },
     {
       "name": "Facilities Maintenance and Repair",
       "code": "FAC",
-      "children": [
+      "isParent": true,
+      "_children": [
         {
-          "code": "ENE40",
-          "name": "Diesel Fuels: Ultra Low Sulfur Diesel and Biodiesel",
-          "link": ""
+          "code": "FAC64",
+          "name": "Security, Surveillance, Monitoring and Access Control Systems",
+          "link": "http://www.mass.gov/anf/docs/osd/uguide/fac64.pdf"
+        },
+        {
+          "code": "FAC77",
+          "name": "Landscaping, Tree Trimming, Catch Basin Cleaning, Snow Removal and Related Products",
+          "link": "http://www.mass.gov/anf/docs/osd/uguide/fac77.pdf"
+        },
+        {
+          "code": "FAC80",
+          "name": "Water Treatment Chemicals and Systems",
+          "link": "http://www.mass.gov/anf/docs/osd/uguide/fac80.pdf"
+        },
+        {
+          "code": "FAC81",
+          "name": "Janitorial Services Environmentally Preferable",
+          "link": "http://www.mass.gov/anf/docs/osd/uguide/fac81.pdf"
+        },
+        {
+          "code": "FAC82",
+          "name": "Hazardous/Universal, Medical, and Electronic Waste Disposal and Emergency Response",
+          "link": "http://www.mass.gov/anf/docs/osd/uguide/fac82.pdf"
+        },
+        {
+          "code": "FAC83",
+          "name": "Renewable and Alternative Energy Credit",
+          "link": "http://www.mass.gov/anf/docs/osd/uguide/fac83designateddcamm.pdf"
+        },
+        {
+          "code": "FAC85",
+          "name": "Environmentally Preferable Cleaning Products, Program, Equipment and Supplies",
+          "link": "http://www.mass.gov/anf/docs/osd/uguide/fac85.pdf"
+        },
+        {
+          "code": "FAC86",
+          "name": "Solid Waste and Recycling Services, Surplus Disposal",
+          "link": "http://www.mass.gov/anf/docs/osd/uguide/fac86.pdf"
+        },
+        {
+          "code": "FAC87",
+          "name": "Recycling Containers, Compost Bins and Rain Barrels",
+          "link": "http://www.mass.gov/anf/docs/osd/uguide/fac87designateddep.pdf"
+        },
+        {
+          "code": "FAC88",
+          "name": "Lawns and Grounds Equipment, Parts and Services",
+          "link": "http://www.mass.gov/anf/docs/osd/uguide/fac88.pdf"
+        },
+        {
+          "code": "FAC89",
+          "name": "Electricity Demand Response and Forward Capacity Market Services",
+          "link": "http://www.mass.gov/anf/docs/osd/uguide/fac89designateddcamm.pdf"
+        },
+        {
+          "code": "FAC90",
+          "name": "Carpet and Mattress Recycling Services",
+          "link": "http://www.mass.gov/anf/docs/osd/uguide/fac90designateddep.pdf"
+        },
+        {
+          "code": "FAC91",
+          "name": "Solar PV Inspection Services",
+          "link": "http://www.mass.gov/anf/docs/osd/uguide/fac91designateddcamm.pdf"
+        },
+        {
+          "code": "FAC92",
+          "name": "Integrated Pest Management Services",
+          "link": "http://www.mass.gov/anf/docs/osd/uguide/fac92.pdf"
+        },
+        {
+          "code": "FAC93",
+          "name": "Security Services, Private Investigative Services, and Fence Rental",
+          "link": "http://www.mass.gov/anf/docs/osd/uguide/fac93.pdf"
+        },
+        {
+          "code": "FAC94",
+          "name": "Facilities Maintenance, Repair & Operations (MRO) with Small Hand & Power Tools",
+          "link": "http://www.mass.gov/anf/docs/osd/uguide/fac94.pdf"
+        },
+        {
+          "code": "FAC96",
+          "name": "Records Management, Storage, Archiving and Moving Services",
+          "link": "http://www.mass.gov/anf/docs/osd/uguide/fac96.pdf"
+        },
+        {
+          "code": "FAC97",
+          "name": "Equipment Rental",
+          "link": "http://www.mass.gov/anf/docs/osd/uguide/fac97.pdf"
+        },
+        {
+          "code": "FAC100",
+          "name": "Building Maintenance Repair and Operations Products and Supplies",
+          "link": "http://www.mass.gov/anf/docs/osd/uguide/fac100.pdf"
+        },
+        {
+          "code": "FAC102",
+          "name": "Athletic Supplies and Physical Education Equipment",
+          "link": "http://www.mass.gov/anf/docs/osd/uguide/fac102.pdf"
+        },
+        {
+          "code": "FAC104",
+          "name": "Landscaping Products, Parks and Recreation Equipment and Related Products, Supplies and Service",
+          "link": "http://www.mass.gov/anf/docs/osd/uguide/fac104.pdf"
+        },
+        {
+          "code": "FAC105",
+          "name": "Maintenance Repair and Operations Industrial and Building Retail Products",
+          "link": "http://www.mass.gov/anf/docs/osd/uguide/fac105.pdf"
+        }
+      ]
+    },
+    {
+      "name": "Public Safety Equipment, Supplies",
+      "code": "FIR",
+      "isParent": true,
+      "_children": [
+        {
+          "code": "FIR04",
+          "name": "Public Safety Equipment, Supplies, Services and Repairs",
+          "link": "http://www.mass.gov/anf/docs/osd/uguide/fir04.pdf"
+        }
+      ]
+    },
+    {
+      "name": "Food and Groceries",
+      "code": "GRO",
+      "isParent": true,
+      "_children": [
+        {
+          "code": "GRO30",
+          "name": "Prime Grocers",
+          "link": "http://www.mass.gov/anf/docs/osd/uguide/gro30.pdf"
+        },
+        {
+          "code": "GRO32",
+          "name": "Dairy Products",
+          "link": "http://www.mass.gov/anf/docs/osd/uguide/gro32.pdf"
+        },
+        {
+          "code": "GRO33",
+          "name": "Baked Goods",
+          "link": "http://www.mass.gov/anf/docs/osd/uguide/gro33.pdf"
+        },
+        {
+          "code": "GRO34",
+          "name": "Bottled Water, Emergency Bottled Water, Water Filtration and Reverse Osmosis, Coffee Services and Supplies",
+          "link": "http://www.mass.gov/anf/docs/osd/uguide/gro34.pdf"
+        },
+        {
+          "code": "GRO35",
+          "name": "Foodservice Equipment & Supplies",
+          "link": "http://www.mass.gov/anf/docs/osd/uguide/gro35.pdf"
+        }
+      ]
+    },
+    {
+      "name": "Homeland Security",
+      "code": "HLS",
+      "isParent": true,
+      "_children": [
+        {
+          "code": "HLS02",
+          "name": "Disaster Debris Monitoring Services",
+          "link": "mailto:Tina.Urato@state.ma.us"
+        },
+        {
+          "code": "HLS03",
+          "name": "Disaster Debris Management Services",
+          "link": "mailto:Tina.Urato@state.ma.us"
+        },
+        {
+          "code": "HLS05",
+          "name": "Homeland Security, Public Safety, and Traffic Safety Supplies",
+          "link": "http://www.mass.gov/anf/docs/osd/uguide/hls05.pdf"
+        }
+      ]
+    },
+    {
+      "name": "Healthcare and Lab Products",
+      "code": "HSP",
+      "isParent": true,
+      "_children": [
+        {
+          "code": "HSP39",
+          "name": "GPO for Medical Commodities and Equipment",
+          "link": "http://www.mass.gov/anf/docs/osd/uguide/hsp39.pdf"
+        },
+        {
+          "code": "HSP40",
+          "name": "Medical Commodities",
+          "link": "http://www.mass.gov/anf/docs/osd/uguide/hsp40.pdf"
+        },
+        {
+          "code": "HSP41",
+          "name": "Laboratory Supplies and Equipment",
+          "link": "http://www.mass.gov/anf/docs/osd/uguide/hsp41.pdf"
+        }
+      ]
+    },
+    {
+      "name": "Information Technology Hardware",
+      "code": "ITC",
+      "isParent": true,
+      "_children": [
+        {
+          "code": "ITC47",
+          "name": "IT Hardware and Services",
+          "link": "http://www.mass.gov/anf/docs/osd/uguide/itc47.pdf"
+        },
+        {
+          "code": "ITC49",
+          "name": "IT Asset Term Leasing Services",
+          "link": "http://www.mass.gov/anf/docs/osd/uguide/itc49-.pdf"
+        },
+        {
+          "code": "ITC54",
+          "name": "Data Cable Products and Services",
+          "link": "http://www.mass.gov/anf/docs/osd/uguide/itc54.pdf"
+        },
+        {
+          "code": "ITC66",
+          "name": "Photocopiers, Printers, Scanners, and Related Devices and Services",
+          "link": "http://www.mass.gov/anf/docs/osd/uguide/itc66.pdf"
+        }
+      ]
+    },
+    {
+      "name": "Information Technology Software and Services",
+      "code": "ITS",
+      "isParent": true,
+      "_children": [
+        {
+          "code": "ITS19",
+          "name": "Oracle Software and Services",
+          "link": "http://www.mass.gov/anf/docs/osd/uguide/its19.pdf"
+        },
+        {
+          "code": "ITS51",
+          "name": "eDiscovery Services",
+          "link": "http://www.mass.gov/anf/docs/osd/uguide/its51designateditd.pdf"
+        },
+        {
+          "code": "ITS53",
+          "name": "ProjServGIS - Geographical Information Services",
+          "link": "http://www.mass.gov/anf/docs/osd/uguide/its53projservgis.pdf"
+        },
+        {
+          "code": "ITS53",
+          "name": "ProjServSP - Solution Providers",
+          "link": "http://www.mass.gov/anf/docs/osd/uguide/its53projservsp.pdf"
+        },
+        {
+          "code": "ITS53",
+          "name": "ProjServTS - Technical Specialist",
+          "link": "http://www.mass.gov/anf/docs/osd/uguide/its53projservts.pdf"
+        },
+        {
+          "code": "ITS55",
+          "name": "IBM Software and Services",
+          "link": "http://www.mass.gov/anf/docs/osd/uguide/its55.pdf"
+        },
+        {
+          "code": "ITS58",
+          "name": "Software Reseller",
+          "link": "http://www.mass.gov/anf/docs/osd/uguide/its58.pdf"
+        },
+        {
+          "code": "ITS59",
+          "name": "Independent IT Research Services",
+          "link": "http://www.mass.gov/anf/docs/osd/uguide/its59.pdf"
+        },
+        {
+          "code": "ITS61",
+          "name": "IT Accessibility Audit, Consulting and Training Services",
+          "link": "mailto:Sarah.Bourne@state.ma.us"
+        },
+        {
+          "code": "ITS63",
+          "name": "StaffAugCat1 - Full Service",
+          "link": "http://www.mass.gov/anf/docs/osd/uguide/its63cat1-and-3.pdf"
+        },
+        {
+          "code": "ITS63",
+          "name": "StaffAugCat2 - Lower Overhead",
+          "link": "http://www.mass.gov/anf/docs/osd/uguide/its63cat2.pdf"
+        },
+        {
+          "code": "ITS65",
+          "name": "ESRI Geographic Information Products and Services",
+          "link": "http://www.mass.gov/anf/docs/osd/uguide/its65designateditd.pdf"
+        },
+        {
+          "code": "ITS67",
+          "name": "Equipment Maintenance Program",
+          "link": "http://www.mass.gov/anf/docs/osd/uguide/its67.pdf"
+        },
+        {
+          "code": "SBP01",
+          "name": "Small-Scale IT Professional Services",
+          "link": "http://www.mass.gov/anf/docs/osd/uguide/sbp01.pdf"
+        }
+      ]
+    },
+    {
+      "name": "Information Technology Telecommunications",
+      "code": "ITT",
+      "isParent": true,
+      "_children": [
+        {
+          "code": "ITT46",
+          "name": "Network Services Statewide Contract",
+          "link": "http://www.mass.gov/anf/docs/osd/uguide/itt46.pdf"
+        },
+        {
+          "code": "ITT50",
+          "name": "Converged Voice and Data Communications Systems, Services and Equipment",
+          "link": "http://www.mass.gov/anf/docs/osd/uguide/itt50.pdf"
+        },
+        {
+          "code": "ITT57",
+          "name": "2 -Way Radio Equipment and Supplies",
+          "link": "http://www.mass.gov/anf/docs/osd/uguide/itt57.pdf"
+        }
+      ]
+    },
+    {
+      "name": "Medical",
+      "code": "MED",
+      "isParent": true,
+      "_children": [
+        {
+          "code": "MED47",
+          "name": "Pharmaceutical Prime Vendor Drug Wholesaler",
+          "link": "http://www.mass.gov/anf/docs/osd/uguide/med47.pdf"
+        },
+        {
+          "code": "MED48",
+          "name": "Pharmaceutical GPO",
+          "link": "http://www.mass.gov/anf/docs/osd/uguide/med48.pdf"
+        },
+        {
+          "code": "MED51",
+          "name": "Influenza Vaccine (2017 - 2018 Flu Season)",
+          "link": "http://www.mass.gov/anf/docs/osd/uguide/med51.pdf"
+        }
+      ]
+    },
+    {
+      "name": "Miscellaneous",
+      "code": "Misc",
+      "isParent": true,
+      "_children": [
+        {
+          "code": "SSP1601",
+          "name": "Scrap Metal Services",
+          "link": "http://www.mass.gov/anf/docs/osd/uguide/ssp1601.pdf"
+        }
+      ]
+    },
+    {
+      "name": "Office, Recreation, and Educational Supplies",
+      "code": "OFF",
+      "isParent": true,
+      "_children": [
+        {
+          "code": "OFF36",
+          "name": "Office Supplies, Recycled Paper, and Envelopes",
+          "link": "http://www.mass.gov/anf/docs/osd/uguide/off36.pdf"
+        },
+        {
+          "code": "OFF38",
+          "name": "Office, School, Library Furniture, Accessories and Installation",
+          "link": "http://www.mass.gov/anf/docs/osd/uguide/off38.pdf"
+        },
+        {
+          "code": "OFF39",
+          "name": "Postage and Mail Processing Equipment, Accessories, Services and Supplies",
+          "link": "http://www.mass.gov/anf/docs/osd/uguide/off39.pdf"
+        },
+        {
+          "code": "OFF40",
+          "name": "Audio, Video, Multimedia Presentation Equipment and Services",
+          "link": "http://www.mass.gov/anf/docs/osd/uguide/off40.pdf"
+        },
+        {
+          "code": "OFF44",
+          "name": "Print, Copy, Mail Services, and Printed Promotional Products",
+          "link": "http://www.mass.gov/anf/docs/osd/uguide/off44.pdf"
+        },
+        {
+          "code": "OFF45",
+          "name": "Art and Instructional School Supplies",
+          "link": "http://www.mass.gov/anf/docs/osd/uguide/off45.pdf"
+        },
+        {
+          "code": "OFF46",
+          "name": "Small Package Delivery and Logistics Services",
+          "link": "http://www.mass.gov/anf/docs/osd/uguide/off46.pdf"
+        }
+      ]
+    },
+    {
+      "name": "Vehicles, Transportation, Road Maintenance",
+      "code": "OVM",
+      "isParent": true,
+      "_children": [
+        {
+          "code": "OVM09",
+          "name": "Short-term Rental of Various Light Duty Vehicles",
+          "link": "http://www.mass.gov/anf/docs/osd/uguide/ovm09.pdf"
+        }
+      ]
+    },
+    {
+      "name": "Professional Services",
+      "code": "PRF",
+      "isParent": true,
+      "_children": [
+        {
+          "code": "PRF54",
+          "name": "TELP - Tax Exempt Lease Purchase (TELP)",
+          "link": "http://www.mass.gov/anf/docs/osd/uguide/prf54.pdf"
+        },
+        {
+          "code": "PRF55",
+          "name": "Debt Collection Services",
+          "link": "mailto:debtcollectioncontract@massmail.state.ma.us"
+        },
+        {
+          "code": "PRF56",
+          "name": "Audit/Accounting, Compliance, Security, and Revenue Recovery",
+          "link": "mailto:PRF56DataSecurity@massmail.state.ma.us"
+        },
+        {
+          "code": "PRF57",
+          "name": "Enterprise Temporary Help Services",
+          "link": "http://www.mass.gov/anf/docs/osd/uguide/prf57.pdf"
+        },
+        {
+          "code": "PRF59",
+          "name": "Card Processing and Merchant Services",
+          "link": "http://www.mass.gov/anf/docs/osd/uguide/prf59.pdf"
+        },
+        {
+          "code": "PRF59A",
+          "name": "Electronic Payment Solutions",
+          "link": "http://www.mass.gov/anf/docs/osd/uguide/prf59adesignatedosc.pdf"
+        },
+        {
+          "code": "PRF60",
+          "name": "Advertising, Marketing and Event Planning Services",
+          "link": "http://www.mass.gov/anf/docs/osd/uguide/prf60.pdf"
+        },
+        {
+          "code": "PRF61",
+          "name": "Management Consultants, Program Coordinators and Planners Services",
+          "link": "http://www.mass.gov/anf/docs/osd/uguide/prf61.pdf"
+        },
+        {
+          "code": "PRF62",
+          "name": "Energy Consulting Services",
+          "link": "http://www.mass.gov/anf/docs/osd/uguide/prf62designateddoer.pdf"
+        },
+        {
+          "code": "PRF63",
+          "name": "Foreign Language Interpretation and Translation Services",
+          "link": "http://www.mass.gov/anf/docs/osd/uguide/prf63.pdf"
+        },
+        {
+          "code": "PRF67",
+          "name": "Environmental Engineering, Diagnostics, and Testing",
+          "link": "http://www.mass.gov/anf/docs/osd/uguide/prf67designateddcamm.pdf"
+        }
+      ]
+    },
+    {
+      "name": "Trades Services",
+      "code": "TRD",
+      "isParent": true,
+      "_children": [
+        {
+          "code": "TRD01",
+          "name": "Boilers, Drains, Electricians, Fencing, General Contracting, Generators-Turbine, Glass/Window/Doors, HVAC/Sheet Metal, Painting, Plumbing Services",
+          "link": "http://www.mass.gov/anf/docs/osd/uguide/trd01.pdf"
+        },
+        {
+          "code": "TRD02",
+          "name": "Tradesperson Installation, Repair and Maintenance Statewide Contract",
+          "link": "http://www.mass.gov/anf/docs/osd/uguide/trd02-.pdf"
+        }
+      ]
+    },
+    {
+      "name": "Vehicles, Transportation, Road Maintenance",
+      "code": "VEH",
+      "isParent": true,
+      "_children": [
+        {
+          "code": "VEH84A",
+          "name": "Maintenance Management and Accident Subrogation Services",
+          "link": "http://www.mass.gov/anf/docs/osd/uguide/veh84a.pdf"
+        },
+        {
+          "code": "VEH93",
+          "name": "Heavy Duty Vehicles",
+          "link": "http://www.mass.gov/anf/docs/osd/uguide/veh93.pdf"
+        },
+        {
+          "code": "VEH95",
+          "name": "Sodium Chloride (Road Salt)",
+          "link": "http://www.mass.gov/anf/docs/osd/uguide/veh95.pdf"
+        },
+        {
+          "code": "VEH96",
+          "name": "Light, Medium, Heavy Duty OEM and NON-OEM Motorized Vehicle Parts, Refined Motor Oil, Lubricants",
+          "link": "http://www.mass.gov/anf/docs/osd/uguide/veh96.pdf"
+        },
+        {
+          "code": "VEH97",
+          "name": "Tires, Tubes and Services",
+          "link": "http://www.mass.gov/anf/docs/osd/uguide/veh97.pdf"
+        },
+        {
+          "code": "VEH98",
+          "name": "Purchase of Light Duty Vehicles - Passenger Cars, SUVs, Trucks, Vans, SSVs and PPVs",
+          "link": "http://www.mass.gov/anf/docs/osd/uguide/veh98.pdf"
+        },
+        {
+          "code": "VEH99",
+          "name": "Fleet Information Management System",
+          "link": "http://www.mass.gov/anf/docs/osd/uguide/veh99.pdf"
+        },
+        {
+          "code": "VEH100",
+          "name": "Fuel Cards and Fuel Management Services",
+          "link": "http://www.mass.gov/anf/docs/osd/uguide/veh100.pdf"
+        },
+        {
+          "code": "VEH102",
+          "name": "Advanced Vehicle Technology Equipment, Supplies and Services",
+          "link": "http://www.mass.gov/anf/docs/osd/uguide/veh102designateddoer.pdf"
+        },
+        {
+          "code": "VEH103",
+          "name": "Windshield and Glass Replacement Services",
+          "link": "http://www.mass.gov/anf/docs/osd/uguide/veh103.pdf"
+        },
+        {
+          "code": "VEH105",
+          "name": "Vehicle Lifts",
+          "link": "http://www.mass.gov/anf/docs/osd/uguide/veh105.pdf"
         }
       ]
     }

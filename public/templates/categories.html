@@ -50,9 +50,10 @@
         setTimeout(function () {
             console.log(jsonTree);
             initializeRows();
-        }, 1000);
+        }, 500);
     }
 
+    0
     init();
 
     function initializeRows() {
@@ -80,14 +81,15 @@
             var contractList = "";
             for (cat in jsonTree.children[dataCount]._children) {
                 contractList = contractList + "<a href='" + jsonTree.children[dataCount]._children[cat].link
-                    + "' class='list-group-item list-group-item-action'>" + jsonTree.children[dataCount]._children[cat].name + "</a>"
-
+                    + "' class='list-group-item list-group-item-action' target='_blank'>" + jsonTree.children[dataCount]._children[cat].name + " (" + jsonTree.children[dataCount]._children[cat].code + ")" + "</a>"
             }
             document.getElementById(colIdName).innerHTML = "<div class='contractContainer'>" +
                 "<h3 class='contractTitle' onclick=drawButtons('" + jsonTree.children[dataCount].code + "')><br/>"
                 + jsonTree.children[dataCount].name
                 + "&nbsp&nbsp<br/></h3>" +
-                "<div class='categoryIconDiv'><img src='/resources/icons/" + jsonTree.children[dataCount].code + ".png' class='categoryIcon' id ='" + jsonTree.children[dataCount].code + "'/>" +
+                "<div class='categoryIconDiv'><img src='/resources/icons/" + jsonTree.children[dataCount].code
+                + ".png' class='categoryIcon' onclick=drawButtons('" + jsonTree.children[dataCount].code
+                + "') id ='" + jsonTree.children[dataCount].code + "'/>" +
                 "</div>" +
                 "<div class='list-group itemList' id='" + jsonTree.children[dataCount].code + "List'>" + contractList +
                 "</div></div>";

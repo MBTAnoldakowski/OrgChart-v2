@@ -13,7 +13,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.73727214">
+    <splitter split-orientation="horizontal" split-proportion="0.8001257">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file leaf-file-name="old-categories.html" pinned="false" current-in-tab="false">
@@ -35,8 +35,8 @@
           <file leaf-file-name="categories.html" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/public/templates/categories.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="444">
-                  <caret line="83" column="203" lean-forward="false" selection-start-line="83" selection-start-column="203" selection-end-line="83" selection-end-column="203" />
+                <state relative-caret-position="221">
+                  <caret line="14" column="12" lean-forward="false" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
                   <folding />
                 </state>
               </provider>
@@ -45,8 +45,8 @@
           <file leaf-file-name="cats.json" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/public/resources/cats.json">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="73">
-                  <caret line="550" column="59" lean-forward="true" selection-start-line="550" selection-start-column="59" selection-end-line="550" selection-end-column="59" />
+                <state relative-caret-position="9350">
+                  <caret line="550" column="59" lean-forward="false" selection-start-line="550" selection-start-column="59" selection-end-line="550" selection-end-column="59" />
                   <folding />
                 </state>
               </provider>
@@ -69,8 +69,8 @@
           <file leaf-file-name="style.css" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/public/resources/style.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="274">
-                  <caret line="690" column="20" lean-forward="false" selection-start-line="690" selection-start-column="20" selection-end-line="690" selection-end-column="20" />
+                <state relative-caret-position="699">
+                  <caret line="735" column="0" lean-forward="false" selection-start-line="735" selection-start-column="0" selection-end-line="735" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -219,8 +219,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -262,6 +260,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -371,12 +371,13 @@
       <workItem from="1510856822731" duration="616000" />
       <workItem from="1510943663583" duration="8425000" />
       <workItem from="1511187896444" duration="19277000" />
-      <workItem from="1511273244185" duration="11600000" />
+      <workItem from="1511273244185" duration="12790000" />
+      <workItem from="1511359087597" duration="3982000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="591793000" />
+    <option name="totallyTimeSpent" value="596965000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1358" y="-548" width="1936" height="1096" extended-state="6" />
@@ -711,26 +712,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/resources/style.css">
+    <entry file="file://$PROJECT_DIR$/public/resources/cats.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="274">
-          <caret line="690" column="20" lean-forward="false" selection-start-line="690" selection-start-column="20" selection-end-line="690" selection-end-column="20" />
+        <state relative-caret-position="9350">
+          <caret line="550" column="59" lean-forward="false" selection-start-line="550" selection-start-column="59" selection-end-line="550" selection-end-column="59" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/resources/cats.json">
+    <entry file="file://$PROJECT_DIR$/public/resources/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="73">
-          <caret line="550" column="59" lean-forward="true" selection-start-line="550" selection-start-column="59" selection-end-line="550" selection-end-column="59" />
+        <state relative-caret-position="699">
+          <caret line="735" column="0" lean-forward="false" selection-start-line="735" selection-start-column="0" selection-end-line="735" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/templates/categories.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="444">
-          <caret line="83" column="203" lean-forward="false" selection-start-line="83" selection-start-column="203" selection-end-line="83" selection-end-column="203" />
+        <state relative-caret-position="221">
+          <caret line="14" column="12" lean-forward="false" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
           <folding />
         </state>
       </provider>

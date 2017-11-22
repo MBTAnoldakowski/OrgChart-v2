@@ -689,6 +689,8 @@ input:checked + .slider:before {
     display: block;
     bottom: 0;
     cursor: pointer;
+    max-height: 10cm;
+    max-width: 10cm;
 }
 
 .categoryIconDiv {
@@ -706,17 +708,30 @@ input:checked + .slider:before {
     padding-right: 2px;
     padding-left: 20px;
     overflow-y: auto;
-    bottom: 0;
+    bottom: 5%;
+    font-size: 18px;
 }
 
 .contractTitle {
-    cursor: pointer;
     text-align: center;
     height: 20%;
 }
 
 .contractContainer {
-    height: 450px;
-    width: 100%;
+    height: 12cm;
     position: relative;
+    display: block;
+}
+
+.close-button {
+    bottom: 0;
+    position: absolute;
+    display: block;
+    left: 10px;
+    right: 10px;
+    padding-right: 20px;
+    padding-left: 20px;
+    visibility: hidden;
+    opacity: 0;
+
 }

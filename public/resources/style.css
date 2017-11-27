@@ -681,45 +681,67 @@ input:checked + .slider:before {
 /* this is for the OSD page*/
 
 .categoryIcon {
-    border: 3px solid black;
+    /*border: 3px solid black;
     border-radius: 50%;
+
     background-color: lightgrey;
-    width: 80%;
+
     margin: auto;
     display: block;
     bottom: 0;
     cursor: pointer;
-    max-height: 10cm;
-    max-width: 10cm;
+    max-height: 15cm;
+    max-width: 15cm;
+*/
+    width: 90%;
+
+    cursor: pointer;
+    max-height: 15cm;
+    max-width: 15cm;
 }
 
 .categoryIconDiv {
-    position: absolute;
+    /*
+    position: relative;
     width: 100%;
+*/
+
+    position: absolute;
+    left: 10px;
+    right: 4px;
+    padding-right: 2px;
+    padding-left: 5px;
+    bottom: 10%;
+    font-size: 16px;
+    display: block;
 }
 
 .itemList {
     opacity: 0;
     visibility: hidden;
     position: absolute;
-    top: 25%;
     left: 10px;
-    right: 0px;
+    right: 4px;
+    top: 25%;
     padding-right: 2px;
-    padding-left: 20px;
+    padding-left: 5px;
     overflow-y: auto;
     bottom: 5%;
     font-size: 16px;
+    display: block;
+
 }
 
 .contractTitle {
     text-align: center;
-    height: 20%;
-    margin-bottom: 15%;
+    font-size: 22px;
+    position: relative;
+    display: block;
+    min-height: 25%;
 }
 
 .contractContainer {
-    height: 10cm;
+    height: 400px;
     position: relative;
     display: block;
 }
@@ -727,23 +749,23 @@ input:checked + .slider:before {
 .close-button {
     bottom: 0;
     position: absolute;
-    display: block;
-    left: 10px;
-    right: 10px;
-    padding-right: 20px;
-    padding-left: 20px;
+    margin: auto;
     visibility: hidden;
     opacity: 0;
+    padding-right: 5px;
+    padding-left: 5px;
 
 }
 
 .catContracts {
     margin-left: 7%;
+    margin-right: 7%;
     width: 65%;
 }
 
 .catCode {
     margin-left: 1%;
+    margin-right: 1%;
     width: 10%;
     text-align: center;
 }

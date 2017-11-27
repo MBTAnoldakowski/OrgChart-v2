@@ -1,615 +1,403 @@
-<div id="option">
-    <h1>Department Vendor Analysis </h1>
-    <h4>{{vendor}}</h4>
-    <input name="updateButton"
-           type="button"
-           class="btn btn-default"
-           value="View Operating"
-           onclick="updateData()"/>
-
-    <input name="updateButton"
-           type="button"
-           class="btn btn-default"
-           value="View Administration"
-           onclick="updateData2()"/>
-
+<div class="row" id="row0">
+    <div class="col-xs-2" id="row0col0">
+        <div class="contractContainer">
+            <div class="contractTitle"><br>Clothing and Footwear&nbsp;&nbsp;<br></div>
+            <div class="categoryIconDiv"><img src="/resources/icons/CLT.png" class="categoryIcon"
+                                              onclick="drawButtons('CLT')" id="CLT"></div>
+            <div class="list-group itemList" id="CLTList"><a href="http://www.mass.gov/anf/docs/osd/uguide/clt08.pdf"
+                                                             class="list-group-item list-group-item-action"
+                                                             target="_blank">Clothing, Uniforms, Footwear, Accessories,
+                Personal Care Products and Bedding (CLT08)</a></div>
+            <div class="btn btn-block btn-danger close-button" onclick="drawButtons('CLT')" id="CLTButton">Close</div>
+        </div>
+    </div>
+    <div class="col-xs-2" id="row0col1">
+        <div class="contractContainer">
+            <div class="contractTitle"><br>Energy, Utilities, and Fuel&nbsp;&nbsp;<br></div>
+            <div class="categoryIconDiv"><img src="/resources/icons/ENE.png" class="categoryIcon"
+                                              onclick="drawButtons('ENE')" id="ENE"></div>
+            <div class="list-group itemList" id="ENEList"><a href="http://www.mass.gov/anf/docs/osd/uguide/ene40.pdf"
+                                                             class="list-group-item list-group-item-action"
+                                                             target="_blank">Diesel Fuels: Ultra Low Sulfur Diesel and
+                Biodiesel (ENE40)</a><a href="http://www.mass.gov/anf/docs/osd/uguide/ene41.pdf"
+                                        class="list-group-item list-group-item-action" target="_blank">Gasoline
+                (ENE41)</a><a href="http://www.mass.gov/anf/docs/osd/uguide/ene43.pdf"
+                              class="list-group-item list-group-item-action" target="_blank">Electricity (ENE43)</a><a
+                    href="http://www.mass.gov/anf/docs/osd/uguide/ene44.pdf"
+                    class="list-group-item list-group-item-action" target="_blank">Natural Gas (ENE44)</a><a
+                    href="http://www.mass.gov/anf/docs/osd/uguide/ene45.pdf"
+                    class="list-group-item list-group-item-action" target="_blank">No. 2 Heating Oil and No. 4 &amp; 6
+                Residual Fuel (ENE45)</a><a href="http://www.mass.gov/anf/docs/osd/uguide/ene46.pdf"
+                                            class="list-group-item list-group-item-action" target="_blank">Propane
+                (ENE46)</a></div>
+            <div class="btn btn-block btn-danger close-button" onclick="drawButtons('ENE')" id="ENEButton">Close</div>
+        </div>
+    </div>
+    <div class="col-xs-2" id="row0col2">
+        <div class="contractContainer">
+            <div class="contractTitle"><br>Facilities Maintenance and Repair&nbsp;&nbsp;<br></div>
+            <div class="categoryIconDiv"><img src="/resources/icons/FAC.png" class="categoryIcon"
+                                              onclick="drawButtons('FAC')" id="FAC"></div>
+            <div class="list-group itemList" id="FACList"><a href="http://www.mass.gov/anf/docs/osd/uguide/fac64.pdf"
+                                                             class="list-group-item list-group-item-action"
+                                                             target="_blank">Security, Surveillance, Monitoring and
+                Access Control Systems (FAC64)</a><a href="http://www.mass.gov/anf/docs/osd/uguide/fac77.pdf"
+                                                     class="list-group-item list-group-item-action" target="_blank">Landscaping,
+                Tree Trimming, Catch Basin Cleaning, Snow Removal and Related Products (FAC77)</a><a
+                    href="http://www.mass.gov/anf/docs/osd/uguide/fac80.pdf"
+                    class="list-group-item list-group-item-action" target="_blank">Water Treatment Chemicals and Systems
+                (FAC80)</a><a href="http://www.mass.gov/anf/docs/osd/uguide/fac81.pdf"
+                              class="list-group-item list-group-item-action" target="_blank">Janitorial Services
+                Environmentally Preferable (FAC81)</a><a href="http://www.mass.gov/anf/docs/osd/uguide/fac82.pdf"
+                                                         class="list-group-item list-group-item-action" target="_blank">Hazardous/Universal,
+                Medical, and Electronic Waste Disposal and Emergency Response (FAC82)</a><a
+                    href="http://www.mass.gov/anf/docs/osd/uguide/fac83designateddcamm.pdf"
+                    class="list-group-item list-group-item-action" target="_blank">Renewable and Alternative Energy
+                Credit (FAC83)</a><a href="http://www.mass.gov/anf/docs/osd/uguide/fac85.pdf"
+                                     class="list-group-item list-group-item-action" target="_blank">Environmentally
+                Preferable Cleaning Products, Program, Equipment and Supplies (FAC85)</a><a
+                    href="http://www.mass.gov/anf/docs/osd/uguide/fac86.pdf"
+                    class="list-group-item list-group-item-action" target="_blank">Solid Waste and Recycling Services,
+                Surplus Disposal (FAC86)</a><a href="http://www.mass.gov/anf/docs/osd/uguide/fac87designateddep.pdf"
+                                               class="list-group-item list-group-item-action" target="_blank">Recycling
+                Containers, Compost Bins and Rain Barrels (FAC87)</a><a
+                    href="http://www.mass.gov/anf/docs/osd/uguide/fac88.pdf"
+                    class="list-group-item list-group-item-action" target="_blank">Lawns and Grounds Equipment, Parts
+                and Services (FAC88)</a><a href="http://www.mass.gov/anf/docs/osd/uguide/fac89designateddcamm.pdf"
+                                           class="list-group-item list-group-item-action" target="_blank">Electricity
+                Demand Response and Forward Capacity Market Services (FAC89)</a><a
+                    href="http://www.mass.gov/anf/docs/osd/uguide/fac90designateddep.pdf"
+                    class="list-group-item list-group-item-action" target="_blank">Carpet and Mattress Recycling
+                Services (FAC90)</a><a href="http://www.mass.gov/anf/docs/osd/uguide/fac91designateddcamm.pdf"
+                                       class="list-group-item list-group-item-action" target="_blank">Solar PV
+                Inspection Services (FAC91)</a><a href="http://www.mass.gov/anf/docs/osd/uguide/fac92.pdf"
+                                                  class="list-group-item list-group-item-action" target="_blank">Integrated
+                Pest Management Services (FAC92)</a><a href="http://www.mass.gov/anf/docs/osd/uguide/fac93.pdf"
+                                                       class="list-group-item list-group-item-action" target="_blank">Security
+                Services, Private Investigative Services, and Fence Rental (FAC93)</a><a
+                    href="http://www.mass.gov/anf/docs/osd/uguide/fac94.pdf"
+                    class="list-group-item list-group-item-action" target="_blank">Facilities Maintenance, Repair &amp;
+                Operations (MRO) with Small Hand &amp; Power Tools (FAC94)</a><a
+                    href="http://www.mass.gov/anf/docs/osd/uguide/fac96.pdf"
+                    class="list-group-item list-group-item-action" target="_blank">Records Management, Storage,
+                Archiving and Moving Services (FAC96)</a><a href="http://www.mass.gov/anf/docs/osd/uguide/fac97.pdf"
+                                                            class="list-group-item list-group-item-action"
+                                                            target="_blank">Equipment Rental (FAC97)</a><a
+                    href="http://www.mass.gov/anf/docs/osd/uguide/fac100.pdf"
+                    class="list-group-item list-group-item-action" target="_blank">Building Maintenance Repair and
+                Operations Products and Supplies (FAC100)</a><a
+                    href="http://www.mass.gov/anf/docs/osd/uguide/fac102.pdf"
+                    class="list-group-item list-group-item-action" target="_blank">Athletic Supplies and Physical
+                Education Equipment (FAC102)</a><a href="http://www.mass.gov/anf/docs/osd/uguide/fac104.pdf"
+                                                   class="list-group-item list-group-item-action" target="_blank">Landscaping
+                Products, Parks and Recreation Equipment and Related Products, Supplies and Service (FAC104)</a><a
+                    href="http://www.mass.gov/anf/docs/osd/uguide/fac105.pdf"
+                    class="list-group-item list-group-item-action" target="_blank">Maintenance Repair and Operations
+                Industrial and Building Retail Products (FAC105)</a></div>
+            <div class="btn btn-block btn-danger close-button" onclick="drawButtons('FAC')" id="FACButton">Close</div>
+        </div>
+    </div>
+    <div class="col-xs-2" id="row0col3">
+        <div class="contractContainer">
+            <div class="contractTitle"><br>Public Safety Equipment, Supplies&nbsp;&nbsp;<br></div>
+            <div class="categoryIconDiv"><img src="/resources/icons/FIR.png" class="categoryIcon"
+                                              onclick="drawButtons('FIR')" id="FIR"></div>
+            <div class="list-group itemList" id="FIRList"><a href="http://www.mass.gov/anf/docs/osd/uguide/fir04.pdf"
+                                                             class="list-group-item list-group-item-action"
+                                                             target="_blank">Public Safety Equipment, Supplies, Services
+                and Repairs (FIR04)</a></div>
+            <div class="btn btn-block btn-danger close-button" onclick="drawButtons('FIR')" id="FIRButton">Close</div>
+        </div>
+    </div>
+    <div class="col-xs-2" id="row0col4">
+        <div class="contractContainer">
+            <div class="contractTitle"><br>Food and Groceries&nbsp;&nbsp;<br></div>
+            <div class="categoryIconDiv"><img src="/resources/icons/GRO.png" class="categoryIcon"
+                                              onclick="drawButtons('GRO')" id="GRO"></div>
+            <div class="list-group itemList" id="GROList"><a href="http://www.mass.gov/anf/docs/osd/uguide/gro30.pdf"
+                                                             class="list-group-item list-group-item-action"
+                                                             target="_blank">Prime Grocers (GRO30)</a><a
+                    href="http://www.mass.gov/anf/docs/osd/uguide/gro32.pdf"
+                    class="list-group-item list-group-item-action" target="_blank">Dairy Products (GRO32)</a><a
+                    href="http://www.mass.gov/anf/docs/osd/uguide/gro33.pdf"
+                    class="list-group-item list-group-item-action" target="_blank">Baked Goods (GRO33)</a><a
+                    href="http://www.mass.gov/anf/docs/osd/uguide/gro34.pdf"
+                    class="list-group-item list-group-item-action" target="_blank">Bottled Water, Emergency Bottled
+                Water, Water Filtration and Reverse Osmosis, Coffee Services and Supplies (GRO34)</a><a
+                    href="http://www.mass.gov/anf/docs/osd/uguide/gro35.pdf"
+                    class="list-group-item list-group-item-action" target="_blank">Foodservice Equipment &amp; Supplies
+                (GRO35)</a></div>
+            <div class="btn btn-block btn-danger close-button" onclick="drawButtons('GRO')" id="GROButton">Close</div>
+        </div>
+    </div>
+    <div class="col-xs-2" id="row0col5">
+        <div class="contractContainer">
+            <div class="contractTitle"><br>Homeland Security&nbsp;&nbsp;<br></div>
+            <div class="categoryIconDiv"><img src="/resources/icons/HLS.png" class="categoryIcon"
+                                              onclick="drawButtons('HLS')" id="HLS"></div>
+            <div class="list-group itemList" id="HLSList"><a href="mailto:Tina.Urato@state.ma.us"
+                                                             class="list-group-item list-group-item-action"
+                                                             target="_blank">Disaster Debris Monitoring Services
+                (HLS02)</a><a href="mailto:Tina.Urato@state.ma.us" class="list-group-item list-group-item-action"
+                              target="_blank">Disaster Debris Management Services (HLS03)</a><a
+                    href="http://www.mass.gov/anf/docs/osd/uguide/hls05.pdf"
+                    class="list-group-item list-group-item-action" target="_blank">Homeland Security, Public Safety, and
+                Traffic Safety Supplies (HLS05)</a></div>
+            <div class="btn btn-block btn-danger close-button" onclick="drawButtons('HLS')" id="HLSButton">Close</div>
+        </div>
+    </div>
 </div>
-
-<div id="chart"></div>
-<script>
-    var url = window.location.href;
-    var vendorName = url ? url.split('/vendor/')[1] : window.location.search.slice(1);
-
-    // clears the screen in case a visualization is still loaded
-    //d3.select("svg").remove();
-    var config = {};
-
-    d3.json("/vendor-data/configuration/" + vendorName + "_config.json", function (error, configuration) {
-        if (error) throw error;
-        console.log('config ' + JSON.stringify(configuration));
-        config.deptNo = configuration.deptNo;
-        config.year = configuration.year;
-        config.price = configuration.price;
-        config.quantity = configuration.quantity;
-        config.extra = configuration.extra;
-        config.field1 = configuration.field1;
-        config.operation = configuration.operation;
-        config.field2 = configuration.field2;
-        config.vars = configuration.vars;
-
-        var myDDL = document.getElementById("colorBy");
-
-        for (i = 0; i < config.vars.length; i++) {
-            var option = document.createElement("option");
-            console.log(config.vars);
-            option.text = config.vars[i].name;
-            option.value = config.vars[i].value;
-            try {
-                myDDL.options.add(option);
-            }
-            catch (e) {
-                alert(e);
-            }
-        }
-    });
-
-
-    // size variables for the box to paint in
-    var margin = {top: 20, right: 150, bottom: 20, left: 200},
-        width = 1000,
-        height = 1300;
-
-    var i = 0,
-        //sets the amount of time it takes the tree opening animation to run
-        duration = 750,
-        root;
-
-    // initializes the tree
-    var tree = d3.layout.tree()
-        .size([height, width]);
-
-    // initializes the tree branches
-    var diagonal = d3.svg.diagonal()
-        .projection(function (d) {
-            return [d.y, d.x];
-        });
-
-    // appends the svg to paint on to the chart div
-    var svg = d3.select("#chart").append("svg")
-    // sets the height and width of the svg
-        .attr("width", width + margin.right + margin.left)
-        .attr("height", height + margin.top + margin.bottom)
-        .append("g")
-        .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-
-    // initializes the tooltip
-    var div = d3.select("body").append("div")
-        .attr("class", "tooltip")
-        .style("opacity", 1e-6);
-
-    var dataArray = [];
-
-    // takes the budgeting data from the CSV file and places it into the array
-    d3.csv("vendor-data/" + decodeURI(vendorName) + ".csv", function (error, data) {
-        if (error) throw error;
-        data.forEach(function (b) {
-            //adds all of the data to the array that I initialized above.
-            dataArray.push(b);
-        });
-    });
-    //loads the department data
-    d3.json("resources/admin.min.json", function (error, flare) {
-        if (error) throw error;
-
-        root = flare;
-        root.x0 = height / 2;
-        root.y0 = 0;
-
-        function collapse(d) {
-            if (d.children) {
-                d._children = d.children;
-                d._children.forEach(collapse);
-                d.children = null;
-            }
-        }
-
-        root.children.forEach(collapse);
-        update(root);
-        setTimeout(function () {
-            expandAll();
-        }, 100);
-    });
-
-    d3.select(self.frameElement).style("height", "800px");
-
-    function update(source, remove) {
-        if (remove) {
-            svg.selectAll("g.node").remove();
-        }
-        // Compute the new tree layout.
-        var nodes = tree.nodes(root).reverse(),
-            links = tree.links(nodes);
-
-
-        // Normalize for fixed-depth.
-        nodes.forEach(function (d) {
-            d.y = d.depth * 250;    // I don't know specifically what this does,
-                                    // but I do know that changing the number
-                                    // changes the width of the tree that is displayed
-
-        }); //180
-
-        // Update the nodes
-        var node = svg.selectAll("g.node")
-            .data(nodes, function (d) {
-                return d.id || (d.id = ++i);
-            });
-
-
-        // Enter any new nodes at the parent's previous position.
-        var nodeEnter = node.enter().append("g")
-            .attr("class", "node")
-            .attr("transform", function (d) {
-                return "translate(" + source.y0 + "," + source.x0 + ")";
-            })
-            .on("click", click);
-
-        nodeEnter.append("circle")
-            .attr("r", 1e-6);
-        // appends the name text to the nodes
-        nodeEnter.append("text")
-            .attr("x", function (d) {
-                if (d.removed == true && d.level == "4") {
-                    return d.children || d._children ? -20 : -10;
-                }
-                return d.children || d._children ? -10 : 10;
-            })
-            .attr("dy", ".35em")
-            .attr("text-anchor", function (d) {
-                if (d.removed == true && d.level == "4") {
-                    return d.children || d._children ? "end" : "end";
-                }
-                return d.children || d._children ? "end" : "start";
-            })
-            //the name is appended to the dot right here
-            .text(function (d) {
-                return d.name;
-            })
-            // calls for PO data tooltip on mouseover
-            .on("mouseover", mouseover)
-            .on("mousemove", function (d) {
-                mousemove(d);
-            })
-            .on("mouseout", mouseout)
-            .style("fill-opacity", 1)
-            .style("text-decoration", function (d) {
-                if (d.removed == true) {
-                    return "line-through"
-                }
-            })
-            // the names are styled here based on PO data
-            .style("fill", "black");
-        // Transition nodes to their new position.
-        var nodeUpdate = node.transition()
-            .duration(duration)
-            .attr("transform", function (d) {
-                return "translate(" + d.y + "," + d.x + ")";
-            });
-
-        // size/style the circles based on levels
-        nodeUpdate.select("circle")
-            .attr("r", function (d) {
-                // change this number to make dots bigger or smaller
-                return 6;
-            })
-            .style("fill", function (d) {
-                if (d.level == "2") return "red";
-                if (d.level == "3") return "orange";
-                if (d.level == "4") return "green";
-                if (d.level == "5") return "blue";
-                if (d.level == "6") return "purple";
-                if (d.name == "") return "#ffffff";
-            })
-            .style("opacity", function (d) {
-                if (d.level == "") {
-                    return 0;
-                }
-            });
-        node.append("svg:foreignObject")
-            .attr("width", 20)
-            .attr("height", 20)
-            .attr("y", "-8px")
-            .attr("x", "-10px")
-            .append("xhtml:span")
-            .attr("z-index", "9999")
-            .attr("class", function (d) {
-                if (d.removed) {
-                    return "control glyphicon glyphicon-remove-circle"
-                }
-            })
-            .style("color", "white");
-
-        // Transition exiting nodes to the parent's new position.
-        var nodeExit = node.exit().transition()
-            .duration(duration)
-            .attr("transform", function (d) {
-                return "translate(" + source.y + "," + source.x + ")";
-            })
-            .remove();
-
-        nodeExit.select("circle")
-            .attr("r", 1e-6);
-
-        nodeExit.select("text")
-            .style("fill-opacity", 1e-6);
-
-        // Update the links…
-        var link = svg.selectAll("path.link")
-            .data(links, function (d) {
-                return d.target.id;
-            });
-
-        // Enter any new links at the parent's previous position.
-        link.enter().insert("path", "g")
-            .attr("class", "link")
-            .attr("d", function (d) {
-                var o = {x: source.x0, y: source.y0};
-                return diagonal({source: o, target: o});
-            });
-
-        // Transition links to their new position.
-        link.transition()
-            .duration(duration)
-            .attr("d", diagonal);
-
-        // Transition exiting nodes to the parent's new position.
-        link.exit().transition()
-            .duration(duration)
-            .attr("d", function (d) {
-                var o = {x: source.x, y: source.y};
-                return diagonal({source: o, target: o});
-            })
-            .remove();
-
-        // Stash the old positions for transition.
-        nodes.forEach(function (d) {
-            d.x0 = d.x;
-            d.y0 = d.y;
-        });
-
-    }
-
-    d3.select('#colorBy')
-        .on("change", function () {
-            var sect = document.getElementById("colorBy");
-            var section = sect.options[sect.selectedIndex].value;
-            var meth = document.getElementById("colorByMethod");
-            var method = meth.options[meth.selectedIndex].value;
-            highlightBy(section, method);
-        });
-
-    d3.select('#colorByMethod')
-        .on("change", function () {
-            var sect = document.getElementById("colorBy");
-            var section = sect.options[sect.selectedIndex].value;
-            var meth = document.getElementById("colorByMethod");
-            var method = meth.options[meth.selectedIndex].value;
-            highlightBy(section, method);
-        });
-
-    function highlightBy(variableName, method) {
-        var met = method;
-        var max = getMaxVar(variableName);
-        var maxAgg = getMaxAgg(variableName);
-        var min = getMinVar(variableName);
-        var minAgg = getMinAgg(variableName);
-        var avgAgg = (maxAgg + minAgg) / 2;
-        var maxCount = getMaxCount();
-        var minCount = getMinCount();
-        var avgCount = (maxCount + minCount) / 2;
-
-        var color;
-
-        if (met == "aggregate") {
-            color = d3.scale.linear()
-                .domain([minAgg, avgAgg, maxAgg])
-                .range(['#22DD22', '#FFFF00', '#FF0000']);
-        }
-
-        if (met == "count") {
-            color = d3.scale.linear()
-                .domain([minCount, avgCount, maxCount])
-                .range(['#22DD22', '#FFFF00', '#FF0000']);
-        }
-        d3.selectAll("text")
-            .style("fill", function (d) {
-                var deptData = findDeptData(d.deptno);
-                if (met == "aggregate" && variableName != "0" && deptData.length > 0) {
-                    var agg = 0;
-                    var dep;
-                    for (var a = 0; a < deptData.length; a++) {
-                        dep = JSON.parse(deptData[a]);
-                        agg = agg + parseFloat(dep[variableName]);
-                    }
-                    return color(agg);
-                }
-                if (met == "count" && variableName != "0" && deptData.length > 0) {
-                    var length = deptData.length;
-                    return color(length);
-
-                }
-                if (met == "0") {
-                    return "black";
-                }
-            });
-
-    }
-
-    function getDepts() {
-        var depts = [];
-        for (i in dataArray) {
-            if (depts.indexOf(dataArray[i].deptNo) < 0) {
-                depts.push(dataArray[i].deptNo)
-            }
-        }
-        return depts;
-    }
-
-    function getMaxCount() {
-        var departmentList = getDepts();
-        var max = 0;
-        for (var a = 0; a < departmentList.length; a++) {
-            var length = findDeptData(departmentList[a]).length;
-            if (length > max) {
-                max = length;
-            }
-        }
-        console.log("MAX: " + max);
-        return max;
-    }
-
-    function getMinCount() {
-        var departmentList = getDepts();
-        var min = 0;
-        for (var a = 0; a < departmentList.length; a++) {
-            var length = findDeptData(departmentList[a]).length;
-            if (length < min) {
-                min = length;
-            }
-        }
-        console.log("MIN: " + min);
-        return min;
-    }
-
-    function getMaxAgg(variable) {
-        var maxAgg = 0;
-        var departmentList = getDepts();
-        for (var a = 0; a < departmentList.length; a++) {
-            var agg = 0;
-            for (var i = 0; i < dataArray.length; i++) {
-                if (dataArray[i].deptNo == departmentList[a]) {
-                    agg = agg + parseFloat(dataArray[i][variable]);
-                }
-            }
-            if (agg > maxAgg) {
-                maxAgg = agg;
-            }
-        }
-        return maxAgg;
-    }
-
-    function getMinAgg(variable) {
-        var minAgg = Number.MAX_VALUE;
-        var departmentList = getDepts();
-        for (var a = 0; a < departmentList.length; a++) {
-            var agg = 0;
-            for (var i = 0; i < dataArray.length; i++) {
-                if (dataArray[i].deptNo == departmentList[a]) {
-                    agg = agg + parseFloat(dataArray[i][variable]);
-                }
-            }
-            if (agg < minAgg) {
-                minAgg = agg;
-            }
-        }
-        return minAgg;
-    }
-
-    function getMaxVar(variable) {
-        var max = 0;
-        for (i in dataArray) {
-            if (parseFloat(dataArray[i][variable]) > max) {
-                max = dataArray[i][variable];
-            }
-        }
-        return parseFloat(max);
-    }
-
-    function getMinVar(variable) {
-        var min = Number.MAX_VALUE;
-        for (i in dataArray) {
-            if (parseFloat(dataArray[i][variable]) < min) {
-                min = dataArray[i][variable];
-            }
-        }
-        return parseFloat(min);
-    }
-
-    // Toggle children on click.
-    function click(d) {
-        if (d.children) {
-            d._children = d.children;
-            d.children = null;
-        } else {
-            d.children = d._children;
-            d._children = null;
-        }
-        update(d, false);
-    }
-
-    // controls how long it takes the tooltip to appear after you hover
-    function mouseover() {
-        div.transition()
-            .duration(300)
-            .style("opacity", 1);
-    }
-
-    var ki = {};
-
-    //draws the tooltip
-    function mousemove(d) {
-        var dept = d.deptno;
-        var deptData = findDeptData(dept);
-        var varString = "<table>";
-        for (var i = 0; i < config.vars.length; i++) {
-            if (i === 0 && deptData.length > 0) {
-                for (var z = 0; z < config.vars.length; z++) {
-                    varString = varString + "<th><b>" + config.vars[z].name + "</b></th>";
-                }
-                varString = varString + "<tr>"
-            }
-            else if (i !== 0 && deptData.length > 0) {
-                varString = varString + "<tr>";
-            }
-            /*
-            if (deptData.length > 0) {
-                varString = varString + "<b>" + config.vars[i].name + ": " + "</b>";
-            }*/
-            for (var k = 0; k < deptData.length; k++) {
-                ki = JSON.parse(deptData[k])[config.vars[i].value];
-                varString = varString + "<td>" + ki + "</td>";
-                if (k === deptData.length - 1) {
-                    varString = varString + "</tr>"
-                }
-            }
-
-            if (varString !== "") {
-                varString = varString + "<br/>";
-            }
-        }
-        varString = varString + "</table>";
-        console.log(varString);
-        div.html(d.deptno + "<br/>" + varString)
-            .style("left", (d3.event.pageX ) + "px")
-            .style("top", (d3.event.pageY) + "px");
-    }
-
-    // controls how slowly the tooltip disappears
-    function mouseout() {
-        div.transition()
-            .duration(300)
-            .style("opacity", 1e-6);
-    }
-
-
-    function findDeptData(dept) {
-        var lookup = [];
-        for (var i = 0, len = dataArray.length; i < len; i++) {
-            if (dataArray[i].deptNo == dept) {
-                lookup.push(JSON.stringify(dataArray[i]));
-            }
-        }
-        return lookup;
-    }
-
-    // this is triggered when you hit the 'View Operating' button, it just loads the
-    // Operating data instead of the Administration data
-    function updateData() {
-        d3.json("resources/operating.min.json", function (error, flare) {
-            if (error) throw error;
-            root = flare;
-            root.x0 = height / 2;
-            root.y0 = 0;
-            dataDisplayed = 1;
-            update(root, true);
-        });
-        var sect = document.getElementById("colorBy");
-        var section = sect.options[sect.selectedIndex].value;
-        var meth = document.getElementById("colorByMethod");
-        var method = meth.options[meth.selectedIndex].value;
-        setTimeout(function () {
-            highlightBy(section, method);
-        }, 1000)
-
-    }
-
-    // this function updates the data to display administration
-    function updateData2() {
-        d3.json("resources/admin.min.json", function (error, flare) {
-            if (error) throw error;
-            root = flare;
-            root.x0 = height / 2;
-            root.y0 = 0;
-            dataDisplayed = 0;
-            update(root, true);
-        });
-        var sect = document.getElementById("colorBy");
-        var section = sect.options[sect.selectedIndex].value;
-        var meth = document.getElementById("colorByMethod");
-        var method = meth.options[meth.selectedIndex].value;
-        setTimeout(function () {
-            highlightBy(section, method);
-        }, 1000)
-    }
-
-    // expands a node
-    function expand(d) {
-        var children = (d.children) ? d.children : d._children;
-        if (d._children) {
-            d.children = d._children;
-            d._children = null;
-        }
-        if (children)
-            children.forEach(expand);
-    }
-
-    //expands all nodes in the tree
-    function expandAll() {
-        expand(root);
-        update(root);
-    }
-
-</script>
-
-<div id="legend">
-    <h3 class="ltitle">Legend</h3>
-    <div id="level1circle"></div>
-    <p>Level 1 is MBTA</p>
-    <div id="level2circle"></div>
-    <p>Level 2</p>
-    <div id="level3circle"></div>
-    <p>Level 3</p>
-    <div id="level4circle"></div>
-    <p>Level 4</p>
-    <div id="level5circle"></div>
-    <p>Level 5</p>
-    <div id="level6circle"></div>
-    <p>Level 6</p>
-
+<div class="row" id="row1">
+    <div class="col-xs-2" id="row1col0">
+        <div class="contractContainer">
+            <div class="contractTitle"><br>Healthcare and Lab Products&nbsp;&nbsp;<br></div>
+            <div class="categoryIconDiv"><img src="/resources/icons/HSP.png" class="categoryIcon"
+                                              onclick="drawButtons('HSP')" id="HSP"></div>
+            <div class="list-group itemList" id="HSPList"><a href="http://www.mass.gov/anf/docs/osd/uguide/hsp39.pdf"
+                                                             class="list-group-item list-group-item-action"
+                                                             target="_blank">GPO for Medical Commodities and Equipment
+                (HSP39)</a><a href="http://www.mass.gov/anf/docs/osd/uguide/hsp40.pdf"
+                              class="list-group-item list-group-item-action" target="_blank">Medical Commodities
+                (HSP40)</a><a href="http://www.mass.gov/anf/docs/osd/uguide/hsp41.pdf"
+                              class="list-group-item list-group-item-action" target="_blank">Laboratory Supplies and
+                Equipment (HSP41)</a></div>
+            <div class="btn btn-block btn-danger close-button" onclick="drawButtons('HSP')" id="HSPButton">Close</div>
+        </div>
+    </div>
+    <div class="col-xs-2" id="row1col1">
+        <div class="contractContainer">
+            <div class="contractTitle"><br>Information Technology Hardware&nbsp;&nbsp;<br></div>
+            <div class="categoryIconDiv"><img src="/resources/icons/ITC.png" class="categoryIcon"
+                                              onclick="drawButtons('ITC')" id="ITC"></div>
+            <div class="list-group itemList" id="ITCList"><a href="http://www.mass.gov/anf/docs/osd/uguide/itc47.pdf"
+                                                             class="list-group-item list-group-item-action"
+                                                             target="_blank">IT Hardware and Services (ITC47)</a><a
+                    href="http://www.mass.gov/anf/docs/osd/uguide/itc49-.pdf"
+                    class="list-group-item list-group-item-action" target="_blank">IT Asset Term Leasing Services
+                (ITC49)</a><a href="http://www.mass.gov/anf/docs/osd/uguide/itc54.pdf"
+                              class="list-group-item list-group-item-action" target="_blank">Data Cable Products and
+                Services (ITC54)</a><a href="http://www.mass.gov/anf/docs/osd/uguide/itc66.pdf"
+                                       class="list-group-item list-group-item-action" target="_blank">Photocopiers,
+                Printers, Scanners, and Related Devices and Services (ITC66)</a></div>
+            <div class="btn btn-block btn-danger close-button" onclick="drawButtons('ITC')" id="ITCButton">Close</div>
+        </div>
+    </div>
+    <div class="col-xs-2" id="row1col2">
+        <div class="contractContainer">
+            <div class="contractTitle"><br>Information Technology Software and Services&nbsp;&nbsp;<br></div>
+            <div class="categoryIconDiv"><img src="/resources/icons/ITS.png" class="categoryIcon"
+                                              onclick="drawButtons('ITS')" id="ITS"></div>
+            <div class="list-group itemList" id="ITSList"><a href="http://www.mass.gov/anf/docs/osd/uguide/its19.pdf"
+                                                             class="list-group-item list-group-item-action"
+                                                             target="_blank">Oracle Software and Services (ITS19)</a><a
+                    href="http://www.mass.gov/anf/docs/osd/uguide/its51designateditd.pdf"
+                    class="list-group-item list-group-item-action" target="_blank">eDiscovery Services (ITS51)</a><a
+                    href="http://www.mass.gov/anf/docs/osd/uguide/its53projservgis.pdf"
+                    class="list-group-item list-group-item-action" target="_blank">ProjServGIS - Geographical
+                Information Services (ITS53)</a><a href="http://www.mass.gov/anf/docs/osd/uguide/its53projservsp.pdf"
+                                                   class="list-group-item list-group-item-action" target="_blank">ProjServSP
+                - Solution Providers (ITS53)</a><a href="http://www.mass.gov/anf/docs/osd/uguide/its53projservts.pdf"
+                                                   class="list-group-item list-group-item-action" target="_blank">ProjServTS
+                - Technical Specialist (ITS53)</a><a href="http://www.mass.gov/anf/docs/osd/uguide/its55.pdf"
+                                                     class="list-group-item list-group-item-action" target="_blank">IBM
+                Software and Services (ITS55)</a><a href="http://www.mass.gov/anf/docs/osd/uguide/its58.pdf"
+                                                    class="list-group-item list-group-item-action" target="_blank">Software
+                Reseller (ITS58)</a><a href="http://www.mass.gov/anf/docs/osd/uguide/its59.pdf"
+                                       class="list-group-item list-group-item-action" target="_blank">Independent IT
+                Research Services (ITS59)</a><a href="mailto:Sarah.Bourne@state.ma.us"
+                                                class="list-group-item list-group-item-action" target="_blank">IT
+                Accessibility Audit, Consulting and Training Services (ITS61)</a><a
+                    href="http://www.mass.gov/anf/docs/osd/uguide/its63cat1-and-3.pdf"
+                    class="list-group-item list-group-item-action" target="_blank">StaffAugCat1 - Full Service
+                (ITS63)</a><a href="http://www.mass.gov/anf/docs/osd/uguide/its63cat2.pdf"
+                              class="list-group-item list-group-item-action" target="_blank">StaffAugCat2 - Lower
+                Overhead (ITS63)</a><a href="http://www.mass.gov/anf/docs/osd/uguide/its65designateditd.pdf"
+                                       class="list-group-item list-group-item-action" target="_blank">ESRI Geographic
+                Information Products and Services (ITS65)</a><a href="http://www.mass.gov/anf/docs/osd/uguide/its67.pdf"
+                                                                class="list-group-item list-group-item-action"
+                                                                target="_blank">Equipment Maintenance Program
+                (ITS67)</a><a href="http://www.mass.gov/anf/docs/osd/uguide/sbp01.pdf"
+                              class="list-group-item list-group-item-action" target="_blank">Small-Scale IT Professional
+                Services (SBP01)</a></div>
+            <div class="btn btn-block btn-danger close-button" onclick="drawButtons('ITS')" id="ITSButton">Close</div>
+        </div>
+    </div>
+    <div class="col-xs-2" id="row1col3">
+        <div class="contractContainer">
+            <div class="contractTitle"><br>Information Technology Telecommunications&nbsp;&nbsp;<br></div>
+            <div class="categoryIconDiv"><img src="/resources/icons/ITT.png" class="categoryIcon"
+                                              onclick="drawButtons('ITT')" id="ITT"></div>
+            <div class="list-group itemList" id="ITTList"><a href="http://www.mass.gov/anf/docs/osd/uguide/itt46.pdf"
+                                                             class="list-group-item list-group-item-action"
+                                                             target="_blank">Network Services Statewide Contract
+                (ITT46)</a><a href="http://www.mass.gov/anf/docs/osd/uguide/itt50.pdf"
+                              class="list-group-item list-group-item-action" target="_blank">Converged Voice and Data
+                Communications Systems, Services and Equipment (ITT50)</a><a
+                    href="http://www.mass.gov/anf/docs/osd/uguide/itt57.pdf"
+                    class="list-group-item list-group-item-action" target="_blank">2 -Way Radio Equipment and Supplies
+                (ITT57)</a></div>
+            <div class="btn btn-block btn-danger close-button" onclick="drawButtons('ITT')" id="ITTButton">Close</div>
+        </div>
+    </div>
+    <div class="col-xs-2" id="row1col4">
+        <div class="contractContainer">
+            <div class="contractTitle"><br>Medical&nbsp;&nbsp;<br></div>
+            <div class="categoryIconDiv"><img src="/resources/icons/MED.png" class="categoryIcon"
+                                              onclick="drawButtons('MED')" id="MED"></div>
+            <div class="list-group itemList" id="MEDList"><a href="http://www.mass.gov/anf/docs/osd/uguide/med47.pdf"
+                                                             class="list-group-item list-group-item-action"
+                                                             target="_blank">Pharmaceutical Prime Vendor Drug Wholesaler
+                (MED47)</a><a href="http://www.mass.gov/anf/docs/osd/uguide/med48.pdf"
+                              class="list-group-item list-group-item-action" target="_blank">Pharmaceutical GPO
+                (MED48)</a><a href="http://www.mass.gov/anf/docs/osd/uguide/med51.pdf"
+                              class="list-group-item list-group-item-action" target="_blank">Influenza Vaccine (2017 -
+                2018 Flu Season) (MED51)</a></div>
+            <div class="btn btn-block btn-danger close-button" onclick="drawButtons('MED')" id="MEDButton">Close</div>
+        </div>
+    </div>
+    <div class="col-xs-2" id="row1col5">
+        <div class="contractContainer">
+            <div class="contractTitle"><br>Miscellaneous&nbsp;&nbsp;<br></div>
+            <div class="categoryIconDiv"><img src="/resources/icons/Misc.png" class="categoryIcon"
+                                              onclick="drawButtons('Misc')" id="Misc"></div>
+            <div class="list-group itemList" id="MiscList"><a href="http://www.mass.gov/anf/docs/osd/uguide/ssp1601.pdf"
+                                                              class="list-group-item list-group-item-action"
+                                                              target="_blank">Scrap Metal Services (SSP1601)</a></div>
+            <div class="btn btn-block btn-danger close-button" onclick="drawButtons('Misc')" id="MiscButton">Close</div>
+        </div>
+    </div>
 </div>
-<div id="optionsMenu">
-    <label>Color By:</label>
-    <select id="colorByMethod">
-        <option value="0" selected="selected">none</option>
-        <option value="aggregate">aggregate</option>
-        <option value="count">count</option>
-    </select>
-    <label>of</label>
-    <select id="colorBy">
-        <option value="0" selected="selected">none</option>
-    </select>
+<div class="row" id="row2">
+    <div class="col-xs-2" id="row2col0">
+        <div class="contractContainer">
+            <div class="contractTitle"><br>Office, Recreation, and Educational Supplies&nbsp;&nbsp;<br></div>
+            <div class="categoryIconDiv"><img src="/resources/icons/OFF.png" class="categoryIcon"
+                                              onclick="drawButtons('OFF')" id="OFF"></div>
+            <div class="list-group itemList" id="OFFList"><a href="http://www.mass.gov/anf/docs/osd/uguide/off36.pdf"
+                                                             class="list-group-item list-group-item-action"
+                                                             target="_blank">Office Supplies, Recycled Paper, and
+                Envelopes (OFF36)</a><a href="http://www.mass.gov/anf/docs/osd/uguide/off38.pdf"
+                                        class="list-group-item list-group-item-action" target="_blank">Office, School,
+                Library Furniture, Accessories and Installation (OFF38)</a><a
+                    href="http://www.mass.gov/anf/docs/osd/uguide/off39.pdf"
+                    class="list-group-item list-group-item-action" target="_blank">Postage and Mail Processing
+                Equipment, Accessories, Services and Supplies (OFF39)</a><a
+                    href="http://www.mass.gov/anf/docs/osd/uguide/off40.pdf"
+                    class="list-group-item list-group-item-action" target="_blank">Audio, Video, Multimedia Presentation
+                Equipment and Services (OFF40)</a><a href="http://www.mass.gov/anf/docs/osd/uguide/off44.pdf"
+                                                     class="list-group-item list-group-item-action" target="_blank">Print,
+                Copy, Mail Services, and Printed Promotional Products (OFF44)</a><a
+                    href="http://www.mass.gov/anf/docs/osd/uguide/off45.pdf"
+                    class="list-group-item list-group-item-action" target="_blank">Art and Instructional School Supplies
+                (OFF45)</a><a href="http://www.mass.gov/anf/docs/osd/uguide/off46.pdf"
+                              class="list-group-item list-group-item-action" target="_blank">Small Package Delivery and
+                Logistics Services (OFF46)</a></div>
+            <div class="btn btn-block btn-danger close-button" onclick="drawButtons('OFF')" id="OFFButton">Close</div>
+        </div>
+    </div>
+    <div class="col-xs-2" id="row2col1">
+        <div class="contractContainer">
+            <div class="contractTitle"><br>Vehicles, Transportation, Road Maintenance&nbsp;&nbsp;<br></div>
+            <div class="categoryIconDiv"><img src="/resources/icons/OVM.png" class="categoryIcon"
+                                              onclick="drawButtons('OVM')" id="OVM"></div>
+            <div class="list-group itemList" id="OVMList"><a href="http://www.mass.gov/anf/docs/osd/uguide/ovm09.pdf"
+                                                             class="list-group-item list-group-item-action"
+                                                             target="_blank">Short-term Rental of Various Light Duty
+                Vehicles (OVM09)</a></div>
+            <div class="btn btn-block btn-danger close-button" onclick="drawButtons('OVM')" id="OVMButton">Close</div>
+        </div>
+    </div>
+    <div class="col-xs-2" id="row2col2">
+        <div class="contractContainer">
+            <div class="contractTitle"><br>Professional Services&nbsp;&nbsp;<br></div>
+            <div class="categoryIconDiv"><img src="/resources/icons/PRF.png" class="categoryIcon"
+                                              onclick="drawButtons('PRF')" id="PRF" style="opacity: 1;"></div>
+            <div class="list-group itemList" id="PRFList" style="visibility: hidden; opacity: 0;"><a
+                    href="http://www.mass.gov/anf/docs/osd/uguide/prf54.pdf"
+                    class="list-group-item list-group-item-action" target="_blank">TELP - Tax Exempt Lease Purchase
+                (TELP) (PRF54)</a><a href="mailto:debtcollectioncontract@massmail.state.ma.us"
+                                     class="list-group-item list-group-item-action" target="_blank">Debt Collection
+                Services (PRF55)</a><a href="mailto:PRF56DataSecurity@massmail.state.ma.us"
+                                       class="list-group-item list-group-item-action" target="_blank">Audit/Accounting,
+                Compliance, Security, and Revenue Recovery (PRF56)</a><a
+                    href="http://www.mass.gov/anf/docs/osd/uguide/prf57.pdf"
+                    class="list-group-item list-group-item-action" target="_blank">Enterprise Temporary Help Services
+                (PRF57)</a><a href="http://www.mass.gov/anf/docs/osd/uguide/prf59.pdf"
+                              class="list-group-item list-group-item-action" target="_blank">Card Processing and
+                Merchant Services (PRF59)</a><a href="http://www.mass.gov/anf/docs/osd/uguide/prf59adesignatedosc.pdf"
+                                                class="list-group-item list-group-item-action" target="_blank">Electronic
+                Payment Solutions (PRF59A)</a><a href="http://www.mass.gov/anf/docs/osd/uguide/prf60.pdf"
+                                                 class="list-group-item list-group-item-action" target="_blank">Advertising,
+                Marketing and Event Planning Services (PRF60)</a><a
+                    href="http://www.mass.gov/anf/docs/osd/uguide/prf61.pdf"
+                    class="list-group-item list-group-item-action" target="_blank">Management Consultants, Program
+                Coordinators and Planners Services (PRF61)</a><a
+                    href="http://www.mass.gov/anf/docs/osd/uguide/prf62designateddoer.pdf"
+                    class="list-group-item list-group-item-action" target="_blank">Energy Consulting Services
+                (PRF62)</a><a href="http://www.mass.gov/anf/docs/osd/uguide/prf63.pdf"
+                              class="list-group-item list-group-item-action" target="_blank">Foreign Language
+                Interpretation and Translation Services (PRF63)</a><a
+                    href="http://www.mass.gov/anf/docs/osd/uguide/prf67designateddcamm.pdf"
+                    class="list-group-item list-group-item-action" target="_blank">Environmental Engineering,
+                Diagnostics, and Testing (PRF67)</a></div>
+            <div class="btn btn-block btn-danger close-button" onclick="drawButtons('PRF')" id="PRFButton"
+                 style="visibility: hidden; opacity: 0;">Close
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-2" id="row2col3">
+        <div class="contractContainer">
+            <div class="contractTitle"><br>Trades Services&nbsp;&nbsp;<br></div>
+            <div class="categoryIconDiv"><img src="/resources/icons/TRD.png" class="categoryIcon"
+                                              onclick="drawButtons('TRD')" id="TRD"></div>
+            <div class="list-group itemList" id="TRDList"><a href="http://www.mass.gov/anf/docs/osd/uguide/trd01.pdf"
+                                                             class="list-group-item list-group-item-action"
+                                                             target="_blank">Boilers, Drains, Electricians, Fencing,
+                General Contracting, Generators-Turbine, Glass/Window/Doors, HVAC/Sheet Metal, Painting, Plumbing
+                Services (TRD01)</a><a href="http://www.mass.gov/anf/docs/osd/uguide/trd02-.pdf"
+                                       class="list-group-item list-group-item-action" target="_blank">Tradesperson
+                Installation, Repair and Maintenance Statewide Contract (TRD02)</a></div>
+            <div class="btn btn-block btn-danger close-button" onclick="drawButtons('TRD')" id="TRDButton">Close</div>
+        </div>
+    </div>
+    <div class="col-xs-2" id="row2col4">
+        <div class="contractContainer">
+            <div class="contractTitle"><br>Vehicles, Transportation, Road Maintenance&nbsp;&nbsp;<br></div>
+            <div class="categoryIconDiv"><img src="/resources/icons/VEH.png" class="categoryIcon"
+                                              onclick="drawButtons('VEH')" id="VEH"></div>
+            <div class="list-group itemList" id="VEHList"><a href="http://www.mass.gov/anf/docs/osd/uguide/veh84a.pdf"
+                                                             class="list-group-item list-group-item-action"
+                                                             target="_blank">Maintenance Management and Accident
+                Subrogation Services (VEH84A)</a><a href="http://www.mass.gov/anf/docs/osd/uguide/veh93.pdf"
+                                                    class="list-group-item list-group-item-action" target="_blank">Heavy
+                Duty Vehicles (VEH93)</a><a href="http://www.mass.gov/anf/docs/osd/uguide/veh95.pdf"
+                                            class="list-group-item list-group-item-action" target="_blank">Sodium
+                Chloride (Road Salt) (VEH95)</a><a href="http://www.mass.gov/anf/docs/osd/uguide/veh96.pdf"
+                                                   class="list-group-item list-group-item-action" target="_blank">Light,
+                Medium, Heavy Duty OEM and NON-OEM Motorized Vehicle Parts, Refined Motor Oil, Lubricants (VEH96)</a><a
+                    href="http://www.mass.gov/anf/docs/osd/uguide/veh97.pdf"
+                    class="list-group-item list-group-item-action" target="_blank">Tires, Tubes and Services (VEH97)</a><a
+                    href="http://www.mass.gov/anf/docs/osd/uguide/veh98.pdf"
+                    class="list-group-item list-group-item-action" target="_blank">Purchase of Light Duty Vehicles -
+                Passenger Cars, SUVs, Trucks, Vans, SSVs and PPVs (VEH98)</a><a
+                    href="http://www.mass.gov/anf/docs/osd/uguide/veh99.pdf"
+                    class="list-group-item list-group-item-action" target="_blank">Fleet Information Management System
+                (VEH99)</a><a href="http://www.mass.gov/anf/docs/osd/uguide/veh100.pdf"
+                              class="list-group-item list-group-item-action" target="_blank">Fuel Cards and Fuel
+                Management Services (VEH100)</a><a
+                    href="http://www.mass.gov/anf/docs/osd/uguide/veh102designateddoer.pdf"
+                    class="list-group-item list-group-item-action" target="_blank">Advanced Vehicle Technology
+                Equipment, Supplies and Services (VEH102)</a><a
+                    href="http://www.mass.gov/anf/docs/osd/uguide/veh103.pdf"
+                    class="list-group-item list-group-item-action" target="_blank">Windshield and Glass Replacement
+                Services (VEH103)</a><a href="http://www.mass.gov/anf/docs/osd/uguide/veh105.pdf"
+                                        class="list-group-item list-group-item-action" target="_blank">Vehicle Lifts
+                (VEH105)</a></div>
+            <div class="btn btn-block btn-danger close-button" onclick="drawButtons('VEH')" id="VEHButton">Close</div>
+        </div>
+    </div>
 </div>
-<!-- This div contains the 'Expand All' button -->
-<div id="expandB">
-    <input name="expandButton"
-           type="button"
-           class="btn"
-           value="Expand All"
-           onclick="expandAll()"/>
+<div class="footer" id="footer">
+    <div class="btn btn-block btn-default" href="#!/category-edit">Edit this page</div>
 </div>
-<!-- This div contains the navigation-->
-<div id="employeeButton" class="btn-group-vertical">
-    <a class="btn btn-default" href="#!/">Home</a>
-
-
-</div>
+</body>

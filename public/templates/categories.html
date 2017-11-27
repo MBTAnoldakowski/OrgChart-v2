@@ -3,7 +3,7 @@
     <p>This page edited 11/22/2017 9:29AM</p>
     <p>Contracts September - October 2017</p>
 </div>
-
+<!--Icons created by Pranita Lokinendi -->
 <script>
     function drawButtons(code) {
         var opacity = $("#" + code).css("opacity");
@@ -68,7 +68,7 @@
         var rowIdName = "";
         var colIdName = "";
         for (data in jsonTree.children) {
-            if (colIdCount % 4 === 0) {
+            if (colIdCount % 6 === 0) {
                 var div = document.createElement("div");
                 div.setAttribute('class', 'row');
                 div.setAttribute('id', 'row' + count);
@@ -78,7 +78,7 @@
                 document.body.appendChild(div);
             }
             var col = document.createElement("div");
-            col.setAttribute('class', 'col-xs-3');
+            col.setAttribute('class', 'col-xs-2');
             colIdName = rowIdName + 'col' + colIdCount;
             col.setAttribute('id', colIdName);
             document.getElementById(rowIdName).appendChild(col);
@@ -103,6 +103,18 @@
             dataCount++;
         }
 
+        var footer = document.createElement("div");
+        footer.setAttribute('class', 'footer');
+        footer.setAttribute('id', 'footer');
+
+        document.body.appendChild(footer);
+        document.getElementById('footer').innerHTML = "<div class='btn btn-block btn-default' href='#!/category-edit'>Edit this page</div>";
+
     }
 
+    window.onbeforeunload = function () {
+        document.body.innerHTML = '';
+        document.documentElement.innerHTML = '';
+
+    }
 </script>

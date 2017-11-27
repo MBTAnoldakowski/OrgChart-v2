@@ -62,6 +62,7 @@
 
         function init() {
             model.getTree();
+
         }
 
         init();

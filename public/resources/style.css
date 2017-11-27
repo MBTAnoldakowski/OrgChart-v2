@@ -702,23 +702,24 @@ input:checked + .slider:before {
     opacity: 0;
     visibility: hidden;
     position: absolute;
-    top: 20%;
+    top: 25%;
     left: 10px;
     right: 0px;
     padding-right: 2px;
     padding-left: 20px;
     overflow-y: auto;
     bottom: 5%;
-    font-size: 18px;
+    font-size: 16px;
 }
 
 .contractTitle {
     text-align: center;
     height: 20%;
+    margin-bottom: 15%;
 }
 
 .contractContainer {
-    height: 12cm;
+    height: 10cm;
     position: relative;
     display: block;
 }
@@ -737,9 +738,10 @@ input:checked + .slider:before {
 }
 
 .catContracts {
-     margin-left: 7%;
-     width: 65%;
- }
+    margin-left: 7%;
+    width: 65%;
+}
+
 .catCode {
     margin-left: 1%;
     width: 10%;
@@ -751,3 +753,9 @@ input:checked + .slider:before {
     width: 70%;
 }
 
+.footer {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}

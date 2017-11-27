@@ -1,0 +1,23 @@
+
+<div class="row">
+    <div class="col-xs-4">
+        <div class="contractTitle" onclick=drawButtons()>
+            <h3 style="text-align: center">
+                <br>
+                Facilities Maintenance and Repair
+                <br>
+                &nbsp
+            </h3>
+        </div>
+        <div class="categoryIconDiv"
+             onclick="drawButtons()">
+            <img src="resources/icons/FAC.png" class="categoryIcon" id="facilities"/>
+        </div>
+        <div class="list-group itemList" id="facList">
+            <a href="#" class="list-group-item list-group-item-action">Dapibus ac facilisis in</a>
+            <a href="#" class="list-group-item list-group-item-action">Morbi leo risus</a>
+            <a href="#" class="list-group-item list-group-item-action">Porta ac consectetur ac</a>
+            <a href="#" class="list-group-item list-group-item-action">Vestibulum at eros</a>
+        </div>
+    </div>
+</div>

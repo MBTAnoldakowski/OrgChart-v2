@@ -735,3 +735,19 @@ input:checked + .slider:before {
     opacity: 0;
 
 }
+
+.catContracts {
+     margin-left: 7%;
+     width: 65%;
+ }
+.catCode {
+    margin-left: 1%;
+    width: 10%;
+    text-align: center;
+}
+
+.catTitle {
+    margin-left: 5%;
+    width: 70%;
+}
+

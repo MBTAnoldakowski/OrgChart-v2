@@ -3,6 +3,7 @@
     <p>This page edited 11/22/2017 9:29AM</p>
     <p>Contracts September - October 2017</p>
 </div>
+
 <script>
     function drawButtons(code) {
         var opacity = $("#" + code).css("opacity");
@@ -54,12 +55,11 @@
         });
 
         setTimeout(function () {
-            console.log(jsonTree);
             initializeRows();
         }, 500);
     }
 
-    0
+
     init();
 
     function initializeRows() {
@@ -83,7 +83,6 @@
             col.setAttribute('id', colIdName);
             document.getElementById(rowIdName).appendChild(col);
             // create list elements
-            console.log(jsonTree.children[dataCount]._children);
             var contractList = "";
             for (cat in jsonTree.children[dataCount]._children) {
                 contractList = contractList + "<a href='" + jsonTree.children[dataCount]._children[cat].link
@@ -91,7 +90,6 @@
             }
             document.getElementById(colIdName).innerHTML = "<div class='contractContainer'>" +
                 "<h3 class='contractTitle' " +
-                /*"onclick=drawButtons('" + jsonTree.children[dataCount].code + "')*/
                 "><br/>"
                 + jsonTree.children[dataCount].name
                 + "&nbsp&nbsp<br/></h3>" +
@@ -101,7 +99,6 @@
                 "</div>" +
                 "<div class='list-group itemList' id='" + jsonTree.children[dataCount].code + "List'>" + contractList +
                 "</div><div class='btn btn-block btn-danger close-button' onclick=drawButtons('" + jsonTree.children[dataCount].code + "') id='" + jsonTree.children[dataCount].code + "Button'>Close</div></div>";
-            console.log('#row' + count + "col" + colIdCount);
             colIdCount++;
             dataCount++;
         }

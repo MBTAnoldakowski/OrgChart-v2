@@ -70,5 +70,15 @@
             .when('/categories', {
                 templateUrl: './templates/categories.html'
             })
+            .when('/category-edit', {
+                templateUrl: './templates/category-edit.html',
+                controller: 'categoryController',
+                controllerAs: 'model'
+            })
+            .when('/category-upload', {
+                templateUrl: './templates/category-icon-upload.html',
+                controller: 'categoryUploadController',
+                controllerAs: 'model'
+            })
     }
 })();

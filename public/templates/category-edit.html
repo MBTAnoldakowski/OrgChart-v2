@@ -1,0 +1,26 @@
+<div class=" container page-header"><h1>OSD Data Edit</h1>
+    <div class="pull-right btn btn-success" ng-click="model.submit()">Submit Changes</div>
+    <div class="pull-right btn btn-success" ng-click="model.getOSDTree()">Pull Data From OSD Site</div>
+</div>
+<div ng-repeat="t in model.tree.children">
+    <input type="text" ng-model="t.name" class="catTitle"><input type="text" ng-model="t.code" class="catCode">
+    <div class="btn btn-danger btn-sm" ng-click="model.removeCategory(t)"><b>-</b></div>
+    <br/>
+    <div ng-repeat="u in t._children">
+        <input type="text" ng-model="u.name" class="catContracts"> <input type="text" ng-model="u.code"
+                                                                          class="catCode">
+        <div class="btn btn-danger btn-sm" ng-click="model.removeContract(t, u)"><b>-</b></div>
+        <input type="text" ng-model="u.link" class="catContracts">
+        <br/>
+        <br/>
+    </div>
+    <div class="container">
+        <div class="btn btn-block btn-success" ng-click="model.addContract(t)"><b>+</b></div>
+    </div>
+    <br/>
+    <br/>
+</div>
+<div class="container">
+    <div class="btn btn-block btn-success" ng-click="model.addCategory()"><b>Add Category</b></div>
+</div>
+<br/>

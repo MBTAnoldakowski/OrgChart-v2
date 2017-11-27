@@ -1,0 +1,13 @@
+<div class="container">
+    <div class="page-header"><h1>OSD Icon Uploader</h1></div>
+
+
+    <form action="/api/upload/osdIcon" method="post" enctype="multipart/form-data">
+        <select ng-model="selectedCategory" name="selectedCat">
+            <option ng-repeat="x in model.tree.children" value="{{x.code}}">{{x.name}}</option>
+        </select>
+        <input name="myFile" type="file" class="form-control" accept="image/png"/>
+        <br/>
+        <button type="submit" class="btn btn-block btn-primary">Upload</button>
+    </form>
+</div>

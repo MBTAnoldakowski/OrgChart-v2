@@ -6,36 +6,38 @@
 <script>
     function drawButtons(code) {
         closeAllExcept(code);
-        var opacity = $("#" + code).css("opacity");
+        setTimeout(function () {
+            var opacity = $("#" + code).css("opacity");
 
-        // if (opacity == 1) {
-        $("#" + code).fadeTo(1000, 0.25);
-        $("#" + code + "List").fadeTo(1000, 0.85);
-        $("#" + code + "Button").fadeTo(1000, 0.85);
+            // if (opacity == 1) {
+            $("#" + code).fadeTo(500, 0.25);
+            $("#" + code + "List").fadeTo(500, 0.85);
+            $("#" + code + "Button").fadeTo(500, 0.85);
 
-        document.getElementById(code + "List").style.visibility = "visible";
-        document.getElementById(code + "Button").style.visibility = "visible";
+            document.getElementById(code + "List").style.visibility = "visible";
+            document.getElementById(code + "Button").style.visibility = "visible";
 
-        /* } else {
+            /* } else {
 
-             $("#" + code).fadeTo(1000, 1);
-             $("#" + code + "List").fadeTo(1000, 0);
-             $("#" + code + "Button").fadeTo(1000, 0);
+                 $("#" + code).fadeTo(1000, 1);
+                 $("#" + code + "List").fadeTo(1000, 0);
+                 $("#" + code + "Button").fadeTo(1000, 0);
 
-             setTimeout(
-                 function () {
-                     document.getElementById(code + "List").style.visibility = "hidden";
-                     document.getElementById(code + "Button").style.visibility = "hidden";
+                 setTimeout(
+                     function () {
+                         document.getElementById(code + "List").style.visibility = "hidden";
+                         document.getElementById(code + "Button").style.visibility = "hidden";
 
-                 }, 1000);
+                     }, 1000);
 
-         }*/
+             }*/
+        }, 375)
     }
 
     function closeList(code) {
-        $("#" + code).fadeTo(1000, 1);
-        $("#" + code + "List").fadeTo(1000, 0);
-        $("#" + code + "Button").fadeTo(1000, 0);
+        $("#" + code).fadeTo(500, 1);
+        $("#" + code + "List").fadeTo(500, 0);
+        $("#" + code + "Button").fadeTo(500, 0);
 
         setTimeout(
             function () {

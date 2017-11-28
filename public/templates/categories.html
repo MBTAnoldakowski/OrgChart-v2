@@ -1,31 +1,56 @@
 <div id="option">
     <h1>CommBuys Statewide Contracts</h1>
-    <p>This page edited 11/22/2017 9:29AM</p>
+    <p>This page edited 11/28/2017 10:19AM</p>
     <p>Contracts September - October 2017</p>
 </div>
 <script>
     function drawButtons(code) {
+        closeAllExcept(code);
         var opacity = $("#" + code).css("opacity");
-        if (opacity == 1) {
-            $("#" + code).fadeTo(1000, 0.25);
-            $("#" + code + "List").fadeTo(1000, 0.85);
-            $("#" + code + "Button").fadeTo(1000, 0.85);
 
-            document.getElementById(code + "List").style.visibility = "visible";
-            document.getElementById(code + "Button").style.visibility = "visible";
+        // if (opacity == 1) {
+        $("#" + code).fadeTo(1000, 0.25);
+        $("#" + code + "List").fadeTo(1000, 0.85);
+        $("#" + code + "Button").fadeTo(1000, 0.85);
 
-        } else {
-            $("#" + code).fadeTo(1000, 1);
-            $("#" + code + "List").fadeTo(1000, 0);
-            $("#" + code + "Button").fadeTo(1000, 0);
+        document.getElementById(code + "List").style.visibility = "visible";
+        document.getElementById(code + "Button").style.visibility = "visible";
 
-            setTimeout(
-                function () {
-                    document.getElementById(code + "List").style.visibility = "hidden";
-                    document.getElementById(code + "Button").style.visibility = "hidden";
+        /* } else {
 
-                }, 1000);
+             $("#" + code).fadeTo(1000, 1);
+             $("#" + code + "List").fadeTo(1000, 0);
+             $("#" + code + "Button").fadeTo(1000, 0);
 
+             setTimeout(
+                 function () {
+                     document.getElementById(code + "List").style.visibility = "hidden";
+                     document.getElementById(code + "Button").style.visibility = "hidden";
+
+                 }, 1000);
+
+         }*/
+    }
+
+    function closeList(code) {
+        $("#" + code).fadeTo(1000, 1);
+        $("#" + code + "List").fadeTo(1000, 0);
+        $("#" + code + "Button").fadeTo(1000, 0);
+
+        setTimeout(
+            function () {
+                document.getElementById(code + "List").style.visibility = "hidden";
+                document.getElementById(code + "Button").style.visibility = "hidden";
+
+            }, 1000);
+    }
+
+    function closeAllExcept(except) {
+        for (data in jsonTree.children) {
+            var code = jsonTree.children[data].code;
+            if (code !== except) {
+                document.getElementById(code + "Button").click();
+            }
         }
     }
 
@@ -85,7 +110,8 @@
             var contractList = "";
             for (cat in jsonTree.children[dataCount]._children) {
                 contractList = contractList + "<a href='" + jsonTree.children[dataCount]._children[cat].link
-                    + "' class='list-group-item list-group-item-action' target='_blank'>" + jsonTree.children[dataCount]._children[cat].name + " (" + jsonTree.children[dataCount]._children[cat].code + ")" + "</a>"
+                    + "' class='list-group-item list-group-item-action' target='_blank'>"
+                    + jsonTree.children[dataCount]._children[cat].name + " (" + jsonTree.children[dataCount]._children[cat].code + ")" + "</a>"
             }
             document.getElementById(colIdName).innerHTML = "<div class='contractContainer'>"
                 + "<div class='categoryIconDiv'><img src='/resources/icons/" + jsonTree.children[dataCount].code
@@ -96,7 +122,7 @@
                 + jsonTree.children[dataCount].name
                 + "</div>" +
                 "<div class='list-group itemList' id='" + jsonTree.children[dataCount].code + "List'>" + contractList +
-                "</div><div class='btn btn-block btn-danger close-button' onclick=drawButtons('" + jsonTree.children[dataCount].code + "') id='" + jsonTree.children[dataCount].code + "Button'>Close</div></div>";
+                "</div><div class='btn btn-block btn-danger close-button' onclick=closeList('" + jsonTree.children[dataCount].code + "') id='" + jsonTree.children[dataCount].code + "Button'>Close</div></div>";
             colIdCount++;
             dataCount++;
         }

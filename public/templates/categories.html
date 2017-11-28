@@ -106,14 +106,15 @@
         footer.setAttribute('id', 'footer');
 
         document.body.appendChild(footer);
-        document.getElementById('footer').innerHTML = "<br/><br/><div class='container'><a class='btn btn-block btn-default' href='#!/category-edit'>Edit this page</a></div>";
+        document.getElementById('footer').innerHTML = "<br/><br/><div class='container'><div class='btn btn-block btn-default' onclick=clearPage()>Edit this page</div></div>";
 
     }
 
-    window.onbeforeunload = function () {
-        document.body.innerHTML = '';
-        document.documentElement.innerHTML = '';
-
+    function clearPage() {
+        $('.row').remove();
+        $('.footer').remove();
+        location.href = '#!/category-edit';
     }
+
 </script>
 <!--Icons created by Pranita Lokinendi -->

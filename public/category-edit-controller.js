@@ -3,7 +3,7 @@
         .module('OrgApp')
         .controller('categoryController', categoryController);
 
-    function categoryController(categoryService) {
+    function categoryController(categoryService, $location) {
         var model = this;
 
         model.getTree = function () {
@@ -61,10 +61,11 @@
         };
 
         function init() {
-            model.getTree();
 
+            model.getTree();
         }
 
         init();
+
     }
 })();

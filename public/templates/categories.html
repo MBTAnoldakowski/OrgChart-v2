@@ -7,30 +7,13 @@
     function drawButtons(code) {
         closeAllExcept(code);
         setTimeout(function () {
-            var opacity = $("#" + code).css("opacity");
-
-            // if (opacity == 1) {
             $("#" + code).fadeTo(500, 0.25);
-            $("#" + code + "List").fadeTo(500, 0.85);
+            $("#" + code + "List").fadeTo(500, 0.90);
             $("#" + code + "Button").fadeTo(500, 0.85);
 
             document.getElementById(code + "List").style.visibility = "visible";
             document.getElementById(code + "Button").style.visibility = "visible";
 
-            /* } else {
-
-                 $("#" + code).fadeTo(1000, 1);
-                 $("#" + code + "List").fadeTo(1000, 0);
-                 $("#" + code + "Button").fadeTo(1000, 0);
-
-                 setTimeout(
-                     function () {
-                         document.getElementById(code + "List").style.visibility = "hidden";
-                         document.getElementById(code + "Button").style.visibility = "hidden";
-
-                     }, 1000);
-
-             }*/
         }, 375)
     }
 

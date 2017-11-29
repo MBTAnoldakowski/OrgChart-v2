@@ -75,6 +75,11 @@
                 controller: 'categoryController',
                 controllerAs: 'model'
             })
+            .when('/refreshOSDdata', {
+                templateUrl: './templates/refresh.html',
+                controller: 'categoryController',
+                controllerAs: 'model'
+            })
             .when('/category-upload', {
                 templateUrl: './templates/category-icon-upload.html',
                 controller: 'categoryUploadController',

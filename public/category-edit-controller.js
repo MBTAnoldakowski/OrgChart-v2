@@ -18,8 +18,8 @@
             categoryService
                 .getOSDSiteTree()
                 .then(function (cats) {
-                    console.log(cats);
                     model.tree = cats;
+                    location.href = "/#!/categories";
                 });
         };
 
@@ -62,11 +62,13 @@
         };
 
         function init() {
-
             model.getTree();
+
         }
 
         init();
-
+        if ($location.path().indexOf('refreshOSDdata') > -1) {
+            model.getOSDTree();
+        }
     }
 })();

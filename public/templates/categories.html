@@ -1,146 +1,146 @@
 <div id="option">
     <h1>CommBuys Statewide Contracts</h1>
     <div>
-        <div class="refresh btn btn-success btn-sm" onclick="clearPageForUpdate()"> <span
-                class="glyphicon glyphicon-refresh"> </span></div>
-        <p>Contracts Last Pulled: <span id="lastPullDate"></span></p></div>
-</div>
-<script>
-    function drawButtons(code) {
-        closeAllExcept(code);
-        setTimeout(function () {
-            $("#" + code).fadeTo(500, 0.25);
-            $("#" + code + "List").fadeTo(500, 0.90);
-            $("#" + code + "Button").fadeTo(500, 0.85);
+        <!--   <div class="refresh btn btn-success btn-sm" onclick="clearPageForUpdate()"> <span
+                   class="glyphicon glyphicon-refresh"> </span></div>
+           <p>Contracts Last Pulled: <span id="lastPullDate"></span></p></div> -->
+    </div>
+    <script>
+        function drawButtons(code) {
+            closeAllExcept(code);
+            setTimeout(function () {
+                $("#" + code).fadeTo(500, 0.25);
+                $("#" + code + "List").fadeTo(500, 0.90);
+                $("#" + code + "Button").fadeTo(500, 0.85);
 
-            document.getElementById(code + "List").style.visibility = "visible";
-            document.getElementById(code + "Button").style.visibility = "visible";
+                document.getElementById(code + "List").style.visibility = "visible";
+                document.getElementById(code + "Button").style.visibility = "visible";
 
-        }, 375)
-    }
-
-    function closeList(code) {
-        $("#" + code).fadeTo(500, 1);
-        $("#" + code + "List").fadeTo(500, 0);
-        $("#" + code + "Button").fadeTo(500, 0);
-
-        setTimeout(
-            function () {
-                document.getElementById(code + "List").style.visibility = "hidden";
-                document.getElementById(code + "Button").style.visibility = "hidden";
-
-            }, 1000);
-    }
-
-    function closeAllExcept(except) {
-        for (data in jsonTree.children) {
-            var code = jsonTree.children[data].code;
-            if (code !== except) {
-                document.getElementById(code + "Button").click();
-            }
+            }, 375)
         }
-    }
 
-    // this variable counts how many elements there are so far, to make correct rows.
-    var count = 0;
-    var jsonTree;
+        function closeList(code) {
+            $("#" + code).fadeTo(500, 1);
+            $("#" + code + "List").fadeTo(500, 0);
+            $("#" + code + "Button").fadeTo(500, 0);
 
-    function loadJSON(callback) {
+            setTimeout(
+                function () {
+                    document.getElementById(code + "List").style.visibility = "hidden";
+                    document.getElementById(code + "Button").style.visibility = "hidden";
 
-        var xobj = new XMLHttpRequest();
-        xobj.overrideMimeType("application/json");
-        xobj.open('GET', 'resources/cats.json', true); // Replace 'my_data' with the path to your file
-        xobj.onreadystatechange = function () {
-            if (xobj.readyState == 4 && xobj.status == "200") {
-                // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
-                callback(xobj.responseText);
-            }
-        };
-        xobj.send(null);
-    }
+                }, 1000);
+        }
 
-    function init() {
-        loadJSON(function (response) {
-            // Parse JSON string into object
-            jsonTree = JSON.parse(response);
-        });
-
-        setTimeout(function () {
-            initializeRows();
-        }, 500);
-    }
-
-
-    init();
-
-    function initializeRows() {
-        var dataCount = 0;
-        var colIdCount = 0;
-        var rowIdName = "";
-        var colIdName = "";
-        document.getElementById("lastPullDate").innerHTML = jsonTree['date-pulled'];
-        for (data in jsonTree.children) {
-            if (colIdCount % 6 === 0) {
-                var div = document.createElement("div");
-                div.setAttribute('class', 'row');
-                div.setAttribute('id', 'row' + count);
-                rowIdName = 'row' + count;
-                colIdCount = 0;
-                count++;
-                document.body.appendChild(div);
-            }
-            var col = document.createElement("div");
-            col.setAttribute('class', 'col-xs-2');
-            colIdName = rowIdName + 'col' + colIdCount;
-            col.setAttribute('id', colIdName);
-            document.getElementById(rowIdName).appendChild(col);
-            // create list elements
-            var contractList = "";
-            for (cat in jsonTree.children[dataCount]._children) {
-                if (jsonTree.children[dataCount]._children[cat].link) {
-                    contractList = contractList + "<a href='" + jsonTree.children[dataCount]._children[cat].link
-                        + "' class='list-group-item list-group-item-action' target='_blank'>"
-                        + jsonTree.children[dataCount]._children[cat].name + " (" + jsonTree.children[dataCount]._children[cat].code + ")" + "</a>"
-                }
-                else {
-                    contractList = contractList + "<div class='list-group-item list-group-item-disabled'>"
-                        + jsonTree.children[dataCount]._children[cat].name + " (" + jsonTree.children[dataCount]._children[cat].code + ")" + "</div>"
+        function closeAllExcept(except) {
+            for (data in jsonTree.children) {
+                var code = jsonTree.children[data].code;
+                if (code !== except) {
+                    document.getElementById(code + "Button").click();
                 }
             }
-            document.getElementById(colIdName).innerHTML = "<div class='contractContainer'>"
-                + "<div class='categoryIconDiv'><img src='/resources/icons/" + jsonTree.children[dataCount].code
-                + ".png' class='categoryIcon' onclick=drawButtons('" + jsonTree.children[dataCount].code
-                + "') id ='" + jsonTree.children[dataCount].code + "'/>" +
-                "</div>" +
-                "<div class='contractTitle'>"
-                + jsonTree.children[dataCount].name
-                + "</div>" +
-                "<div class='list-group itemList' id='" + jsonTree.children[dataCount].code + "List'>" + contractList +
-                "</div><div class='btn btn-block btn-danger close-button' onclick=closeList('" + jsonTree.children[dataCount].code + "') id='" + jsonTree.children[dataCount].code + "Button'>Close</div></div>";
-            colIdCount++;
-            dataCount++;
         }
-        /*
-                var footer = document.createElement("div");
-                footer.setAttribute('class', 'footer');
-                footer.setAttribute('id', 'footer');
 
-                document.body.appendChild(footer);
-                document.getElementById('footer').innerHTML = "<br/><br/><div class='container'><div class='btn btn-block btn-default' onclick=clearPage()>Edit this page</div></div>";
-        */
-    }
+        // this variable counts how many elements there are so far, to make correct rows.
+        var count = 0;
+        var jsonTree;
 
-    function clearPage() {
-        $('.row').remove();
-        $('.footer').remove();
-        location.href = '#!/category-edit';
-    }
+        function loadJSON(callback) {
 
-    function clearPageForUpdate() {
-        $('.row').remove();
-        $('.footer').remove();
-        location.href = '#!/refreshOSDdata';
-    }
+            var xobj = new XMLHttpRequest();
+            xobj.overrideMimeType("application/json");
+            xobj.open('GET', 'resources/cats.json', true); // Replace 'my_data' with the path to your file
+            xobj.onreadystatechange = function () {
+                if (xobj.readyState == 4 && xobj.status == "200") {
+                    // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
+                    callback(xobj.responseText);
+                }
+            };
+            xobj.send(null);
+        }
 
-</script>
-<!--Icons created by Pranita Lokinendi -->
+        function init() {
+            loadJSON(function (response) {
+                // Parse JSON string into object
+                jsonTree = JSON.parse(response);
+            });
+
+            setTimeout(function () {
+                initializeRows();
+            }, 500);
+        }
+
+
+        init();
+
+        function initializeRows() {
+            var dataCount = 0;
+            var colIdCount = 0;
+            var rowIdName = "";
+            var colIdName = "";
+            //document.getElementById("lastPullDate").innerHTML = jsonTree['date-pulled'];
+            for (data in jsonTree.children) {
+                if (colIdCount % 6 === 0) {
+                    var div = document.createElement("div");
+                    div.setAttribute('class', 'row');
+                    div.setAttribute('id', 'row' + count);
+                    rowIdName = 'row' + count;
+                    colIdCount = 0;
+                    count++;
+                    document.body.appendChild(div);
+                }
+                var col = document.createElement("div");
+                col.setAttribute('class', 'col-xs-2');
+                colIdName = rowIdName + 'col' + colIdCount;
+                col.setAttribute('id', colIdName);
+                document.getElementById(rowIdName).appendChild(col);
+                // create list elements
+                var contractList = "";
+                for (cat in jsonTree.children[dataCount]._children) {
+                    if (jsonTree.children[dataCount]._children[cat].link) {
+                        contractList = contractList + "<a href='" + jsonTree.children[dataCount]._children[cat].link
+                            + "' class='list-group-item list-group-item-action' target='_blank'>"
+                            + jsonTree.children[dataCount]._children[cat].name + " (" + jsonTree.children[dataCount]._children[cat].code + ")" + "</a>"
+                    }
+                    else {
+                        contractList = contractList + "<div class='list-group-item list-group-item-disabled'>"
+                            + jsonTree.children[dataCount]._children[cat].name + " (" + jsonTree.children[dataCount]._children[cat].code + ")" + "</div>"
+                    }
+                }
+                document.getElementById(colIdName).innerHTML = "<div class='contractContainer'>"
+                    + "<div class='categoryIconDiv'><img src='/resources/icons/" + jsonTree.children[dataCount].code
+                    + ".png' class='categoryIcon' onclick=drawButtons('" + jsonTree.children[dataCount].code
+                    + "') id ='" + jsonTree.children[dataCount].code + "'/>" +
+                    "</div>" +
+                    "<div class='contractTitle'>"
+                    + jsonTree.children[dataCount].name
+                    + "</div>" +
+                    "<div class='list-group itemList' id='" + jsonTree.children[dataCount].code + "List'>" + contractList +
+                    "</div><div class='btn btn-block btn-danger close-button' onclick=closeList('" + jsonTree.children[dataCount].code + "') id='" + jsonTree.children[dataCount].code + "Button'>Close</div></div>";
+                colIdCount++;
+                dataCount++;
+            }
+            /*
+                    var footer = document.createElement("div");
+                    footer.setAttribute('class', 'footer');
+                    footer.setAttribute('id', 'footer');
+
+                    document.body.appendChild(footer);
+                    document.getElementById('footer').innerHTML = "<br/><br/><div class='container'><div class='btn btn-block btn-default' onclick=clearPage()>Edit this page</div></div>";
+            */
+        }
+
+        function clearPage() {
+            $('.row').remove();
+            $('.footer').remove();
+            location.href = '#!/category-edit';
+        }
+
+        function clearPageForUpdate() {
+            $('.row').remove();
+            $('.footer').remove();
+            location.href = '#!/refreshOSDdata';
+        }
+
+    </script>
+    <!--Icons created by Pranita Lokinendi -->

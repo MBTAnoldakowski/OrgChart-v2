@@ -1,7 +1,6 @@
 <div id="option">
     <h1>CommBuys Statewide Contracts</h1>
-    <p>This page edited 11/28/2017 10:19AM</p>
-    <p>Contracts September - October 2017</p>
+    <p>Contracts Last Pulled: <span id="lastPullDate"></span></p>
 </div>
 <script>
     function drawButtons(code) {
@@ -76,6 +75,7 @@
         var colIdCount = 0;
         var rowIdName = "";
         var colIdName = "";
+        document.getElementById("lastPullDate").innerHTML = jsonTree['date-pulled'];
         for (data in jsonTree.children) {
             if (colIdCount % 6 === 0) {
                 var div = document.createElement("div");

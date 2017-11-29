@@ -18,6 +18,7 @@
             categoryService
                 .getOSDSiteTree()
                 .then(function (cats) {
+                    console.log(cats);
                     model.tree = cats;
                 });
         };

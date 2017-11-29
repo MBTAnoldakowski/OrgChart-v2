@@ -703,6 +703,7 @@ input:checked + .slider:before {
     bottom: 7%;
     font-size: 0.8vw;
     display: block;
+    width: 100%;
 }
 
 .contractTitle {

@@ -10,7 +10,8 @@
     "mongoose": "^4.4.15",
     "multer": "^1.3.0",
     "request": "^2.83.0",
-    "cheerio": "^1.0.0-rc.2"
+    "cheerio": "^1.0.0-rc.2",
+    "csv-string": "^3.0.3"
   },
   "devDependencies": {},
   "scripts": {

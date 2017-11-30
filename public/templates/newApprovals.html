@@ -84,13 +84,8 @@
         .attr("class", "tooltip")
         .style("opacity", 1e-6);
 
-    // initializes the new approval tooltip
-    var div2 = d3.select("body").append("div")
-        .attr("class", "tooltip")
-        .style("opacity", 1e-6);
-
     var aData = [];
-    d3.csv("csv/approvals.csv", function (error, bData) {
+    d3.csv("csv/new_approvals.csv", function (error, bData) {
         if (error) throw error;
         bData.forEach(function (b) {
             //the + next to the following makes d3 think of it as a number
@@ -171,44 +166,6 @@
         nodeEnter.append("circle")
             .attr("r", 1e-6);
 
-        // appends the new/old approval signifiers
-        node.append("svg:foreignObject")
-            .attr("width", 10)
-            .attr("height", 10)
-            .attr("y", "-11px")
-            .attr("x", "-4.5px")
-            .append("xhtml:span")
-            .attr("z-index", "1000")
-            .attr("class", function (d) {
-                var info = findApproval(d.deptno);
-                if (info !== undefined) {
-                    if (info.gotApprovalFrom) {
-                        return "control glyphicon glyphicon-plus"
-                    }
-                }
-            })
-            // calls for approval tooltip on mouseover
-            .on("mouseover", mouseover2)
-            .on("mousemove", function (d) {
-                mousemove2(d);
-            })
-            .on("mouseout", mouseout2);
-
-        node.append("svg:foreignObject")
-            .attr("width", 20)
-            .attr("height", 20)
-            .attr("y", "-7px")
-            .attr("x", "-10px")
-            .append("xhtml:span")
-            .attr("z-index", "9999")
-            .attr("class", function (d) {
-                if (d.removed) {
-                    return "control glyphicon glyphicon-remove-circle"
-                }
-
-            })
-            .style("color", "white");
-
         // appends the name text to the nodes
         nodeEnter.append("text")
         // changes the X position of where the text starts in relation to the node
@@ -228,9 +185,6 @@
             })
             //the name is appended to the dot right here
             .text(function (d) {
-                if (d.deptno === "320000") {
-                    return d.name + "  C̶a̶p̶i̶t̶a̶l̶ ̶P̶r̶o̶j̶e̶c̶t̶ ̶O̶v̶e̶r̶s̶i̶g̶h̶t̶";
-                }
                 return d.name;
             })
             // calls for PO data tooltip on mouseover
@@ -238,32 +192,7 @@
             .on("mousemove", function (d) {
                 mousemove(findApproval(d.deptno), d.deptno);
             })
-            .on("mouseout", mouseout)
-            .style("fill-opacity", 1)
-            // puts a line through a department's name if it is to be removed
-            .style("text-decoration", function (d) {
-                if (d.removed === true) {
-                    return "line-through"
-                }
-            })
-            // the names are styled here based on PO data
-            .style("fill", function (d) {
-                if (d.removed === true) {
-                    return "black"
-                }
-            })
-            //makes Green Line Extension's text large
-            .style("font-size", function (d) {
-                if (d.deptno === "000000") {
-                    return "18px";
-                }
-            })
-            // I am pretty sure this is left over from me trying to put a red line through text
-            .attr("id", function (d) {
-                if (d.removed === true) {
-                    return "striker"
-                }
-            });
+            .on("mouseout", mouseout);
 
 
         // Transition nodes to their new position.
@@ -367,204 +296,23 @@
     }
 
 
-    // controls how long it takes the tooltip to appear after you hover
-    function mouseover2() {
-        div2.transition()
-            .duration(300)
-            .style("opacity", 1);
-    }
-
     //draws the tooltip
     function mousemove(d, departmentNumber) {
+
         // if there is no new approval structure, no an old approval structure, and no requestors
         if (d === undefined) {
-            div.html(departmentNumber + "<br/> Approves at a higher level")
+            div.html(departmentNumber + "<br/> Approves at a different level")
                 .style("left", (d3.event.pageX + 15 ) + "px")
                 .style("top", (d3.event.pageY) + "px");
         }
         else {
-            //if there is an old approval structure but no requestors
-            if (d.approval1 !== "" && d.requestors === "") {
-                div.html(d.deptno + "<br/>" + "Level 1: " + d.approval1 + "<br/>" + "Level 2: " + d.approval2 + "<br/>"
-                    + "Level 3: " + d.approval3 + "<br/>" + "Level 4: " + d.approval4 + "<br/>" + "Level 5: " + d.approval5
-                    + "<br/>" + "Level 6: " + d.approval6 + "<br/>" + "Level 7: " + d.approval7 + "<br/>" + "Level 8: "
-                    + d.approval8 + " </div>")
-                    .style("left", (d3.event.pageX + 15 ) + "px")
-                    .style("top", (d3.event.pageY) + "px");
-
-            }
-            // if there is an old approval structure and an old requestor structure
-            if (d.approval1 !== "" && d.requestors !== "") {
-                div.html(d.deptno + "<br/><div class='approvals-container'>" + "Level 1: " + d.approval1 + "<br/>" + "Level 2: " + d.approval2 + "<br/>"
-                    + "Level 3: " + d.approval3 + "<br/>" + "Level 4: " + d.approval4 + "<br/>" + "Level 5: " + d.approval5
-                    + "<br/>" + "Level 6: " + d.approval6 + "<br/>" + "Level 7: " + d.approval7 + "<br/>" + "Level 8: "
-                    + d.approval8 + "</div><br/><div class='request-container2'> Requestors <br/>" + d.requestors + "</div>")
-                    .style("left", (d3.event.pageX + 15 ) + "px")
-                    .style("top", (d3.event.pageY) + "px");
-
-            }
-            // if there is an old approval structure and an old requestor structure and the department is to be removed
-            if (d.approval1 !== "" && d.removed === true && d.requestors !== "") {
-                div.html(d.deptno + "<br/>Department is to be removed<br/>" + "Level 1: " + d.approval1 + "<br/>" + "Level 2: " + d.approval2 + "<br/>"
-                    + "Level 3: " + d.approval3 + "<br/>" + "Level 4: " + d.approval4 + "<br/>" + "Level 5: " + d.approval5
-                    + "<br/>" + "Level 6: " + d.approval6 + "<br/>" + "Level 7: " + d.approval7 + "<br/>" + "Level 8: "
-                    + d.approval8 + "<br/> Requestors <br/>" + d.requestors + "</div>")
-                    .style("left", (d3.event.pageX + 15 ) + "px")
-                    .style("top", (d3.event.pageY) + "px");
-
-            }
-            // if there is an old approval structure, but not a requestor structure, and the department is to be removed
-            if (d.approval1 !== "" && d.removed === true && d.requestors === "") {
-                div.html(d.deptno + "<br/>Department is to be removed<br/>" + "Level 1: " + d.approval1 + "<br/>" + "Level 2: " + d.approval2 + "<br/>"
-                    + "Level 3: " + d.approval3 + "<br/>" + "Level 4: " + d.approval4 + "<br/>" + "Level 5: " + d.approval5
-                    + "<br/>" + "Level 6: " + d.approval6 + "<br/>" + "Level 7: " + d.approval7 + "<br/>" + "Level 8: "
-                    + d.approval8 + "</div>")
-                    .style("left", (d3.event.pageX + 15 ) + "px")
-                    .style("top", (d3.event.pageY) + "px");
-
-            }
-            // if there is a new approval structure, an old approval structure that is different, and requestors
-            if (d.newApproval1 !== "" && d.approval1 !== "" && (d.approval1 !== d.newApproval1
-                    || d.approval2 !== d.newApproval2 || d.approval3 !== d.newApproval3 || d.approval4 !== d.newApproval4 ||
-                    d.approval5 !== d.newApproval5 || d.approval6 !== d.newApproval6 || d.approval7 !== d.newApproval7
-                    || d.approval8 !== d.newApproval8) && d.requestors !== "" && d.newRequestors !== "") {
-
-                div.html("<div class='tooltip-head'>" + d.deptno + "</div>"
-                    + "<div class='approvals-container'><div class='old-approvals'> Old Approval Structure <br/> Level 1: " + d.approval1 + "<br/>" + "Level 2: " + d.approval2 + "<br/>"
-                    + "Level 3: " + d.approval3 + "<br/>" + "Level 4: " + d.approval4 + "<br/>" + "Level 5: " + d.approval5
-                    + "<br/>" + "Level 6: " + d.approval6 + "<br/>" + "Level 7: " + d.approval7 + "<br/>" + "Level 8: "
-                    + d.approval8 + "</div>" + "<div class='new-approvals'> New Approval Structure <br/> Level 1: " + d.newApproval1 + "<br/>" + "Level 2: " + d.newApproval2 + "<br/>"
-                    + "Level 3: " + d.newApproval3 + "<br/>" + "Level 4: " + d.newApproval4 + "<br/>" + "Level 5: " + d.newApproval5
-                    + "<br/>" + "Level 6: " + d.newApproval6 + "<br/>" + "Level 7: " + d.newApproval7 + "<br/>" + "Level 8: "
-                    + d.newApproval8 + "<br/>" + "Level 9: " + d.newApproval9 + "</div></div>"
-                    + "<div class='request-container'><div class='old-requests'> Old Requestors <br/>" + d.requestors + "</div>"
-                    + "<div class='new-requests'> New Requestors <br/>" + d.newRequestors + "</div>")
-                    .style("left", (d3.event.pageX + 15 ) + "px")
-                    .style("top", (d3.event.pageY) + "px");
-            }
-            // if there is a new approval structure, an old approval structure that is different, and requestors did not change
-            if (d.newApproval1 !== "" && d.approval1 !== "" && (d.approval1 !== d.newApproval1
-                    || d.approval2 !== d.newApproval2 || d.approval3 !== d.newApproval3 || d.approval4 !== d.newApproval4 ||
-                    d.approval5 !== d.newApproval5 || d.approval6 !== d.newApproval6 || d.approval7 !== d.newApproval7
-                    || d.approval8 !== d.newApproval8) && d.requestors !== "" && d.newRequestors !== "" && d.requestors === d.newRequestors) {
-                div.html("<div class='tooltip-head'>" + d.deptno + "</div>" + "<div class='approvals-container'><div class='old-approvals'> Old Approval Structure <br/> Level 1: " + d.approval1 + "<br/>" + "Level 2: " + d.approval2 + "<br/>"
-                    + "Level 3: " + d.approval3 + "<br/>" + "Level 4: " + d.approval4 + "<br/>" + "Level 5: " + d.approval5
-                    + "<br/>" + "Level 6: " + d.approval6 + "<br/>" + "Level 7: " + d.approval7 + "<br/>" + "Level 8: "
-                    + d.approval8 + "</div>" + "<div class='new-approvals'> New Approval Structure <br/> Level 1: " + d.newApproval1 + "<br/>" + "Level 2: " + d.newApproval2 + "<br/>"
-                    + "Level 3: " + d.newApproval3 + "<br/>" + "Level 4: " + d.newApproval4 + "<br/>" + "Level 5: " + d.newApproval5
-                    + "<br/>" + "Level 6: " + d.newApproval6 + "<br/>" + "Level 7: " + d.newApproval7 + "<br/>" + "Level 8: "
-                    + d.newApproval8 + "<br/>" + "Level 9: " + d.newApproval9 + "</div></div>"
-                    + "<div class='request-container'><br/> Requestors did not change<br/>" + d.requestors + "</div></div>")
-                    .style("left", (d3.event.pageX + 15 ) + "px")
-                    .style("top", (d3.event.pageY) + "px");
-            }
-            // if there is a new approval structure, an old approval structure that is different, and no requestors
-            if (d.newApproval1 !== "" && d.approval1 !== "" && (d.approval1 !== d.newApproval1
-                    || d.approval2 !== d.newApproval2 || d.approval3 !== d.newApproval3 || d.approval4 !== d.newApproval4 ||
-                    d.approval5 !== d.newApproval5 || d.approval6 !== d.newApproval6 || d.approval7 !== d.newApproval7
-                    || d.approval8 !== d.newApproval8) && d.requestors === "" && d.newRequestors === "") {
-                div.html("<div class='tooltip-head'>" + d.deptno + "</div>"
-                    + "<div class='approvals-container'><div class='old-approvals'> Old Approval Structure <br/> Level 1: " + d.approval1 + "<br/>" + "Level 2: " + d.approval2 + "<br/>"
-                    + "Level 3: " + d.approval3 + "<br/>" + "Level 4: " + d.approval4 + "<br/>" + "Level 5: " + d.approval5
-                    + "<br/>" + "Level 6: " + d.approval6 + "<br/>" + "Level 7: " + d.approval7 + "<br/>" + "Level 8: "
-                    + d.approval8 + "</div>" + "<div class='new-approvals'> New Approval Structure <br/> Level 1: " + d.newApproval1 + "<br/>" + "Level 2: " + d.newApproval2 + "<br/>"
-                    + "Level 3: " + d.newApproval3 + "<br/>" + "Level 4: " + d.newApproval4 + "<br/>" + "Level 5: " + d.newApproval5
-                    + "<br/>" + "Level 6: " + d.newApproval6 + "<br/>" + "Level 7: " + d.newApproval7 + "<br/>" + "Level 8: "
-                    + d.newApproval8 + "<br/>" + "Level 9: " + d.newApproval9 + "</div></div>")
-                    .style("left", (d3.event.pageX + 15 ) + "px")
-                    .style("top", (d3.event.pageY) + "px");
-            }
-            // if there is a new approval structure, an old approval structure that is the same, and no requestors
-            if (d.newApproval1 !== "" && d.approval1 !== "" && d.approval1 === d.newApproval1
-                && d.approval2 === d.newApproval2 && d.approval3 === d.newApproval3 && d.approval4 === d.newApproval4 &&
-                d.approval5 === d.newApproval5 && d.approval6 === d.newApproval6 && d.approval7 === d.newApproval7
-                && d.approval8 === d.newApproval8 && d.requestors === "" && d.newRequestors === "") {
-                div.html(d.deptno + "<br/>Approval did not change<br/>" + "Level 1: " + d.approval1 + "<br/>" + "Level 2: " + d.approval2 + "<br/>"
-                    + "Level 3: " + d.approval3 + "<br/>" + "Level 4: " + d.approval4 + "<br/>" + "Level 5: " + d.approval5
-                    + "<br/>" + "Level 6: " + d.approval6 + "<br/>" + "Level 7: " + d.approval7 + "<br/>" + "Level 8: "
-                    + d.approval8 + "</div>")
-                    .style("left", (d3.event.pageX + 15 ) + "px")
-                    .style("top", (d3.event.pageY) + "px");
-
-            }
-            // if there is a new approval structure, an old approval structure that is the same, and requestors
-            if (d.newApproval1 !== "" && d.approval1 !== "" && d.approval1 === d.newApproval1
-                && d.approval2 === d.newApproval2 && d.approval3 === d.newApproval3 && d.approval4 === d.newApproval4 &&
-                d.approval5 === d.newApproval5 && d.approval6 === d.newApproval6 && d.approval7 === d.newApproval7
-                && d.approval8 === d.newApproval8 && d.requestors !== "" && d.newRequestors !== "") {
-                div.html(d.deptno + "<br/>Approval did not change<br/><div class='approvals-container'>" + "Level 1: " + d.approval1 + "<br/>" + "Level 2: " + d.approval2 + "<br/>"
-                    + "Level 3: " + d.approval3 + "<br/>" + "Level 4: " + d.approval4 + "<br/>" + "Level 5: " + d.approval5
-                    + "<br/>" + "Level 6: " + d.approval6 + "<br/>" + "Level 7: " + d.approval7 + "<br/>" + "Level 8: "
-                    + d.approval8 + "</div><div class='request-container2'><div class='old-requests'> Old Requestors <br/>" + d.requestors + "</div>"
-                    + "<div class='new-requests'> New Requestors <br/>" + d.newRequestors + "</div></div>")
-                    .style("left", (d3.event.pageX + 15 ) + "px")
-                    .style("top", (d3.event.pageY) + "px");
-
-            }
-            // if there is a new approval structure, an old approval structure that is the same, and the same requestors
-            if (d.newApproval1 !== "" && d.approval1 !== "" && d.approval1 === d.newApproval1
-                && d.approval2 === d.newApproval2 && d.approval3 === d.newApproval3 && d.approval4 === d.newApproval4 &&
-                d.approval5 === d.newApproval5 && d.approval6 === d.newApproval6 && d.approval7 === d.newApproval7
-                && d.approval8 === d.newApproval8 && d.requestors !== "" && d.newRequestors !== "" && d.requestors === d.newRequestors) {
-                div.html(d.deptno + "<br/>Approval did not change<br/><div class='approvals-container'>" + "Level 1: " + d.approval1 + "<br/>" + "Level 2: " + d.approval2 + "<br/>"
-                    + "Level 3: " + d.approval3 + "<br/>" + "Level 4: " + d.approval4 + "<br/>" + "Level 5: " + d.approval5
-                    + "<br/>" + "Level 6: " + d.approval6 + "<br/>" + "Level 7: " + d.approval7 + "<br/>" + "Level 8: "
-                    + d.approval8 + "</div><div class='request-container2'> Requestors did not change <br/>" + d.requestors + "</div>")
-                    .style("left", (d3.event.pageX + 15 ) + "px")
-                    .style("top", (d3.event.pageY) + "px");
-
-            }
-            // if there is a new approval structure, no an old approval structure, and no requestors
-            if (d.newApproval1 !== "" && d.approval1 === "" && d.newRequestors === "") {
-                div.html(d.deptno + "<br/>" + "New Approval Structure <br/> Level 1: " + d.newApproval1 + "<br/>" + "Level 2: " + d.newApproval2 + "<br/>"
-                    + "Level 3: " + d.newApproval3 + "<br/>" + "Level 4: " + d.newApproval4 + "<br/>" + "Level 5: " + d.newApproval5
-                    + "<br/>" + "Level 6: " + d.newApproval6 + "<br/>" + "Level 7: " + d.newApproval7 + "<br/>" + "Level 8: "
-                    + d.newApproval8 + "<br/>" + "Level 9: " + d.newApproval9 + "</div>")
-                    .style("left", (d3.event.pageX + 15 ) + "px")
-                    .style("top", (d3.event.pageY) + "px")
-
-            }
-            // if there is a new approval structure, no an old approval structure, and requestors
-            if (d.newApproval1 !== "" && d.approval1 === "" && d.newRequestors !== "") {
-                div.html(d.deptno + "<br/>" + "New Approval Structure <br/><div class='approvals-container'> Level 1: " + d.newApproval1 + "<br/>" + "Level 2: " + d.newApproval2 + "<br/>"
-                    + "Level 3: " + d.newApproval3 + "<br/>" + "Level 4: " + d.newApproval4 + "<br/>" + "Level 5: " + d.newApproval5
-                    + "<br/>" + "Level 6: " + d.newApproval6 + "<br/>" + "Level 7: " + d.newApproval7 + "<br/>" + "Level 8: "
-                    + d.newApproval8 + "<br/>" + "Level 9: " + d.newApproval9 + "</div><div class='request-container2'><br/> New Requestor Structure <br/>" + d.newRequestors + "</div>")
-                    .style("left", (d3.event.pageX + 15 ) + "px")
-                    .style("top", (d3.event.pageY) + "px")
-
-            }
-
-            // if there is no new approval structure, no an old approval structure, but requestors
-            if (d.approval1 === "" && d.newApproval1 === "" && d.requestors !== "") {
-                div.html(d.deptno + "<br/> Approves at a higher level <br/> Requestors <br/>" + d.requestors)
-                    .style("left", (d3.event.pageX + 15 ) + "px")
-                    .style("top", (d3.event.pageY) + "px");
-            }
-            // if there is no new approval structure, no an old approval structure, and department is to be removed
-            if (d.approval1 === "" && d.newApproval1 === "" && d.removed === true) {
-                div.html(d.deptno + "<br/> Department is to be removed <br/>")
-                    .style("left", (d3.event.pageX + 15 ) + "px")
-                    .style("top", (d3.event.pageY) + "px");
-            }
-            // this was made exclusively for Green Line Extension, which is a proposed new department.
-            if (d.deptno === "000000") {
-                div.html("Proposed new department. <br/> Awaiting approval structure")
-                    .style("left", (d3.event.pageX + 15 ) + "px")
-                    .style("top", (d3.event.pageY) + "px");
-            }
-        }
-    }
-
-    //draws the tooltip
-    function mousemove2(d) {
-        if (d.gotApprovalFrom && d.deptno != "000000") {
-            div2.html("Recently received approval structure")
+            div.html(departmentNumber + "<br/>" + "Level 1: " + d.approval1 + "<br/>" + "Level 2: " + d.approval2 + "<br/>"
+                + "Level 3: " + d.approval3 + "<br/>" + "Level 4: " + d.approval4 + "<br/>" + "Level 5: " + d.approval5
+                + "<br/>" + "Level 6: " + d.approval6 + "<br/>" + "Level 7: " + d.approval7 + "<br/>" + "Level 8: "
+                + d.approval8 + "<br/>Level 9:" + d.approval9 + "<br/>Requestors: "+d.requestors)
                 .style("left", (d3.event.pageX + 15 ) + "px")
                 .style("top", (d3.event.pageY) + "px");
-            //highlight(d.gotApprovalFrom);
         }
-
     }
 
     // controls how slowly the tooltip disappears
@@ -574,12 +322,6 @@
             .style("opacity", 1e-6);
     }
 
-    // highlights department names that are in a certain KPI section
-    function mouseout2() {
-        div2.transition()
-            .duration(300)
-            .style("opacity", 1e-6);
-    }
 
     // this is triggered when you hit the 'View Operating' button, it just loads the
     // Operating data instead of the Administration data
@@ -745,11 +487,6 @@
     <p>Level 5</p>
     <div id="level6circle"></div>
     <p>Level 6</p>
-
-</div>
-<!--This div contains the Key-->
-<div class="ltitleright2">
-    <p><span class="glyphicon-key glyphicon glyphicon-plus-sign"></span> Recently gained approval rights</p>
 
 </div>
 <!-- This div contains the 'Expand All' button -->

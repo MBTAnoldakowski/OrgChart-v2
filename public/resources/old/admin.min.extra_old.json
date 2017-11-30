@@ -1362,6 +1362,42 @@
           ]
         }
       ]
+    },
+    {
+      "name": "Community Relations",
+      "level": "4",
+      "deptno": "570000",
+      "removed": true
+    },
+    {
+      "name": "DGM Human Resources and Labor Relations",
+      "level": "4",
+      "deptno": "770000",
+      "removed": true
+    },
+    {
+      "name": "Worker's Compensation",
+      "level": "4",
+      "deptno": "741000",
+      "removed": true
+    },
+    {
+      "name": "Director of Marketing & Communications",
+      "level": "4",
+      "deptno": "550000",
+      "removed": true
+    },
+    {
+      "name": "Director of Marketing",
+      "level": "4",
+      "deptno": "500000",
+      "removed": true
+    },
+    {
+      "name": "Director of Customer Service",
+      "level": "4",
+      "deptno": "275000",
+      "removed": true
     }
   ]
 }

@@ -4,8 +4,10 @@
   "deptno": "200000",
   "children": [
     {
-      "name": "",
-      "level": "",
+      "name": "Bus Operations",
+      "level": "3",
+      "deptno": "220000",
+      "removed": true,
       "children": [
         {
           "name": "Bus Maintenance",
@@ -648,6 +650,24 @@
               "level": "5",
               "deptno": "322081",
               "new": true
+            },
+            {
+              "name": "Capital Project Oversight PP",
+              "level": "5",
+              "deptno": "322002",
+              "removed": true
+            },
+            {
+              "name": "Capital Project Oversight SoSt",
+              "level": "5",
+              "deptno": "322280",
+              "removed": true
+            },
+            {
+              "name": "Capital Project Oversight SuSt",
+              "level": "5",
+              "deptno": "322124",
+              "removed": true
             }
           ]
         },
@@ -694,6 +714,12 @@
               "name": "Design & Construction",
               "level": "5",
               "deptno": "311002"
+            },
+            {
+              "name": "Capital Delivery Administration",
+              "level": "5",
+              "deptno": "310002",
+              "removed": true
             },
             {
               "name": "Construction Management Design Arborway",

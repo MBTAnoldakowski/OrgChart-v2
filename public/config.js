@@ -29,6 +29,9 @@
             .when('/approvals', {
                 templateUrl: './templates/newApprovals.html'
             })
+            .when('/old-approvals', {
+                templateUrl: './templates/notUpdatedApprovals.html'
+            })
             .when('/auth-vs-dept', {
                 templateUrl: './templates/auth-vs-dept.html'
             })

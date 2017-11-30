@@ -17,7 +17,7 @@
       <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/resources/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="569">
+            <state relative-caret-position="12920">
               <caret line="760" column="4" lean-forward="false" selection-start-line="760" selection-start-column="4" selection-end-line="760" selection-end-column="4" />
               <folding />
             </state>
@@ -48,7 +48,7 @@
         <entry file="file://$PROJECT_DIR$/public/templates/categories.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1292">
-              <caret line="76" column="30" lean-forward="true" selection-start-line="76" selection-start-column="30" selection-end-line="76" selection-end-column="30" />
+              <caret line="76" column="30" lean-forward="false" selection-start-line="76" selection-start-column="30" selection-end-line="76" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -57,7 +57,7 @@
       <file leaf-file-name="cats_backup.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/cats_backup.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="518">
+            <state relative-caret-position="10863">
               <caret line="639" column="1" lean-forward="false" selection-start-line="639" selection-start-column="1" selection-end-line="639" selection-end-column="1" />
               <folding />
             </state>
@@ -67,8 +67,8 @@
       <file leaf-file-name="cats.json" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/resources/cats.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="287">
-              <caret line="596" column="42" lean-forward="false" selection-start-line="596" selection-start-column="42" selection-end-line="596" selection-end-column="42" />
+            <state relative-caret-position="246">
+              <caret line="596" column="44" lean-forward="false" selection-start-line="596" selection-start-column="44" selection-end-line="596" selection-end-column="44" />
               <folding />
             </state>
           </provider>
@@ -77,8 +77,8 @@
       <file leaf-file-name="config.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/config.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="382">
-              <caret line="75" column="21" lean-forward="true" selection-start-line="75" selection-start-column="21" selection-end-line="75" selection-end-column="21" />
+            <state relative-caret-position="1275">
+              <caret line="75" column="21" lean-forward="false" selection-start-line="75" selection-start-column="21" selection-end-line="75" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -189,8 +189,8 @@
         <option value="$PROJECT_DIR$/public/config.js" />
         <option value="$PROJECT_DIR$/public/category-edit-controller.js" />
         <option value="$PROJECT_DIR$/public/templates/categories.html" />
-        <option value="$PROJECT_DIR$/public/resources/cats.json" />
         <option value="$PROJECT_DIR$/public/cats_backup.json" />
+        <option value="$PROJECT_DIR$/public/resources/cats.json" />
       </list>
     </option>
   </component>
@@ -225,6 +225,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -260,8 +262,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -377,12 +377,13 @@
       <workItem from="1511791543473" duration="20857000" />
       <workItem from="1511877761467" duration="1296000" />
       <workItem from="1511879404772" duration="17643000" />
-      <workItem from="1511964265368" duration="20713000" />
+      <workItem from="1511964265368" duration="20816000" />
+      <workItem from="1512050553020" duration="589000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="665613000" />
+    <option name="totallyTimeSpent" value="666305000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1358" y="-548" width="1936" height="1096" extended-state="6" />
@@ -693,7 +694,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
           <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -701,7 +701,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="399">
           <caret line="179" column="51" lean-forward="false" selection-start-line="179" selection-start-column="51" selection-end-line="179" selection-end-column="51" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -709,23 +708,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="28" lean-forward="false" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="28" />
-          <folding>
-            <element signature="e#160#166#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/templates/categories.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1292">
-          <caret line="76" column="30" lean-forward="true" selection-start-line="76" selection-start-column="30" selection-end-line="76" selection-end-column="30" />
+          <caret line="76" column="30" lean-forward="false" selection-start-line="76" selection-start-column="30" selection-end-line="76" selection-end-column="30" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/resources/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="569">
+        <state relative-caret-position="12920">
           <caret line="760" column="4" lean-forward="false" selection-start-line="760" selection-start-column="4" selection-end-line="760" selection-end-column="4" />
           <folding />
         </state>
@@ -749,15 +745,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/config.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="382">
-          <caret line="75" column="21" lean-forward="true" selection-start-line="75" selection-start-column="21" selection-end-line="75" selection-end-column="21" />
+        <state relative-caret-position="1275">
+          <caret line="75" column="21" lean-forward="false" selection-start-line="75" selection-start-column="21" selection-end-line="75" selection-end-column="21" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/cats_backup.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="518">
+        <state relative-caret-position="10863">
           <caret line="639" column="1" lean-forward="false" selection-start-line="639" selection-start-column="1" selection-end-line="639" selection-end-column="1" />
           <folding />
         </state>
@@ -765,8 +761,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/resources/cats.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
-          <caret line="596" column="42" lean-forward="false" selection-start-line="596" selection-start-column="42" selection-end-line="596" selection-end-column="42" />
+        <state relative-caret-position="246">
+          <caret line="596" column="44" lean-forward="false" selection-start-line="596" selection-start-column="44" selection-end-line="596" selection-end-column="44" />
           <folding />
         </state>
       </provider>

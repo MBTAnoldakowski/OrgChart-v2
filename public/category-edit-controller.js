@@ -62,15 +62,17 @@
         };
 
         function init() {
-            model.getTree();
-
+            if ($location.path().indexOf('refreshOSDdata') > -1) {
+                model.getOSDTree();
+            }
+            else{
+                model.getTree();
+            }
         }
 
         init();
-        /*
-        if ($location.path().indexOf('refreshOSDdata') > -1) {
-            model.getOSDTree();
-        }
-        */
+
+
+
     }
 })();

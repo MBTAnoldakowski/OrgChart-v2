@@ -1,9 +1,9 @@
 <div id="option">
     <h1>CommBuys Statewide Contracts</h1>
     <div>
-        <!--   <div class="refresh btn btn-success btn-sm" onclick="clearPageForUpdate()"> <span
+           <div class="refresh btn btn-success btn-sm" onclick="clearPageForUpdate()"> <span
                    class="glyphicon glyphicon-refresh"> </span></div>
-           <p>Contracts Last Pulled: <span id="lastPullDate"></span></p></div> -->
+           <p>Contracts Last Pulled: <span id="lastPullDate"></span></p></div>
     </div>
     <script>
         function drawButtons(code) {
@@ -78,7 +78,7 @@
             var colIdCount = 0;
             var rowIdName = "";
             var colIdName = "";
-            //document.getElementById("lastPullDate").innerHTML = jsonTree['date-pulled'];
+            document.getElementById("lastPullDate").innerHTML = jsonTree['date-pulled'];
             for (data in jsonTree.children) {
                 if (colIdCount % 6 === 0) {
                     var div = document.createElement("div");

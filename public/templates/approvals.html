@@ -346,7 +346,7 @@
 
     //draws the tooltip
     function mousemove(d) {
-        //if there is an old approval structure but no requestors
+        //if there is an old approval structure but no requestors.csv
         if (d.approval1 !== undefined && d.requestors === undefined) {
             div.html(d.deptno + "<br/>" + "Level 1: " + d.approval1 + "<br/>" + "Level 2: " + d.approval2 + "<br/>"
                 + "Level 3: " + d.approval3 + "<br/>" + "Level 4: " + d.approval4 + "<br/>" + "Level 5: " + d.approval5
@@ -386,7 +386,7 @@
                 .style("top", (d3.event.pageY) + "px");
 
         }
-        // if there is a new approval structure, an old approval structure that is different, and requestors
+        // if there is a new approval structure, an old approval structure that is different, and requestors.csv
         if (d.newApproval1 !== undefined && d.approval1 !== undefined && (d.approval1 !== d.newApproval1
                 || d.approval2 !== d.newApproval2 || d.approval3 !== d.newApproval3 || d.approval4 !== d.newApproval4 ||
                 d.approval5 !== d.newApproval5 || d.approval6 !== d.newApproval6 || d.approval7 !== d.newApproval7
@@ -405,7 +405,7 @@
                 .style("left", (d3.event.pageX + 15 ) + "px")
                 .style("top", (d3.event.pageY) + "px");
         }
-        // if there is a new approval structure, an old approval structure that is different, and requestors did not change
+        // if there is a new approval structure, an old approval structure that is different, and requestors.csv did not change
         if (d.newApproval1 !== undefined && d.approval1 !== undefined && (d.approval1 !== d.newApproval1
                 || d.approval2 !== d.newApproval2 || d.approval3 !== d.newApproval3 || d.approval4 !== d.newApproval4 ||
                 d.approval5 !== d.newApproval5 || d.approval6 !== d.newApproval6 || d.approval7 !== d.newApproval7
@@ -421,7 +421,7 @@
                 .style("left", (d3.event.pageX + 15 ) + "px")
                 .style("top", (d3.event.pageY) + "px");
         }
-        // if there is a new approval structure, an old approval structure that is different, and no requestors
+        // if there is a new approval structure, an old approval structure that is different, and no requestors.csv
         if (d.newApproval1 !== undefined && d.approval1 !== undefined && (d.approval1 !== d.newApproval1
                 || d.approval2 !== d.newApproval2 || d.approval3 !== d.newApproval3 || d.approval4 !== d.newApproval4 ||
                 d.approval5 !== d.newApproval5 || d.approval6 !== d.newApproval6 || d.approval7 !== d.newApproval7
@@ -437,7 +437,7 @@
                 .style("left", (d3.event.pageX + 15 ) + "px")
                 .style("top", (d3.event.pageY) + "px");
         }
-        // if there is a new approval structure, an old approval structure that is the same, and no requestors
+        // if there is a new approval structure, an old approval structure that is the same, and no requestors.csv
         if (d.newApproval1 !== undefined && d.approval1 !== undefined && d.approval1 === d.newApproval1
             && d.approval2 === d.newApproval2 && d.approval3 === d.newApproval3 && d.approval4 === d.newApproval4 &&
             d.approval5 === d.newApproval5 && d.approval6 === d.newApproval6 && d.approval7 === d.newApproval7
@@ -450,7 +450,7 @@
                 .style("top", (d3.event.pageY) + "px");
 
         }
-        // if there is a new approval structure, an old approval structure that is the same, and requestors
+        // if there is a new approval structure, an old approval structure that is the same, and requestors.csv
         if (d.newApproval1 !== undefined && d.approval1 !== undefined && d.approval1 === d.newApproval1
             && d.approval2 === d.newApproval2 && d.approval3 === d.newApproval3 && d.approval4 === d.newApproval4 &&
             d.approval5 === d.newApproval5 && d.approval6 === d.newApproval6 && d.approval7 === d.newApproval7
@@ -464,7 +464,7 @@
                 .style("top", (d3.event.pageY) + "px");
 
         }
-        // if there is a new approval structure, an old approval structure that is the same, and the same requestors
+        // if there is a new approval structure, an old approval structure that is the same, and the same requestors.csv
         if (d.newApproval1 !== undefined && d.approval1 !== undefined && d.approval1 === d.newApproval1
             && d.approval2 === d.newApproval2 && d.approval3 === d.newApproval3 && d.approval4 === d.newApproval4 &&
             d.approval5 === d.newApproval5 && d.approval6 === d.newApproval6 && d.approval7 === d.newApproval7
@@ -477,7 +477,7 @@
                 .style("top", (d3.event.pageY) + "px");
 
         }
-        // if there is a new approval structure, no an old approval structure, and no requestors
+        // if there is a new approval structure, no an old approval structure, and no requestors.csv
         if (d.newApproval1 !== undefined && d.approval1 === undefined && d.newRequestors === undefined) {
             div.html(d.deptno + "<br/>" + "New Approval Structure <br/> Level 1: " + d.newApproval1 + "<br/>" + "Level 2: " + d.newApproval2 + "<br/>"
                 + "Level 3: " + d.newApproval3 + "<br/>" + "Level 4: " + d.newApproval4 + "<br/>" + "Level 5: " + d.newApproval5
@@ -487,7 +487,7 @@
                 .style("top", (d3.event.pageY) + "px")
 
         }
-        // if there is a new approval structure, no an old approval structure, and requestors
+        // if there is a new approval structure, no an old approval structure, and requestors.csv
         if (d.newApproval1 !== undefined && d.approval1 === undefined && d.newRequestors !== undefined) {
             div.html(d.deptno + "<br/>" + "New Approval Structure <br/><div class='approvals-container'> Level 1: " + d.newApproval1 + "<br/>" + "Level 2: " + d.newApproval2 + "<br/>"
                 + "Level 3: " + d.newApproval3 + "<br/>" + "Level 4: " + d.newApproval4 + "<br/>" + "Level 5: " + d.newApproval5
@@ -497,13 +497,13 @@
                 .style("top", (d3.event.pageY) + "px")
 
         }
-        // if there is no new approval structure, no an old approval structure, and no requestors
+        // if there is no new approval structure, no an old approval structure, and no requestors.csv
         if (d.approval1 === undefined && d.newApproval1 === undefined && d.requestors === undefined) {
             div.html(d.deptno + "<br/> Approves at a higher level")
                 .style("left", (d3.event.pageX + 15 ) + "px")
                 .style("top", (d3.event.pageY) + "px");
         }
-        // if there is no new approval structure, no an old approval structure, but requestors
+        // if there is no new approval structure, no an old approval structure, but requestors.csv
         if (d.approval1 === undefined && d.newApproval1 === undefined && d.requestors !== undefined) {
             div.html(d.deptno + "<br/> Approves at a higher level <br/> Requestors <br/>" + d.requestors)
                 .style("left", (d3.event.pageX + 15 ) + "px")

@@ -299,7 +299,7 @@
     //draws the tooltip
     function mousemove(d, departmentNumber) {
 
-        // if there is no new approval structure, no an old approval structure, and no requestors
+        // if there is no new approval structure, no an old approval structure, and no requestors.csv
         if (d === undefined) {
             div.html("<b>" + departmentNumber + "</b><br/> Approves at a different level")
                 .style("left", (d3.event.pageX + 15 ) + "px")

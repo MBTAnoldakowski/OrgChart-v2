@@ -1,10 +1,11 @@
 <div id="option">
     <h1>CommBuys Statewide Contracts</h1>
     <div>
-           <div class="refresh btn btn-success btn-sm" onclick="clearPageForUpdate()"> <span
+        <a class="btn btn-primary btn-sm" href="#!/">Home</a> <div class="refresh btn btn-success btn-sm" onclick="clearPageForUpdate()"> <span
                    class="glyphicon glyphicon-refresh"> </span></div>
            <p>Contracts Last Pulled: <span id="lastPullDate"></span></p></div>
     </div>
+<div id="categoryContainer"></div>
     <script>
         function drawButtons(code) {
             closeAllExcept(code);
@@ -87,7 +88,7 @@
                     rowIdName = 'row' + count;
                     colIdCount = 0;
                     count++;
-                    document.body.appendChild(div);
+                    document.getElementById("categoryContainer").appendChild(div);
                 }
                 var col = document.createElement("div");
                 col.setAttribute('class', 'col-xs-2');
@@ -130,15 +131,8 @@
             */
         }
 
-        function clearPage() {
-            $('.row').remove();
-            $('.footer').remove();
-            location.href = '#!/category-edit';
-        }
 
         function clearPageForUpdate() {
-            $('.row').remove();
-            $('.footer').remove();
             location.href = '#!/refreshOSDdata';
         }
 

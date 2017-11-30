@@ -301,15 +301,15 @@
 
         // if there is no new approval structure, no an old approval structure, and no requestors
         if (d === undefined) {
-            div.html(departmentNumber + "<br/> Approves at a different level")
+            div.html("<b>" + departmentNumber + "</b><br/> Approves at a different level")
                 .style("left", (d3.event.pageX + 15 ) + "px")
                 .style("top", (d3.event.pageY) + "px");
         }
         else {
-            div.html(departmentNumber + "<br/>" + "Level 1: " + d.approval1 + "<br/>" + "Level 2: " + d.approval2 + "<br/>"
+            div.html("<b>" + departmentNumber + "</b><br/>Approvers:<br/>" + "Level 1: " + d.approval1 + "<br/>" + "Level 2: " + d.approval2 + "<br/>"
                 + "Level 3: " + d.approval3 + "<br/>" + "Level 4: " + d.approval4 + "<br/>" + "Level 5: " + d.approval5
                 + "<br/>" + "Level 6: " + d.approval6 + "<br/>" + "Level 7: " + d.approval7 + "<br/>" + "Level 8: "
-                + d.approval8 + "<br/>Level 9:" + d.approval9 + "<br/>Requestors: "+d.requestors)
+                + d.approval8 + "<br/>Level 9:" + d.approval9 + "<br/><br/>Requestors: <br/>" + d.requestors)
                 .style("left", (d3.event.pageX + 15 ) + "px")
                 .style("top", (d3.event.pageY) + "px");
         }

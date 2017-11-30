@@ -37,11 +37,11 @@
       <file leaf-file-name="newApprovals.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/templates/newApprovals.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="382">
-              <caret line="311" column="97" lean-forward="false" selection-start-line="311" selection-start-column="97" selection-end-line="311" selection-end-column="97" />
+            <state relative-caret-position="331">
+              <caret line="308" column="68" lean-forward="false" selection-start-line="308" selection-start-column="68" selection-end-line="308" selection-end-column="68" />
               <folding>
                 <element signature="n#style#0;n#input#0;n#div#3;n#!!top" expanded="true" />
-                <element signature="e#15736#15743#1" expanded="true" />
+                <element signature="e#15787#15794#1" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -227,7 +227,7 @@
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1911" />
+    <option name="x" value="1358" />
     <option name="y" value="-548" />
     <option name="width" value="980" />
     <option name="height" value="498" />
@@ -408,12 +408,12 @@
       <workItem from="1511877761467" duration="1296000" />
       <workItem from="1511879404772" duration="17643000" />
       <workItem from="1511964265368" duration="20816000" />
-      <workItem from="1512050553020" duration="5554000" />
+      <workItem from="1512050553020" duration="6299000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="671270000" />
+    <option name="totallyTimeSpent" value="672015000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1358" y="-548" width="1936" height="1096" extended-state="6" />
@@ -836,11 +836,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/templates/newApprovals.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="382">
-          <caret line="311" column="97" lean-forward="false" selection-start-line="311" selection-start-column="97" selection-end-line="311" selection-end-column="97" />
+        <state relative-caret-position="331">
+          <caret line="308" column="68" lean-forward="false" selection-start-line="308" selection-start-column="68" selection-end-line="308" selection-end-column="68" />
           <folding>
             <element signature="n#style#0;n#input#0;n#div#3;n#!!top" expanded="true" />
-            <element signature="e#15736#15743#1" expanded="true" />
+            <element signature="e#15787#15794#1" expanded="true" />
           </folding>
         </state>
       </provider>

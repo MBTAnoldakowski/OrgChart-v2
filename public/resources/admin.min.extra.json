@@ -117,7 +117,7 @@
           ]
         },
         {
-          "name": "Center for Audit/Gaap Adjustment",
+          "name": "Center for Audit/Gap Adjustment",
           "level": "5",
           "deptno": "871002",
           "new": true
@@ -261,6 +261,56 @@
       ]
     },
     {
+      "name": "Customer Technology Department",
+      "level": "4",
+      "deptno": "118000",
+      "children": [
+        {
+          "name": "AFC 1.0",
+          "level": "5",
+          "deptno": "116002",
+          "children": [
+            {
+              "name": "Revenue Maintenance Charlestown",
+              "level": "6",
+              "deptno": "263077"
+            },
+            {
+              "name": "Revenue Maintenance Everett",
+              "level": "6",
+              "deptno": "263106"
+            },
+            {
+              "name": "Revenue Audit",
+              "level": "6",
+              "deptno": "267002"
+            },
+            {
+              "name": "Revenue Maintenance Franklin",
+              "level": "6",
+              "deptno": "263123"
+            }
+          ]
+        },
+        {
+          "name": "AFC 2.0",
+          "level": "5",
+          "deptno": "117002"
+        },
+        {
+          "name": "Customer Technology Division",
+          "level": "5",
+          "deptno": "118002"
+        },
+        {
+          "name": "Automated Fare Collection Park Plaza",
+          "level": "5",
+          "deptno": "856002",
+          "new": true
+        }
+      ]
+    },
+    {
       "name": "Diversity & Civil Rights",
       "level": "4",
       "deptno": "135000",
@@ -317,56 +367,6 @@
           "name": "Communications",
           "level": "5",
           "deptno": "521002"
-        }
-      ]
-    },
-    {
-      "name": "Customer Technology Department",
-      "level": "4",
-      "deptno": "118000",
-      "children": [
-        {
-          "name": "AFC 1.0",
-          "level": "5",
-          "deptno": "116002",
-          "children": [
-            {
-              "name": "Revenue Maintenance Charlestown",
-              "level": "6",
-              "deptno": "263077"
-            },
-            {
-              "name": "Revenue Maintenance Everett",
-              "level": "6",
-              "deptno": "263106"
-            },
-            {
-              "name": "Revenue Audit",
-              "level": "6",
-              "deptno": "267002"
-            },
-            {
-              "name": "Revenue Maintenance Franklin",
-              "level": "6",
-              "deptno": "263123"
-            }
-          ]
-        },
-        {
-          "name": "AFC 2.0",
-          "level": "5",
-          "deptno": "117002"
-        },
-        {
-          "name": "Customer Technology Division",
-          "level": "5",
-          "deptno": "118002"
-        },
-        {
-          "name": "Automated Fare Collection Park Plaza",
-          "level": "5",
-          "deptno": "856002",
-          "new": true
         }
       ]
     },

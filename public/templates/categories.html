@@ -7,13 +7,18 @@
     </div>
 <div id="categoryContainer"></div>
     <script>
+        //this function shows the list that appears overlayed on the icon
         function drawButtons(code) {
+            //close the open lists
             closeAllExcept(code);
+            //this is in a setTimeout so that the data has time to load
             setTimeout(function () {
+                // fades the icon out in the background
                 $("#" + code).fadeTo(500, 0.25);
+
+                //fades in the list and close buttons
                 $("#" + code + "List").fadeTo(500, 0.90);
                 $("#" + code + "Button").fadeTo(500, 0.85);
-
                 document.getElementById(code + "List").style.visibility = "visible";
                 document.getElementById(code + "Button").style.visibility = "visible";
 
@@ -33,6 +38,7 @@
                 }, 1000);
         }
 
+        //
         function closeAllExcept(except) {
             for (data in jsonTree.children) {
                 var code = jsonTree.children[data].code;

@@ -25,6 +25,7 @@
             }, 375)
         }
 
+        // fades the list into the background
         function closeList(code) {
             $("#" + code).fadeTo(500, 1);
             $("#" + code + "List").fadeTo(500, 0);
@@ -38,7 +39,7 @@
                 }, 1000);
         }
 
-        //
+        // presses the close buttons on all lists that do not have the given code
         function closeAllExcept(except) {
             for (data in jsonTree.children) {
                 var code = jsonTree.children[data].code;
@@ -52,20 +53,20 @@
         var count = 0;
         var jsonTree;
 
+        // loads JSON
         function loadJSON(callback) {
-
             var xobj = new XMLHttpRequest();
             xobj.overrideMimeType("application/json");
-            xobj.open('GET', 'resources/cats.json', true); // Replace 'my_data' with the path to your file
+            xobj.open('GET', 'resources/cats.json', true);
             xobj.onreadystatechange = function () {
                 if (xobj.readyState == 4 && xobj.status == "200") {
-                    // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
                     callback(xobj.responseText);
                 }
             };
             xobj.send(null);
         }
 
+        // runs on initialization
         function init() {
             loadJSON(function (response) {
                 // Parse JSON string into object
@@ -80,18 +81,24 @@
 
         init();
 
+        // initializes the row layout depending on the number of category elements
         function initializeRows() {
             var dataCount = 0;
             var colIdCount = 0;
             var rowIdName = "";
             var colIdName = "";
+            // populates the date div with the date from the JSON
             document.getElementById("lastPullDate").innerHTML = jsonTree['date-pulled'];
             for (data in jsonTree.children) {
+                // if the column number is divisible by 6
                 if (colIdCount % 6 === 0) {
+                    // create a div
                     var div = document.createElement("div");
+                    // set properties
                     div.setAttribute('class', 'row');
                     div.setAttribute('id', 'row' + count);
                     rowIdName = 'row' + count;
+
                     colIdCount = 0;
                     count++;
                     document.getElementById("categoryContainer").appendChild(div);
@@ -127,14 +134,6 @@
                 colIdCount++;
                 dataCount++;
             }
-            /*
-                    var footer = document.createElement("div");
-                    footer.setAttribute('class', 'footer');
-                    footer.setAttribute('id', 'footer');
-
-                    document.body.appendChild(footer);
-                    document.getElementById('footer').innerHTML = "<br/><br/><div class='container'><div class='btn btn-block btn-default' onclick=clearPage()>Edit this page</div></div>";
-            */
         }
 
 

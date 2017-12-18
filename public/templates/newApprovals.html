@@ -53,8 +53,8 @@
 
     // size variables for the box to paint in
     var margin = {top: 20, right: 150, bottom: 20, left: 200},
-        width = 1000,
-        height = 2200;
+        width = 3000,
+        height = 4000;
 
     var i = 0,
         //sets the amount of time it takes the tree opening animation to run
@@ -95,7 +95,7 @@
         });
     });
 
-    //loads the initial department data
+    // loads the initial department data
     d3.json("resources/admin.min.extra.json", function (error, flare) {
         if (error) throw error;
 
@@ -187,6 +187,11 @@
             .text(function (d) {
                 return d.name;
             })
+            .attr("opacity", function(d){
+                if(d.status === 'I'){
+                    return 0.5;
+                }
+            })
             // calls for PO data tooltip on mouseover
             .on("mouseover", mouseover)
             .on("mousemove", function (d) {
@@ -211,6 +216,7 @@
             .attr("z-index", "9997")
             // fill circles based on their level
             .style("fill", function (d) {
+                if (d.status === "I") return "grey";
                 if (d.level === "2") return "red";
                 if (d.level === "3") return "orange";
                 if (d.level === "4") return "green";

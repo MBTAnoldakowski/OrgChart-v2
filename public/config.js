@@ -6,16 +6,16 @@
     function configuration($routeProvider) {
         $routeProvider
             .when('/', {
-                templateUrl: 'home.html'
+                templateUrl: './templates/home.html'
             })
             .when('/budget', {
                 templateUrl: './templates/visualization.html'
             })
             .when('/old', {
-                templateUrl: './deprecated.html'
+                templateUrl: './templates/deprecated.html'
             })
             .when('/update', {
-                templateUrl: 'upload.template.html'
+                templateUrl: './templates/upload.template.html'
             })
             .when('/employees', {
                 templateUrl: './templates/employees3.html'
@@ -36,22 +36,22 @@
                 templateUrl: './templates/auth-vs-dept.html'
             })
             .when('/vendor/:vendorName', {
-                templateUrl: 'vendor.html',
+                templateUrl: './templates/vendor/vendor.html',
                 controller: 'vendorPageController',
                 controllerAs: 'model'
             })
             .when('/vendor/:vendorName/remove', {
-                templateUrl: 'vendorRemove.html',
+                templateUrl: './templates/vendor/vendorRemove.html',
                 controller: 'vendorPageController',
                 controllerAs: 'model'
             })
             .when('/vendor/:vendorName/options', {
-                templateUrl: 'vendorOptions.html',
+                templateUrl: './templates/vendor/vendorOptions.html',
                 controller: 'vendorPageController',
                 controllerAs: 'model'
             })
             .when('/vendor', {
-                templateUrl: 'vendorUpload.html'
+                templateUrl: './templates/vendor/vendorUpload.html'
             })
             .when('/extra', {
                 templateUrl: './templates/new-depts.html'
@@ -66,7 +66,7 @@
                 templateUrl: './templates/circle.html'
             })
             .when('/vendors', {
-                templateUrl: 'vendor-list.html',
+                templateUrl: './templates/vendor/vendor-list.html',
                 controller: 'vendorController',
                 controllerAs: 'model'
             })

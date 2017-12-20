@@ -53,8 +53,8 @@
 
     // size variables for the box to paint in
     var margin = {top: 20, right: 150, bottom: 20, left: 200},
-        width = 3000,
-        height = 4000;
+        width = 1000,
+        height = 2200;
 
     var i = 0,
         //sets the amount of time it takes the tree opening animation to run
@@ -216,7 +216,6 @@
             .attr("z-index", "9997")
             // fill circles based on their level
             .style("fill", function (d) {
-                if (d.status === "I") return "grey";
                 if (d.level === "2") return "red";
                 if (d.level === "3") return "orange";
                 if (d.level === "4") return "green";

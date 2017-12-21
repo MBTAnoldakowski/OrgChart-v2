@@ -1,3 +1,4 @@
+// declare dependencies:
 var express = require('express');
 var app = express();
 var fs = require('fs');
@@ -20,12 +21,13 @@ require("./app.js");
 var port = process.env.PORT || 3000;
 app.listen(port);
 
+// set paths for HTTP requests:
+
 app.get("/api/vendor-list", getFiles);
 app.get("/api/cats", getCategories);
 app.get("/api/cats/osd", getOSDCategories);
 
 app.post("/api/updateCats", updateCats);
-
 app.post("/api/upload/image", upload.single('myFile'), uploadFile);
 app.post("/api/upload/p", upload.single('myFile'), uploadFileProcurement);
 app.post("/api/upload/odepartments", upload.single('myFile'), uploadFileODepartments);
@@ -50,15 +52,28 @@ var k = schedule.scheduleJob({hour: 00, minute: 30}, function () {
     treeInfoToJSON();
 });
 
+//pullFromFTP();
 // pulls the files from the server, deletes the first line of the file
 function pullFromFTP() {
+    /*client.scp({
+        host: 'mbtaftp.mbta.com',
+        username: 'mbtadotcom',
+        port: 10022,
+        password: "Pr0gr3ss",
+        path: './ORGCHART_6.csv'
+    }, './public/csv/budgetdata.csv', function (err) {
+        if (err) {
+            console.log("rut roe, there's been an error: " + err);
+        }
+    });
+
     client.scp({
         host: 'mbtaftp.mbta.com',
         username: 'mbtadotcom',
         port: 10022,
         password: process.env.ftp_password,
-        path: './DEPT_TBL.csv'
-    }, './public/csv/', function (err) {
+        path: './ORGCHART_4.csv'
+    }, './public/csv/approver_report.csv', function (err) {
         if (err) {
             console.log("rut roe, there's been an error: " + err);
         }
@@ -68,8 +83,8 @@ function pullFromFTP() {
         username: 'mbtadotcom',
         port: 10022,
         password: process.env.ftp_password,
-        path: './approval_report.csv'
-    }, './public/csv/', function (err) {
+        path: './ORGCHART_5.csv'
+    }, './public/csv/procurementdata.csv', function (err) {
         if (err) {
             console.log("rut roe, there's been an error: " + err);
         }
@@ -79,8 +94,8 @@ function pullFromFTP() {
         username: 'mbtadotcom',
         port: 10022,
         password: process.env.ftp_password,
-        path: './budgetdata.csv'
-    }, './public/csv/', function (err) {
+        path: './ORGCHART_1.csv'
+    }, './public/csv/requestors.csv', function (err) {
         if (err) {
             console.log("rut roe, there's been an error: " + err);
         }
@@ -90,8 +105,8 @@ function pullFromFTP() {
         username: 'mbtadotcom',
         port: 10022,
         password: process.env.ftp_password,
-        path: './requestors.csv'
-    }, './public/csv/', function (err) {
+        path: './ORGCHART_2.csv'
+    }, './public/csv/PSTREENODE.csv', function (err) {
         if (err) {
             console.log("rut roe, there's been an error: " + err);
         }
@@ -101,30 +116,22 @@ function pullFromFTP() {
         username: 'mbtadotcom',
         port: 10022,
         password: process.env.ftp_password,
-        path: './PSTREENODE.csv'
-    }, './public/csv/', function (err) {
+        path: './ORGCHART_3.csv'
+    }, './public/csv/DEPT_TBL.csv', function (err) {
         if (err) {
             console.log("rut roe, there's been an error: " + err);
         }
     });
-    client.scp({
-        host: 'mbtaftp.mbta.com',
-        username: 'mbtadotcom',
-        port: 10022,
-        password: process.env.ftp_password,
-        path: './procurementdata.csv'
-    }, './public/csv/', function (err) {
-        if (err) {
-            console.log("rut roe, there's been an error: " + err);
-        }
-    });
+    */
 }
 
+// is supposed to remove a vendor from the DVA pages, does not currently do anything...
 function removeVendor(req, res) {
     var vendorName = req.body;
     console.log('removing vendor');
 }
 
+// upload a file of operating employees
 function uploadFileOEmployees(req, res) {
     var myFile = req.file;
     fs.rename(__dirname + '/public/uploads/' + myFile.filename, __dirname + '/public/resources/operatingEmployees.json');
@@ -132,8 +139,8 @@ function uploadFileOEmployees(req, res) {
     res.redirect(callbackUrl);
 }
 
+// upload icons for the categories
 function uploadIcon(req, res) {
-    console.log(req.body.selectedCat);
     var myFile = req.file;
     var fileName = req.body.selectedCat + ".png";
     fs.rename(__dirname + '/public/uploads/' + myFile.filename, __dirname + '/public/resources/icons/' + fileName);
@@ -141,6 +148,7 @@ function uploadIcon(req, res) {
     res.redirect(callbackUrl);
 }
 
+// update the categories list
 function updateCats(req, res) {
     var myFile = JSON.stringify(req.body);
     fs.writeFile("./public/resources/cats.json", myFile);
@@ -148,51 +156,72 @@ function updateCats(req, res) {
     res.redirect(callbackUrl);
 }
 
+// gets the vendor data file
 function getFiles(req, res) {
     var files = fs.readdirSync(__dirname + '/public/vendor-data');
     res.send(files);
 }
 
+// sends the OSD categories in JSON format
 function getCategories(req, res) {
     var file = JSON.parse(fs.readFileSync('./public/resources/cats.json', 'utf8'));
     res.send(file);
 }
 
-
+// scrapes the OSD site for the categories... I will do my best to comment it,
+// but honestly I don't remember what some of this is supposed to do- there's this whole thing where
+// some of it depends on var % 2, which is mod 2, which is like odds and evens. I think it might have to do with
+// codes being on the evens and descriptions on the odds?? I know this is not really helpful
 function getOSDCategories(req, res) {
+    // url of the OSD categories page
     var url = 'http://www.mass.gov/anf/budget-taxes-and-procurement/procurement-info-and-res/buy-from-a-state-contract/statewide-contract-user-guides.html';
+    // creates a new date object
     var date = new Date();
+    // adds today's date to the JSON and initializes the final object
     var finalJSON = {
         "date-pulled": (date.getMonth() + 1) + "/" + date.getDate() + "/" + date.getFullYear(),
         "children": []
     };
-    console.log(finalJSON);
+    // here is where the scarping starts:
     request(url, function (error, response, html) {
         var $ = cheerio.load(html);
         var codeArray = [];
+        // grabs the contract codes and descriptions from the table of contents
+
+        // grabs the element with the class 'bodyfield'
         var links = $('.bodyfield');
+        // for each of the link texts, finds the bold links and extrapolates its text
         $(links).each(function (i, link) {
             contracts = $(link).find('strong a').text();
         });
+        // Regular expression to find 3 letters with a dash
         var regEx = new RegExp('[A-Z]{3} - ');
+        // splits the text of all of the codes and descriptions by the regex
         descriptions = contracts.split(regEx);
+        // removes the first description
         descriptions.splice(0, 1);
+        // regular Expression for finding _-_
         var regEx2 = new RegExp(' - ');
+        // splits by dash
         codes = contracts.split(regEx2);
         codes = codes.map(function (e) {
+            // splices by 3s (?)
             e = e.slice(-3);
+            // adds the code to the array of codes
             codeArray.push(e);
         });
-        //console.log(descriptions);
         var finalCodes = [];
         for (code in codeArray) {
+            // makes sure whatever it picked up is actually a code from the table of contents
             if (codeArray[code].toUpperCase() == codeArray[code]) {
                 finalCodes.push(codeArray[code]);
             }
         }
+        // adds a misc category for everything it can't classify
         finalCodes.push("Misc");
         descriptions.push("Miscellaneous");
-        //console.log(finalCodes);
+
+        // adds all of the codes and descriptions to the final tree.
         for (description in descriptions) {
             finalJSON.children.push({
                 "code": finalCodes[description],
@@ -201,22 +230,30 @@ function getOSDCategories(req, res) {
                 "_children": []
             });
         }
+        // gets the elements containing the contract names, descriptions, including those without links
         var contractNames = $('.col .callout .lead_snippet .titlelink');
         var contractDesc = $('.col .callout p').text();
         var unlinkedContracts = $('.col .callout p strong');
         var othersString = unlinkedContracts.text();
+        // some text cleaning
         othersString = othersString.replace(/Back to Top/g, '');
         var otherStrings = othersString.replace(/OSC/g, 'OSC ');
+        // splits by 3 letters, unlimited digits and anything that happens to come after (?)
         otherStrings = otherStrings.split(new RegExp('([A-Z]{3}[0-9]+[^]*?)'));
-
+        // splits by 'Back to Top'
         contractDesc = contractDesc.split(new RegExp('Back to Top'));
+        // for each contract, looks to see if the parent code is in the JSON already
         $(contractNames).each(function (i, link) {
             var found = false;
+            // gets contract name
             var cn = $(link).text();
+            // gets rid of spaces (?)
             cn = cn.replace(/\s/g, '');
+            // creates link
             var link = "http://www.mass.gov" + $(link).attr('href');
-            // find description here
+            // creates contract object
             var cname = {"code": cn, "link": link, "name": ""};
+            // finds if the code is in the JSON, if it isn't, puts the contract in the MISC category
             for (child in finalJSON.children) {
                 if (finalJSON.children[child].code == cn.substr(0, 3)) {
                     found = true;
@@ -231,10 +268,14 @@ function getOSDCategories(req, res) {
                 }
             }
         });
+        // Gets rid of first element (?)
         otherStrings.shift();
-        console.log(otherStrings);
+
+        // this next part is kind of a mystery to me- I have no clue why odds and evens are involved.
+        // this code does the same thing as what is above, just with the unlinked contracts (I think?)
         var odds = [];
         var evens = [];
+
         for (s in otherStrings) {
             if (s % 2 == 0) {
                 odds.push(otherStrings[s]);
@@ -270,6 +311,7 @@ function getOSDCategories(req, res) {
 
             }
         }
+        // matches contract description to its object
         for (con in contractDesc) {
             if (contractDesc[con].replace(/\s/g, '').length > 0) {
                 var codescstring = myTrim(contractDesc[con]);
@@ -277,13 +319,15 @@ function getOSDCategories(req, res) {
                 desc = codescstring.split(new RegExp("([A-Z]{3}[0-9]+[^@]*?-)"));
                 for (var d = 0; d < desc.length; d++) {
                     if (desc[d].replace(/\s/g, '').length > 0) {
+                        // again with the odds??
                         if (d % 2 === 1) {
                             var found = false;
                             var codeName = desc[d];
+                            // clean up the text
                             codeName = codeName.replace('-', '');
                             codeName = codeName.replace('file size 1MB', '');
                             codeName = codeName.replace(/\s/g, '');
-                            //console.log(codeName);
+
                             for (child in finalJSON.children) {
                                 for (childs in finalJSON.children[child]._children) {
                                     if (finalJSON.children[child]._children[childs].code == codeName && d != desc.length) {
@@ -300,7 +344,6 @@ function getOSDCategories(req, res) {
                         }
                     }
                 }
-                // validDesc.push(myTrim(contractDesc[con]));
             }
         }
 
@@ -308,6 +351,7 @@ function getOSDCategories(req, res) {
             return x.replace(/^\s+|\s+$/gm, '');
         }
 
+        // set the categories file as the newly created JSON
         fs.writeFile(__dirname + '/public/resources/cats.json', JSON.stringify(finalJSON));
 
         res.send(finalJSON);
@@ -406,6 +450,7 @@ function parseApprovalsReport() {
     }
     var requestorsFile = fs.readFileSync('./public/csv/requestors.csv', 'utf8');
     var reqArr = CSV.parse(requestorsFile);
+    reqArr.splice(0, 1);
 
     for (req in reqArr) {
         for (var record = 1; record < finalArr.length; record++) {

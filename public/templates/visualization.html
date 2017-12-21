@@ -5,9 +5,6 @@
     <div class="lastUpdated">
         <p>Last Updated: 10/5/2017 10:00AM</p>
     </div>
-    <div class="update">
-        <a class="btn btn-warning" href="#!/update">Update</a>
-    </div>
     <br/>
     <input name="updateButton"
            type="button"
@@ -70,13 +67,14 @@
         if (error) throw error;
         bData.forEach(function (b) {
             //the + next to the following makes d3 think of it as a number
-            b.deptNo = +b.deptNo;
-            b.year = +b.year;
-            b.budgetAmount = +parseFloat(b.budgetAmount);
-            b.actualsAmount = +parseFloat(b.actualsAmount);
+            b.deptNo = +b["Dept/Loc"];
+            b.year = +b.Year;
+            b.budgetAmount = +parseFloat(b["Budget Amount"]);
+            b.actualsAmount = +parseFloat(b["Actuals Amount"]);
             //adds all of the budget data to the array that I initialized above.
             buData.push(b);
         });
+        console.log(buData);
     });
 
     //loads the department data

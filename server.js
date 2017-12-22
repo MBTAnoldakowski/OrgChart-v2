@@ -52,14 +52,16 @@ var k = schedule.scheduleJob({hour: 00, minute: 30}, function () {
     treeInfoToJSON();
 });
 
-//pullFromFTP();
+// pullFromFTP();
 // pulls the files from the server, deletes the first line of the file
 function pullFromFTP() {
+    // UNCOMMENT ME AND PUT IN CORRECT FILE NAMES
+    // This won't work on the computer server, only when you deploy it to Heroku.
     /*client.scp({
         host: 'mbtaftp.mbta.com',
         username: 'mbtadotcom',
         port: 10022,
-        password: "Pr0gr3ss",
+        password: process.env.ftp_password,
         path: './ORGCHART_6.csv'
     }, './public/csv/budgetdata.csv', function (err) {
         if (err) {

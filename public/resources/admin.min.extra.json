@@ -487,6 +487,13 @@
       ]
     },
     {
+      "name": "OSHA",
+      "level": "4",
+      "deptno": "150000",
+      "chuldren":[],
+      "removed":true
+    },
+    {
       "name": "Safety",
       "level": "4",
       "deptno": "240000",
@@ -622,6 +629,12 @@
           "deptno": "781002"
         }
       ]
+    },
+    {
+      "name": "Capital Delivery Contract Management",
+      "level": "4",
+      "deptno": "423000",
+      "removed": true
     },
     {
       "name": "Procurement and Logistics",

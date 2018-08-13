@@ -2,7 +2,7 @@
 <div id="option">
     <h1>MBTA Approvals Chart</h1>
     <div class="lastUpdated">
-        <p>Last Updated 11/30/2017</p>
+        <p>Last Updated 8/13/2018</p>
     </div>
     <br/>
     <input name="updateButton"
@@ -173,7 +173,7 @@
         nodeEnter.append("text")
         // changes the X position of where the text starts in relation to the node
             .attr("x", function (d) {
-                if (d.removed === true && d.level === "4") {
+                if (d.removed === true && d.level === "4" ) {
                     return d.children || d._children ? -20 : -10;
                 }
                 return d.children || d._children ? -10 : 10;

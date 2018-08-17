@@ -40,7 +40,6 @@ app.post("/api/upload/vendorOptions", upload.single('myFile'), uploadVendorOptio
 app.post("/api/upload/osdIcon", upload.single('myFile'), uploadIcon);
 
 app.delete("/api/remove", removeVendor);
-
 // when the clock hits 11:59PM, pull the files
 var j = schedule.scheduleJob({hour: 23, minute: 59}, function () {
     pullFromFTP();
@@ -474,22 +473,24 @@ function treeInfoToJSON() {
     var namesFile = fs.readFileSync('./public/csv/DEPT_TBL.csv', 'utf8');
     var structure = CSV.parse(structureFile);
     var names = CSV.parse(namesFile);
+
     var finalOpsTree = {
         "name": "Chief Operating Officer",
         "level": "2",
         "deptno": "200000",
-        "children": returnKids('200000')
+        "children": returnKids('000000')
     };
     var finalAdminTree = {
-        "name": "General Manager",
-        "level": "2",
-        "deptno": "105000",
-        "children": returnKids('105000')
+        "name": "MBTA Organization",
+        "level": "0",
+        "deptno": "000000",
+        "children": returnKids('000000')
     };
 
     function returnKids(deptNo) {
         var childArr = [];
         for (record in structure) {
+            // console.log(structure[record][3]);
             // if the parent = deptNo, and the parent isn't the GARBAGE node
             if (structure[record][3] === deptNo && deptNo !== '096011') {
                 var n = "";

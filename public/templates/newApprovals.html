@@ -5,6 +5,7 @@
         <p>Last Updated 8/13/2018</p>
     </div>
     <br/>
+    <!--
     <input name="updateButton"
            type="button"
            class="btn btn-default"
@@ -16,7 +17,7 @@
            class="btn btn-default"
            value="View Administration"
            onclick="updateData2()"/>
-
+-->
 </div>
 
 <!-- this is an empty div for the script to populate with the tree -->
@@ -50,8 +51,8 @@
 
     // size variables for the box to paint in
     var margin = {top: 20, right: 150, bottom: 20, left: 200},
-        width = 1000,
-        height = 2200;
+        width = 1200,
+        height = 3960;
 
     var i = 0,
         //sets the amount of time it takes the tree opening animation to run
@@ -113,6 +114,7 @@
         setTimeout(function () {
             expandAll();
         }, 100);
+        /*
         setTimeout(function () {
             updateData();
         }, 100);
@@ -125,6 +127,7 @@
         setTimeout(function () {
             updateData2();
         }, 100);
+        */
     });
 
     d3.select(self.frameElement).style("height", "800px");
@@ -192,7 +195,7 @@
             })
             .attr("opacity", function(d){
                 if(d.status === 'I'){
-                    return 0.5;
+                    return 1;
                 }
             })
             // calls for PO data tooltip on mouseover

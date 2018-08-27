@@ -198,6 +198,11 @@
                     return 1;
                 }
             })
+            .attr("text-decoration",function(d){
+                if(d.level === "3"){
+                    return "underline";
+                }
+            })
             // calls for PO data tooltip on mouseover
             .on("mouseover", mouseover)
             .on("mousemove", function (d) {
@@ -382,13 +387,25 @@
         if (children)
             children.forEach(expand);
     }
+    //collapses a node
+    function collapse(d) {
+        if (d.children) {
+            d._children = d.children;
+            d._children.forEach(collapse);
+            d.children = null;
+        }
+    }
 
     //expands all nodes in the tree
     function expandAll() {
         expand(root);
         update(root);
     }
-
+    //collapses all nodes in the tree
+    function collapseAll() {
+        collapse(root);
+        update(root);
+    }
     function searchForDepartment() {
         console.log('Searching');
         unHighlight();
@@ -508,7 +525,12 @@
            value="Expand All"
            onclick="expandAll()"
            style="float:right;"/>
-
+    <input name="collapseButton"
+           type="button"
+           class="btn"
+           value="Collapse All"
+           onclick="collapseAll()"
+           style="float:right;"/>
     <div class="push-right">
         <br/>
         <br/>

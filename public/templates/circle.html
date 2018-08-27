@@ -22,6 +22,7 @@
     }
 
 </style>
+<!--
 <div id="employeeOptions">
     <input name="updateButton"
            type="button"
@@ -35,8 +36,9 @@
            value="Show Administration"
            onclick="updateData('admin')"/>
 </div>
+
 <br>
-<br>
+<br>-->
 <div id="sizer"></div>
 
 <script>
@@ -59,7 +61,7 @@
             return [d.y, d.x / 180 * Math.PI];
         });
 
-    var svg = d3.select("#sizer").append("svg").attr("width", chartwidth).attr("height", chartheight + 500)
+    var svg = d3.select("#sizer").append("svg").attr("width", chartwidth).attr("height", chartheight + 700)
         .attr("id", "svgId")
         .call(zm = d3.behavior.zoom().scaleExtent([-1.5, 2]).on("zoom", redraw)).append("g")
         .attr("transform", "translate(" + (chartwidth / 2.2) + "," + 20 + ")scale(0.72,0.72)");
@@ -83,13 +85,23 @@
         var nodes = svg.selectAll("g.node")
             .data(nodes);
 
+        function collapse(d) {
+            if (d.children) {
+                d._children = d.children;
+                d._children.forEach(collapse);
+                d.children = null;
+            }
+        }
+
         // enter
         nodes.enter()
             .append("g")
             .attr("class", "node")
             .attr("transform", function (d) {
                 return "rotate(" + (d.x - 90) + ")translate(" + d.y + ")";
-            });
+            })
+            .on("click", click);
+
 
         // update
         nodes.append("circle")
@@ -137,6 +149,18 @@
             .style("font-weight", "500");
 
     });
+    // Toggle children on click.
+    function click(d) {
+        if (d.children) {
+            d._children = d.children;
+            d.children = null;
+        } else {
+            d.children = d._children;
+            d._children = null;
+        }
+        update("admin");
+    }
+
 
     function updateData(side) {
         d3.select("svg").remove();

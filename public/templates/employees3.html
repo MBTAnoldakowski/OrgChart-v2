@@ -61,7 +61,7 @@
         zm.translate([chartwidth / 2.2, 20]).scale(0.72, 0.72);
 
         //loads in the administrative employee data
-        d3.json("resources/adminEmployees.json", function (error, flare) {
+        d3.json("resources/newEmployeeStructure.json", function (error, flare) {
             if (error) throw error;
             root = flare;
             root.x0 = height / 2;
@@ -125,7 +125,12 @@
                 .attr("dy", "10")
                 .attr("text-anchor", "middle")
                 .text(function (d) {
-                    return d.title;
+                    console.log(d);
+                    if(d.type == "DEPT"){
+                        return d.name;
+                    }else{
+                        return d.title;
+                    }
                 })
                 //makes the text wrap
                 .call(wrap, rectW, rectH);
@@ -138,7 +143,11 @@
                 .attr("id", "name-text")
                 .attr("text-anchor", "middle")
                 .text(function (d) {
-                    return d.name;
+                    if(d.type == "DEPT"){
+                        return d.head;
+                    }else{
+                        return d.name;
+                    }
                 });
 
             // Transition nodes to their new position.
@@ -237,49 +246,50 @@
             update(d);
         }
 
-        // change the data to operating data
-        function updateData() {
-            d3.json("resources/operatingEmployees.json", function (error, flare) {
-                if (error) throw error;
-                root = flare;
-                root.x0 = height / 2;
-                root.y0 = 0;
+        /*
+                // change the data to operating data
+                function updateData() {
+                    d3.json("resources/operatingEmployees.json", function (error, flare) {
+                        if (error) throw error;
+                        root = flare;
+                        root.x0 = height / 2;
+                        root.y0 = 0;
 
-                function collapse(d) {
-                    if (d.children) {
-                        d._children = d.children;
-                        d._children.forEach(collapse);
-                        d.children = null;
-                    }
+                        function collapse(d) {
+                            if (d.children) {
+                                d._children = d.children;
+                                d._children.forEach(collapse);
+                                d.children = null;
+                            }
+                        }
+
+                        // collapses nodes on start.
+                        root.children.forEach(collapse);
+                        update(root);
+                    });
                 }
 
-                // collapses nodes on start.
-                root.children.forEach(collapse);
-                update(root);
-            });
-        }
+                // this function updates the data to display administration
+                function updateData2() {
+                    d3.json("resources/adminEmployees.json", function (error, flare) {
+                        if (error) throw error;
+                        root = flare;
+                        root.x0 = height / 2;
+                        root.y0 = 0;
 
-        // this function updates the data to display administration
-        function updateData2() {
-            d3.json("resources/adminEmployees.json", function (error, flare) {
-                if (error) throw error;
-                root = flare;
-                root.x0 = height / 2;
-                root.y0 = 0;
+                        function collapse(d) {
+                            if (d.children) {
+                                d._children = d.children;
+                                d._children.forEach(collapse);
+                                d.children = null;
+                            }
+                        }
 
-                function collapse(d) {
-                    if (d.children) {
-                        d._children = d.children;
-                        d._children.forEach(collapse);
-                        d.children = null;
-                    }
+                        root.children.forEach(collapse);
+                        update(root);
+                    });
                 }
-
-                root.children.forEach(collapse);
-                update(root);
-            });
-        }
-
+        */
         //Redraw for zoom
         function redraw() {
             svg.attr("transform",
@@ -346,24 +356,26 @@
     <div id="employeeOptions">
         <h1>MBTA Employee Chart</h1>
         <div class="lastUpdated">
-            <p>Last Updated: 10/2/2017 1:00PM</p>
+            <p>Last Updated: 9/21/2018</p>
         </div>
+        <!--
+                <div class="update">
+                    <a class="btn btn-warning" href="#!/update">Update</a>
+                </div>
+                <br/>
+                <input name="updateButton"
+                       type="button"
+                       class="btn btn-default"
+                       value="View Operating"
+                       onclick="updateData()"/>
 
-        <div class="update">
-            <a class="btn btn-warning" href="#!/update">Update</a>
-        </div>
-        <br/>
-        <input name="updateButton"
-               type="button"
-               class="btn btn-default"
-               value="View Operating"
-               onclick="updateData()"/>
+                <input name="updateButton"
+                       type="button"
+                       class="btn btn-default"
+                       value="View Administration"
+                       onclick="updateData2()"/>
 
-        <input name="updateButton"
-               type="button"
-               class="btn btn-default"
-               value="View Administration"
-               onclick="updateData2()"/>
-        <br/>
+               <br/>
+           -->
     </div>
 </div>

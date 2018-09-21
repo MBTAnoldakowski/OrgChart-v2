@@ -50,7 +50,7 @@ var k = schedule.scheduleJob({hour: 00, minute: 30}, function () {
     parseApprovalsReport();
     treeInfoToJSON();
 });
-
+// employeeInfoToJSON();
 // pullFromFTP();
 // pulls the files from the server, deletes the first line of the file
 function pullFromFTP() {
@@ -466,7 +466,47 @@ function parseApprovalsReport() {
     fs.writeFile(__dirname + '/public/csv/new_approvals.csv', CSV.stringify(finalArr));
 
 }
+function employeeInfoToJSON(){
+    var structureFile = fs.readFileSync('./public/csv/employee_tree_9-21.csv', 'utf8');
+    var structure = CSV.parse(structureFile);
+    var tree = {
+        "name": "MBTA",
+        "title": "Organization",
+        "children": returnKids("000000")
+    };
 
+    function returnKids(deptNo){
+        console.log(deptNo);
+        var childArr = [];
+        for (record in structure) {
+            console.log(structure[record][4])
+            // if the parent = deptNo
+            if (structure[record][3] === deptNo) {
+                if(structure[record][4] === "PERSON"){
+                    childArr.push({
+                        "name": structure[record][2],
+                        "title": structure[record][1],
+                        "type": "PERSON",
+                        "children": returnKids(structure[record][0])
+                    })
+                }else if(structure[record][4] === "DEPT"){
+                    childArr.push({
+                        "name": structure[record][1],
+                        "head": structure[record][2],
+                        "number": structure[record][0],
+                        "type": "DEPT",
+                        "children": returnKids(structure[record][0])
+                    })
+                }
+
+            }
+
+        }
+        return childArr;
+    }
+    fs.writeFileSync(__dirname + '/public/resources/newEmployeeStructure.json', JSON.stringify(tree));
+
+}
 
 function treeInfoToJSON() {
     var structureFile = fs.readFileSync('./public/csv/PSTREENODE.csv', 'utf8');

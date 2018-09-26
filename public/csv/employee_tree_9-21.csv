@@ -1,72 +1,72 @@
 Department_Number,Title,Head,Rolls_To,Dept_or_Person,Budget
-000000,MBTA,MBTA,,,
-p1,Director of Trans. Innovation,Ben Schutzman,000000,PERSON,
-p2,Assistant General Manager of Human Resources,Bonnie Haase,000000,PERSON,
-p3,Transit Police Chief,Kenneth Green,000000,PERSON,
-p4,Chief Technology Officer,David Block-Schachter,000000,PERSON,
-p5,Chief Customer Officer,Danny Levy,000000,PERSON,
-p6,DCOO Infrastructure,Erik Stoothoff,000000,PERSON,
-p7,Contractor,Grabauskas / Ray / Muller,000000,PERSON,
-p8,Chief Procurement and Contract Administration Officer,Jeff Cook,000000,PERSON,
-p9,Deputy Chief Operating Officer - Service Planning and Strategy,Jessica Casey,000000,PERSON,
-p10,Assistant General Manager of System-Wide Accessibility,Laura Brelsford,000000,PERSON,
-p11,General Manager,Luis Ramirez,000000,PERSON,
-p12,1st Assistant General Counsel,Marie Breen,000000,PERSON,
-p13,Acting CFO and Treasurer,Paul Brandley,000000,PERSON,
-p14,Assistant Secretary of Transportation,Rachel Bain,000000,PERSON,
-p15,Chief Mechanical Officer,S Hicks / T Johnson,000000,PERSON,
-p16,Chief Administrative Officer,Leslie (Susie) Garcia,000000,PERSON,
-p17,Director of Finance & Administration,Todd Johnson,000000,PERSON,
-,OTA / LSS - THE RIDE,Ben Schutzman,p1,DEPT,
-135000,Diversity & Civil Rights,Julian Tynes (MassDOT),p2,DEPT,
-,Employee Relations/MassDOT U,Mike McDonald,p2,DEPT,
-770000,Human Resources,Bonnie Haase,p2,DEPT,
-730000,Labor Relations,Mark D'Angelo,p2,DEPT,
-,Occupational Health,Kate Legrow,p2,DEPT,
-,Fringe Benefits,David Hollis,p2,DEPT,
-,Payroll Taxes,Evanice Torres,p2,DEPT,
-,Health & Welfare Fund,Joe Pagliuca,p2,DEPT,
-120000,Police,Richard Sullivan,p3,DEPT,
-,Customer Technology ,W. Kingkade,p4,DEPT,
-157000,Customer Experience,Danny Levy,p5,DEPT,
-,Engineering Department (APT),William Boyce,p6,DEPT,
-,Vehicle Engineeering,William Wolfgang,p6,DEPT,
-,Commuter Rail Supervision/CRAIL Subsidy,Mike M,p7,DEPT,
-,Ferry Supervision / LSS - Ferry Subsidy,Ryan Coholan,p7,DEPT,
-,Casualty & Liability,Mark DeCourcy,p8,DEPT,
-,Financial Service Charges,Jimmy D'arcangelo,p8,DEPT,
-430000,ITD,David Metreaux,p9,DEPT,
-172000,Own Source Revenue,Evan Rowe,p9,DEPT,
-,Procurement & Logistics,Ray Wise,p9,DEPT,
-804000,Vendor Management,Joe Carriero,p9,DEPT,
-460000,Warehouse,Dan Barton,p9,DEPT,
-330000,Real Estate,Jeff Cook,p9,DEPT,
-,Srvc Planning & Strategy,Jessica Casey,p10,DEPT,
-,LSS - Private Carrier/ Suburban Bus,Melissa Dullea,p10,DEPT,
-102000,Systemwide Accessibility,Laura Brelsford,p11,DEPT,
-,GM & Board of Directors,David Abdoo,p12,DEPT,
-,Law,Marie Breen,p13,DEPT,
-630000,Budget,Paula Beatty,p14,DEPT,
-,Chief Financial Officer,Kashif Qadeer,p14,DEPT,
-860000,General Activities,Paul Brandley,p14,DEPT,
-170000,Interagency,Steve B,p14,DEPT,
-805000,Treasurer/Controller,Joe C,p14,DEPT,
-,Debt Service,John Markowitz,p14,DEPT,
-,OPMI Performance Mgmt,Laurel Paget-Seekins,p15,DEPT,
-,Bus Maintenance,Howard Pransky,p16,DEPT,
-,Everett Main Repair,Paul Flynn,p16,DEPT,
-,Rail Maintenance,Joseph Gentilucci,p16,DEPT,
-,Chief Operating Officer,Pat Labitude,p17,DEPT,
-,Office of Administration,Leslie (Susie) Garcia,p17,DEPT,
-,Bus Transportation,Dave Carney,p18,DEPT,
-,Heavy Rail,Norman Michaud,p18,DEPT,
-,Light Rail,Tameika Thibideaux,p18,DEPT,
-,Maintenance of Way,Joe Gushue,p18,DEPT,
-674000,Power Systems Maintenance,Bill Charrate,p18,DEPT,
-672000,Signals & Communications,Joe McNall,p18,DEPT,
-673000,Transit Facilities Maintenance,Joe Cheever,p18,DEPT,
-,OCC & Training,Marc Romain,p18,DEPT,
-,Security,Nick Boyd,p18,DEPT,
-155000,Environmental Affairs,Andrew Brennan,000000,DEPT,
-240000,Safety,Ron Nickle,000000,DEPT,
-115000,Public Affairs,Joe Pesaturo,000000,DEPT,
+0,MBTA,MBTA,,,
+p1,Director of Trans. Innovation,Ben Schutzman,0,PERSON,0
+p2,Assistant General Manager of Human Resources,Bonnie Haase,0,PERSON,0
+p3,Transit Police Chief,Kenneth Green,0,PERSON,0
+p4,Chief Technology Officer,David Block-Schachter,0,PERSON,0
+p5,Chief Customer Officer,Danny Levy,0,PERSON,0
+p6,DCOO Infrastructure,Erik Stoothoff,0,PERSON,0
+p7,Contractor,Grabauskas / Ray / Muller,0,PERSON,0
+p8,Chief Procurement and Contract Administration Officer,Jeff Cook,0,PERSON,0
+p9,Deputy Chief Operating Officer - Service Planning and Strategy,Jessica Casey,0,PERSON,0
+p10,Assistant General Manager of System-Wide Accessibility,Laura Brelsford,0,PERSON,0
+p11,General Manager,Luis Ramirez,0,PERSON,0
+p12,1st Assistant General Counsel,Marie Breen,0,PERSON,0
+p13,Acting CFO and Treasurer,Paul Brandley,0,PERSON,0
+p14,Assistant Secretary of Transportation,Rachel Bain,0,PERSON,0
+p15,Chief Mechanical Officer,S Hicks / T Johnson,0,PERSON,0
+p16,Chief Administrative Officer,Leslie (Susie) Garcia,0,PERSON,0
+p17,Director of Finance & Administration,Todd Johnson,0,PERSON,0
+290000,OTA / LSS - THE RIDE,Ben Schutzman,p1,DEPT,115.2675594
+135000,Diversity & Civil Rights,Julian Tynes (MassDOT),p2,DEPT,1.7442803
+710000,Employee Relations/MassDOT U,Mike McDonald,p2,DEPT,0.54535704
+770000,Human Resources,Bonnie Haase,p2,DEPT,4.3355199
+730000,Labor Relations,Mark D'Angelo,p2,DEPT,1.066220004
+780000,Occupational Health,Kate Legrow,p2,DEPT,2.146561
+751002,Fringe Benefits,David Hollis,p2,DEPT,210.1668436
+,Payroll Taxes,Evanice Torres,p2,DEPT,40.44651383
+752002,Health & Welfare Fund,Joe Pagliuca,p2,DEPT,11.92599037
+120000,Police,Richard Sullivan,p3,DEPT,27.00622763
+118000,Customer Technology ,W. Kingkade,p4,DEPT,17.32340917
+157000,Customer Experience,Danny Levy,p5,DEPT,3.849419432
+250000,Engineering Department (APT),William Boyce,p6,DEPT,1.963012034
+204000,Vehicle Engineeering,William Wolfgang,p6,DEPT,2.273450098
+210000,Commuter Rail Supervision/CRAIL Subsidy,Mike M,p7,DEPT,414.886212
+211000,Ferry Supervision / LSS - Ferry Subsidy,Ryan Coholan,p7,DEPT,15.712533
+,Casualty & Liability,Mark DeCourcy,p8,DEPT,11.36094602
+,Financial Service Charges,Jimmy D'arcangelo,p8,DEPT,6.928752156
+430000,ITD,David Metreaux,p9,DEPT,25.160685
+172000,Own Source Revenue,Evan Rowe,p9,DEPT,13.709592
+400000,Procurement & Logistics,Ray Wise,p9,DEPT,4.757062008
+804000,Vendor Management,Joe Carriero,p9,DEPT,12.97967726
+460000,Warehouse,Dan Barton,p9,DEPT,8.829324
+330000,Real Estate,Jeff Cook,p9,DEPT,11.80415748
+795000,Srvc Planning & Strategy,Jessica Casey,p10,DEPT,3.749192634
+203008,LSS - Private Carrier/ Suburban Bus,Melissa Dullea,p10,DEPT,2.928753099
+102000,Systemwide Accessibility,Laura Brelsford,p11,DEPT,1.692187425
+100000,GM & Board of Directors,David Abdoo,p12,DEPT,3.475767336
+161002,Law,Marie Breen,p13,DEPT,10.73229376
+630000,Budget,Paula Beatty,p14,DEPT,0.87945761
+640000,Chief Financial Officer,Kashif Qadeer,p14,DEPT,1.450901004
+860000,General Activities,Paul Brandley,p14,DEPT,-16.94198948
+170000,Interagency,Steve B,p14,DEPT,0.783475121
+805000,Treasurer/Controller,Joe C,p14,DEPT,3.747101
+,Debt Service,John Markowitz,p14,DEPT,492.8610301
+620000,OPMI Performance Mgmt,Laurel Paget-Seekins,p15,DEPT,1.218300658
+221000,Bus Maintenance,Howard Pransky,p16,DEPT,0
+209000,Everett Main Repair,Paul Flynn,p16,DEPT,0
+239000,Rail Maintenance,Joseph Gentilucci,p16,DEPT,0
+205000,Chief Operating Officer,Pat Labitude,p17,DEPT,1.07496185
+208000,Office of Administration,Leslie (Susie) Garcia,p17,DEPT,1.403056994
+224000,Bus Transportation,Dave Carney,p18,DEPT,0
+231000,Heavy Rail,Norman Michaud,p18,DEPT,0
+235000,Light Rail,Tameika Thibideaux,p18,DEPT,0
+671000,Maintenance of Way,Joe Gushue,p18,DEPT,30.04352564
+674000,Power Systems Maintenance,Bill Charrate,p18,DEPT,39.29344502
+672000,Signals & Communications,Joe McNall,p18,DEPT,19.69809365
+673000,Transit Facilities Maintenance,Joe Cheever,p18,DEPT,40.25356841
+238000,OCC & Training,Marc Romain,p18,DEPT,0
+280000,Security,Nick Boyd,p18,DEPT,2.507014402
+155000,Environmental Affairs,Andrew Brennan,0,DEPT,41.31351549
+240000,Safety,Ron Nickle,0,DEPT,2.976018002
+115000,Public Affairs,Joe Pesaturo,0,DEPT,0.185001396

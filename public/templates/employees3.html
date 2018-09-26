@@ -41,6 +41,9 @@
         // sets the size of the svg to paint on to the size of the window
         height = chartheight;
         width = chartwidth;
+        var div = d3.select("body").append("div")
+            .attr("class", "tooltip")
+            .style("opacity", 1e-6);
         // the .separation part of this determines how far apart the nodes are
         var tree = d3.layout.tree().nodeSize([70, 40]).separation(function (a, b) {
             return a.parent == b.parent ? 3 : 4;
@@ -116,20 +119,27 @@
                 .attr("stroke-width", 1)
                 .style("fill", function (d) {
                     return d._children ? "lightsteelblue" : "#fff";
-                });
+                })
+                .on("mouseover", mouseover)
+                .on("mousemove", function (d) {
+                    console.log("HOVER");
+                    mousemove(d);
+                })
+                .on("mouseout", mouseout);
+            ;
 
             // appends the job title to the rectangle
             nodeEnter.append("text")
                 .attr("x", rectW / 2)
-                .attr("y", 35 * rectH / 100)
+                .attr("y", 3 * rectH / 4)
                 .attr("dy", "10")
+
                 .attr("text-anchor", "middle")
                 .text(function (d) {
-                    console.log(d);
-                    if(d.type == "DEPT"){
+                    if (d.type == "DEPT") {
+                        return d.head;
+                    } else {
                         return d.name;
-                    }else{
-                        return d.title;
                     }
                 })
                 //makes the text wrap
@@ -138,17 +148,19 @@
             // appens the employee name to the rectangle
             nodeEnter.append("text")
                 .attr("x", rectW / 2)
-                .attr("y", rectH / 3)
+                .attr("y", 35 * rectH / 100)
                 .attr("dy", "-10")
                 .attr("id", "name-text")
                 .attr("text-anchor", "middle")
                 .text(function (d) {
-                    if(d.type == "DEPT"){
-                        return d.head;
-                    }else{
+                    console.log(d);
+                    if (d.type == "DEPT") {
                         return d.name;
+                    } else {
+                        return d.title;
                     }
-                });
+                }).call(wrap, rectW, rectH);
+
 
             // Transition nodes to their new position.
             var nodeUpdate = node.transition()
@@ -165,6 +177,7 @@
                 .style("fill", function (d) {
                     return d._children ? "lightsteelblue" : "#fff";
                 });
+
 
             nodeUpdate.select("text")
                 .style("fill-opacity", 1);
@@ -246,50 +259,6 @@
             update(d);
         }
 
-        /*
-                // change the data to operating data
-                function updateData() {
-                    d3.json("resources/operatingEmployees.json", function (error, flare) {
-                        if (error) throw error;
-                        root = flare;
-                        root.x0 = height / 2;
-                        root.y0 = 0;
-
-                        function collapse(d) {
-                            if (d.children) {
-                                d._children = d.children;
-                                d._children.forEach(collapse);
-                                d.children = null;
-                            }
-                        }
-
-                        // collapses nodes on start.
-                        root.children.forEach(collapse);
-                        update(root);
-                    });
-                }
-
-                // this function updates the data to display administration
-                function updateData2() {
-                    d3.json("resources/adminEmployees.json", function (error, flare) {
-                        if (error) throw error;
-                        root = flare;
-                        root.x0 = height / 2;
-                        root.y0 = 0;
-
-                        function collapse(d) {
-                            if (d.children) {
-                                d._children = d.children;
-                                d._children.forEach(collapse);
-                                d.children = null;
-                            }
-                        }
-
-                        root.children.forEach(collapse);
-                        update(root);
-                    });
-                }
-        */
         //Redraw for zoom
         function redraw() {
             svg.attr("transform",
@@ -339,6 +308,31 @@
             update(root);
         }
 
+
+        // controls how long it takes the tooltip to appear after you hover
+        function mouseover() {
+            div.transition()
+                .duration(100)
+                .style("opacity", 1);
+        }
+
+
+        //draws the tooltip
+        function mousemove(d) {
+            if (d.type === "DEPT") {
+                div.html("<b>" + d.number + "</b><br/>FY19 Budget: " + d.budget)
+                    .style("left", (d3.event.pageX + 15) + "px")
+                    .style("top", (d3.event.pageY) + "px");
+            }
+        }
+
+        // controls how slowly the tooltip disappears
+        function mouseout() {
+            div.transition()
+                .duration(100)
+                .style("opacity", 1e-6);
+        }
+
     </script>
     <!-- This div contains the 'Expand All' button -->
     <div id="expandB">
@@ -354,28 +348,10 @@
     </div>
     <!--This div contains the header menu-->
     <div id="employeeOptions">
-        <h1>MBTA Employee Chart</h1>
+        <h3>MBTA Employee Chart</h3>
         <div class="lastUpdated">
             <p>Last Updated: 9/21/2018</p>
         </div>
-        <!--
-                <div class="update">
-                    <a class="btn btn-warning" href="#!/update">Update</a>
-                </div>
-                <br/>
-                <input name="updateButton"
-                       type="button"
-                       class="btn btn-default"
-                       value="View Operating"
-                       onclick="updateData()"/>
 
-                <input name="updateButton"
-                       type="button"
-                       class="btn btn-default"
-                       value="View Administration"
-                       onclick="updateData2()"/>
-
-               <br/>
-           -->
     </div>
 </div>

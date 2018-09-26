@@ -50,7 +50,7 @@ var k = schedule.scheduleJob({hour: 00, minute: 30}, function () {
     parseApprovalsReport();
     treeInfoToJSON();
 });
-// employeeInfoToJSON();
+//employeeInfoToJSON();
 // pullFromFTP();
 // pulls the files from the server, deletes the first line of the file
 function pullFromFTP() {
@@ -472,7 +472,7 @@ function employeeInfoToJSON(){
     var tree = {
         "name": "MBTA",
         "title": "Organization",
-        "children": returnKids("000000")
+        "children": returnKids("0")
     };
 
     function returnKids(deptNo){
@@ -495,6 +495,7 @@ function employeeInfoToJSON(){
                         "head": structure[record][2],
                         "number": structure[record][0],
                         "type": "DEPT",
+                        "budget" : structure[record][5],
                         "children": returnKids(structure[record][0])
                     })
                 }

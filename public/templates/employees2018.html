@@ -1,0 +1,19 @@
+<head>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+</head>
+<svg width="10" height="10" id="employeeMap"></svg>
+
+<script>
+var svg = document.getElementById("employeeMap");
+svg.setAttribute("width", window.innerWidth);
+svg.setAttribute("height", window.innerHeight);
+d3.select("#employeeMap")
+    .call(
+        d3.zoom()
+            .on("zoom", function(){
+                d3.select("employeeMap").attr("transform", d3.event.transform);
+            })
+            .scaleExtent([1,2])
+    );
+
+</script>

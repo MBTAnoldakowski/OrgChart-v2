@@ -20,6 +20,15 @@
             .when('/employees', {
                 templateUrl: './templates/employees3.html'
             })
+            .when('/employees-new', {
+                templateUrl: './templates/employees2018.html'
+            })
+            .when('/plemployees', {
+                templateUrl: './templates/p-and-l-employees.html'
+            })
+            .when('/plemployees2', {
+                templateUrl: './templates/p-l-employees-tree.html'
+            })
             .when('/procurement', {
                 templateUrl: './templates/procurement.html'
             })

@@ -1,0 +1,76 @@
+{
+  "Name": "Jeff Cook",
+  "Title": "Chief Procurement and Contract Administration Officer",
+  "Email": "jcook2@mbta.com",
+  "children": [
+    {
+      "Name": "Ray Wise",
+      "Email": "rwise@mbta.com",
+      "children": [
+        {
+          "Name": "Frank Scabin",
+          "Title": "Supervisor of Inventory Planning & Purchasing",
+          "children": [
+            {
+              "Name": "Inventory Buyers",
+              "Title": "Buyers",
+              "children": []
+            }
+          ]
+        },
+        {
+          "Name": "Buyers",
+          "Title": "Buyers",
+          "children": []
+        },
+        {
+          "Name": "Sourcing Executives",
+          "Title": "Sourcing Executive",
+          "children": []
+        },
+        {
+          "Name": "Peter Papagno",
+          "Title": "Mgr. of Procurement Contract Compliance",
+          "Email": "ppapagno@mbta.com",
+          "children": []
+        },
+        {
+          "Name": "Dan Maloney",
+          "Title": "Project Assistant",
+          "Email": "dmaloney@mbta.com",
+          "children": []
+        },
+        {
+          "Name": "Scott Taing",
+          "Title": "Data Analyst",
+          "Email": "staing@mbta.com",
+          "children": []
+        },
+        {
+          "Name": "Willie Ruffin",
+          "Title": "Data Analyst",
+          "Email": "wruffin@mbta.com",
+          "children": []
+        }
+      ]
+    },
+    {
+      "Name": "Gideon Guilman",
+      "Title": "Director of Flexible Contracting",
+      "Email": "gguilman@mbta.com",
+      "children": []
+    },
+    {
+      "Name": "Joe Carreiro",
+      "Title": "Director of Vendor Management",
+      "Email": "jcarreiro@mbta.com",
+      "children": [
+        {
+          "Name": "Takary Connor",
+          "Email": "tconnor@mbta.com",
+          "Title": "Director of Inventory Management"
+        }
+      ]
+    }
+  ]
+}

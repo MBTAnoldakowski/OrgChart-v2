@@ -1,0 +1,362 @@
+<style>
+    body {
+        overflow: hidden;
+    }
+
+    #description {
+        color: red;
+    }
+
+    #svgId {
+        z-index: 1;
+    }
+</style>
+<div id="employees">
+    <!-- Div for getting the size of the window-->
+    <div id="sizer"></div>
+    <div id="body"></div>
+    <div id="description"> &nbsp;&nbsp;&nbsp;&nbsp;Click and drag on the chart to pan, use your scroll wheel to zoom.
+    </div>
+    <script>
+        // size variables for the box to paint in
+        var margin = {
+                top: 20,
+                right: 120,
+                bottom: 20,
+                left: 120
+            },
+            width = 1200 - margin.right - margin.left,
+            height = 800 - margin.top - margin.bottom;
+        var i = 0,
+            //sets the amount of time it takes the tree opening animation to run
+            duration = 450,
+            // sets the variables for rectangle size
+            rectW = 160,
+            rectH = 100,
+            root;
+        // this gets the size of the window
+        var chartDiv = document.getElementById("sizer");
+        var chartwidth = chartDiv.clientWidth;
+        var chartheight = chartDiv.clientHeight;
+        // sets the size of the svg to paint on to the size of the window
+        height = chartheight;
+        width = chartwidth;
+        var div = d3.select("body").append("div")
+            .attr("class", "tooltip")
+            .style("opacity", 1e-6);
+        // the .separation part of this determines how far apart the nodes are
+        var tree = d3.layout.tree().nodeSize([70, 40]).separation(function (a, b) {
+            return a.parent == b.parent ? 3 : 4;
+        });
+        // initializes the tree branches
+        var diagonal = d3.svg.diagonal()
+            .projection(function (d) {
+                return [d.x + rectW / 2, d.y + rectH / 2];
+            });
+
+        // creates the svg
+        var svg = d3.select("#sizer").append("svg").attr("width", chartwidth).attr("height", chartheight + 500)
+            .attr("id", "svgId")
+            .call(zm = d3.behavior.zoom().scaleExtent([-1.5, 2]).on("zoom", redraw)).append("g")
+            .attr("transform", "translate(" + (chartwidth / 2.2) + "," + 20 + ")scale(0.72,0.72)");
+
+        //necessary so that zoom knows where to zoom and unzoom from
+        zm.translate([chartwidth / 2.2, 20]).scale(0.72, 0.72);
+
+        //loads in the administrative employee data
+        d3.json("resources/pandlemployees.json", function (error, flare) {
+            if (error) throw error;
+            root = flare;
+            root.x0 = height / 2;
+            root.y0 = 0;
+
+            function collapse(d) {
+                if (d.children) {
+                    d._children = d.children;
+                    d._children.forEach(collapse);
+                    d.children = null;
+                }
+            }
+
+            //this line starts the tree collapsed
+            root.children.forEach(collapse);
+            update(root);
+            expandAll();
+
+        });
+
+        // sets the height to 800px
+        d3.select("#body").style("height", "800px");
+
+        function update(source) {
+            // Compute the new tree layout.
+            var nodes = tree.nodes(root).reverse(),
+                links = tree.links(nodes);
+
+            // Normalize for fixed-depth.
+            nodes.forEach(function (d) {
+                d.y = d.depth * 250;
+            });
+
+            // Update the nodes…
+            var node = svg.selectAll("g.node")
+                .data(nodes, function (d) {
+                    //console.log(d);
+                    return d.id || (d.id = ++i);
+                });
+
+            // Enter any new nodes at the parent's previous position.
+            var nodeEnter = node.enter().append("g")
+                .attr("class", "node")
+                .attr("transform", function (d) {
+                    return "translate(" + source.x0 + "," + source.y0 + ")";
+                })
+                .on("click", click);
+
+            // appends the rectangle that holds the name
+            nodeEnter.append("rect")
+                .attr("width", rectW)
+                .attr("height", rectH)
+                .attr("stroke", "black")
+                .attr("stroke-width", 1)
+                .style("fill", function (d) {
+                    return d._children ? "lightsteelblue" : "#fff";
+                })
+                .on("mouseover", mouseover)
+                .on("mousemove", function (d) {
+                    console.log("HOVER");
+                    mousemove(d);
+                })
+                .on("mouseout", mouseout);
+            ;
+
+            // appends the job title to the rectangle
+            nodeEnter.append("text")
+                .attr("x", rectW / 2)
+                .attr("y", 3 * rectH / 10)
+                .attr("dy", "10")
+                .attr("text-anchor", "middle")
+                .text(function (d) {
+                    return d.Title;
+                })
+                //makes the text wrap
+                .call(wrap, rectW, rectH);
+
+            // appens the employee name to the rectangle
+            nodeEnter.append("text")
+                .attr("x", rectW / 2)
+                .attr("y", 35 * rectH / 100)
+                .attr("dy", "-10")
+                .attr("id", "name-text")
+                .attr("text-anchor", "middle")
+                .text(function (d) {
+                    return d.Name;
+                }).call(wrap, rectW, rectH);
+
+            nodeEnter.append("text")
+                .attr("x", rectW / 2)
+                .attr("y",99 * rectH / 100)
+                .attr("dy", "-10")
+                .attr('z-value',"10000")
+                .attr("id", "name-text")
+                .attr("text-anchor", "middle")
+                .attr('xlink:href', function(d){
+                    return "mailto:" + d.Email;
+                })
+                .style('color', "blue")
+                .text(function (d) {
+                    return d.Email;
+                }).call(wrap, rectW, rectH)
+                .on("click", function(d){
+                    console.log(d);
+                    location.href = ("mailto:" + d.Email);
+
+                });
+
+
+            // Transition nodes to their new position.
+            var nodeUpdate = node.transition()
+                .duration(duration)
+                .attr("transform", function (d) {
+                    return "translate(" + d.x + "," + d.y + ")";
+                });
+
+            nodeUpdate.select("rect")
+                .attr("width", rectW)
+                .attr("height", rectH)
+                .attr("stroke", "black")
+                .attr("stroke-width", 1)
+                .style("fill", function (d) {
+                    return d._children ? "lightsteelblue" : "#fff";
+                });
+
+
+            nodeUpdate.select("text")
+                .style("fill-opacity", 1);
+
+            // Transition exiting nodes to the parent's new position.
+            var nodeExit = node.exit().transition()
+                .duration(duration)
+                .attr("transform", function (d) {
+                    return "translate(" + source.x + "," + source.y + ")";
+                })
+                .remove();
+
+            nodeExit.select("rect")
+                .attr("width", rectW)
+                .attr("height", rectH)
+                .attr("stroke", "black")
+                .attr("stroke-width", 1);
+
+            nodeExit.select("text");
+
+            // Update the links…
+            var link = svg.selectAll("path.link")
+                .data(links, function (d) {
+                    return d.target.id;
+                });
+
+            // Enter any new links at the parent's previous position.
+            link.enter().insert("path", "g")
+                .attr("class", "link")
+                .attr("x", rectW / 2)
+                .attr("y", rectH / 2)
+                .attr("d", function (d) {
+                    var o = {
+                        x: source.x0,
+                        y: source.y0
+                    };
+                    return diagonal({
+                        source: o,
+                        target: o
+                    });
+                });
+
+            // Transition links to their new position.
+            link.transition()
+                .duration(duration)
+                .attr("d", diagonal);
+
+            // Transition exiting nodes to the parent's new position.
+            link.exit().transition()
+                .duration(duration)
+                .attr("d", function (d) {
+                    var o = {
+                        x: source.x,
+                        y: source.y
+                    };
+                    return diagonal({
+                        source: o,
+                        target: o
+                    });
+                })
+                .remove();
+
+            // Stash the old positions for transition.
+            nodes.forEach(function (d) {
+                d.x0 = d.x;
+                d.y0 = d.y;
+            });
+        }
+
+        // Toggle children on click.
+        function click(d) {
+            if (d.children) {
+                d._children = d.children;
+                d.children = null;
+            } else {
+                d.children = d._children;
+                d._children = null;
+            }
+            update(d);
+        }
+
+        //Redraw for zoom
+        function redraw() {
+            svg.attr("transform",
+                "translate(" + d3.event.translate + ")"
+                + " scale(" + d3.event.scale + ")");
+        }
+
+        // wraps text
+        function wrap(text, width, height) {
+            text.each(function () {
+                var text = d3.select(this),
+                    words = text.text().split(/\s+/).reverse(),
+                    word,
+                    line = [],
+                    lineNumber = 0,
+                    lineHeight = 1.1, // ems
+                    y = text.attr("y"),
+                    dy = parseFloat(text.attr("dy")),
+                    tspan = text.text(null).append("tspan").attr("x", width / 2).attr("y", y).attr("dy", dy);
+                while (word = words.pop()) {
+                    line.push(word);
+                    tspan.text(line.join(" "));
+                    if (tspan.node().getComputedTextLength() > width) {
+                        line.pop();
+                        tspan.text(line.join(" "));
+                        line = [word];
+                        tspan = text.append("tspan").attr("x", width / 2).attr("y", y).attr("dy", ++lineNumber * lineHeight * 15 + dy).text(word);
+                    }
+                }
+            });
+        }
+
+        // expands a node
+        function expand(d) {
+            var children = (d.children) ? d.children : d._children;
+            if (d._children) {
+                d.children = d._children;
+                d._children = null;
+            }
+            if (children)
+                children.forEach(expand);
+        }
+
+        //expands all nodes in the tree
+        function expandAll() {
+            expand(root);
+            update(root);
+        }
+
+
+        // controls how long it takes the tooltip to appear after you hover
+        function mouseover() {
+            div.transition()
+                .duration(100)
+                .style("opacity", 1);
+        }
+
+
+        //draws the tooltip
+        function mousemove(d) {
+            if (d.type === "DEPT") {
+                div.html("<b>" + d.number + "</b><br/>FY19 Budget: " + d.budget)
+                    .style("left", (d3.event.pageX + 15) + "px")
+                    .style("top", (d3.event.pageY) + "px");
+            }
+        }
+
+        // controls how slowly the tooltip disappears
+        function mouseout() {
+            div.transition()
+                .duration(100)
+                .style("opacity", 1e-6);
+        }
+    </script>
+    <!-- This div contains the 'Expand All' button -->
+    <div id="expandB">
+        <input name="expandButton"
+               type="button"
+               class="btn"
+               value="Expand All"
+               onclick="expandAll()"/>
+    </div>
+    <!-- This div contains the navigation-->
+    <div id="employeeButton" class="btn-group-vertical">
+        <a class="btn btn-primary btn-lg" href="#!/">Home</a>
+    </div>
+    <!--This div contains the header menu-->
+
+</div>

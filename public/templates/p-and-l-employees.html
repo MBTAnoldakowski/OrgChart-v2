@@ -44,17 +44,18 @@
     circle packing
 </h2>
 <script type="text/javascript">
-    var w = 1000,
-        h = 1000,
-        r = 720,
+    var w = 1200,
+        h = 1200,
+        r = 900,
         x = d3.scale.linear().range([0, r]),
         y = d3.scale.linear().range([0, r]),
         node,
         root;
-    console.log('here1');
     var pack = d3.layout.pack()
         .size([r, r])
-        .value(function(d) { return d.depth; });
+        .value(function(d) {
+            console.log(d);
+            return d.depth; });
 
     var vis = d3.select("body").insert("svg:svg")
         .attr("width", w)
@@ -62,7 +63,7 @@
         .append("svg:g")
         .attr("transform", "translate(" + (w - r) / 2 + "," + (h - r) / 2 + ")");
 
-    d3.json("resources/newEmployeeStructure.json", function(data) {
+    d3.json("resources/pandlemployees.json", function(data) {
         node = root = data;
         var nodes = pack.nodes(root);
         console.log(nodes);
@@ -83,29 +84,19 @@
             .attr("x", function(d) { return d.x; })
             .attr("y", function(d) {return d.y; })
             .attr("dy", function(d){
-                if(d.type === "PERSON"){
-                    return "60";
-                }
                 return "0";
             })
             .attr("text-anchor", "middle")
             .style("opacity", function(d) { return d.r > 20 ? 1 : 0; })
             .text(function(d) {
-                if(d.type === "PERSON"){
-                    return d.title;
-                }
-                return d.name; }).append("svg:text")
+                return d.Name; }).append("svg:text")
             .attr("class", function(d) { return d.children ? "parent" : "child"; })
             .attr("x", function(d) { return d.x; })
             .attr("y", function(d) {return d.y; })
             .attr("dy", "5")
             .attr("text-anchor", "middle")
             .style("opacity", function(d) { return d.r > 20 ? 1 : 0; })
-            .text(function(d) {
-                if(d.type === "PERSON"){
-                    return d.name;
-                }
-                return d.head; });
+            .text(function(d) {return d.Name});
 
         d3.select(window).on("click", function() { zoom(root); });
     });

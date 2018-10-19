@@ -12,21 +12,21 @@
           "Title": "Supervisor of Inventory Planning & Purchasing",
           "children": [
             {
-              "Name": "Inventory Buyers",
-              "Title": "Angela Knobel, Dimitrios Martinos, Karen Love, Philip Hong, Timothy Sullivan, Natalie Sequea",
+              "Name": "Inventory Buyers (5)",
+              "Title": "Angela Knobel, Dimitrios Martinos, Karen Love, Philip Hong, Timothy Sullivan",
               "long": "true",
               "children": []
             }
           ]
         },
         {
-          "Name": "Non-Inventory Buyers",
+          "Name": "NonInventory Buyers (5)",
           "Title": "Chris Francis, Judi Kidd, Julie Lebbossiere, Kiana Hall, Tineika Toussaint",
           "long": "true",
           "children": []
         },
         {
-          "Name": "Sourcing Executives",
+          "Name": "Sourcing Executives (5)",
           "Title": "Aidan (Joe) Flynn, Tracy Dionne, Eric Welsh, Edward Cook, Rob Weiner",
           "long": "true",
           "children": []

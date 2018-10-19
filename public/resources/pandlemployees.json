@@ -13,7 +13,7 @@
           "children": [
             {
               "Name": "Inventory Buyers (5)",
-              "Title": "Angela Knobel, Dimitrios Martinos, Karen Love, Philip Hong, Timothy Sullivan",
+              "Title": "Angela Knobel /e Dimitrios Martinos /e Karen Love /e Philip Hong /e Timothy Sullivan",
               "long": "true",
               "children": []
             }
@@ -21,13 +21,13 @@
         },
         {
           "Name": "NonInventory Buyers (5)",
-          "Title": "Chris Francis, Judi Kidd, Julie Lebbossiere, Kiana Hall, Tineika Toussaint",
+          "Title": "Chris Francis /e Judi Kidd /e Julie Lebbossiere /e Kiana Hall /e Tineika Toussaint",
           "long": "true",
           "children": []
         },
         {
           "Name": "Sourcing Executives (5)",
-          "Title": "Aidan (Joe) Flynn, Tracy Dionne, Eric Welsh, Edward Cook, Rob Weiner",
+          "Title": "Aidan (Joe) Flynn /e Tracy Dionne /e Eric Welsh /e Edward Cook /e Rob Weiner",
           "long": "true",
           "children": []
         },

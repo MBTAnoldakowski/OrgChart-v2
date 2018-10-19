@@ -314,10 +314,14 @@
                 while (word = words.pop()) {
                     line.push(word);
                     tspan.text(line.join(" "));
-                    if (tspan.node().getComputedTextLength() > width) {
+                    if (tspan.node().getComputedTextLength() > width || word == "/e") {
                         line.pop();
                         tspan.text(line.join(" "));
-                        line = [word];
+                        if(word== '/e'){
+                            line = [""];
+                        }else {
+                            line = [word];
+                        }
                         tspan = text.append("tspan").attr("x", width / 2).attr("y", y).attr("dy", ++lineNumber * lineHeight * 15 + dy).text(word);
                     }
                 }

@@ -190,12 +190,18 @@
                 .attr("width", rectW)
                 .attr("height", function(d){
                     if(d.long == "true"){
-                        return rectH * 2;
+                        return rectH * 1.3;
                     }
                     return rectH;
                 })
                 .attr("stroke", "black")
                 .attr("stroke-width", 1)
+                .attr("opacity",function(d){
+                    if(!d.Name && !d.Title){
+                        return 0;
+                    }
+                    return 1;
+                })
                 .style("fill", function (d) {
                     return d._children ? "lightsteelblue" : "#fff";
                 });

@@ -13,7 +13,7 @@
           "children": [
             {
               "Name": "Inventory Buyers",
-              "Title": "Angela Knobel, Dimitrios Martinos, Karen Love, Philip Hong, Timothy Sullivan, Natalie Sequea, Tineika Toussaint",
+              "Title": "Angela Knobel, Dimitrios Martinos, Karen Love, Philip Hong, Timothy Sullivan, Natalie Sequea",
               "long": "true",
               "children": []
             }
@@ -21,7 +21,7 @@
         },
         {
           "Name": "Non-Inventory Buyers",
-          "Title": "Chris Francis, Judi Kidd, Julie Lebbossiere, Kiana Hall",
+          "Title": "Chris Francis, Judi Kidd, Julie Lebbossiere, Kiana Hall, Tineika Toussaint",
           "long": "true",
           "children": []
         },
@@ -32,17 +32,30 @@
           "children": []
         },
         {
-          "Name": "Peter Papagno",
-          "Title": "Mgr. of Procurement Contract Compliance",
-          "Email": "ppapagno@mbta.com",
-          "children": []
-        },
+          "Name": "Charlie Hill",
+          "Title": "Mailroom Manager",
+          "children": [
+            {
+              "Name": "Devendra Jadav",
+              "Title": "Temp"
+            },
+            {
+              "Name": "Natalie Sequea",
+              "Title": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "children": [
         {
           "Name": "Dan Maloney",
           "Title": "Project Assistant",
           "Email": "dmaloney@mbta.com",
           "children": [
             {
+              "Name": "",
               "Title": "Co-op"
             }
           ]
@@ -53,16 +66,17 @@
           "Email": "staing@mbta.com",
           "children": [
             {
+              "Name": "",
               "Title": "Co-op"
             },
             {
+              "Name": "",
               "Title": "Co-op"
             }
           ]
         }
       ]
     },
-
     {
       "Name": "Dan Barton",
       "Title": "Senior Director of Warehouse & Inventory Management",
@@ -75,6 +89,12 @@
           "children": []
         }
       ]
+    },
+    {
+      "Name": "Peter Papagno",
+      "Title": "Mgr. of Procurement Contract Compliance",
+      "Email": "ppapagno@mbta.com",
+      "children": []
     },
     {
       "Name": "Gideon Guilman",

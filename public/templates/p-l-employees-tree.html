@@ -116,7 +116,12 @@
             // appends the rectangle that holds the name
             nodeEnter.append("rect")
                 .attr("width", rectW)
-                .attr("height", rectH)
+                .attr("height", function(d){
+                    if(d.long == "true"){
+                        return rectH * 2;
+                    }
+                    return rectH;
+                })
                 .attr("stroke", "black")
                 .attr("stroke-width", 1)
                 .style("fill", function (d) {
@@ -183,7 +188,12 @@
 
             nodeUpdate.select("rect")
                 .attr("width", rectW)
-                .attr("height", rectH)
+                .attr("height", function(d){
+                    if(d.long == "true"){
+                        return rectH * 2;
+                    }
+                    return rectH;
+                })
                 .attr("stroke", "black")
                 .attr("stroke-width", 1)
                 .style("fill", function (d) {
@@ -204,7 +214,12 @@
 
             nodeExit.select("rect")
                 .attr("width", rectW)
-                .attr("height", rectH)
+                .attr("height", function(d){
+                    if(d.long == "true"){
+                        return rectH * 2;
+                    }
+                    return rectH;
+                })
                 .attr("stroke", "black")
                 .attr("stroke-width", 1);
 

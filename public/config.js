@@ -23,10 +23,10 @@
             .when('/employees-new', {
                 templateUrl: './templates/employees2018.html'
             })
-            .when('/plemployees', {
+            .when('/plemployees-experiment', {
                 templateUrl: './templates/p-and-l-employees.html'
             })
-            .when('/plemployees2', {
+            .when('/plemployees', {
                 templateUrl: './templates/p-l-employees-tree.html'
             })
             .when('/procurement', {

@@ -13,19 +13,22 @@
           "children": [
             {
               "Name": "Inventory Buyers",
-              "Title": "Buyers",
+              "Title": "Angela Knobel, Dimitrios Martinos, Karen Love, Philip Hong, Timothy Sullivan, Natalie Sequea, Tineika Toussaint",
+              "long": "true",
               "children": []
             }
           ]
         },
         {
-          "Name": "Buyers",
-          "Title": "Buyers",
+          "Name": "Non-Inventory Buyers",
+          "Title": "Chris Francis, Judi Kidd, Julie Lebbossiere, Kiana Hall",
+          "long": "true",
           "children": []
         },
         {
           "Name": "Sourcing Executives",
-          "Title": "Sourcing Executive",
+          "Title": "Aidan (Joe) Flynn, Tracy Dionne, Eric Welsh, Edward Cook, Rob Weiner",
+          "long": "true",
           "children": []
         },
         {
@@ -38,18 +41,37 @@
           "Name": "Dan Maloney",
           "Title": "Project Assistant",
           "Email": "dmaloney@mbta.com",
-          "children": []
+          "children": [
+            {
+              "Title": "Co-op"
+            }
+          ]
         },
         {
           "Name": "Scott Taing",
           "Title": "Data Analyst",
           "Email": "staing@mbta.com",
-          "children": []
-        },
+          "children": [
+            {
+              "Title": "Co-op"
+            },
+            {
+              "Title": "Co-op"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "Name": "Dan Barton",
+      "Title": "Senior Director of Warehouse & Inventory Management",
+      "Email": "dbarton@mbta.com",
+      "children": [
         {
-          "Name": "Willie Ruffin",
-          "Title": "Data Analyst",
-          "Email": "wruffin@mbta.com",
+          "Name": "Kate Cairns",
+          "Title": "Directory of Inventory Integration",
+          "Email": "kcairns@mbta.com",
           "children": []
         }
       ]
@@ -66,9 +88,28 @@
       "Email": "jcarreiro@mbta.com",
       "children": [
         {
+          "Name": "Frank Rubino",
+          "Email": "frubino@mbta.com",
+          "Title": "Operations Analyst",
+          "children": []
+        },
+        {
+          "Name": "Kyujung (KJ) Hwang",
+          "Email": "khwang@mbta.com",
+          "Title": "Warranty Manager",
+          "children": []
+        },
+        {
+          "Name": "Amber Debole",
+          "Email": "adebole@mbta.com",
+          "Title": "Director of Capacity Management",
+          "children": []
+        },
+        {
           "Name": "Takary Connor",
           "Email": "tconnor@mbta.com",
-          "Title": "Director of Inventory Management"
+          "Title": "Director of Inventory Management",
+          "children": []
         }
       ]
     }
